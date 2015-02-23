@@ -691,7 +691,7 @@ $( We will use the following descriptive terms very loosely:  A "closed form"
     sylsyld.1 $e |- ( ph -> ps ) $.
     sylsyld.2 $e |- ( ph -> ( ch -> th ) ) $.
     sylsyld.3 $e |- ( ps -> ( th -> ta ) ) $.
-    $( Virtual deduction rule ~ e12 without virtual deduction symbols.
+    $( Virtual deduction rule without virtual deduction symbols.
        (Contributed by Alan Sare, 20-Apr-2011.) $)
     sylsyld $p |- ( ph -> ( ch -> ta ) ) $=
       ( wi syl syld ) ACDEGABDEIFHJK $.
@@ -741,8 +741,8 @@ $( We will use the following descriptive terms very loosely:  A "closed form"
     syl3c.2 $e |- ( ph -> ch ) $.
     syl3c.3 $e |- ( ph -> th ) $.
     syl3c.4 $e |- ( ps -> ( ch -> ( th -> ta ) ) ) $.
-    $( A syllogism inference combined with contraction. ~ e111 without virtual
-       deductions.  (Contributed by Alan Sare, 7-Jul-2011.) $)
+    $( A syllogism inference combined with contraction.   
+       (Contributed by Alan Sare, 7-Jul-2011.) $)
     syl3c $p |- ( ph -> ta ) $=
       ( wi sylc mpd ) ADEHABCDEJFGIKL $.
       $( [7-Jul-2011] $)
@@ -752,7 +752,7 @@ $( We will use the following descriptive terms very loosely:  A "closed form"
     syl6mpi.1 $e |- ( ph -> ( ps -> ch ) ) $.
     syl6mpi.2 $e |- th $.
     syl6mpi.3 $e |- ( ch -> ( th -> ta ) ) $.
-    $( ~ e20 without virtual deductions.  (Contributed by Alan Sare,
+    $( A virtual deduction elimination rule.  (Contributed by Alan Sare,
        8-Jul-2011.)  (The proof was shortened by Wolf Lammen, 13-Sep-2012.) $)
     syl6mpi $p |- ( ph -> ( ps -> ta ) ) $=
       ( mpi syl6 ) ABCEFCDEGHIJ $.
@@ -4946,8 +4946,7 @@ $)
 
   ${
     exbiri.1 $e |- ( ( ph /\ ps ) -> ( ch <-> th ) ) $.
-    $( Inference form of ~ exbir .  This proof is ~ exbiriVD automatically
-       translated and minimized.  (Contributed by Alan Sare, 31-Dec-2011.)
+    $( Inference form of ~ exbir .  (Contributed by Alan Sare, 31-Dec-2011.)
        (The proof was shortened by Wolf Lammen, 27-Jan-2013.) $)
     exbiri $p |- ( ph -> ( ps -> ( th -> ch ) ) ) $=
       ( wa biimpar exp31 ) ABDCABFCDEGH $.
@@ -4969,8 +4968,8 @@ $)
 
   ${
     pm3.26bi2.1 $e |- ( ph <-> ( ps /\ ch ) ) $.
-    $( Deduction eliminating a conjunct.  Automatically derived from
-       ~ simplbi2VD .  (Contributed by Alan Sare, 31-Dec-2011.) $)
+    $( Deduction eliminating a conjunct.  (Contributed 
+       by Alan Sare, 31-Dec-2011.) $)
     simplbi2 $p |- ( ps -> ( ch -> ph ) ) $=
       ( wa biimpri ex ) BCAABCEDFG $.
       $( [31-Dec-2011] $)
@@ -10146,7 +10145,7 @@ $)
     ee22.1 $e |- ( ph -> ( ps -> ch ) ) $.
     ee22.2 $e |- ( ph -> ( ps -> th ) ) $.
     ee22.3 $e |- ( ch -> ( th -> ta ) ) $.
-    $( Virtual deduction rule ~ e22 without virtual deduction connectives.
+    $( Virtual deduction rule without virtual deduction connectives.
        Special theorem needed for Alan Sare's virtual deduction translation
        tool.  (Contributed by Alan Sare, 2-May-2011.) $)
     ee22 $p |- ( ph -> ( ps -> ta ) ) $=
@@ -10158,7 +10157,8 @@ $)
     ee12an.1 $e |- ( ph -> ps ) $.
     ee12an.2 $e |- ( ph -> ( ch -> th ) ) $.
     ee12an.3 $e |- ( ( ps /\ th ) -> ta ) $.
-    $( ~ e12an without virtual deduction connectives.  Special theorem needed
+    $( Virtual deduction rule without virtual deduction connectives.  
+       Special theorem needed
        for Alan Sare's virtual deduction translation tool.  (Contributed by
        Alan Sare, 28-Oct-2011.) $)
     ee12an $p |- ( ph -> ( ch -> ta ) ) $=
@@ -10170,7 +10170,8 @@ $)
     ee23.1 $e |- ( ph -> ( ps -> ch ) ) $.
     ee23.2 $e |- ( ph -> ( ps -> ( th -> ta ) ) ) $.
     ee23.3 $e |- ( ch -> ( ta -> et ) ) $.
-    $( ~ e23 without virtual deductions.  (Contributed by Alan Sare,
+    $( Virtual deduction rule without virtual deductions.  (Contributed by 
+       Alan Sare,
        17-Jul-2011.) $)
     ee23 $p |- ( ph -> ( ps -> ( th -> et ) ) ) $=
       ( wi syl6 syldd ) ABDEFHABCEFJGIKL $.
@@ -10178,15 +10179,13 @@ $)
   $}
 
   $( Exportation implication also converting head from biconditional to
-     conditional.  This proof is ~ exbirVD automatically translated and
-     minimized.  (Contributed by Alan Sare, 31-Dec-2011.) $)
+     conditional.  (Contributed by Alan Sare, 31-Dec-2011.) $)
   exbir $p |- ( ( ( ph /\ ps ) -> ( ch <-> th ) ) ->
               ( ph -> ( ps -> ( th -> ch ) ) ) ) $=
     ( wa wb wi bi2 imim2i exp3a ) ABEZCDFZGABDCGZLMKCDHIJ $.
     $( [31-Dec-2011] $)
 
-  $( ~ impexp with a 3-conjunct antecedent.  This proof is ~ 3impexpVD
-     automatically translated and minimized.  (Contributed by Alan Sare,
+  $( ~ impexp with a 3-conjunct antecedent.  (Contributed by Alan Sare,
      31-Dec-2011.) $)
   3impexp $p |- ( ( ( ph /\ ps /\ ch ) -> th ) <->
                 ( ph -> ( ps -> ( ch -> th ) ) ) ) $=
@@ -10194,8 +10193,7 @@ $)
     $( [31-Dec-2011] $)
 
   $( ~ 3impexp with biconditional consequent of antecedent that is commuted in
-     consequent.  Derived automatically from ~ 3impexpVD .  (Contributed by
-     Alan Sare, 31-Dec-2011.) $)
+     consequent.  (Contributed by Alan Sare, 31-Dec-2011.) $)
   3impexpbicom $p |- ( ( ( ph /\ ps /\ ch ) -> ( th <-> ta ) ) <->
                      ( ph -> ( ps -> ( ch -> ( ta <-> th ) ) ) ) ) $=
     ( w3a wb wi bicom imbi2 biimpcd mpi 3expd 3impexp biimpri syl6ibr impbii )
@@ -10205,15 +10203,14 @@ $)
 
   ${
     3impexpbicomi.1 $e |- ( ( ph /\ ps /\ ch ) -> ( th <-> ta ) ) $.
-    $( Deduction form of ~ 3impexpbicom .  Derived automatically from
-       ~ 3impexpbicomiVD .  (Contributed by Alan Sare, 31-Dec-2011.) $)
+    $( Deduction form of ~ 3impexpbicom .  (Contributed by Alan Sare, 
+       31-Dec-2011.) $)
     3impexpbicomi $p |- ( ph -> ( ps -> ( ch -> ( ta <-> th ) ) ) ) $=
       ( wb w3a bicomd 3exp ) ABCEDGABCHDEFIJ $.
       $( [31-Dec-2011] $)
   $}
 
-  $( Closed form of ~ ancoms .  Derived automatically from ~ ancomsimpVD .
-     (Contributed by Alan Sare, 31-Dec-2011.) $)
+  $( Closed form of ~ ancoms .  (Contributed by Alan Sare, 31-Dec-2011.) $)
   ancomsimp $p |- ( ( ( ph /\ ps ) -> ch ) <-> ( ( ps /\ ph ) -> ch ) ) $=
     ( wa ancom imbi1i ) ABDBADCABEF $.
     $( [31-Dec-2011] $)
@@ -10260,15 +10257,10 @@ $)
   $}
 
   ${
-    $( Non-virtual deduction from of ~ e21 . ~ ee21 is ~ ee21VD without virtual
-       deductions and was automatically derived from ~ ee21VD using the tools
-       program translate..without..overwriting.cmd and Metamath's minimize
-       command.  (Contributed by Alan Sare, 18-Mar-2012.)  $)
-
     ee21.1 $e |- ( ph -> ( ps -> ch ) ) $.
     ee21.2 $e |- ( ph -> th ) $.
     ee21.3 $e |- ( ch -> ( th -> ta ) ) $.
-    $( ~ e21 without virtual deductions. $)
+    $( Virtual deduction rule without virtual deductions. $)
     ee21 $p |- ( ph -> ( ps -> ta ) ) $=
       ( a1d ee22 ) ABCDEFADBGIHJ $.
       $( [18-Mar-2012] $)
@@ -10278,7 +10270,7 @@ $)
     ee10.1 $e |- ( ph -> ps ) $.
     ee10.2 $e |- ch $.
     ee10.3 $e |- ( ps -> ( ch -> th ) ) $.
-    $( ~ e10 without virtual deductions. $)
+    $( Virtual deduction rule without virtual deductions. $)
     ee10 $p |- ( ph -> th ) $=
       ( mpi syl ) ABDEBCDFGHI $.
       $( [25-Jul-2011] $)
@@ -10288,7 +10280,7 @@ $)
     ee02.1 $e |- ph $.
     ee02.2 $e |- ( ps -> ( ch -> th ) ) $.
     ee02.3 $e |- ( ph -> ( th -> ta ) ) $.
-    $( ~ e02 without virtual deductions. $)
+    $( Virtual deduction rule without virtual deductions. $)
     ee02 $p |- ( ps -> ( ch -> ta ) ) $=
       ( a1i sylsyld ) BACDEABFIGHJ $.
       $( [22-Jul-2012] $)
@@ -11382,10 +11374,7 @@ $)
 
      ~ ax-9 can be proved from a weaker version requiring that the variables be
      distinct; see theorem ~ a9wa9 .
-
-     ~ ax-9 can also be proved from the Axiom of Separation.  See theorem
-     ~ ax9sep .  Thus ~ ax-9 is dispensable for Zermelo set theory Z, which
-     uses the the Axiom of Separation instead of the Axiom of Replacement. $)
+  $)
   ax-9 $a |- -. A. x -. x = y $.
 
   $( ~ equid with existential quantifier without using ~ ax-4 or ~ ax-17 .
@@ -11829,7 +11818,7 @@ $)
 
   $( Theorem 19.12 of [Margaris] p. 89.  Assuming the converse is a mistake
      sometimes made by beginners!  But sometimes the converse does hold, as in
-     ~ 19.12vv and ~ r19.12sn . $)
+     ~ 19.12vv . $)
   19.12 $p |- ( E. x A. y ph -> A. y E. x ph ) $=
     ( wal wex hba1 hbex ax-4 eximi alrimi ) ACDZBEABECKCBACFGKABACHIJ $.
     $( [5-Aug-1993] $)
@@ -13058,7 +13047,7 @@ $)
        16 of the preprint).  It apparently does not otherwise appear in the
        literature but is easily proved from textbook predicate calculus by
        cases.  It is a somewhat bizarre axiom since the antecedent is always
-       false in set theory (see ~ dtru ), but nonetheless it is technically
+       false in set theory, but nonetheless it is technically
        necessary as you can see from its uses.
 
        This axiom is redundant if we include ~ ax-17 ; see theorem ~ ax16 .
@@ -15844,7 +15833,7 @@ $)
     $d x y $.
     $( Two ways to express "only one thing exists."  The left-hand side
        requires only one variable to express this.  Both sides are false in set
-       theory; see theorem ~ dtru . $)
+       theory. $)
     exists1 $p |- ( E! x x = x <-> A. x x = y ) $=
       ( weq weu wb wal wex df-eu equid tbt bicom bitri albii exbii hbae 3bitr2i
       19.9 ) AACZADRABCZEZAFZBGSAFZBGUBRABHUBUABSTASSRETRSAIJSRKLMNUBBABBOQP $.
@@ -16233,8 +16222,7 @@ $( $v ._|_ $. $)
      Because class variables can be substituted with compound expressions and
      set variables cannot, it is often useful to convert a theorem containing a
      free set variable to a more general version with a class variable.  This
-     is done with theorems such as ~ vtoclg which is used, for example, to
-     convert ~ elirrv to ~ elirr . $)
+     is done with theorems such as ~ vtoclg . $)
   df-clab $a |- ( x e. { y | ph } <-> [ x / y ] ph ) $.
 
   $( Simplification of class abstraction notation when the free and bound
@@ -17257,16 +17245,9 @@ $( $v ._|_ $. $)
        roughly as follows.  To convert a theorem with a wff variable ` ph `
        (that has a free variable ` x ` ) to a theorem with a class variable
        ` A ` , we substitute ` x e. A ` for ` ph ` throughout and simplify,
-       where ` A ` is a new class variable not already in the wff.  An example
-       is the conversion of ~ zfauscl to ~ inex1 (look at the instance of
-       ~ zfauscl that occurs in the proof of ~ inex1 ).  Conversely, to convert
-       a theorem with a class variable ` A ` to one with ` ph ` , we substitute
-       ` { x | ph } ` for ` A ` throughout and simplify, where ` x ` and ` ph `
-       are new set and wff variables not already in the wff.  An example is
-       ~ cp , which derives a formula containing wff variables from
-       substitution instances of the class variables in its equivalent
-       formulation ~ cplem2 .  For more information on class variables, see
-       Quine pp. 15-21 and/or Takeuti and Zaring pp. 10-13. $)
+       where ` A ` is a new class variable not already in the wff.  
+       For more information on class variables, see
+       [Quine] pp. 15-21 and/or [TakeutiZaring] pp. 10-13. $)
     abeq2 $p |- ( A = { x | ph } <-> A. x ( x e. A <-> ph ) ) $=
       ( vy cab wceq cv wcel wb wal ax-17 hbab1 cleqf abid bibi2i albii bitri )
       CABEZFBGZCHZSRHZIZBJTAIZBJBDCRDGCHBKABDLMUBUCBUAATABNOPQ $.
@@ -18511,8 +18492,7 @@ $)
   ${
     $d A y $.  $d x y $.
     $( Similar to Lemma 24 of [Monk2] p. 114, except the quantification of the
-       antecedent is restricted.  Derived automatically from ~ hbra2VD .
-       Contributed by Alan Sare 31-Dec-2011. $)
+       antecedent is restricted.  Contributed by Alan Sare 31-Dec-2011. $)
     hbra2 $p |- ( A. x e. A A. y e. B ph -> A. y A. x e. A A. y e. B ph ) $=
       ( wral cv wcel wi wal df-ral ralbii ax-17 hba1 hbral hbxfrbi ) ACEFZBDFCG
       EHAIZCJZBDFCQSBDACEKLSCBDBGDHCMRCNOP $.
@@ -20075,9 +20055,7 @@ $)
   ${
     $d x A $.  $d x B $.  $d x C $.
     $( If two classes each contain another class, then both contain some set.
-       This proof was automatically generated from the virtual deduction proof
-       ~ elex22VD using a translation program.  (Contributed by Alan Sare,
-       24-Oct-2011.) $)
+       (Contributed by Alan Sare, 24-Oct-2011.) $)
     elex22 $p |- ( ( A e. B /\ A e. C ) -> E. x ( x e. B /\ x e. C ) ) $=
       ( wcel wa cv wceq wi wal eleq1a anim12ii alrimiv elisset adantr exim sylc
       wex ) BCEZBDEZFZAGZBHZUBCEZUBDEZFZIZAJUCARZUFARUAUGASUCUDTUEBCUBKBDUBKLMS
@@ -22075,9 +22053,9 @@ $)
      Our definition also does not produce the same results as discussed in the
      proof of Theorem 6.6 of [Quine] p. 42 (although Theorem 6.6 itself does
      hold, as shown by ~ dfsbcq below).  For example, if ` A ` is a proper
-     class, Quine's substitution of ` A ` for ` y ` in ` 0 e. y ` evaluates to
-     ` 0 e. A ` rather than our falsehood.  (This can be seen by substituting
-     ` A ` , ` y ` , and ` 0 ` for for alpha, beta, and gamma in Subcase 1 of
+     class, Quine's substitution of ` A ` for ` y ` in ` B e. y ` evaluates to
+     ` B e. A ` rather than our falsehood.  (This can be seen by substituting
+     ` A ` , ` y ` , and ` B ` for for alpha, beta, and gamma in Subcase 1 of
      Quine's discussion on p. 42.)  Unfortunately, Quine's definition requires
      a recursive structural breakdown of ` ph ` , and it does not seem possible
      to express it with a single closed formula.
@@ -22545,8 +22523,8 @@ $)
 
   ${
     $d x B $.  $d x A $.
-    $( Set theory version of ~ sbeqal1 .  (Contributed by Andrew Salmon,
-       28-Jun-2011.) $)
+    $( If ` x = A ` always implies ` x = B ` , then ` A = B ` is true.  
+       (Contributed by Andrew Salmon, 28-Jun-2011.) $)
     sbceqal $p |- ( A e. V -> ( A. x ( x = A -> x = B ) -> A = B ) ) $=
       ( wcel cv wceq wi wal wsbc a4sbc sbcimg wb eqsbc3 mpbiri pm5.5 syl 3bitrd
       eqid sylibd ) BDEZAFZBGZUBCGZHZAIUEABJZBCGZUEABDKUAUFUCABJZUDABJZHZUIUGUC
@@ -22608,10 +22586,8 @@ $)
 
   ${
     $d x C $.  $d x A $.
-    $( ~ eqsbc3 with set variable on right side of equals sign.  This proof was
-       automatically generated from the virtual deduction proof ~ eqsbc3rVD
-       using a translation program.  (Contributed by Alan Sare,
-       24-Oct-2011.) $)
+    $( ~ eqsbc3 with set variable on right side of equals sign.  (Contributed 
+       by Alan Sare, 24-Oct-2011.) $)
     eqsbc3r $p |- ( A e. B -> ( [ A / x ] C = x <-> C = A ) ) $=
       ( wcel wceq wsbc eqcom sbcbii biimpd eqsbc3 sylibd syl6ib syl6ibr sylibrd
       cv idd impbid ) BCEZDAPZFZABGZDBFZSUBBDFZUCSUBTDFZABGZUDSUBUFUAUEABCDTHIZ
@@ -26968,9 +26944,8 @@ $)
 
   ${
     $d A y z $.  $d B y z $.  $d V y z $.  $d x y z $.
-    $( Distribute proper substitution through the union of a class. ~ csbunig
-       is derived from the virtual deduction proof ~ csbunigVD .  (Contributed
-       by Alan Sare, 10-Nov-2012. ) $)
+    $( Distribute proper substitution through the union of a class. 
+       (Contributed by Alan Sare, 10-Nov-2012. ) $)
     csbunig $p |- ( A e. V -> [_ A / x ]_ U. B = U. [_ A / x ]_ B ) $=
       ( vz vy wcel cuni csb wel cv wa wex cab wsbc df-uni csbeq2i csbabg sbcexg
       bitrd sbcang sbcg sbcel2g anbi12d exbidv abbidv 3eqtrd syl6eqr ) BDGZABCH
@@ -27096,7 +27071,7 @@ $)
       $( [20-Aug-1993] $)
 
     $( The class union of the intersection of two classes.  Exercise 4.12(n) of
-       [Mendelson] p. 235.  See ~ uninqs for a condition where equality holds.
+       [Mendelson] p. 235. 
        (The proof was shortened by Andrew Salmon, 29-Jun-2011.) $)
     uniin $p |- U. ( A i^i B ) C_ ( U. A i^i U. B ) $=
       ( vx vy cin cuni cv wcel wex 19.40 elin anbi2i anandi bitri exbii anbi12i
@@ -27150,8 +27125,7 @@ $)
   $}
 
   $( The union of the empty set is the empty set.  Theorem 8.7 of [Quine]
-     p. 54.  (Reproved without relying on ~ ax-nul by Eric Schmidt,
-     4-Apr-2007.) $)
+     p. 54.  $)
   uni0 $p |- U. (/) = (/) $=
     ( c0 cuni wceq csn wss 0ss uni0b mpbir ) ABACAADZEIFAGH $.
     $( [4-Apr-2007] $) $( [16-Sep-1993] $)
@@ -27512,8 +27486,7 @@ $)
     intab.2 $e |- { x | E. y ( ph /\ x = A ) } e. _V $.
     $( The intersection of a special case of a class abstraction. ` y ` may be
        free in ` ph ` and ` A ` , which can be thought of a ` ph ( y ) ` and
-       ` A ( y ) ` .  Typically, ~ abrexex2 or ~ abexssex can be used to
-       satisfy the second hypothesis. $)
+       ` A ( y ) ` .  $)
     intab $p |- |^| { x | A. y ( ph -> A e. x ) } =
                 { x | E. y ( ph /\ x = A ) } $=
       ( vz cv wcel wi wal cab wceq wa wex wsbc cvv wb ax-mp sylibr eqeq1 anbi2d
@@ -27589,8 +27562,7 @@ $)
 
   ${
     $d x y A $.
-    $( Two ways to express " ` A ` is a singleton."  See also ~ en1 , ~ card1 ,
-       and ~ eusn . $)
+    $( Two ways to express " ` A ` is a singleton."  $)
     uniintsn $p |- ( U. A = |^| A <-> E. x A = { x } ) $=
       ( vy cuni cint wceq cv wex wcel wa wal c0 inteq syl6eq adantl unieq sylib
       wne cvv wss csn wi vn0 int0 eqeq1 syl5ib imp eqtr3d ex necon3d mpi n0 cpr
@@ -28232,8 +28204,7 @@ $)
     elimdhyp.3 $e |- ( B = if ( ph , A , B ) -> ( th <-> ch ) ) $.
     elimdhyp.4 $e |- th $.
     $( Version of ~ elimhyp where the hypothesis is deduced from the final
-       antecedent.  See ~ ghomgrplem for an example of its use.  (Contributed
-       by Paul Chapman, 25-Mar-2008.) $)
+       antecedent.  (Contributed by Paul Chapman, 25-Mar-2008.) $)
     elimdhyp $p |- ch $=
       ( cif wceq wb iftrue eqcomd syl mpbid wn iffalse mpbii pm2.61i ) ACABCGAE
       AEFKZLBCMAUBEAEFNOHPQARZDCJUCFUBLDCMUCUBFAEFSOIPTUA $.
@@ -28385,8 +28356,7 @@ $)
         $( [31-Dec-1993] $)
     $}
 
-    $( Membership in a power class.  Theorem 86 of [Suppes] p. 47.  See also
-       ~ elpw2g . $)
+    $( Membership in a power class.  Theorem 86 of [Suppes] p. 47. $)
     elpwg $p |- ( A e. V -> ( A e. ~P B <-> A C_ B ) ) $=
       ( vx cv cpw wcel wss wb wceq eleq1 sseq1 bibi12d vex elpw vtoclg ) DEZBFZ
       GZQBHZIARGZABHZIDACQAJSUATUBQARKQABLMQBDNOP $.
@@ -30551,7 +30521,7 @@ $)
     $d A x y z w t u $.  $d B x y z w t u $.
     insklem.1 $e |- A C_ ( ~P1 1c X._k ( _V X._k _V ) ) $.
     insklem.2 $e |- B C_ ( ~P1 1c X._k ( _V X._k _V ) ) $.
-    $( Lemma for ~ ins2exg and ~ ins3exg .  Equality for subsets of
+    $( Lemma for ~ ins2kexg and ~ ins3kexg .  Equality for subsets of
        ` ( ~P1 1c X._k ( _V X._k _V ) ) ` . $)
     insklem $p |- ( A = B <->
       A. x A. y A. z ( << { { x } } , << y , z >> >> e. A <->
@@ -31261,14 +31231,14 @@ $)
       $( [21-Aug-2011] $)
   $}
 
-  $( Substitution law for descriptions.  Compare ~ reuunisbc . $)
+  $( Substitution law for descriptions. $)
   reiotasbc $p |- ( E! x e. A ph -> [ ( iota x ( x e. A /\ ph ) ) / x ] ph ) $=
     ( cv wcel wa weu cio wsbc wreu iota4an df-reu ancom eubii bitri wceq iotabi
     wb mpg dfsbcq ax-mp 3imtr4i ) ABDCEZFZBGZABUDBHZIZABCJZABUCAFZBHZIZAUCBKUHU
     IBGUEABCLUIUDBUCAMZNOUJUFPZUKUGRUIUDRUMBUIUDBQULSABUJUFTUAUB $.
     $( [23-Aug-2011] $)
 
-  $( Property of iota.  Compare ~ reuuni1 . $)
+  $( Property of iota. $)
   reiota1 $p |- ( ( x e. A /\ E! x e. A ph ) ->
           ( ph <-> ( iota x ( x e. A /\ ph ) ) = x ) ) $=
     ( cv wcel wa wreu cio wceq ibar weu wb df-reu iota1 sylbi sylan9bb ) BDZCEZ
@@ -35874,8 +35844,7 @@ $)
        although the definition doesn't strictly require it (see ~ dfid2 for a
        case where they are not distinct).  The brace notation is called "class
        abstraction" by Quine; it is also (more commonly) called a "class
-       builder" in the literature.  An alternate definition using no
-       existential quantifiers is shown by ~ dfopab2 . $)
+       builder" in the literature.  $)
     df-opab $a |- { <. x , y >. | ph } =
                   { z | E. x E. y ( z = <. x , y >. /\ ph ) } $.
   $}
@@ -36045,9 +36014,7 @@ $)
   $( Extend wff notation to include the general binary relation predicate.
      Note that the syntax is simply three class symbols in a row.  Since binary
      relations are the only possible wff expressions consisting of three class
-     expressions in a row, the syntax is unambiguous.  (For an example of how
-     syntax could become ambiguous if we are not careful, see the comment in
-     ~ cneg .) $)
+     expressions in a row, the syntax is unambiguous.  $)
   wbr $a wff A R B $.
 
   $( Define a general binary relation.  Note that the syntax is simply three
@@ -38420,7 +38387,7 @@ $)
 
     $( Indexed intersection with a universal index class.  When ` A ` doesn't
        depend on ` x ` , this evaluates to ` A ` by ~ 19.3 and ~ abid2 .  When
-       ` A = x ` , this evaluates to ` (/) ` by ~ intiin and ~ intv . $)
+       ` A = x ` , this evaluates to ` (/) ` . $)
     viin $p |- |^|_ x e. _V A = { y | A. x y e. A } $=
       ( cvv ciin cv wcel wral cab wal df-iin ralv abbii eqtri ) ADCEBFCGZADHZBI
       OAJZBIABDCKPQBOALMN $.
@@ -39031,7 +38998,6 @@ $)
   ${
     $d A w y z $.  $d B w y z $.  $d C w y z $.  $d D w y z $.  $d w x y z $.
     $( Distribute proper substitution through the cross product of two classes.
-       ~ csbxpg is derived from the virtual deduction proof ~ csbxpgVD .
        (Contributed by Alan Sare, 10-Nov-2012. ) $)
     csbxpg $p |- ( A e. D -> [_ A / x ]_ ( B X. C ) =
                 ( [_ A / x ]_ B X. [_ A / x ]_ C ) ) $=
@@ -40580,9 +40546,8 @@ $)
 
   ${
     $d A w y $.  $d B w y $.  $d V w y $.  $d x w y $.
-    $( Distribute proper substitution through the range of a class. ~ csbrng is
-       derived from the virtual deduction proof ~ csbrngVD .  (Contributed by
-       Alan Sare, 10-Nov-2012. ) $)
+    $( Distribute proper substitution through the range of a class.   
+       (Contributed by Alan Sare, 10-Nov-2012. ) $)
     csbrng $p |- ( A e. V -> [_ A / x ]_ ran B = ran [_ A / x ]_ B ) $=
       ( vw vy wcel crn csb cop wex cab wsbc dfrn3 csbeq2i csbabg sbcexg sbcel2g
       cv exbidv bitrd abbidv 3eqtrd syl6eqr ) BDGZABCHZIZESFSJZABCIZGZEKZFLZUIH
@@ -40670,7 +40635,6 @@ $)
     $( [19-Mar-1998] $)
 
   $( Distribute proper substitution through the restriction of a class.
-     ~ csbresg is derived from the virtual deduction proof ~ csbresgVD .
      (Contributed by Alan Sare, 10-Nov-2012. ) $)
   csbresg $p |- ( A e. V -> [_ A / x ]_ ( B |` C ) =
                  ( [_ A / x ]_ B |` [_ A / x ]_ C ) ) $=
@@ -41563,9 +41527,8 @@ $)
   ${
     op1sta.1 $e |- A e. _V $.
     op1sta.2 $e |- B e. _V $.
-    $( Extract the first member of an ordered pair.  (See ~ op2nda to extract
-       the second member, ~ op1stb for an alternate version, and ~ op1st for
-       the preferred version..)  (Contributed by Raph Levien, 4-Dec-2003.) $)
+    $( Extract the first member of an ordered pair.  
+       (Contributed by Raph Levien, 4-Dec-2003.) $)
     op1sta $p |- U. dom { <. A , B >. } = A $=
       ( cop csn cdm cuni dmsnop unieqi unisn eqtri ) ABEFGZHAFZHAMNABDIJACKL $.
       $( [4-Dec-2003] $)
@@ -46556,13 +46519,12 @@ $(
 =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 $)
 
-  $( Extend class notation to include the value of an operation ` F ` (such as
-     ` + ` ) for two arguments ` A ` and ` B ` .  Note that the syntax is
+  $( Extend class notation to include the value of an operation ` F ` for two 
+     arguments ` A ` and ` B ` .  Note that the syntax is
      simply three class symbols in a row surrounded by parentheses.  Since
      operation values are the only possible class expressions consisting of
      three class expressions in a row surrounded by parentheses, the syntax is
-     unambiguous.  (For an example of how syntax could become ambiguous if we
-     are not careful, see the comment in ~ cneg .) $)
+     unambiguous.  $)
   co $a class ( A F B ) $.
 
   $( Extend class notation to include class abstraction (class builder) of
@@ -47041,8 +47003,8 @@ $)
     elimdelov.1 $e |- ( ph -> C e. ( A F B ) ) $.
     elimdelov.2 $e |- Z e. ( X F Y ) $.
     $( Eliminate a hypothesis which is a predicate expressing membership in the
-       result of an operator (deduction version).  See ~ ghomgrplem for an
-       example of its use.  (Contributed by Paul Chapman, 25-Mar-2008.) $)
+       result of an operator (deduction version).  
+       (Contributed by Paul Chapman, 25-Mar-2008.) $)
     elimdelov $p |- if ( ph , C , Z ) e.
                      ( if ( ph , A , X ) F if ( ph , B , Y ) ) $=
       ( cif co wcel iftrue eqeltrd oveq12d eleqtrrd wn iffalse syl6eqel pm2.61i
@@ -50565,7 +50527,7 @@ $)
 
   $( Define the ` R ` -coset of ` A ` .  Exercise 35 of [Enderton] p. 61.  This
      is called the equivalence class of ` A ` modulo ` R ` when ` R ` is an
-     equivalence relation (i.e. when ` Er R ` ; see ~ dfer2 ).  In this case,
+     equivalence relation.  In this case,
      ` A ` is a representative (member) of the equivalence class ` [ A ] R ` ,
      which contains all sets that are equivalent to ` A ` .  Definition of
      [Enderton] p. 57 uses the notation ` [ A ] ` (subscript) ` R ` , although
@@ -51957,5 +51919,10 @@ htmldef "Er" as
     " <FONT FACE=sans-serif>Er</FONT> ";
   althtmldef "Er" as ' <FONT FACE=sans-serif>Er</FONT> ';
   latexdef "Er" as "{\rm Er}";
+
+htmldef "/." as
+    "<IMG SRC='diagup.gif' WIDTH=14 HEIGHT=19 TITLE='/.' ALIGN=TOP>";
+  althtmldef "/." as ' <B>/</B> ';
+  latexdef "/." as "\diagup";
 
 $)
