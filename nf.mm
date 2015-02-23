@@ -51165,8 +51165,8 @@ $( $t
 /******* Web page format settings *******/
 
 /* Page title, home page link */
-htmltitle "Metamath Proof Explorer";
-htmlhome '<A HREF="mmset.html"><FONT SIZE=-2 FACE=sans-serif>' +
+htmltitle "New Foundations Proof Explorer";
+htmlhome '<A HREF="nfset.html"><FONT SIZE=-2 FACE=sans-serif>' +
     '<IMG SRC="mm.gif" BORDER=0 ALT=' +
     '"Home" HEIGHT=32 WIDTH=32 ALIGN=MIDDLE>' +
     'Home</FONT></A>';
@@ -51176,7 +51176,7 @@ htmlhome '<A HREF="mmset.html"><FONT SIZE=-2 FACE=sans-serif>' +
 /* A warning will be given if the file "mmset.html" with the bibliographical
    references is not present.  It is read in order to check correctness of
    the references. */
-htmlbibliography "mmset.html";
+htmlbibliography "nfset.html";
 
 /* Variable color key at the bottom of each proof table */
 htmlvarcolor '<FONT COLOR="#0000FF">wff</FONT> '
