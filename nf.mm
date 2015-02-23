@@ -48997,6 +48997,20 @@ $)
       $( [12-May-2014] $) $( [27-Jul-2004] $)
   $}
 
+  ${ $d x y z w $.
+     $( Alternate definition of ` Swap ` as an operator abstraction. $)
+     dfswap3 $p |- Swap = { <. <. x , y >. , z >. | z = <. y , x >. } $=
+       ( vw cswap cv cop wceq wa wex copab copab2 df-swap dfoprab2 eqtr4i ) EDF
+       AFZBFZGHCFQPGHZIBJAJDCKRABCLDCABMRABCDNO $.
+       $( [23-Feb-2015] $)
+
+     $( Alternate definition of ` Swap ` as an operator mapping. $)
+     dfswap4 $p |- Swap = ( x e. _V , y e. _V |-> <. y , x >. ) $=
+       ( vz cswap cv cop wceq copab2 cvv cmpt2 dfswap3 mpt2v eqtr4i ) DCEBEAEFZ
+       GABCHABIINJABCKABCNLM $.
+       $( [23-Feb-2015] $)
+  $}
+
 $(
 =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
         Set construction lemmas
