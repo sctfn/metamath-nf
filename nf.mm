@@ -50373,6 +50373,27 @@ $)
        $( [20-Feb-2015] $)
   $}
 
+  ${
+    $d A a $.  $d a r $.  $d A r $.  $d a x $.  $d A x $.  $d a y $.  $d A y $.
+    $d a z $.  $d A z $.  $d ph x $.  $d ph y $.  $d ph z $.  $d R a $.
+    $d R r $.  $d r x $.  $d R x $.  $d r y $.  $d R y $.  $d r z $.  $d R z $.
+    $d x y $.  $d x z $.  $d y z $.
+    trrd.1 $e |- ( ph -> R e. V ) $.
+    trrd.2 $e |- ( ph -> A e. W ) $.
+    trrd.3 $e |- ( ( ph /\ ( x e. A /\ y e. A /\ z e. A ) /\ 
+           ( x R y /\ y R z ) ) -> x R z ) $.
+    $( Deduce transitivity from its properties. $)
+    trrd $p |- ( ph -> R Trans A ) $=
+      ( vr va ctrans wbr cv wa wral wcel breq wi w3a df-3an 3exp exp3a ralrimdv
+      syl5bir ralrimivv wb wceq anbi12d imbi12d ralbidv 2ralbidv raleq df-trans
+      raleqbi1dv brabg syl2anc mpbird ) AFENOZBPZCPZFOZVCDPZFOZQZVBVEFOZUAZDERZ
+      CERZBERZAVJBCEEAVBESZVCESZQZVIDEAVOVEESZVIVOVPQVMVNVPUBZAVIVMVNVPUCAVQVGV
+      HKUDUGUEUFUHAFGSEHSVAVLUIIJVBVCLPZOZVCVEVROZQZVBVEVROZUAZDMPZRZCWDRBWDRVI
+      DWDRZCWDRZBWDRVLLMFEGHNVRFUJZWEWFBCWDWDWHWCVIDWDWHWAVGWBVHWHVSVDVTVFVBVCV
+      RFTVCVEVRFTUKVBVEVRFTULUMUNWGVKBWDEWFVJCWDEVIDWDEUOUQUQBCDLMUPURUSUT $.
+      $( [22-Feb-2015] $)
+  $}
+
   $( Partial ordering as irreflexivity and transitivity. $)
   potrir $p |- ( R Po A <-> ( R Trans A /\ R Irr A ) ) $=
     ( cpartial wbr ctrans cirr cin wa df-partial breqi brin bitri ) BACDBAEFGZD
@@ -50392,53 +50413,52 @@ $)
     $( [22-Feb-2015] $)
 
   ${
-     poasym.1 $e |- ( ph -> R Po A ) $.
-     poasym.2 $e |- ( ph -> X e. A ) $.
-     poasym.3 $e |- ( ph -> Y e. A ) $.
-     poasym.4 $e |- ( ph -> X R Y ) $.
-
-     $( Partial ordering is asymmetric. $)
-     poasym $p |- ( ph -> -. Y R X ) $=
+    poasym.1 $e |- ( ph -> R Po A ) $.
+    poasym.2 $e |- ( ph -> X e. A ) $.
+    poasym.3 $e |- ( ph -> Y e. A ) $.
+    poasym.4 $e |- ( ph -> X R Y ) $.
+    $( Partial ordering is asymmetric. $)
+    poasym $p |- ( ph -> -. Y R X ) $=
        ( wbr cpartial cirr ctrans potrir simprbi syl irrd wa adantr wcel simpr
        simplbi trd mtand ) AEDCJZDDCJABCDACBKJZCBLJZFUFCBMJZUGBCNZOPGQAUERBCDED
        AUHUEAUFUHFUFUHUGUIUBPSADBTUEGSZAEBTUEHSUJADECJUEISAUEUAUCUD $.
        $( [22-Feb-2015] $)
   $}
 
-  ${ $d A a $. $d a r $. $d A r $. $d a x $. $d A x $. $d a y $. $d A y $. $d a z $. $d A z $. $d ph x $. $d ph y $. $d ph z $. $d R a $. $d R r $. $d r x $. $d R x $. $d r y $. $d R y $. $d r z $. $d R z $. $d x y $. $d x z $. $d y z $. 
-     pod.1 $e |- ( ph -> R e. V ) $.
-     pod.2 $e |- ( ph -> A e. W ) $.
-     pod.3 $e |- ( ( ph /\ x e. A ) -> -. x R x ) $.
-     pod.4 $e |-  ( ( ph /\ ( x e. A /\ y e. A /\ z e. A ) /\ 
+  ${
+    $d A a $.  $d a r $.  $d A r $.  $d a x $.  $d A x $.  $d a y $.  $d A y $.
+    $d a z $.  $d A z $.  $d ph x $.  $d ph y $.  $d ph z $.  $d R a $.
+    $d R r $.  $d r x $.  $d R x $.  $d r y $.  $d R y $.  $d r z $.  $d R z $.
+    $d x y $.  $d x z $.  $d y z $.
+    pod.1 $e |- ( ph -> R e. V ) $.
+    pod.2 $e |- ( ph -> A e. W ) $.
+    pod.3 $e |- ( ( ph /\ x e. A ) -> -. x R x ) $.
+    pod.4 $e |- ( ( ph /\ ( x e. A /\ y e. A /\ z e. A ) /\ 
        ( x R y /\ y R z ) ) -> x R z ) $.
-
-     $( An irreflexive, transitive ordering is a partial ordering. $)
-     pod $p |- ( ph -> R Po A ) $=
-       ( vr va wbr cv wa wral wcel breq ctrans cirr cpartial wi w3a df-3an 3exp
-       syl5bir exp3a ralrimdv ralrimivv wceq anbi12d imbi12d ralbidv raleqbi1dv
-       wb 2ralbidv raleq df-trans syl2anc mpbird ralrimiva notbid df-irr potrir
-       brabg wn sylanbrc ) AFEUAOZFEUBOZFEUCOAVJBPZCPZFOZVMDPZFOZQZVLVOFOZUDZDE
-       RZCERZBERZAVTBCEEAVLESZVMESZQZVSDEAWEVOESZVSWEWFQWCWDWFUEZAVSWCWDWFUFAWG
-       VQVRLUGUHUIUJUKAFGSZEHSZVJWBUQIJVLVMMPZOZVMVOWJOZQZVLVOWJOZUDZDNPZRZCWPR
-       BWPRVSDWPRZCWPRZBWPRWBMNFEGHUAWJFULZWQWRBCWPWPWTWOVSDWPWTWMVQWNVRWTWKVNW
-       LVPVLVMWJFTVMVOWJFTUMVLVOWJFTUNUOURWSWABWPEWRVTCWPEVSDWPEUSUPUPBCDMNUTVG
-       VAVBAVKVLVLFOZVHZBERZAXBBEKVCAWHWIVKXCUQIJVLVLWJOZVHZBWPRXBBWPRXCMNFEGHU
-       BWTXEXBBWPWTXDXAVLVLWJFTVDUOXBBWPEUSBMNVEVGVAVBEFVFVI $.
+    $( An irreflexive, transitive ordering is a partial ordering. $)
+    pod $p |- ( ph -> R Po A ) $=
+       ( vr va wbr cirr cv wn wral wcel cpartial trrd ralrimiva wb wceq ralbidv
+       ctrans breq notbid raleq df-irr brabg syl2anc mpbird potrir sylanbrc ) A
+       FEUGOFEPOZFEUAOABCDEFGHIJLUBAUQBQZURFOZRZBESZAUTBEKUCAFGTEHTUQVAUDIJURUR
+       MQZOZRZBNQZSUTBVESVAMNFEGHPVBFUEZVDUTBVEVFVCUSURURVBFUHUIUFUTBVEEUJBMNUK
+       ULUMUNEFUOUP $.
        $( [22-Feb-2015] $)
   $}
 
-  ${ $d A a $. $d a r $. $d A r $. $d a x $. $d A x $. $d a y $. $d A y $. $d ph x $. $d ph y $. $d R a $. $d R r $. $d r x $. $d R x $. $d r y $. $d R y $. $d x y $. $d a z $. $d A z $. $d ph z $. $d r z $. $d R z $. $d x z $. $d y z $. 
-     issod.1 $e |- ( ph -> R e. V ) $.
-     issod.2 $e |- ( ph -> A e. W ) $.
-     issod.3 $e |- ( ( ph /\ x e. A ) -> -. x R x ) $.
-     issod.4 $e |- ( ( ph /\ ( x e. A /\ y e. A /\ z e. A ) /\ 
+  ${
+    $d A a $.  $d a r $.  $d A r $.  $d a x $.  $d A x $.  $d a y $.  $d A y $.
+    $d ph x $.  $d ph y $.  $d R a $.  $d R r $.  $d r x $.  $d R x $.
+    $d r y $.  $d R y $.  $d x y $.  $d a z $.  $d A z $.  $d ph z $.
+    $d r z $.  $d R z $.  $d x z $.  $d y z $.
+    issod.1 $e |- ( ph -> R e. V ) $.
+    issod.2 $e |- ( ph -> A e. W ) $.
+    issod.3 $e |- ( ( ph /\ x e. A ) -> -. x R x ) $.
+    issod.4 $e |- ( ( ph /\ ( x e. A /\ y e. A /\ z e. A ) /\ 
        ( x R y /\ y R z ) ) -> x R z ) $.
-     issod.5 $e |- ( ( ph /\ ( x e. A /\ y e. A ) ) ->
+    issod.5 $e |- ( ( ph /\ ( x e. A /\ y e. A ) ) ->
        ( x R y \/ x = y \/ y R x ) ) $.
-
-     $( An irreflexive, transitive, linear relationship is a strict
-     	ordering. $)
-     issod $p |- ( ph -> R Or A ) $=
+    $( An irreflexive, transitive, linear relationship is a strict ordering. $)
+    issod $p |- ( ph -> R Or A ) $=
        ( vr va wbr clin cv w3o wral cpartial cstrict pod weq ralrimivva wcel wb
        wceq breq biidd 3orbi123d 2ralbidv raleq raleqbi1dv df-lin brabg syl2anc
        mpbird sopolin sylanbrc ) AFEUAPFEQPZFEUBPABCDEFGHIJKLUCAVABRZCRZFPZBCUD
@@ -50448,16 +50468,17 @@ $)
        $( [22-Feb-2015] $)
   $}
 
-  ${ $d A x $. $d A y $. $d A z $. $d ph x $. $d ph y $. $d ph z $. $d R x $. $d R y $. $d R z $. $d x y $. $d x z $. $d y z $. 
-     isso2d.1 $e |- ( ph -> R e. V ) $.
-     isso2d.2 $e |- ( ph -> A e. W ) $.
-     isso2d.3 $e |- ( ( ph /\ ( x e. A /\ y e. A ) ) ->
+  ${
+    $d A x $.  $d A y $.  $d A z $.  $d ph x $.  $d ph y $.  $d ph z $.
+    $d R x $.  $d R y $.  $d R z $.  $d x y $.  $d x z $.  $d y z $.
+    isso2d.1 $e |- ( ph -> R e. V ) $.
+    isso2d.2 $e |- ( ph -> A e. W ) $.
+    isso2d.3 $e |- ( ( ph /\ ( x e. A /\ y e. A ) ) ->
        ( x R y <-> -. ( x = y \/ y R x ) ) ) $.
-     isso2d.4 $e |- ( ( ph /\ ( x e. A /\ y e. A /\ z e. A ) /\ 
+    isso2d.4 $e |- ( ( ph /\ ( x e. A /\ y e. A /\ z e. A ) /\ 
        ( x R y /\ y R z ) ) -> x R z ) $.
-
-     $( Deduce strict ordering from its properties. $)
-     isso2d $p |- ( ph -> R Or A ) $=
+    $( Deduce strict ordering from its properties. $)
+    isso2d $p |- ( ph -> R Or A ) $=
        ( cv wcel wbr wn wa weq wo wi equid orci wb eleq1 anbi2d equequ2 orbi12d
        breq2 breq1 notbid bibi12d imbi12d chvarv con2bid mpbii anabsan2 w3o bi2
        con1d 3orass df-or bitri sylibr syl issod ) ABCDEFGHIJABMZENZVFVFFOZPZAV
@@ -50468,9 +50489,9 @@ $)
        $( [22-Feb-2015] $)
   $}
 
-  ${ $d R x y z $. $d ph x y z $.
+  ${
+    $d R x y z $.  $d ph x y z $.
     ord0.1 $e |- ( ph -> R e. V ) $.
-
     $( Anything partially orders the empty set. $)
     po0 $p |- ( ph -> R Po (/) ) $=
       ( vx vy vz c0 cvv wcel 0ex a1i cv wbr wn noel pm2.21i adantl w3a wa pod
@@ -50486,6 +50507,38 @@ $)
       $( [22-Feb-2015] $)
   $}
 
+  ${
+    $d A a $.  $d a r $.  $d A r $.  $d a x $.  $d A x $.  $d a y $.  $d A y $.
+    $d a z $.  $d A z $.  $d ph x $.  $d ph y $.  $d ph z $.  $d R a $.
+    $d R r $.  $d r x $.  $d R x $.  $d r y $.  $d R y $.  $d r z $.  $d R z $.
+    $d x y $.  $d x z $.  $d y z $.
+    erd.1 $e |- ( ph -> R e. V ) $.
+    erd.2 $e |- ( ph -> A e. W ) $.
+    erd.3 $e |- ( ( ph /\ ( x e. A /\ y e. A ) /\ x R y ) -> y R x ) $.
+    erd.4 $e |- ( ( ph /\ ( x e. A /\ y e. A /\ z e. A ) /\ 
+       ( x R y /\ y R z ) ) -> x R z ) $.
+    $( A symmetric, transitive relationship is an equivalence relationship. $)
+    erd $p |- ( ph -> R Er A ) $=
+       ( vr va csym wbr cv wi wral wcel ctrans cer wa 3expia ralrimivva wb wceq
+       breq imbi12d 2ralbidv raleq raleqbi1dv df-sym brabg syl2anc trrd ersymtr
+       mpbird sylanbrc ) AFEOPZFEUAPFEUBPAUTBQZCQZFPZVBVAFPZRZCESZBESZAVEBCEEAV
+       AETVBETUCVCVDKUDUEAFGTEHTUTVGUFIJVAVBMQZPZVBVAVHPZRZCNQZSBVLSVECVLSZBVLS
+       VGMNFEGHOVHFUGZVKVEBCVLVLVNVIVCVJVDVAVBVHFUHVBVAVHFUHUIUJVMVFBVLEVECVLEU
+       KULBCMNUMUNUOURABCDEFGHIJLUPEFUQUS $.
+       $( [22-Feb-2015] $)
+  $}
+ 
+  ${ $d x y z $.
+     $( The identity relationship is an equivalence relationship over the
+     	universe. $)
+     ider $p |- _I Er _V $=
+       ( vx vy vz cid cvv cer wbr wtru wcel idex a1i vvex cv wa weq equcomi vex
+       ideq 3imtr4i 3ad2ant3 w3a eqtr anbi12i erd trud ) DEFGHABCEDEEDEIHJKEEIH
+       LKAMZBMZDGZHUGUFDGZUFEIZUGEIZNABOZBAOUHUIABPUFUGBQRZUGUFAQRSTUHUGCMZDGZN
+       ZHUFUNDGZUJUKUNEIUAULBCOZNACOUPUQUFUGUNUBUHULUOURUMUGUNCQZRUCUFUNUSRSTUD
+       UE $.
+       $( [22-Feb-2015] $)
+  $}
 
 $(
 #*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#
