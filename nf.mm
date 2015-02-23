@@ -691,8 +691,8 @@ $( We will use the following descriptive terms very loosely:  A "closed form"
     sylsyld.1 $e |- ( ph -> ps ) $.
     sylsyld.2 $e |- ( ph -> ( ch -> th ) ) $.
     sylsyld.3 $e |- ( ps -> ( th -> ta ) ) $.
-    $( Virtual deduction rule without virtual deduction symbols.
-       (Contributed by Alan Sare, 20-Apr-2011.) $)
+    $( Virtual deduction rule without virtual deduction symbols.  (Contributed
+       by Alan Sare, 20-Apr-2011.) $)
     sylsyld $p |- ( ph -> ( ch -> ta ) ) $=
       ( wi syl syld ) ACDEGABDEIFHJK $.
       $( [20-Apr-2011] $)
@@ -741,8 +741,8 @@ $( We will use the following descriptive terms very loosely:  A "closed form"
     syl3c.2 $e |- ( ph -> ch ) $.
     syl3c.3 $e |- ( ph -> th ) $.
     syl3c.4 $e |- ( ps -> ( ch -> ( th -> ta ) ) ) $.
-    $( A syllogism inference combined with contraction.   
-       (Contributed by Alan Sare, 7-Jul-2011.) $)
+    $( A syllogism inference combined with contraction.  (Contributed by Alan
+       Sare, 7-Jul-2011.) $)
     syl3c $p |- ( ph -> ta ) $=
       ( wi sylc mpd ) ADEHABCDEJFGIKL $.
       $( [7-Jul-2011] $)
@@ -4968,8 +4968,8 @@ $)
 
   ${
     pm3.26bi2.1 $e |- ( ph <-> ( ps /\ ch ) ) $.
-    $( Deduction eliminating a conjunct.  (Contributed 
-       by Alan Sare, 31-Dec-2011.) $)
+    $( Deduction eliminating a conjunct.  (Contributed by Alan Sare,
+       31-Dec-2011.) $)
     simplbi2 $p |- ( ps -> ( ch -> ph ) ) $=
       ( wa biimpri ex ) BCAABCEDFG $.
       $( [31-Dec-2011] $)
@@ -10145,9 +10145,9 @@ $)
     ee22.1 $e |- ( ph -> ( ps -> ch ) ) $.
     ee22.2 $e |- ( ph -> ( ps -> th ) ) $.
     ee22.3 $e |- ( ch -> ( th -> ta ) ) $.
-    $( Virtual deduction rule without virtual deduction connectives.
-       Special theorem needed for Alan Sare's virtual deduction translation
-       tool.  (Contributed by Alan Sare, 2-May-2011.) $)
+    $( Virtual deduction rule without virtual deduction connectives.  Special
+       theorem needed for Alan Sare's virtual deduction translation tool.
+       (Contributed by Alan Sare, 2-May-2011.) $)
     ee22 $p |- ( ph -> ( ps -> ta ) ) $=
       ( syl6c ) ABCDEFGHI $.
       $( [28-Oct-2011] $) $( [2-May-2011] $)
@@ -10157,10 +10157,9 @@ $)
     ee12an.1 $e |- ( ph -> ps ) $.
     ee12an.2 $e |- ( ph -> ( ch -> th ) ) $.
     ee12an.3 $e |- ( ( ps /\ th ) -> ta ) $.
-    $( Virtual deduction rule without virtual deduction connectives.  
-       Special theorem needed
-       for Alan Sare's virtual deduction translation tool.  (Contributed by
-       Alan Sare, 28-Oct-2011.) $)
+    $( Virtual deduction rule without virtual deduction connectives.  Special
+       theorem needed for Alan Sare's virtual deduction translation tool.
+       (Contributed by Alan Sare, 28-Oct-2011.) $)
     ee12an $p |- ( ph -> ( ch -> ta ) ) $=
       ( wa jctild syl6 ) ACBDIEACDBGFJHK $.
       $( [28-Oct-2011] $) $( [28-Oct-2011] $)
@@ -10170,9 +10169,8 @@ $)
     ee23.1 $e |- ( ph -> ( ps -> ch ) ) $.
     ee23.2 $e |- ( ph -> ( ps -> ( th -> ta ) ) ) $.
     ee23.3 $e |- ( ch -> ( ta -> et ) ) $.
-    $( Virtual deduction rule without virtual deductions.  (Contributed by 
-       Alan Sare,
-       17-Jul-2011.) $)
+    $( Virtual deduction rule without virtual deductions.  (Contributed by Alan
+       Sare, 17-Jul-2011.) $)
     ee23 $p |- ( ph -> ( ps -> ( th -> et ) ) ) $=
       ( wi syl6 syldd ) ABDEFHABCEFJGIKL $.
       $( [17-Jul-2011] $)
@@ -10203,7 +10201,7 @@ $)
 
   ${
     3impexpbicomi.1 $e |- ( ( ph /\ ps /\ ch ) -> ( th <-> ta ) ) $.
-    $( Deduction form of ~ 3impexpbicom .  (Contributed by Alan Sare, 
+    $( Deduction form of ~ 3impexpbicom .  (Contributed by Alan Sare,
        31-Dec-2011.) $)
     3impexpbicomi $p |- ( ph -> ( ps -> ( ch -> ( ta <-> th ) ) ) ) $=
       ( wb w3a bicomd 3exp ) ABCEDGABCHDEFIJ $.
@@ -11373,8 +11371,7 @@ $)
      ~ http://us.metamath.org/award2003.html .
 
      ~ ax-9 can be proved from a weaker version requiring that the variables be
-     distinct; see theorem ~ a9wa9 .
-  $)
+     distinct; see theorem ~ a9wa9 . $)
   ax-9 $a |- -. A. x -. x = y $.
 
   $( ~ equid with existential quantifier without using ~ ax-4 or ~ ax-17 .
@@ -13047,8 +13044,8 @@ $)
        16 of the preprint).  It apparently does not otherwise appear in the
        literature but is easily proved from textbook predicate calculus by
        cases.  It is a somewhat bizarre axiom since the antecedent is always
-       false in set theory, but nonetheless it is technically
-       necessary as you can see from its uses.
+       false in set theory, but nonetheless it is technically necessary as you
+       can see from its uses.
 
        This axiom is redundant if we include ~ ax-17 ; see theorem ~ ax16 .
        Alternately, ~ ax-17 becomes logically redundant in the presence of this
@@ -17245,9 +17242,9 @@ $( $v ._|_ $. $)
        roughly as follows.  To convert a theorem with a wff variable ` ph `
        (that has a free variable ` x ` ) to a theorem with a class variable
        ` A ` , we substitute ` x e. A ` for ` ph ` throughout and simplify,
-       where ` A ` is a new class variable not already in the wff.  
-       For more information on class variables, see
-       [Quine] pp. 15-21 and/or [TakeutiZaring] pp. 10-13. $)
+       where ` A ` is a new class variable not already in the wff.  For more
+       information on class variables, see [Quine] pp. 15-21 and/or
+       [TakeutiZaring] pp. 10-13. $)
     abeq2 $p |- ( A = { x | ph } <-> A. x ( x e. A <-> ph ) ) $=
       ( vy cab wceq cv wcel wb wal ax-17 hbab1 cleqf abid bibi2i albii bitri )
       CABEZFBGZCHZSRHZIZBJTAIZBJBDCRDGCHBKABDLMUBUCBUAATABNOPQ $.
@@ -22523,7 +22520,7 @@ $)
 
   ${
     $d x B $.  $d x A $.
-    $( If ` x = A ` always implies ` x = B ` , then ` A = B ` is true.  
+    $( If ` x = A ` always implies ` x = B ` , then ` A = B ` is true.
        (Contributed by Andrew Salmon, 28-Jun-2011.) $)
     sbceqal $p |- ( A e. V -> ( A. x ( x = A -> x = B ) -> A = B ) ) $=
       ( wcel cv wceq wi wal wsbc a4sbc sbcimg wb eqsbc3 mpbiri pm5.5 syl 3bitrd
@@ -22586,7 +22583,7 @@ $)
 
   ${
     $d x C $.  $d x A $.
-    $( ~ eqsbc3 with set variable on right side of equals sign.  (Contributed 
+    $( ~ eqsbc3 with set variable on right side of equals sign.  (Contributed
        by Alan Sare, 24-Oct-2011.) $)
     eqsbc3r $p |- ( A e. B -> ( [ A / x ] C = x <-> C = A ) ) $=
       ( wcel wceq wsbc eqcom sbcbii biimpd eqsbc3 sylibd syl6ib syl6ibr sylibrd
@@ -24713,6 +24710,7 @@ $)
       UJQUB $.
       $( [11-Aug-2004] $)
   $}
+
 
   ${
     $d x A $.  $d x B $.  $d x C $.
@@ -26864,6 +26862,13 @@ $)
     ACEZFDZTFGQSUASRFDZQUARIQTRDUBUAJABCKTRFLMNOTPM $.
     $( [23-Jan-2007] $)
 
+  $( Only the universal class has the universal class as a subclass.  (The
+     proof was shortened by Andrew Salmon, 26-Jun-2011.) $)
+  vss $p |- ( _V C_ A <-> A = _V ) $=
+    ( cvv wss wa wceq ssv biantrur eqss bitr4i ) BACZABCZJDABEKJAFGABHI $.
+    $( [26-Jun-2011] $) $( [17-Sep-2003] $)
+
+
 $(
 =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
                        The union of a class
@@ -26944,7 +26949,7 @@ $)
 
   ${
     $d A y z $.  $d B y z $.  $d V y z $.  $d x y z $.
-    $( Distribute proper substitution through the union of a class. 
+    $( Distribute proper substitution through the union of a class.
        (Contributed by Alan Sare, 10-Nov-2012. ) $)
     csbunig $p |- ( A e. V -> [_ A / x ]_ U. B = U. [_ A / x ]_ B ) $=
       ( vz vy wcel cuni csb wel cv wa wex cab wsbc df-uni csbeq2i csbabg sbcexg
@@ -27071,8 +27076,8 @@ $)
       $( [20-Aug-1993] $)
 
     $( The class union of the intersection of two classes.  Exercise 4.12(n) of
-       [Mendelson] p. 235. 
-       (The proof was shortened by Andrew Salmon, 29-Jun-2011.) $)
+       [Mendelson] p. 235.  (The proof was shortened by Andrew Salmon,
+       29-Jun-2011.) $)
     uniin $p |- U. ( A i^i B ) C_ ( U. A i^i U. B ) $=
       ( vx vy cin cuni cv wcel wex 19.40 elin anbi2i anandi bitri exbii anbi12i
       wa eluni 3imtr4i ssriv ) CABEZFZAFZBFZEZCGZDGZHZUGUAHZQZDIZUFUCHZUFUDHZQZ
@@ -27125,7 +27130,7 @@ $)
   $}
 
   $( The union of the empty set is the empty set.  Theorem 8.7 of [Quine]
-     p. 54.  $)
+     p. 54. $)
   uni0 $p |- U. (/) = (/) $=
     ( c0 cuni wceq csn wss 0ss uni0b mpbir ) ABACAADZEIFAGH $.
     $( [4-Apr-2007] $) $( [16-Sep-1993] $)
@@ -27486,7 +27491,7 @@ $)
     intab.2 $e |- { x | E. y ( ph /\ x = A ) } e. _V $.
     $( The intersection of a special case of a class abstraction. ` y ` may be
        free in ` ph ` and ` A ` , which can be thought of a ` ph ( y ) ` and
-       ` A ( y ) ` .  $)
+       ` A ( y ) ` . $)
     intab $p |- |^| { x | A. y ( ph -> A e. x ) } =
                 { x | E. y ( ph /\ x = A ) } $=
       ( vz cv wcel wi wal cab wceq wa wex wsbc cvv wb ax-mp sylibr eqeq1 anbi2d
@@ -27562,7 +27567,7 @@ $)
 
   ${
     $d x y A $.
-    $( Two ways to express " ` A ` is a singleton."  $)
+    $( Two ways to express " ` A ` is a singleton." $)
     uniintsn $p |- ( U. A = |^| A <-> E. x A = { x } ) $=
       ( vy cuni cint wceq cv wex wcel wa wal c0 inteq syl6eq adantl unieq sylib
       wne cvv wss csn wi vn0 int0 eqeq1 syl5ib imp eqtr3d ex necon3d mpi n0 cpr
@@ -32127,6 +32132,16 @@ Image_k ( ( Ins3_k ~ ( ( Ins3_k SSet_k i^i Ins2_k SSet_k ) "_k
     PSUCUEQR $.
     $( [13-Feb-2015] $)
 
+  ${ $d A x $.
+     $( A singleton is finite. $)
+     snfi $p |- { A } e. Fin $=
+       ( vx cvv wcel csn cfin cnnc wrex c1c 1cnnc snel1cg eleq2 rcla4ev sylancr
+       cv elfin sylibr wn c0 wceq snprc 0fin eleq1 mpbiri sylbi pm2.61i ) ACDZA
+       EZFDZUGUHBOZDZBGHZUIUGIGDUHIDZULJACKUKUMBIGUJIUHLMNBUHPQUGRUHSTZUIAUAUNU
+       ISFDUBUHSFUCUDUEUF $.
+       $( [23-Feb-2015] $)
+  $}
+
 $(
 =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
                  Deriving infinity
@@ -35844,7 +35859,7 @@ $)
        although the definition doesn't strictly require it (see ~ dfid2 for a
        case where they are not distinct).  The brace notation is called "class
        abstraction" by Quine; it is also (more commonly) called a "class
-       builder" in the literature.  $)
+       builder" in the literature. $)
     df-opab $a |- { <. x , y >. | ph } =
                   { z | E. x E. y ( z = <. x , y >. /\ ph ) } $.
   $}
@@ -36014,7 +36029,7 @@ $)
   $( Extend wff notation to include the general binary relation predicate.
      Note that the syntax is simply three class symbols in a row.  Since binary
      relations are the only possible wff expressions consisting of three class
-     expressions in a row, the syntax is unambiguous.  $)
+     expressions in a row, the syntax is unambiguous. $)
   wbr $a wff A R B $.
 
   $( Define a general binary relation.  Note that the syntax is simply three
@@ -38997,8 +39012,8 @@ $)
 
   ${
     $d A w y z $.  $d B w y z $.  $d C w y z $.  $d D w y z $.  $d w x y z $.
-    $( Distribute proper substitution through the cross product of two classes.
-       (Contributed by Alan Sare, 10-Nov-2012. ) $)
+    $( Distribute proper substitution through the cross product of two
+       classes.  (Contributed by Alan Sare, 10-Nov-2012. ) $)
     csbxpg $p |- ( A e. D -> [_ A / x ]_ ( B X. C ) =
                 ( [_ A / x ]_ B X. [_ A / x ]_ C ) ) $=
       ( vz vw vy wcel cxp csb cv wa wex cab wsbc copab df-xp df-opab bitrd wceq
@@ -40546,7 +40561,7 @@ $)
 
   ${
     $d A w y $.  $d B w y $.  $d V w y $.  $d x w y $.
-    $( Distribute proper substitution through the range of a class.   
+    $( Distribute proper substitution through the range of a class.
        (Contributed by Alan Sare, 10-Nov-2012. ) $)
     csbrng $p |- ( A e. V -> [_ A / x ]_ ran B = ran [_ A / x ]_ B ) $=
       ( vw vy wcel crn csb cop wex cab wsbc dfrn3 csbeq2i csbabg sbcexg sbcel2g
@@ -41527,8 +41542,8 @@ $)
   ${
     op1sta.1 $e |- A e. _V $.
     op1sta.2 $e |- B e. _V $.
-    $( Extract the first member of an ordered pair.  
-       (Contributed by Raph Levien, 4-Dec-2003.) $)
+    $( Extract the first member of an ordered pair.  (Contributed by Raph
+       Levien, 4-Dec-2003.) $)
     op1sta $p |- U. dom { <. A , B >. } = A $=
       ( cop csn cdm cuni dmsnop unieqi unisn eqtri ) ABEFGZHAFZHAMNABDIJACKL $.
       $( [4-Dec-2003] $)
@@ -46513,18 +46528,132 @@ $)
        $( [12-Feb-2015] $)
   $}
 
+  ${
+    $d A x y z $.
+    $( Alternate definition of domain. $)
+    dfdm4 $p |- dom A = ( 1st " A ) $=
+       ( vx vy vz cdm c1st cima cv cop wcel wex wbr wrex wceq rexcom4 vex br1st
+       rexbii risset exbii 3bitr4ri eldm2 elima 3bitr4i eqriv ) BAEZFAGZBHZCHIZ
+       AJZCKZDHZUHFLZDAMZUHUFJUHUGJULUINZCKZDAMUODAMZCKUNUKUODCAOUMUPDACULUHBPQ
+       RUJUQCDUIASTUACUHAUBDUHFAUCUDUE $.
+       $( [23-Feb-2015] $)
+
+    $( Alternate definition of range. $)
+    dfrn5 $p |- ran A = ( 2nd " A ) $=
+       ( vy vx vz crn c2nd cima cv cop wcel wex wbr wrex wceq rexcom4 vex br2nd
+       rexbii risset exbii 3bitr4ri elrn2 elima 3bitr4i eqriv ) BAEZFAGZCHBHZIZ
+       AJZCKZDHZUHFLZDAMZUHUFJUHUGJULUINZCKZDAMUODAMZCKUNUKUODCAOUMUPDACULUHBPQ
+       RUJUQCDUIASTUACUHAUBDUHFAUCUDUE $.
+       $( [23-Feb-2015] $)
+  $}
+
+  ${ $d A a $. $d a b $. $d A b $. $d a x $. $d A x $. $d a y $. $d A y $. $d B a $. $d B b $. $d b x $. $d B x $. $d b y $. $d B y $. $d x y $. 
+
+     $( Binary relationship of ` Swap ` . $)
+     brswap $p |- ( A Swap B <-> E. x E. y ( A = <. x , y >. /\ B = <. y , x >. ) ) $=
+       ( va vb cswap cvv wcel wa cv cop wceq wex vex eleq1 mpbiri eqeq1 2exbidv
+       opex wbr brex anim12i exlimivv anbi1d anbi2d df-swap brabg pm5.21nii ) C
+       DGUACHIZDHIZJZCAKZBKZLZMZDUNUMLZMZJZBNANZCDGUBUSULABUPUJURUKUPUJUOHIUMUN
+       AOZBOZTCUOHPQURUKUQHIUNUMVBVATDUQHPQUCUDEKZUOMZFKZUQMZJZBNANUPVFJZBNANUT
+       EFCDHHGVCCMZVGVHABVIVDUPVFVCCUORUESVEDMZVHUSABVJVFURUPVEDUQRUFSEFABUGUHU
+       I $.
+       $( [23-Feb-2015] $)
+  $}
+
+  ${ $d a b x y $.
+     $( The converse of ` Swap ` is ` Swap ` . $)
+     cnvswap $p |- `' Swap = Swap $=
+       ( va vb vy vx cswap ccnv relcnv relswap cv cop wceq wex wbr ancom 2exbii
+       wa brcnv brswap excom 3bitri 3bitr4i eqbrriv ) ABEFZEEGHBIZCIZDIZJKZAIZU
+       FUEJKZPZCLDLZUIUGPZCLDLUHUDUCMZUHUDEMUJULDCUGUINOUMUDUHEMUJDLCLUKUHUDEQC
+       DUDUHRUJCDSTDCUHUDRUAUB $.
+       $( [23-Feb-2015] $)
+  $}
+
+  ${ $d p q r x y z w $.
+     $( ` Swap ` is a bijection over all ordered pairs. $)
+     swapf1o $p |- Swap : ( _V X. _V ) -1-1-onto-> ( _V X. _V ) $=
+       ( vp vq vr vx vy vz vw cvv cswap wfn wceq cv wbr wa weq wal cop mpbir2an
+       wex brswap cxp wf1o ccnv wfun cdm wi relswap anbi12i ee4anv bitr4i eqtr2
+       wrel ancom opth 3bitr4i sylib eqeq12 biimprd mpan9 exlimivv sylbi ax-gen
+       an4s gen2 dffun2 wcel exrot3 vex opex isseti 19.42v mpbiran2 2exbii eldm
+       exbii 3bitri elvv eqriv df-fn cnvswap fneq1i mpbir dff1o4 ) HHUAZWDIUBIW
+       DJZIUCZWDJZWEIUDZIUEZWDKWHIULALZBLZIMZWJCLZIMZNZBCOZUFZCPBPZAPUGWRAWQBCW
+       OWJDLZELZQZKZWKWTWSQZKZNZWJFLZGLZQZKZWMXGXFQZKZNZNZGSFSZESDSZWPWOXEESDSZ
+       XLGSFSZNXOWLXPWNXQDEWJWKTZFGWJWMTUHXEXLDEFGUIUJXNWPDEXMWPFGXBXIXDXKWPXBX
+       INZXCXJKZXDXKNZWPXSXAXHKZXTWJXAXHUKDFOZEGOZNYDYCNYBXTYCYDUMWSWTXFXGUNWTW
+       SXGXFUNUOUPYAWPXTWKXCWMXJUQURUSVCUTUTVAVDVBABCIVERAWIWDWLBSZXBESDSZWJWIV
+       FWJWDVFYEXPBSXEBSZESDSYFWLXPBXRVOXEBDEVGYGXBDEYGXBXDBSBXCWTWSEVHDVHVIVJX
+       BXDBVKVLVMVPBWJIVNDEWJVQUOVRIWDVSRZWGWEYHWDWFIVTWAWBWDWDIWCR $.
+       $( [23-Feb-2015] $)
+  $}
+
+  ${
+    $( Bijection law for restrictions of ` Swap ` . $)
+    swapresrel $p |- ( Rel A -> ( Swap |` A ) : A -1-1-onto-> `' A ) $=
+      ( cvv cxp wss cswap cima cres wf1o wrel ccnv wf1 swapf1o f1of1 ax-mp mpan
+      f1ores df-rel wceq wb dfcnv2 f1oeq3 3imtr4i ) ABBCZDZAEAFZEAGZHZAIAAJZUFH
+      ZUCUCEKZUDUGUCUCEHUJLUCUCEMNUCUCAEPOAQUHUERUIUGSATUHUEAUFUANUB $.
+      $( [23-Feb-2015] $)
+  $}
+
+  ${ $d A x $. $d A y $. $d A z $. $d B x $. $d B y $. $d C x $. $d C y $. $d C z $. $d D x $. $d D y $. $d x y $. $d x z $. $d y z $. 
+     xpnedisj.1 $e |- C e. _V $.
+     xpnedisj.2 $e |- C =/= D $.
+     $( Cross products with non-equal singletons are disjoint. $)
+     xpnedisj $p |- ( ( A X. { C } ) i^i ( B X. { D } ) ) = (/) $=
+       ( vx vy vz csn cxp cin c0 wceq cv wcel wn disj cop wrex eqeq2d rexbii wa
+       elxp2 opeq2 rexsn bitri wne df-ne mpbi elsni intnan opelxp syl6bb mtbiri
+       mto eleq1 rexlimivw sylbi mprgbir ) ACJZKZBDJZKZLMNGOZVDPZQZGVBGVBVDRVEV
+       BPZVEHOZCSZNZHATZVGVHVEVIIOZSZNZIVATZHATVLHIVEAVAUDVPVKHAVOVKICEVMCNVNVJ
+       VEVMCVIUEUAUFUBUGVKVGHAVKVFVIBPZCVCPZUCZVRVQVRCDNZCDUHVTQFCDUIUJCDUKUPUL
+       VKVFVJVDPVSVEVJVDUQVICBVCUMUNUOURUSUT $.
+       $( [23-Feb-2015] $)
+  $}
+
+  ${
+     opfv1st.1 $e |- A e. _V $.
+     opfv1st.2 $e |- B e. _V $.    
+ 
+     $( The value of the ` 1st ` function on an ordered pair. $)
+     opfv1st $p |- ( 1st ` <. A , B >. ) = A $=
+       ( cop c1st cfv wceq wbr eqid opbr1st mpbir wfun cdm wcel wb cvv cxp mp2b
+       1stfo wfo wf fof ffun opelxp mpbir2an fdm eleqtrri funbrfvb mp2an ) ABEZ
+       FGAHZUKAFIZUMAAHAJABACDKLFMZUKFNZOULUMPQQRZQFUAZUPQFUBZUNTUPQFUCZUPQFUDS
+       UKUPUOUKUPOAQOBQOCDABQQUEUFUQURUOUPHTUSUPQFUGSUHUKAFUIUJL $.
+       $( [23-Feb-2015] $)
+
+     $( The value of the ` 2nd ` function on an ordered pair. $)
+     opfv2nd $p |- ( 2nd ` <. A , B >. ) = B $=
+       ( cop c2nd cfv wceq wbr eqid opbr2nd mpbir wfun cdm wb cvv cxp wfo 2ndfo
+       wcel wf fof ffun mp2b opelxp mpbir2an ax-mp fdmi eleqtrri funbrfvb mp2an
+       ) ABEZFGBHZULBFIZUNBBHBJABBCDKLFMZULFNZTUMUNOPPQZPFRZUQPFUAZUOSUQPFUBZUQ
+       PFUCUDULUQUPULUQTAPTBPTCDABPPUEUFUQPFURUSSUTUGUHUIULBFUJUKL $.
+       $( [23-Feb-2015] $)
+  $}
+
+  ${ $d A x y $. $d B x y $. $d C x y $.
+  $( Reconstruction of a member of a cross product in terms of its ordered pair
+     components. $)
+  1st2nd2 $p |- ( A e. ( B X. C ) -> A = <. ( 1st ` A ) , ( 2nd ` A ) >. ) $=
+    ( vx vy cxp wcel cv cop wceq wrex c1st cfv c2nd elxp2 opfv1st opfv2nd fveq2
+    vex rexlimivw opeq12i eqcomi id opeq12d 3eqtr4a sylbi ) ABCFGADHZEHZIZJZECK
+    ZDBKAALMZANMZIZJZDEABCOUKUODBUJUOECUJUIUILMZUINMZIZAUNURUIUPUGUQUHUGUHDSZES
+    ZPUGUHUSUTQUAUBUJUCUJULUPUMUQAUILRAUINRUDUETTUF $.
+    $( [20-Oct-2013] $)
+  $}
+
 $(
 =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
         Operations
 =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 $)
 
-  $( Extend class notation to include the value of an operation ` F ` for two 
-     arguments ` A ` and ` B ` .  Note that the syntax is
-     simply three class symbols in a row surrounded by parentheses.  Since
-     operation values are the only possible class expressions consisting of
-     three class expressions in a row surrounded by parentheses, the syntax is
-     unambiguous.  $)
+  $( Extend class notation to include the value of an operation ` F ` for two
+     arguments ` A ` and ` B ` .  Note that the syntax is simply three class
+     symbols in a row surrounded by parentheses.  Since operation values are
+     the only possible class expressions consisting of three class expressions
+     in a row surrounded by parentheses, the syntax is unambiguous. $)
   co $a class ( A F B ) $.
 
   $( Extend class notation to include class abstraction (class builder) of
@@ -47003,8 +47132,8 @@ $)
     elimdelov.1 $e |- ( ph -> C e. ( A F B ) ) $.
     elimdelov.2 $e |- Z e. ( X F Y ) $.
     $( Eliminate a hypothesis which is a predicate expressing membership in the
-       result of an operator (deduction version).  
-       (Contributed by Paul Chapman, 25-Mar-2008.) $)
+       result of an operator (deduction version).  (Contributed by Paul
+       Chapman, 25-Mar-2008.) $)
     elimdelov $p |- if ( ph , C , Z ) e.
                      ( if ( ph , A , X ) F if ( ph , B , Y ) ) $=
       ( cif co wcel iftrue eqeltrd oveq12d eleqtrrd wn iffalse syl6eqel pm2.61i
@@ -48884,6 +49013,8 @@ $)
   $c Ins3 $. $( Third insertion operation $)
   $c Ins4 $. $( Fourth insertion operation $)
   $c SI_3 $. $( Triple singleton image. $)
+  $c Funs $. $( Class of functions. $)
+  $c Fns $. $( Function with domain relationship. $)
 
   $( Extend the definition of a class to include the tail cross product. $)
   ctxp $a class ( A (x) B ) $.
@@ -48918,6 +49049,13 @@ $)
 
   $( Extend the definition of a class to include the triple singleton image. $)
   csi3 $a class SI_3 A $.
+
+  $( Extend the definition of a class to include the set of all functions. $)
+  cfuns $a class Funs $.
+
+  $( Extend the definition of a class to include the function with domain
+     relationship. $)
+  cfns $a class Fns $.
 
   $( Define the tail cross product of two classes.  Definition from [Holmes],
      p. 40.  See ~ brtxp for membership. $)
@@ -48963,6 +49101,15 @@ $)
   $( Define the triple singleton image. $)
   df-si3 $a |- SI_3 A = 
   ( ( SI 1st (x) ( SI ( 1st o. 2nd ) (x) SI ( 2nd o. 2nd ) ) ) " ~P1 A ) $.
+
+  $( Define the class of all functions. $)
+  df-funs $a |- Funs = { f | Fun f } $.
+
+  ${
+    $d f a $.
+    $( Define the function with domain relationship. $)
+    df-fns $a |- Fns = { <. f , a >. | f Fn a } $.
+  $}
 
   ${
     $d A x y z w $.  $d B x y z w $.  $d R x y z w $.
@@ -49570,6 +49717,104 @@ $)
        $( [20-Feb-2015] $)
   $}
 
+
+  ${
+    $d a b x y z $.
+    $( The function mapping ` x ` and ` y ` to their cross product is a set. $)
+    xpfnex $p |- ( x e. _V , y e. _V |-> ( x X. y ) ) e. _V $=
+      ( va vb cvv cxp csset c1st c2nd c1c cop wcel wrex wex otelins2 vex 3bitri
+      cv wa wbr vz cins2 ccnv cin csi3 cins4 cima cins3 csymdif cdif cmpt2 wceq
+      csn wel elin snex opelssetsn otsnelsi3 df-br brcnv 3bitr2i opelxp mpbiran
+      oqelins4 anbi12i op1st2nd bitri exbii elima1c df-rex 3bitr4i rexcom elxp2
+      bitr4i releqmpt2 vvex ssetex 1stex cnvex 2ndex xpex inex si3ex 1cex imaex
+      ins2ex ins4ex mpt2exlem eqeltrri ) EEFEFGUBZWJUBZWKHUCZUBZEIUCZFZUDZUEZUF
+      ZUDZJUGZUFZUDZJUGZUHUIJUGUJABEEARZBRZFZUKEABUAEEXCXFUARZUMZXDXEKZKZXCLZXG
+      CRZDRZKULZDXEMCXDMZXGXFLXMUMZXJKZXBLZDNDBUNZXNCXDMZSZDNZXKXOXRYADXRXQWKLZ
+      XQXALZSYAXQWKXAUOYCXSYDXTYCXPXIKWJLXPXEKGLXSXPXHXIWJXGUPZOXPXDXEGAPZOXMXE
+      DPZBPZUQQYDXPXHXDKZKZWTLZXTXPXHXDXEWTYHVDXLUMZYJKZWSLZCNCAUNZXNSZCNYKXTYN
+      YPCYNYMWKLZYMWRLZSYPYMWKWRUOYQYOYRXNYQYLYIKWJLYLXDKGLYOYLXPYIWJXMUPOYLXHX
+      DGYEOXLXDCPZYFUQQYRYLXPXHKKWQLXLXMXGKZKZWPLZXNYLXPXHXDWQYFVDXLXMXGWPYSYGU
+      APURUUBUUAWMLZUUAWOLZSXGXLHTZXGXMITZSXNUUAWMWOUOUUCUUEUUDUUFUUCXLXGKWLLXL
+      XGWLTUUEXLXMXGWLYGOXLXGWLUSXLXGHUTVAUUDYTWNLZXMXGWNTUUFUUDXLELUUGYSXLYTEW
+      NVBVCXMXGWNUSXMXGIUTVAVEXLXMXGYSYGVFQQVEVGVHCYJWSVIXNCXDVJVKVGVEVGVHDXJXB
+      VIXOXTDXEMYBXNCDXDXEVLXTDXEVJVGVKCDXGXDXEVMVNVOEEXCVPVPXBJWKXAWJGVQWFWFZW
+      TWSJWKWRUUHWQWPWMWOWLHVRVSWFEWNVPIVTVSWAWBWCWGWBWDWEWGWBWDWEWHWI $.
+      $( [11-Feb-2015] $)
+  $}
+
+  ${
+    $d f x y z p q $.
+    $( The class of all functions forms a set. $)
+    funsex $p |- Funs e. _V $=
+      ( vf vx vy vz vp vq c1st c2nd c1c csset cid cv wcel wn wa wbr df-br bitri
+      wex cop cfuns cvv cxp cpw ccnv ctxp csi3 cima cins4 cins2 cin cdif ccompl
+      cins3 wfun cab df-funs wrel weq wi wal wss vex elpw df-rel bitr4i elima1c
+      csn snex opex elcompl eldif otelins2 wrex wceq elin oqelins4 brcnv bitr3i
+      oteltxp otsnelsi3 trtxp ancom 3bitr3i op1st2nd 3bitri anbi12i sneq breq2d
+      exbii ceqsexv 3bitr4i rexbii elima risset opelssetsn otelins3 ideq notbii
+      sneqb exanali con2bii alex dffun3 abbi2i vvex xpex pwex 1stex cnvex 2ndex
+      eqtr4i txpex si3ex 1cex imaex ins4ex ins2ex inex ssetex idex ins3ex difex
+      complex eqeltri ) UAUBUBUCZUDZGUEZHGUFZUGZUFZIUHZUIZHUJZUJZUKZJUHZUJZKUNZ
+      ULZIUHZUMZIUHZUMZIUHZULZUBUAALZUOZAUPUUFAUQUUHAUUFUUGYGMZUUGUUEMZNZOUUGUR
+      ZBLZCLZUUGPZCDUSZUTCVAZDSZBVAZOUUGUUFMUUHUUIUULUUKUUSUUIUUGYFVBUULUUGYFAV
+      CZVDUUGVEVFUUKUURNZBSZNUUSUUJUVBUUJUUMVHZUUGTZUUDMZBSUVBBUUGUUDVGUVEUVABU
+      VEUVDUUCMZNUVAUVDUUCUVCUUGUUMVIZUUTVJZVKUVFUURUVFDLZVHZUVDTZUUBMZDSUURDUV
+      DUUBVGUVLUUQDUVKUUAMZNUUOUUPNZOZCSZNUVLUUQUVMUVPUVMUUNVHZUVKTZYTMZCSUVPCU
+      VKYTVGUVSUVOCUVSUVRYRMZUVRYSMZNZOUVOUVRYRYSVLUVTUUOUWBUVNUVTUVQUVDTZYQMZU
+      UMUUNTZVHZUUGTZJMZUUOUVQUVJUVDYQUVIVIZVMELZUWCYPPZEJVNUWJUWGVOZEJVNUWDUWH
+      UWKUWLEJUWKUWJUWCTZYPMZUWJUWFGPZUWJUUGHPZOZUWLUWJUWCYPQUWNUWMYMMZUWMYOMZO
+      UWQUWMYMYOVPUWRUWOUWSUWPUWRUWJUVQUVCTZTZYLMZUWOUWJUVQUVCUUGYLUUTVQUXBFLZV
+      HZUXATYKMZFSUXCUWEVOZUWJUXDGPZOZFSUWOFUXAYKVGUXEUXHFUXEUXDUWJTYHMZUXDUWTT
+      YJMZOUXGUXFOUXHUXDUWJUWTYHYJVTUXIUXGUXJUXFUXIUXDUWJYHPUXGUXDUWJYHQUXDUWJG
+      VRVSUXJUXCUUNUUMTZTYIMZUXCUUMGPZUXCUUNHPZOZUXFUXCUUNUUMYIFVCCVCZBVCZWAUXC
+      UXKYIPUXNUXMOUXLUXOUXCUUNUUMHGWBUXCUXKYIQUXNUXMWCWDUUMUUNUXCUXQUXPWEWFWGU
+      XGUXFWCWFWJUXGUWOFUWEUUMUUNUXQUXPVJZUXFUXDUWFUWJGUXCUWEWHWIWKWFRUWJUVDTYN
+      MUWJUUGTHMUWSUWPUWJUVCUUGHUVGVMUWJUVQUVDYNUUNVIVMUWJUUGHQWLWGRUWFUUGUWJUW
+      EVIUUTWEWFWMEUWCYPJWNEUWGJWOWLUWHUWEUUGMUUOUWEUUGUXRUUTWPUUMUUNUUGQVFWFUW
+      AUUPUWAUVQUVJTKMZUUPUVQUVJUVDKUVHWQUVQUVJKPUVQUVJVOUXSUUPUVQUVJUWIWRUVQUV
+      JKQUUNUVIUXPWTWDRWSWGRWJRWSUVKUUAUVJUVDUWIUVHVJVKUVPUUQUUOUUPCXAXBWLWJRWS
+      RWJRWSUURBXCVFWGUUGYGUUEVLBCDUUGXDWLXEXLYGUUEYFUBUBXFXFXGXHUUDIUUCUUBIUUA
+      YTIYRYSYQYPJYMYOYLYKIYHYJGXIXJYIHGXKXIXMXNXMXOXPXQYNHXKXRXRXSXTXPXRKYAYBY
+      CXOXPYDXOXPYDXOXPYCYE $.
+      $( [18-Feb-2015] $)
+  $}
+
+  ${
+    $d F f $.
+    elfuns.1 $e |- F e. _V $.
+    $( Membership in the set of all functions. $)
+    elfuns $p |- ( F e. Funs <-> Fun F ) $=
+       ( vf cv wfun cfuns funeq df-funs elab2 ) CDZEAECAFBJAGCHI $.
+       $( [23-Feb-2015] $)
+  $}
+
+  ${
+    $d f a $.
+    $( The function with domain relationship exists. $)
+    fnsex $p |- Fns e. _V $=
+       ( vf va cfns cvv cxp cfuns c1st cimage cin cv wfn copab df-fns wcel wceq
+       wa vex vvex xpex inex cop wfun cdm opelxp mpbiran2 elfuns bitri wbr cima
+       brimage dfdm4 eqeq2i bitr4i df-br 3bitr3i anbi12i elin 3bitr4i releqopab
+       eqcom df-fn eqtr4i funsex 1stex imageex eqeltri ) CDDEZFDEZGHZIZIZDCAJZB
+       JZKZABLVKABMVNABVJVLVMUAZVHNZVOVINZPVLUBZVLUCZVMOZPVOVJNVNVPVRVQVTVPVLFN
+       ZVRVPWAVMDNBQZVLVMFDUDUEVLAQZUFUGVLVMVIUHZVMVSOZVQVTWDVMGVLUIZOWEVLVMGWC
+       WBUJVSWFVMVLUKULUMVLVMVIUNVMVSUTUOUPVOVHVIUQVLVMVAURUSVBVGVJDDRRSVHVIFDV
+       CRSGVDVETTVF $.
+       $( [23-Feb-2015] $)
+  $}
+
+  ${
+    $d A a b f $.  $d F a b f $.
+    brfns.1 $e |- F e. _V $.
+    $( Binary relationship form of ` Fns ` relationship. $)
+    brfns $p |- ( F Fns A <-> F Fn A ) $=
+       ( va vf vb cfns wbr cvv wcel wfn brex simprd cdm fndm eqcomd dmexg ax-mp
+       cv fneq2 syl6eqel breq2 vex fneq1 df-fns brab vtoclbg pm5.21nii ) BAGHZA
+       IJZBAKZUIBIJZUJBAGLMUKABNZIUKUMAABOPULUMIJCBIQRUABDSZGHBUNKZUIUKDAIUNABG
+       UBUNABTESZFSZKBUQKUOEFBUNGCDUCUQUPBUDUQUNBTEFUEUFUGUH $.
+       $( [23-Feb-2015] $)
+  $}
+
 $(
 =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
         Closure operation
@@ -49765,68 +50010,6 @@ $)
       OXEWFWTWEOGXEWFRCTZAWEWNWFOWOWMWEHVGXNWEHXQSUQZVHVIVJWFWTVKVLVCVFXBWGDWFX
       RWTWFWCVMVNVLVOVRVPVQVSCBVTWOWKBWAWB $.
       $( [12-Feb-2015] $)
-  $}
-
-  ${
-    $d a b x y z $.
-    $( The function mapping ` x ` and ` y ` to their cross product is a set. $)
-    xpfnex $p |- ( x e. _V , y e. _V |-> ( x X. y ) ) e. _V $=
-      ( va vb cvv cxp csset c1st c2nd c1c cop wcel wrex wex otelins2 vex 3bitri
-      cv wa wbr vz cins2 ccnv cin csi3 cins4 cima cins3 csymdif cdif cmpt2 wceq
-      csn wel elin snex opelssetsn otsnelsi3 df-br brcnv 3bitr2i opelxp mpbiran
-      oqelins4 anbi12i op1st2nd bitri exbii elima1c df-rex 3bitr4i rexcom elxp2
-      bitr4i releqmpt2 vvex ssetex 1stex cnvex 2ndex xpex inex si3ex 1cex imaex
-      ins2ex ins4ex mpt2exlem eqeltrri ) EEFEFGUBZWJUBZWKHUCZUBZEIUCZFZUDZUEZUF
-      ZUDZJUGZUFZUDZJUGZUHUIJUGUJABEEARZBRZFZUKEABUAEEXCXFUARZUMZXDXEKZKZXCLZXG
-      CRZDRZKULZDXEMCXDMZXGXFLXMUMZXJKZXBLZDNDBUNZXNCXDMZSZDNZXKXOXRYADXRXQWKLZ
-      XQXALZSYAXQWKXAUOYCXSYDXTYCXPXIKWJLXPXEKGLXSXPXHXIWJXGUPZOXPXDXEGAPZOXMXE
-      DPZBPZUQQYDXPXHXDKZKZWTLZXTXPXHXDXEWTYHVDXLUMZYJKZWSLZCNCAUNZXNSZCNYKXTYN
-      YPCYNYMWKLZYMWRLZSYPYMWKWRUOYQYOYRXNYQYLYIKWJLYLXDKGLYOYLXPYIWJXMUPOYLXHX
-      DGYEOXLXDCPZYFUQQYRYLXPXHKKWQLXLXMXGKZKZWPLZXNYLXPXHXDWQYFVDXLXMXGWPYSYGU
-      APURUUBUUAWMLZUUAWOLZSXGXLHTZXGXMITZSXNUUAWMWOUOUUCUUEUUDUUFUUCXLXGKWLLXL
-      XGWLTUUEXLXMXGWLYGOXLXGWLUSXLXGHUTVAUUDYTWNLZXMXGWNTUUFUUDXLELUUGYSXLYTEW
-      NVBVCXMXGWNUSXMXGIUTVAVEXLXMXGYSYGVFQQVEVGVHCYJWSVIXNCXDVJVKVGVEVGVHDXJXB
-      VIXOXTDXEMYBXNCDXDXEVLXTDXEVJVGVKCDXGXDXEVMVNVOEEXCVPVPXBJWKXAWJGVQWFWFZW
-      TWSJWKWRUUHWQWPWMWOWLHVRVSWFEWNVPIVTVSWAWBWCWGWBWDWEWGWBWDWEWHWI $.
-      $( [11-Feb-2015] $)
-  $}
-
-  ${
-    $d f x y z p q $.
-    $( The class of all functions forms a set. $)
-    funsetex $p |- { f | Fun f } e. _V $=
-       ( vx vy vz vp vq c1st c2nd c1c csset cid cv wcel wn wa cop wex wbr df-br
-       bitri cvv cxp cpw cins2 cins3 csi3 ccnv cima cins4 cdif ccompl wfun wrel
-       cin cab weq wal wss vex elpw df-rel bitr4i csn elima1c snex opex elcompl
-       wi eldif otelins2 wrex wceq oqelins4 otsnelsi3 otelins3 anbi12i op1st2nd
-       elin 3bitri brcnv 3bitr2i exbii sneq breq2d ceqsexv 3bitr4i rexbii elima
-       risset opelssetsn ideq sneqb 3bitr3i notbii exanali con2bii exnal dffun5
-       3bitrri abbi2i vvex xpex pwex 1stex ins2ex 2ndex ins3ex inex si3ex cnvex
-       con1bii 1cex imaex ins4ex ssetex idex difex complex eqeltrri ) UAUAUBZUC
-       ZGUDZHUEZUNZUFZUDZGUGZUEZUNZIUHZUIZHUDZUDZUNZJUHZUDZKUEZUJZIUHZUKZIUHZUK
-       ZIUHZUJZALZULZAUOUAUUFAUUDUUEYAMZUUEUUCMZNZOUUEUMZBLZCLZPZUUEMZCDUPZVHCU
-       QZDQZBUQZOUUEUUDMUUFUUGUUJUUIUURUUGUUEXTURUUJUUEXTAUSZUTUUEVAVBUURUUHUUH
-       UUKVCZUUEPZUUBMZBQUUQNZBQUURNBUUEUUBVDUVBUVCBUVBUVAUUAMZNUVCUVAUUAUUTUUE
-       UUKVEZUUSVFZVGUVDUUQUVDDLZVCZUVAPZYTMZDQUUQDUVAYTVDUVJUUPDUVJUVIYSMZNUUP
-       UVIYSUVHUVAUVGVEZUVFVFVGUVKUUPUVKUULVCZUVIPZYRMZCQUUNUUONZOZCQUUPNCUVIYR
-       VDUVOUVQCUVOUVNYPMZUVNYQMZNZOUVQUVNYPYQVIUVRUUNUVTUVPUVRUVMUVAPZYOMZUUMV
-       CZUUEPZJMZUUNUVMUVHUVAYOUVLVJELZUWAYNRZEJVKUWFUWDVLZEJVKUWBUWEUWGUWHEJUW
-       GUWFUWAPZYNMZUWHUWFUWAYNSUWJUWIYKMZUWIYMMZOUWFUWCGRZUWFUUEHRZOUWHUWIYKYM
-       VRUWKUWMUWLUWNUWKUWFUVMUUTPZPZYJMZUWMUWFUVMUUTUUEYJUUSVMUWQFLZVCZUWPPZYI
-       MZFQUWRUUMVLZUWFUWSGRZOZFQUWMFUWPYIVDUXAUXDFUXAUWTYFMZUWTYHMZOUXDUWTYFYH
-       VRUXEUXBUXFUXCUXEUWSUWOPYEMUWRUULUUKPPZYDMZUXBUWSUWFUWOYEEUSVJUWRUULUUKY
-       DFUSCUSZBUSZVNUXHUXGYBMZUXGYCMZOUWRUUKGRZUWRUULHRZOUXBUXGYBYCVRUXKUXMUXL
-       UXNUXKUWRUUKPGMUXMUWRUULUUKGUXIVJUWRUUKGSVBUXLUWRUULPHMUXNUWRUULUUKHUXJV
-       OUWRUULHSVBVPUUKUULUWRUXJUXIVQVSVSUXFUWSUWFPYGMUWSUWFYGRUXCUWSUWFUWOYGUV
-       MUUTUULVEZUVEVFVOUWSUWFYGSUWSUWFGVTWAVPTWBUXCUWMFUUMUUKUULUXJUXIVFZUXBUW
-       SUWCUWFGUWRUUMWCWDWEVSTUWFUVAPYLMUWFUUEPHMUWLUWNUWFUUTUUEHUVEVJUWFUVMUVA
-       YLUXOVJUWFUUEHSWFVPUWCUUEUWFUUMVEUUSVQVSTWGEUWAYNJWHEUWDJWIWFUUMUUEUXPUU
-       SWJVSUVSUUOUVSUVMUVHPKMZUUOUVMUVHUVAKUVFVOUVMUVHKRUVMUVHVLUXQUUOUVMUVHUV
-       LWKUVMUVHKSUULUVGUXIWLWMTWNVPTWBUUNUUOCWOVSWPVBWBTWNTWBUUQBWQWSXKVPUUEYA
-       UUCVIBCDUUEWRWFWTYAUUCXTUAUAXAXAXBXCUUBIUUAYTIYSYRIYPYQYOYNJYKYMYJYIIYFY
-       HYEYDYBYCGXDXEHXFXGXHXIXEYGGXDXJXGXHXLXMXNYLHXFXEXEXHXOXMXEKXPXGXQXLXMXR
-       XLXMXRXLXMXQXS $.
-       $( [18-Feb-2015] $)
   $}
 
 
@@ -50527,12 +50710,12 @@ $)
 
   $( Define the ` R ` -coset of ` A ` .  Exercise 35 of [Enderton] p. 61.  This
      is called the equivalence class of ` A ` modulo ` R ` when ` R ` is an
-     equivalence relation.  In this case,
-     ` A ` is a representative (member) of the equivalence class ` [ A ] R ` ,
-     which contains all sets that are equivalent to ` A ` .  Definition of
-     [Enderton] p. 57 uses the notation ` [ A ] ` (subscript) ` R ` , although
-     we simply follow the brackets by ` R ` since we don't have subscripted
-     expressions.  For an alternate definition, see ~ dfec2 . $)
+     equivalence relation.  In this case, ` A ` is a representative (member) of
+     the equivalence class ` [ A ] R ` , which contains all sets that are
+     equivalent to ` A ` .  Definition of [Enderton] p. 57 uses the notation
+     ` [ A ] ` (subscript) ` R ` , although we simply follow the brackets by
+     ` R ` since we don't have subscripted expressions.  For an alternate
+     definition, see ~ dfec2 . $)
   df-ec $a |- [ A ] R = ( R " { A } ) $.
 
   ${
@@ -50635,12 +50818,12 @@ $)
   $}
 
   ${
-    $d A y $.  $d ph y $.  $d R y $. $d X y $.
+    $d A y $.  $d ph y $.  $d R y $.  $d X y $.
     erref.1 $e |- ( ph -> R Er _V ) $.
     erref.2 $e |- ( ph -> dom R = A ) $.
     erref.3 $e |- ( ph -> X e. A ) $.
     $( An equivalence relation is reflexive on its field.  Compare Theorem 3M
-       of [Enderton] p. 56.   $)
+       of [Enderton] p. 56. $)
     erref $p |- ( ph -> X R X ) $=
       ( vy wcel wbr cdm eleq2d cv wex eldm wa cvv cer adantr elex syl vex simpr
       a1i ertr4d ex exlimdv syl5bi sylbird mpd ) ADBIZDDCJZGAUKDCKZIZULAUMBDFLU
@@ -51102,6 +51285,312 @@ $)
       $( [9-Aug-1995] $)
   $}
 
+$(
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+        Equinumerosity
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+$)
+
+  $( Introduce new constant symbols. $)
+  $c ~~ $.  $( Equinumerosity relation ("approximately equals" symbol) $)
+
+  $( Extend class definition to include the equinumerosity relation
+     ("approximately equals" symbol) $)
+  cen $a class ~~ $.
+
+  ${
+    $d x y f $.
+    $( Define the equinumerosity relation.  Definition of [Enderton] p. 129.
+       We define ` ~~ ` to be a binary relation rather than a connective, so
+       its arguments must be sets to be meaningful.  This is acceptable because
+       we do not consider equinumerosity for proper classes.  We derive the
+       usual definition as ~ bren . $)
+    df-en $a |- ~~ = { <. x , y >. | E. f f : x -1-1-onto-> y } $.
+  $}
+
+
+  ${
+    $d x y f $.  $d x y f $.
+    $( Equinumerosity is a relation. $)
+    relen $p |- Rel ~~ $=
+      ( vx vy vf cv wf1o wex cen df-en relopabi ) ADBDCDECFABGABCHI $.
+      $( [28-Mar-1998] $)
+  $}
+
+  ${
+    $d A f x y $.  $d B f x y $.
+    $( Equinumerosity relationship. $)
+    bren $p |- ( A ~~ B <-> E. f f : A -1-1-onto-> B ) $=
+      ( vx vy cen wbr cvv wcel wa wf1o wex brex cdm crn vex eleq1d wceq exbidv
+      cv dmex rnex pm3.2i f1odm wfo f1ofo forn syl anbi12d mpbii exlimiv f1oeq2
+      f1oeq3 df-en brabg pm5.21nii ) ABFGAHIZBHIZJZABCTZKZCLZABFMVAUSCVAUTNZHIZ
+      UTOZHIZJUSVDVFUTCPZUAUTVGUBUCVAVDUQVFURVAVCAHABUTUDQVAVEBHVAABUTUEVEBRABU
+      TUFABUTUGUHQUIUJUKDTZETZUTKZCLAVIUTKZCLVBDEABHHFVHARVJVKCVHAVIUTULSVIBRVK
+      VACVIBAUTUMSDECUNUOUP $.
+      $( [23-Feb-2015] $)
+  $}
+
+  ${
+    $d f g x y $.
+    $( The equinumerosity relationship is a set. $)
+    enex $p |- ~~ e. _V $=
+       ( vx vy vf vg cen cvv cfns cswap ccnv ctxp crn wex cop wcel wbr elrn wfn
+       cv wa bitri cxp cimage cin wf1o copab df-en vex brfns wceq df-br brimage
+       trtxp cima brcnv dfcnv2 eqeq2i 3bitr4i anbi12i exbii cnvex fneq1 ceqsexv
+       dff1o4 releqopab eqtr4i vvex xpex fnsex swapex imageex rnex inex eqeltri
+       txpex ) EFFUAZGHUBZIZGJZKZJZKZUCZFEARZBRZCRZUDZCLZABUEWBABCUFWGABWAWCWDM
+       ZWANWEWHVTOZCLWGCWHVTPWIWFCWEWCGOZWEWDVSOZSWEWCQZWEIZWDQZSWIWFWJWLWKWNWC
+       WECUGZUHWKDRZWMUIZWPWDQZSZDLZWNWKWEWDMZVSNZWTWEWDVSUJXBWPXAVROZDLWTDXAVR
+       PXCWSDXCWPWEVQOZWPWDGOZSWSWPWEWDVQGULXDWQXEWRWEWPVPOWPHWEUMZUIXDWQWEWPHW
+       ODUGZUKWPWEVPUNWMXFWPWEUOUPUQWDWPXGUHURTUSTTWRWNDWMWEWOUTWDWPWMVAVBTURWE
+       WCWDGVSULWCWDWEVCUQUSTVDVEVOWAFFVFVFVGVTGVSVHVRVQGVPHVIVJUTVHVNVKVNVKVLV
+       M $.
+       $( [23-Feb-2015] $)
+  $}
+
+  ${
+    $d f A $.  $d f B $.  $d f F $.
+    $( The domain and range of a one-to-one, onto function are equinumerous. $)
+    f1oeng $p |- ( ( F e. C /\ F : A -1-1-onto-> B ) -> A ~~ B ) $=
+      ( vf wcel wf1o wa cv wex cen wbr f1oeq1 cla4egv imp bren sylibr ) DCFZABD
+      GZHABEIZGZEJZABKLRSUBUASEDCABTDMNOABEPQ $.
+      $( [23-Feb-2015] $)
+  $}
+
+
+  ${
+    f1oen.1 $e |- F e. _V $.
+    $( The domain and range of a one-to-one, onto function are equinumerous. $)
+    f1oen $p |- ( F : A -1-1-onto-> B -> A ~~ B ) $=
+      ( cvv wcel wf1o cen wbr f1oeng mpan ) CEFABCGABHIDABECJK $.
+      $( [19-Jun-1998] $)
+  $}
+
+  $( Equinumerosity is reflexive. $)
+  enrflxg $p |- ( A e. V -> A ~~ A ) $=
+    ( wcel cid cres cvv wf1o cen wbr idex resexg mpan f1oi f1oeng sylancl ) ABC
+    ZDAEZFCZAAQGAAHIDFCPRJDAFBKLAMAAFQNO $.
+    $( [23-Feb-2015] $)
+
+  ${
+     enrflx.1 $e |- A e. _V $.
+     $( Equinumerosity is reflexive. $)
+     enrflx $p |- A ~~ A $=
+       ( cvv wcel cen wbr enrflxg ax-mp ) ACDAAEFBACGH $.
+       $( [23-Feb-2015] $)
+  $}
+
+
+  ${
+    $d A f g $.  $d B f g $.  $d C f g $.
+
+    $( Equinumerosity is symmetric. $)
+    ensymi $p |- ( A ~~ B -> B ~~ A ) $=
+      ( vf cen wbr wf1o wex bren ccnv f1ocnv vex cnvex f1oen syl exlimiv sylbi
+      cv ) ABDEABCQZFZCGBADEZABCHSTCSBARIZFTABRJBAUARCKLMNOP $.
+      $( [23-Feb-2015] $)
+
+    $( Equinumerosity is symmetric. $)
+    ensym $p |- ( A ~~ B <-> B ~~ A ) $=
+       ( cen wbr ensymi impbii ) ABCDBACDABEBAEF $.
+       $( [23-Feb-2015] $)
+
+    $( Equinumerosity is transitive. $)
+    entr $p |- ( ( A ~~ B /\ B ~~ C ) -> A ~~ C ) $=
+      ( vf vg cen wbr wa cv wf1o wex bren anbi12i eeanv bitr4i f1oco ancoms vex
+      ccom coex f1oen syl exlimivv sylbi ) ABFGZBCFGZHZABDIZJZBCEIZJZHZEKDKZACF
+      GZUGUIDKZUKEKZHUMUEUOUFUPABDLBCELMUIUKDENOULUNDEULACUJUHSZJZUNUKUIURABCUJ
+      UHPQACUQUJUHERDRTUAUBUCUD $.
+      $( [23-Feb-2015] $)
+  $}
+
+  ${
+    $d x y z $.
+    $( Equinumerosity is an equivalence relationship over the universe. $)
+    ener $p |- ~~ Er _V $=
+       ( vx vy vz cen cvv cer wbr wtru wcel enex a1i vvex cv wa ensymi 3ad2ant3
+       w3a entr iserd trud ) DEFGHABCEDEEDEIHJKEEIHLKAMZBMZDGZHUBUADGUAEIZUBEIZ
+       NUAUBOPUCUBCMZDGNHUAUFDGUDUEUFEIQUAUBUFRPST $.
+       $( [23-Feb-2015] $)
+  $}
+
+
+  ${
+    $d x y $.
+    $( Equality implies equinumerosity. $)
+    idssen $p |- _I C_ ~~ $=
+      ( vx vy cid cen reli cv wbr cop wcel weq vex ideq cvv enrflxg ax-mp breq2
+      mpbii sylbi df-br 3imtr3i relssi ) ABCDEAFZBFZCGZUBUCDGZUBUCHZCIUFDIUDABJ
+      ZUEUBUCBKLUGUBUBDGZUEUBMIUHAKUBMNOUBUCUBDPQRUBUCCSUBUCDSTUA $.
+      $( [30-Apr-1998] $)
+  $}
+
+  $( The domain of equinumerosity. $)
+  dmen $p |- dom ~~ = _V $=
+    ( cvv cen cdm wss wceq cid idssen dmi dmss syl5eqssr ax-mp vss mpbi ) ABCZD
+    ZNAEFBDZOGPAFCNHFBIJKNLM $.
+    $( [10-May-1998] $)
+
+  ${
+    $d f A $.
+    $( The empty set is equinumerous only to itself.  Exercise 1 of
+       [TakeutiZaring] p. 88. $)
+    en0 $p |- ( A ~~ (/) <-> A = (/) ) $=
+      ( vf c0 cen wbr wceq cv wf1o wex bren ccnv f1ocnv f1o00 simprbi syl sylbi
+      exlimiv 0ex enrflx breq1 mpbiri impbii ) ACDEZACFZUCACBGZHZBIUDACBJUFUDBU
+      FCAUEKZHZUDACUELUHUGCFUDAUGMNOQPUDUCCCDECRSACCDTUAUB $.
+      $( [27-May-1998] $)
+  $}
+
+  ${
+    $d x y z a b F $.
+    fundmen.1 $e |- F e. _V $.
+    $( A function is equinumerous to its domain.  Exercise 4 of [Suppes]
+       p. 98. $)
+    fundmen $p |- ( Fun F -> dom F ~~ F ) $=
+      ( vx vy vz va vb wfun cen wbr c1st wceq cvv cv wa wi wal wcel wex bitr4i
+      cdm cres wf1o wfn ccnv crn cxp wss wrel funrel df-rel sylib wb 1stfo fofn
+      wfo fnssresb mp2b sylibr weq cop brcnv brres anbi1i 19.41v 3bitri anbi12i
+      vex br1st eeanv an4 dffun4 ax467to4 a4s adantl sylbi opeq2 eleq1 bi2anan9
+      eqeq12 imbi12d biimprcd imp3a syl syl5bi exlimdvv alrimiv alrimivv relcnv
+      syl6 dffun2 mpbiran cima dfdm4 dfima3 eqtr2i dff1o2 syl3anbrc 1stex resex
+      a1i f1oen ensym ) AHZAAUAZIJZXEAIJXDAXEKAUBZUCZXFXDXGAUDZXGUEZHZXGUFZXELZ
+      XHXDAMMUGZUHZXIXDAUIZXOAUJAUKULXNMKUPKXNUDXIXOUMUNXNMKUOXNAKUQURUSXDCNZDN
+      ZXJJZXQENZXJJZOZDEUTZPZEQZDQCQZXKXDYECDXDYDEYBXRXQFNZVAZLZXRARZOZXTXQGNZV
+      AZLZXTARZOZOZGSFSZXDYCYBYKFSZYPGSZOYRXSYSYAYTXSXRXQXGJXRXQKJZYJOZYSXQXRXG
+      VBXRXQKAVCUUBYIFSZYJOYSUUAUUCYJFXRXQCVHZVIVDYIYJFVETVFYAYNGSZYOOZYTYAXTXQ
+      XGJXTXQKJZYOOUUFXQXTXGVBXTXQKAVCUUGUUEYOGXTXQUUDVIVDVFYNYOGVETVGYKYPFGVJT
+      XDYQYCFGYQYIYNOZYJYOOZOZXDYCYIYJYNYOVKXDYHARZYMARZOZYHYMLZPZUUJYCPXDUUMFG
+      UTZUUNXDXPUUMUUPPZGQZFQZCQZOUUQCFGAVLUUTUUQXPUUSUUQCUURUUQFUUQGVMVNVNVOVP
+      YGYLXQVQWJUUOUUHUUIYCUUHUUIYCPUUOUUHUUIUUMYCUUNYIYJUUKYNYOUULXRYHAVRXTYMA
+      VRVSXRYHXTYMVTWAWBWCWDWEWFWEWGWHXKXJUIYFXGWICDEXJWKWLUSXMXDXEKAWMXLAWNKAW
+      OWPXAAXEXGWQWRAXEXGKAWSBWTXBWDAXEXCUL $.
+      $( [23-Feb-2015] $)
+  $}
+
+
+  ${
+    $d x A $.  $d x F $.
+    $( A function is equinumerous to its domain.  Exercise 4 of [Suppes]
+       p. 98. $)
+    fundmeng $p |- ( ( F e. V /\ Fun F ) -> dom F ~~ F ) $=
+      ( vx wcel wfun cdm cen wbr cv wceq funeq dmeq breq12d imbi12d vex fundmen
+      wi id vtoclg imp ) ABDAEZAFZAGHZCIZEZUDFZUDGHZQUAUCQCABUDAJZUEUAUGUCUDAKU
+      HUFUBUDAGUDALUHRMNUDCOPST $.
+      $( [17-Sep-2013] $)
+
+    $( A relational set is equinumerous to its converse. $)
+    cnven $p |- ( ( Rel A /\ A e. V ) -> A ~~ `' A ) $=
+      ( wcel cswap cres cvv ccnv wf1o wrel swapex resexg mpan swapresrel f1oeng
+      cen wbr syl2anr ) ABCZDAEZFCZAAGZSHAUAOPAIDFCRTJDAFBKLAMAUAFSNQ $.
+      $( [28-Dec-2014] $)
+  $}
+
+  $( A function is equinumerate to its domain.  (Contributed by Paul Chapman,
+     22-Jun-2011.) $)
+  fndmeng $p |- ( ( F Fn A /\ F e. C ) -> A ~~ F ) $=
+    ( wcel wfn cen wbr wfun wceq wa df-fn fundmeng breq1 syl5ibcom impr sylan2b
+    cdm ancoms ) CBDZCAEZACFGZTSCHZCQZAIZJUACAKSUBUDUASUBJUCCFGUDUACBLUCACFMNOP
+    R $.
+    $( [22-Jun-2011] $)
+
+  ${
+    $d x A $.  $d x B $.
+    $( Two singletons are equinumerous. $)
+    en2sn $p |- ( ( A e. C /\ B e. D ) -> { A } ~~ { B } ) $=
+      ( wcel wa csn cop wf1o cen wbr f1osng snex f1oen syl ) ACEBDEFAGZBGZABHZG
+      ZIPQJKABCDLPQSRMNO $.
+      $( [9-Nov-2003] $)
+  $}
+
+  ${
+    $d f g h A $.  $d f g h B $.  $d f g h C $.  $d f g h D $.
+    $( Equinumerosity of union of disjoint sets.  Theorem 4 of [Suppes]
+       p. 92. $)
+    unen $p |- ( ( ( A ~~ B /\ C ~~ D ) /\
+  ( ( A i^i C ) = (/) /\ ( B i^i D ) = (/) ) ) -> ( A u. C ) ~~ ( B u. D ) ) $=
+      ( vf vg vh cv wf1o wa wex cin c0 wceq cun cen wbr wi vex bren unex f1oeq1
+      f1oun cla4ev syl ex exlimivv imp anbi12i eeanv bitr4i anbi1i 3imtr4i ) AB
+      EHZIZCDFHZIZJZFKEKZACLMNBDLMNJZJACOZBDOZGHZIZGKZABPQZCDPQZJZUTJVAVBPQUSUT
+      VEURUTVEREFURUTVEURUTJVAVBUNUPOZIZVEABCDUNUPUCVDVJGVIUNUPESFSUAVAVBVCVIUB
+      UDUEUFUGUHVHUSUTVHUOEKZUQFKZJUSVFVKVGVLABETCDFTUIUOUQEFUJUKULVAVBGTUM $.
+      $( [11-Jun-1998] $)
+  $}
+
+
+  ${
+    $d x y z w A $.  $d x y z w B $.
+    xpsnen.1 $e |- A e. _V $.
+    xpsnen.2 $e |- B e. _V $.
+    $( A set is equinumerous to its cross-product with a singleton.
+       Proposition 4.22(c) of [Mendelson] p. 254. $)
+    xpsnen $p |- ( A X. { B } ) ~~ A $=
+      ( csn cxp cen wbr cdm wcel c0 wne wceq snid ne0i dmxp mp2b wf wfun fconst
+      ffun snex xpex fundmen eqbrtrri ensym mpbi ) AABEZFZGHUIAGHUIIZAUIGBUHJUH
+      KLUJAMBDNUHBOAUHPQAUHUIRUISUJUIGHABDTAUHUIUAUIAUHCBUBUCUDQUEAUIUFUG $.
+      $( [23-Feb-2015] $)
+  $}
+
+
+  ${
+    $d x y A $.  $d x y B $.
+    $( A set is equinumerous to its cross-product with a singleton.
+       Proposition 4.22(c) of [Mendelson] p. 254. $)
+    xpsneng $p |- ( ( A e. V /\ B e. W ) -> ( A X. { B } ) ~~ A ) $=
+      ( vx vy cv csn cxp cen wbr wceq xpeq1 id breq12d xpeq2d breq1d vex xpsnen
+      sneq vtocl2g ) EGZFGZHZIZUBJKAUDIZAJKABHZIZAJKEFABCDUBALZUEUFUBAJUBAUDMUI
+      NOUCBLZUFUHAJUJUDUGAUCBTPQUBUCERFRSUA $.
+      $( [22-Oct-2004] $)
+  $}
+
+
+  ${
+    $d x y A $.  $d x y B $.
+    endisj.1 $e |- A e. _V $.
+    endisj.2 $e |- B e. _V $.
+    $( Any two sets are equinumerous to disjoint sets.  Exercise 4.39 of
+       [Mendelson] p. 255. $)
+    endisj $p |- E. x E. y ( ( x ~~ A /\ y ~~ B ) /\ ( x i^i y ) = (/) ) $=
+      ( c0 csn cxp cen wbr wa cin wceq cv wex 0ex xpsnen snex xpex ccompl breq1
+      complex pm3.2i necompl xpnedisj bi2anan9 ineq12 eqeq1d anbi12d cla42ev
+      mp2an ) CGUAZHZIZCJKZDGHZIZDJKZLZUOURMZGNZAOZCJKZBOZDJKZLZVCVEMZGNZLZBPAP
+      UPUSCUMEGQUCZRDGFQRUDCDUMGVKGUEUFVJUTVBLABUOURCUNEUMSTDUQFGSTVCUONZVEURNZ
+      LZVGUTVIVBVLVDUPVMVFUSVCUOCJUBVEURDJUBUGVNVHVAGVCUOVEURUHUIUJUKUL $.
+      $( [16-Apr-2004] $)
+  $}
+
+
+  ${
+    xpcomen.1 $e |- A e. _V $.
+    xpcomen.2 $e |- B e. _V $.
+    $( Commutative law for equinumerosity of cross product.  Proposition
+       4.22(d) of [Mendelson] p. 254. $)
+    xpcomen $p |- ( A X. B ) ~~ ( B X. A ) $=
+      ( cxp cswap cres wf1o cen wbr ccnv wrel relxp swapresrel ax-mp wceq cnvxp
+      wb f1oeq3 mpbi swapex xpex resex f1oen ) ABEZBAEZFUEGZHZUEUFIJUEUEKZUGHZU
+      HUELUJABMUENOUIUFPUJUHRABQUIUFUEUGSOTUEUFUGFUEUAABCDUBUCUDO $.
+      $( [23-Apr-2014] $) $( [5-Jan-2004] $)
+  $}
+
+  ${
+    $d x y A $.  $d y B $.
+    $( Commutative law for equinumerosity of cross product.  Proposition
+       4.22(d) of [Mendelson] p. 254. $)
+    xpcomeng $p |- ( ( A e. V /\ B e. W ) -> ( A X. B ) ~~ ( B X. A ) ) $=
+      ( vx vy cv cxp cen wbr wceq xpeq1 xpeq2 breq12d vex xpcomen vtocl2g ) EGZ
+      FGZHZSRHZIJASHZSAHZIJABHZBAHZIJEFABCDRAKTUBUAUCIRASLRASMNSBKUBUDUCUEISBAM
+      SBALNRSEOFOPQ $.
+      $( [27-Mar-2006] $)
+  $}
+
+  $( A set is equinumerous to its cross-product with a singleton on the left.
+     (Contributed by Stefan O'Rear, 21-Nov-2014.) $)
+  xpsnen2g $p |- ( ( A e. V /\ B e. W ) -> ( { A } X. B ) ~~ B ) $=
+    ( wcel wa csn cxp cen wbr cvv snex xpcomeng mpan adantl xpsneng ancoms entr
+    syl2anc ) ACEZBDEZFAGZBHZBUBHZIJZUDBIJZUCBIJUAUETUBKEUAUEALUBBKDMNOUATUFBAD
+    CPQUCUDBRS $.
+    $( [21-Nov-2014] $)
+
 
 $(
 #*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#
@@ -51133,8 +51622,8 @@ htmlhome '<A HREF="nfset.html"><FONT SIZE=-2 FACE=sans-serif>' +
     '"Home" HEIGHT=32 WIDTH=32 ALIGN=MIDDLE>' +
     'Home</FONT></A>';
 /* Optional file where bibliographic references are kept */
-/* If specified, e.g. "mmset.html", Metamath will hyperlink all strings of the
-   form "[rrr]" (where "rrr" has no whitespace) to "mmset.html#rrr" */
+/* If specified, e.g. "nfset.html", Metamath will hyperlink all strings of the
+   form "[rrr]" (where "rrr" has no whitespace) to "nfset.html#rrr" */
 /* A warning will be given if the file "mmset.html" with the bibliographical
    references is not present.  It is read in order to check correctness of
    the references. */
@@ -51147,8 +51636,8 @@ htmlvarcolor '<FONT COLOR="#0000FF">wff</FONT> '
 
 /* GIF and Unicode HTML directories - these are used for the GIF version to
    crosslink to the Unicode version and vice-versa */
-htmldir "../mpegif/";
-althtmldir "../mpeuni/";
+htmldir "../nfpegif/";
+althtmldir "../nfpeuni/";
 
 
 /******* Symbol definitions *******/
@@ -51924,5 +52413,10 @@ htmldef "/." as
     "<IMG SRC='diagup.gif' WIDTH=14 HEIGHT=19 TITLE='/.' ALIGN=TOP>";
   althtmldef "/." as ' <B>/</B> ';
   latexdef "/." as "\diagup";
+
+htmldef "~~" as
+    " <IMG SRC='approx.gif' WIDTH=13 HEIGHT=19 TITLE='~~' ALIGN=TOP> ";
+  althtmldef "~~" as ' &#8776; '; /* &ap; */
+  latexdef "~~" as "\approx";
 
 $)
