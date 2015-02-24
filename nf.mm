@@ -49893,9 +49893,17 @@ $)
        $( [24-Feb-2015] $)
   $}
 
-  ${
+  ${ $d A a $. $d a b $. $d A b $. $d a c $. $d A c $. $d a d $. $d A d $. $d a x $. $d A x $. $d a y $. $d A y $. $d B a $. $d B b $. $d b c $. $d B c $. $d b d $. $d B d $. $d b x $. $d B x $. $d b y $. $d B y $. $d c d $. $d c x $. $d c y $. $d d x $. $d d y $. $d x y $. 
      $( A subset law for parallel product. $)
-     pprodss4v $p |- PProd ( A , B ) C_ ( ( _V X. _V ) X. ( _V X. _V ) ) $= ? $.
+     pprodss4v $p |- PProd ( A , B ) C_ ( ( _V X. _V ) X. ( _V X. _V ) ) $=
+       ( vx vy va vb vc vd cvv cxp cv cop wcel wal wceq wbr wex opelxp mpbir2an
+       vex cpprod wss wi wrel wb relpprod ssrel ax-mp w3a brpprod bitr3i opeq12
+       wa df-br syl6eqel 3adant3 exlimivv sylbir ax-gen mpgbir ) ABUAZIIJZVBJZU
+       BZCKZDKZLZVAMZVGVCMZUCZDNZCVAUDVDVKCNUEABUFCDVAVCUGUHVJDVHVEEKZFKZLZOZVF
+       GKZHKZLZOZVLVPAPVMVQBPUMZUIZHQGQZFQEQZVIWCVEVFVAPVHEFGHVEVFABUJVEVFVAUNU
+       KWBVIEFWAVIGHVOVSVIVTVOVSUMVGVNVRLZVCVEVNVFVRULWDVCMVNVBMZVRVBMZWEVLIMVM
+       IMETFTVLVMIIRSWFVPIMVQIMGTHTVPVQIIRSVNVRVBVBRSUOUPUQUQURUSUT $.
+       $( [24-Feb-2015] $)
   $}
 
   ${ $d A a $. $d a b $. $d A b $. $d a c $. $d A c $. $d a d $. $d A d $. $d a x $. $d A x $. $d B a $. $d B b $. $d b c $. $d B c $. $d b d $. $d B d $. $d b x $. $d B x $. $d c d $. $d c x $. $d d x $. $d a t $. $d A t $. $d a u $. $d A u $. $d b t $. $d B t $. $d b u $. $d B u $. $d c t $. $d c u $. $d d t $. $d d u $. $d t u $. $d t x $. $d u x $. 
