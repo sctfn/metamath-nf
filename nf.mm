@@ -49253,6 +49253,12 @@ $)
       $( [9-Feb-2015] $)
   $}
 
+  $( A tail cross product is a relationship. $)
+  reltxp $p |- Rel ( A (x) B ) $= 	     
+    ( ctxp wrel c1st ccnv ccom c2nd cin wss inss1 relco relss mp2 df-txp releqi
+    mpbir ) ABCZDEFZAGZHFBGZIZDZUBTJTDUCTUAKSALUBTMNRUBABOPQ $.
+    $( [24-Feb-2015] $)
+
   ${
     $d A x y $.  $d R x y $.
     $( Membership in the fixed points of a relationship. $)
@@ -49855,7 +49861,35 @@ $)
      pprodex.1 $e |- A e. _V $.
      pprodex.2 $e |- B e. _V $.
      $( The parallel product of two sets is a set. $)
-     pprodex $p |- PProd ( A , B ) e. _V $= ? $.
+     pprodex $p |- PProd ( A , B ) e. _V $=
+       ( cvv wcel cpprod pprodexg mp2an ) AEFBEFABGEFCDABEEHI $.
+       $( [24-Feb-2015] $)
+  $}
+
+  ${
+     $( Parallel product is a relationship. $)
+     relpprod $p |- Rel PProd ( A , B ) $=
+       ( cpprod wrel c1st ccom c2nd ctxp reltxp df-pprod releqi mpbir ) ABCZDAE
+       FZBGFZHZDNOIMPABJKL $.
+       $( [24-Feb-2015] $)
+  $}
+
+  ${
+     $( Binary relationship over a parallel product. $)
+     brpprod $p |- ( A PProd ( R , S ) B <->
+       E. x E. y E. z E. w ( A = <. x , y >. /\ B = <. z , w >. /\
+         ( x R z /\ y S w ) ) ) $= ? $.
+  $}
+
+  ${
+     $( The domain of a parallel product. $)
+     dmpprod $p |- dom PProd ( A , B ) = ( dom A X. dom B ) $= ? $.
+
+     $( The range of a parallel product. $)
+     rnpprod $p |- ran PProd ( A , B ) = ( ran A X. ran B ) $= ? $.
+
+     $( The converse of a parallel product. $)
+     cnvpprod $p |- `' PProd ( A , B ) = PProd ( `' A , `' B ) $= ? $.
   $}
 
   ${ $d A x y $. $d B y $.
