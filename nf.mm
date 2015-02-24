@@ -51907,6 +51907,20 @@ $)
       $( [9-Mar-2013] $) $( [24-Jul-2004] $)
   $}
 
+
+  ${
+    $d x y z w v u A $.  $d x y z w v u B $.  $d x y z w v u C $.
+    xpassen.1 $e |- A e. _V $.
+    xpassen.2 $e |- B e. _V $.
+    xpassen.3 $e |- C e. _V $.
+    $( Associative law for equinumerosity of cross product.  Proposition
+       4.22(e) of [Mendelson] p. 254. $)
+    xpassen $p |- ( ( A X. B ) X. C ) ~~ ( A X. ( B X. C ) ) $=
+      ( cxp c1st ccom c2nd ctxp cres wf1o cen wbr 1stex coex 2ndex txpex xpex
+      resex f1oen ax-mp ) ABGZCGZABCGGZHHIZJHIZJKZKZUELZMUEUFNO?UEUFUKUJUEUGUIH
+      HPPQUHJJHRPQRSSUDCABDETFTUAUBUC $.
+  $}
+
 $(
 =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
         Cardinal numbers
