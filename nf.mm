@@ -49881,15 +49881,27 @@ $)
          ( x R z /\ y S w ) ) ) $= ? $.
   $}
 
-  ${
-     $( The domain of a parallel product. $)
-     dmpprod $p |- dom PProd ( A , B ) = ( dom A X. dom B ) $= ? $.
+  ${ $d A a $. $d a b $. $d A b $. $d a c $. $d A c $. $d a d $. $d A d $. $d a x $. $d A x $. $d B a $. $d B b $. $d b c $. $d B c $. $d b d $. $d B d $. $d b x $. $d B x $. $d c d $. $d c x $. $d d x $. 
 
-     $( The range of a parallel product. $)
-     rnpprod $p |- ran PProd ( A , B ) = ( ran A X. ran B ) $= ? $.
+     $( The domain of a parallel product. $)
+     dmpprod $p |- dom PProd ( A , B ) = ( dom A X. dom B ) $=
+       ? $.
+       $( [24-Feb-2015] $)
 
      $( The converse of a parallel product. $)
      cnvpprod $p |- `' PProd ( A , B ) = PProd ( `' A , `' B ) $= ? $.
+  $}
+
+  $( The range of a parallel product. $)
+  rnpprod $p |- ran PProd ( A , B ) = ( ran A X. ran B ) $=
+    ( cpprod ccnv cdm cxp cnvpprod dmeqi dmpprod eqtri dfrn4 xpeq12i 3eqtr4i
+    crn ) ABCZDZEZADZEZBDZEZFZONANZBNZFQRTCZEUBPUEABGHRTIJOKUCSUDUAAKBKLM $.
+    $( [24-Feb-2015] $)
+
+  ${
+     $( The parallel product of two bijections is a bijection. $)
+     f1opprod $p |- ( ( F : A -1-1-onto-> C /\ G : B -1-1-onto-> D ) ->
+       PProd ( F , G ) : ( A X. B ) -1-1-onto-> ( C X. D ) ) $= ? $.
   $}
 
   ${ $d A x y $. $d B y $.
@@ -51749,9 +51761,10 @@ $)
     $( Equinumerosity law for cross product.  Proposition 4.22(b) of
        [Mendelson] p. 254.  (Revised by Mario Carneiro, 9-Mar-2013.) $)
     xpen $p |- ( ( A ~~ B /\ C ~~ D ) -> ( A X. C ) ~~ ( B X. D ) ) $=
-      ( vf vg cen wbr wa cv wf1o wex cxp bren anbi12i eeanv bitr4i cpprod f1oen
-      syl exlimivv sylbi ) ABGHZCDGHZIZABEJZKZCDFJZKZIZFLELZACMZBDMZGHZUEUGELZU
-      IFLZIUKUCUOUDUPABENCDFNOUGUIEFPQUJUNEFUJULUMUFUHRZKUN?ULUMUQ?STUAUB $.
+      ( vf vg cen wbr wa wf1o wex cxp bren anbi12i eeanv bitr4i cpprod f1opprod
+      cv vex pprodex f1oen syl exlimivv sylbi ) ABGHZCDGHZIZABESZJZCDFSZJZIZFKE
+      KZACLZBDLZGHZUHUJEKZULFKZIUNUFURUGUSABEMCDFMNUJULEFOPUMUQEFUMUOUPUIUKQZJU
+      QACBDUIUKRUOUPUTUIUKETFTUAUBUCUDUE $.
       $( [9-Mar-2013] $) $( [24-Jul-2004] $)
   $}
 
