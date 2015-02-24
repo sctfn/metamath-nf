@@ -49874,23 +49874,48 @@ $)
        $( [24-Feb-2015] $)
   $}
 
-  ${
+  ${ $d A w $. $d A x $. $d A y $. $d A z $. $d B w $. $d B x $. $d B y $. $d B z $. $d R w $. $d R x $. $d R y $. $d R z $. $d S w $. $d S x $. $d S y $. $d S z $. $d w x $. $d w y $. $d w z $. $d x y $. $d x z $. $d y z $. 
      $( Binary relationship over a parallel product. $)
      brpprod $p |- ( A PProd ( R , S ) B <->
        E. x E. y E. z E. w ( A = <. x , y >. /\ B = <. z , w >. /\
-         ( x R z /\ y S w ) ) ) $= ? $.
+         ( x R z /\ y S w ) ) ) $=
+       ( wbr c1st ccom cv cop w3a wex wa anbi1i 19.41v exbii bitri cpprod breqi
+       c2nd ctxp wceq df-pprod brtxp brco an32 vex br1st brco2nd syl6bb pm5.32i
+       breq1 3bitr2i bitr3i bitr2i 3bitri anbi2i 3anass 3ancoma 19.42vv 3bitr4i
+       anass 2exbii exrot4 ) EFGHUAZIEFGJKZHUCKZUDZIFCLZDLZMUEZEVLVIIZEVMVJIZNZ
+       DOCOZEALZBLZMZUEZVNVSVLGIZVTVMHIZPZNZDOCOBOAOZEFVHVKGHUFUBCDEFVIVJUGVRWF
+       BOAOZDOCOWGVQWHCDVNVOVPPZPVNWBWEPZBOZAOZPZVQWHWIWLVNWIEVSJIZWCPZAOZVPPWO
+       VPPZAOWLVOWPVPAEVLGJUHQWOVPARWQWKAWQWNVPPZWCPWBWDPZBOZWCPZWKWNWCVPUIWRWT
+       WCWRWBBOZVPPWBVPPZBOWTWNXBVPBEVSAUJZUKQWBVPBRXCWSBWBVPWDWBVPWAVMVJIWDEWA
+       VMVJUOVSVTVMHXDBUJULUMUNSUPQWKWSWCPZBOXAWJXEBWJWBWCPWDPXEWBWCWDVEWBWCWDU
+       IUQSWSWCBRURUSSUPUTVNVOVPVAWHVNWJPZBOAOWMWFXFABWFVNWBWENXFWBVNWEVBVNWBWE
+       VATVFVNWJABVCTVDVFWFCDABVGTUS $.
+       $( [24-Feb-2015] $)
+  $}
+
+  ${
+     $( A subset law for parallel product. $)
+     pprodss4v $p |- PProd ( A , B ) C_ ( ( _V X. _V ) X. ( _V X. _V ) ) $= ? $.
   $}
 
   ${ $d A a $. $d a b $. $d A b $. $d a c $. $d A c $. $d a d $. $d A d $. $d a x $. $d A x $. $d B a $. $d B b $. $d b c $. $d B c $. $d b d $. $d B d $. $d b x $. $d B x $. $d c d $. $d c x $. $d d x $. 
 
      $( The domain of a parallel product. $)
      dmpprod $p |- dom PProd ( A , B ) = ( dom A X. dom B ) $=
-       ? $.
+       ( cpprod cdm cxp relxp eqbrriv ) ??ABCDADZBDZE?HIF?G $.
        $( [24-Feb-2015] $)
-
-     $( The converse of a parallel product. $)
-     cnvpprod $p |- `' PProd ( A , B ) = PProd ( `' A , `' B ) $= ? $.
   $}
+
+  $( The converse of a parallel product. $)
+  cnvpprod $p |- `' PProd ( A , B ) = PProd ( `' A , `' B ) $=
+    ( c1st ccnv ccom c2nd cin cpprod cnvco wrel wceq cvv wfo wf fof frel dfrel2
+    mp2b mpbi eqtri cnvin cxp 1stfo coeq12i coass 3eqtri 2ndfo ineq12i df-pprod
+    ctxp df-txp cnveqi 3eqtr4i ) CDZACEZEZFDZBFEZEZGZDZUNADZCEZEZUQBDZFEZEZGZAB
+    HZDVBVEHZVAUPDZUSDZGVHUPUSUAVKVDVLVGVKUODZUNDZEUNVBEZCEVDUNUOIVMVOVNCACICJZ
+    VNCKLLUBZLCMVQLCNVPUCVQLCOVQLCPRCQSUDUNVBCUEUFVLURDZUQDZEUQVEEZFEVGUQURIVRV
+    TVSFBFIFJZVSFKVQLFMVQLFNWAUGVQLFOVQLFPRFQSUDUQVEFUEUFUHTVIUTVIUOURUJUTABUIU
+    OURUKTULVJVCVFUJVHVBVEUIVCVFUKTUM $.
+    $( [24-Feb-2015] $)
 
   $( The range of a parallel product. $)
   rnpprod $p |- ran PProd ( A , B ) = ( ran A X. ran B ) $=
