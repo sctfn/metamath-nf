@@ -49302,12 +49302,6 @@ $)
   $}
 
   ${
-     $( If ` F ` and ` G ` are functions, then their tail cross product
-     	is a function over the intersection of their domains. $)
-     fntxp $p |- ( ( F Fn A /\ G Fn B ) -> ( F (x) G ) Fn ( A i^i B ) ) $= ? $.
-  $}
-
-  ${
     $d A x y $.  $d R x y $.
     $( Membership in the fixed points of a relationship. $)
     elfix $p |- ( A e. Fix R <-> A R A ) $=
@@ -49552,6 +49546,27 @@ $)
        YNYOQXRLZYNYPQXSLZTUVBHRZUVGTUUIUVIUWAUWCUWBUVGHYNYOACXAIYNYPBCXAXCYNYOY
        PXRXSXDUVBUVGHXEXFXGXHYSYCUUHYDUUIYBYRXQXKYBYRXTXKXIXLXJXMXNXO $.
        $( [18-Feb-2015] $)
+  $}
+
+  ${
+     $d a b $. $d a c $. $d a d $. $d a x $. $d a y $. $d a z $. $d b c $. $d b d $. $d b x $. $d b y $. $d b z $. $d c d $. $d c x $. $d c y $. $d c z $. $d d x $. $d d y $. $d d z $. $d F a $. $d F b $. $d F c $. $d F d $. $d F x $. $d F y $. $d F z $. $d G a $. $d G b $. $d G c $. $d G d $. $d G x $. $d G y $. $d G z $. $d x y $. $d x z $. $d y z $. 
+     $( If ` F ` and ` G ` are functions, then their tail cross product
+     	is a function over the intersection of their domains. $)
+     fntxp $p |- ( ( F Fn A /\ G Fn B ) -> ( F (x) G ) Fn ( A i^i B ) ) $=
+       ( vx vy vz va vb vc vd wfun cdm wceq wa wfn cv wbr wi wex ctxp cin brtxp
+       weq wal cop w3a anbi12i ee4anv bitr4i 3an6 bicomi 3expib im2anan9 eqeq12
+       fununiq opth syl6bb imbi2d biimprcd exp4a 3impd syl5bi exlimdvv alrimivv
+       syl alrimiv wrel reltxp dffun2 mpbiran sylibr ineq12 syl5eq anim12i an4s
+       dmtxp df-fn 3imtr4i ) CLZCMZANZOZDLZDMZBNZOZOCDUAZLZWHMZABUBZNZOZCAPZDBP
+       ZOWHWKPVTWDWBWFWMVTWDOZWIWBWFOZWLWPEQZFQZWHRZWRGQZWHRZOZFGUDZSZGUEZFUEEU
+       EZWIWPXFEFWPXEGXCWSHQZIQZUFZNZWRXHCRZWRXIDRZUGZXAJQZKQZUFZNZWRXOCRZWRXPD
+       RZUGZOZKTJTZITHTZWPXDXCXNITHTZYAKTJTZOYDWTYEXBYFHIWRWSCDUCJKWRXACDUCUHXN
+       YAHIJKUIUJWPYCXDHIWPYBXDJKYBXKXROZXLXSOZXMXTOZUGZWPXDYJYBXKXRXLXSXMXTUKU
+       LWPYGYHYIXDWPYGYHYIXDWPYHYIOZHJUDZIKUDZOZSZYGYKXDSZSVTYHYLWDYIYMVTXLXSYL
+       WRXHXOCUPUMWDXMXTYMWRXIXPDUPUMUNYGYPYOYGXDYNYKYGXDXJXQNYNWSXJXAXQUOXHXIX
+       OXPUQURUSUTVFVAVBVCVDVDVCVGVEWIWHVHXGCDVIEFGWHVJVKVLWQWJWAWEUBWKCDVQWAAW
+       EBVMVNVOVPWNWCWOWGCAVRDBVRUHWHWKVRVS $.
+       $( [24-Feb-2015] $)
   $}
 
   ${
