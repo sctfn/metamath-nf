@@ -49029,9 +49029,15 @@ $)
   $c SI_3 $. $( Triple singleton image. $)
   $c Funs $. $( Class of functions. $)
   $c Fns $. $( Function with domain relationship. $)
+  $c PProd $. $( Parallel product. $)
+  $c Cross $. $( Cross product function. $)
 
   $( Extend the definition of a class to include the tail cross product. $)
   ctxp $a class ( A (x) B ) $.
+
+  $( Extend the definition of a class to include the parallel product
+     operation. $)
+  cpprod $a class PProd ( A , B ) $.
 
   $( Extend the definition of a class to include the fixed points of a
      relationship. $)
@@ -49071,9 +49077,15 @@ $)
      relationship. $)
   cfns $a class Fns $.
 
+  $( Extend the definition of a class to include the cross product function. $)
+  ccross $a class Cross $.
+
   $( Define the tail cross product of two classes.  Definition from [Holmes],
      p. 40.  See ~ brtxp for membership. $)
   df-txp $a |- ( A (x) B ) = ( ( `' 1st o. A ) i^i ( `' 2nd o. B ) ) $.
+
+  $( Define the parallel product operation. $)
+  df-pprod $a |- PProd ( A , B ) = ( ( A o. 1st ) (x) ( B o. 2nd ) ) $.
 
   $( Define the fixed points of a relationship. $)
   df-fix $a |- Fix A = ran ( A i^i _I ) $.
@@ -49123,6 +49135,11 @@ $)
     $d f a $.
     $( Define the function with domain relationship. $)
     df-fns $a |- Fns = { <. f , a >. | f Fn a } $.
+  $}
+
+  ${ $d x y $.
+     $( Define the cross product function. $)
+     df-cross $a |- Cross = ( x e. _V , y e. _V |-> ( x X. y ) ) $. 
   $}
 
   ${
@@ -49731,31 +49748,6 @@ $)
        $( [20-Feb-2015] $)
   $}
 
-
-  ${
-    $d a b x y z $.
-    $( The function mapping ` x ` and ` y ` to their cross product is a set. $)
-    xpfnex $p |- ( x e. _V , y e. _V |-> ( x X. y ) ) e. _V $=
-      ( va vb cvv cxp csset c1st c2nd c1c cop wcel wrex wex otelins2 vex 3bitri
-      cv wa wbr vz cins2 ccnv cin csi3 cins4 cima cins3 csymdif cdif cmpt2 wceq
-      csn wel elin snex opelssetsn otsnelsi3 df-br brcnv 3bitr2i opelxp mpbiran
-      oqelins4 anbi12i op1st2nd bitri exbii elima1c df-rex 3bitr4i rexcom elxp2
-      bitr4i releqmpt2 vvex ssetex 1stex cnvex 2ndex xpex inex si3ex 1cex imaex
-      ins2ex ins4ex mpt2exlem eqeltrri ) EEFEFGUBZWJUBZWKHUCZUBZEIUCZFZUDZUEZUF
-      ZUDZJUGZUFZUDZJUGZUHUIJUGUJABEEARZBRZFZUKEABUAEEXCXFUARZUMZXDXEKZKZXCLZXG
-      CRZDRZKULZDXEMCXDMZXGXFLXMUMZXJKZXBLZDNDBUNZXNCXDMZSZDNZXKXOXRYADXRXQWKLZ
-      XQXALZSYAXQWKXAUOYCXSYDXTYCXPXIKWJLXPXEKGLXSXPXHXIWJXGUPZOXPXDXEGAPZOXMXE
-      DPZBPZUQQYDXPXHXDKZKZWTLZXTXPXHXDXEWTYHVDXLUMZYJKZWSLZCNCAUNZXNSZCNYKXTYN
-      YPCYNYMWKLZYMWRLZSYPYMWKWRUOYQYOYRXNYQYLYIKWJLYLXDKGLYOYLXPYIWJXMUPOYLXHX
-      DGYEOXLXDCPZYFUQQYRYLXPXHKKWQLXLXMXGKZKZWPLZXNYLXPXHXDWQYFVDXLXMXGWPYSYGU
-      APURUUBUUAWMLZUUAWOLZSXGXLHTZXGXMITZSXNUUAWMWOUOUUCUUEUUDUUFUUCXLXGKWLLXL
-      XGWLTUUEXLXMXGWLYGOXLXGWLUSXLXGHUTVAUUDYTWNLZXMXGWNTUUFUUDXLELUUGYSXLYTEW
-      NVBVCXMXGWNUSXMXGIUTVAVEXLXMXGYSYGVFQQVEVGVHCYJWSVIXNCXDVJVKVGVEVGVHDXJXB
-      VIXOXTDXEMYBXNCDXDXEVLXTDXEVJVGVKCDXGXDXEVMVNVOEEXCVPVPXBJWKXAWJGVQWFWFZW
-      TWSJWKWRUUHWQWPWMWOWLHVRVSWFEWNVPIVTVSWAWBWCWGWBWDWEWGWBWDWEWHWI $.
-      $( [11-Feb-2015] $)
-  $}
-
   ${
     $d f x y z p q $.
     $( The class of all functions forms a set. $)
@@ -49828,6 +49820,118 @@ $)
        UBUNABTESZFSZKBUQKUOEFBUNGCDUCUQUPBUDUQUNBTEFUEUFUGUH $.
        $( [23-Feb-2015] $)
   $}
+
+  ${ $d a w $. $d a x $. $d A x $. $d a y $. $d A y $. $d a z $. $d B y $. $d C w $. $d C x $. $d C y $. $d C z $. $d D w $. $d D x $. $d D y $. $d R a $. $d R w $. $d R x $. $d R y $. $d R z $. $d S a $. $d S w $. $d S x $. $d S y $. $d S z $. $d w x $. $d w y $. $d w z $. $d x y $. $d x z $. $d y z $. 
+     $( A quadratic relationship over a parallel product. $)
+     qrpprod $p |- ( <. A , B >. PProd ( R , S ) <. C , D >. <->
+       ( A R C /\ B S D ) ) $=
+       ( vx vy va cop wbr cvv wcel wa wb cv wceq breq1 bibi12d bitri vz vw brex
+       cpprod opexb anbi12i sylib anim12i an4 sylibr opeq1 breq1d anbi1d imbi2d
+       wi opeq2 anbi2d breq2d breq2 c1st ccom c2nd df-pprod breqi trtxp weq wex
+       ctxp brco vex opbr1st eqcom anbi1i ceqsexv opbr2nd vtocl2g imp pm5.21nii
+       exbii ) ABJZCDJZEFUDZKZALMZBLMZNZCLMZDLMZNZNZACEKZBDFKZNZWCVTLMZWALMZNWJ
+       VTWAWBUCWNWFWOWIABUECDUEUFUGWMWDWGNZWEWHNZNWJWKWPWLWQACEUCBDFUCUHWDWEWGW
+       HUIUJWFWIWCWMOZWIGPZHPZJZWAWBKZWSCEKZWTDFKZNZOZUOWIAWTJZWAWBKZWKXDNZOZUO
+       WIWRUOGHABLLWSAQZXFXJWIXKXBXHXEXIXKXAXGWAWBWSAWTUKULXKXCWKXDWSACERUMSUNW
+       TBQZXJWRWIXLXHWCXIWMXLXGVTWAWBWTBAUPULXLXDWLWKWTBDFRUQSUNXAUAPZUBPZJZWBK
+       ZWSXMEKZWTXNFKZNZOXACXNJZWBKZXCXRNZOXFUAUBCDLLXMCQZXPYAXSYBYCXOXTXAWBXMC
+       XNUKURYCXQXCXRXMCWSEUSUMSXNDQZYAXBYBXEYDXTWAXAWBXNDCUPURYDXRXDXCXNDWTFUS
+       UQSXPXAXMEUTVAZKZXAXNFVBVAZKZNZXSXPXAXOYEYGVHZKYIXAXOWBYJEFVCVDXAXMXNYEY
+       GVETYFXQYHXRYFIGVFZIPZXMEKZNZIVGZXQYFXAYLUTKZYMNZIVGYOIXAXMEUTVIYQYNIYPY
+       KYMYPGIVFYKWSWTYLGVJZHVJZVKWSYLVLTVMVSTYMXQIWSYRYLWSXMERVNTYHIHVFZYLXNFK
+       ZNZIVGZXRYHXAYLVBKZUUANZIVGUUCIXAXNFVBVIUUEUUBIUUDYTUUAUUDHIVFYTWSWTYLYR
+       YSVOWTYLVLTVMVSTUUAXRIWTYSYLWTXNFRVNTUFTVPVPVQVR $.
+       $( [24-Feb-2015] $)
+  $}
+
+  $( The parallel product of two sets is a set. $)
+  pprodexg $p |- ( ( A e. V /\ B e. W ) -> PProd ( A , B ) e. _V ) $=
+    ( wcel wa cpprod c1st ccom c2nd cvv df-pprod 1stex coexg mpan2 2ndex txpexg
+    ctxp syl2an syl5eqel ) ACEZBDEZFABGAHIZBJIZRZKABLUAUCKEZUDKEZUEKEUBUAHKEUFM
+    AHCKNOUBJKEUGPBJDKNOUCUDKKQST $.
+    $( [24-Feb-2015] $)
+
+  ${
+     pprodex.1 $e |- A e. _V $.
+     pprodex.2 $e |- B e. _V $.
+     $( The parallel product of two sets is a set. $)
+     pprodex $p |- PProd ( A , B ) e. _V $= ? $.
+  $}
+
+  ${ $d A x y $. $d B y $.
+     $( The value of the cross product function. $)
+     ovcross $p |- ( ( A e. V /\ B e. W ) -> ( A Cross B ) = ( A X. B ) ) $=
+       ( vx vy wcel cvv ccross co cxp wceq elex xpexg cv xpeq1 df-cross ovmpt2g
+       xpeq2 mpd3an3 syl2an ) ACGAHGZBHGZABIJABKZLZBDGACMBDMUBUCUDHGUEABHHNEFAB
+       HHEOZFOZKUDIAUGKHUFAUGPUGBASEFQRTUA $.
+       $( [24-Feb-2015] $)
+  $}
+
+  ${ $d x y z $.
+     $( The domain of the cross product function. $)
+     dmcross $p |- dom Cross = ( _V X. _V ) $=
+       ( vz vx vy cxp wceq wex copab cvv wcel ccross cdm vex xpex isseti pm3.2i
+       cv wa 2th opabbii eqtri cmpt2 df-cross mpt2v dmeqi dmoprab df-xp 3eqtr4i
+       copab2 ) APBPZCPZDZEZAFZBCGZUIHIZUJHIZQZBCGJKZHHDUMUQBCUMUQAUKUIUJBLZCLZ
+       MNUOUPUSUTORSURULBCAUHZKUNJVAJBCHHUKUAVABCUBBCAUKUCTUDULBCAUETBCHHUFUG
+       $.
+       $( [24-Feb-2015] $)
+
+     $( The cross product function is a function over ` ( _V X. _V ) ` $)
+     fncross $p |- Cross Fn ( _V X. _V ) $=
+       ( vz vx vy ccross cvv cxp wfn wfun wceq cv copab2 moeq funoprab df-cross
+       cdm cmpt2 mpt2v eqtri funeqi mpbir dmcross df-fn mpbir2an ) DEEFZGDHZDOU
+       DIUEAJBJCJFZIZBCAKZHUGBCAAUFLMDUHDBCEEUFPUHBCNBCAUFQRSTUADUDUBUC $.
+       $( [24-Feb-2015] $)
+  $}
+
+  ${
+     $( Binary relationship over the cross product function. $)
+     brcrossg $p |- ( ( A e. V /\ B e. W ) -> 
+       ( <. A , B >. Cross C <-> C = ( A X. B ) ) ) $=
+       ( wcel wa ccross wceq cop wbr cxp cfv eqcom df-ov eqeq1i bitri cvv elex
+       co wb opelxp wfn fncross fnbrfvb mpan sylbir syl2an syl5bb eqeq2d bitr3d
+       ovcross ) ADFZBEFZGZCABHTZIZABJZCHKZCABLZIUQURHMZCIZUOUSUQUPCIVBCUPNUPVA
+       CABHOPQUMARFZBRFZVBUSUAZUNADSBESVCVDGURRRLZFZVEABRRUBHVFUCVGVEUDVFURCHUE
+       UFUGUHUIUOUPUTCABDEULUJUK $.
+       $( [24-Feb-2015] $)
+  $}
+
+  ${
+     brcross.1 $e |- A e. _V $.
+     brcross.2 $e |- B e. _V $.
+     $( Binary relationship over the cross product function. $)
+     brcross $p |- ( <. A , B >. Cross C <-> C = ( A X. B ) ) $=
+       ( cvv wcel cop ccross wbr cxp wceq wb brcrossg mp2an ) AFGBFGABHCIJCABKL
+       MDEABCFFNO $.
+       $( [24-Feb-2015] $)
+  $}
+
+  ${
+    $d a b x y z $.
+    $( The function mapping ` x ` and ` y ` to their cross product is a set. $)
+    crossex $p |- Cross e. _V $=
+      ( vx vy va vb cvv cxp csset c1st c2nd c1c cv cop wrex wex wa otelins2 vex
+      wcel 3bitri wbr ccross cins2 ccnv cin csi3 cins4 cima cins3 csymdif cmpt2
+      vz cdif df-cross wceq csn rexcom elxp2 wel elin snex opelssetsn otsnelsi3
+      oqelins4 df-br brcnv 3bitr2i mpbiran anbi12i op1st2nd bitri exbii elima1c
+      opelxp df-rex 3bitr4i 3bitr4ri releqmpt2 eqtr4i ssetex ins2ex 1stex cnvex
+      vvex 2ndex xpex inex si3ex ins4ex 1cex imaex mpt2exlem eqeltri ) UAEEFEFG
+      UBZWMUBZWNHUCZUBZEIUCZFZUDZUEZUFZUDZJUGZUFZUDZJUGZUHUIJUGULZEUAABEEAKZBKZ
+      FZUJXGABUMABUKEEXFXJUKKZCKZDKZLUNZDXIMCXHMXNCXHMZDXIMZXKXJRXKUOZXHXILZLZX
+      FRZXNCDXHXIUPCDXKXHXIUQXMUOZXSLZXERZDNDBURZXOOZDNXTXPYCYEDYCYBWNRZYBXDRZO
+      YEYBWNXDUSYFYDYGXOYFYAXRLWMRYAXILGRYDYAXQXRWMXKUTZPYAXHXIGAQZPXMXIDQZBQZV
+      ASYGYAXQXHLZLZXCRZXOYAXQXHXIXCYKVCXLUOZYMLZXBRZCNCAURZXNOZCNYNXOYQYSCYQYP
+      WNRZYPXARZOYSYPWNXAUSYTYRUUAXNYTYOYLLWMRYOXHLGRYRYOYAYLWMXMUTPYOXQXHGYHPX
+      LXHCQZYIVASUUAYOYAXQLLWTRXLXMXKLZLZWSRZXNYOYAXQXHWTYIVCXLXMXKWSUUBYJUKQVB
+      UUEUUDWPRZUUDWRRZOXKXLHTZXKXMITZOXNUUDWPWRUSUUFUUHUUGUUIUUFXLXKLWORXLXKWO
+      TUUHXLXMXKWOYJPXLXKWOVDXLXKHVEVFUUGUUCWQRZXMXKWQTUUIUUGXLERUUJUUBXLUUCEWQ
+      VMVGXMXKWQVDXMXKIVEVFVHXLXMXKUUBYJVISSVHVJVKCYMXBVLXNCXHVNVOVJVHVJVKDXSXE
+      VLXODXIVNVOVPVQVREEXFWCWCXEJWNXDWMGVSVTVTZXCXBJWNXAUUKWTWSWPWRWOHWAWBVTEW
+      QWCIWDWBWEWFWGWHWFWIWJWHWFWIWJWKWL $.
+      $( [11-Feb-2015] $)
+  $}
+
 
 $(
 =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
@@ -51605,6 +51709,347 @@ $)
     CPQUCUDBRS $.
     $( [21-Nov-2014] $)
 
+
+  ${
+     $d A f $. $d A g $. $d B f $. $d B g $. $d C f $. $d C g $. $d D f $. $d D g $. $d f g $. 
+    $( Equinumerosity law for cross product.  Proposition 4.22(b) of
+       [Mendelson] p. 254.  (Revised by Mario Carneiro, 9-Mar-2013.) $)
+    xpen $p |- ( ( A ~~ B /\ C ~~ D ) -> ( A X. C ) ~~ ( B X. D ) ) $=
+      ( vf vg cen wbr wa cv wf1o wex cxp bren anbi12i eeanv bitr4i cpprod f1oen
+      syl exlimivv sylbi ) ABGHZCDGHZIZABEJZKZCDFJZKZIZFLELZACMZBDMZGHZUEUGELZU
+      IFLZIUKUCUOUDUPABENCDFNOUGUIEFPQUJUNEFUJULUMUFUHRZKUN?ULUMUQ?STUAUB $.
+      $( [9-Mar-2013] $) $( [24-Jul-2004] $)
+  $}
+
+$(
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+        Cardinal numbers
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+$)
+
+  $c NC $. $( The set of cardinal numbers. $)
+  $c <_c $. $( Cardinal less than or equal. $)
+  $c <c $. $( Cardinal less than. $)
+  $c Nc $. $( Cardinality operation. $)
+  $c .c $. $( Cardinal multiplication. $)
+
+  $( Extend the definition of a class to include the set of cardinal numbers. $)
+  cncs $a class NC $.
+
+  $( Extend the definition of a class to include cardinal less than or 
+     equal. $)
+  clec $a class <_c $.
+
+  $( Extend the definition of a class to include cardinal strict less than. $)
+  cltc $a class <c $.
+
+  $( Extend the definition of a class to include the cardinality operation. $)
+  cnc $a class Nc A $.
+
+  $( Extend the definition of a class to include cardinal multiplication. $)
+  cmuc $a class .c $.
+
+  $( Define the set of all cardinal numbers.  We define them as equivelance
+     classes of sets of the same size.  Definition from [Rosser], p. XXX. $)
+  df-ncs $a |- NC = ( _V /. ~~ ) $.
+
+  ${ $d x y a b $.
+     $( Define cardinal less than or equal.  Definition from [Rosser], 
+     	p. XXX. $)
+     df-lec $a |- <_c = { <. a , b >. | E. x e. a E. y e. b x C_ y } $.
+  $}
+
+  $( Define cardinal less than.  Definition from [Rosser], p. XXX. $)
+  df-ltc $a |- <c = ( <_c \ _I ) $.
+
+  $( Define the cardinality operation.  This is the unique cardinal number
+     containing a given set.  Defintion from [Rosser], p. XXX. $)
+  df-nc $a |- Nc A = [ A ] ~~ $.
+
+  ${ $d a b c x y $.
+     $( Define cardinal multiplication.  Definition from [Rosser], p. XXX. $)
+     df-muc $a |- .c = ( a e. NC , b e. NC |->
+       ( iota c ( c e. NC /\ E. x e. a E. y e. b c = Nc ( x X. y ) ) ) ) $.
+  $}
+
+  $( Cardinality equality law $)
+  nceq $p |- ( A = B -> Nc A = Nc B ) $=
+    ( wceq cen cec cnc eceq1 df-nc 3eqtr4g ) ABCADEBDEAFBFABDGAHBHI $.
+    $( [24-Feb-2015] $)
+
+  ${
+     nceqi.1 $e |- A = B $.
+     $( Equality inference for cardinality. $)
+     nceqi $p |- Nc A = Nc B $=
+       ( wceq cnc nceq ax-mp ) ABDAEBEDCABFG $.
+       $( [24-Feb-2015] $)
+  $}
+
+  ${
+     nceqd.1 $e |- ( ph -> A = B ) $.
+     $( Equality deduction for cardinality. $)
+     nceqd $p |- ( ph -> Nc A = Nc B ) $=
+       ( wceq cnc nceq syl ) ABCEBFCFEDBCGH $.
+       $( [24-Feb-2015] $)
+  $}
+
+  $( The class of all cardinal numbers is a set. $)
+  ncsex $p |- NC e. _V $=
+    ( cncs cvv cen cqs df-ncs enex vvex qsex eqeltri ) ABCDBEBCFGHI $.
+    $( [24-Feb-2015] $)
+
+  ${ $d A a b x $. $d B a b x y $. 
+     $( Binary relationship form of cardinal less than or equal. $)
+     brlecg $p |- ( ( A e. V /\ B e. W ) ->
+       ( A <_c B <-> E. x e. A E. y e. B x C_ y ) ) $=
+       ( vb va cv wss wrex clec rexeq wceq rexbidv df-lec brabg ) AIBIJZBGIZKZA
+       HIZKTACKRBDKZACKHGCDEFLTAUACMSDNTUBACRBSDMOABHGPQ $.
+       $( [24-Feb-2015] $)
+
+     brlec.1 $e |- A e. _V $.
+     brlec.2 $e |- B e. _V $.
+     $( Binary relationship form of cardinal less than or equal. $)
+     brlec $p |- ( A <_c B <-> E. x e. A E. y e. B x C_ y ) $=
+       ( cvv wcel clec wbr cv wss wrex wb brlecg mp2an ) CGHDGHCDIJAKBKLBDMACMN
+       EFABCDGGOP $.
+       $( [24-Feb-2015] $)
+  $}
+
+  ${ $d a b x y $.
+     $( Cardinal less than or equal is a relationship. $)
+     rellec $p |- Rel <_c $=
+       ( vx vy vb va cv wss wrex clec df-lec relopabi ) AEBEFBCEGADEGDCHABDCIJ
+       $.
+       $( [24-Feb-2015] $)
+  $}
+
+  ${ $d a b $. $d a t $. $d a u $. $d a x $. $d a y $. $d b t $. $d b u $. $d b x $. $d b y $. $d t u $. $d t x $. $d t y $. $d u x $. $d u y $. $d x y $. 
+     $( Cardinal less than or equal is a set. $)
+     lecex $p |- <_c e. _V $=
+       ( va vb vx vy vt vu clec csset ccom cv wrex wbr csn wex 2exbii vex bitri
+       wa exbii ssetex csi ccnv cvv rellec relco wss wceq wel 19.41vv anass w3a
+       ancom df-3an bitr4i breq1 anbi1d anbi2d ceqsex2v brssetsn anbi12i 3bitri
+       r2ex snex anbi1i 3bitr3i brlec brcnv brsset anbi2i 19.42v 19.42vv bitr2i
+       brco brsi 3bitr2i exrot4 3bitr4i eqbrriv siex coex cnvex eqeltri ) GHHUA
+       ZIZHUBZIZUCABGWFUDWDWEUECJZDJZUFZDBJZKCAJZKZEJZWKHLZFJZWJHLZRZWMWGMZUGZW
+       OWHMZUGZRZWIRZRZFNENZDNCNZWKWJGLWKWJWFLZWLCAUHZDBUHZRZWIRZDNCNXFWICDWKWJ
+       VBXEXKCDWQXBRZWIRZFNENXLFNENZWIRXEXKXLWIEFUIXMXDEFWQXBWIUJOXNXJWIXNWSXAW
+       QUKZFNENWRWKHLZWTWJHLZRZXJXLXOEFXLXBWQRXOWQXBULWSXAWQUMUNOWQXPWPRXREFWRW
+       TWGVCWHVCWSWNXPWPWMWRWKHUOUPXAWPXQXPWOWTWJHUOUQURXPXHXQXIWGWKCPZAPZUSWHW
+       JDPZBPZUSUTVAVDVEOUNCDWKWJXTYBVFXGWKWMWELZWMWJWDLZRZENXDDNCNZFNZENXFEWKW
+       JWDWEVMYEYGEYEWNWPXCDNCNZRZFNZRWNYIRZFNYGYCWNYDYJWKWMHVGYDWMWOWCLZWPRZFN
+       YJFWMWJHWCVMYMYIFYMWPYLRYIYLWPULYLYHWPYLWSXAWGWHHLZUKZDNCNYHCDWMWOHVNYOX
+       CCDYOXBYNRXCWSXAYNUMYNWIXBWGWHXSYAVHVIQOQVIQSQUTWNYIFVJYKYFFYFWQYHRYKWQX
+       CCDVKWNWPYHUJVLSVOSXDEFCDVPVAVQVRWDWEHWCTHTVSVTHTWAVTWB $.
+       $( [24-Feb-2015] $)
+  $}
+
+  $( Cardinal strict less than is a set. $)
+  ltcex $p |- <c e. _V $=
+    ( cltc clec cid cdif cvv df-ltc lecex idex difex eqeltri ) ABCDEFBCGHIJ $.
+    $( [24-Feb-2015] $)
+
+  $( The cardinality of a class is a set. $)
+  ncex $p |- Nc A e. _V $=
+    ( cnc cen cec cvv df-nc wcel enex ecexg ax-mp eqeltri ) ABACDZEAFCEGLEGHAEC
+    IJK $.
+    $( [24-Feb-2015] $)
+
+  $( The empty class is not a cardinal number. $)
+  nulnnc $p |- -. (/) e. NC $=
+    ( wceq cncs wcel eqid wne cvv cen cqs cdm dmen elqsn0 mpan df-ncs eleq2s
+      c0 wn necon2bi ax-mp ) OOAOBCZPODSOOOOEZOFGHZBGIFAOUACTJFOGKLMNQR $.
+    $( [24-Feb-2015] $)
+
+  ${ $d A x $.
+     $( Membership in the cardinals. $)
+     elncs $p |- ( A e. NC <-> E. x A = Nc x ) $=
+       ( cncs wcel cvv cen cqs cv cnc wceq df-ncs eleq2i elex ncex eleq1 mpbiri
+       wex exlimiv cec wrex elqsg df-nc eqeq2i exbii rexv bitr4i syl6bbr bitri
+       pm5.21nii ) BCDBEFGZDZBAHZIZJZAQZCUJBKLUKBEDZUOBUJMUNUPAUNUPUMEDULNBUMEO
+       PRUPUKBULFSZJZAETZUOAEBFEUAUOURAQUSUNURAUMUQBULUBUCUDURAUEUFUGUIUH $.
+       $( [24-Feb-2015] $)
+  $}
+
+  ${ $d A x $.
+    $( The cardinality of a set is a cardinal number. $)
+    ncelncs $p |- ( A e. V -> Nc A e. NC ) $=
+      ( vx wcel cnc cv wceq wex cncs elisset nceq eqcoms eximi syl elncs sylibr
+      ) ABDZAEZCFZEGZCHZRIDQSAGZCHUACABJUBTCTASASKLMNCROP $.
+      $( [24-Feb-2015] $)
+  $}
+
+  $( A set is a member of its own cardinal. $)
+  ncidg $p |- ( A e. V -> A e. Nc A ) $=
+    ( wcel cen cec cnc wbr enrflxg elec sylibr df-nc syl6eleqr ) ABCZAADEZAFMAA
+    DGANCABHAADIJAKL $.
+    $( [24-Feb-2015] $)
+
+  ${
+    ncid.1 $e |- A e. _V $.
+    $( A set is a member of its own cardinal. $)
+    ncid $p |- A e. Nc A $=
+      ( cvv wcel cnc ncidg ax-mp ) ACDAAEDBACFG $.
+      $( [24-Feb-2015] $)
+  $}
+
+  ${ $d A x $.
+    $( The cardinality of a proper class is the empty set. $)
+    ncprc $p |- ( -. A e. _V -> Nc A = (/) ) $=
+      ( vx cvv wcel wn cv cnc wal wceq cen cec ecexr df-nc eleq2s con3i alrimiv
+      c0 eq0 sylibr ) ACDZEZBFZAGZDZEZBHUCQIUAUEBUDTTUBAJKUCUBAJLAMNOPBUCRS $.
+      $( [24-Feb-2015] $)
+  $}
+
+  $( Membership in cardinality. $)
+  elnc $p |- ( A e. Nc B <-> A ~~ B ) $=
+    ( cnc wcel cvv wa cen wbr elex cec ecexr df-nc eleq2s jca brex eleq2i bitri
+    elec cer ener a1i simpr simpl ersymb syl5bb pm5.21nii ) ABCZDZAEDZBEDZFZABG
+    HZUHUIUJAUGIUJABGJZUGABGKBLZMNABGOUHBAGHZUKULUHAUMDUOUGUMAUNPABGRQUKEGBAGES
+    HUKTUAUIUJUBUIUJUCUDUEUF $.
+    $( [24-Feb-2015] $)
+
+  ${
+     $( Equality of cardinalities. $)
+     eqncg $p |- ( A e. V -> ( Nc A = Nc B <-> A ~~ B ) ) $=
+       ( wcel cvv cnc wceq cen wbr wa cec ncidg adantr eleq2 adantl mpbid df-nc
+       wb ex a1i syl6eleq ecexr syl wi brex simprd cer ener cdm dmen elex simpr
+       erth eqeq12i syl6rbbr pm5.21ndd ) ACDZBEDZAFZBFZGZABHIZUQVAURUQVAJZABHKZ
+       DURVCAUTVDVCAUSDZAUTDZUQVEVAACLMVAVEVFRUQUSUTANOPBQZUAABHUBUCSVBURUDUQVB
+       AEDZURABHUEUFTUQURVAVBRUQURJZVBAHKZVDGVAVIABHEEHEUGIVIUHTHUIEGVIUJTUQVHU
+       RACUKMUQURULUMUSVJUTVDAQVGUNUOSUP $.
+       $( [24-Feb-2015] $)
+  $}
+
+  ${
+     eqnc.1 $e |- A e. _V $.
+     $( Equality of cardinalities. $)
+     eqnc $p |- ( Nc A = Nc B <-> A ~~ B ) $=
+       ( cvv wcel cnc wceq cen wbr wb eqncg ax-mp ) ADEAFBFGABHIJCABDKL $.
+       $( [24-Feb-2015] $)
+  $}
+
+  ${ $d A y $. $d X y $.
+     $( A cardinal is equal to the cardinality of a set iff it contains
+     	the set. $)
+      ncseqnc $p |- ( A e. NC -> ( A = Nc X <-> X e. A ) ) $=
+        ( vy cncs wcel cv cnc wceq wex wb elncs cen wbr cvv cec vex eleq2 df-nc
+        ncid a1i mpbiri syl6eleq ecexr syl brex simpld cer ener dmen id eqeq12i
+        erth syl6rbbr pm5.21nii eqcom elnc 3bitr4i eqeq1 3bitr4d exlimiv sylbi
+        cdm ) ADEACFZGZHZCIABGZHZBAEZJZCAKVEVICVEVDVFHZBVDEZVGVHVJVKJVEVFVDHZBV
+        CLMZVJVKVLBNEZVMVLVCBLOZEVNVLVCVFVOVLVCVFEVCVDEVCCPZSVFVDVCQUABRZUBVCBL
+        UCUDVMVNVCNEZBVCLUEUFVNVMVOVCLOZHVLVNBVCLNNLNUGMVNUHTLVBNHVNUITVNUJVRVN
+        VPTULVFVOVDVSVQVCRUKUMUNVDVFUOBVCUPUQTAVDVFURAVDBQUSUTVA $.
+        $( [24-Feb-2015] $)
+  $}
+
+  ${ $d A a $. $d a b $. $d A b $. $d a c $. $d A c $. $d a x $. $d A x $. $d a y $. $d B b $. $d b c $. $d B c $. $d b x $. $d B x $. $d b y $. $d B y $. $d c x $. $d c y $. $d x y $. 
+     $( The value of cardinal multiplication. $)
+     mucval $p |- ( ( A e. NC /\ B e. NC ) ->
+       ( A .c B ) = 
+       ( iota c ( c e. NC /\ E. x e. A E. y e. B c = Nc ( x X. y ) ) ) ) $=
+       ( va vb cncs cv wcel cxp cnc wceq wrex wa cio cmuc rexeq anbi2d iotabidv
+       rexbidv df-muc iotaex ovmpt2 ) FGCDHHEIZHJZUEAIBIKLMZBGIZNZAFIZNZOZEPUFU
+       GBDNZACNZOZEPQUFUIACNZOZEPUJCMZULUQEURUKUPUFUIAUJCRSTUHDMZUQUOEUSUPUNUFU
+       SUIUMACUGBUHDRUASTABFGEUBUOEUCUD $.
+       $( [24-Feb-2015] $)
+  $}
+
+  ${ $d A c $. $d A d $. $d A w $. $d A x $. $d A y $. $d A z $. $d B c $. $d B d $. $d B w $. $d B x $. $d B y $. $d B z $. $d c d $. $d c w $. $d c x $. $d c y $. $d c z $. $d d w $. $d d x $. $d d y $. $d d z $. $d w x $. $d w y $. $d w z $. $d x y $. $d x z $. $d y z $. $d A a $. $d a b $. $d A b $. $d a w $. $d a x $. $d a y $. $d a z $. $d B a $. $d B b $. $d b w $. $d b x $. $d b y $. $d b z $. 
+     $( There is a unique cardinal equal to the cross product of members
+     	of two cardinals. $)
+     ncxpeu $p |- ( ( A e. NC /\ B e. NC ) ->
+       E! c e. NC E. x e. A E. y e. B c = Nc ( x X. y ) ) $=
+       ( vz vw va vb cncs wcel wa cv cnc wceq wrex wex eleq2 cen wbr vd cxp weq
+       wral wreu elncs anbi12i eeanv bitr4i vex ncid pm3.2i bi2anan9 mpbiri cvv
+       wi xpex ncelncs ax-mp eqid eqeq1 rcla4ev mp2an jctir 2eximi sylibr sylbi
+       r2ex rexcom rexbii bitri sylib reeanv 2rexbii anbi12d elnc ensymi sylan2
+       entr syl2anb xpen syl2an syl6bi exlimivv imp eqnc eqeq12 syl5ibrcom expr
+       adantlr rexlimdvv rexlimdvva syl5bir ralrimivva xpeq1 nceqd eqeq2d xpeq2
+       2rexbidv cbvrex2v syl6bb reu4 sylanbrc ) CJKZDJKZLZEMZAMZBMZUBZNZOZBDPZA
+       CPZEJPZXNUAMZFMZGMZUBZNZOZGDPZFCPZLZEUAUCZUPZUAJUDEJUDXNEJUEXFXLEJPZBDPZ
+       ACPZXOXFCXHNZOZDXINZOZLZBQAQZYIXFYKAQZYMBQZLYOXDYPXEYQACUFBDUFUGYKYMABUH
+       UIYOXHCKZXIDKZLZYGLZBQAQYIYNUUAABYNYTYGYNYTXHYJKZXIYLKZLUUBUUCXHAUJZUKXI
+       BUJZUKULYKYRUUBYMYSUUCCYJXHRDYLXIRUMUNXKJKZXKXKOZYGXJUOKUUFXHXIUUDUUEUQZ
+       XJUOURUSXKUTXLUUGEXKJXGXKXKVAVBVCVDVEYGABCDVHVFVGYIXMEJPZACPXOYHUUIACXLB
+       EDJVIVJXMAECJVIVKVLXFYFEUAJJYDXLYALZGDPBDPZFCPACPZXFXGJKXPJKLZLZYEUULXMY
+       BLZFCPACPYDUUKUUOAFCCXLYABGDDVMVNXMYBAFCCVMVKUUNUUKYEAFCCUUNYRXQCKZLZLUU
+       JYEBGDDUUNUUQYSXRDKZLZUUJYEUPZXFUUQUUSLZUUTUUMXFUVALZYEUUJXKXTOZUVBXJXSS
+       TZUVCXFUVAUVDXFCHMZNZOZDIMZNZOZLZIQHQZUVAUVDUPZXFUVGHQZUVJIQZLUVLXDUVNXE
+       UVOHCUFIDUFUGUVGUVJHIUHUIUVKUVMHIUVKUVAXHUVFKZXQUVFKZLZXIUVIKZXRUVIKZLZL
+       UVDUVGUUQUVRUVJUUSUWAUVGYRUVPUUPUVQCUVFXHRCUVFXQRVOUVJYSUVSUURUVTDUVIXIR
+       DUVIXRRVOUMUVRXHXQSTZXIXRSTZUVDUWAUVPXHUVESTZXQUVESTZUWBUVQXHUVEVPXQUVEV
+       PUWEUWDUVEXQSTUWBXQUVEVQXHUVEXQVSVRVTUVSXIUVHSTZXRUVHSTZUWCUVTXIUVHVPXRU
+       VHVPUWGUWFUVHXRSTUWCXRUVHVQXIUVHXRVSVRVTXHXQXIXRWAWBWCWDVGWEXJXSUUHWFVFX
+       GXKXPXTWGWHWJWIWKWLWMWNXNYCEUAJYEXNXPXKOZBDPACPYCYEXLUWHABCDXGXPXKVAWSUW
+       HYAXPXQXIUBZNZOABFGCDAFUCZXKUWJXPUWKXJUWIXHXQXIWOWPWQBGUCZUWJXTXPUWLUWIX
+       SXIXRXQWRWPWQWTXAXBXC $.
+       $( [24-Feb-2015] $)
+  $}
+
+  ${ $d A c $. $d A x $. $d A y $. $d B c $. $d B x $. $d B y $. $d c x $. $d c y $. $d x y $. 
+     $( Closure law for cardinal multiplicaton. $)
+     muccl $p |- ( ( A e. NC /\ B e. NC ) -> ( A .c B ) e. NC ) $=
+       ( vc vx vy cncs wcel wa cmuc co cxp cnc wceq wrex cio mucval wreu ncxpeu
+       cv reiotacl syl eqeltrd ) AFGBFGHZABIJCSZFGUDDSESKLMEBNDANZHCOZFDEABCPUC
+       UECFQUFFGDEABCRUECFTUAUB $.
+       $( [24-Feb-2015] $)
+  $}
+
+  ${ $d A c $. $d A x $. $d A y $. $d B c $. $d B x $. $d B y $. $d C c $. $d c x $. $d C x $. $d c y $. $d C y $. $d x y $. 
+     $( Equality to cardinal multiplication. $)
+     eqmuc $p |- ( ( A e. NC /\ B e. NC /\ C e. NC ) ->
+       ( ( A .c B ) = C <-> E. x e. A E. y e. B C = Nc ( x X. y ) ) ) $=
+       ( vc cncs wcel w3a cmuc co wceq cv cxp cnc wrex wa cio mucval 3adant3 wb
+       eqeq1d wreu simp3 ncxpeu eqeq1 2rexbidv reiota2 syl2anc bitr4d ) CGHZDGH
+       ZEGHZIZCDJKZELFMZGHUPAMBMNOZLZBDPACPZQFRZELZEUQLZBDPACPZUNUOUTEUKULUOUTL
+       UMABCDFSTUBUNUMUSFGUCZVCVAUAUKULUMUDUKULVDUMABCDFUETUSVCFGEUPELURVBABCDU
+       PEUQUFUGUHUIUJ $.
+       $( [24-Feb-2015] $)
+  $}
+
+  ${ $d a b c x y z w $.
+     $( Cardinal multiplication is a set. $)
+     mucex $p |- .c e. _V $=
+       ( va vb vc vx vy vz vw cncs cvv csset c1c cv wcel wa wex 3bitri otelins2
+       cop vex bitri cmuc cxp cins2 ccnv cins3 ccross csi3 cin cima cid csymdif
+       cins4 crn ccompl cdif cnc wceq wrex cio cmpt2 df-muc weq wb wal cab cuni
+       wel csn eluniab dfiota2 eleq2i wbr elrn df-br elin opex otelins3 opelcnv
+       opelssetsn elrn2 elsymdif snex opelxp mpbiran2 ncseqnc 2rexbidv oqelins4
+       anbi1i elima1c otsnelsi3 brcnv brcross 3bitr2i anbi12i exbii xpex opeq1d
+       wn sneq eleq1d ceqsexv df-rex 3bitr4i rexcom pm5.32i ideq bibi12i notbii
+       syl6rbbr elcompl alex 3bitr4ri releqmpt2 eqtr4i ncsex ssetex ins3ex vvex
+       cnvex ins2ex crossex si3ex ins4ex inex 1cex idex symdifex rnex mpt2exlem
+       imaex complex eqeltri ) UAHHUBIUBJUCZJUDZUEZHIUBZYMUCZYQUFUDZUGZULZYQUHZ
+       KUIZULZUHZKUIZULZUHZKUIZUHZUCZUCZUJUEZUKZUMZUNZUHZUMZUEUKKUIUOZIUAABHHCL
+       ZHMZUUSDLZELZUBZUPUQZEBLZURDALZURZNZCUSZUTUURDEABCVAABFHHUUQUVIFLZUVHCGV
+       BZVCZCVDZGVEVFZMFGVGZUVMNZGOZUVJUVIMUVJVHZUVFUVERZRZUUQMZUVMGUVJVIUVIUVN
+       UVJUVHCGVJVKUWAGLZUVTUUPVLZGOUVQGUVTUUPVMUWCUVPGUWCUWBUVTRZUUPMUWDYOMZUW
+       DUUOMZNUVPUWBUVTUUPVNUWDYOUUOVOUWEUVOUWFUVMUWEUWBUVRRYNMUVRUWBRJMUVOUWBU
+       VRUVSYNUVFUVEASZBSZVPZVQUWBUVRJVRUVJUWBFSZGSZVSPUWDUUNMZWRUVLWRZCOZWRUWF
+       UVMUWLUWNUWLUUSUWDRZUUMMZCOUWNCUWDUUMVTUWPUWMCUWPUWOUUKMZUWOUULMZVCZWRUW
+       MUWOUUKUULWAUWSUVLUWQUVHUWRUVKUWQUUSUVTRUUJMUUSUVSRZUUIMZUVHUUSUWBUVTUUJ
+       UWKQUUSUVRUVSUUIUVJWBZQUXAUWTYPMZUWTUUHMZNUUTUXDNUVHUWTYPUUHVOUXCUUTUXDU
+       XCUUTUVSIMUWIUUSUVSHIWCWDWHUUTUXDUVGUUTUVGUVCUUSMZEUVEURDUVFURZUXDUUTUVD
+       UXEDEUVFUVEUUSUVCWEWFUXDUXEDUVFURZEUVEURZUXFUVBVHZUWTRZUUGMZEOEBVGZUXGNZ
+       EOUXDUXHUXKUXMEUXKUXJYQMZUXJUUFMZNUXMUXJYQUUFVOUXNUXLUXOUXGUXNUXIUVSRYMM
+       UXIUVERJMUXLUXIUUSUVSYMCSZQUXIUVFUVEJUWGQUVBUVEESZUWHVSPUXOUXIUUSUVFRZRZ
+       UUEMZUXGUXIUUSUVFUVEUUEUWHWGUVAVHZUXSRZUUDMZDODAVGZUXENZDOUXTUXGUYCUYEDU
+       YCUYBYQMZUYBUUCMZNUYEUYBYQUUCVOUYFUYDUYGUXEUYFUYAUXRRYMMUYAUVFRJMUYDUYAU
+       XIUXRYMUVBWBZQUYAUUSUVFJUXPQUVAUVFDSZUWGVSPUYGUYAUXIUUSRZRZUUBMZUVCVHZUU
+       SRZJMZUXEUYAUXIUUSUVFUUBUWGWGUYLUVRUYKRZUUAMZFOUVJUVCUQZUVRUUSRZJMZNZFOU
+       YOFUYKUUAWIUYQVUAFUYQUYPYTMZUYPYQMZNVUAUYPYTYQVOVUBUYRVUCUYTVUBUVRUYAUXI
+       RRYSMZUYRUVRUYAUXIUUSYSUXPWGVUDUVJUVAUVBRZRYRMUVJVUEYRVLZUYRUVJUVAUVBYRU
+       WJUYIUXQWJUVJVUEYRVNVUFVUEUVJUFVLUYRUVJVUEUFWKUVAUVBUVJUYIUXQWLTWMTVUCUV
+       RUYJRYMMUYTUVRUYAUYJYMUVAWBQUVRUXIUUSJUYHQTWNTWOUYTUYOFUVCUVAUVBUYIUXQWP
+       ZUYRUYSUYNJUYRUVRUYMUUSUVJUVCWSWQWTXAPUVCUUSVUGUXPVSPWNTWODUXSUUDWIUXEDU
+       VFXBXCTWNTWOEUWTUUGWIUXGEUVEXBXCUXEEDUVEUVFXDTXIXEPPUWRUUSUWBRUJMUUSUWBU
+       JVLUVKUUSUWBUVTUJUVRUVSUXBUWIVPZVQUUSUWBUJVNUUSUWBUWKXFWMXGXHTWOTXHUWDUU
+       NUWBUVTUWKVUHVPXJUVLCXKXCWNPWOTXLXMXNHHUUQXOXOUUPYOUUOYNJXPXSXQUUNUUMUUK
+       UULUUJUUIYPUUHHIXOXRWPUUGKYQUUFYMJXPXTXTZUUEUUDKYQUUCVUIUUBUUAKYTYQYSYRU
+       FYAXSYBYCVUIYDYEYJYCYDYEYJYCYDYEYJYDXTXTUJYFXQYGYHYKYDYHYIYL $.
+       $( [24-Feb-2015] $)
+  $}
 
 $(
 #*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#
