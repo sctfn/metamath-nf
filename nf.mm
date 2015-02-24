@@ -50016,11 +50016,14 @@ $)
        $( [24-Feb-2015] $)
   $}
 
-  ${
-    $( The parallel product of two bijections is a bijection. $)
-    f1opprod $p |- ( ( F : A -1-1-onto-> C /\ G : B -1-1-onto-> D ) ->
-       PProd ( F , G ) : ( A X. B ) -1-1-onto-> ( C X. D ) ) $= ? $.
-  $}
+  $( The parallel product of two bijections is a bijection. $)
+  f1opprod $p |- ( ( F : A -1-1-onto-> C /\ G : B -1-1-onto-> D ) ->
+     PProd ( F , G ) : ( A X. B ) -1-1-onto-> ( C X. D ) ) $=
+    ( wfn ccnv wa cpprod cxp wf1o fnpprod cnvpprod fneq1i sylibr anim12i an4s
+    dff1o4 anbi12i 3imtr4i ) EAGZEHZCGZIZFBGZFHZDGZIZIEFJZABKZGZUJHZCDKZGZIZA
+    CELZBDFLZIUKUNUJLUBUFUDUHUPUBUFIULUDUHIZUOABEFMUSUCUGJZUNGUOCDUCUGMUNUMUT
+    EFNOPQRUQUEURUIACESBDFSTUKUNUJSUA $.
+    $( [24-Feb-2015] $)
 
   ${
     $d A x y $.  $d B y $.
