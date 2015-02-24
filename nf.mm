@@ -52380,6 +52380,33 @@ $)
        $( [24-Feb-2015] $)
   $}
 
+  ${
+     ncdisjun.1 $e |- A e. _V $.
+     ncdisjun.2 $e |- B e. _V $.
+     $( Cardinality of disjoint union of two sets. $)
+     ncdisjun $p |- ( ( A i^i B ) = (/) -> Nc ( A u. B ) = ( Nc A +c Nc B ) ) $= ? $.
+  $}
+
+  $( Cardinal zero is the cardinality of the empty set. $)
+  0cncnul $p |- 0c = Nc (/) $=
+    ( vx c0 cen cec cv wbr cab cnc c0c dfec2 df-nc wceq wcel en0 ensym 3bitr4ri
+    el0c abbi2i 3eqtr4ri ) BCDBAEZCFZAGBHIABCJBKUAAITBCFTBLUATIMTNBTOTQPRS $.
+    $( [24-Feb-2015] $)
+
+  $( Cardinal zero is a cardinal number. $)
+  0cnc $p |- 0c e. NC $=
+    ( vx c0c cncs wcel cv cnc wceq wex c0 0cncnul 0ex eqeq2d cla4ev ax-mp elncs
+    nceq mpbir ) BCDBAEZFZGZAHZBIFZGZUAJTUCAIKRIGSUBBRIPLMNABOQ $.
+    $( [24-Feb-2015] $)
+
+  ${
+     $( A finite cardinal number is a cardinal number. $)
+     nnnc $p |- ( A e. Nn -> A e. NC ) $=
+       ( vx vn cv cncs wcel c0c c1c cplc cab cvv abid2 ncsex eqeltri eleq1 0cnc
+       finds ) BDZEFZGEFCDZEFTHIZEFAEFBCASBJEKBELMNRGEORTEORUAEORAEOP?Q $.
+       $( [24-Feb-2015] $)
+  $}
+
 $(
 #*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#
        Appendix:  Typesetting definitions for the tokens in this file
