@@ -49287,6 +49287,27 @@ $)
     $( [24-Feb-2015] $)
 
   ${
+     $d A a $. $d a b $. $d A b $. $d a x $. $d A x $. $d a y $. $d A y $. $d B a $. $d B b $. $d b x $. $d B x $. $d b y $. $d B y $. $d C a $. $d C b $. $d C x $. $d C y $. $d x y $. 
+     $( Restriction distributes over tail cross product. $)
+     restxp $p |- ( ( A (x) B ) |` C ) = ( ( A |` C ) (x) ( B |` C ) ) $=
+       ( vx vy va vb ctxp cres cv wbr w3a wa 3anass anbi1i bitri 3bitr4i 2exbii
+       wex brres relres reltxp cop wceq wcel anandir anbi2i anass brtxp 19.41vv
+       biid 3anbi123i eqbrriv ) DEABHZCIZACIZBCIZHZUNCUAUPUQUBEJZFJZGJZUCUDZDJZ
+       UTAKZVCVABKZLZVCCUEZMZGSFSZVBVDVGMZVEVGMZLZGSFSZVCUSUOKZVCUSURKZVHVLFGVB
+       VDVEMZVGMZMZVBVJVKMZMVHVLVQVSVBVDVEVGUFUGVHVBVPMZVGMVRVFVTVGVBVDVENOVBVP
+       VGUHPVBVJVKNQRVCUSUNKZVGMVFGSFSZVGMVNVIWAWBVGFGVCUSABUIOVCUSUNCTVFVGFGUJ
+       QVOVBVCUTUPKZVCVAUQKZLZGSFSVMFGVCUSUPUQUIWEVLFGVBVBWCVJWDVKVBUKVCUTACTVC
+       VABCTULRPQUM $.
+       $( [24-Feb-2015] $)
+  $}
+
+  ${
+     $( If ` F ` and ` G ` are functions, then their tail cross product
+     	is a function over the intersection of their domains. $)
+     fntxp $p |- ( ( F Fn A /\ G Fn B ) -> ( F (x) G ) Fn ( A i^i B ) ) $= ? $.
+  $}
+
+  ${
     $d A x y $.  $d R x y $.
     $( Membership in the fixed points of a relationship. $)
     elfix $p |- ( A e. Fix R <-> A R A ) $=
@@ -51909,16 +51930,39 @@ $)
 
 
   ${
-    $d x y z w v u A $.  $d x y z w v u B $.  $d x y z w v u C $.
+    $d A a $. $d a b $. $d A b $. $d a c $. $d A c $. $d a t $. $d A t $. $d a u $. $d A u $. $d a x $. $d A x $. $d a y $. $d B a $. $d B b $. $d b c $. $d B c $. $d b t $. $d B t $. $d b u $. $d B u $. $d b x $. $d B x $. $d b y $. $d C a $. $d C b $. $d C c $. $d c t $. $d C t $. $d c u $. $d C u $. $d c x $. $d C x $. $d c y $. $d t u $. $d t x $. $d u x $. $d u y $. $d x y $. $d x z $. $d y z $. 
     xpassen.1 $e |- A e. _V $.
     xpassen.2 $e |- B e. _V $.
     xpassen.3 $e |- C e. _V $.
     $( Associative law for equinumerosity of cross product.  Proposition
        4.22(e) of [Mendelson] p. 254. $)
     xpassen $p |- ( ( A X. B ) X. C ) ~~ ( A X. ( B X. C ) ) $=
-      ( cxp c1st ccom c2nd ctxp cres wf1o cen wbr 1stex coex 2ndex txpex xpex
-      resex f1oen ax-mp ) ABGZCGZABCGGZHHIZJHIZJKZKZUELZMUEUFNO?UEUFUKUJUEUGUIH
-      HPPQUHJJHRPQRSSUDCABDETFTUAUBUC $.
+      ( vx vy vt va vb vc vu c1st wbr cvv wceq wrex cop bitri vz ccom c2nd ctxp
+      cxp cres wf1o cen cima wf1 wss wf cv wmo wal wfn dffn2 mpbi wa gen2 breq1
+      weq wi mo4 mpbir ax-gen dff12 mpbir2an xpss ssv xpss12 mp2an f1ores rexxp
+      wb wcel opeq1 breq1d rexbidv w3a wex biid vex opex brco1st opbr1st equcom
+      brtxp 3bitri opbr2nd eqcom 3anbi123i 3anrot 2exbii eqeq2d ceqsex2v rexbii
+      opeq2 2rexbii elima elxp2 3bitr4i eqriv ax-mp 1stex coex 2ndex txpex xpex
+      f1oeq3 resex f1oen ) ABUEZCUEZABCUEZUEZNNUBZUCNUBZUCUDZUDZXNUFZUGZXNXPUHO
+      XNXTXNUIZYAUGZYBPPUEZPUEZPXTUJZXNYFUKZYDYGYFPXTULZGUMZHUMZXTOZGUNZHUOXTYF
+      UPYI?YFXTUQURYMHYMYLUAUMZYKXTOZUSGUAVBVCZUAUOGUOYPGUA?UTYLYOGUAYJYNYKXTVA
+      VDVEVFGHYFPXTVGVHXMYEUKCPUKYHABVICVJXMYECPVKVLYFPXNXTVMVLYCXPQYDYBVOGYCXP
+      IUMZYJXTOZIXNRZYJJUMZKUMZLUMZSZSZQZLCRZKBRZJARZYJYCVPYJXPVPZYSMUMZUUBSZYJ
+      XTOZLCRZMXMRZUUHYRUULIMLXMCYQUUKYJXTVAVNUUNYTUUASZUUBSZYJXTOZLCRZKBRJARUU
+      HUUMUURMJKABUUJUUOQZUULUUQLCUUSUUKUUPYJXTUUJUUOUUBVQVRVSVNUURUUFJKABUUQUU
+      ELCUUQYJYQUUJSZQZUUPYQXQOZUUPUUJXSOZVTZMWAIWAZUUEIMUUPYJXQXSWHUVEIJVBZUUJ
+      UUCQZUVAVTZMWAIWAUUEUVDUVHIMUVDUVAUVFUVGVTUVHUVAUVAUVBUVFUVCUVGUVAWBUVBUU
+      OYQNOJIVBUVFUUOUUBYQNYTUUAJWCZKWCZWDZLWCZWEYTUUAYQUVIUVJWFJIWGWIUVCUUJYJY
+      KSZQZUUPYJXROZUUPYKUCOZVTZHWAGWAZUVGGHUUPUUJXRUCWHUVRGKVBZHLVBZUVNVTZHWAG
+      WAUVGUVQUWAGHUVQUVNUVSUVTVTUWAUVNUVNUVOUVSUVPUVTUVNWBUVOUUOYJUCOZUVSUUOUU
+      BYJUCUVKUVLWEUWBKGVBUVSYTUUAYJUVIUVJWJKGWGTTUVPLHVBUVTUUOUUBYKUVKUVLWJUUB
+      YKWKTWLUVNUVSUVTWMTWNUVNUUJUUAYKSZQUVGGHUUAUUBUVJUVLUVSUVMUWCUUJYJUUAYKVQ
+      WOUVTUWCUUCUUJYKUUBUUAWRWOWPTTWLUVAUVFUVGWMTWNUVAYJYTUUJSZQUUEIMYTUUCUVIU
+      UAUUBUVJUVLWDUVFUUTUWDYJYQYTUUJVQWOUVGUWDUUDYJUUJUUCYTWRWOWPTTWQWSTTIYJXT
+      XNWTUUIYJYTYQSZQZIXORZJARUUHJIYJAXOXAUWGUUGJAUWFUUEIKLBCYQUUCQUWEUUDYJYQU
+      UCYTWRWOVNWQTXBXCYCXPXNYAXJXDURXNXPYAXTXNXQXSNNXEXEXFXRUCUCNXGXEXFXGXHXHX
+      MCABDEXIFXIXKXLXD $.
+      $( [24-Feb-2015] $)
   $}
 
 $(
