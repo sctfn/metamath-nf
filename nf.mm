@@ -49898,11 +49898,24 @@ $)
      pprodss4v $p |- PProd ( A , B ) C_ ( ( _V X. _V ) X. ( _V X. _V ) ) $= ? $.
   $}
 
-  ${ $d A a $. $d a b $. $d A b $. $d a c $. $d A c $. $d a d $. $d A d $. $d a x $. $d A x $. $d B a $. $d B b $. $d b c $. $d B c $. $d b d $. $d B d $. $d b x $. $d B x $. $d c d $. $d c x $. $d d x $. 
-
+  ${ $d A a $. $d a b $. $d A b $. $d a c $. $d A c $. $d a d $. $d A d $. $d a x $. $d A x $. $d B a $. $d B b $. $d b c $. $d B c $. $d b d $. $d B d $. $d b x $. $d B x $. $d c d $. $d c x $. $d d x $. $d a t $. $d A t $. $d a u $. $d A u $. $d b t $. $d B t $. $d b u $. $d B u $. $d c t $. $d c u $. $d d t $. $d d u $. $d t u $. $d t x $. $d u x $. 
      $( The domain of a parallel product. $)
      dmpprod $p |- dom PProd ( A , B ) = ( dom A X. dom B ) $=
-       ( cpprod cdm cxp relxp eqbrriv ) ??ABCDADZBDZE?HIF?G $.
+       ( va vb vx vc vd vt vu cdm cxp cvv wss cv cop wbr wa wex vex bitri ax-mp
+       cpprod wrel pprodss4v dmss dmxpss sstri relxp relss mp2 wceq opex isseti
+       19.41v mpbiran 2exbii wcel df-br eldm w3a brpprod weq 3anass opth anbi1i
+       eqcom 19.42vv df-3an bicomi breq1 anbi1d anbi2d 2exbidv exbii brxp eeanv
+       ceqsex2v exrot3 anbi12i bitr4i 3bitr4i eqbrriv ) CDABUBZJZAJZBJZKZWDLLKZ
+       MWHUCWDUCWDWHWHKZJZWHWCWIMWDWJMABUDWCWIUEUAWHWHUFUGLLUHWDWHUIUJWEWFUHENZ
+       FNZGNZOZUKZCNZWLAPZDNZWMBPZQZQZERZGRFRZWTGRFRZWPWRWDPZWPWRWGPZXBWTFGXBWO
+       ERWTEWNWLWMFSGSULUMWOWTEUNUOUPXEWPWROZWDUQZXCWPWRWDURXHXGWKWCPZERZXCEXGW
+       CUSXJXAGRFRZERXCXIXKEXIXGHNZINZOZUKZWOXLWLAPZXMWMBPZQZUTZGRFRZIRHRZXKHIF
+       GXGWKABVAYAHCVBZIDVBZWOXRQZGRFRZUTZIRHRXKXTYFHIXTYBYCQZYDQZGRFRZYFXSYHFG
+       XSXOYDQYHXOWOXRVCXOYGYDXOXNXGUKYGXGXNVFXLXMWPWRVDTVETUPYIYGYEQZYFYGYDFGV
+       GYFYJYBYCYEVHVITTUPYEWOWQXQQZQZGRFRXKHIWPWRCSDSYBYDYLFGYBXRYKWOYBXPWQXQX
+       LWPWLAVJVKVLVMYCYLXAFGYCYKWTWOYCXQWSWQXMWRWMBVJVLVLVMVQTTVNXAEFGVRTTTXFW
+       PWEUQZWRWFUQZQZXDWPWRWEWFVOXDWQFRZWSGRZQYOWQWSFGVPYMYPYNYQFWPAUSGWRBUSVS
+       VTVTWAWB $.
        $( [24-Feb-2015] $)
   $}
 
