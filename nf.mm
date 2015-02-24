@@ -52381,10 +52381,32 @@ $)
   $}
 
   ${
+     $d A p $. $d A q $. $d A r $. $d A x $. $d B p $. $d B q $. $d B r $. $d B x $. $d p q $. $d p x $. $d q x $. $d r x $. 
      ncdisjun.1 $e |- A e. _V $.
      ncdisjun.2 $e |- B e. _V $.
      $( Cardinality of disjoint union of two sets. $)
-     ncdisjun $p |- ( ( A i^i B ) = (/) -> Nc ( A u. B ) = ( Nc A +c Nc B ) ) $= ? $.
+     ncdisjun $p |- ( ( A i^i B ) = (/) -> Nc ( A u. B ) = ( Nc A +c Nc B ) ) $=
+       ( vr vp vq cin c0 wceq cv wcel cen wbr elnc wf1o ccnv wa cima adantl cun
+       cnc cplc wex bren f1ocnv imaundi cdm crn imadmrn a1i f1odm imaeq2d f1ofo
+       wfo forn syl 3eqtr3d syl5eqr cres wf1 wss f1of1 ssun1 f1ores sylancl vex
+       vx cnvex resex f1oen 3syl sylibr ssun2 wfun wf df-f1 simprbi imaeq2 ima0
+       imain syl6eq adantr eqtr3d eladdci syl3anc eqeltrrd ex syl5 exlimdv wrex
+       syl5bi eladdc simplrl sylib simplrr simpr unen syl22anc breq1 syl5ibrcom
+       simpll expimpd rexlimdvva impbid syl5bb eqrdv ) ABHZIJZVHABUAZUBZAUBZBUB
+       ZUCZVHKZXKLXOXJMNZXIXOXNLZXOXJOXIXPXQXPXOXJEKZPZEUDXIXQXOXJEUEXIXSXQEXSX
+       JXOXRQZPZXIXQXOXJXRUFXIYAXQXIYARZXTASZXTBSZUAZXOXNYAYEXOJXIYAYEXTXJSZXOX
+       TABUGYAXTXTUHZSZXTUIZYFXOYHYIJYAXTUJUKYAYGXJXTXJXOXTULUMYAXJXOXTUOYIXOJX
+       JXOXTUNXJXOXTUPUQURUSTYBYCXLLZYDXMLZYCYDHZIJYEXNLYAYJXIYAYCAMNZYJYAAYCXT
+       AUTZPZYCAYNQZPYMYAXJXOXTVAZAXJVBYOXJXOXTVCZABVDXJXOAXTVEVFAYCYNUFYCAYPYN
+       XTAXREVGVIZCVJVIVKVLYCAOVMTYBYDBMNZYKYAYTXIYABYDXTBUTZPZYDBUUAQZPYTYAYQB
+       XJVBUUBYRBAVNXJXOBXTVEVFBYDUUAUFYDBUUCUUAXTBYSDVJVIVKVLTYDBOVMYBXTXHSZYL
+       IYAUUDYLJZXIYAYQXTQVOZUUEYRYQXJXOXTVPUUFXJXOXTVQVRABXTWAVLTXIUUDIJYAXIUU
+       DXTISIXHIXTVSXTVTWBWCWDYCYDXLXMWEWFWGWHWIWJWLXQFKZGKZHIJZXOUUGUUHUAZJZRZ
+       GXMWKFXLWKXIXPXOXLXMFGWMXIUULXPFGXLXMXIUUGXLLZUUHXMLZRZRZUUIUUKXPUUPUUIR
+       ZXPUUKUUJXJMNZUUQUUGAMNZUUHBMNZUUIXIUURUUQUUMUUSXIUUMUUNUUIWNUUGAOWOUUQU
+       UNUUTXIUUMUUNUUIWPUUHBOWOUUPUUIWQXIUUOUUIXBUUGAUUHBWRWSXOUUJXJMWTXAXCXDW
+       LXEXFXG $.
+       $( [24-Feb-2015] $)
   $}
 
   $( Cardinal zero is the cardinality of the empty set. $)
@@ -52399,7 +52421,7 @@ $)
     nceq mpbir ) BCDBAEZFZGZAHZBIFZGZUAJTUCAIKRIGSUBBRIPLMNABOQ $.
     $( [24-Feb-2015] $)
 
-  ${
+  ${ $d A x n $.
      $( A finite cardinal number is a cardinal number. $)
      nnnc $p |- ( A e. Nn -> A e. NC ) $=
        ( vx vn cv cncs wcel c0c c1c cplc cab cvv abid2 ncsex eqeltri eleq1 0cnc
