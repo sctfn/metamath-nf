@@ -46651,9 +46651,12 @@ $)
     $( [20-Oct-2013] $)
   $}
 
-  ${ $d A x $. $d A y $. $d A z $. $d B x $. $d B y $. $d B z $. $d C x $. $d C y $. $d C z $. $d F x $. $d F y $. $d F z $. $d x y $. $d x z $. $d y z $. 
-     $( Implicational form of part of the definition of a function. $)
-     fununiq $p |- ( ( Fun F /\ A F B /\ A F C ) -> B = C ) $=
+  ${
+    $d A x $.  $d A y $.  $d A z $.  $d B x $.  $d B y $.  $d B z $.  $d C x $.
+    $d C y $.  $d C z $.  $d F x $.  $d F y $.  $d F z $.  $d x y $.  $d x z $.
+    $d y z $.
+    $( Implicational form of part of the definition of a function. $)
+    fununiq $p |- ( ( Fun F /\ A F B /\ A F C ) -> B = C ) $=
        ( vx vy vz cvv wcel wa wbr w3a wceq brex 3adant1 wi cv wal wb breq12 weq
        wfun anim12i anandi sylibr dffun2 simprbi 3adant3 3adant2 anbi12d eqeq12
        wrel imbi12d cla43gv syl5 exp4a 3impd 3expb mpcom ) AHIZBHIZCHIZJJZDUBZA
