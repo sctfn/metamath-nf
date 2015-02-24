@@ -32132,9 +32132,10 @@ Image_k ( ( Ins3_k ~ ( ( Ins3_k SSet_k i^i Ins2_k SSet_k ) "_k
     PSUCUEQR $.
     $( [13-Feb-2015] $)
 
-  ${ $d A x $.
-     $( A singleton is finite. $)
-     snfi $p |- { A } e. Fin $=
+  ${
+    $d A x $.
+    $( A singleton is finite. $)
+    snfi $p |- { A } e. Fin $=
        ( vx cvv wcel csn cfin cnnc wrex c1c 1cnnc snel1cg eleq2 rcla4ev sylancr
        cv elfin sylibr wn c0 wceq snprc 0fin eleq1 mpbiri sylbi pm2.61i ) ACDZA
        EZFDZUGUHBOZDZBGHZUIUGIGDUHIDZULJACKUKUMBIGUJIUHLMNBUHPQUGRUHSTZUIAUAUNU
@@ -46547,10 +46548,13 @@ $)
        $( [23-Feb-2015] $)
   $}
 
-  ${ $d A a $. $d a b $. $d A b $. $d a x $. $d A x $. $d a y $. $d A y $. $d B a $. $d B b $. $d b x $. $d B x $. $d b y $. $d B y $. $d x y $. 
+  ${
+    $d A a $.  $d a b $.  $d A b $.  $d a x $.  $d A x $.  $d a y $.  $d A y $.
+    $d B a $.  $d B b $.  $d b x $.  $d B x $.  $d b y $.  $d B y $.  $d x y $.
 
-     $( Binary relationship of ` Swap ` . $)
-     brswap $p |- ( A Swap B <-> E. x E. y ( A = <. x , y >. /\ B = <. y , x >. ) ) $=
+    $( Binary relationship of ` Swap ` . $)
+    brswap $p |- ( A Swap B <-> E. x E. y ( A = <. x , y >. /\ B = <. y , x >.
+        ) ) $=
        ( va vb cswap cvv wcel wa cv cop wceq wex vex eleq1 mpbiri eqeq1 2exbidv
        opex wbr brex anim12i exlimivv anbi1d anbi2d df-swap brabg pm5.21nii ) C
        DGUACHIZDHIZJZCAKZBKZLZMZDUNUMLZMZJZBNANZCDGUBUSULABUPUJURUKUPUJUOHIUMUN
@@ -46560,9 +46564,10 @@ $)
        $( [23-Feb-2015] $)
   $}
 
-  ${ $d a b x y $.
-     $( The converse of ` Swap ` is ` Swap ` . $)
-     cnvswap $p |- `' Swap = Swap $=
+  ${
+    $d a b x y $.
+    $( The converse of ` Swap ` is ` Swap ` . $)
+    cnvswap $p |- `' Swap = Swap $=
        ( va vb vy vx cswap ccnv relcnv relswap cv cop wceq wex wbr ancom 2exbii
        wa brcnv brswap excom 3bitri 3bitr4i eqbrriv ) ABEFZEEGHBIZCIZDIZJKZAIZU
        FUEJKZPZCLDLZUIUGPZCLDLUHUDUCMZUHUDEMUJULDCUGUINOUMUDUHEMUJDLCLUKUHUDEQC
@@ -46570,9 +46575,10 @@ $)
        $( [23-Feb-2015] $)
   $}
 
-  ${ $d p q r x y z w $.
-     $( ` Swap ` is a bijection over all ordered pairs. $)
-     swapf1o $p |- Swap : ( _V X. _V ) -1-1-onto-> ( _V X. _V ) $=
+  ${
+    $d p q r x y z w $.
+    $( ` Swap ` is a bijection over all ordered pairs. $)
+    swapf1o $p |- Swap : ( _V X. _V ) -1-1-onto-> ( _V X. _V ) $=
        ( vp vq vr vx vy vz vw cvv cswap wfn wceq cv wbr wa weq wal cop mpbir2an
        wex brswap cxp wf1o ccnv wfun cdm wi relswap anbi12i ee4anv bitr4i eqtr2
        wrel ancom opth 3bitr4i sylib eqeq12 biimprd mpan9 exlimivv sylbi ax-gen
@@ -46597,11 +46603,13 @@ $)
       $( [23-Feb-2015] $)
   $}
 
-  ${ $d A x $. $d A y $. $d A z $. $d B x $. $d B y $. $d C x $. $d C y $. $d C z $. $d D x $. $d D y $. $d x y $. $d x z $. $d y z $. 
-     xpnedisj.1 $e |- C e. _V $.
-     xpnedisj.2 $e |- C =/= D $.
-     $( Cross products with non-equal singletons are disjoint. $)
-     xpnedisj $p |- ( ( A X. { C } ) i^i ( B X. { D } ) ) = (/) $=
+  ${
+    $d A x $.  $d A y $.  $d A z $.  $d B x $.  $d B y $.  $d C x $.  $d C y $.
+    $d C z $.  $d D x $.  $d D y $.  $d x y $.  $d x z $.  $d y z $.
+    xpnedisj.1 $e |- C e. _V $.
+    xpnedisj.2 $e |- C =/= D $.
+    $( Cross products with non-equal singletons are disjoint. $)
+    xpnedisj $p |- ( ( A X. { C } ) i^i ( B X. { D } ) ) = (/) $=
        ( vx vy vz csn cxp cin c0 wceq cv wcel wn disj cop wrex eqeq2d rexbii wa
        elxp2 opeq2 rexsn bitri wne df-ne mpbi elsni intnan opelxp syl6bb mtbiri
        mto eleq1 rexlimivw sylbi mprgbir ) ACJZKZBDJZKZLMNGOZVDPZQZGVBGVBVDRVEV
@@ -46612,19 +46620,18 @@ $)
   $}
 
   ${
-     opfv1st.1 $e |- A e. _V $.
-     opfv1st.2 $e |- B e. _V $.    
- 
-     $( The value of the ` 1st ` function on an ordered pair. $)
-     opfv1st $p |- ( 1st ` <. A , B >. ) = A $=
+    opfv1st.1 $e |- A e. _V $.
+    opfv1st.2 $e |- B e. _V $.
+    $( The value of the ` 1st ` function on an ordered pair. $)
+    opfv1st $p |- ( 1st ` <. A , B >. ) = A $=
        ( cop c1st cfv wceq wbr eqid opbr1st mpbir wfun cdm wcel wb cvv cxp mp2b
        1stfo wfo wf fof ffun opelxp mpbir2an fdm eleqtrri funbrfvb mp2an ) ABEZ
        FGAHZUKAFIZUMAAHAJABACDKLFMZUKFNZOULUMPQQRZQFUAZUPQFUBZUNTUPQFUCZUPQFUDS
        UKUPUOUKUPOAQOBQOCDABQQUEUFUQURUOUPHTUSUPQFUGSUHUKAFUIUJL $.
        $( [23-Feb-2015] $)
 
-     $( The value of the ` 2nd ` function on an ordered pair. $)
-     opfv2nd $p |- ( 2nd ` <. A , B >. ) = B $=
+    $( The value of the ` 2nd ` function on an ordered pair. $)
+    opfv2nd $p |- ( 2nd ` <. A , B >. ) = B $=
        ( cop c2nd cfv wceq wbr eqid opbr2nd mpbir wfun cdm wb cvv cxp wfo 2ndfo
        wcel wf fof ffun mp2b opelxp mpbir2an ax-mp fdmi eleqtrri funbrfvb mp2an
        ) ABEZFGBHZULBFIZUNBBHBJABBCDKLFMZULFNZTUMUNOPPQZPFRZUQPFUAZUOSUQPFUBZUQ
@@ -46632,10 +46639,11 @@ $)
        $( [23-Feb-2015] $)
   $}
 
-  ${ $d A x y $. $d B x y $. $d C x y $.
-  $( Reconstruction of a member of a cross product in terms of its ordered pair
-     components. $)
-  1st2nd2 $p |- ( A e. ( B X. C ) -> A = <. ( 1st ` A ) , ( 2nd ` A ) >. ) $=
+  ${
+    $d A x y $.  $d B x y $.  $d C x y $.
+    $( Reconstruction of a member of a cross product in terms of its ordered
+       pair components. $)
+    1st2nd2 $p |- ( A e. ( B X. C ) -> A = <. ( 1st ` A ) , ( 2nd ` A ) >. ) $=
     ( vx vy cxp wcel cv cop wceq wrex c1st cfv c2nd elxp2 opfv1st opfv2nd fveq2
     vex rexlimivw opeq12i eqcomi id opeq12d 3eqtr4a sylbi ) ABCFGADHZEHZIZJZECK
     ZDBKAALMZANMZIZJZDEABCOUKUODBUJUOECUJUIUILMZUINMZIZAUNURUIUPUGUQUHUGUHDSZES
@@ -48997,15 +49005,16 @@ $)
       $( [12-May-2014] $) $( [27-Jul-2004] $)
   $}
 
-  ${ $d x y z w $.
-     $( Alternate definition of ` Swap ` as an operator abstraction. $)
-     dfswap3 $p |- Swap = { <. <. x , y >. , z >. | z = <. y , x >. } $=
+  ${
+    $d x y z w $.
+    $( Alternate definition of ` Swap ` as an operator abstraction. $)
+    dfswap3 $p |- Swap = { <. <. x , y >. , z >. | z = <. y , x >. } $=
        ( vw cswap cv cop wceq wa wex copab copab2 df-swap dfoprab2 eqtr4i ) EDF
        AFZBFZGHCFQPGHZIBJAJDCKRABCLDCABMRABCDNO $.
        $( [23-Feb-2015] $)
 
-     $( Alternate definition of ` Swap ` as an operator mapping. $)
-     dfswap4 $p |- Swap = ( x e. _V , y e. _V |-> <. y , x >. ) $=
+    $( Alternate definition of ` Swap ` as an operator mapping. $)
+    dfswap4 $p |- Swap = ( x e. _V , y e. _V |-> <. y , x >. ) $=
        ( vz cswap cv cop wceq copab2 cvv cmpt2 dfswap3 mpt2v eqtr4i ) DCEBEAEFZ
        GABCHABIINJABCKABCNLM $.
        $( [23-Feb-2015] $)
@@ -49137,9 +49146,10 @@ $)
     df-fns $a |- Fns = { <. f , a >. | f Fn a } $.
   $}
 
-  ${ $d x y $.
-     $( Define the cross product function. $)
-     df-cross $a |- Cross = ( x e. _V , y e. _V |-> ( x X. y ) ) $. 
+  ${
+    $d x y $.
+    $( Define the cross product function. $)
+    df-cross $a |- Cross = ( x e. _V , y e. _V |-> ( x X. y ) ) $.
   $}
 
   ${
@@ -49827,9 +49837,14 @@ $)
        $( [23-Feb-2015] $)
   $}
 
-  ${ $d a w $. $d a x $. $d A x $. $d a y $. $d A y $. $d a z $. $d B y $. $d C w $. $d C x $. $d C y $. $d C z $. $d D w $. $d D x $. $d D y $. $d R a $. $d R w $. $d R x $. $d R y $. $d R z $. $d S a $. $d S w $. $d S x $. $d S y $. $d S z $. $d w x $. $d w y $. $d w z $. $d x y $. $d x z $. $d y z $. 
-     $( A quadratic relationship over a parallel product. $)
-     qrpprod $p |- ( <. A , B >. PProd ( R , S ) <. C , D >. <->
+  ${
+    $d a w $.  $d a x $.  $d A x $.  $d a y $.  $d A y $.  $d a z $.  $d B y $.
+    $d C w $.  $d C x $.  $d C y $.  $d C z $.  $d D w $.  $d D x $.  $d D y $.
+    $d R a $.  $d R w $.  $d R x $.  $d R y $.  $d R z $.  $d S a $.  $d S w $.
+    $d S x $.  $d S y $.  $d S z $.  $d w x $.  $d w y $.  $d w z $.  $d x y $.
+    $d x z $.  $d y z $.
+    $( A quadratic relationship over a parallel product. $)
+    qrpprod $p |- ( <. A , B >. PProd ( R , S ) <. C , D >. <->
        ( A R C /\ B S D ) ) $=
        ( vx vy va cop wbr cvv wcel wa wb cv wceq breq1 bibi12d bitri vz vw brex
        cpprod opexb anbi12i sylib anim12i an4 sylibr opeq1 breq1d anbi1d imbi2d
@@ -49858,25 +49873,29 @@ $)
     $( [24-Feb-2015] $)
 
   ${
-     pprodex.1 $e |- A e. _V $.
-     pprodex.2 $e |- B e. _V $.
-     $( The parallel product of two sets is a set. $)
-     pprodex $p |- PProd ( A , B ) e. _V $=
+    pprodex.1 $e |- A e. _V $.
+    pprodex.2 $e |- B e. _V $.
+    $( The parallel product of two sets is a set. $)
+    pprodex $p |- PProd ( A , B ) e. _V $=
        ( cvv wcel cpprod pprodexg mp2an ) AEFBEFABGEFCDABEEHI $.
        $( [24-Feb-2015] $)
   $}
 
   ${
-     $( Parallel product is a relationship. $)
-     relpprod $p |- Rel PProd ( A , B ) $=
+    $( Parallel product is a relationship. $)
+    relpprod $p |- Rel PProd ( A , B ) $=
        ( cpprod wrel c1st ccom c2nd ctxp reltxp df-pprod releqi mpbir ) ABCZDAE
        FZBGFZHZDNOIMPABJKL $.
        $( [24-Feb-2015] $)
   $}
 
-  ${ $d A w $. $d A x $. $d A y $. $d A z $. $d B w $. $d B x $. $d B y $. $d B z $. $d R w $. $d R x $. $d R y $. $d R z $. $d S w $. $d S x $. $d S y $. $d S z $. $d w x $. $d w y $. $d w z $. $d x y $. $d x z $. $d y z $. 
-     $( Binary relationship over a parallel product. $)
-     brpprod $p |- ( A PProd ( R , S ) B <->
+  ${
+    $d A w $.  $d A x $.  $d A y $.  $d A z $.  $d B w $.  $d B x $.  $d B y $.
+    $d B z $.  $d R w $.  $d R x $.  $d R y $.  $d R z $.  $d S w $.  $d S x $.
+    $d S y $.  $d S z $.  $d w x $.  $d w y $.  $d w z $.  $d x y $.  $d x z $.
+    $d y z $.
+    $( Binary relationship over a parallel product. $)
+    brpprod $p |- ( A PProd ( R , S ) B <->
        E. x E. y E. z E. w ( A = <. x , y >. /\ B = <. z , w >. /\
          ( x R z /\ y S w ) ) ) $=
        ( wbr c1st ccom cv cop w3a wex wa anbi1i 19.41v exbii bitri cpprod breqi
@@ -49893,9 +49912,13 @@ $)
        $( [24-Feb-2015] $)
   $}
 
-  ${ $d A a $. $d a b $. $d A b $. $d a c $. $d A c $. $d a d $. $d A d $. $d a x $. $d A x $. $d a y $. $d A y $. $d B a $. $d B b $. $d b c $. $d B c $. $d b d $. $d B d $. $d b x $. $d B x $. $d b y $. $d B y $. $d c d $. $d c x $. $d c y $. $d d x $. $d d y $. $d x y $. 
-     $( A subset law for parallel product. $)
-     pprodss4v $p |- PProd ( A , B ) C_ ( ( _V X. _V ) X. ( _V X. _V ) ) $=
+  ${
+    $d A a $.  $d a b $.  $d A b $.  $d a c $.  $d A c $.  $d a d $.  $d A d $.
+    $d a x $.  $d A x $.  $d a y $.  $d A y $.  $d B a $.  $d B b $.  $d b c $.
+    $d B c $.  $d b d $.  $d B d $.  $d b x $.  $d B x $.  $d b y $.  $d B y $.
+    $d c d $.  $d c x $.  $d c y $.  $d d x $.  $d d y $.  $d x y $.
+    $( A subset law for parallel product. $)
+    pprodss4v $p |- PProd ( A , B ) C_ ( ( _V X. _V ) X. ( _V X. _V ) ) $=
        ( vx vy va vb vc vd cvv cxp cv cop wcel wal wceq wbr wex opelxp mpbir2an
        vex cpprod wss wi wrel wb relpprod ssrel ax-mp w3a brpprod bitr3i opeq12
        wa df-br syl6eqel 3adant3 exlimivv sylbir ax-gen mpgbir ) ABUAZIIJZVBJZU
@@ -49906,9 +49929,14 @@ $)
        $( [24-Feb-2015] $)
   $}
 
-  ${ $d A a $. $d a b $. $d A b $. $d a c $. $d A c $. $d a d $. $d A d $. $d a x $. $d A x $. $d B a $. $d B b $. $d b c $. $d B c $. $d b d $. $d B d $. $d b x $. $d B x $. $d c d $. $d c x $. $d d x $. $d a t $. $d A t $. $d a u $. $d A u $. $d b t $. $d B t $. $d b u $. $d B u $. $d c t $. $d c u $. $d d t $. $d d u $. $d t u $. $d t x $. $d u x $. 
-     $( The domain of a parallel product. $)
-     dmpprod $p |- dom PProd ( A , B ) = ( dom A X. dom B ) $=
+  ${
+    $d A a $.  $d a b $.  $d A b $.  $d a c $.  $d A c $.  $d a d $.  $d A d $.
+    $d a x $.  $d A x $.  $d B a $.  $d B b $.  $d b c $.  $d B c $.  $d b d $.
+    $d B d $.  $d b x $.  $d B x $.  $d c d $.  $d c x $.  $d d x $.  $d a t $.
+    $d A t $.  $d a u $.  $d A u $.  $d b t $.  $d B t $.  $d b u $.  $d B u $.
+    $d c t $.  $d c u $.  $d d t $.  $d d u $.  $d t u $.  $d t x $.  $d u x $.
+    $( The domain of a parallel product. $)
+    dmpprod $p |- dom PProd ( A , B ) = ( dom A X. dom B ) $=
        ( va vb vx vc vd vt vu cdm cxp cvv wss cv cop wbr wa wex vex bitri ax-mp
        cpprod wrel pprodss4v dmss dmxpss sstri relxp relss mp2 wceq opex isseti
        19.41v mpbiran 2exbii wcel df-br eldm w3a brpprod weq 3anass opth anbi1i
@@ -49945,23 +49973,69 @@ $)
     $( [24-Feb-2015] $)
 
   ${
-     $( The parallel product of two bijections is a bijection. $)
-     f1opprod $p |- ( ( F : A -1-1-onto-> C /\ G : B -1-1-onto-> D ) ->
+    $d A a $.  $d a b $.  $d A b $.  $d a c $.  $d A c $.  $d a d $.  $d A d $.
+    $d a e $.  $d A e $.  $d a f $.  $d A f $.  $d a g $.  $d A g $.  $d a h $.
+    $d A h $.  $d a x $.  $d A x $.  $d a y $.  $d A y $.  $d a z $.  $d A z $.
+    $d B a $.  $d B b $.  $d b c $.  $d B c $.  $d b d $.  $d B d $.  $d b e $.
+    $d B e $.  $d b f $.  $d B f $.  $d b g $.  $d B g $.  $d b h $.  $d B h $.
+    $d b x $.  $d B x $.  $d b y $.  $d B y $.  $d b z $.  $d B z $.  $d c d $.
+    $d c e $.  $d c f $.  $d c g $.  $d c h $.  $d c x $.  $d c y $.  $d c z $.
+    $d d e $.  $d d f $.  $d d g $.  $d d h $.  $d d x $.  $d d y $.  $d d z $.
+    $d e f $.  $d e g $.  $d e h $.  $d e x $.  $d e y $.  $d e z $.  $d F a $.
+    $d F b $.  $d F c $.  $d F d $.  $d F e $.  $d F f $.  $d f g $.  $d F g $.
+    $d f h $.  $d F h $.  $d f x $.  $d F x $.  $d f y $.  $d F y $.  $d f z $.
+    $d F z $.  $d G a $.  $d G b $.  $d G c $.  $d G d $.  $d G e $.  $d G f $.
+    $d G g $.  $d g h $.  $d G h $.  $d g x $.  $d G x $.  $d g y $.  $d G y $.
+    $d g z $.  $d G z $.  $d h x $.  $d h y $.  $d h z $.  $d x y $.  $d x z $.
+    $d y z $.
+    $( Functionhood law for parallel product. $)
+    fnpprod $p |- ( ( F Fn A /\ G Fn B ) -> PProd ( F , G ) Fn ( A X. B ) ) $=
+       ( vy va vb vc vd ve vf vg vh wa wceq cv wbr wi wal wex vx vz cpprod wfun
+       wfn cdm cxp weq cop w3a ee4anv 2exbii brpprod 3bitr4ri fnfun wrel dffun2
+       anbi12i simprbi ax-4 a4s 3syl im2anan9 opth 3imtr4g exp3a breq1 bi2anan9
+       an4 wb imbi1d sylbi biimprd syl5com com23 imp eqeq2 imbi2d biimprcd syl6
+       3impd ex eqeq1 3anbi1d adantr adantl imbi12d 3impia imp3a syl5bi alrimiv
+       exlimdvv alrimivv mpbiran sylibr dmpprod fndm xpeq12 syl2an syl5eq df-fn
+       relpprod sylanbrc ) CAUEZDBUEZNZCDUCZUDZXGUFZABUGZOXGXJUEXFUAPZEPZXGQZXK
+       UBPZXGQZNZEUBUHZRZUBSZESUASZXHXFXSUAEXFXRUBXPXKFPZGPZUIZOZXLHPZIPZUIZOZY
+       AYECQZYBYFDQZNZUJZXKJPZKPZUIZOZXNLPZMPZUIZOZYMYQCQZYNYRDQZNZUJZNZMTLTZIT
+       HTZKTJTZGTFTZXFXQYLITHTZUUDMTLTZNZKTJTZGTFTUUJGTFTZUUKKTJTZNUUIXPUUJUUKF
+       GJKUKUUHUUMFGUUGUULJKYLUUDHILMUKULULXMUUNXOUUOFGHIXKXLCDUMJKLMXKXNCDUMUR
+       UNXFUUHXQFGXFUUGXQJKXFUUFXQHIXFUUEXQLMXFYLUUDXQXFYKYCYOOZYTUUCUJZYGXNOZR
+       ZRZYLUUDXQRZXFYKUUSXFYKNZUUPYTUUCUURUVBUUPUUCYGYSOZRZYTUUCUURRZRXFYKUUPU
+       VDRXFUUPYKUVDXFYMYECQZYNYFDQZNZUVDRZUUPYKUVDRZXFUVHUUCUVCXFUVFUUANZUVGUU
+       BNZNHLUHZIMUHZNUVHUUCNUVCXDUVKUVMXEUVLUVNXDCUDZUVKUVMRZLSZHSZJSZUVPACUOU
+       VOCUPUVSJHLCUQUSUVRUVPJUVQUVPHUVPLUTVAVAVBXEDUDZUVLUVNRZMSZISZKSZUWABDUO
+       UVTDUPUWDKIMDUQUSUWCUWAKUWBUWAIUWAMUTVAVAVBVCUVFUVGUUAUUBVIYEYFYQYRVDVEV
+       FUUPUVJUVIUUPFJUHZGKUHZNZUVJUVIVJYAYBYMYNVDUWGYKUVHUVDUWEYIUVFUWFYJUVGYA
+       YMYECVGYBYNYFDVGVHVKVLVMVNVOVPYTUVEUVDYTUURUVCUUCXNYSYGVQVRVSVTWAWBYDYHY
+       KUUTUVARYDYHNZUUTYKUVAUWHYKUVARUUTUWHUVAUUSYKUWHUUDUUQXQUURYDUUDUUQVJYHY
+       DYPUUPYTUUCXKYCYOWCWDWEYHXQUURVJYDXLYGXNWCWFWGVRVMVOWHVNWIWLWLWLWLWJWKWM
+       XHXGUPXTCDXBUAEUBXGUQWNWOXFXICUFZDUFZUGZXJCDWPXDUWIAOUWJBOUWKXJOXEACWQBD
+       WQUWIAUWJBWRWSWTXGXJXAXC $.
+       $( [24-Feb-2015] $)
+  $}
+
+  ${
+    $( The parallel product of two bijections is a bijection. $)
+    f1opprod $p |- ( ( F : A -1-1-onto-> C /\ G : B -1-1-onto-> D ) ->
        PProd ( F , G ) : ( A X. B ) -1-1-onto-> ( C X. D ) ) $= ? $.
   $}
 
-  ${ $d A x y $. $d B y $.
-     $( The value of the cross product function. $)
-     ovcross $p |- ( ( A e. V /\ B e. W ) -> ( A Cross B ) = ( A X. B ) ) $=
+  ${
+    $d A x y $.  $d B y $.
+    $( The value of the cross product function. $)
+    ovcross $p |- ( ( A e. V /\ B e. W ) -> ( A Cross B ) = ( A X. B ) ) $=
        ( vx vy wcel cvv ccross co cxp wceq elex xpexg cv xpeq1 df-cross ovmpt2g
        xpeq2 mpd3an3 syl2an ) ACGAHGZBHGZABIJABKZLZBDGACMBDMUBUCUDHGUEABHHNEFAB
        HHEOZFOZKUDIAUGKHUFAUGPUGBASEFQRTUA $.
        $( [24-Feb-2015] $)
   $}
 
-  ${ $d x y z $.
-     $( The domain of the cross product function. $)
-     dmcross $p |- dom Cross = ( _V X. _V ) $=
+  ${
+    $d x y z $.
+    $( The domain of the cross product function. $)
+    dmcross $p |- dom Cross = ( _V X. _V ) $=
        ( vz vx vy cxp wceq wex copab cvv wcel ccross cdm vex xpex isseti pm3.2i
        cv wa 2th opabbii eqtri cmpt2 df-cross mpt2v dmeqi dmoprab df-xp 3eqtr4i
        copab2 ) APBPZCPZDZEZAFZBCGZUIHIZUJHIZQZBCGJKZHHDUMUQBCUMUQAUKUIUJBLZCLZ
@@ -49969,8 +50043,8 @@ $)
        $.
        $( [24-Feb-2015] $)
 
-     $( The cross product function is a function over ` ( _V X. _V ) ` $)
-     fncross $p |- Cross Fn ( _V X. _V ) $=
+    $( The cross product function is a function over ` ( _V X. _V ) ` $)
+    fncross $p |- Cross Fn ( _V X. _V ) $=
        ( vz vx vy ccross cvv cxp wfn wfun wceq cv copab2 moeq funoprab df-cross
        cdm cmpt2 mpt2v eqtri funeqi mpbir dmcross df-fn mpbir2an ) DEEFZGDHZDOU
        DIUEAJBJCJFZIZBCAKZHUGBCAAUFLMDUHDBCEEUFPUHBCNBCAUFQRSTUADUDUBUC $.
@@ -49978,8 +50052,8 @@ $)
   $}
 
   ${
-     $( Binary relationship over the cross product function. $)
-     brcrossg $p |- ( ( A e. V /\ B e. W ) -> 
+    $( Binary relationship over the cross product function. $)
+    brcrossg $p |- ( ( A e. V /\ B e. W ) -> 
        ( <. A , B >. Cross C <-> C = ( A X. B ) ) ) $=
        ( wcel wa ccross wceq cop wbr cxp cfv eqcom df-ov eqeq1i bitri cvv elex
        co wb opelxp wfn fncross fnbrfvb mpan sylbir syl2an syl5bb eqeq2d bitr3d
@@ -49990,10 +50064,10 @@ $)
   $}
 
   ${
-     brcross.1 $e |- A e. _V $.
-     brcross.2 $e |- B e. _V $.
-     $( Binary relationship over the cross product function. $)
-     brcross $p |- ( <. A , B >. Cross C <-> C = ( A X. B ) ) $=
+    brcross.1 $e |- A e. _V $.
+    brcross.2 $e |- B e. _V $.
+    $( Binary relationship over the cross product function. $)
+    brcross $p |- ( <. A , B >. Cross C <-> C = ( A X. B ) ) $=
        ( cvv wcel cop ccross wbr cxp wceq wb brcrossg mp2an ) AFGBFGABHCIJCABKL
        MDEABCFFNO $.
        $( [24-Feb-2015] $)
@@ -51583,9 +51657,9 @@ $)
     $( [23-Feb-2015] $)
 
   ${
-     enrflx.1 $e |- A e. _V $.
-     $( Equinumerosity is reflexive. $)
-     enrflx $p |- A ~~ A $=
+    enrflx.1 $e |- A e. _V $.
+    $( Equinumerosity is reflexive. $)
+    enrflx $p |- A ~~ A $=
        ( cvv wcel cen wbr enrflxg ax-mp ) ACDAAEFBACGH $.
        $( [23-Feb-2015] $)
   $}
@@ -51803,7 +51877,8 @@ $)
 
 
   ${
-     $d A f $. $d A g $. $d B f $. $d B g $. $d C f $. $d C g $. $d D f $. $d D g $. $d f g $. 
+    $d A f $.  $d A g $.  $d B f $.  $d B g $.  $d C f $.  $d C g $.  $d D f $.
+    $d D g $.  $d f g $.
     $( Equinumerosity law for cross product.  Proposition 4.22(b) of
        [Mendelson] p. 254.  (Revised by Mario Carneiro, 9-Mar-2013.) $)
     xpen $p |- ( ( A ~~ B /\ C ~~ D ) -> ( A X. C ) ~~ ( B X. D ) ) $=
@@ -51826,10 +51901,11 @@ $)
   $c Nc $. $( Cardinality operation. $)
   $c .c $. $( Cardinal multiplication. $)
 
-  $( Extend the definition of a class to include the set of cardinal numbers. $)
+  $( Extend the definition of a class to include the set of cardinal
+     numbers. $)
   cncs $a class NC $.
 
-  $( Extend the definition of a class to include cardinal less than or 
+  $( Extend the definition of a class to include cardinal less than or
      equal. $)
   clec $a class <_c $.
 
@@ -51843,45 +51919,47 @@ $)
   cmuc $a class .c $.
 
   $( Define the set of all cardinal numbers.  We define them as equivelance
-     classes of sets of the same size.  Definition from [Rosser], p. XXX. $)
+     classes of sets of the same size.  Definition from [Rosser], p.  XXX. $)
   df-ncs $a |- NC = ( _V /. ~~ ) $.
 
-  ${ $d x y a b $.
-     $( Define cardinal less than or equal.  Definition from [Rosser], 
-     	p. XXX. $)
-     df-lec $a |- <_c = { <. a , b >. | E. x e. a E. y e. b x C_ y } $.
+  ${
+    $d x y a b $.
+    $( Define cardinal less than or equal.  Definition from [Rosser], p.
+       XXX. $)
+    df-lec $a |- <_c = { <. a , b >. | E. x e. a E. y e. b x C_ y } $.
   $}
 
-  $( Define cardinal less than.  Definition from [Rosser], p. XXX. $)
+  $( Define cardinal less than.  Definition from [Rosser], p.  XXX. $)
   df-ltc $a |- <c = ( <_c \ _I ) $.
 
   $( Define the cardinality operation.  This is the unique cardinal number
-     containing a given set.  Defintion from [Rosser], p. XXX. $)
+     containing a given set.  Defintion from [Rosser], p.  XXX. $)
   df-nc $a |- Nc A = [ A ] ~~ $.
 
-  ${ $d a b c x y $.
-     $( Define cardinal multiplication.  Definition from [Rosser], p. XXX. $)
-     df-muc $a |- .c = ( a e. NC , b e. NC |->
+  ${
+    $d a b c x y $.
+    $( Define cardinal multiplication.  Definition from [Rosser], p.  XXX. $)
+    df-muc $a |- .c = ( a e. NC , b e. NC |->
        ( iota c ( c e. NC /\ E. x e. a E. y e. b c = Nc ( x X. y ) ) ) ) $.
   $}
 
-  $( Cardinality equality law $)
+  $( Cardinality equality law. $)
   nceq $p |- ( A = B -> Nc A = Nc B ) $=
     ( wceq cen cec cnc eceq1 df-nc 3eqtr4g ) ABCADEBDEAFBFABDGAHBHI $.
     $( [24-Feb-2015] $)
 
   ${
-     nceqi.1 $e |- A = B $.
-     $( Equality inference for cardinality. $)
-     nceqi $p |- Nc A = Nc B $=
+    nceqi.1 $e |- A = B $.
+    $( Equality inference for cardinality. $)
+    nceqi $p |- Nc A = Nc B $=
        ( wceq cnc nceq ax-mp ) ABDAEBEDCABFG $.
        $( [24-Feb-2015] $)
   $}
 
   ${
-     nceqd.1 $e |- ( ph -> A = B ) $.
-     $( Equality deduction for cardinality. $)
-     nceqd $p |- ( ph -> Nc A = Nc B ) $=
+    nceqd.1 $e |- ( ph -> A = B ) $.
+    $( Equality deduction for cardinality. $)
+    nceqd $p |- ( ph -> Nc A = Nc B ) $=
        ( wceq cnc nceq syl ) ABCEBFCFEDBCGH $.
        $( [24-Feb-2015] $)
   $}
@@ -51891,34 +51969,39 @@ $)
     ( cncs cvv cen cqs df-ncs enex vvex qsex eqeltri ) ABCDBEBCFGHI $.
     $( [24-Feb-2015] $)
 
-  ${ $d A a b x $. $d B a b x y $. 
-     $( Binary relationship form of cardinal less than or equal. $)
-     brlecg $p |- ( ( A e. V /\ B e. W ) ->
+  ${
+    $d A a b x $.  $d B a b x y $.
+    $( Binary relationship form of cardinal less than or equal. $)
+    brlecg $p |- ( ( A e. V /\ B e. W ) ->
        ( A <_c B <-> E. x e. A E. y e. B x C_ y ) ) $=
        ( vb va cv wss wrex clec rexeq wceq rexbidv df-lec brabg ) AIBIJZBGIZKZA
        HIZKTACKRBDKZACKHGCDEFLTAUACMSDNTUBACRBSDMOABHGPQ $.
        $( [24-Feb-2015] $)
 
-     brlec.1 $e |- A e. _V $.
-     brlec.2 $e |- B e. _V $.
-     $( Binary relationship form of cardinal less than or equal. $)
-     brlec $p |- ( A <_c B <-> E. x e. A E. y e. B x C_ y ) $=
+    brlec.1 $e |- A e. _V $.
+    brlec.2 $e |- B e. _V $.
+    $( Binary relationship form of cardinal less than or equal. $)
+    brlec $p |- ( A <_c B <-> E. x e. A E. y e. B x C_ y ) $=
        ( cvv wcel clec wbr cv wss wrex wb brlecg mp2an ) CGHDGHCDIJAKBKLBDMACMN
        EFABCDGGOP $.
        $( [24-Feb-2015] $)
   $}
 
-  ${ $d a b x y $.
-     $( Cardinal less than or equal is a relationship. $)
-     rellec $p |- Rel <_c $=
+  ${
+    $d a b x y $.
+    $( Cardinal less than or equal is a relationship. $)
+    rellec $p |- Rel <_c $=
        ( vx vy vb va cv wss wrex clec df-lec relopabi ) AEBEFBCEGADEGDCHABDCIJ
        $.
        $( [24-Feb-2015] $)
   $}
 
-  ${ $d a b $. $d a t $. $d a u $. $d a x $. $d a y $. $d b t $. $d b u $. $d b x $. $d b y $. $d t u $. $d t x $. $d t y $. $d u x $. $d u y $. $d x y $. 
-     $( Cardinal less than or equal is a set. $)
-     lecex $p |- <_c e. _V $=
+  ${
+    $d a b $.  $d a t $.  $d a u $.  $d a x $.  $d a y $.  $d b t $.  $d b u $.
+    $d b x $.  $d b y $.  $d t u $.  $d t x $.  $d t y $.  $d u x $.  $d u y $.
+    $d x y $.
+    $( Cardinal less than or equal is a set. $)
+    lecex $p |- <_c e. _V $=
        ( va vb vx vy vt vu clec csset ccom cv wrex wbr csn wex 2exbii vex bitri
        wa exbii ssetex csi ccnv cvv rellec relco wss wceq wel 19.41vv anass w3a
        ancom df-3an bitr4i breq1 anbi1d anbi2d ceqsex2v brssetsn anbi12i 3bitri
@@ -51954,9 +52037,10 @@ $)
       c0 wn necon2bi ax-mp ) OOAOBCZPODSOOOOEZOFGHZBGIFAOUACTJFOGKLMNQR $.
     $( [24-Feb-2015] $)
 
-  ${ $d A x $.
-     $( Membership in the cardinals. $)
-     elncs $p |- ( A e. NC <-> E. x A = Nc x ) $=
+  ${
+    $d A x $.
+    $( Membership in the cardinals. $)
+    elncs $p |- ( A e. NC <-> E. x A = Nc x ) $=
        ( cncs wcel cvv cen cqs cv cnc wceq df-ncs eleq2i elex ncex eleq1 mpbiri
        wex exlimiv cec wrex elqsg df-nc eqeq2i exbii rexv bitr4i syl6bbr bitri
        pm5.21nii ) BCDBEFGZDZBAHZIZJZAQZCUJBKLUKBEDZUOBUJMUNUPAUNUPUMEDULNBUMEO
@@ -51964,7 +52048,8 @@ $)
        $( [24-Feb-2015] $)
   $}
 
-  ${ $d A x $.
+  ${
+    $d A x $.
     $( The cardinality of a set is a cardinal number. $)
     ncelncs $p |- ( A e. V -> Nc A e. NC ) $=
       ( vx wcel cnc cv wceq wex cncs elisset nceq eqcoms eximi syl elncs sylibr
@@ -51986,7 +52071,8 @@ $)
       $( [24-Feb-2015] $)
   $}
 
-  ${ $d A x $.
+  ${
+    $d A x $.
     $( The cardinality of a proper class is the empty set. $)
     ncprc $p |- ( -. A e. _V -> Nc A = (/) ) $=
       ( vx cvv wcel wn cv cnc wal wceq cen cec ecexr df-nc eleq2s con3i alrimiv
@@ -52003,8 +52089,8 @@ $)
     $( [24-Feb-2015] $)
 
   ${
-     $( Equality of cardinalities. $)
-     eqncg $p |- ( A e. V -> ( Nc A = Nc B <-> A ~~ B ) ) $=
+    $( Equality of cardinalities. $)
+    eqncg $p |- ( A e. V -> ( Nc A = Nc B <-> A ~~ B ) ) $=
        ( wcel cvv cnc wceq cen wbr wa cec ncidg adantr eleq2 adantl mpbid df-nc
        wb ex a1i syl6eleq ecexr syl wi brex simprd cer ener cdm dmen elex simpr
        erth eqeq12i syl6rbbr pm5.21ndd ) ACDZBEDZAFZBFZGZABHIZUQVAURUQVAJZABHKZ
@@ -52015,17 +52101,18 @@ $)
   $}
 
   ${
-     eqnc.1 $e |- A e. _V $.
-     $( Equality of cardinalities. $)
-     eqnc $p |- ( Nc A = Nc B <-> A ~~ B ) $=
+    eqnc.1 $e |- A e. _V $.
+    $( Equality of cardinalities. $)
+    eqnc $p |- ( Nc A = Nc B <-> A ~~ B ) $=
        ( cvv wcel cnc wceq cen wbr wb eqncg ax-mp ) ADEAFBFGABHIJCABDKL $.
        $( [24-Feb-2015] $)
   $}
 
-  ${ $d A y $. $d X y $.
-     $( A cardinal is equal to the cardinality of a set iff it contains
-     	the set. $)
-      ncseqnc $p |- ( A e. NC -> ( A = Nc X <-> X e. A ) ) $=
+  ${
+    $d A y $.  $d X y $.
+    $( A cardinal is equal to the cardinality of a set iff it contains the
+       set. $)
+    ncseqnc $p |- ( A e. NC -> ( A = Nc X <-> X e. A ) ) $=
         ( vy cncs wcel cv cnc wceq wex wb elncs cen wbr cvv cec vex eleq2 df-nc
         ncid a1i mpbiri syl6eleq ecexr syl brex simpld cer ener dmen id eqeq12i
         erth syl6rbbr pm5.21nii eqcom elnc 3bitr4i eqeq1 3bitr4d exlimiv sylbi
@@ -52036,9 +52123,12 @@ $)
         $( [24-Feb-2015] $)
   $}
 
-  ${ $d A a $. $d a b $. $d A b $. $d a c $. $d A c $. $d a x $. $d A x $. $d a y $. $d B b $. $d b c $. $d B c $. $d b x $. $d B x $. $d b y $. $d B y $. $d c x $. $d c y $. $d x y $. 
-     $( The value of cardinal multiplication. $)
-     mucval $p |- ( ( A e. NC /\ B e. NC ) ->
+  ${
+    $d A a $.  $d a b $.  $d A b $.  $d a c $.  $d A c $.  $d a x $.  $d A x $.
+    $d a y $.  $d B b $.  $d b c $.  $d B c $.  $d b x $.  $d B x $.  $d b y $.
+    $d B y $.  $d c x $.  $d c y $.  $d x y $.
+    $( The value of cardinal multiplication. $)
+    mucval $p |- ( ( A e. NC /\ B e. NC ) ->
        ( A .c B ) = 
        ( iota c ( c e. NC /\ E. x e. A E. y e. B c = Nc ( x X. y ) ) ) ) $=
        ( va vb cncs cv wcel cxp cnc wceq wrex wa cio cmuc rexeq anbi2d iotabidv
@@ -52048,10 +52138,16 @@ $)
        $( [24-Feb-2015] $)
   $}
 
-  ${ $d A c $. $d A d $. $d A w $. $d A x $. $d A y $. $d A z $. $d B c $. $d B d $. $d B w $. $d B x $. $d B y $. $d B z $. $d c d $. $d c w $. $d c x $. $d c y $. $d c z $. $d d w $. $d d x $. $d d y $. $d d z $. $d w x $. $d w y $. $d w z $. $d x y $. $d x z $. $d y z $. $d A a $. $d a b $. $d A b $. $d a w $. $d a x $. $d a y $. $d a z $. $d B a $. $d B b $. $d b w $. $d b x $. $d b y $. $d b z $. 
-     $( There is a unique cardinal equal to the cross product of members
-     	of two cardinals. $)
-     ncxpeu $p |- ( ( A e. NC /\ B e. NC ) ->
+  ${
+    $d A c $.  $d A d $.  $d A w $.  $d A x $.  $d A y $.  $d A z $.  $d B c $.
+    $d B d $.  $d B w $.  $d B x $.  $d B y $.  $d B z $.  $d c d $.  $d c w $.
+    $d c x $.  $d c y $.  $d c z $.  $d d w $.  $d d x $.  $d d y $.  $d d z $.
+    $d w x $.  $d w y $.  $d w z $.  $d x y $.  $d x z $.  $d y z $.  $d A a $.
+    $d a b $.  $d A b $.  $d a w $.  $d a x $.  $d a y $.  $d a z $.  $d B a $.
+    $d B b $.  $d b w $.  $d b x $.  $d b y $.  $d b z $.
+    $( There is a unique cardinal equal to the cross product of members of two
+       cardinals. $)
+    ncxpeu $p |- ( ( A e. NC /\ B e. NC ) ->
        E! c e. NC E. x e. A E. y e. B c = Nc ( x X. y ) ) $=
        ( vz vw va vb cncs wcel wa cv cnc wceq wrex wex eleq2 cen wbr vd cxp weq
        wral wreu elncs anbi12i eeanv bitr4i vex ncid pm3.2i bi2anan9 mpbiri cvv
@@ -52080,18 +52176,22 @@ $)
        $( [24-Feb-2015] $)
   $}
 
-  ${ $d A c $. $d A x $. $d A y $. $d B c $. $d B x $. $d B y $. $d c x $. $d c y $. $d x y $. 
-     $( Closure law for cardinal multiplicaton. $)
-     muccl $p |- ( ( A e. NC /\ B e. NC ) -> ( A .c B ) e. NC ) $=
+  ${
+    $d A c $.  $d A x $.  $d A y $.  $d B c $.  $d B x $.  $d B y $.  $d c x $.
+    $d c y $.  $d x y $.
+    $( Closure law for cardinal multiplicaton. $)
+    muccl $p |- ( ( A e. NC /\ B e. NC ) -> ( A .c B ) e. NC ) $=
        ( vc vx vy cncs wcel wa cmuc co cxp cnc wceq wrex cio mucval wreu ncxpeu
        cv reiotacl syl eqeltrd ) AFGBFGHZABIJCSZFGUDDSESKLMEBNDANZHCOZFDEABCPUC
        UECFQUFFGDEABCRUECFTUAUB $.
        $( [24-Feb-2015] $)
   $}
 
-  ${ $d A c $. $d A x $. $d A y $. $d B c $. $d B x $. $d B y $. $d C c $. $d c x $. $d C x $. $d c y $. $d C y $. $d x y $. 
-     $( Equality to cardinal multiplication. $)
-     eqmuc $p |- ( ( A e. NC /\ B e. NC /\ C e. NC ) ->
+  ${
+    $d A c $.  $d A x $.  $d A y $.  $d B c $.  $d B x $.  $d B y $.  $d C c $.
+    $d c x $.  $d C x $.  $d c y $.  $d C y $.  $d x y $.
+    $( Equality to cardinal multiplication. $)
+    eqmuc $p |- ( ( A e. NC /\ B e. NC /\ C e. NC ) ->
        ( ( A .c B ) = C <-> E. x e. A E. y e. B C = Nc ( x X. y ) ) ) $=
        ( vc cncs wcel w3a cmuc co wceq cv cxp cnc wrex wa cio mucval 3adant3 wb
        eqeq1d wreu simp3 ncxpeu eqeq1 2rexbidv reiota2 syl2anc bitr4d ) CGHZDGH
@@ -52101,9 +52201,10 @@ $)
        $( [24-Feb-2015] $)
   $}
 
-  ${ $d a b c x y z w $.
-     $( Cardinal multiplication is a set. $)
-     mucex $p |- .c e. _V $=
+  ${
+    $d a b c x y z w $.
+    $( Cardinal multiplication is a set. $)
+    mucex $p |- .c e. _V $=
        ( va vb vc vx vy vz vw cncs cvv csset c1c cv wcel wa wex 3bitri otelins2
        cop vex bitri cmuc cxp cins2 ccnv cins3 ccross csi3 cin cima cid csymdif
        cins4 crn ccompl cdif cnc wceq wrex cio cmpt2 df-muc weq wb wal cab cuni
