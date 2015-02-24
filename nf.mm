@@ -49287,9 +49287,11 @@ $)
     $( [24-Feb-2015] $)
 
   ${
-     $d A a $. $d a b $. $d A b $. $d a x $. $d A x $. $d a y $. $d A y $. $d B a $. $d B b $. $d b x $. $d B x $. $d b y $. $d B y $. $d C a $. $d C b $. $d C x $. $d C y $. $d x y $. 
-     $( Restriction distributes over tail cross product. $)
-     restxp $p |- ( ( A (x) B ) |` C ) = ( ( A |` C ) (x) ( B |` C ) ) $=
+    $d A a $.  $d a b $.  $d A b $.  $d a x $.  $d A x $.  $d a y $.  $d A y $.
+    $d B a $.  $d B b $.  $d b x $.  $d B x $.  $d b y $.  $d B y $.  $d C a $.
+    $d C b $.  $d C x $.  $d C y $.  $d x y $.
+    $( Restriction distributes over tail cross product. $)
+    restxp $p |- ( ( A (x) B ) |` C ) = ( ( A |` C ) (x) ( B |` C ) ) $=
        ( vx vy va vb ctxp cres cv wbr w3a wa 3anass anbi1i bitri 3bitr4i 2exbii
        wex brres relres reltxp cop wceq wcel anandir anbi2i anass brtxp 19.41vv
        biid 3anbi123i eqbrriv ) DEABHZCIZACIZBCIZHZUNCUAUPUQUBEJZFJZGJZUCUDZDJZ
@@ -49549,10 +49551,14 @@ $)
   $}
 
   ${
-     $d a b $. $d a c $. $d a d $. $d a x $. $d a y $. $d a z $. $d b c $. $d b d $. $d b x $. $d b y $. $d b z $. $d c d $. $d c x $. $d c y $. $d c z $. $d d x $. $d d y $. $d d z $. $d F a $. $d F b $. $d F c $. $d F d $. $d F x $. $d F y $. $d F z $. $d G a $. $d G b $. $d G c $. $d G d $. $d G x $. $d G y $. $d G z $. $d x y $. $d x z $. $d y z $. 
-     $( If ` F ` and ` G ` are functions, then their tail cross product
-     	is a function over the intersection of their domains. $)
-     fntxp $p |- ( ( F Fn A /\ G Fn B ) -> ( F (x) G ) Fn ( A i^i B ) ) $=
+    $d a b $.  $d a c $.  $d a d $.  $d a x $.  $d a y $.  $d a z $.  $d b c $.
+    $d b d $.  $d b x $.  $d b y $.  $d b z $.  $d c d $.  $d c x $.  $d c y $.
+    $d c z $.  $d d x $.  $d d y $.  $d d z $.  $d F a $.  $d F b $.  $d F c $.
+    $d F d $.  $d F x $.  $d F y $.  $d F z $.  $d G a $.  $d G b $.  $d G c $.
+    $d G d $.  $d G x $.  $d G y $.  $d G z $.  $d x y $.  $d x z $.  $d y z $.
+    $( If ` F ` and ` G ` are functions, then their tail cross product is a
+       function over the intersection of their domains. $)
+    fntxp $p |- ( ( F Fn A /\ G Fn B ) -> ( F (x) G ) Fn ( A i^i B ) ) $=
        ( vx vy vz va vb vc vd wfun cdm wceq wa wfn cv wbr wi wex ctxp cin brtxp
        weq wal cop w3a anbi12i ee4anv bitr4i 3an6 bicomi 3expib im2anan9 eqeq12
        fununiq opth syl6bb imbi2d biimprcd exp4a 3impd syl5bi exlimdvv alrimivv
@@ -51945,7 +51951,17 @@ $)
 
 
   ${
-    $d A a $. $d a b $. $d A b $. $d a c $. $d A c $. $d a t $. $d A t $. $d a u $. $d A u $. $d a x $. $d A x $. $d a y $. $d B a $. $d B b $. $d b c $. $d B c $. $d b t $. $d B t $. $d b u $. $d B u $. $d b x $. $d B x $. $d b y $. $d C a $. $d C b $. $d C c $. $d c t $. $d C t $. $d c u $. $d C u $. $d c x $. $d C x $. $d c y $. $d t u $. $d t x $. $d u x $. $d u y $. $d x y $. $d x z $. $d y z $. $d a d $. $d a p $. $d a q $. $d a v $. $d a z $. $d b d $. $d b p $. $d b q $. $d b v $. $d b z $. $d c d $. $d c z $. $d d x $. $d d y $. $d d z $. $d p q $. $d p t $. $d p u $. $d p v $. $d p x $. $d p y $. $d p z $. $d q t $. $d q u $. $d q v $. $d q x $. $d q y $. $d q z $. $d t v $. $d t z $. $d u v $. $d u z $. $d v x $. $d v y $. $d v z $. 
+    $d A a $.  $d a b $.  $d A b $.  $d a c $.  $d A c $.  $d a t $.  $d A t $.
+    $d a u $.  $d A u $.  $d a x $.  $d A x $.  $d a y $.  $d B a $.  $d B b $.
+    $d b c $.  $d B c $.  $d b t $.  $d B t $.  $d b u $.  $d B u $.  $d b x $.
+    $d B x $.  $d b y $.  $d C a $.  $d C b $.  $d C c $.  $d c t $.  $d C t $.
+    $d c u $.  $d C u $.  $d c x $.  $d C x $.  $d c y $.  $d t u $.  $d t x $.
+    $d u x $.  $d u y $.  $d x y $.  $d x z $.  $d y z $.  $d a d $.  $d a p $.
+    $d a q $.  $d a v $.  $d a z $.  $d b d $.  $d b p $.  $d b q $.  $d b v $.
+    $d b z $.  $d c d $.  $d c z $.  $d d x $.  $d d y $.  $d d z $.  $d p q $.
+    $d p t $.  $d p u $.  $d p v $.  $d p x $.  $d p y $.  $d p z $.  $d q t $.
+    $d q u $.  $d q v $.  $d q x $.  $d q y $.  $d q z $.  $d t v $.  $d t z $.
+    $d u v $.  $d u z $.  $d v x $.  $d v y $.  $d v z $.
     xpassen.1 $e |- A e. _V $.
     xpassen.2 $e |- B e. _V $.
     xpassen.3 $e |- C e. _V $.
@@ -52381,11 +52397,12 @@ $)
   $}
 
   ${
-     $d A p $. $d A q $. $d A r $. $d A x $. $d B p $. $d B q $. $d B r $. $d B x $. $d p q $. $d p x $. $d q x $. $d r x $. 
-     ncdisjun.1 $e |- A e. _V $.
-     ncdisjun.2 $e |- B e. _V $.
-     $( Cardinality of disjoint union of two sets. $)
-     ncdisjun $p |- ( ( A i^i B ) = (/) -> Nc ( A u. B ) = ( Nc A +c Nc B ) ) $=
+    $d A p $.  $d A q $.  $d A r $.  $d A x $.  $d B p $.  $d B q $.  $d B r $.
+    $d B x $.  $d p q $.  $d p x $.  $d q x $.  $d r x $.
+    ncdisjun.1 $e |- A e. _V $.
+    ncdisjun.2 $e |- B e. _V $.
+    $( Cardinality of disjoint union of two sets. $)
+    ncdisjun $p |- ( ( A i^i B ) = (/) -> Nc ( A u. B ) = ( Nc A +c Nc B ) ) $=
        ( vr vp vq cin c0 wceq cv wcel cen wbr elnc wf1o ccnv wa cima adantl cun
        cnc cplc wex bren f1ocnv imaundi cdm crn imadmrn a1i f1odm imaeq2d f1ofo
        wfo forn syl 3eqtr3d syl5eqr cres wf1 wss f1of1 ssun1 f1ores sylancl vex
@@ -52421,13 +52438,60 @@ $)
     nceq mpbir ) BCDBAEZFZGZAHZBIFZGZUAJTUCAIKRIGSUBBRIPLMNABOQ $.
     $( [24-Feb-2015] $)
 
-  ${ $d A x n $.
-     $( A finite cardinal number is a cardinal number. $)
-     nnnc $p |- ( A e. Nn -> A e. NC ) $=
-       ( vx vn cv cncs wcel c0c c1c cplc cab cvv abid2 ncsex eqeltri eleq1 0cnc
-       finds ) BDZEFZGEFCDZEFTHIZEFAEFBCASBJEKBELMNRGEORTEORUAEORAEOP?Q $.
+  ${
+    $d f x $.  $d f y $.  $d f z $.  $d x y $.  $d x z $.  $d y z $.
+    $( Cardinal one is a cardinal number. $)
+    1cnc $p |- 1c e. NC $=
+      ( vx vy vz vf c1c wcel cv cnc wceq wex csn cen wbr cvv vex exlimiv eqeq2d
+      crn cla4ev sylbi cncs dfec2 df-nc el1c en2sn mp2an breq2 mpbiri wf1o bren
+      cec cab wf f1of wfo f1ofo forn syl cfv cop fsn2 rneq rnsnop syl6eq eqeq1d
+      wa wi fvex sneq eqcoms syl6bi adantl sylc impbii bitri 3eqtr4ri snex nceq
+      abbi2i ax-mp elncs mpbir ) EUAFEAGZHZIZAJZEBGZKZHZIZWFWHLUKWHCGZLMZCULWIE
+      CWHLUBWHUCWLCEWKEFWKWCKZIZAJZWLAWKUDWOWLWNWLAWNWLWHWMLMZWGNFWCNFWPBOZAOWG
+      WCNNUEUFWKWMWHLUGUHPWLWHWKDGZUIZDJWOWHWKDUJWSWODWSWHWKWRUMZWRRZWKIZWOWHWK
+      WRUNWSWHWKWRUOXBWHWKWRUPWHWKWRUQURWTWGWRUSZWKFZWRWGXCUTKZIZVFXBWOVGZWGWKW
+      RWQVAXFXGXDXFXBXCKZWKIWOXFXAXHWKXFXAXERXHWRXEVBWGXCWQVCVDVEWOWKXHWNWKXHIA
+      XCWGWRVHWCXCIWMXHWKWCXCVIQSVJVKVLTVMPTVNVOVSVPWEWJAWHWGVQWCWHIWDWIEWCWHVR
+      QSVTAEWAWB $.
+      $( [24-Feb-2015] $)
+  $}
+
+  ${
+    $d A x $. $d A y $. $d B x $. $d B y $. $d x y $. $d x z $. $d y z $. 
+    $( The cardinals are closed under cardinal addition. $)
+    ncaddccl $p |- ( ( A e. NC /\ B e. NC ) -> ( A +c B ) e. NC ) $=
+       ( vx vy vz cncs wcel cv cnc wceq wex cplc elncs wa c0 csn cxp cen eqcomi
+       mpbir eeanv ccompl wbr vex 0ex xpsnen snex xpex eqnc eqtr mpan2 addceq12
+       complex cun cin xpnedisj ncdisjun ax-mp unex nceq eqeq2d cla4ev syl6eqel
+       necompl syl2an exlimivv sylbir syl2anb ) AFGACHZIZJZCKZBDHZIZJZDKZABLZFG
+       ZBFGCAMDBMVLVPNVKVONZDKCKVRVKVOCDUAVSVRCDVKAVIOUBZPZQZIZJZBVMOPZQZIZJZVR
+       VOVKVJWCJWDWCVJWCVJJWBVIRUCVIVTCUDZOUEUMZUFWBVIVIWAWIVTUGUHZUITSAVJWCUJU
+       KVOVNWGJWHWGVNWGVNJWFVMRUCVMODUDZUEUFWFVMVMWEWLOUGUHZUITSBVNWGUJUKWDWHNV
+       QWCWGLZFABWCWGULWNFGWNEHZIZJZEKZWNWBWFUNZIZJZWRWTWNWBWFUOOJWTWNJVIVMVTOW
+       JOVDUPWBWFWKWMUQURSWQXAEWSWBWFWKWMUSWOWSJWPWTWNWOWSUTVAVBUREWNMTVCVEVFVG
+       VH $.
        $( [24-Feb-2015] $)
   $}
+
+  $( The successor of a cardinal is a cardinal. $)
+  peano2nc $p |- ( A e. NC -> ( A +c 1c ) e. NC ) $=
+    ( cncs wcel c1c cplc 1cnc ncaddccl mpan2 ) ABCDBCADEBCFADGH $.
+    $( [24-Feb-2015] $)
+
+  ${
+    $d A x n $.
+    $( A finite cardinal number is a cardinal number. $)
+    nnnc $p |- ( A e. Nn -> A e. NC ) $=
+       ( vx vn cv cncs wcel c0c c1c cplc cab cvv abid2 ncsex eqeltri eleq1 0cnc
+       wi cnnc peano2nc a1i finds ) BDZEFZGEFCDZEFZUDHIZEFZAEFBCAUCBJEKBELMNUBG
+       EOUBUDEOUBUFEOUBAEOPUEUGQUDRFUDSTUA $.
+       $( [24-Feb-2015] $)
+  $}
+
+  $( The finite cardinals are a subset of the cardinals. $)
+  nnssnc $p |- Nn C_ NC $=
+    ( vx cnnc cncs cv nnnc ssriv ) ABCADEF $.
+    $( [24-Feb-2015] $)
 
 $(
 #*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#
