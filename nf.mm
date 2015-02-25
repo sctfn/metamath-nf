@@ -52521,6 +52521,13 @@ $)
        $( [25-Feb-2015] $)
   $}
 
+  $( If two cardinals have an element in common, then they are equal. $)
+  nceleq $p |- ( ( ( A e. NC /\ B e. NC ) /\ ( X e. A /\ X e. B ) ) ->
+     A = B ) $=
+    ( cncs wcel wa wceq cin c0 wn elin n0i sylbir ncdisjeq ord syl5 imp ) ADEBD
+    EFZCAECBEFZABGZSABHZIGZJZRTSCUAEUCCABKUACLMRUBTABNOPQ $.
+    $( [25-Feb-2015] $)
+
 $(
 #*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#
        Appendix:  Typesetting definitions for the tokens in this file
