@@ -37806,30 +37806,6 @@ SI_k ( ( ( _V X._k ( _V X._k _V ) ) i^i
   $}
 
   ${
-    $d A t x $.  $d B t x $.  $d C t x $.
-    $( Membership in an image under a unit power class. $)
-    elimapw1 $p |- ( A e. ( B " ~P1 C ) <-> E. x e. C <. { x } , A >. e. B ) $=
-      ( vt cpw1 cima wcel cv wbr wrex csn cop elima wceq wa bitr4i bitri rexbii
-      wex df-rex elpw1 anbi1i r19.41v exbii rexcom4 snex breq1 ceqsexv df-br )
-      BCDFZGHEIZBCJZEUKKZAIZLZBMCHZADKZEBCUKNUNUPBCJZADKZURUNULUPOZUMPZETZADKZU
-      TUNULUKHZUMPZETZVDUMEUKUAVGVBADKZETVDVFVHEVFVAADKZUMPVHVEVIUMAULDUBUCVAUM
-      ADUDQUEVBAEDUFQRVCUSADUMUSEUPUOUGULUPBCUHUISRUSUQADUPBCUJSRR $.
-      $( [19-Feb-2015] $)
-  $}
-
-  ${
-    $d A x t $.  $d B x t $.
-    $( Membership in an image under cardinal one. $)
-    elima1c $p |- ( A e. ( B " 1c ) <-> E. x <. { x } , A >. e. B ) $=
-      ( vt c1c cima wcel cv csn wceq wbr wex cop wrex elima df-rex bitr4i exbii
-      wa bitri el1c anbi1i 19.41v excom snex breq1 ceqsexv df-br ) BCEFGZDHZAHZ
-      IZJZUJBCKZSZDLZALZULBMCGZALUIUNDENZUQDBCEOUSUJEGZUNSZDLZUQUNDEPVBUOALZDLU
-      QVAVCDVAUMALZUNSVCUTVDUNAUJUAUBUMUNAUCQRUOADUDQTTUPURAUPULBCKZURUNVEDULUK
-      UEUJULBCUFUGULBCUHTRT $.
-      $( [6-Feb-2015] $)
-  $}
-
-  ${
     $d A x y $.  $d B x y $.
     $( Binary relationship form of the subset relationship. $)
     brssetg $p |- ( ( A e. V /\ B e. W ) -> ( A SSet B <-> A C_ B ) ) $=
@@ -40396,6 +40372,37 @@ $)
       $( [12-Dec-2006] $)
   $}
 
+
+  ${
+    $d A t x $.  $d B t x $.  $d C t x $.
+    $( Membership in an image under a unit power class. $)
+    elimapw1 $p |- ( A e. ( B " ~P1 C ) <-> E. x e. C <. { x } , A >. e. B ) $=
+      ( vt cpw1 cima wcel cv wbr wrex csn cop elima wceq wa bitr4i bitri rexbii
+      wex df-rex elpw1 anbi1i r19.41v exbii rexcom4 snex breq1 ceqsexv df-br )
+      BCDFZGHEIZBCJZEUKKZAIZLZBMCHZADKZEBCUKNUNUPBCJZADKZURUNULUPOZUMPZETZADKZU
+      TUNULUKHZUMPZETZVDUMEUKUAVGVBADKZETVDVFVHEVFVAADKZUMPVHVEVIUMAULDUBUCVAUM
+      ADUDQUEVBAEDUFQRVCUSADUMUSEUPUOUGULUPBCUHUISRUSUQADUPBCUJSRR $.
+      $( [19-Feb-2015] $)
+  $}
+
+  ${
+    $d A x t $.  $d B x t $.
+    $( Membership in an image under cardinal one. $)
+    elima1c $p |- ( A e. ( B " 1c ) <-> E. x <. { x } , A >. e. B ) $=
+      ( c1c cima wcel cvv cpw1 cv csn cop wrex wex imaeq2i eleq2i elimapw1 rexv
+      df1c2 3bitri ) BCDEZFBCGHZEZFAIJBKCFZAGLUCAMTUBBDUACRNOABCGPUCAQS $.
+      $( [6-Feb-2015] $)
+
+    $( Membership in an image under the unit power class of cardinal one. $)
+    elimapw11c $p |- ( A e. ( B " ~P1 1c ) <-> E. x <. { { x } } , A >. e. B )
+        $=
+      ( vt c1c cpw1 cima wcel cv csn cop wrex wex elimapw1 wa wceq df-rex exbii
+      el1c bitri anbi1i 19.41v bitr4i excom snex opeq1d eleq1d ceqsexv 3bitri
+      sneq ) BCEFGHDIZJZBKZCHZDELZAIZJZJZBKZCHZAMZDBCENUOUKEHZUNOZDMZUKUQPZUNOZ
+      DMZAMZVAUNDEQVDVFAMZDMVHVCVIDVCVEAMZUNOVIVBVJUNAUKSUAVEUNAUBUCRVFDAUDTVGU
+      TAUNUTDUQUPUEVEUMUSCVEULURBUKUQUJUFUGUHRUIT $.
+      $( [25-Feb-2015] $)
+  $}
 
   ${
 
@@ -48248,8 +48255,8 @@ $)
   $}
 
 
-  $( Eliminate antecedent for operator values: domain and range can be taken 
-     to be a set.  $)
+  $( Eliminate antecedent for operator values: domain and range can be taken to
+     be a set. $)
   elovex12 $p |- ( A e. ( B F C ) -> ( B e. _V /\ C e. _V ) ) $=
     ( co wcel c0 wne cvv wa ne0i cop wceq opexb cfv df-ov fvprc syl5eq sylnbir
     wn necon1ai syl ) ABCDEZFUCGHBIFCIFJZUCAKUDUCGUDBCLZIFZUCGMBCNUFTUCUEDOGBCD
@@ -48258,13 +48265,13 @@ $)
 
 
   $( Eliminate antecedent for operator values: domain can be taken to be a
-     set.  $)
+     set. $)
   elovex1 $p |- ( A e. ( B F C ) -> B e. _V ) $=
     ( co wcel cvv elovex12 simpld ) ABCDEFBGFCGFABCDHI $.
     $( [25-Feb-2015] $)
 
   $( Eliminate antecedent for operator values: range can be taken to be a
-     set.  $)
+     set. $)
   elovex2 $p |- ( A e. ( B F C ) -> C e. _V ) $=
     ( co wcel cvv elovex12 simprd ) ABCDEFBGFCGFABCDHI $.
     $( [25-Feb-2015] $)
@@ -51713,10 +51720,10 @@ $)
   df-fp $a |- ( F : A -|-> B <-> ( Fun F /\ F C_ ( X X. Y ) ) $.
   $)
 
-  ${ $d A f $. $d B f $. $d B x $. $d f x $. 
-     mapexi.1 $e |- A e. _V $.
-     mapexi.2 $e |- B e. _V $.
-
+  ${
+    $d A f $.  $d B f $.  $d B x $.  $d f x $.
+    mapexi.1 $e |- A e. _V $.
+    mapexi.2 $e |- B e. _V $.
     $( The class of all functions mapping one set to another is a set.  Remark
        after Definition 10.24 of [Kunen] p. 31. $)
     mapexi $p |- { f | f : A --> B } e. _V $=
@@ -51753,7 +51760,7 @@ $)
       UBULOUCLOFUSUTUDLUOOOUEUFUGUH $.
       $( [15-Nov-2007] $)
 
-    $d A a $. $d a b $. $d A b $. $d a f $. $d B b $. $d b f $. 
+    $d A a $.  $d a b $.  $d A b $.  $d a f $.  $d B b $.  $d b f $.
     $( The class of all functions mapping one set to another is a set.  Remark
        after Definition 10.24 of [Kunen] p. 31. $)
     mapex $p |- ( ( A e. C /\ B e. D ) -> { f | f : A --> B } e. _V ) $=
@@ -51863,8 +51870,8 @@ $)
       $( [30-Jan-2014] $)
   $}
 
-  $( A mapping is a function, forward direction only with 
-     antecedents removed.  $)
+  $( A mapping is a function, forward direction only with antecedents
+     removed. $)
   elmapi $p |- ( A e. ( B ^m C ) -> A : C --> B ) $=
     ( cmap co wcel wf cvv wb elovex1 elovex2 id elmapg syl3anc ibi ) ABCDEZFZCB
     AGZQBHFCHFQQRIABCDJABCDKQLBCAHHPMNO $.
@@ -51903,7 +51910,7 @@ $)
   $}
 
   ${
-    $d A x f $. $d B x f $.
+    $d A x f $.  $d B x f $.
     $( Set exponentiation is a subset of partial maps. $)
     mapsspm $p |- ( A ^m B ) C_ ( A ^pm B ) $=
       ( vx vf cmap co cpm wss c0 wceq 0ss sseq1 mpbiri wne cvv wcel wa wex cab
@@ -51932,8 +51939,8 @@ $)
   ${
     $d f A $.
     map0e.1 $e |- A e. _V $.
-    $( Set exponentiation with an empty exponent is the unit class of the
-       empty set. $)
+    $( Set exponentiation with an empty exponent is the unit class of the empty
+       set. $)
     map0e $p |- ( A ^m (/) ) = { (/) } $=
       ( vf c0 cv wf cab wceq cmap co csn wfn crn wss fn0 anbi1i df-f 0ss rneq
       wa rn0 syl6eq sseq1d mpbiri pm4.71i 3bitr4i abbii mapval df-sn 3eqtr4i
@@ -52412,18 +52419,18 @@ $)
   $}
 
   ${
-     ensn.1 $e |- A e. _V $.
-     ensn.2 $e |- B e. _V $.
-     $( Two singletons are equinumerous. Theorem XI.1.10 of [Rosser]. $)
-     ensn $p |- { A } ~~ { B } $=
+    ensn.1 $e |- A e. _V $.
+    ensn.2 $e |- B e. _V $.
+    $( Two singletons are equinumerous.  Theorem XI.1.10 of [Rosser]. $)
+    ensn $p |- { A } ~~ { B } $=
        ( cvv wcel csn cen wbr en2sn mp2an ) AEFBEFAGBGHICDABEEJK $.
        $( [25-Feb-2015] $)
   $}
 
   ${
-    $d A x $. $d B x $. $d X x $. $d Y x $. 
-  $( Lemma for ~ enadj . Calculate equality of differences. $)
-  enadjlem1 $p |- ( ( ( A u. { X } ) = ( B u. { Y } ) /\
+    $d A x $.  $d B x $.  $d X x $.  $d Y x $.
+    $( Lemma for ~ enadj .  Calculate equality of differences. $)
+    enadjlem1 $p |- ( ( ( A u. { X } ) = ( B u. { Y } ) /\
     ( -. X e. A /\ -. Y e. B ) /\ ( Y e. A /\ X e. B ) ) ->
     ( A \ { Y } ) = ( B \ { X } ) ) $=
     ( vx csn cun wceq wcel wn wa cdif wo elsni necon3ai ad2antll ssun1 ad2antrl
@@ -52440,14 +52447,13 @@ $)
   $}
 
   ${
-     enadj.1 $e |- A e. _V $.
-     enadj.2 $e |- B e. _V $.
-     enadj.3 $e |- X e. _V $.
-     enadj.4 $e |- Y e. _V $.
-
-     $( Equivalence law for adjunction.  Theorem XI.1.13 of [Rosser]. $)
-     enadj $p |- ( ( ( A u. { X } ) = ( B u. { Y } ) /\
-     	-. X e. A /\ -. Y e. B ) -> A ~~ B ) $=
+    enadj.1 $e |- A e. _V $.
+    enadj.2 $e |- B e. _V $.
+    enadj.3 $e |- X e. _V $.
+    enadj.4 $e |- Y e. _V $.
+    $( Equivalence law for adjunction.  Theorem XI.1.13 of [Rosser]. $)
+    enadj $p |- ( ( ( A u. { X } ) = ( B u. { Y } ) /\
+        -. X e. A /\ -. Y e. B ) -> A ~~ B ) $=
        ( cun wceq wcel wn w3a cen wbr cdif wa cin c0 a1i csn sneq uneq2d eqeq1d
        eleq1 notbid 3anbi12d simp1 difeq1d nnsucelrlem2 3ad2ant2 3eqtr3d enrflx
        wi 3ad2ant3 syl6eqbr syl6bi wo elsni eqcomd necon3ai adantr ssun2 sselii
@@ -52528,12 +52534,11 @@ $)
   $}
 
   ${
-     $d A b x $.
-     $( Define the type-raising operation on a cardinal number.  This
-     	is the unique cardinal containing the unit power classes of
-	the elements of the given cardinal.  Definition from [Rosser], 
-	p. XXX. $)
-     df-tc $a |- T_c A = ( iota b ( b e. NC /\ E. x e. A b = Nc ~P1 b ) ) $.
+    $d A b x $.
+    $( Define the type-raising operation on a cardinal number.  This is the
+       unique cardinal containing the unit power classes of the elements of the
+       given cardinal.  Definition from [Rosser], p.  XXX. $)
+    df-tc $a |- T_c A = ( iota b ( b e. NC /\ E. x e. A b = Nc ~P1 b ) ) $.
   $}
 
   $( Cardinality equality law. $)
@@ -52899,7 +52904,7 @@ $)
   $}
 
   ${
-    $d A x $. $d A y $. $d B x $. $d B y $. $d x y $. $d x z $. $d y z $. 
+    $d A x $.  $d A y $.  $d B x $.  $d B y $.  $d x y $.  $d x z $.  $d y z $.
     $( The cardinals are closed under cardinal addition. $)
     ncaddccl $p |- ( ( A e. NC /\ B e. NC ) -> ( A +c B ) e. NC ) $=
        ( vx vy vz cncs wcel cv cnc wceq wex cplc elncs wa c0 csn cxp cen eqcomi
@@ -52936,9 +52941,9 @@ $)
     $( [24-Feb-2015] $)
 
   ${
-     $d A x $. $d A y $. $d B x $. $d B y $. $d x y $. 
-     $( Two cardinals are either disjoint or equal. $)
-     ncdisjeq $p |- ( ( A e. NC /\ B e. NC ) ->
+    $d A x $.  $d A y $.  $d B x $.  $d B y $.  $d x y $.
+    $( Two cardinals are either disjoint or equal. $)
+    ncdisjeq $p |- ( ( A e. NC /\ B e. NC ) ->
        ( ( A i^i B ) = (/) \/ A = B ) ) $=
        ( vx vy cncs wcel wa cv cnc wceq wex cin c0 wo elncs cen cec df-nc mpan2
        eqtr anbi12i eeanv bitr4i cvv cer wbr ener erdisj ax-mp wb eqeq12 ineq12
@@ -52958,10 +52963,12 @@ $)
     $( [25-Feb-2015] $)
 
   ${
-    $d A f $. $d A g $. $d A t $. $d B f $. $d B g $. $d B t $. $d f g $. $d f t $. $d f x $. $d f y $. $d g t $. $d g x $. $d g y $. $d t x $. $d t y $. $d x y $. 
+    $d A f $.  $d A g $.  $d A t $.  $d B f $.  $d B g $.  $d B t $.  $d f g $.
+    $d f t $.  $d f x $.  $d f y $.  $d g t $.  $d g x $.  $d g y $.  $d t x $.
+    $d t y $.  $d x y $.
     $( Successor is one-to-one over the cardinals. $)
     peano4nc $p |- ( ( A e. NC /\ B e. NC ) -> 
-    	     ( ( A +c 1c ) = ( B +c 1c ) <-> A = B ) ) $=
+             ( ( A +c 1c ) = ( B +c 1c ) <-> A = B ) ) $=
       ( vg vt vx vf vy cncs wcel wa c1c cplc wceq adantr cnc eqtr2 csn wrex vex
       cv peano2nc wex elncs simpr jca cun ccompl ncid eleq2 mpbiri elsuc biimpi
       syl sylib anim12i reeanv 2rexbii bitri wi ncseqnc bi2anan9 biimpar cen wn
