@@ -53050,6 +53050,23 @@ $)
       $( [25-Feb-2015] $)
   $}
 
+  ${
+     $d A x y $.
+     $( A cardinal is finite iff it is a subset of ` Fin ` . $)
+     ncssfin $p |- ( A e. NC -> ( A e. Nn <-> A C_ Fin ) ) $=
+       ( vx vy cncs wcel cnnc cfin wss cuni elssuni cv wi wrex wal c0c wne wceq
+       c0 wex wa df-fin syl6sseqr wel dfss2 imbi2i wb peano1 ne0i r19.37zv mp2b
+       elfin bitr4i albii bitri nulnnc eleq1 mtbiri necon2ai 19.29r pm2.27 nnnc
+       n0 sylib adantl nceleq sylanl2 eqeltrd expr syld an32s rexlimdva expimpd
+       simplr exlimdv syl5 mpand syl5bi impbid2 ) ADEZAFEZAGHZVTAFIGAFJUAUBWABK
+       ZAEZBCUCZLZCFMZBNZVSVTWAWCWBGEZLZBNWGBAGUDWIWFBWIWCWDCFMZLZWFWHWJWCCWBUK
+       UEOFEFRPWFWKUFUGFOUHWCWDCFUIUJULUMUNVSWCBSZWGVTVSARPWLVSARARQVSRDEUOARDU
+       PUQURBAVBVCWLWGTWCWFTZBSVSVTWCWFBUSVSWMVTBVSWCWFVTVSWCTWEVTCFVSCKZFEZWCW
+       EVTLVSWOTZWCTWEWDVTWCWEWDLWPWCWDUTVDWPWCWDVTWPWCWDTZTAWNFWOVSWNDEWQAWNQW
+       NVAAWNWBVEVFVSWOWQVMVGVHVIVJVKVLVNVOVPVQVR $.
+       $( [25-Feb-2015] $)
+  $}
+
 $(
 #*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#
        Appendix:  Typesetting definitions for the tokens in this file
