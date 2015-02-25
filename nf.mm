@@ -53067,6 +53067,19 @@ $)
        $( [25-Feb-2015] $)
   $}
 
+  ${
+     $d A f $. $d B f $.
+     ncpw1.1 $e |- A e. _V $.
+     $( The cardinality of two sets are equal iff their unit power classes
+     	have the same cardinality. $)
+     ncpw1 $p |- ( Nc A = Nc B <-> Nc ~P1 A = Nc ~P1 B ) $=
+       ( vf cen wbr cpw1 cnc wceq cv wf1o wex bren csi vex siex f1oen eqnc wcel
+       cvv syl exlimiv sylbi impbii pw1exg ax-mp 3bitr4i ) ABEFZAGZBGZEFZAHBHIU
+       IHUJHIUHUKUHABDJZKZDLUKABDMUMUKDUMUIUJULNZKUK?UIUJUNULDOPQUAUBUC?UDABCRU
+       IUJATSUITSCATUEUFRUG $.
+       $( [25-Feb-2015] $)
+  $}
+
 $(
 #*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#
        Appendix:  Typesetting definitions for the tokens in this file
