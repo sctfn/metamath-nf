@@ -50209,6 +50209,30 @@ $)
        $( [25-Feb-2015] $)
   $}
 
+  ${ $d x y z $.
+    $( The unit power class function is a set. $)
+    pw1fnex $p |- Pw1Fn e. _V $=
+      ( vx vy vz cpw1fn cvv cxp c1c csset cpw1 cv wcel wa cop wn csn wex wb vex
+      wceq 1cex cpw cins2 csi cins3 csymdif cima cdif cuni cmpt df-mpt df-pw1fn
+      cin copab eldif opelxp anbi1i anass bitri wss wel wal elimapw11c elsymdif
+      el1c elpw snex otelins2 opelssetsn otelins3 opsnelsi 3bitri bibi12i exbii
+      xchbinx exnal 3bitrri eqpw1 bitr4i opeq1 eleq1d notbid anbi2d unieq unisn
+      con1bii anbi12i syl6eq pw1eq syl eqeq2d bibi12d exlimiv pm5.32i releqopab
+      mpbiri sylbi 3eqtr4i vvex xpex pwex ssetex ins2ex siex ins3ex pw1ex imaex
+      symdifex difex inex eqeltri ) DEEFZGGUAZFZHUBZHUCZUDZUEZGIZUFZUGZULZEAGAJ
+      ZUHZIZUIYBGKZBJZYDSZLZABUMDYAABGYDUJAUKYHABXTYBYFMZXTKYIXMKZYIXSKZNZLZYEY
+      FXLKZYLLZLZYHYIXMXSUNYMYEYNLZYLLYPYJYQYLYBYFGXLUOUPYEYNYLUQURYEYOYGYEYBCJ
+      ZOZSZCPYOYGQZCYBVDYTUUACYTUUAYNYSYFMZXSKZNZLZYFYRIZSZQUUEYFGUSZYBOZYFKZAC
+      UTZQZAVAZLUUGYNUUHUUDUUMYFGBRZVEUUMUUCUUCUUIOZUUBMZXQKZAPUULNZAPUUMNAUUBX
+      QVBUUQUURAUUQUUPXNKZUUPXPKZQUULUUPXNXPVCUUSUUJUUTUUKUUSUUOYFMHKUUJUUOYSYF
+      HYRVFVGUUIYFYBVFZUUNVHURUUTUUOYSMXOKUUIYRMHKUUKUUOYSYFXOUUNVIUUIYRHUVACRZ
+      VJYBYRARUVBVHVKVLVNVMUULAVOVPWEWFAYFYRVQVRYTYOUUEYGUUGYTYLUUDYNYTYKUUCYTY
+      IUUBXSYBYSYFVSVTWAWBYTYDUUFYFYTYCYRSYDUUFSYTYCYSUHYRYBYSWCYRUVBWDWGYCYRWH
+      WIWJWKWOWLWPWMVKWNWQXKXTEEWRWRWSXMXSGXLTGTWTWSXQXRXNXPHXAXBXOHXAXCXDXGGTX
+      EXFXHXIXJ $.
+      $( [25-Feb-2015] $)
+  $}
+
 
 $(
 =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
