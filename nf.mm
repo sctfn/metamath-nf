@@ -52040,6 +52040,64 @@ $)
       $( [24-Feb-2015] $)
   $}
 
+  ${
+     ensn.1 $e |- A e. _V $.
+     ensn.2 $e |- B e. _V $.
+     $( Two singletons are equinumerous. Theorem XI.1.10 of [Rosser]. $)
+     ensn $p |- { A } ~~ { B } $=
+       ( cvv wcel csn cen wbr en2sn mp2an ) AEFBEFAGBGHICDABEEJK $.
+       $( [25-Feb-2015] $)
+  $}
+
+  ${
+    $d A x $. $d B x $. $d X x $. $d Y x $. 
+  $( Lemma for ~ enadj . Calculate equality of differences. $)
+  enadjlem1 $p |- ( ( ( A u. { X } ) = ( B u. { Y } ) /\
+    ( -. X e. A /\ -. Y e. B ) /\ ( Y e. A /\ X e. B ) ) ->
+    ( A \ { Y } ) = ( B \ { X } ) ) $=
+    ( vx csn cun wceq wcel wn wa cdif wo elsni necon3ai ad2antll ssun1 ad2antrl
+    wne sseli w3a cv simpl1 eleqtrd elun sylib orel2 ex simp2l eleq1 syl5ibrcom
+    sylc notbid necon2ad adantrd eldifsn 3imtr4g ssrdv eleqtrrd simp2r eqssd
+    jcad ) ACFZGZBDFZGZHZCAIZJZDBIZJZKZDAICBIKZUAZAVELZBVCLZVNEVOVPVNEUBZAIZVQD
+    SZKZVQBIZVQCSZKZVQVOIZVQVPIZVNVTWAWBVNVTWAVNVTKZVQVEIZJZWAWGMZWAVSWHVNVRWGV
+    QDVQDNOPWFVQVFIZWIWFVQVDVFVRVQVDIZVNVSAVDVQAVCQTRVGVLVMVTUCUDVQBVEUEUFWGWAU
+    GULUHVNVRWBVSVNVRVQCVNVRJVQCHZVIVGVIVKVMUIWLVRVHVQCAUJUMUKUNUOVBVQADUPZVQBC
+    UPZUQURVNEVPVOVNWCVTWEWDVNWCVRVSVNWCVRVNWCKZVQVCIZJZVRWPMZVRWBWQVNWAWPVQCVQ
+    CNOPWOWKWRWOVQVFVDWAWJVNWBBVFVQBVEQTRVGVLVMWCUCUSVQAVCUEUFWPVRUGULUHVNWAVSW
+    BVNWAVQDVNWAJVQDHZVKVGVIVKVMUTWSWAVJVQDBUJUMUKUNUOVBWNWMUQURVA $.
+    $( [25-Feb-2015] $)
+  $}
+
+  ${
+     enadj.1 $e |- A e. _V $.
+     enadj.2 $e |- B e. _V $.
+     enadj.3 $e |- X e. _V $.
+     enadj.4 $e |- Y e. _V $.
+
+     $( Equivalence law for adjunction.  Theorem XI.1.13 of [Rosser]. $)
+     enadj $p |- ( ( ( A u. { X } ) = ( B u. { Y } ) /\
+     	-. X e. A /\ -. Y e. B ) -> A ~~ B ) $=
+       ( cun wceq wcel wn w3a cen wbr cdif wa cin c0 a1i csn sneq uneq2d eqeq1d
+       eleq1 notbid 3anbi12d simp1 difeq1d nnsucelrlem2 3ad2ant2 3eqtr3d enrflx
+       wi 3ad2ant3 syl6eqbr syl6bi wo elsni eqcomd necon3ai adantr ssun2 sselii
+       wne snid simpr1 syl5eleqr elun sylib orel2 syl5eleq simpl1 simpl2 simpl3
+       sylc jca simprl simprr enadjlem1 syl122anc snex difex breq2 mpbii adantl
+       3adant1 ensn incom disjdif syl22anc simpl3l nnsucelrlem4 simpl3r 3brtr3d
+       eqtri unen syl mpdan mpd3an3 ex pm2.61ine ) ACUAZIZBDUAZIZJZCAKZLZDBKLZM
+       ZABNOZUNCDCDJZXKAXEIZXFJZDAKZLZXJMZXLXMXGXOXIXQXJXMXDXNXFXMXCXEACDUBUCUD
+       XMXHXPCDAUEUFUGXRABBNXRXNXEPZXFXEPZABXRXNXFXEXOXQXJUHUIXQXOXSAJXJADUJUKX
+       JXOXTBJXQBDUJUOULBFUMUPUQCDVEZXKXLYAXKXPCBKZQZXLYAXKQZXPYBYDDXCKZLZXPYEU
+       RZXPYAYFXKYECDYEDCDCUSUTVAVBYDDXDKYGYDDXFXDXEXFDXEBVCDHVFVDYAXGXIXJVGZVH
+       DAXCVIVJYEXPVKVPYDCXEKZLZYBYIURZYBYAYJXKYICDCDUSVAVBYDCXFKYKYDCXDXFXCXDC
+       XCAVCCGVFVDYHVLCBXEVIVJYIYBVKVPVQYAXKYCMZAXEPZBXCPZJZXLXKYCYOYAXKYCQXGXI
+       XJXPYBYOXGXIXJYCVMXGXIXJYCVNXGXIXJYCVOXKXPYBVRXKXPYBVSABCDVTWAWGYLYOQZYM
+       XEIZYNXCIZABNYPYMYNNOZXEXCNOZYMXERZSJZYNXCRZSJZYQYRNOYOYSYLYOYMYMNOYSYMA
+       XEEDWBWCUMYMYNYMNWDWEWFYTYPDCHGWHTUUBYPUUAXEYMRSYMXEWIXEAWJWPTUUDYPUUCXC
+       YNRSYNXCWIXCBWJWPTYMYNXEXCWQWKYPXPYQAJXPYBYAXKYOWLDAWMWRYPYBYRBJXPYBYAXK
+       YOWNCBWMWRWOWSWTXAXB $.
+       $( [25-Feb-2015] $)
+  $}
+
 $(
 =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
         Cardinal numbers
@@ -52527,6 +52585,29 @@ $)
     ( cncs wcel wa wceq cin c0 wn elin n0i sylbir ncdisjeq ord syl5 imp ) ADEBD
     EFZCAECBEFZABGZSABHZIGZJZRTSCUAEUCCABKUACLMRUBTABNOPQ $.
     $( [25-Feb-2015] $)
+
+  ${
+    $d A f $. $d A g $. $d A t $. $d B f $. $d B g $. $d B t $. $d f g $. $d f t $. $d f x $. $d f y $. $d g t $. $d g x $. $d g y $. $d t x $. $d t y $. $d x y $. 
+    $( Successor is one-to-one over the cardinals. $)
+    peano4nc $p |- ( ( A e. NC /\ B e. NC ) -> 
+    	     ( ( A +c 1c ) = ( B +c 1c ) <-> A = B ) ) $=
+      ( vg vt vx vf vy cncs wcel wa c1c cplc wceq adantr cnc eqtr2 csn wrex vex
+      cv peano2nc wex elncs simpr jca cun ccompl ncid eleq2 mpbiri elsuc biimpi
+      syl sylib anim12i reeanv 2rexbii bitri wi ncseqnc bi2anan9 biimpar cen wn
+      wbr wel elcompl enadj ancoms ex syl2anb syl5 rexlimivv eqeq12 eqnc syl6bb
+      syl5ibr rexlimdvva syl5bir imp sylan2 expr exlimdv syl5bi addceq1 impbid1
+      3expb mpd ) AHIZBHIZJZAKLZBKLZMZABMZWKWNWOWKWNJZWLHIZWOWKWQWNWIWQWJAUANNW
+      QWLCTZOZMZCUBWPWOCWLUCWPWTWOCWKWNWTWOWNWTJZWKWTWMWSMZJZWOXAWTXBWNWTUDWLWM
+      WSPUEWKXCWOXCWRDTZETZQUFZMZEXDUGZRZDARZWRFTZGTZQUFZMZGXKUGZRZFBRZJZWKWOWT
+      XJXBXQWTWRWLIZXJWTXSWRWSIZWRCSUHZWLWSWRUIUJXSXJEWRADUKULUMXBWRWMIZXQXBYBX
+      TYAWMWSWRUIUJGWRBFUKUNUOXRXGXNJZGXOREXHRZFBRDARZWKWOYEXIXPJZFBRDARXRYDYFD
+      FABXGXNEGXHXOUPUQXIXPDFABUPURWKYDWODFABWKXDAIZXKBIZJZJAXDOZMZBXKOZMZJZYDW
+      OUSWKYNYIWIYKYGWJYMYHAXDUTBXKUTVAVBYDWOYNXDXKVCVEZYCYOEGXHXOYCXFXMMZXEXHI
+      ZXLXOIZJYOWRXFXMPYQEDVFVDZGFVFVDZYPYOUSYRXEXDESZVGXLXKGSZVGYSYTJZYPYOYPUU
+      CYOYPYSYTYOXDXKXEXLDSZFSUUAUUBVHWGVIVJVKVLVMYNWOYJYLMYOAYJBYLVNXDXKUUDVOV
+      PVQUMVRVSVLVTWAWBWCWDWHVJABKWEWF $.
+      $( [25-Feb-2015] $)
+  $}
 
 $(
 #*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#
