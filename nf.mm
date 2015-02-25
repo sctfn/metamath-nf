@@ -50233,6 +50233,24 @@ $)
       $( [25-Feb-2015] $)
   $}
 
+  ${
+     $( Functionhood statement for ` Pw1Fn ` $)
+     fnpw1fn $p |- Pw1Fn Fn 1c $=
+       ( vx cv cuni cpw1 cvv wcel cpw1fn c1c wfn df-pw1fn fnmpt vex uniex pw1ex
+       a1i mprg ) ABZCZDZEFZGHIAHAHSGEAJKTQHFRQALMNOP $.
+       $( [25-Feb-2015] $)
+  $}
+
+  ${
+     brpw1fn.1 $e |- A e. _V $.
+
+     $( Binary relationship form of ` Pw1Fn ` $)
+     brpw1fn $p |- ( { A } Pw1Fn B <-> B = ~P1 A ) $=
+       ( csn cpw1fn cfv wceq cpw1 wbr pw1fnval eqeq1i c1c wfn wb fnpw1fn snel1c
+       wcel fnbrfvb mp2an eqcom 3bitr3i ) ADZEFZBGZAHZBGUBBEIZBUEGUCUEBACJKELMU
+       BLQUDUFNOACPLUBBERSUEBTUA $.
+       $( [25-Feb-2015] $)
+  $}
 
 $(
 =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
