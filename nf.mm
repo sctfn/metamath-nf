@@ -49087,6 +49087,7 @@ $)
   $c Fns $. $( Function with domain relationship. $)
   $c PProd $. $( Parallel product. $)
   $c Cross $. $( Cross product function. $)
+  $c Pw1Fn $. $( The unit power class function. $)
 
   $( Extend the definition of a class to include the tail cross product. $)
   ctxp $a class ( A (x) B ) $.
@@ -49135,6 +49136,11 @@ $)
 
   $( Extend the definition of a class to include the cross product function. $)
   ccross $a class Cross $.
+
+  $( Extend the definition of a class to include the unit power class 
+     function. $)
+  cpw1fn $a class Pw1Fn $.
+
 
   $( Define the tail cross product of two classes.  Definition from [Holmes],
      p. 40.  See ~ brtxp for membership. $)
@@ -49198,6 +49204,11 @@ $)
     $( Define the cross product function. $)
     df-cross $a |- Cross = ( x e. _V , y e. _V |-> ( x X. y ) ) $.
   $}
+
+  $( Define the function that takes a singleton to the unit power class
+     of its member.  This function is defined in such a way as to ensure
+     stratification. $)
+  df-pw1fn $a |- Pw1Fn = ( x e. 1c |-> ~P1 U. x ) $.
 
   ${
     $d A x y z w $.  $d B x y z w $.  $d R x y z w $.
@@ -50186,6 +50197,16 @@ $)
       VLXODXIVNVOVPVQVREEXFWCWCXEJWNXDWMGVSVTVTZXCXBJWNXAUUKWTWSWPWRWOHWAWBVTEW
       QWCIWDWBWEWFWGWHWFWIWJWHWFWIWJWKWL $.
       $( [11-Feb-2015] $)
+  $}
+
+  ${ $d A x $.
+     pw1fnval.1 $e |- A e. _V $.
+     $( The value of the unit power class function. $)
+     pw1fnval $p |- ( Pw1Fn ` { A } ) = ~P1 A $=
+       ( vx csn c1c wcel cpw1fn cfv cpw1 wceq snel1c cv cuni unieq unisn syl6eq
+       pw1eq syl df-pw1fn pw1ex fvmpt ax-mp ) ADZEFUCGHAIZJABKCUCCLZMZIZUDEGUEU
+       CJZUFAJUGUDJUHUFUCMAUEUCNABOPUFAQRCSABTUAUB $.
+       $( [25-Feb-2015] $)
   $}
 
 
