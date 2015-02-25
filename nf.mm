@@ -52051,6 +52051,7 @@ $)
   $c <c $. $( Cardinal less than. $)
   $c Nc $. $( Cardinality operation. $)
   $c .c $. $( Cardinal multiplication. $)
+  $c T_c $. $( Cardinal type raising. $)
 
   $( Extend the definition of a class to include the set of cardinal
      numbers. $)
@@ -52068,6 +52069,9 @@ $)
 
   $( Extend the definition of a class to include cardinal multiplication. $)
   cmuc $a class .c $.
+
+  $( Extend the definition of a class to include cardinal type raising. $)
+  ctc $a class T_c A $.
 
   $( Define the set of all cardinal numbers.  We define them as equivelance
      classes of sets of the same size.  Definition from [Rosser], p.  XXX. $)
@@ -52092,6 +52096,15 @@ $)
     $( Define cardinal multiplication.  Definition from [Rosser], p.  XXX. $)
     df-muc $a |- .c = ( a e. NC , b e. NC |->
        ( iota c ( c e. NC /\ E. x e. a E. y e. b c = Nc ( x X. y ) ) ) ) $.
+  $}
+
+  ${
+     $d A b x $.
+     $( Define the type-raising operation on a cardinal number.  This
+     	is the unique cardinal containing the unit power classes of
+	the elements of the given cardinal.  Definition from [Rosser], 
+	p. XXX. $)
+     df-tc $a |- T_c A = ( iota b ( b e. NC /\ E. x e. A b = Nc ~P1 b ) ) $.
   $}
 
   $( Cardinality equality law. $)
@@ -52492,6 +52505,21 @@ $)
   nnssnc $p |- Nn C_ NC $=
     ( vx cnnc cncs cv nnnc ssriv ) ABCADEF $.
     $( [24-Feb-2015] $)
+
+  ${
+     $d A x $. $d A y $. $d B x $. $d B y $. $d x y $. 
+     $( Two cardinals are either disjoint or equal. $)
+     ncdisjeq $p |- ( ( A e. NC /\ B e. NC ) ->
+       ( ( A i^i B ) = (/) \/ A = B ) ) $=
+       ( vx vy cncs wcel wa cv cnc wceq wex cin c0 wo elncs cen cec df-nc mpan2
+       eqtr anbi12i eeanv bitr4i cvv cer wbr ener erdisj ax-mp wb eqeq12 ineq12
+       eqeq1d orbi12d syl2an mpbiri orcomd exlimivv sylbi ) AEFZBEFZGZACHZIZJZB
+       DHZIZJZGZDKCKZABLZMJZABJZNZVBVECKZVHDKZGVJUTVOVAVPCAODBOUAVEVHCDUBUCVIVN
+       CDVIVMVLVIVMVLNZVCPQZVFPQZJZVRVSLZMJZNZPUDUEUFWCUGVCVFPUHUIVEAVRJZBVSJZV
+       QWCUJVHVEVDVRJWDVCRAVDVRTSVHVGVSJWEVFRBVGVSTSWDWEGZVMVTVLWBAVRBVSUKWFVKW
+       AMAVRBVSULUMUNUOUPUQURUS $.
+       $( [25-Feb-2015] $)
+  $}
 
 $(
 #*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#
@@ -53269,6 +53297,23 @@ htmldef "Sp[fin]" as
   althtmldef "Sp[fin]" as ' <FONT FACE=sans-serif>Sp</FONT><SUB>fin</SUB> ';
   latexdef "Sp[fin]" as "{\rm Sp}_{\rm fin}";
 
+htmldef "Funs" as
+    " <FONT FACE=sans-serif>Funs</FONT> ";
+  althtmldef "Funs" as ' <FONT FACE=sans-serif>Funs</FONT> ';
+  latexdef "Funs" as "{\rm Funs}";
+htmldef "Fns" as
+    " <FONT FACE=sans-serif>Fns</FONT> ";
+  althtmldef "Fns" as ' <FONT FACE=sans-serif>Fns</FONT> ';
+  latexdef "Fns" as "{\rm Fns}";
+htmldef "PProd" as
+    " <FONT FACE=sans-serif>PProd</FONT> ";
+  althtmldef "PProd" as ' <FONT FACE=sans-serif>PProd</FONT> ';
+  latexdef "PProd" as "{\rm PProd}";
+htmldef "Cross" as
+    " <FONT FACE=sans-serif>Cross</FONT> ";
+  althtmldef "Cross" as ' <FONT FACE=sans-serif>Cross</FONT> ';
+  latexdef "Cross" as "{\rm Cross}";
+
 htmldef "Trans" as
     " <FONT FACE=sans-serif>Trans</FONT> ";
   althtmldef "Trans" as ' <FONT FACE=sans-serif>Trans</FONT> ';
@@ -53319,5 +53364,30 @@ htmldef "~~" as
     " <IMG SRC='approx.gif' WIDTH=13 HEIGHT=19 TITLE='~~' ALIGN=TOP> ";
   althtmldef "~~" as ' &#8776; '; /* &ap; */
   latexdef "~~" as "\approx";
+
+htmldef "NC" as
+    " <FONT FACE=sans-serif>NC</FONT> ";
+  althtmldef "NC" as ' <FONT FACE=sans-serif>NC</FONT> ';
+  latexdef "NC" as "{\rm NC}";
+htmldef "<_c" as
+    " <IMG SRC='le.gif' WIDTH=11 HEIGHT=19 ALT='&lt;_' ALIGN=TOP><SUB>c</SUB> ";
+  althtmldef "<_c" as ' &le;<SUB>c</SUB> ';
+  latexdef "<_c" as "{\le}_c";
+htmldef "<c" as
+    " <IMG SRC='lt.gif' WIDTH=11 HEIGHT=19 ALT='&lt;' ALIGN=TOP><SUB>c</SUB> ";
+  althtmldef "<c" as ' &lt;<SUB>c</SUB> ';
+  latexdef "<c" as "<_c ";
+htmldef "Nc" as
+    " <FONT FACE=sans-serif>Nc</FONT> ";
+  althtmldef "Nc" as ' <FONT FACE=sans-serif>Nc</FONT> ';
+  latexdef "Nc" as "{\rm Nc}";
+htmldef ".c" as
+    " <IMG SRC='_cdc.gif' WIDTH=10 HEIGHT=19 TITLE='.c' ALIGN=TOP> ";
+  althtmldef ".c" as ' &middot;<SUB><I>c</I></SUB> ';
+  latexdef ".c" as "\cdot_c";
+htmldef "T_c" as
+    " <FONT FACE=sans-serif>T</FONT><SUB>c</SUB> ";
+  althtmldef "T_c" as ' <FONT FACE=sans-serif>T</FONT><SUB>c</SUB> ';
+  latexdef "T_c" as "{\rm T}_c ";
 
 $)
