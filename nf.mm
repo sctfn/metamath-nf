@@ -46675,6 +46675,22 @@ $)
        $( [24-Feb-2015] $)
   $}
 
+  ${
+     $( Calculate the converse of a singleton image. $)
+     cnvsi $p |- `' SI R = SI `' R $= ? $.
+
+     $( Calculate the domain of a singleton image. $)
+     dmsi $p |- dom SI R = ~P1 dom R $= ? $.
+  $}
+
+  $( Calculate the range of a singleton image. $)
+  rnsi $p |- ran SI R = ~P1 ran R $= ? $.
+
+  ${
+     $( The singleton image of a function is a function. $)
+     funsi $p |- ( Fun F -> Fun SI F ) $= ? $.
+  $}
+
 $(
 =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
         Operations
@@ -52538,6 +52554,21 @@ $)
        $( [25-Feb-2015] $)
   $}
 
+  ${ $d A a b f $. $d B a b f $.
+     $( Two classes are equinumerous iff their unit power classes are
+     	equinumerous. $)
+     enpw1 $p |- ( A ~~ B <-> ~P1 A ~~ ~P1 B ) $=
+       ( va vb vf cen wbr wcel wa cpw1 brex pw1exb sylibr cv wceq pw1eq bibi12d
+       cvv wb wf1o anbi12i bicomi breq1 breq1d breq2 breq2d wex bren csi dff1o4
+       wfn ccnv vex siex f1oen syl exlimiv sylbi impbii vtocl2g pm5.21nii ) ABF
+       GZARHZBRHZIZAJZBJZFGZABFKVHVFRHZVGRHZIZVEVFVGFKVKVEVIVCVJVDALBLUAUBMCNZD
+       NZFGZVLJZVMJZFGZSAVMFGZVFVPFGZSVBVHSCDABRRVLAOZVNVRVQVSVLAVMFUCVTVOVFVPF
+       VLAPUDQVMBOZVRVBVSVHVMBAFUEWAVPVGVFFVMBPUFQVNVQVNVLVMENZTZEUGVQVLVMEUHWC
+       VQEWCVOVPWBUIZTZVQWCWDVOUKWDULVPUKIWE?VOVPWDUJMVOVPWDWBEUMUNUOUPUQUR?USU
+       TVA $.
+       $( [26-Feb-2015] $)
+  $}
+
 $(
 =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
         Cardinal numbers
@@ -53073,10 +53104,8 @@ $)
      $( The cardinality of two sets are equal iff their unit power classes
      	have the same cardinality. $)
      ncpw1 $p |- ( Nc A = Nc B <-> Nc ~P1 A = Nc ~P1 B ) $=
-       ( vf cen wbr cpw1 cnc wceq cv wf1o wex bren csi vex siex f1oen eqnc wcel
-       cvv syl exlimiv sylbi impbii pw1exg ax-mp 3bitr4i ) ABEFZAGZBGZEFZAHBHIU
-       IHUJHIUHUKUHABDJZKZDLUKABDMUMUKDUMUIUJULNZKUK?UIUJUNULDOPQUAUBUC?UDABCRU
-       IUJATSUITSCATUEUFRUG $.
+       ( cen wbr cpw1 cnc wceq enpw1 eqnc pw1ex 3bitr4i ) ABDEAFZBFZDEAGBGHMGNG
+       HABIABCJMNACKJL $.
        $( [25-Feb-2015] $)
   $}
 
