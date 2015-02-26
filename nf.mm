@@ -46676,20 +46676,61 @@ $)
   $}
 
   ${
-     $( Calculate the converse of a singleton image. $)
-     cnvsi $p |- `' SI R = SI `' R $= ? $.
+    $d a b $.  $d a x $.  $d a y $.  $d b x $.  $d b y $.  $d R a $.  $d R b $.
+    $d R x $.  $d R y $.  $d x y $.
+    $( A singleton image is a relationship. $)
+    relsi $p |- Rel SI R $=
+       ( vx va vy vb cv csn wceq wbr w3a wex csi df-si relopabi ) BFCFZGHDFEFZG
+       HOPAIJEKCKBDALBDCEAMN $.
+       $( [26-Feb-2015] $)
 
-     $( Calculate the domain of a singleton image. $)
-     dmsi $p |- dom SI R = ~P1 dom R $= ? $.
+    $( Calculate the converse of a singleton image. $)
+    cnvsi $p |- `' SI R = SI `' R $=
+       ( vx vy vb va csi ccnv relcnv relsi csn wceq wbr w3a wex 3ancoma 3anbi3i
+       cv brcnv bitr4i brsi 2exbii excom 3bitri 3bitr4i eqbrriv ) BCAFZGZAGZFZU
+       FHUHICQZDQZJKZBQZEQZJKZUKUNALZMZDNENZUOULUNUKUHLZMZDNENUMUJUGLZUMUJUILUQ
+       UTEDUQUOULUPMUTULUOUPOUSUPUOULUNUKARPSUAVAUJUMUFLUQENDNURUMUJUFRDEUJUMAT
+       UQDEUBUCEDUMUJUHTUDUE $.
+       $( [26-Feb-2015] $)
+
+    $( Calculate the domain of a singleton image. $)
+    dmsi $p |- dom SI R = ~P1 dom R $=
+       ( vx va vy vb csi cdm cpw1 cv csn wceq wbr wex wcel wa bitri exbii excom
+       eldm 3bitr4i w3a wrex 3anass 2exbii 19.42vv isseti 19.41v mpbiran anbi2i
+       snex ancom df-rex brsi elpw1 eqriv ) BAFZGZAGZHZBIZCIZJKZDIZEIZJZKZVAVDA
+       LZUAZEMZCMZDMZVBCURUBZUTUQNZUTUSNVIDMZCMVAURNZVBOZCMVKVLVNVPCVNVBVFVGOZE
+       MDMZOZVPVNVBVQOZEMDMVSVHVTDEVBVFVGUCUDVBVQDEUEPVSVBVOOVPVRVOVBVQDMZEMVGE
+       MVRVOWAVGEWAVFDMVGDVEVDUJUFVFVGDUGUHQVQDEREVAASTUIVBVOUKPPQVIDCRVBCURULT
+       VMUTVCUPLZDMVKDUTUPSWBVJDCEUTVCAUMQPCUTURUNTUO $.
+       $( [26-Feb-2015] $)
+
+    $d a c $.  $d a d $.  $d a z $.  $d b c $.  $d b d $.  $d b z $.  $d c d $.
+    $d c x $.  $d c y $.  $d c z $.  $d d x $.  $d d y $.  $d d z $.  $d F a $.
+    $d F b $.  $d F c $.  $d F d $.  $d F x $.  $d F y $.  $d F z $.  $d x z $.
+    $d y z $.
+    $( The singleton image of a function is a function. $)
+    funsi $p |- ( Fun F -> Fun SI F ) $=
+       ( vx vy vz va vb vc vd wfun cv wbr wa weq wi wal csn wceq w3a wex wb csi
+       brsi anbi12i ee4anv bitr4i fununiq 3exp breq1 bicomd adantr eqeq2 syl6bb
+       vex sneqb adantl imbi12d biimprcd exp3a 3impd eqeq1 3anbi1d imbi2d imp3a
+       syl6 exlimdvv syl5bi alrimiv alrimivv wrel relsi dffun2 mpbiran sylibr
+       syl ) AIZBJZCJZAUAZKZVPDJZVRKZLZCDMZNZDOZCOBOZVRIZVOWEBCVOWDDWBVPEJZPZQZ
+       VQFJZPZQZWHWKAKZRZVPGJZPZQZVTHJZPZQZWPWSAKZRZLZHSGSZFSESZVOWCWBWOFSESZXC
+       HSGSZLXFVSXGWAXHEFVPVQAUBGHVPVTAUBUCWOXCEFGHUDUEVOXEWCEFVOXDWCGHVOWOXCWC
+       VOWNEGMZXAXBRZWLVTQZNZNZWOXCWCNZNVOWNWHWSAKZFHMZNZXLVOWNXOXPWHWKWSAUFUGX
+       QXIXAXBXKXQXIXAXBXKNZXIXALZXRXQXSXBXOXKXPXIXBXOTXAXIXOXBWHWPWSAUHUIUJXAX
+       KXPTXIXAXKWLWTQXPVTWTWLUKWKWSFUMUNULUOUPUQURUSVDXMWJWMWNXNXMWJWMWNXNNZWJ
+       WMLZXTXMYAXNXLWNYAXCXJWCXKWJXCXJTWMWJWRXIXAXBWJWRWIWQQXIVPWIWQUTWHWPEUMU
+       NULVAUJWMWCXKTWJVQWLVTUTUOUPVBUQURUSVNVCVEVEVFVGVHWGVRVIWFAVJBCDVRVKVLVM
+       $.
+       $( [26-Feb-2015] $)
   $}
 
   $( Calculate the range of a singleton image. $)
-  rnsi $p |- ran SI R = ~P1 ran R $= ? $.
-
-  ${
-     $( The singleton image of a function is a function. $)
-     funsi $p |- ( Fun F -> Fun SI F ) $= ? $.
-  $}
+  rnsi $p |- ran SI R = ~P1 ran R $=
+    ( csi ccnv cdm cpw1 cnvsi dmeqi dmsi eqtri dfrn4 wceq pw1eq ax-mp 3eqtr4i
+    crn ) ABZCZDZACZDZEZPOAOZEZRSBZDUAQUDAFGSHIPJUBTKUCUAKAJUBTLMN $.
+    $( [26-Feb-2015] $)
 
 $(
 =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
@@ -49153,7 +49194,7 @@ $)
   $( Extend the definition of a class to include the cross product function. $)
   ccross $a class Cross $.
 
-  $( Extend the definition of a class to include the unit power class 
+  $( Extend the definition of a class to include the unit power class
      function. $)
   cpw1fn $a class Pw1Fn $.
 
@@ -49221,8 +49262,8 @@ $)
     df-cross $a |- Cross = ( x e. _V , y e. _V |-> ( x X. y ) ) $.
   $}
 
-  $( Define the function that takes a singleton to the unit power class
-     of its member.  This function is defined in such a way as to ensure
+  $( Define the function that takes a singleton to the unit power class of its
+     member.  This function is defined in such a way as to ensure
      stratification. $)
   df-pw1fn $a |- Pw1Fn = ( x e. 1c |-> ~P1 U. x ) $.
 
@@ -50215,17 +50256,19 @@ $)
       $( [11-Feb-2015] $)
   $}
 
-  ${ $d A x $.
-     pw1fnval.1 $e |- A e. _V $.
-     $( The value of the unit power class function. $)
-     pw1fnval $p |- ( Pw1Fn ` { A } ) = ~P1 A $=
+  ${
+    $d A x $.
+    pw1fnval.1 $e |- A e. _V $.
+    $( The value of the unit power class function. $)
+    pw1fnval $p |- ( Pw1Fn ` { A } ) = ~P1 A $=
        ( vx csn c1c wcel cpw1fn cfv cpw1 wceq snel1c cv cuni unieq unisn syl6eq
        pw1eq syl df-pw1fn pw1ex fvmpt ax-mp ) ADZEFUCGHAIZJABKCUCCLZMZIZUDEGUEU
        CJZUFAJUGUDJUHUFUCMAUEUCNABOPUFAQRCSABTUAUB $.
        $( [25-Feb-2015] $)
   $}
 
-  ${ $d x y z $.
+  ${
+    $d x y z $.
     $( The unit power class function is a set. $)
     pw1fnex $p |- Pw1Fn e. _V $=
       ( vx vy vz cpw1fn cvv cxp c1c csset cpw1 cv wcel wa cop wn csn wex wb vex
@@ -50250,18 +50293,17 @@ $)
   $}
 
   ${
-     $( Functionhood statement for ` Pw1Fn ` $)
-     fnpw1fn $p |- Pw1Fn Fn 1c $=
+    $( Functionhood statement for ` Pw1Fn ` $)
+    fnpw1fn $p |- Pw1Fn Fn 1c $=
        ( vx cv cuni cpw1 cvv wcel cpw1fn c1c wfn df-pw1fn fnmpt vex uniex pw1ex
        a1i mprg ) ABZCZDZEFZGHIAHAHSGEAJKTQHFRQALMNOP $.
        $( [25-Feb-2015] $)
   $}
 
   ${
-     brpw1fn.1 $e |- A e. _V $.
-
-     $( Binary relationship form of ` Pw1Fn ` $)
-     brpw1fn $p |- ( { A } Pw1Fn B <-> B = ~P1 A ) $=
+    brpw1fn.1 $e |- A e. _V $.
+    $( Binary relationship form of ` Pw1Fn ` $)
+    brpw1fn $p |- ( { A } Pw1Fn B <-> B = ~P1 A ) $=
        ( csn cpw1fn cfv wceq cpw1 wbr pw1fnval eqeq1i c1c wfn wb fnpw1fn snel1c
        wcel fnbrfvb mp2an eqcom 3bitr3i ) ADZEFZBGZAHZBGUBBEIZBUEGUCUEBACJKELMU
        BLQUDUFNOACPLUBBERSUEBTUA $.
@@ -52554,18 +52596,24 @@ $)
        $( [25-Feb-2015] $)
   $}
 
-  ${ $d A a b f $. $d B a b f $.
-     $( Two classes are equinumerous iff their unit power classes are
-     	equinumerous. $)
-     enpw1 $p |- ( A ~~ B <-> ~P1 A ~~ ~P1 B ) $=
-       ( va vb vf cen wbr wcel wa cpw1 brex pw1exb sylibr cv wceq pw1eq bibi12d
-       cvv wb wf1o anbi12i bicomi breq1 breq1d breq2 breq2d wex bren csi dff1o4
-       wfn ccnv vex siex f1oen syl exlimiv sylbi impbii vtocl2g pm5.21nii ) ABF
-       GZARHZBRHZIZAJZBJZFGZABFKVHVFRHZVGRHZIZVEVFVGFKVKVEVIVCVJVDALBLUAUBMCNZD
-       NZFGZVLJZVMJZFGZSAVMFGZVFVPFGZSVBVHSCDABRRVLAOZVNVRVQVSVLAVMFUCVTVOVFVPF
-       VLAPUDQVMBOZVRVBVSVHVMBAFUEWAVPVGVFFVMBPUFQVNVQVNVLVMENZTZEUGVQVLVMEUHWC
-       VQEWCVOVPWBUIZTZVQWCWDVOUKWDULVPUKIWE?VOVPWDUJMVOVPWDWBEUMUNUOUPUQUR?USU
-       TVA $.
+  ${
+    $d A a b f $.  $d B a b f $.
+    $( Two classes are equinumerous iff their unit power classes are
+       equinumerous. $)
+    enpw1 $p |- ( A ~~ B <-> ~P1 A ~~ ~P1 B ) $=
+       ( va vb vf cen wbr cvv wcel wa cpw1 brex cv wceq pw1eq wfun cdm sylanbrc
+       wb syl pw1exb anbi12i sylib breq1 breq1d bibi12d breq2 wf1o wex bren csi
+       breq2d wfn ccnv f1ofun funsi f1odm dmsi syl5eq df-fn f1of1 df-f1 simprbi
+       wf1 wf 3syl cnvsi funeqi sylibr wfo f1ofo forn rnsi dfrn4 eqtr3i syl5eqr
+       crn dff1o4 vex siex f1oen exlimiv sylbi impbii vtocl2g pm5.21nii ) ABFGZ
+       AHIZBHIZJZAKZBKZFGZABFLWMWKHIZWLHIZJWJWKWLFLWNWHWOWIAUABUAUBUCCMZDMZFGZW
+       PKZWQKZFGZSAWQFGZWKWTFGZSWGWMSCDABHHWPANZWRXBXAXCWPAWQFUDXDWSWKWTFWPAOUE
+       UFWQBNZXBWGXCWMWQBAFUGXEWTWLWKFWQBOULUFWRXAWRWPWQEMZUHZEUIXAWPWQEUJXGXAE
+       XGWSWTXFUKZUHZXAXGXHWSUMZXHUNZWTUMZXIXGXHPZXHQZWSNZXJXGXFPXMWPWQXFUOXFUP
+       TXGXFQZWPNZXOWPWQXFUQXQXNXPKWSXFURXPWPOUSTXHWSUTRXGXKPZXKQZWTNZXLXGXFUNZ
+       UKZPZXRXGWPWQXFVDZYAPZYCWPWQXFVAYDWPWQXFVEYEWPWQXFVBVCYAUPVFXKYBXFVGVHVI
+       XGWPWQXFVJXFVQZWQNZXTWPWQXFVKWPWQXFVLYGXSYFKZWTXHVQYHXSXFVMXHVNVOYFWQOVP
+       VFXKWTUTRWSWTXHVRRWSWTXHXFEVSVTWATWBWC?WDWEWF $.
        $( [26-Feb-2015] $)
   $}
 
@@ -53082,9 +53130,9 @@ $)
   $}
 
   ${
-     $d A x y $.
-     $( A cardinal is finite iff it is a subset of ` Fin ` . $)
-     ncssfin $p |- ( A e. NC -> ( A e. Nn <-> A C_ Fin ) ) $=
+    $d A x y $.
+    $( A cardinal is finite iff it is a subset of ` Fin ` . $)
+    ncssfin $p |- ( A e. NC -> ( A e. Nn <-> A C_ Fin ) ) $=
        ( vx vy cncs wcel cnnc cfin wss cuni elssuni cv wi wrex wal c0c wne wceq
        c0 wex wa df-fin syl6sseqr wel dfss2 imbi2i wb peano1 ne0i r19.37zv mp2b
        elfin bitr4i albii bitri nulnnc eleq1 mtbiri necon2ai 19.29r pm2.27 nnnc
@@ -53099,11 +53147,11 @@ $)
   $}
 
   ${
-     $d A f $. $d B f $.
-     ncpw1.1 $e |- A e. _V $.
-     $( The cardinality of two sets are equal iff their unit power classes
-     	have the same cardinality. $)
-     ncpw1 $p |- ( Nc A = Nc B <-> Nc ~P1 A = Nc ~P1 B ) $=
+    $d A f $.  $d B f $.
+    ncpw1.1 $e |- A e. _V $.
+    $( The cardinality of two sets are equal iff their unit power classes have
+       the same cardinality. $)
+    ncpw1 $p |- ( Nc A = Nc B <-> Nc ~P1 A = Nc ~P1 B ) $=
        ( cen wbr cpw1 cnc wceq enpw1 eqnc pw1ex 3bitr4i ) ABDEAFZBFZDEAGBGHMGNG
        HABIABCJMNACKJL $.
        $( [25-Feb-2015] $)
