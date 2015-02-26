@@ -29244,6 +29244,20 @@ $)
     GBGMNPCOQCABHNPEIJAKBKL $.
     $( [3-Feb-2015] $)
 
+  ${
+    $d A t $.  $d A x $.  $d B t $.  $d B x $.  $d t x $.
+    $( The unit power class operation is one-to-one. $)
+    pw111 $p |- ( ~P1 A = ~P1 B <-> A = B ) $=
+       ( vt vx cv csn wceq cpw1 wcel wb wi wal snex eleq1 snelpw1 bitri c1c wss
+       albii pw1ss1c bibi12d ceqsalv bibi12i wral ssofeq df-ral wex el1c imbi1i
+       mp2an 19.23v bitr4i alcom dfcleq 3bitr4i ) CEZDEZFZGZUPAHZIZUPBHZIZJZKZC
+       LZDLZUQAIZUQBIZJZDLUTVBGZABGVFVJDVFURUTIZURVBIZJZVJVDVNCURUQMUSVAVLVCVMU
+       PURUTNUPURVBNUAUBVLVHVMVIUQAOUQBOUCPSVKVDCQUDZVGUTQRVBQRVKVOJATBTCUTVBQU
+       EUJVOUPQIZVDKZCLZVGVDCQUFVRVEDLZCLVGVQVSCVQUSDUGZVDKVSVPVTVDDUPUHUIUSVDD
+       UKULSVECDUMPPPDABUNUO $.
+       $( [26-Feb-2015] $)
+  $}
+
 $(
 =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
         Kuratowski relationships
@@ -50308,6 +50322,30 @@ $)
        wcel fnbrfvb mp2an eqcom 3bitr3i ) ADZEFZBGZAHZBGUBBEIZBUEGUCUEBACJKELMU
        BLQUDUFNOACPLUBBERSUEBTUA $.
        $( [25-Feb-2015] $)
+  $}
+
+  ${
+    $d a b $.  $d a x $.  $d a y $.  $d b x $.  $d b y $.  $d x y $.  $d x z $.
+    $d y z $.
+    $( ` Pw1Fn ` is a one-to-one function with domain ` 1c ` and range
+       ` ~P 1c ` . $)
+    pw1fnf1o $p |- Pw1Fn : 1c -1-1-onto-> ~P 1c $=
+       ( vx vy vz va vb c1c cpw1fn wceq cv cfv cpw1 wss wex wcel cvv wa vex csn
+       exbii el1c cpw wf1o wfn crn weq wi wral fnpw1fn cuni wrex df-pw1fn rnmpt
+       cab sspw1 df1c2 sseq2i biantrur 3bitr4i elpw df-rex anbi1i 19.41v bitr4i
+       ssv excom snex unieq unisn syl6eq pw1eq syl eqeq2d ceqsexv 3bitri abbi2i
+       bitri eqtr4i anbi12i eeanv pw111 biimpi a1i fveq2 eqeqan12d eqeq12 sneqb
+       pw1fnval syl6bb 3imtr4d exlimivv sylbi rgen2a dff1o6 mpbir3an ) FFUAZGUB
+       GFUCGUDZWOHAIZGJZBIZGJZHZABUEZUFZBFUGAFUGUHWPWSWQUIZKZHZAFUJZBUMWOABFXEG
+       AUKULXGBWOWSFLZWSCIZKZHZCMZWSWONXGWSOKZLXIOLZXKPZCMXHXLCWSOBQZUNFXMWSUOU
+       PXKXOCXNXKXIVDUQSURWSFXPUSXGWQFNZXFPZAMWQXIRZHZXFPZCMZAMZXLXFAFUTXRYBAXR
+       XTCMZXFPYBXQYDXFCWQTVAXTXFCVBVCSYCYAAMZCMXLYAACVEYEXKCXFXKAXSXIVFXTXEXJW
+       SXTXDXIHXEXJHXTXDXSUIXIWQXSVGXICQVHVIXDXIVJVKVLVMSVPVNURVOVQXCABFXQWSFNZ
+       PZWQDIZRZHZWSEIZRZHZPZEMDMZXCYGYJDMZYMEMZPYOXQYPYFYQDWQTEWSTVRYJYMDEVSVC
+       YNXCDEYNYHKZYKKZHZDEUEZXAXBYTUUAUFYNYTUUAYHYKVTWAWBYJYMWRYRWTYSYJWRYIGJY
+       RWQYIGWCYHDQZWGVIYMWTYLGJYSWSYLGWCYKEQWGVIWDYNXBYIYLHUUAWQYIWSYLWEYHYKUU
+       BWFWHWIWJWKWLABFWOGWMWN $.
+       $( [26-Feb-2015] $)
   $}
 
 $(
