@@ -52860,10 +52860,10 @@ $)
 
   ${
      $d A x y z $.
-     erpw1pw.1 $e |- A e. _V $.
+     enpw1pw.1 $e |- A e. _V $.
      $( Unit power class and power class commute within equivalence.  Theorem
      	XI.1.35 of [Rosser], p. 368. $)
-     erpw1pw $p |- ~P1 ~P A ~~ ~P ~P1 A $=
+     enpw1pw $p |- ~P1 ~P A ~~ ~P ~P1 A $=
        ( vy vx vz cpw cpw1 cpw1fn wf1o wbr c1c wss ax-mp wceq wrex wcel wex vex
        cv wa cres cen cima wf1 pw1fnf1o f1of1 pw1ss1c f1ores wb cab df-ima elpw
        mp2an sspw1 df-rex df-pw abeq2i anbi1i exbii bitr2i 3bitri elpw1 r19.41v
