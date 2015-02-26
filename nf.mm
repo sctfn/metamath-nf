@@ -53419,6 +53419,21 @@ $)
        $( [25-Feb-2015] $)
   $}
 
+  ${
+     ncpwpw1.1 $e |- A e. _V $.
+     $( Power class and unit power class commute within cardinality. $)
+     ncpwpw1 $p |- Nc ~P ~P1 A = Nc ~P1 ~P A $=
+       ( cpw1 cpw cnc wceq cen wbr enpw1pw ensym mpbi pw1ex pwex eqnc mpbir ) A
+       CZDZEADCZEFQRGHZRQGHSABIRQJKQRPABLMNO $.
+       $( [26-Feb-2015] $)
+  $}
+
+  $( The cardinality of ` 1c ` is equal to that of its power class. $)
+  ncpw1c $p |- Nc ~P 1c = Nc 1c $=
+    ( cvv cpw1 cpw cnc c1c vvex ncpwpw1 df1c2 pweqi nceqi wceq pwv pw1eq eqtr4i
+    ax-mp 3eqtr4i ) ABZCZDACZBZDECZDEDAFGUAREQHIJETEQTHSAKTQKLSAMONJP $.
+    $( [26-Feb-2015] $)
+
 $(
 #*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#
        Appendix:  Typesetting definitions for the tokens in this file
