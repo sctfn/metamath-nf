@@ -53059,6 +53059,10 @@ $)
      elements. $)
   df-2c $a |- 2c = Nc { (/) , _V } $.
 
+  $( Define cardinal three. This is the set of all sets with three unique
+     elements. $)
+  df-3c $a |- 3c = Nc { (/) , _V , ( _V \ { (/) } ) } $.
+
   $( Cardinality equality law. $)
   nceq $p |- ( A = B -> Nc A = Nc B ) $=
     ( wceq cen cec cnc eceq1 df-nc 3eqtr4g ) ABCADEBDEAFBFABDGAHBHI $.
@@ -53080,7 +53084,7 @@ $)
        $( [24-Feb-2015] $)
   $}
 
-  $( The class of all cardinal numbers is a set. $)
+  $( The class of all cardinal numbers is a  set. $)
   ncsex $p |- NC e. _V $=
     ( cncs cvv cen cqs df-ncs enex vvex qsex eqeltri ) ABCDBEBCFGHI $.
     $( [24-Feb-2015] $)
