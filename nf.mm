@@ -53610,18 +53610,31 @@ $)
      QKVRVGVMWIVHVIVJ $.
      $( [2-Mar-2015] $)
 
-  ${ $d A x $. $d A y $. $d x y $. 
-     $( The cardinal T operation always yields a set. $)
-     tcex $p |- T_c A e. _V $=
+  ${
+    $d A x $.  $d A y $.  $d x y $.
+    $( The cardinal T operation always yields a set. $)
+    tcex $p |- T_c A e. _V $=
        ( vx vy ctc cv cncs wcel cpw1 cnc wceq wrex cio cvv df-tc iotaex eqeltri
        wa ) ADBEZFGRCEHIJCAKQZBLMCABNSBOP $.
        $( [2-Mar-2015] $)
   $}
 
-  ${ $d A w $. $d A x $. $d A y $. $d A z $. $d w x $. $d w y $. $d w z $. $d x y $. $d x z $. $d y z $. 
-     $( Given a cardinal, there is a unique cardinal that contains
-     	the unit power class of its members. $)
-     ncspw1eu $p |- ( A e. NC -> E! x e. NC E. y e. A x = Nc ~P1 y ) $=
+  ${
+    $d A x $.  $d A y $.  $d B x $.  $d B y $.  $d x y $.
+    $( Equality theorem for cardinal T operator. $)
+    tceq $p |- ( A = B -> T_c A = T_c B ) $=
+       ( vx vy wceq cv cncs wcel cpw1 cnc wrex wa cio ctc rexeq anbi2d iotabidv
+       df-tc 3eqtr4g ) ABEZCFZGHZUADFIJEZDAKZLZCMUBUCDBKZLZCMANBNTUEUGCTUDUFUBU
+       CDABOPQDACRDBCRS $.
+       $( [2-Mar-2015] $)
+  $}
+
+  ${
+    $d A w $.  $d A x $.  $d A y $.  $d A z $.  $d w x $.  $d w y $.  $d w z $.
+    $d x y $.  $d x z $.  $d y z $.
+    $( Given a cardinal, there is a unique cardinal that contains the unit
+       power class of its members. $)
+    ncspw1eu $p |- ( A e. NC -> E! x e. NC E. y e. A x = Nc ~P1 y ) $=
        ( vz vw cncs wcel cv cpw1 cnc wceq wrex wa weq wi wral wex c0 sylib cvv
        wreu wne nulnnc eleq1 mtbiri necon2ai vex pw1ex ncelncs ax-mp eqid eqeq1
        n0 rcla4ev mp2an jctr a1i eximdv mpd rexcom df-rex sylibr reeanv ncseqnc
@@ -53639,18 +53652,20 @@ $)
        $( [2-Mar-2015] $)
   $}
 
-  ${ $d A x y $.
-     $( The cardinal T operation over a cardinal yields a cardinal. $)
-     tccl $p |- ( A e. NC -> T_c A e. NC ) $=
+  ${
+    $d A x y $.
+    $( The cardinal T operation over a cardinal yields a cardinal. $)
+    tccl $p |- ( A e. NC -> T_c A e. NC ) $=
        ( vx vy cncs wcel ctc cv cpw1 cnc wceq wrex df-tc wreu ncspw1eu reiotacl
        wa cio syl syl5eqel ) ADEZAFBGZDEUACGHIJCAKZPBQZDCABLTUBBDMUCDEBCANUBBDO
        RS $.
        $( [2-Mar-2015] $)
   $}
 
-  ${ $d A x y $. $d B x y $.
-     $( The defining property of the cardinal T operation. $)
-     eqtc $p |- ( A e. NC -> ( T_c A = B <-> E. x e. A B = Nc ~P1 x ) ) $=
+  ${
+    $d A x y $.  $d B x y $.
+    $( The defining property of the cardinal T operation. $)
+    eqtc $p |- ( A e. NC -> ( T_c A = B <-> E. x e. A B = Nc ~P1 x ) ) $=
        ( vy cncs wcel ctc wceq cv cpw1 cnc wrex wa simpr adantr eqeltrrd ex cvv
        tccl wb vex pw1ex ncelncs ax-mp eleq1 mpbiri rexlimivw a1i wreu ncspw1eu
        cio eqeq1 rexbidv reiota2 sylan2 ancoms df-tc eqeq1i syl6rbbr pm5.21ndd
@@ -53661,10 +53676,11 @@ $)
        $( [2-Mar-2015] $)
   $}
 
-  ${ $d A y $. $d B y $.
-     $( The unit power class of an element of a cardinal is in the cardinal's
-     	T raising. $)
-     pw1eltc $p |- ( ( A e. NC /\ B e. A ) -> ~P1 B e. T_c A ) $=
+  ${
+    $d A y $.  $d B y $.
+    $( The unit power class of an element of a cardinal is in the cardinal's T
+       raising. $)
+    pw1eltc $p |- ( ( A e. NC /\ B e. A ) -> ~P1 B e. T_c A ) $=
        ( vy cncs wcel wa cpw1 cnc ctc cvv pw1exg ncidg adantl wceq cv wrex eqid
        syl pw1eq nceqd eqeq2d rcla4ev mpan2 wb eqtc adantr mpbird eleqtrrd ) AD
        EZBAEZFZBGZULHZAIZUJULUMEZUIUJULJEUOBAKULJLRMUKUNUMNZUMCOZGZHZNZCAPZUJVA
@@ -53672,6 +53688,51 @@ $)
        H $.
        $( [2-Mar-2015] $)
   $}
+
+  $( The T raising of cardinal zero is still cardinal zero. $)
+  tc0c $p |- T_c 0c = 0c $=
+    ( c0c ctc cncs wcel wceq 0cnc tccl ax-mp cpw1 pw10 nulel0c pw1eltc mp2an
+    c0 eqeltrri nceleq mp4an ) ABZCDZACDZNRDNADZRAETSFAGHFNIZNRJTUAUBRDFKANL
+    MOKRANPQ $.
+    $( [2-Mar-2015] $)
+
+  ${
+    $d A x $.  $d A y $.  $d B x $.  $d B y $.  $d x y $.
+    $( T raising distributes over addition. $)
+    tcdi $p |- ( ( A e. NC /\ B e. NC ) -> 
+       T_c ( A +c B ) = ( T_c A +c T_c B ) ) $=
+       ( vx vy cncs wcel wa cnc wceq wex cplc ctc cpw1 ax-mp mp2an tccl pw1eltc
+       c0 cvv tceq cv ccompl csn cxp eeanv cen wbr vex complex xpsnen snex xpex
+       0ex eqnc mpbir eqeq2i anbi12i 2exbii elncs 3bitr4ri cun ncelncs ncaddccl
+       cin ncid necompl xpnedisj eladdci mp3an pw1un pw1eq pw10 3eqtr3i eqeltri
+       pw1in nceleq mp4an addceq12 syl adantr adantl addceq12d 3eqtr4a exlimivv
+       sylbi ) AEFZBEFZGZACUAZRUBZUCZUDZHZIZBDUAZRUCZUDZHZIZGZDJCJZABKZLZALZBLZ
+       KZIZAWIHZIZBWOHZIZGZDJCJXICJZXKDJZGXAWHXIXKCDUEWTXLCDWNXIWSXKWMXHAWMXHIW
+       LWIUFUGWIWJCUHZRUMUIZUJWLWIWIWKXOWJUKULZUNUOUPWRXJBWRXJIWQWOUFUGWORDUHZU
+       MUJWQWOWOWPXRRUKULZUNUOUPUQURWFXMWGXNCAUSDBUSUQUTWTXGCDWTWMWRKZLZWMLZWRL
+       ZKZXCXFYAEFZYDEFZWLWQVAZMZYAFZYHYDFYAYDIXTEFZYEWMEFZWREFZYJWLSFYKXQWLSVB
+       NZWQSFYLXSWQSVBNZWMWRVCOZXTPNYBEFZYCEFZYFYKYPYMWMPNYLYQYNWRPNYBYCVCOYJYG
+       XTFZYIYOWLWMFZWQWRFZWLWQVDZRIZYRWLXQVEZWQXSVEZWIWOWJRXPRVFVGZWLWQWMWRVHV
+       IXTYGQOYHWLMZWQMZVAZYDWLWQVJUUFYBFZUUGYCFZUUFUUGVDZRIUUHYDFYKYSUUIYMUUCW
+       MWLQOYLYTUUJYNUUDWRWQQOUUAMZRMZUUKRUUBUULUUMIUUEUUARVKNWLWQVOVLVMUUFUUGY
+       BYCVHVIVNYAYDYHVPVQWTXBXTIXCYAIABWMWRVRXBXTTVSWTXDYBXEYCWNXDYBIWSAWMTVTW
+       SXEYCIWNBWRTWAWBWCWDWE $.
+       $( [2-Mar-2015] $)
+  $}
+
+  $( T raising does not change cardinal one. $)
+  tc1c $p |- T_c 1c = 1c $=
+    ( c1c ctc cncs wcel c0 csn wceq 1cnc tccl ax-mp 0ex pw1sn snel1c pw1eltc
+      cpw1 mp2an eqeltrri snex nceleq mp4an ) ABZCDZACDZEFZFZUADUEADUAAGUCUBHA
+    IJHUDOZUEUAEKLUCUDADUFUADHEKMAUDNPQUDERMUAAUEST $.
+    $( [2-Mar-2015] $)
+
+  $( T raising does not change cardinal two. $)
+  tc2c $p |- T_c 2c = 2c $=
+    ( c1c cplc ctc c2c cncs wcel wceq 1cnc tcdi mp2an tc1c addceq12i eqtri tceq
+    1p1e2c ax-mp 3eqtr3i ) AABZCZRDCZDSACZUABZRAEFZUCSUBGHHAAIJUAAUAAKKLMRDGSTG
+    ORDNPOQ $.
+    $( [2-Mar-2015] $)
 
 $(
 =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
@@ -53814,6 +53875,11 @@ $)
       $( [2-Mar-2015] $)
   $}
 
+  ${
+     $( Lemma for ~ nchoice .  A finite cardinal is not one more than its 
+     	T-raising. $)
+     nchoicelem1 $p |- ( A e. Nn -> -. A = ( T_c A +c 1c ) ) $= ? $.
+  $}
 
 $(
 #*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#
