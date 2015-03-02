@@ -53078,7 +53078,7 @@ $)
     $( Define the type-raising operation on a cardinal number.  This is the
        unique cardinal containing the unit power classes of the elements of the
        given cardinal.  Definition from [Rosser], p.  XXX. $)
-    df-tc $a |- T_c A = ( iota b ( b e. NC /\ E. x e. A b = Nc ~P1 b ) ) $.
+    df-tc $a |- T_c A = ( iota b ( b e. NC /\ E. x e. A b = Nc ~P1 x ) ) $.
   $}
 
   $( Define cardinal two.  This is the set of all sets with two unique
@@ -53609,6 +53609,44 @@ $)
      MUNUOVMABBVLPATUPZUQSVKVMURUSVKVNABVCVMTUTRIABVMVAZGVPVBWJVOABVMVDVEVFJV
      QKVRVGVMWIVHVIVJ $.
      $( [2-Mar-2015] $)
+
+  ${ $d A x $. $d A y $. $d x y $. 
+     $( The cardinal T operation always yields a set. $)
+     tcex $p |- T_c A e. _V $=
+       ( vx vy ctc cv cncs wcel cpw1 cnc wceq wrex cio cvv df-tc iotaex eqeltri
+       wa ) ADBEZFGRCEHIJCAKQZBLMCABNSBOP $.
+       $( [2-Mar-2015] $)
+  $}
+
+  ${ $d A w $. $d A x $. $d A y $. $d A z $. $d w x $. $d w y $. $d w z $. $d x y $. $d x z $. $d y z $. 
+     $( Given a cardinal, there is a unique cardinal that contains
+     	the unit power class of its members. $)
+     ncspw1eu $p |- ( A e. NC -> E! x e. NC E. y e. A x = Nc ~P1 y ) $=
+       ( vz vw cncs wcel cv cpw1 cnc wceq wrex wa weq wi wral wex c0 sylib cvv
+       wreu wne nulnnc eleq1 mtbiri necon2ai vex pw1ex ncelncs ax-mp eqid eqeq1
+       n0 rcla4ev mp2an jctr a1i eximdv mpd rexcom df-rex sylibr reeanv ncseqnc
+       bitri w3a biimpar adantrr adantrl eqtr3d ncpw1 eqeq2 anbi1d eqtr3 syl6bi
+       3adant2 3expa rexlimdvva syl5bir ralrimivva rexbidv pw1eq eqeq2d cbvrexv
+       syl nceqd syl6bb reu4 sylanbrc ) CFGZAHZBHZIZJZKZBCLZAFLZWPDHZEHZIZJZKZE
+       CLZMZADNZOZDFPAFPWPAFUAWJWLCGZWOAFLZMZBQZWQWJXGBQZXJWJCRUBXKWJCRCRKWJRFG
+       UCCRFUDUEUFBCUMSWJXGXIBXGXIOWJXGXHWNFGZWNWNKZXHWMTGXLWLBUGZUHWMTUIUJWNUK
+       WOXMAWNFWKWNWNULUNUOUPUQURUSWQXHBCLXJWOABFCUTXHBCVAVEVBWJXFADFFXDWOXBMZE
+       CLBCLWJWKFGWRFGMZMZXEWOXBBECCVCXQXOXEBECCWJXPXGWSCGZMZXOXEOZWJXPXSVFWNXA
+       KZXTWJXSYAXPWJXSMZWLJZWSJZKYAYBCYCYDWJXGCYCKZXRWJYEXGCWLVDVGVHWJXRCYDKZX
+       GWJYFXRCWSVDVGVIVJWLWSXNVKSVPYAXOWKXAKZXBMXEYAWOYGXBWNXAWKVLVMWKWRXAVNVO
+       WEVQVRVSVTWPXCADFXEWPWRWNKZBCLXCXEWOYHBCWKWRWNULWAYHXBBECBENZWNXAWRYIWMW
+       TWLWSWBWFWCWDWGWHWI $.
+       $( [2-Mar-2015] $)
+  $}
+
+  ${ $d A x y $.
+     $( The cardinal T operation over a cardinal yields a cardinal. $)
+     tccl $p |- ( A e. NC -> T_c A e. NC ) $=
+       ( vx vy cncs wcel ctc cv cpw1 cnc wceq wrex df-tc wreu ncspw1eu reiotacl
+       wa cio syl syl5eqel ) ADEZAFBGZDEUACGHIJCAKZPBQZDCABLTUBBDMUCDEBCANUBBDO
+       RS $.
+       $( [2-Mar-2015] $)
+  $}
 
 $(
 =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
