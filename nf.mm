@@ -50035,7 +50035,7 @@ $)
        $( [2-Mar-2015] $)
   $}
 
-  ${
+  ${ $d A x y $. $d B y $.
      braddcfn.1 $e |- A e. _V $.
      braddcfn.2 $e |- B e. _V $.
      $( Binary relationship form of the ` AddC ` function. $)
