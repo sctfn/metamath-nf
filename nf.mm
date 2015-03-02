@@ -25114,6 +25114,9 @@ $)
   $( Extend the definition of a class to include the unordered pair. $)
   cpr $a class { A , B } $.
 
+  $( Extend class notation to include unordered triplet. $)
+  ctp $a class { A , B , C } $.
+
   ${
     $d A x y $.
     $( Soundness justification for singleton definition. $)
@@ -25136,6 +25139,9 @@ $)
      more traditional definition, but requiring a dummy variable, see
      ~ dfpr2 . $)
   df-pr $a |- { A , B } = ( { A } u. { B } ) $.
+
+  $( Define unordered triple of classes.  Definition of [Enderton] p. 19. $)
+  df-tp $a |- { A , B , C } = ( { A , B } u. { C } ) $.
 
   ${
     $d x A $.  $d x B $.
@@ -25222,6 +25228,51 @@ $)
     preq12d $p |- ( ph -> { A , C } = { B , D } ) $=
       ( wceq cpr preq12 syl2anc ) ABCHDEHBDICEIHFGBDCEJK $.
       $( [19-Oct-2012] $)
+  $}
+
+
+  $( Equality theorem for unordered triples. $)
+  tpeq1 $p |- ( A = B -> { A , C , D } = { B , C , D } ) $=
+    ( wceq cpr csn cun ctp preq1 uneq1d df-tp 3eqtr4g ) ABEZACFZDGZHBCFZPHACDIB
+    CDINOQPABCJKACDLBCDLM $.
+    $( [13-Sep-2011] $)
+
+  $( Equality theorem for unordered triples. $)
+  tpeq2 $p |- ( A = B -> { C , A , D } = { C , B , D } ) $=
+    ( wceq cpr csn cun ctp preq2 uneq1d df-tp 3eqtr4g ) ABEZCAFZDGZHCBFZPHCADIC
+    BDINOQPABCJKCADLCBDLM $.
+    $( [13-Sep-2011] $)
+
+  $( Equality theorem for unordered triples. $)
+  tpeq3 $p |- ( A = B -> { C , D , A } = { C , D , B } ) $=
+    ( wceq cpr csn cun ctp sneq uneq2d df-tp 3eqtr4g ) ABEZCDFZAGZHOBGZHCDAICDB
+    INPQOABJKCDALCDBLM $.
+    $( [13-Sep-2011] $)
+
+  ${
+    tpeq1d.1 $e |- ( ph -> A = B ) $.
+    $( Equality theorem for unordered triples. $)
+    tpeq1d $p |- ( ph -> { A , C , D } = { B , C , D } ) $=
+      ( wceq ctp tpeq1 syl ) ABCGBDEHCDEHGFBCDEIJ $.
+      $( [22-Jun-2014] $)
+
+    $( Equality theorem for unordered triples. $)
+    tpeq2d $p |- ( ph -> { C , A , D } = { C , B , D } ) $=
+      ( wceq ctp tpeq2 syl ) ABCGDBEHDCEHGFBCDEIJ $.
+      $( [22-Jun-2014] $)
+
+    $( Equality theorem for unordered triples. $)
+    tpeq3d $p |- ( ph -> { C , D , A } = { C , D , B } ) $=
+      ( wceq ctp tpeq3 syl ) ABCGDEBHDECHGFBCDEIJ $.
+      $( [22-Jun-2014] $)
+
+    tpeq123d.2 $e |- ( ph -> C = D ) $.
+    tpeq123d.3 $e |- ( ph -> E = F ) $.
+    $( Equality theorem for unordered triples. $)
+    tpeq123d $p |- ( ph -> { A , C , E } = { B , D , F } ) $=
+      ( ctp tpeq1d tpeq2d tpeq3d 3eqtrd ) ABDFKCDFKCEFKCEGKABCDFHLADECFIMAFGCEJ
+      NO $.
+      $( [22-Jun-2014] $)
   $}
 
   $( Alternate definition of singleton. $)
@@ -25331,6 +25382,8 @@ $)
       $( [24-Apr-1994] $)
   $}
 
+
+
   $( Membership in an unordered pair. $)
   elprg $p |- ( A e. V -> ( A e. { B , C } <-> ( A = B \/ A = C ) ) ) $=
     ( cpr wcel csn wo wceq cun df-pr eleq2i elun bitri elsng orbi12d syl5bb ) A
@@ -25368,6 +25421,55 @@ $)
       $( [14-Oct-2005] $)
   $}
 
+
+  ${
+    $( Members of an unordered triple of classes.  (Contributed by FL,
+       2-Feb-2014.)  (The proof was shortened by Mario Carneiro,
+       11-Feb-2015.) $)
+    eltpg $p |- ( A e. V -> ( A e. { B , C , D } <->
+       ( A = B \/ A = C \/ A = D ) ) ) $=
+      ( wcel cpr csn wo wceq ctp w3o elprg elsng orbi12d cun df-tp eleq2i elun
+      bitri df-3or 3bitr4g ) AEFZABCGZFZADHZFZIZABJZACJZIZADJZIABCDKZFZUIUJULLU
+      CUEUKUGULABCEMADENOUNAUDUFPZFUHUMUOABCDQRAUDUFSTUIUJULUAUB $.
+      $( [11-Feb-2015] $) $( [2-Feb-2014] $)
+  $}
+
+  ${
+    $( A member of an unordered triple of classes is one of them.  (Contributed
+       by Mario Carneiro, 11-Feb-2015.) $)
+    eltpi $p |- ( A e. { B , C , D } -> ( A = B \/ A = C \/ A = D ) ) $=
+      ( ctp wcel wceq w3o eltpg ibi ) ABCDEZFABGACGADGHABCDKIJ $.
+      $( [11-Feb-2015] $)
+  $}
+
+  ${
+    eltp.1 $e |- A e. _V $.
+    $( A member of an unordered triple of classes is one of them.  Special case
+       of Exercise 1 of [TakeutiZaring] p. 17. $)
+    eltp $p |- ( A e. { B , C , D } <-> ( A = B \/ A = C \/ A = D ) ) $=
+      ( cvv wcel ctp wceq w3o wb eltpg ax-mp ) AFGABCDHGABIACIADIJKEABCDFLM $.
+      $( [11-Feb-2015] $) $( [8-Apr-1994] $)
+  $}
+
+  ${
+    $d x A $.  $d x B $.  $d x C $.
+    $( Alternate definition of unordered triple of classes.  Special case of
+       Definition 5.3 of [TakeutiZaring] p. 16. $)
+    dftp2 $p |- { A , B , C } = { x | ( x = A \/ x = B \/ x = C ) } $=
+      ( cv wceq w3o ctp vex eltp abbi2i ) AEZBFLCFLDFGABCDHLBCDAIJK $.
+      $( [8-Apr-1994] $)
+  $}
+
+
+  ${
+    $d x A $.  $d x B $.  $d x C $.
+    $( Rotation of the elements of an unordered triple.  (Contributed by Alan
+       Sare, 24-Oct-2011.) $)
+    tprot $p |- { A , B , C } = { B , C , A } $=
+      ( vx cv wceq w3o cab ctp 3orrot abbii dftp2 3eqtr4i ) DEZAFZNBFZNCFZGZDHP
+      QOGZDHABCIBCAIRSDOPQJKDABCLDBCALM $.
+      $( [24-Oct-2011] $)
+  $}
 
   ${
     $d A x y $.  $d B x y $.
@@ -52891,6 +52993,8 @@ $)
   $c Nc $. $( Cardinality operation. $)
   $c .c $. $( Cardinal multiplication. $)
   $c T_c $. $( Cardinal type raising. $)
+  $c 2c $. $( Cardinal two. $)
+  $c 3c $. $( Cardinal three. $)
 
   $( Extend the definition of a class to include the set of cardinal
      numbers. $)
@@ -52911,6 +53015,12 @@ $)
 
   $( Extend the definition of a class to include cardinal type raising. $)
   ctc $a class T_c A $.
+
+  $( Extend the definition of a class to include cardinal two. $)
+  c2c $a class 2c $.
+
+  $( Extend the definition of a class to include cardinal three. $)
+  c3c $a class 3c $.
 
   $( Define the set of all cardinal numbers.  We define them as equivelance
      classes of sets of the same size.  Definition from [Rosser], p.  XXX. $)
@@ -52944,6 +53054,10 @@ $)
        given cardinal.  Definition from [Rosser], p.  XXX. $)
     df-tc $a |- T_c A = ( iota b ( b e. NC /\ E. x e. A b = Nc ~P1 b ) ) $.
   $}
+
+  $( Define cardinal two. This is the set of all sets with two unique 
+     elements. $)
+  df-2c $a |- 2c = Nc { (/) , _V } $.
 
   $( Cardinality equality law. $)
   nceq $p |- ( A = B -> Nc A = Nc B ) $=
