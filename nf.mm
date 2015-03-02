@@ -50023,6 +50023,31 @@ $)
       $( [12-Feb-2015] $)
   $}
 
+  ${ $d x y z $.
+     $( ` AddC ` is a function over all ordered pairs. $)
+     addcfn $p |- AddC Fn ( _V X. _V ) $=
+       ( vz vx vy caddcfn cvv cxp wfn wfun cdm wceq cv cplc moeq funoprab cmpt2
+       copab2 eqtri copab wcel vex df-addcfn funeqi wex wa addcex isseti pm3.2i
+       mpt2v mpbir 2th opabbii dmeqi dmoprab df-xp 3eqtr4i df-fn mpbir2an ) DEE
+       FZGDHZDIZURJUSAKBKZCKZLZJZBCAPZHVDBCAAVCMNDVEDBCEEVCOVEBCUABCAVCUHQZUBUI
+       VDAUCZBCRZVAESZVBESZUDZBCRUTURVGVKBCVGVKAVCVAVBBTZCTZUEUFVIVJVLVMUGUJUKU
+       TVEIVHDVEVFULVDBCAUMQBCEEUNUODURUPUQ $.
+       $( [2-Mar-2015] $)
+  $}
+
+  ${
+     braddcfn.1 $e |- A e. _V $.
+     braddcfn.2 $e |- B e. _V $.
+     $( Binary relationship form of the ` AddC ` function. $)
+     braddcfn $p |- ( <. A , B >. AddC C <-> ( A +c B ) = C ) $=
+       ( vx vy cop caddcfn wbr cfv wceq cplc cvv cxp wfn wcel wb mp2an cv df-ov
+       addcfn opelxp mpbir2an fnbrfvb co addceq1 df-addcfn addcex ovmpt2 eqtr3i
+       addceq2 eqeq1i bitr3i ) ABHZCIJZUOIKZCLZABMZCLINNOZPUOUTQZURUPRUBVAANQZB
+       NQZDEABNNUCUDUTUOCIUESUQUSCABIUFZUQUSABIUAVBVCVDUSLDEFGABNNFTZGTZMUSIAVF
+       MVEAVFUGVFBAULFGUHABDEUIUJSUKUMUN $.
+       $( [2-Mar-2015] $)
+  $}
+
   ${
     $( The membership relationship is a proper class.  This theorem together
        with ~ vvex demonstrates the basic idea behind New Foundations: since
@@ -53551,6 +53576,59 @@ $)
     ( cvv cpw1 cpw cnc c1c vvex ncpwpw1 df1c2 pweqi nceqi wceq pwv pw1eq eqtr4i
     ax-mp 3eqtr4i ) ABZCZDACZBZDECZDEDAFGUAREQHIJETEQTHSAKTQKLSAMONJP $.
     $( [26-Feb-2015] $)
+
+  ${
+     df1c3.1 $e |- A e. _V $.
+     $( Cardinal one is the cardinality of a singleton. $)
+     df1c3 $p |- 1c = Nc { A } $=
+       ( c1c csn cnc wceq wcel snel1c cncs wb 1cnc ncseqnc ax-mp mpbir ) CADZEF
+       ZOCGZABHCIGPQJKCOLMN $.
+       $( [2-Mar-2015] $)
+  $}
+
+  ${
+     $( One plus one equals two.  Theorem *110.64 of [WhiteheadRussell].  
+     	This theorem is occasionally useful. $)
+     1p1e2c $p |- ( 1c +c 1c ) = 2c $=
+       ( c0 csn cvv cun cnc cplc c2c c1c cin wceq wcel 0ex n0i ax-mp vvex mtbir
+       wn elsn snex df1c3 disjsn mpbir ncdisjun cpr df-2c df-pr nceqi addceq12i
+       eqtri 3eqtr4ri ) ABZCBZDZEZUKEZULEZFZGHHFUKULIAJZUNUQJURCUKKZQUSCAJZACKU
+       TQLCAMNCAORPUKCUAUBUKULASCSUCNGACUDZEUNUEVAUMACUFUGUIHUOHUPALTCOTUHUJ $.
+       $( [2-Mar-2015] $)
+  $}
+
+   $( Two plus one equals three. $)
+   2p1e3c $p |- ( 2c +c 1c ) = 3c $=
+     ( c0 cvv cpr csn cdif cun cnc cplc c3c c2c c1c cin wceq wcel wn vvex 0ex
+     ax-mp mtbir snex wo wne vn0 eldifsn mpbir2an n0i wa notnoti intnan eldif
+     snid eleq2 mpbiri mto pm3.2ni difex elpr disjsn mpbir ncdisjun ctp df-3c
+     prex df-tp nceqi eqtri df-2c df1c3 addceq12i 3eqtr4ri ) ABCZBADZEZDZFZGZ
+     VKGZVNGZHZIJKHVKVNLAMZVPVSMVTVMVKNZOWAVMAMZVMBMZUAWBWCBVMNZWBOWDBBNBAUBP
+     UCBBAUDUEVMBUFRWCAVMNZWEABNZAVLNZOZUGWHWFWGAQUKUHUIABVLUJSWCWEWFQVMBAULU
+     MUNUOVMABBVLPATUPZUQSVKVMURUSVKVNABVCVMTUTRIABVMVAZGVPVBWJVOABVMVDVEVFJV
+     QKVRVGVMWIVHVIVJ $.
+     $( [2-Mar-2015] $)
+
+$(
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+        Specker's disproof of the axiom of choice
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+$)
+
+  ${ $d A n a $.
+    $( Divisibility by three rule for finite cardinals. $)
+    nncdiv3 $p |- ( A e. Nn ->
+      E. n e. Nn ( A =   ( ( n +c n ) +c n ) \/ 
+      	      	   A = ( ( ( n +c n ) +c n ) +c 1c ) \/
+		   A = ( ( ( n +c n ) +c n ) +c 2c ) ) ) $=
+      ( va vm cv cplc wceq c1c c2c w3o cnnc wrex cab cvv elima wo orbi12i bitri
+      brun eqeq1 df-3or 3bitr4i rexbii abbi2i eqeltrri 3orbi123d rexbidv finds
+      ) CEZBEZUJFUJFZGZUIUKHFZGZUIUKIFZGZJZBKLZ???AUKGZAUMGZAUOGZJZBKLCDA?URCMN
+      URC???URBUI?KO?UQBK?ULUNPZUPP?UQ?VC?UP??VCUJUI??SZ?UL?UN??QR?QVDULUNUPUAU
+      BUCRUD?UE???UIAGZUQVBBKVEULUSUNUTUPVAUIAUKTUIAUMTUIAUOTUFUG??UH $.
+      $( [2-Mar-2015] $)
+  $}
+
 
 $(
 #*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#
