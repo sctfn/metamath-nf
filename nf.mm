@@ -53648,6 +53648,31 @@ $)
        $( [2-Mar-2015] $)
   $}
 
+  ${ $d A x y $. $d B x y $.
+     $( The defining property of the cardinal T operation. $)
+     eqtc $p |- ( A e. NC -> ( T_c A = B <-> E. x e. A B = Nc ~P1 x ) ) $=
+       ( vy cncs wcel ctc wceq cv cpw1 cnc wrex wa simpr adantr eqeltrrd ex cvv
+       tccl wb vex pw1ex ncelncs ax-mp eleq1 mpbiri rexlimivw a1i wreu ncspw1eu
+       cio eqeq1 rexbidv reiota2 sylan2 ancoms df-tc eqeq1i syl6rbbr pm5.21ndd
+       wi ) BEFZCEFZBGZCHZCAIZJZKZHZABLZVBVEVCVBVEMVDCEVBVENVBVDEFVEBSOPQVJVCVA
+       VBVIVCABVIVCVHEFZVGRFVKVFAUAUBVGRUCUDCVHEUEUFUGUHVBVCVEVJTVBVCMVJDIZEFVL
+       VHHZABLZMDUKZCHZVEVCVBVJVPTZVBVCVNDEUIVQDABUJVNVJDECVLCHVMVIABVLCVHULUMU
+       NUOUPVDVOCABDUQURUSQUT $.
+       $( [2-Mar-2015] $)
+  $}
+
+  ${ $d A y $. $d B y $.
+     $( The unit power class of an element of a cardinal is in the cardinal's
+     	T raising. $)
+     pw1eltc $p |- ( ( A e. NC /\ B e. A ) -> ~P1 B e. T_c A ) $=
+       ( vy cncs wcel wa cpw1 cnc ctc cvv pw1exg ncidg adantl wceq cv wrex eqid
+       syl pw1eq nceqd eqeq2d rcla4ev mpan2 wb eqtc adantr mpbird eleqtrrd ) AD
+       EZBAEZFZBGZULHZAIZUJULUMEZUIUJULJEUOBAKULJLRMUKUNUMNZUMCOZGZHZNZCAPZUJVA
+       UIUJUMUMNZVAUMQUTVBCBAUQBNZUSUMUMVCURULUQBSTUAUBUCMUIUPVAUDUJCAUMUEUFUGU
+       H $.
+       $( [2-Mar-2015] $)
+  $}
+
 $(
 =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
         Specker's disproof of the axiom of choice
