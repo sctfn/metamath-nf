@@ -52903,7 +52903,8 @@ $)
   ${
     $d a s $.  $d G s $.
     enmap2lem2.1 $e |- W = ( s e. ( G ^m a ) |-> ( s o. `' r ) ) $.
-    $( Lemma for ~ enmap2 .  Establish the functionhood and domain of ` W ` . $)
+    $( Lemma for ~ enmap2 .  Establish the functionhood and domain of
+       ` W ` . $)
     enmap2lem2 $p |- W Fn ( G ^m a ) $=
       ( cv ccnv ccom cvv wcel cmap co wfn fnmpt vex cnvex coex a1i mprg ) CGZDG
       ZHZIZJKZBAEGLMZNCUFCUFUDBJFOUEUAUFKUAUCCPUBDPQRST $.
@@ -52971,7 +52972,7 @@ $)
   ${
     $d A a $.  $d a b $.  $d A b $.  $d a r $.  $d a s $.  $d B b $.  $d b r $.
     $d C a $.  $d C b $.  $d C r $.  $d C s $.  $d r s $.
-    $( Set exponentiation preserves equinumerosity in the second argument.  
+    $( Set exponentiation preserves equinumerosity in the second argument.
        Theorem XI.1.22 of [Rosser], p. 357. $)
     enmap2 $p |- ( A ~~ B -> ( C ^m A ) ~~ ( C ^m B ) ) $=
        ( va vb vr vs cvv wcel wa cen wbr cmap co cv wi wceq oveq2 imbi12d wf1o
@@ -52986,13 +52987,15 @@ $)
        $( [26-Feb-2015] $)
   $}
 
- ${
+  ${
     $d A s $.  $d A z $.  $d G s $.  $d G z $.  $d p q $.  $d p r $.  $d p s $.
     $d p t $.  $d p w $.  $d p x $.  $d p y $.  $d q r $.  $d q s $.  $d q t $.
     $d q w $.  $d q x $.  $d q y $.  $d r s $.  $d r t $.  $d r x $.  $d r z $.
     $d s t $.  $d s w $.  $d s x $.  $d s y $.  $d s z $.  $d t w $.  $d t x $.
-    $d t y $.  $d w x $.  $d w y $.  $d x y $.  $d x z $.  $d a b $. $d a c $. $d a p $. $d a r $. $d a s $. $d A t $. $d a x $. $d b c $. $d b p $. $d b r $. $d b s $. $d b x $. $d c p $. $d c r $. $d c s $. $d c x $. $d G t $. 
-
+    $d t y $.  $d w x $.  $d w y $.  $d x y $.  $d x z $.  $d a b $.  $d a c $.
+    $d a p $.  $d a r $.  $d a s $.  $d A t $.  $d a x $.  $d b c $.  $d b p $.
+    $d b r $.  $d b s $.  $d b x $.  $d c p $.  $d c r $.  $d c s $.  $d c x $.
+    $d G t $.
     enmap1lem1.1 $e |- W = ( s e. ( A ^m G ) |-> ( r o. s ) ) $.
     $( Lemma for ~ enmap1 .  Set up stratification. $)
     enmap1lem1 $p |- W e. _V $=
@@ -53035,10 +53038,11 @@ $)
       JUUIUUHEVEYCYDXMXQYAYBXQYAYBYAYBYDYEYAYBYGXQXQYH $.
       $( [3-Mar-2015] $)
   $}
- 
-  ${ $d A s $. $d G s $.
+
+  ${
+    $d A s $.  $d G s $.
     enmap1lem2.1 $e |- W = ( s e. ( A ^m G ) |-> ( r o. s ) ) $.
-    $( Lemma for ~ enmap1 . Establish functionhood. $)
+    $( Lemma for ~ enmap1 .  Establish functionhood. $)
     enmap1lem2 $p |- W Fn ( A ^m G ) $=
       ( cv ccom cvv wcel cmap co wfn fnmpt vex coex a1i mprg ) EGZDGZHZIJZCABKL
       ZMDUCDUCUACIFNUBTUCJSTEODOPQR $.
@@ -53046,7 +53050,7 @@ $)
   $}
 
   ${
-    $d a s $.  $d G s $.  $d r s $.  $d S s $. $d A s $.
+    $d a s $.  $d G s $.  $d r s $.  $d S s $.  $d A s $.
     enmap1lem3.1 $e |- W = ( s e. ( A ^m G ) |-> ( r o. s ) ) $.
     $( Lemma for ~ enmap2 .  Binary relationship condition over ` W ` . $)
     enmap1lem3 $p |- ( r : A -1-1-onto-> B -> 
@@ -53066,7 +53070,8 @@ $)
   ${
     $d a s $.  $d a x $.  $d a y $.  $d a z $.  $d b x $.  $d b y $.  $d b z $.
     $d G s $.  $d r s $.  $d r x $.  $d r y $.  $d r z $.  $d s y $.  $d s z $.
-    $d W x $.  $d W y $.  $d W z $.  $d x y $.  $d x z $.  $d y z $.  $d A s $. $d A x $. $d A y $. $d A z $. $d B x $. $d B y $. $d B z $. 
+    $d W x $.  $d W y $.  $d W z $.  $d x y $.  $d x z $.  $d y z $.  $d A s $.
+    $d A x $.  $d A y $.  $d A z $.  $d B x $.  $d B y $.  $d B z $.
     enmap1lem4.1 $e |- W = ( s e. ( A ^m G ) |-> ( r o. s ) ) $.
     $( Lemma for ~ enmap2 .  The converse of ` W ` is a function. $)
     enmap1lem4 $p |- ( r : A -1-1-onto-> B -> Fun `' W ) $=
@@ -53081,7 +53086,8 @@ $)
 
   ${
     $d a p $.  $d a s $.  $d b p $.  $d G p $.  $d G s $.  $d p q $.  $d p r $.
-    $d p s $.  $d q r $.  $d r s $.  $d W p $.  $d W q $.  $d A p $. $d A s $. $d B p $. 
+    $d p s $.  $d q r $.  $d r s $.  $d W p $.  $d W q $.  $d A p $.  $d A s $.
+    $d B p $.
     enmap1lem5.1 $e |- W = ( s e. ( A ^m G ) |-> ( r o. s ) ) $.
     $( Lemma for ~ enmap2 .  Calculate the range of ` W ` . $)
     enmap1lem5 $p |- ( r : A -1-1-onto-> B -> ran W = ( B ^m G ) ) $=
@@ -53105,8 +53111,9 @@ $)
 
   ${
     $d A a $.  $d a b $.  $d A b $.  $d a r $.  $d a s $.  $d B b $.  $d b r $.
-    $d C a $.  $d C b $.  $d C r $.  $d C s $.  $d r s $.  $d A r $.  $d A s $.  $d B r $.
-    $( Set exponentiation preserves equinumerosity in the first argument.  
+    $d C a $.  $d C b $.  $d C r $.  $d C s $.  $d r s $.  $d A r $.  $d A s $.
+    $d B r $.
+    $( Set exponentiation preserves equinumerosity in the first argument.
        Theorem XI.1.23 of [Rosser], p. 357. $)
     enmap1 $p |- ( A ~~ B -> ( A ^m C ) ~~ ( B ^m C ) ) $=
       ( vr vs cen wbr cv wf1o wex cmap co bren ccom cmpt wfn ccnv wfun crn wceq
@@ -53139,10 +53146,11 @@ $)
   $}
 
   ${
-     $d A r $. $d A s $. $d B r $. $d B s $. $d p r $. $d p x $. $d p y $. $d r s $. $d r x $. $d r y $. $d s x $. $d s y $. $d x y $. 
-     enprmaplem1.1 $e |- W = ( r e. ( A ^m B ) |-> ( `' r " { x } ) ) $.
-     $( Lemma for ~ enprmap . Set up stratification. $)
-     enprmaplem1 $p |- W e. _V $=
+    $d A r $.  $d A s $.  $d B r $.  $d B s $.  $d p r $.  $d p x $.  $d p y $.
+    $d r s $.  $d r x $.  $d r y $.  $d s x $.  $d s y $.  $d x y $.
+    enprmaplem1.1 $e |- W = ( r e. ( A ^m B ) |-> ( `' r " { x } ) ) $.
+    $( Lemma for ~ enprmap .  Set up stratification. $)
+    enprmaplem1 $p |- W e. _V $=
        ( vs vy vp cvv csset c1st c2nd cv cima wcel wa cop vex bitri cxp cmap co
        cins2 ccnv csn cin csi ctxp c1c cins3 ccompl cmpt wceq copab df-mpt elin
        csymdif opelxp mpbiran2 wel wal wex elima1c elsymdif otelins2 opelssetsn
@@ -53167,19 +53175,24 @@ $)
        $( [3-Mar-2015] $)
   $}
 
-  ${ $d A r $. $d B r $.
-     enprmaplem2.1 $e |- W = ( r e. ( A ^m B ) |-> ( `' r " { x } ) ) $.
-     $( Lemma for ~ enprmap . Establish functionhood. $)
-     enprmaplem2 $p |- W Fn ( A ^m B ) $=
+  ${
+    $d A r $.  $d B r $.
+    enprmaplem2.1 $e |- W = ( r e. ( A ^m B ) |-> ( `' r " { x } ) ) $.
+    $( Lemma for ~ enprmap .  Establish functionhood. $)
+    enprmaplem2 $p |- W Fn ( A ^m B ) $=
        ( cv ccnv csn cima cvv wcel cmap co wfn fnmpt vex cnvex snex imaex mprg
        a1i ) EGZHZAGZIZJZKLZDBCMNZOEUIEUIUGDKFPUHUCUILUDUFUCEQRUESTUBUA $.
        $( [3-Mar-2015] $)
   $}
 
-  ${ $d A p $. $d A q $. $d A r $. $d A w $. $d A z $. $d B r $. $d B w $. $d B z $. $d p q $. $d p r $. $d p w $. $d p x $. $d p y $. $d p z $. $d q r $. $d q w $. $d q x $. $d q y $. $d q z $. $d r x $. $d W p $. $d W q $. $d w x $. $d w y $. $d w z $. $d W z $. $d x z $. $d y z $. 
-     enprmaplem3.1 $e |- W = ( r e. ( A ^m B ) |-> ( `' r " { x } ) ) $.
-     $( Lemma for ~ enprmap . The converse of ` W ` is a function. $)
-     enprmaplem3 $p |- ( ( x =/= y /\ A = { x , y } ) -> Fun `' W ) $=
+  ${
+    $d A p $.  $d A q $.  $d A r $.  $d A w $.  $d A z $.  $d B r $.  $d B w $.
+    $d B z $.  $d p q $.  $d p r $.  $d p w $.  $d p x $.  $d p y $.  $d p z $.
+    $d q r $.  $d q w $.  $d q x $.  $d q y $.  $d q z $.  $d r x $.  $d W p $.
+    $d W q $.  $d w x $.  $d w y $.  $d w z $.  $d W z $.  $d x z $.  $d y z $.
+    enprmaplem3.1 $e |- W = ( r e. ( A ^m B ) |-> ( `' r " { x } ) ) $.
+    $( Lemma for ~ enprmap .  The converse of ` W ` is a function. $)
+    enprmaplem3 $p |- ( ( x =/= y /\ A = { x , y } ) -> Fun `' W ) $=
        ( vz vp vq vw cv wceq wa wbr weq wcel wb fnbrfvb syl wne cpr ccnv wi wal
        wfun cmap co csn cima brcnv cdm breldm wfn enprmaplem2 fndm syl6eleq cfv
        ax-mp sylancr ibir cnveq imaeq1d vex cnvex snex imaex eqtr3d jca anim12i
@@ -53223,11 +53236,13 @@ $)
        $( [3-Mar-2015] $)
   $}
 
-  ${ $d B u $. $d B v $. $d p u $. $d p v $. $d u v $. $d u x $. $d u y $. $d v x $. $d v y $. 
-     enprmaplem4.1 $e |- R = ( u e. B |-> if ( u e. p , x , y ) ) $.
-     enprmaplem4.2 $e |- B e. _V $.
-     $( Lemma for ~ enprmap . More stratification condition setup. $)
-     enprmaplem4 $p |- R e. _V $=
+  ${
+    $d B u $.  $d B v $.  $d p u $.  $d p v $.  $d u v $.  $d u x $.  $d u y $.
+    $d v x $.  $d v y $.
+    enprmaplem4.1 $e |- R = ( u e. B |-> if ( u e. p , x , y ) ) $.
+    enprmaplem4.2 $e |- B e. _V $.
+    $( Lemma for ~ enprmap .  More stratification condition setup. $)
+    enprmaplem4 $p |- R e. _V $=
        ( vv cvv cxp cv csn wcel wa vex opelxp bitri vvex xpex cun cin cmpt wceq
        ccompl wel cif copab df-mpt cop elin mpbiran2 wo weq elsn anbi2i elcompl
        wn anbi12i orbi12i elun eqif 3bitr4i releqopab 3eqtr4i snex complex unex
@@ -53240,13 +53255,16 @@ $)
        $( [3-Mar-2015] $)
   $}
 
-  ${ $d A p $. $d A r $. $d A u $. $d A z $. $d B p $. $d B r $. $d B u $. $d B z $. $d p u $. $d p x $. $d p y $. $d p z $. $d R r $. $d r x $. $d R z $. $d u x $. $d u y $. $d u z $. $d W p $. $d x z $. $d y z $. 
-     enprmaplem5.1 $e |- W = ( r e. ( A ^m B ) |-> ( `' r " { x } ) ) $.
-     enprmaplem5.2 $e |- R = ( u e. B |-> if ( u e. p , x , y ) ) $.
-     enprmaplem5.3 $e |- B e. _V $.
-     $( Lemma for ~ enprmap . Establish that ` ~P B ` is a subset of the range
-     	of ` W ` . $)
-     enprmaplem5 $p |- ( ( x =/= y /\ A = { x , y } ) -> ~P B C_ ran W ) $=
+  ${
+    $d A p $.  $d A r $.  $d A u $.  $d A z $.  $d B p $.  $d B r $.  $d B u $.
+    $d B z $.  $d p u $.  $d p x $.  $d p y $.  $d p z $.  $d R r $.  $d r x $.
+    $d R z $.  $d u x $.  $d u y $.  $d u z $.  $d W p $.  $d x z $.  $d y z $.
+    enprmaplem5.1 $e |- W = ( r e. ( A ^m B ) |-> ( `' r " { x } ) ) $.
+    enprmaplem5.2 $e |- R = ( u e. B |-> if ( u e. p , x , y ) ) $.
+    enprmaplem5.3 $e |- B e. _V $.
+    $( Lemma for ~ enprmap .  Establish that ` ~P B ` is a subset of the range
+       of ` W ` . $)
+    enprmaplem5 $p |- ( ( x =/= y /\ A = { x , y } ) -> ~P B C_ ran W ) $=
        ( vz cv wceq wa wcel vex cvv syl wne cpr cpw crn wss elpw ccnv cima cmap
        wbr w3a cfv csn co wf wel cif wral ifeqor ifex mpbir syl5eleqr ralrimivw
        wo elpr id fmpt sylib wb prex mpbiri enprmaplem4 elmapg mp3an23 3ad2ant2
@@ -53273,11 +53291,15 @@ $)
        $( [3-Mar-2015] $)
   $}
 
-  ${ $d A p $. $d A r $. $d A s $. $d A u $. $d B p $. $d B r $. $d B s $. $d B u $. $d p r $. $d p s $. $d p u $. $d p x $. $d p y $. $d r s $. $d r u $. $d r x $. $d r y $. $d s x $. $d s y $. $d u x $. $d u y $. $d W p $. $d W s $. 
-     enprmaplem6.1 $e |- W = ( r e. ( A ^m B ) |-> ( `' r " { x } ) ) $.
-     enprmaplem6.2 $e |- B e. _V $.
-     $( Lemma for ~ enprmap . The range of ` W ` is ` ~P B ` . $)
-     enprmaplem6 $p |- ( ( x =/= y /\ A = { x , y } ) -> ran W = ~P B ) $=
+  ${
+    $d A p $.  $d A r $.  $d A s $.  $d A u $.  $d B p $.  $d B r $.  $d B s $.
+    $d B u $.  $d p r $.  $d p s $.  $d p u $.  $d p x $.  $d p y $.  $d r s $.
+    $d r u $.  $d r x $.  $d r y $.  $d s x $.  $d s y $.  $d u x $.  $d u y $.
+    $d W p $.  $d W s $.
+    enprmaplem6.1 $e |- W = ( r e. ( A ^m B ) |-> ( `' r " { x } ) ) $.
+    enprmaplem6.2 $e |- B e. _V $.
+    $( Lemma for ~ enprmap .  The range of ` W ` is ` ~P B ` . $)
+    enprmaplem6 $p |- ( ( x =/= y /\ A = { x , y } ) -> ran W = ~P B ) $=
        ( vp vs vu cv wceq wa crn wss wcel cdm wb ccnv wne cpr cpw wbr co breldm
        wex cmap cfv wfn enprmaplem2 fndm ax-mp syl6eleq fnbrfvb sylancr ibir wi
        jca w3a csn cima weq cnveq imaeq1d vex cnvex imaex fvmpt eqeq1d 3ad2ant3
@@ -53293,16 +53315,33 @@ $)
        $( [3-Mar-2015] $)
   $}
 
-  ${ $d A r $. $d B r $. $d r x $. $d r y $. 
-     enprmap.1 $e |- B e. _V $.
-     $( A mapping from a two element pair onto a set is equinumerous with the
-     	power class of the set.  Theorem XI.1.28 of [Rosser]. $)
-     enprmap $p |- ( ( x =/= y /\ A = { x , y } ) -> ( A ^m B ) ~~ ~P B ) $=
+  ${
+    $d A r $.  $d B r $.  $d r x $.  $d r y $.
+    enprmap.1 $e |- B e. _V $.
+    $( A mapping from a two element pair onto a set is equinumerous with the
+       power class of the set.  Theorem XI.1.28 of [Rosser]. $)
+    enprmap $p |- ( ( x =/= y /\ A = { x , y } ) -> ( A ^m B ) ~~ ~P B ) $=
        ( vr cv wne cpr wceq wa cmap co cpw ccnv csn cima cmpt wf1o cen wbr wfun
        wfn crn enprmaplem2 enprmaplem3 enprmaplem6 dff1o2 syl3anbrc enprmaplem1
        eqid a1i f1oen syl ) AGZBGZHCUOUPIJKZCDLMZDNZFURFGOUOPQRZSZURUSTUAUQUTUR
        UCZUTOUBUTUDUSJVAVBUQACDUTFUTUKZUEULABCDUTFVCUFABCDUTFVCEUGURUSUTUHUIURU
        SUTACDUTFVCUJUMUN $.
+       $( [3-Mar-2015] $)
+  $}
+
+  ${
+    $d A x $.  $d B x $.  $d B y $.  $d C x $.  $d C y $.  $d P x $.  $d P y $.
+    $d x y $.
+    enprmapc.1 $e |- A e. _V $.
+    enprmapc.2 $e |- B e. _V $.
+    enprmapc.3 $e |- C e. _V $.
+    $( A mapping from a two element pair onto a set is equinumerous with the
+       power class of the set.  Theorem XI.1.28 of [Rosser]. $)
+    enprmapc $p |- ( ( A =/= B /\ P = { A , B } ) -> ( P ^m C ) ~~ ~P C ) $=
+       ( vx vy cv wne cpr wceq wa cmap wi eqeq2d anbi12d imbi1d vtocl cpw neeq1
+       co cen wbr preq1 neeq2 preq2 enprmap ) HJZBKZDUJBLZMZNZDCOUCCUAUDUEZPZAB
+       KZDABLZMZNZUOPHAEUJAMZUNUTUOVAUKUQUMUSUJABUBVAULURDUJABUFQRSUJIJZKZDUJVB
+       LZMZNZUOPUPIBFVBBMZVFUNUOVGVCUKVEUMVBBUJUGVGVDULDVBBUJUHQRSHIDCGUITT $.
        $( [3-Mar-2015] $)
   $}
 
@@ -54162,10 +54201,14 @@ $)
       $( [3-Mar-2015] $)
   $}
 
-  ${ $d a b $. $d a c $. $d a d $. $d a p $. $d a q $. $d b c $. $d b d $. $d b p $. $d b q $. $d c d $. $d c p $. $d c q $. $d d p $. $d d q $. $d M a $. $d M b $. $d M c $. $d M d $. $d M p $. $d M q $. $d N a $. $d N b $. $d N c $. $d N d $. $d N p $. $d N q $. $d p q $. 
-     $( There is at most one cardinal specified in the definition of
-     	cardinal exponentiation. $)
-     cencmo $p |- ( ( N e. NC /\ M e. NC ) -> E* p ( p e. NC /\
+  ${
+    $d a b $.  $d a c $.  $d a d $.  $d a p $.  $d a q $.  $d b c $.  $d b d $.
+    $d b p $.  $d b q $.  $d c d $.  $d c p $.  $d c q $.  $d d p $.  $d d q $.
+    $d M a $.  $d M b $.  $d M c $.  $d M d $.  $d M p $.  $d M q $.  $d N a $.
+    $d N b $.  $d N c $.  $d N d $.  $d N p $.  $d N q $.  $d p q $.
+    $( There is at most one cardinal specified in the definition of cardinal
+       exponentiation. $)
+    cencmo $p |- ( ( N e. NC /\ M e. NC ) -> E* p ( p e. NC /\
           E. a E. b ( ~P1 a e. N /\ ~P1 b e. M /\ p = Nc ( a ^m b ) ) ) ) $=
        ( vc vd vq cncs wcel wa cv cpw1 cmap cnc wceq w3a wex cen wbr co wi wral
        weq wmo 2exbii ee4anv bitri ncseqnc biimpar adantrr adantrl eqtr3d pw1ex
@@ -54186,6 +54229,52 @@ $)
        ZWRXJXAXMUUJXQUULWRXJWAUUMUULWQXIBWPXHWBWCWDUUMXAXMWAUULUUMWTXLAWSXKWBWC
        WEUUNXDXPXNUUNXCXOWPXHWSXKNWFWGWHWIWJWKWLVI $.
        $( [3-Mar-2015] $)
+  $}
+
+  ${
+    $d A t $.  $d A x $.  $d A y $.  $d t x $.  $d t y $.  $d x y $.
+    $( Membership in cardinal two. $)
+    el2c $p |- ( A e. 2c <-> E. x E. y ( x =/= y /\ A = { x , y } ) ) $=
+       ( vt c1c wcel cv csn wceq cun ccompl wrex wa wex c2c df-rex bicomi bitri
+       exbii weq cplc wne cpr elsuc el1c anbi1i 19.41v excom 1p1e2c eleq2i snex
+       compleq eleq2d uneq1 eqeq2d anbi12d exbidv syl5bb ceqsexv wn vex elcompl
+       elsn equcom necon3bbii df-pr eqeq2i anbi12i 3bitr3i ) CEEUAZFZDGZAGZHZIZ
+       CVLBGZHZJZIZBVLKZLZMZDNZANZCOFVMVPUBZCVMVPUCZIZMZBNZANVKWADELZWDBCEDUDWJ
+       VLEFZWAMZDNZWDWADEPWMWBANZDNWDWLWNDWLVOANZWAMZWNWKWOWAAVLUEUFWNWPVOWAAUG
+       QRSWBDAUHRRRVJOCUIUJWCWIAWCVPVNKZFZCVNVQJZIZMZBNZWIWAXBDVNVMUKWAVPVTFZVS
+       MZBNVOXBVSBVTPVOXDXABVOXCWRVSWTVOVTWQVPVLVNULUMVOVRWSCVLVNVQUNUOUPUQURUS
+       XAWHBWRWEWTWGWRVPVNFZUTWEVPVNBVAZVBXEVMVPXEBATABTVPVMXFVCBAVDRVERWGWTWFW
+       SCVMVPVFVGQVHSRSVI $.
+       $( [3-Mar-2015] $)
+  $}
+
+  ${
+    $d A p $.  $d A x $.  $d A y $.  $d p x $.  $d p y $.  $d x y $.
+    ce2.1 $e |- A e. _V $.
+    $( The value of base two cardinal exponentiation.  Theorem XI.2.70 of
+       [Rosser]. $)
+    ce2 $p |- ( M = Nc ~P1 A -> ( 2c ^c M ) = Nc ~P A ) $=
+      ( vp vx vy cpw1 wceq c2c co cncs wcel cmap wex wa cvv mp2an c0 csn wne cv
+      cnc cce cpw oveq2 w3a cio 2nc pw1ex ncelncs ax-mp ovce cen wbr vvex sneqb
+      cpr vn0 necon3bii necomi eqid snex id adantr adantl neeq12d preq12 eqeq2d
+      mpbir anbi12d cla42ev el2c ncid 0ex enprmapc prex pw1eq cun df-pr uneq12i
+      pw1sn pw1un 3eqtr4i eqtri syl6eq eleq1d oveq12 breq1d 3anbi123d wreu pwex
+      mp3an wrex wmo eqeq1 eqcom ovex eqnc bitri syl6bb 3anbi3d 2exbidv rcla4ev
+      wb cencmo reu5 mpbir2an reiota2 mpbi ) BAGZUBZHIBUCJIXKUCJZAUDZUBZBXKIUCU
+      EXLDUAZKLEUAZGZILZFUAZGZXKLZXOXPXSMJZUBZHZUFZFNENZOZDUGZXNIKLZXKKLZXLYHHU
+      HXJPLYJACUIZXJPUJUKZXKIDEFULQXRYAYBXMUMUNZUFZFNENZYHXNHZRSZPSZUQZILZXJXKL
+      ZRPUQZAMJZXMUMUNZYOYTXPXSTZYSXPXSUQZHZOZFNENZYQYRTZYSYSHZUUIYRYQYRYQTPRTU
+      RYRYQPRPRUOUPUSVIUTYSVAUUHUUJUUKOEFYQYRRVBPVBXPYQHZXSYRHZOZUUEUUJUUGUUKUU
+      NXPYQXSYRUULUULUUMUULVCVDUUMUUMUULUUMVCVEVFUUNUUFYSYSXPXSYQYRVGVHVJVKQEFY
+      SVLVIXJYKVMRPTUUBUUBHUUDPRURUTUUBVARPAUUBVNUOCVOQYNYTUUAUUDUFEFUUBARPVPCX
+      PUUBHZXSAHZOZXRYTYAUUAYMUUDUUOXRYTXDUUPUUOXQYSIUUOXQUUBGZYSXPUUBVQUURYQYR
+      VRZGZYSUUBUUSHUURUUTHRPVSUUBUUSVQUKYQGZYRGZVRYQSZYRSZVRUUTYSUVAUVCUVBUVDR
+      VNWAPUOWAVTYQYRWBYQYRVSWCWDWEWFVDUUPYAUUAXDUUOUUPXTXJXKXSAVQWFVEUUQYBUUCX
+      MUMXPUUBXSAMWGWHWIVKWLZXNKLZYFDKWJZYOYPXDXMPLUVFACWKXMPUJUKZUVGYFDKWMZYGD
+      WNZUVFYOUVIUVHUVEYFYODXNKXOXNHZYEYNEFUVKYDYMXRYAUVKYDXNYCHZYMXOXNYCWOUVLY
+      CXNHYMXNYCWPYBXMXPXSMWQWRWSWTXAXBZXCQYIYJUVJUHYLXKIDEFXEQYFDKXFXGYFYODKXN
+      UVMXHQXIWDWE $.
+      $( [3-Mar-2015] $)
   $}
 
 $(
