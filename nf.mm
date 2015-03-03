@@ -52851,9 +52851,9 @@ $)
     $d q w $.  $d q x $.  $d q y $.  $d r s $.  $d r t $.  $d r x $.  $d r z $.
     $d s t $.  $d s w $.  $d s x $.  $d s y $.  $d s z $.  $d t w $.  $d t x $.
     $d t y $.  $d w x $.  $d w y $.  $d x y $.  $d x z $.
-    enmaplem1.1 $e |- W = ( s e. ( G ^m A ) |-> ( s o. `' r ) ) $.
-    $( Lemma for ~ enmap .  Set up stratification. $)
-    enmaplem1 $p |- W e. _V $=
+    enmap2lem1.1 $e |- W = ( s e. ( G ^m A ) |-> ( s o. `' r ) ) $.
+    $( Lemma for ~ enmap2 .  Set up stratification. $)
+    enmap2lem1 $p |- W e. _V $=
       ( vx vp vq cvv csset c2nd cv c1c wcel wa cop wex bitri wbr vz vt cxp cmap
       vw vy cins2 c1st ccnv cin csi3 cins4 csi cins3 cid ctxp cima ccom csymdif
       co ccompl cmpt wceq copab df-mpt elin vex opelxp mpbiran2 wel wal elima1c
@@ -52902,9 +52902,9 @@ $)
 
   ${
     $d a s $.  $d G s $.
-    enmaplem2.1 $e |- W = ( s e. ( G ^m a ) |-> ( s o. `' r ) ) $.
-    $( Lemma for ~ enmap .  Establish the functionhood and domain of ` W ` . $)
-    enmaplem2 $p |- W Fn ( G ^m a ) $=
+    enmap2lem2.1 $e |- W = ( s e. ( G ^m a ) |-> ( s o. `' r ) ) $.
+    $( Lemma for ~ enmap2 .  Establish the functionhood and domain of ` W ` . $)
+    enmap2lem2 $p |- W Fn ( G ^m a ) $=
       ( cv ccnv ccom cvv wcel cmap co wfn fnmpt vex cnvex coex a1i mprg ) CGZDG
       ZHZIZJKZBAEGLMZNCUFCUFUDBJFOUEUAUFKUAUCCPUBDPQRST $.
       $( [26-Feb-2015] $)
@@ -52912,11 +52912,11 @@ $)
 
   ${
     $d a s $.  $d G s $.  $d r s $.  $d S s $.
-    enmaplem3.1 $e |- W = ( s e. ( G ^m a ) |-> ( s o. `' r ) ) $.
-    $( Lemma for ~ enmap .  Binary relationship condition over ` W ` . $)
-    enmaplem3 $p |- ( r : a -1-1-onto-> b -> 
+    enmap2lem3.1 $e |- W = ( s e. ( G ^m a ) |-> ( s o. `' r ) ) $.
+    $( Lemma for ~ enmap2 .  Binary relationship condition over ` W ` . $)
+    enmap2lem3 $p |- ( r : a -1-1-onto-> b -> 
        ( S W T -> S = ( T o. r ) ) ) $=
-      ( wbr cv cmap co wcel ccnv ccom wceq wa cvv coeq1 wf1o cdm enmaplem2 fndm
+      ( wbr cv cmap co wcel ccnv ccom wceq wa cvv coeq1 wf1o cdm enmap2lem2 fndm
       breldm wfn ax-mp syl6eleq cfv wb fnbrfvb mpan vex cnvex coexg mpan2 mpdan
       fvmptg eqeq1d eqcom syl6bb biimpd sylbird mpcom jca cres f1ococnv1 coeq2d
       cid adantr elmapi fcoi1 syl adantl eqtr2d coass syl6eq syl5ibrcom expimpd
@@ -52933,10 +52933,10 @@ $)
     $d a s $.  $d a x $.  $d a y $.  $d a z $.  $d b x $.  $d b y $.  $d b z $.
     $d G s $.  $d r s $.  $d r x $.  $d r y $.  $d r z $.  $d s y $.  $d s z $.
     $d W x $.  $d W y $.  $d W z $.  $d x y $.  $d x z $.  $d y z $.
-    enmaplem4.1 $e |- W = ( s e. ( G ^m a ) |-> ( s o. `' r ) ) $.
-    $( Lemma for ~ enmap .  The converse of ` W ` is a function. $)
-    enmaplem4 $p |- ( r : a -1-1-onto-> b -> Fun `' W ) $=
-      ( vy vx vz cv wf1o wbr wa weq wi wal wceq enmaplem3 brcnv ccnv wfun eqtr3
+    enmap2lem4.1 $e |- W = ( s e. ( G ^m a ) |-> ( s o. `' r ) ) $.
+    $( Lemma for ~ enmap2 .  The converse of ` W ` is a function. $)
+    enmap2lem4 $p |- ( r : a -1-1-onto-> b -> Fun `' W ) $=
+      ( vy vx vz cv wf1o wbr wa weq wi wal wceq enmap2lem3 brcnv ccnv wfun eqtr3
       ccom anim12d syl6 alrimiv wrel relcnv dffun2 mpbiran anbi12i imbi1i albii
       alrimivv 2albii bitri sylibr ) EKFKDKZLZHKZIKZBMZJKZVBBMZNZHJOZPZJQZHQIQZ
       BUAZUBZUTVIIHUTVHJUTVFVAVBUSUDZRZVDVMRZNVGUTVCVNVEVOVAVBABCDEFGSVDVBABCDE
@@ -52948,11 +52948,11 @@ $)
   ${
     $d a p $.  $d a s $.  $d b p $.  $d G p $.  $d G s $.  $d p q $.  $d p r $.
     $d p s $.  $d q r $.  $d r s $.  $d W p $.  $d W q $.
-    enmaplem5.1 $e |- W = ( s e. ( G ^m a ) |-> ( s o. `' r ) ) $.
-    $( Lemma for ~ enmap .  Calculate the range of ` W ` . $)
-    enmaplem5 $p |- ( r : a -1-1-onto-> b -> ran W = ( G ^m b ) ) $=
+    enmap2lem5.1 $e |- W = ( s e. ( G ^m a ) |-> ( s o. `' r ) ) $.
+    $( Lemma for ~ enmap2 .  Calculate the range of ` W ` . $)
+    enmap2lem5 $p |- ( r : a -1-1-onto-> b -> ran W = ( G ^m b ) ) $=
       ( vp cv cmap wcel ccom wceq vex coex adantl wf syl wb cvv wf1o crn co wfn
-      cfv wral wss enmaplem2 wa ccnv coeq1 cnvex elmapi f1ocnv f1of fco syl2anr
+      cfv wral wss enmap2lem2 wa ccnv coeq1 cnvex elmapi f1ocnv f1of fco syl2anr
       fvmpt elovex1 elmapg mp3an23 eqeltrd ralrimiva fnfvrnss sylancr wbr coass
       mpbird syl6eq cid cres f1ococnv2 coeq2d fcoi1 sylan9eq eqtrd mpbid brelrn
       fnbrfvb ex ssrdv eqssd ) EIZFIZDIZUAZBUBZAWDJUCZWFBAWCJUCZUDZHIZBUEZWHKZH
@@ -52971,19 +52971,150 @@ $)
   ${
     $d A a $.  $d a b $.  $d A b $.  $d a r $.  $d a s $.  $d B b $.  $d b r $.
     $d C a $.  $d C b $.  $d C r $.  $d C s $.  $d r s $.
-    $( Set exponentiation preserves equinumerosity.  Theorem XI.1.22 of
-       [Rosser], p. 357. $)
-    enmap $p |- ( A ~~ B -> ( C ^m A ) ~~ ( C ^m B ) ) $=
+    $( Set exponentiation preserves equinumerosity in the second argument.  
+       Theorem XI.1.22 of [Rosser], p. 357. $)
+    enmap2 $p |- ( A ~~ B -> ( C ^m A ) ~~ ( C ^m B ) ) $=
        ( va vb vr vs cvv wcel wa cen wbr cmap co cv wi wceq oveq2 imbi12d wf1o
        brex breq1 breq1d breq2 breq2d wex bren ccnv ccom cmpt wfn wfun cdm eqid
-       enmaplem4 crn dfrn4 enmaplem5 syl5eqr jca df-fn sylibr enmaplem2 mpbiran
-       dff1o4 enmaplem1 f1oen syl exlimiv sylbi vtocl2g mpcom ) AHIBHIJABKLZCAM
+       enmap2lem4 crn dfrn4 enmap2lem5 syl5eqr jca df-fn sylibr enmap2lem2 mpbiran
+       dff1o4 enmap2lem1 f1oen syl exlimiv sylbi vtocl2g mpcom ) AHIBHIJABKLZCAM
        NZCBMNZKLZABKUADOZEOZKLZCVQMNZCVRMNZKLZPAVRKLZVNWAKLZPVMVPPDEABHHVQAQZVS
        WCWBWDVQAVRKUBWEVTVNWAKVQACMRUCSVRBQZWCVMWDVPVRBAKUDWFWAVOVNKVRBCMRUESVS
        VQVRFOZTZFUFWBVQVRFUGWHWBFWHVTWAGVTGOWGUHUIUJZTZWBWHWIUHZWAUKZWJWHWKULZW
        KUMZWAQZJWLWHWMWOCWIGFDEWIUNZUOWHWNWIUPWAWIUQCWIGFDEWPURUSUTWKWAVAVBWJWI
        VTUKWLCWIGFDWPVCVTWAWIVEVDVBVTWAWIVQCWIGFWPVFVGVHVIVJVKVL $.
        $( [26-Feb-2015] $)
+  $}
+
+ ${
+    $d A s $.  $d A z $.  $d G s $.  $d G z $.  $d p q $.  $d p r $.  $d p s $.
+    $d p t $.  $d p w $.  $d p x $.  $d p y $.  $d q r $.  $d q s $.  $d q t $.
+    $d q w $.  $d q x $.  $d q y $.  $d r s $.  $d r t $.  $d r x $.  $d r z $.
+    $d s t $.  $d s w $.  $d s x $.  $d s y $.  $d s z $.  $d t w $.  $d t x $.
+    $d t y $.  $d w x $.  $d w y $.  $d x y $.  $d x z $.  $d a b $. $d a c $. $d a p $. $d a r $. $d a s $. $d A t $. $d a x $. $d b c $. $d b p $. $d b r $. $d b s $. $d b x $. $d c p $. $d c r $. $d c s $. $d c x $. $d G t $. 
+
+    enmap1lem1.1 $e |- W = ( s e. ( A ^m G ) |-> ( r o. s ) ) $.
+    $( Lemma for ~ enmap1 .  Set up stratification. $)
+    enmap1lem1 $p |- W e. _V $=
+      ( vx va vb vp cvv c1st c2nd c1c wcel wa cop wex bitri wbr vt vc cxp csset
+      cmap co cins2 ccnv cin csi3 cins4 ctxp cima csi cins3 csymdif ccompl ccom
+      cv cmpt wceq copab df-mpt elin vex opelxp mpbiran2 wn wel wal csn elima1c
+      elsymdif otelins2 opelssetsn oqelins4 df-br brcnv 3bitr2i mpbiran anbi12i
+      wb otsnelsi3 op1st2nd 3bitri opex eleq1 ceqsexv snex trtxp bitr3i 3bitr4i
+      ancom exbii opsnelsi otelins3 excom eleq2i elopab bibi12i xchbinx 3bitrri
+      df-co exnal con1bii elcompl dfcleq releqopab vvex xpex ovex ssetex ins2ex
+      1stex cnvex 2ndex inex si3ex ins4ex txpex 1cex imaex siex ins3ex symdifex
+      3eqtr4i complex eqeltri ) CKKUCZABUEUFZKUCZUDUGZLUHZUGZKMUHZUCZUIZUJZUKZM
+      LULZUJZUKZYLUGZUGZUGZUIZNUMZEUSZUNZUOZUGZUIZNUMZUIZNUMZNUMZUOZUPZNUMZUQZU
+      IZUIZKDYJUUHDUSZURZUTUVCYJOZUAUSZUVDVAZPZDUAVBCUVBDUAYJUVDVCFUVHDUAUVAUVC
+      UVFQZUVAOUVIYKOZUVIUUTOZPUVHUVIYKUUTVDUVJUVEUVKUVGUVJUVEUVFKOUAVEZUVCUVFY
+      JKVFVGUVIUUSOZVHGUAVIZGUSZUVDOZWBZGVJZUVKUVGUVRUVMUVMUVOVKZUVIQZUUROZGRUV
+      QVHZGRUVRVHGUVIUURVLUWAUWBGUWAUVTYLOZUVTUUQOZWBUVQUVTYLUUQVMUWCUVNUWDUVPU
+      WCUVSUVFQUDOUVNUVSUVCUVFUDDVEZVNUVOUVFGVEZUVLVOSUVSUVCQZUUPOZUVOHUSZIUSZQ
+      VAZUWIUBUSZUVCTZUWLUWJUUHTZPZUBRZPZIRHRZUWDUVPUWJVKZUWGQZUUOOZIRUWQHRZIRU
+      WHUWRUXAUXBIUXAUWIVKZUWTQZUUNOZHRUXBHUWTUUNVLUXEUWQHUXEUXDYSOZUXDUUMOZPUW
+      QUXDYSUUMVDUXFUWKUXGUWPUXFUXCUWSUVSQQYROUWIUWJUVOQZQZYQOZUWKUXCUWSUVSUVCY
+      RUWEVPUWIUWJUVOYQHVEZIVEZUWFWCUXJUXIYNOZUXIYPOZPUVOUWILTZUVOUWJMTZPUWKUXI
+      YNYPVDUXMUXOUXNUXPUXMUWIUVOQYMOUWIUVOYMTUXOUWIUWJUVOYMUXLVNUWIUVOYMVQUWIU
+      VOLVRVSUXNUXHYOOZUWJUVOYOTUXPUXNUWIKOUXQUXKUWIUXHKYOVFVTUWJUVOYOVQUWJUVOM
+      VRVSWAUWIUWJUVOUXKUXLWDWEWEUXGUWLVKZUXDQZUULOZUBRUWPUBUXDUULVLUXTUWOUBUXT
+      UXSUUGOZUXSUUKOZPUWOUXSUUGUUKVDUYAUWMUYBUWNJUSZUWIUWLQZVAZJDVIZPZJRZUYDUV
+      COZUYAUWMUYFUYIJUYDUWIUWLUXKUBVEZWFUYCUYDUVCWGWHUYAUYCVKZUXSQZUUFOZJRUYHJ
+      UXSUUFVLUYMUYGJUYMUYLUUBOZUYLUUEOZPUYGUYLUUBUUEVDUYNUYEUYOUYFUYNUYKUXRUXC
+      QQUUAOZUYEUYKUXRUXCUWTUUAUWSUWGUWJWIZUVSUVCUVOWIZUWEWFZWFVPUYPUYCUWLUWIQZ
+      QYTOZUYCUWILTZUYCUWLMTZPZUYEUYCUWLUWIYTJVEZUYJUXKWCVUAUYCUYTYTTZVUDUYCUYT
+      YTVQVUFVUCVUBPVUDUYCUWLUWIMLWJVUCVUBWMSWKUWIUWLUYCUXKUYJWDWESUYOUYKUXDQUU
+      DOUYKUWTQUUCOZUYFUYKUXRUXDUUDUWLWIVNUYKUXCUWTUUCUWIWIZVNVUGUYKUWGQYLOUYKU
+      VCQUDOUYFUYKUWSUWGYLUYQVNUYKUVSUVCUDUYRVNUYCUVCVUEUWEVOWEWEWASWNSUWIUWLUV
+      CVQWLUYBUXRUWTQUUJOZUWNUXRUXCUWTUUJVUHVNUXRUWSQUUIOUWLUWJQUUHOVUIUWNUWLUW
+      JUUHUYJUXLWOUXRUWSUWGUUIUYSWPUWLUWJUUHVQWLSWASWNSWASWNSWNIUWGUUOVLUWQHIWQ
+      WLUVSUVCUVFUUPUVLWPUVPUVOUWPHIVBZOUWRUVDVUJUVOHIUBUUHUVCXCWRUWPHIUVOWSSWL
+      WTXAWNUVQGXDXBXEUVIUUSUVCUVFUWEUVLWFXFGUVFUVDXGWLWASXHYFYIUVAKKXIXIXJYKUU
+      TYJKABUEXKXIXJUUSUURNYLUUQUDXLXMZUUPUUONUUNNYSUUMYRYQYNYPYMLXNXOXMKYOXIMX
+      PXOXJXQXRXSUULNUUGUUKUUFNUUBUUEUUAYTMLXPXNXTXRXSUUDUUCYLVUKXMXMXMXQYAYBUU
+      JUUIUUHEVEYCYDXMXQYAYBXQYAYBYAYBYDYEYAYBYGXQXQYH $.
+      $( [3-Mar-2015] $)
+  $}
+ 
+  ${ $d A s $. $d G s $.
+    enmap1lem2.1 $e |- W = ( s e. ( A ^m G ) |-> ( r o. s ) ) $.
+    $( Lemma for ~ enmap1 . Establish functionhood. $)
+    enmap1lem2 $p |- W Fn ( A ^m G ) $=
+      ( cv ccom cvv wcel cmap co wfn fnmpt vex coex a1i mprg ) EGZDGZHZIJZCABKL
+      ZMDUCDUCUACIFNUBTUCJSTEODOPQR $.
+      $( [3-Mar-2015] $)
+  $}
+
+  ${
+    $d a s $.  $d G s $.  $d r s $.  $d S s $. $d A s $.
+    enmap1lem3.1 $e |- W = ( s e. ( A ^m G ) |-> ( r o. s ) ) $.
+    $( Lemma for ~ enmap2 .  Binary relationship condition over ` W ` . $)
+    enmap1lem3 $p |- ( r : A -1-1-onto-> B -> 
+       ( S W T -> S = ( `' r o. T ) ) ) $=
+      ( wbr cmap co wcel cv ccom wceq wa mpan cvv coeq2 wf1o cdm wfn enmap1lem2
+      ccnv breldm fndm ax-mp syl6eleq cfv fnbrfvb vex coexg fvmptg mpdan eqeq1d
+      wb bitr3d biimpd mpcom jca coass cid f1ococnv1 coeq1d wf elmapi fcoi2 syl
+      cres sylan9eq syl5reqr eqeq2d syl5ibcom expimpd syl5 ) CDFJZCAEKLZMZHNZCO
+      ZDPZQABVTUAZCVTUEZDOZPZVQVSWBVQCFUBZVRCDFUFFVRUCZWGVRPAEFGHIUDZVRFUGUHUIZ
+      VSVQWBWJVSVQWBVSCFUJZDPZVQWBWHVSWLVQUQWIVRCDFUKRVSWKWADVSWASMZWKWAPVTSMVS
+      WMHULVTCSVRUMRGCVTGNZOWAVRSFWNCVTTIUNUOUPURUSUTVAWCVSWBWFWCVSQZCWDWAOZPWB
+      WFWOWPWDVTOZCOZCWDVTCVBWCVSWRVCAVJZCOZCWCWQWSCABVTVDVEVSEACVFWTCPCAEVGEAC
+      VHVIVKVLWBWPWECWADWDTVMVNVOVP $.
+      $( [3-Mar-2015] $)
+  $}
+
+  ${
+    $d a s $.  $d a x $.  $d a y $.  $d a z $.  $d b x $.  $d b y $.  $d b z $.
+    $d G s $.  $d r s $.  $d r x $.  $d r y $.  $d r z $.  $d s y $.  $d s z $.
+    $d W x $.  $d W y $.  $d W z $.  $d x y $.  $d x z $.  $d y z $.  $d A s $. $d A x $. $d A y $. $d A z $. $d B x $. $d B y $. $d B z $. 
+    enmap1lem4.1 $e |- W = ( s e. ( A ^m G ) |-> ( r o. s ) ) $.
+    $( Lemma for ~ enmap2 .  The converse of ` W ` is a function. $)
+    enmap1lem4 $p |- ( r : A -1-1-onto-> B -> Fun `' W ) $=
+      ( vy vx vz cv wf1o wbr wa wi wal ccnv wceq enmap1lem3 brcnv weq wfun ccom
+      anim12d eqtr3 alrimiv alrimivv relcnv dffun2 mpbiran anbi12i imbi1i albii
+      syl6 wrel 2albii bitri sylibr ) ABFKZLZHKZIKZDMZJKZVBDMZNZHJUAZOZJPZHPIPZ
+      DQZUBZUTVIIHUTVHJUTVFVAUSQVBUCZRZVDVMRZNVGUTVCVNVEVOABVAVBCDEFGSABVDVBCDE
+      FGSUDVAVDVMUEUNUFUGVLVBVAVKMZVBVDVKMZNZVGOZJPZHPIPZVJVLVKUOWADUHIHJVKUIUJ
+      VTVIIHVSVHJVRVFVGVPVCVQVEVBVADTVBVDDTUKULUMUPUQUR $.
+      $( [3-Mar-2015] $)
+  $}
+
+  ${
+    $d a p $.  $d a s $.  $d b p $.  $d G p $.  $d G s $.  $d p q $.  $d p r $.
+    $d p s $.  $d q r $.  $d r s $.  $d W p $.  $d W q $.  $d A p $. $d A s $. $d B p $. 
+    enmap1lem5.1 $e |- W = ( s e. ( A ^m G ) |-> ( r o. s ) ) $.
+    $( Lemma for ~ enmap2 .  Calculate the range of ` W ` . $)
+    enmap1lem5 $p |- ( r : A -1-1-onto-> B -> ran W = ( B ^m G ) ) $=
+      ( vp cv wf1o cmap wcel ccom wceq coex wf syl2an cvv wb syl crn co wfn cfv
+      wral wss enmap1lem2 coeq2 vex fvmpt adantl f1of elmapi fco wfo f1ofo forn
+      wa rnex syl6eqelr elovex2 elmapg mp3an3 mpbird eqeltrd ralrimiva fnfvrnss
+      sylancr ccnv wbr f1ocnv cdm f1odm dmex cnvex coass f1ococnv2 coeq1d fcoi2
+      cid cres sylan9eq syl5eqr eqtrd fnbrfvb mpbid brelrn ex ssrdv eqssd ) ABF
+      IZJZDUAZBCKUBZWLDACKUBZUCZHIZDUDZWNLZHWOUEWMWNUFACDEFGUGZWLWSHWOWLWQWOLZU
+      RZWRWKWQMZWNXAWRXCNWLEWQWKEIZMZXCWODXDWQWKUHGWKWQFUIZHUIZOZUJUKXBXCWNLZCB
+      XCPZWLABWKPCAWQPXJXAABWKULWQACUMCABWKWQUNQWLBRLZCRLZXIXJSZXAWLBWKUAZRWLAB
+      WKUOXNBNABWKUPABWKUQTWKXFUSUTWQACKVAXKXLXCRLXMXHBCXCRRRVBVCQVDVEVFHWOWNDV
+      GVHWLHWNWMWLWQWNLZWQWMLZWLXOURZWKVIZWQMZWQDVJZXPXQXSDUDZWQNZXTXQYAWKXSMZW
+      QXQXSWOLZYAYCNXQYDCAXSPZWLBAXRPZCBWQPZYEXOWLBAXRJYFABWKVKBAXRULTWQBCUMZCB
+      AXRWQUNQWLARLZXLYDYESZXOWLAWKVLRABWKVMWKXFVNUTWQBCKVAYIXLXSRLYJXRWQWKXFVO
+      XGOZACXSRRRVBVCQVDZEXSXEYCWODXDXSWKUHGWKXSXFYKOUJTXQYCWKXRMZWQMZWQWKXRWQV
+      PWLXOYNVTBWAZWQMZWQWLYMYOWQABWKVQVRXOYGYPWQNYHCBWQVSTWBWCWDXQWPYDYBXTSWTY
+      LWOXSWQDWEVHWFXSWQDWGTWHWIWJ $.
+      $( [3-Mar-2015] $)
+  $}
+
+  ${
+    $d A a $.  $d a b $.  $d A b $.  $d a r $.  $d a s $.  $d B b $.  $d b r $.
+    $d C a $.  $d C b $.  $d C r $.  $d C s $.  $d r s $.  $d A r $.  $d A s $.  $d B r $.
+    $( Set exponentiation preserves equinumerosity in the first argument.  
+       Theorem XI.1.23 of [Rosser], p. 357. $)
+    enmap1 $p |- ( A ~~ B -> ( A ^m C ) ~~ ( B ^m C ) ) $=
+      ( vr vs cen wbr cv wf1o wex cmap co bren ccom cmpt wfn ccnv wfun crn wceq
+      eqid enmap1lem2 a1i enmap1lem4 enmap1lem5 dff1o2 syl3anbrc enmap1lem1 syl
+      f1oen exlimiv sylbi ) ABFGABDHZIZDJACKLZBCKLZFGZABDMUNUQDUNUOUPEUOUMEHNOZ
+      IZUQUNURUOPZURQRURSUPTUSUTUNACUREDURUAZUBUCABCUREDVAUDABCUREDVAUEUOUPURUF
+      UGUOUPURACUREDVAUHUJUIUKUL $.
+      $( [3-Mar-2015] $)
   $}
 
   ${
@@ -53861,6 +53992,32 @@ $)
       CUWJIYGYMUWIUWHUWGUOUWFUWEIUWDUKUVAUVBYHYGYKXRUVCYKYRYNYOYLYPYSYRYTYQYLYP
       YTYQKYLUVDZYPWVAYPYQYNVAUVEYMYOXRYSYKXRUVFUVG $.
       $( [3-Mar-2015] $)
+  $}
+
+  ${ $d a b $. $d a c $. $d a d $. $d a p $. $d a q $. $d b c $. $d b d $. $d b p $. $d b q $. $d c d $. $d c p $. $d c q $. $d d p $. $d d q $. $d M a $. $d M b $. $d M c $. $d M d $. $d M p $. $d M q $. $d N a $. $d N b $. $d N c $. $d N d $. $d N p $. $d N q $. $d p q $. 
+     $( There is at most one cardinal specified in the definition of
+     	cardinal exponentiation. $)
+     cencmo $p |- ( ( N e. NC /\ M e. NC ) -> E* p ( p e. NC /\
+          E. a E. b ( ~P1 a e. N /\ ~P1 b e. M /\ p = Nc ( a ^m b ) ) ) ) $=
+       ( vc vd vq cncs wcel wa cv cpw1 cmap cnc wceq w3a wex cen wbr co wi wral
+       weq wmo 2exbii ee4anv bitri ncseqnc biimpar adantrr adantrl eqtr3d pw1ex
+       3an6 vex eqnc sylib ad2ant2r ad2ant2l enmap1 enmap2 entr syl2an syl2anbr
+       enpw1 syl2anc ovex sylibr eqeq12 syl5ibrcom exp32 3impd exlimdvv syl5bir
+       a1d ralrimivv eqeq1 3anbi3d 2exbidv wb pw1eq eleq1d adantr adantl oveq12
+       nceqd eqeq2d 3anbi123d cbvex2v syl6bb rmo4 ) BIJZAIJZKZDLZMZBJZELZMZAJZC
+       LZWPWSNUAZOZPZQZERDRZFLZMZBJZGLZMZAJZHLZXHXKNUAZOZPZQZGRFRZKZCHUDZUBZHIU
+       CCIUCXBIJZXGKCUEWOYBCHIIWOYBYCXNIJKXTWRXJKZXAXMKZXEXQKZQZGRFRZERDRZWOYAY
+       IXFXRKZGRFRZERDRXTYHYKDEYGYJFGWRXJXAXMXEXQUOUFUFXFXRDEFGUGUHWOYHYADEWOYG
+       YAFGWOYDYEYFYAWOYDYEYFYAUBWOYDYEKKZYAYFXDXPPZYLXCXOSTZYMYLWQXISTZWTXLSTZ
+       YNWMYDYOWNYEWMYDKZWQOZXIOZPYOYQBYRYSWMWRBYRPZXJWMYTWRBWQUIUJUKWMXJBYSPZW
+       RWMUUAXJBXIUIUJULUMWQXIWPDUPUNUQURUSWNYEYPWMYDWNYEKZWTOZXLOZPYPUUBAUUCUU
+       DWNXAAUUCPZXMWNUUEXAAWTUIUJUKWNXMAUUDPZXAWNUUFXMAXLUIUJULUMWTXLWSEUPUNUQ
+       URUTYOWPXHSTZWSXKSTZYNYPWPXHVFWSXKVFUUGXCXHWSNUAZSTUUIXOSTYNUUHWPXHWSVAW
+       SXKXHVBXCUUIXOVCVDVEVGXCXOWPWSNVHUQVIXBXDXNXPVJVKVLVMVNVNVOVPVQXGXSCHIYA
+       XGWRXAXNXDPZQZERDRXSYAXFUUKDEYAXEUUJWRXAXBXNXDVRVSVTUUKXRDEFGDFUDZEGUDZK
+       ZWRXJXAXMUUJXQUULWRXJWAUUMUULWQXIBWPXHWBWCWDUUMXAXMWAUULUUMWTXLAWSXKWBWC
+       WEUUNXDXPXNUUNXCXOWPXHWSXKNWFWGWHWIWJWKWLVI $.
+       $( [3-Mar-2015] $)
   $}
 
 $(
