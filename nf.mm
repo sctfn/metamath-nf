@@ -54350,6 +54350,19 @@ $)
        $( [4-Mar-2015] $)
   $}
 
+  $( Compute an exponent of the cardinality of one. $)
+  ce2nc1 $p |- ( 2c ^c Nc 1c ) = Nc _V $=
+    ( c2c c1c cnc cce co cvv cpw cpw1 wceq df1c2 nceqi vvex ce2 ax-mp pwv eqtri
+    ) ABCZDEZFGZCZFCQFHZCIRTIBUAJKFQLMNSFOKP $.
+    $( [4-Mar-2015] $)
+
+  $( Compute an exponent of the cardinality of the unit power class of
+     one. $)
+  ce2ncpw11c $p |- ( 2c ^c Nc ~P1 1c ) = Nc 1c $=
+    ( c2c c1c cpw1 cnc cce co cpw wceq eqid 1cex ce2 ax-mp ncpw1c eqtri ) ABCDZ
+    EFZBGDZBDOOHPQHOIBOJKLMN $.
+    $( [4-Mar-2015] $)
+
 $(
 =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
         Specker's disproof of the axiom of choice
