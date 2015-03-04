@@ -53483,6 +53483,22 @@ $)
        $( [24-Feb-2015] $)
   $}
 
+  $( Binary relationship form of cardinal less than. $)
+  brltcg $p |- ( B e. V -> ( A <c B <-> ( A <_c B /\ A =/= B ) ) ) $=
+    ( wcel clec wbr cid wn wceq cltc wne ideqg notbid anbi2d df-ltc breqi brdif
+    wa cdif bitri df-ne anbi2i 3bitr4g ) BCDZABEFZABGFZHZRZUEABIZHZRABJFZUEABKZ
+    RUDUGUJUEUDUFUIABCLMNUKABEGSZFUHABJUMOPABEGQTULUJUEABUAUBUC $.
+    $( [4-Mar-2015] $)
+
+  ${
+     brltc.1 $e |- B e. _V $.
+     $( Binary relationship form of cardinal less than. $)
+     brltc $p |- ( A <c B <-> ( A <_c B /\ A =/= B ) ) $=
+       ( cvv wcel cltc wbr clec wne wa wb brltcg ax-mp ) BDEABFGABHGABIJKCABDLM
+       $.
+       $( [4-Mar-2015] $)
+  $}
+
   ${
     $d a b x y $.
     $( Cardinal less than or equal is a relationship. $)
@@ -53864,7 +53880,8 @@ $)
     $d A f $.  $d A g $.  $d A t $.  $d B f $.  $d B g $.  $d B t $.  $d f g $.
     $d f t $.  $d f x $.  $d f y $.  $d g t $.  $d g x $.  $d g y $.  $d t x $.
     $d t y $.  $d x y $.
-    $( Successor is one-to-one over the cardinals. $)
+    $( Successor is one-to-one over the cardinals.  Theorem XI.2.12 of [Rosser],
+       p. 375. $)
     peano4nc $p |- ( ( A e. NC /\ B e. NC ) -> 
              ( ( A +c 1c ) = ( B +c 1c ) <-> A = B ) ) $=
       ( vg vt vx vf vy cncs wcel wa c1c cplc wceq adantr cnc eqtr2 csn wrex vex
@@ -54248,6 +54265,8 @@ $)
        $( [3-Mar-2015] $)
   $}
 
+  
+
   ${
     $d A p $.  $d A x $.  $d A y $.  $d p x $.  $d p y $.  $d x y $.
     ce2.1 $e |- A e. _V $.
@@ -54275,6 +54294,60 @@ $)
       CXNHYMXNYCWPYBXMXPXSMWQWRWSWTXAXBZXCQYIYJUVJUHYLXKIDEFXEQYFDKXFXGYFYODKXN
       UVMXHQXIWDWE $.
       $( [3-Mar-2015] $)
+  $}
+
+  ${ $d A x y $.
+     $( A non-empty set is less than or equal to itself.  Theorem XI.2.14
+     	of [Rosser], p. 375. $)
+     lecidg $p |- ( ( A e. V /\ A =/= (/) ) -> A <_c A ) $=
+       ( vx vy wcel c0 wne wa clec wbr cv wss wrex wex ssid sseq2 rcla4ev mpan2
+       ancli eximi n0 df-rex 3imtr4i adantl wb brlecg anidms adantr mpbird ) AB
+       EZAFGZHAAIJZCKZDKZLZDAMZCAMZUKUQUJUMAEZCNURUPHZCNUKUQURUSCURUPURUMUMLZUP
+       UMOUOUTDUMAUNUMUMPQRSTCAUAUPCAUBUCUDUJULUQUEZUKUJVACDAABBUFUGUHUI $.
+       $( [4-Mar-2015] $)
+  $}
+
+  $( A cardinal is less than or equal to itself.  Corollary 1 of
+     theorem XI.2.14 of [Rosser], p. 376. $)
+  nclecid $p |- ( A e. NC -> A <_c A ) $=
+    ( cncs wcel c0 wne clec wbr wceq nulnnc eleq1 mtbiri necon2ai lecidg mpdan
+    ) ABCZADEAAFGOADADHODBCIADBJKLABMN $.
+    $( [4-Mar-2015] $)
+
+  ${ $d A x $. $d A y $. $d x y $. 
+     $( Cardinal zero is a minimal element of cardinal less than or equal. 
+     	Theorem XI.2.15 of [Rosser], p. 376. $)
+     lec0cg $p |- ( ( A e. V /\ A =/= (/) ) -> 0c <_c A ) $=
+       ( vx vy wcel c0 wne wa c0c clec wbr cv wss wrex wex 0ss jctr wceq wb cvv
+       eximi df-rex 3imtr4i csn df-0c rexeq ax-mp 0ex sseq1 rexbidv rexsn bitri
+       n0 sylibr adantl 0cex brlecg mpan adantr mpbird ) ABEZAFGZHIAJKZCLZDLZMZ
+       DANZCINZVBVHVAVBFVEMZDANZVHVEAEZDOVKVIHZDOVBVJVKVLDVKVIVEPQUADAUMVIDAUBU
+       CVHVGCFUDZNZVJIVMRVHVNSUEVGCIVMUFUGVGVJCFUHVDFRVFVIDAVDFVEUIUJUKULUNUOVA
+       VCVHSZVBITEVAVOUPCDIATBUQURUSUT $.
+       $( [4-Mar-2015] $)
+
+     $( The cardinality of ` _V ` is a maximal element of cardinal less than 
+     	or equal.  Theorem XI.2.16 of [Rosser], p. 376. $)
+     lecncvg $p |- ( ( A e. V /\ A =/= (/) ) -> A <_c Nc _V ) $=
+       ( vx vy wcel c0 wne wa cvv cnc clec wbr wss wrex wex vvex ncid ssv sseq2
+       cv rcla4ev mp2an jctr eximi n0 df-rex 3imtr4i adantl brlecg mpan2 adantr
+       wb ncex mpbird ) ABEZAFGZHAIJZKLZCTZDTZMZDUQNZCANZUPVCUOUSAEZCOVDVBHZCOU
+       PVCVDVECVDVBIUQEUSIMZVBIPQUSRVAVFDIUQUTIUSSUAUBUCUDCAUEVBCAUFUGUHUOURVCU
+       LZUPUOUQIEVGIUMCDAUQBIUIUJUKUN $.
+       $( [4-Mar-2015] $)
+  $}
+
+  ${ $d A x $. $d A y $. $d x y $. 
+     $( The cardinality of a unit power class is strictly less than
+     	the cardinality of the power class.  Theorem XI.2.17 of [Rosser],
+	p. 376. $)
+     ltcpw1pwg $p |- ( A e. V -> Nc ~P1 A <_c Nc ~P A ) $=
+       ( vx vy wcel cv wss cpw cnc wrex cpw1 wbr cvv pw1exg ncidg syl pwexg c1c
+       clec ncex cin df-pw1 inss1 eqsstri a1i sseq1 sseq2 rcla42ev brlec sylibr
+       syl3anc ) ABEZCFZDFZGZDAHZIZJCAKZIZJZUSUQSLULURUSEZUPUQEZURUPGZUTULURMEV
+       AABNURMOPULUPMEVBABQUPMOPVCULURUPRUAUPAUBUPRUCUDUEUOVCURUNGCDURUPUSUQUMU
+       RUNUFUNUPURUGUHUKCDUSUQURTUPTUIUJ $.
+       $( [4-Mar-2015] $)
   $}
 
 $(
