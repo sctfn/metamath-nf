@@ -54363,6 +54363,26 @@ $)
     EFZBGDZBDOOHPQHOIBOJKLMN $.
     $( [4-Mar-2015] $)
 
+  ${
+     tcnc.1 $e |- A e. _V $.
+     $( Compute the T-raising of a cardinality. $)
+     tcnc $p |- T_c Nc A = Nc ~P1 A $=
+       ( cnc ctc cncs wcel cpw1 wceq cvv ncelncs ax-mp tccl pw1ex pw1eltc mp2an
+       ncid nceleq mp4an ) ACZDZEFZAGZCZEFZUBTFZUBUCFTUCHSEFZUAAIFUFBAIJKZSLKUB
+       IFUDABMZUBIJKUFASFUEUGABPSANOUBUHPTUCUBQR $.
+       $( [4-Mar-2015] $)
+  $}
+
+  $( Compute the T-raising of the cardinality of the universe. $)
+  tcncv $p |- T_c Nc _V = Nc 1c $=
+    ( cvv cnc ctc cpw1 c1c vvex tcnc df1c2 nceqi eqtr4i ) ABCADZBEBAFGEKHIJ $.
+    $( [4-Mar-2015] $)
+
+  $( Compute the T-raising of the cardinality of one. $)
+  tcnc1c $p |- T_c Nc 1c = Nc ~P1 1c $=
+    ( c1c 1cex tcnc ) ABC $.
+    $( [4-Mar-2015] $)
+
 $(
 =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
         Specker's disproof of the axiom of choice
