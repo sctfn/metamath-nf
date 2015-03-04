@@ -53491,9 +53491,9 @@ $)
     $( [4-Mar-2015] $)
 
   ${
-     brltc.1 $e |- B e. _V $.
-     $( Binary relationship form of cardinal less than. $)
-     brltc $p |- ( A <c B <-> ( A <_c B /\ A =/= B ) ) $=
+    brltc.1 $e |- B e. _V $.
+    $( Binary relationship form of cardinal less than. $)
+    brltc $p |- ( A <c B <-> ( A <_c B /\ A =/= B ) ) $=
        ( cvv wcel cltc wbr clec wne wa wb brltcg ax-mp ) BDEABFGABHGABIJKCABDLM
        $.
        $( [4-Mar-2015] $)
@@ -53880,8 +53880,8 @@ $)
     $d A f $.  $d A g $.  $d A t $.  $d B f $.  $d B g $.  $d B t $.  $d f g $.
     $d f t $.  $d f x $.  $d f y $.  $d g t $.  $d g x $.  $d g y $.  $d t x $.
     $d t y $.  $d x y $.
-    $( Successor is one-to-one over the cardinals.  Theorem XI.2.12 of [Rosser],
-       p. 375. $)
+    $( Successor is one-to-one over the cardinals.  Theorem XI.2.12 of
+       [Rosser], p. 375. $)
     peano4nc $p |- ( ( A e. NC /\ B e. NC ) -> 
              ( ( A +c 1c ) = ( B +c 1c ) <-> A = B ) ) $=
       ( vg vt vx vf vy cncs wcel wa c1c cplc wceq adantr cnc eqtr2 csn wrex vex
@@ -54101,10 +54101,15 @@ $)
     ORDNPOQ $.
     $( [2-Mar-2015] $)
 
+  $( Two is a finite cardinal. $)
+  2nnc $p |- 2c e. Nn $=
+    ( c1c cplc c2c cnnc 1p1e2c wcel 1cnnc peano2 ax-mp eqeltrri ) AABZCDEADFKDF
+    GAHIJ $.
+    $( [4-Mar-2015] $)
+
   $( Two is a cardinal number. $)
   2nc $p |- 2c e. NC $=
-    ( c2c c0 cvv cpr cnc cncs df-2c wcel prex ncelncs ax-mp eqeltri ) ABCDZEZFG
-    MCHNFHBCIMCJKL $.
+    ( c2c cnnc wcel cncs 2nnc nnnc ax-mp ) ABCADCEAFG $.
     $( [3-Mar-2015] $)
 
   ${
@@ -54265,7 +54270,6 @@ $)
        $( [3-Mar-2015] $)
   $}
 
-  
 
   ${
     $d A p $.  $d A x $.  $d A y $.  $d p x $.  $d p y $.  $d x y $.
@@ -54296,10 +54300,11 @@ $)
       $( [3-Mar-2015] $)
   $}
 
-  ${ $d A x y $.
-     $( A non-empty set is less than or equal to itself.  Theorem XI.2.14
-     	of [Rosser], p. 375. $)
-     lecidg $p |- ( ( A e. V /\ A =/= (/) ) -> A <_c A ) $=
+  ${
+    $d A x y $.
+    $( A non-empty set is less than or equal to itself.  Theorem XI.2.14 of
+       [Rosser], p. 375. $)
+    lecidg $p |- ( ( A e. V /\ A =/= (/) ) -> A <_c A ) $=
        ( vx vy wcel c0 wne wa clec wbr cv wss wrex wex ssid sseq2 rcla4ev mpan2
        ancli eximi n0 df-rex 3imtr4i adantl wb brlecg anidms adantr mpbird ) AB
        EZAFGZHAAIJZCKZDKZLZDAMZCAMZUKUQUJUMAEZCNURUPHZCNUKUQURUSCURUPURUMUMLZUP
@@ -54307,17 +54312,18 @@ $)
        $( [4-Mar-2015] $)
   $}
 
-  $( A cardinal is less than or equal to itself.  Corollary 1 of
-     theorem XI.2.14 of [Rosser], p. 376. $)
+  $( A cardinal is less than or equal to itself.  Corollary 1 of theorem
+     XI.2.14 of [Rosser], p. 376. $)
   nclecid $p |- ( A e. NC -> A <_c A ) $=
     ( cncs wcel c0 wne clec wbr wceq nulnnc eleq1 mtbiri necon2ai lecidg mpdan
     ) ABCZADEAAFGOADADHODBCIADBJKLABMN $.
     $( [4-Mar-2015] $)
 
-  ${ $d A x $. $d A y $. $d x y $. 
-     $( Cardinal zero is a minimal element of cardinal less than or equal. 
-     	Theorem XI.2.15 of [Rosser], p. 376. $)
-     lec0cg $p |- ( ( A e. V /\ A =/= (/) ) -> 0c <_c A ) $=
+  ${
+    $d A x $.  $d A y $.  $d x y $.
+    $( Cardinal zero is a minimal element of cardinal less than or equal.
+       Theorem XI.2.15 of [Rosser], p. 376. $)
+    lec0cg $p |- ( ( A e. V /\ A =/= (/) ) -> 0c <_c A ) $=
        ( vx vy wcel c0 wne wa c0c clec wbr cv wss wrex wex 0ss jctr wceq wb cvv
        eximi df-rex 3imtr4i csn df-0c rexeq ax-mp 0ex sseq1 rexbidv rexsn bitri
        n0 sylibr adantl 0cex brlecg mpan adantr mpbird ) ABEZAFGZHIAJKZCLZDLZMZ
@@ -54326,9 +54332,9 @@ $)
        VCVHSZVBITEVAVOUPCDIATBUQURUSUT $.
        $( [4-Mar-2015] $)
 
-     $( The cardinality of ` _V ` is a maximal element of cardinal less than 
-     	or equal.  Theorem XI.2.16 of [Rosser], p. 376. $)
-     lecncvg $p |- ( ( A e. V /\ A =/= (/) ) -> A <_c Nc _V ) $=
+    $( The cardinality of ` _V ` is a maximal element of cardinal less than or
+       equal.  Theorem XI.2.16 of [Rosser], p. 376. $)
+    lecncvg $p |- ( ( A e. V /\ A =/= (/) ) -> A <_c Nc _V ) $=
        ( vx vy wcel c0 wne wa cvv cnc clec wbr wss wrex wex vvex ncid ssv sseq2
        cv rcla4ev mp2an jctr eximi n0 df-rex 3imtr4i adantl brlecg mpan2 adantr
        wb ncex mpbird ) ABEZAFGZHAIJZKLZCTZDTZMZDUQNZCANZUPVCUOUSAEZCOVDVBHZCOU
@@ -54337,11 +54343,11 @@ $)
        $( [4-Mar-2015] $)
   $}
 
-  ${ $d A x $. $d A y $. $d x y $. 
-     $( The cardinality of a unit power class is strictly less than
-     	the cardinality of the power class.  Theorem XI.2.17 of [Rosser],
-	p. 376. $)
-     ltcpw1pwg $p |- ( A e. V -> Nc ~P1 A <_c Nc ~P A ) $=
+  ${
+    $d A x $.  $d A y $.  $d x y $.
+    $( The cardinality of a unit power class is strictly less than the
+       cardinality of the power class.  Theorem XI.2.17 of [Rosser], p. 376. $)
+    ltcpw1pwg $p |- ( A e. V -> Nc ~P1 A <_c Nc ~P A ) $=
        ( vx vy wcel cv wss cpw cnc wrex cpw1 wbr cvv pw1exg ncidg syl pwexg c1c
        clec ncex cin df-pw1 inss1 eqsstri a1i sseq1 sseq2 rcla42ev brlec sylibr
        syl3anc ) ABEZCFZDFZGZDAHZIZJCAKZIZJZUSUQSLULURUSEZUPUQEZURUPGZUTULURMEV
@@ -54350,37 +54356,50 @@ $)
        $( [4-Mar-2015] $)
   $}
 
-  $( Compute an exponent of the cardinality of one. $)
+  $( Compute an exponent of the cardinality of one.  Theorem 4.3 of
+     [Specker]. $)
   ce2nc1 $p |- ( 2c ^c Nc 1c ) = Nc _V $=
     ( c2c c1c cnc cce co cvv cpw cpw1 wceq df1c2 nceqi vvex ce2 ax-mp pwv eqtri
     ) ABCZDEZFGZCZFCQFHZCIRTIBUAJKFQLMNSFOKP $.
     $( [4-Mar-2015] $)
 
-  $( Compute an exponent of the cardinality of the unit power class of
-     one. $)
+  $( Compute an exponent of the cardinality of the unit power class of one.
+     Theorem 4.4 of [Specker]. $)
   ce2ncpw11c $p |- ( 2c ^c Nc ~P1 1c ) = Nc 1c $=
     ( c2c c1c cpw1 cnc cce co cpw wceq eqid 1cex ce2 ax-mp ncpw1c eqtri ) ABCDZ
     EFZBGDZBDOOHPQHOIBOJKLMN $.
     $( [4-Mar-2015] $)
 
   ${
-     tcnc.1 $e |- A e. _V $.
-     $( Compute the T-raising of a cardinality. $)
-     tcnc $p |- T_c Nc A = Nc ~P1 A $=
+    tcnc.1 $e |- A e. _V $.
+    $( Compute the T-raising of a cardinality. $)
+    tcnc $p |- T_c Nc A = Nc ~P1 A $=
        ( cnc ctc cncs wcel cpw1 wceq cvv ncelncs ax-mp tccl pw1ex pw1eltc mp2an
        ncid nceleq mp4an ) ACZDZEFZAGZCZEFZUBTFZUBUCFTUCHSEFZUAAIFUFBAIJKZSLKUB
        IFUDABMZUBIJKUFASFUEUGABPSANOUBUHPTUCUBQR $.
        $( [4-Mar-2015] $)
   $}
 
-  $( Compute the T-raising of the cardinality of the universe. $)
+  $( Compute the T-raising of the cardinality of the universe.  Part of Theorem
+     5.2 of [Specker]. $)
   tcncv $p |- T_c Nc _V = Nc 1c $=
     ( cvv cnc ctc cpw1 c1c vvex tcnc df1c2 nceqi eqtr4i ) ABCADZBEBAFGEKHIJ $.
     $( [4-Mar-2015] $)
 
-  $( Compute the T-raising of the cardinality of one. $)
+  $( Compute the T-raising of the cardinality of one.  Part of Theorem 5.2 of
+     [Specker]. $)
   tcnc1c $p |- T_c Nc 1c = Nc ~P1 1c $=
     ( c1c 1cex tcnc ) ABC $.
+    $( [4-Mar-2015] $)
+
+  $( Cardinal one is not zero. $)
+  1ne0c $p |- 1c =/= 0c $=
+    ( c0c c1c cplc addcid2 0cnsuc eqnetrri ) ABCBABDAEF $.
+    $( [4-Mar-2015] $)
+
+  $( Cardinal two is not zero. $)
+  2ne0c $p |- 2c =/= 0c $=
+    ( c1c cplc c2c c0c 1p1e2c 0cnsuc eqnetrri ) AABCDEAFG $.
     $( [4-Mar-2015] $)
 
 $(
@@ -54388,6 +54407,20 @@ $(
         Specker's disproof of the axiom of choice
 =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 $)
+  $c Sp[ac] $. $( Special set generator for axiom of choice. $)
+
+  $( Extend the definition of a class to include the special set generator for
+     the axiom of choice. $)
+  cspac $a class Sp[ac] $.
+
+  ${
+    $d m x y $.
+    $( Define the special class generator for the disproof of the axiom of
+       choice.  Definition 6.1 of [Specker]. $)
+    df-spac $a |- Sp[ac] = ( m e. NC |->
+        Clos1 ( { m } , 
+        { <. x , y >. | ( x e. NC /\ y e. NC /\ y = ( 2c ^c x ) ) } ) ) $.
+  $}
 
   ${
     $d b m $.  $d b s $.  $d m n $.  $d m s $.  $d m t $.  $d n s $.  $d n t $.
@@ -54462,8 +54495,8 @@ $)
 
   ${
     $d A n m a $.
-    $( Divisibility by three rule for finite cardinals. $)
-    nncdiv3 $p |- ( A e. Nn ->
+    $( Lemma for ~ nncdiv3 .  Inductive step. $)
+    nncdiv3lem3 $p |- ( A e. Nn ->
       E. n e. Nn ( A = ( ( n +c n ) +c n ) \/ 
                    A = ( ( ( n +c n ) +c n ) +c 1c ) \/
                    A = ( ( ( n +c n ) +c n ) +c 2c ) ) ) $=
@@ -54495,19 +54528,111 @@ $)
 
   ${
     $d A n $.
+    $( Divisibility by three rule for finite cardinals.  Theorem 3.4 of
+       [Specker]. $)
+    nncdiv3 $p |- ( A e. Nn -> E. n e. Nn 
+       ( A = ( ( n +c n ) +c n ) <->
+         -. ( A = ( ( ( n +c n ) +c n ) +c 1c ) \/
+              A = ( ( ( n +c n ) +c n ) +c 2c ) ) ) ) $=
+       ( cnnc wcel cplc wceq c1c c2c w3o wrex wo wn wb wa wi c0c wne df-ne mpbi
+       necomi cv nncdiv3lem3 1ne0c addcid1 eqeq1i nncaddccl anidms peano1 1cnnc
+       mpancom addccan2 mp3an23 syl syl5bbr mtbiri 2ne0c ioran sylanbrc orbi12d
+       2nnc eqeq1 notbid syl5ibrcom ad2antlr 3orrot df-3or biimpi adantl impbid
+       bitri ord ex reximdva mpd ) ACDZABUAZVPEZVPEZFZAVRGEZFZAVRHEZFZIZBCJVSWA
+       WCKZLZMZBCJABUBVOWDWGBCVOVPCDZNZWDWGWIWDNVSWFWHVSWFOVOWDWHWFVSVRVTFZVRWB
+       FZKZLZWHWJLWKLWMWHWJPGFZPGQWNLGPUCTPGRSWJVRPEZVTFZWHWNWOVRVTVRUDZUEWHVRC
+       DZWPWNMZVQCDZWHWRWHWTVPVPUFUGVQVPUFUJZWRPCDZGCDWSUHUIGVRPUKULUMUNUOWHWKP
+       HFZPHQXCLHPUPTPHRSWKWOWBFZWHXCWOVRWBWQUEWHWRXDXCMZXAWRXBHCDXEUHUTHVRPUKU
+       LUMUNUOWJWKUQURVSWEWLVSWAWJWCWKAVRVTVAAVRWBVAUSVBVCVDWDWFVSOWIWDWEVSWDWE
+       VSKZWDWAWCVSIXFVSWAWCVEWAWCVSVFVJVGVKVHVIVLVMVN $.
+       $( [4-Mar-2015] $)
+  $}
+
+  ${
+    $d a b $.  $d a c $.  $d a f $.  $d a p $.  $d a t $.  $d a x $.  $d a z $.
+    $d b c $.  $d b f $.  $d b p $.  $d b t $.  $d b x $.  $d b z $.  $d c p $.
+    $d c x $.  $d c z $.  $d f t $.  $d N n $.  $d n x $.  $d n y $.  $d p t $.
+    $d p x $.  $d p z $.  $d t x $.  $d x y $.  $d x z $.  $d y z $.
+    $( The value of the special set generator. $)
+    spacval $p |- ( N e. NC -> ( Sp[ac] ` N ) = 
+         Clos1 ( { N } , { <. x , y >. | ( x e. NC /\ y e. NC /\ y = ( 2c ^c x
+        ) ) } ) ) $=
+       ( vp va vb vz vc vt vf cncs wcel c2c wceq csset cop wa wex wn bitri sneq
+       vn cv csn cce w3a copab cclos1 cspac clos1eq1 syl df-spac snex cvv cins2
+       co cxp ccnv cpw1fn cima cpw1 csi ctxp c1c cins3 c2nd cimage ccom csymdif
+       cfns csi3 ccompl cin cid crn opelxp anbi1i wb cmap cnc cio 2nc ovce mpan
+       cins4 wel wal elima1c elsymdif vex otelins2 opelssetsn elrn2 oteltxp wbr
+       otelins3 df-br brcnv bitr3i opex elcompl elin elimapw11c brpw1fn anbi12i
+       wrex bitr4i exbii df-clel oqelins4 otsnelsi3 cab wss eqeq2i rnex 3bitr4i
+       bibi12i notbii exnal bitr2i con1bii df-3an syl6rbbr pm5.32i ncsex ssetex
+       vvex ins2ex cnvex imaex pw1ex txpex ins3ex si3ex symdifex complex ins4ex
+       xpex 1cex inex eqeq2d weq brssetsn ncseqnc 3anbi3d 2exbidv snelpw1 elima
+       mpbiran2 rexbii risset opsnelsi wf wfn brimage dfrn5 bicomi brsset sseq1
+       brco ceqsexv 3bitri brfns ancom df-f abeq2 mapval excom ideq cuni eleq2i
+       dfiota2 eluniab dfcleq adantr releqopab pw1fnex elexi siex 2ndex imageex
+       coex fnsex idex eqeltrri clos1ex fvmpt ) UBCUBUCZUDZAUCZKLZBUCZKLZUWLMUW
+       JUEUPZNZUFZABUGZUHZCUDZUWQUHZKUIUWHCNUWIUWSNUWRUWTNUWHCUAUWQUWIUWSUJUKAB
+       UBULUWQUWSCUMUNUNUQZKKUQZOUOZOURZKUNUQZUSURZMUTZVAZUXFVBZOVCZVDUTZUOZUQZ
+       OVEZOVFVGZVHZVJVCZVKZUOZVIZVDUTZVLZVKZWEZUXCUOZVMZVDUTZWEZVMZVDVAZUTZUYJ
+       UTZUOZVMZVNVEZVIZVOZVLZVCZVOZVEZVIZVDUTZVLZVMZVMUWQUNUWPABVUEUWJUWLPZUXB
+       LZVUFVUDLZQZUWKUWMQZUWOQZVUFVUELUWPVUIVUJVUHQVUKVUGVUJVUHUWJUWLKKVPVQVUJ
+       VUHUWOUWKVUHUWOVRUWMUWKUWOUWLDUCZKLZEUCZVAZMLZFUCZVAZUWJLZVULVUNVUQVSUPZ
+       VTNZUFZFRERZQZDWAZNZVUHUWKUWNVVEUWLMKLUWKUWNVVENWBUWJMDEFWCWDUUAVUFVUCLZ
+       SGBWFZGUCZVVELZVRZGWGZVUHVVFVVLVVGVVGVVKSZGRZVVLSVVGVVIUDZVUFPZVUBLZGRVV
+       NGVUFVUBWHVVQVVMGVVQVVPUXCLZVVPVUALZVRZSVVMVVPUXCVUAWIVVTVVKVVRVVHVVSVVJ
+       VVRVVOUWLPOLVVHVVOUWJUWLOAWJZWKVVIUWLGWJZBWJZWLTVVSVVOUWJPZUYTLZVVJVVOUW
+       JUWLUYTVWCWPVWEGHWFZVVDDHUUBZVRZDWGZQZHRZVVJVWEHUCZVWDPUYSLZHRVWKHVWDUYS
+       WMVWMVWJHVWMVWLVVOPUXDLZVWLUWJPZUYRLZQVWJVWLVVOUWJUXDUYRWNVWNVWFVWPVWIVW
+       NVWLVVOUXDWOZVWFVWLVVOUXDWQVWQVVOVWLOWOVWFVWLVVOOWRVVIVWLVWBHWJZUUCTWSVW
+       PVWOUYQLZSVWIVWOUYQVWLUWJVWRVWAWTZXAVWIVWSVWSVWHSZDRZVWISVWSVULVWOPZUYPL
+       ZDRVXBDVWOUYPWMVXDVXADVXDVXCUYNLZVXCUYOLZVRZSVXAVXCUYNUYOWIVXGVWHVXEVVDV
+       XFVWGVXEVXCUXELZVXCUYMLZQZVVDVXCUXEUYMXBVXJVUMVXIQVVDVXHVUMVXIVXHVUMVWOU
+       NLVWTVULVWOKUNVPUUIVQVUMVXIVVCVUMVVCVUPVUSVUTVULLZUFZFRERZVXIVUMVVBVXLEF
+       VUMVVAVXKVUPVUSVULVUTUUDUUEUUFVXIVULUWJPZUYLLZVXMVULVWLUWJUYLVWRWKVXOVXL
+       ERZFRZVXMVXOVUQUDZUDZVXNPZUYKLZFRVXQFVXNUYKXCVYAVXPFVYAVUNUDZUDZVXTPZUYI
+       LZERVXPEVXTUYIXCVYEVXLEVYDUXMLZVYDUYHLZQVUPVUSQZVXKQVYEVXLVYFVYHVYGVXKVY
+       FVYCUXHLZVXTUXLLZQVYHVYCVXTUXHUXLVPVYIVUPVYJVUSVYIIUCZVUONZIMXFZVUPVYIVY
+       BUXGLZVYMVYBUXGUUGVYNVYKVYBUXFWOZIMXFVYMIVYBUXFMUUHVYOVYLIMVYOVYBVYKUSWO
+       VYLVYKVYBUSWRVUNVYKEWJZXDTUUJTTIVUOMUUKXGVYJVXSUWJPZUXKLZVUSVXSVULUWJUXK
+       DWJZWKVYRVYKVURNZIAWFZQZIRZVUSVYRVYKUDZVYQPUXJLZIRWUCIVYQUXJWHWUEWUBIWUE
+       WUDVXSPUXILZWUDUWJPOLZQWUBWUDVXSUWJUXIOWNWUFVYTWUGWUAWUFVYKVXRPUXFLZVYTV
+       YKVXRUXFIWJZVUQUMZUULWUHVYKVXRUXFWOZVYTVYKVXRUXFWQWUKVXRVYKUSWOVYTVYKVXR
+       USWRVUQVYKFWJZXDTWSTVYKUWJWUIVWAWLXETXHTIVURUWJXIXGTXETVYGVYCVXSVULPZPZU
+       YGLZVXKVYCVXSVULUWJUYGVWAXJWUDWUNPZUYFLZIRVYKVUTNZIDWFZQZIRWUOVXKWUQWUTI
+       WUQWUPUYDLZWUPUYELZQWUTWUPUYDUYEXBWVAWURWVBWUSWVAWUDVYCVXSPPUYCLZWURWUDV
+       YCVXSVULUYCVYSXJWVCVYKVYBVXRPZPZUYBLZWURVYKVYBVXRUYBWUIVUNUMZWUJXKWVFVYK
+       VUQVUNJUCZUUMZJXLZNZWURWVFJIWFZWVIVRZJWGZWVKWVFWVEUYALZSWVNWVEUYAVYKWVDW
+       UIVYBVXRWVGWUJWTZWTXAWVNWVOWVOWVMSZJRZWVNSWVOWVHUDZWVEPZUXTLZJRWVRJWVEUX
+       TWHWWAWVQJWWAWVTUXNLZWVTUXSLZVRZSWVQWVTUXNUXSWIWWDWVMWWBWVLWWCWVIWWBWVSV
+       YKPOLWVLWVSVYKWVDOWVPWPWVHVYKJWJZWUIWLTWWCWVSWVDPUXRLZWVIWVSVYKWVDUXRWUI
+       WKWWFWVHVUNVUQPPUXQLZWVIWVHVUNVUQUXQWWEVYPWULXKWVHVUNPUXPLZWVHVUQPVJLZQZ
+       WVHVUQUUNZWVHVOZVUNXMZQZWWGWVIWWJWWMWWKQZWWNWWJWVHVUNUXPWOZWVHVUQVJWOZQW
+       WOWWPWWHWWQWWIWVHVUNUXPWQWVHVUQVJWQXEWWPWWMWWQWWKWWPWVHVYKUXOWOZVYKVUNOW
+       OZQZIRVYKWWLNZVYKVUNXMZQZIRWWMIWVHVUNOUXOUUTWWTWXCIWWRWXAWWSWXBWWRVYKVFW
+       VHUTZNZWXAWVHVYKVFWWEWUIUUOWXAWXEWWLWXDVYKWVHUUPXNUUQTVYKVUNWUIVYPUURXEX
+       HWXBWWMIWWLWVHWWEXOVYKWWLVUNUUSUVAUVBVUQWVHWWEUVCXEWSWWMWWKUVDTWVHVUNVUQ
+       UXPVJWNVUQVUNWVHUVEXPTTXQXRTXHTWVMJXSXTYATWVIJVYKUVFXGVUTWVJVYKVUNVUQJVY
+       PWULUVGXNXGTTWVBWUDWUMPUXCLZWUSWUDVYCWUMUXCVYBUMWKWXFWUDVULPOLWUSWUDVXSV
+       ULOVXRUMWKVYKVULWUIVYSWLTTXETXHIWUNUYFWHIVUTVULXIXPTXEVYDUXMUYHXBVUPVUSV
+       XKYBXPXHTXHTVXLEFUVHXGTYCYDTTVXFVULVWLPVNLZVWGVULVWLUWJVNVWAWPWXGVULVWLV
+       NWOVWGVULVWLVNWQVULVWLVWRUVIWSTXQXRTXHTVWHDXSXTYATXETXHTVVJVVIVWIHXLUVJZ
+       LVWKVVEWXHVVIVVDDHUVLUVKVWIHVVIUVMTXGTXQXRTXHTVVKGXSXTYAVUFVUCUWJUWLVWAV
+       WCWTXAGUWLVVEUVNXPYCUVOYDTVUFUXBVUDXBUWKUWMUWOYBXPUVPUXAVUEUNUNYGYGYRUXB
+       VUDKKYEYEYRVUCVUBVDUXCVUAOYFYHZUYTUYSUXDUYROYFYIUYQUYPUYNUYOUXEUYMKUNYEY
+       GYRUYLUYKUYJUYIUYJUXMUYHUXHUXLUXGUXFMUSUVQYIZMKWBUVRYJYKUXKUXJVDUXIOUXFW
+       XJUVSYFYLYSYJYHYRUYGUYFVDUYDUYEUYCUYBUYAUXTVDUXNUXSOYFYMUXRUXQUXPVJOUXOY
+       FVFUVTUWAUWBUWCYLYNYHYOYSYJYPYNYQUXCWXIYHYTYSYJYQYTVDYSYKZYJWXKYJYHYTVNU
+       WDYMYOXOYPYLXOYMYOYSYJYPYTYTUWEUWFUWG $.
+       $( [4-Mar-2015] $)
+  $}
+
+  ${
+    $d A n $.
     $( Lemma for ~ nchoice .  A finite cardinal is not one more than its
        T-raising. $)
     nchoicelem1 $p |- ( A e. Nn -> -. A = ( T_c A +c 1c ) ) $=
-       ( vn cnnc wcel cplc wceq c1c c2c w3o wrex ctc cncs ncaddccl syl2anc tcdi
-       cv wn syl addceq1d eqtrd nncdiv3 wi nnnc 2nc mpan2 tc2c addceq12d eqeq2d
-       a1i sylbid mtod id tceq eqeq12d notbid biimprd com12 3jaod rexlimiv ) AC
-       DABPZUTEZUTEZFZAVBGEFZAVBHEZFZIZBCJAAKZGEZFZQZABUAVGVKBCUTCDZVCVKVDVF??V
-       LVEVEKZGEZFZQZVFVKUBVLVO??VLVOVEUTKZVQEZVQEZHEZGEZF?VLVNWAVEVLVMVTGVLVMV
-       BKZHKZEZVTVLVBLDZVMWDFZVLVALDZUTLDZWEVLWHWHWGUTUCZWIUTUTMNZWIVAUTMNWEHLD
-       WFUDVBHOUERVLWBVSWCHVLWBVAKZVQEZVSVLWGWHWBWLFWJWIVAUTONVLWKVRVQVLWHWHWKV
-       RFWIWIUTUTONSTWCHFVLUFUIUGTSUH?UJUKVFVPVKVFVKVPVFVJVOVFAVEVIVNVFULVFVHVM
-       GAVEUMSUNUOUPUQRURUSR $.
-       $( [3-Mar-2015] $)
+      (  ) ? $.
+      $( [3-Mar-2015] $)
   $}
 
 
