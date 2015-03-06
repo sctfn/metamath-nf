@@ -53432,11 +53432,11 @@ $)
   df-3c $a |- 3c = Nc { (/) , _V , ( _V \ { (/) } ) } $.
 
   ${
-    $d n m p a b $.
-    $( Define cardinal exponentiation.  Definition from [Rosser], p.  XXX. $)
+    $d n m g a b $.
+    $( Define cardinal exponentiation.  Definition from [Rosser], p.  381. $)
     df-ce $a |- ^c = ( n e. NC , m e. NC |-> 
-       ( iota p ( p e. NC /\ E. a E. b ( ~P1 a e. n /\ ~P1 b e. m /\
-          p = Nc ( a ^m b ) ) ) ) ) $.
+       { g | E. a E. b ( ~P1 a e. n /\ ~P1 b e. m /\
+          p = Nc ( a ^m b ) ) } ) $.
   $}
 
   $( Cardinality equality law. $)
@@ -54144,13 +54144,8 @@ $)
     $d N b $.  $d N m $.  $d N n $.  $d n p $.  $d N p $.
     $( The value of cardinal exponentiation. $)
     ovce $p |- ( ( N e. NC /\ M e. NC ) ->
-       ( N ^c M ) = ( iota p ( p e. NC /\ 
-          E. a E. b ( ~P1 a e. N /\ ~P1 b e. M /\ p = Nc ( a ^m b ) ) ) ) ) $=
-       ( vn vm cncs cv wcel cpw1 wceq w3a wex cio eleq2 2exbidv anbi2d iotabidv
-       wa cmap co cnc cce 3anbi1d 3anbi2d df-ce iotaex ovmpt2 ) FGBAHHCIZHJZDIZ
-       KZFIZJZEIZKZGIZJZUJULUPUAUBUCLZMZENDNZTZCOUKUMBJZUQAJZUTMZENDNZTZCOUDUKV
-       DUSUTMZENDNZTZCOUNBLZVCVKCVLVBVJUKVLVAVIDEVLUOVDUSUTUNBUMPUEQRSURALZVKVH
-       CVMVJVGUKVMVIVFDEVMUSVEVDUTURAUQPUFQRSGFCDEUGVHCUHUI $.
+       ( N ^c M ) = { g | E. a E. b   
+       	 ( ~P1 a e. N /\ ~P1 b e. M /\ g ~~ ( a ^m b ) ) } ) $= ? $.
        $( [3-Mar-2015] $)
   $}
 
@@ -54160,97 +54155,16 @@ $)
     $d p y $.  $d x y $.  $d a x $.  $d b x $.  $d m x $.  $d n x $.  $d a f $.
     $d b f $.  $d f x $.  $d p x $.
     $( Cardinal exponentiation is stratified. $)
-    ceex $p |- ^c e. _V $=
-      ( vp va vb vx vy vf cncs cvv csset cins2 c1c wcel wex wa cop bitri 3bitri
-      wbr exbii 3bitr4i vn vm cce cxp ccnv cpw1fn csi ctxp cima cin c2nd cimage
-      cins3 crn cfns csi3 csymdif ccompl cins4 cpw1 cid cdif cv cmap co cnc w3a
-      wceq cio cmpt2 df-ce csn wel weq wb wal oteltxp df-br vex brssetsn bitr3i
-      brcnv wn elrn2 elsymdif otelins2 elin opex opelxp mpbiran2 anbi1i ncseqnc
-      3anbi3d 2exbidv elimapw11c snex elima1c opsnelsi brpw1fn opelssetsn ancom
-      anbi12i otelins3 wrex risset df-rex mpbiran 3bitr2i cab otsnelsi3 wfn wss
-      wf elrn trtxp brimage eqeq2i rnex bibi12i xchbinx notbii elcompl oqelins4
-      dfrn5 alex ncsex ssetex cnvex vvex xpex txpex 1cex ins3ex ins2ex symdifex
-      imaex inex si3ex complex ins4ex brsset sseq1 ceqsexv brfns abeq2 syl6rbbr
-      df-f mapval df-3an excom pm5.32i ideq cuni dfiota2 eleq2i eluniab pw1fnex
-      releqmpt2 eqtr4i siex 2ndex imageex fnsex pw1ex idex mpt2exlem eqeltri )
-      UCGGUDHUDIJZIUEZGHUDZUFUEZUGZIUHZKUIZUMZJZJZHUVNJZJZUDZUJZUVHJZIUMZUKULZU
-      EZIUHZUNZUOUHZUPZJZUQZKUIZURZUPZUSZUJZKUIZUSZUJZKUTZUIZUWTUIZUJZJZVAUMZUQ
-      ZUNZURZUHZUNZUMUQKUIVBZHUCUAUBGGAVCZGLZBVCZUTZUAVCZLZCVCZUTZUBVCZLZUXLUXN
-      UXRVDVEZVFVHZVGZCMBMZNZAVIZVJUXKUBUAABCVKUAUBDGGUXJUYGEVCZDVCZVLZUXPUXTOZ
-      OZOUXILZEMDEVMZUYFAEVNZVOZAVPZNZEMZUYLUXJLUYIUYGLZUYMUYREUYMUYHUYJOUVILZU
-      YHUYKOZUXHLZNUYRUYHUYJUYKUVIUXHVQVUAUYNVUCUYQVUAUYHUYJUVIRZUYNUYHUYJUVIVR
-      VUDUYJUYHIRUYNUYHUYJIWBUYIUYHDVSZEVSZVTPWAVUBUXGLZWCUYPWCZAMZWCVUCUYQVUGV
-      UIVUGUXLVUBOZUXFLZAMVUIAVUBUXFWDVUKVUHAVUKVUJUXDLZVUJUXELZVOUYPVUJUXDUXEW
-      EVULUYFVUMUYOVULUXLUYKOZUXCLZUXMVUNUXBLZNZUYFUXLUYHUYKUXCVUFWFVUOVUNUVJLZ
-      VUPNVUQVUNUVJUXBWGVURUXMVUPVURUXMUYKHLUXPUXTUAVSZUBVSZWHZUXLUYKGHWIWJWKPU
-      XMVUPUYEUXMUYEUXQUYAUYBUXLLZVGZCMBMZVUPUXMUYDVVCBCUXMUYCVVBUXQUYAUXLUYBWL
-      WMWNVUPUXRVLZVLZVUNOZUXALZCMVVCBMZCMVVDCVUNUXAWOVVHVVICVVHUXNVLZVLZVVGOZU
-      WSLZBMVVIBVVGUWSWOVVMVVCBVVLUWALZVVLUWRLZNUXQUYANZVVBNVVMVVCVVNVVPVVOVVBV
-      VNVVLUVQLZVVLUVTLZNVVPVVLUVQUVTWGVVQUXQVVRUYAVVQVVKVUNOUVPLVVKUYKOUVOLZUX
-      QVVKVVFVUNUVPVVEWPZWFVVKUXLUYKUVOAVSZWFVVKUXPOZUVNLZDUAVMZUYIUXOVHZNZDMZV
-      VSUXQVWCUYJVWBOUVMLZDMVWGDVWBUVMWQVWHVWFDVWHUYJVVKOUVLLZUYJUXPOILZNVWEVWD
-      NVWFUYJVVKUXPUVLIVQVWIVWEVWJVWDVWIUYIVVJOUVKLZVVJUYIUFRZVWEUYIVVJUVKVUEUX
-      NWPZWRVWKUYIVVJUVKRVWLUYIVVJUVKVRUYIVVJUFWBWAUXNUYIBVSZWSQUYIUXPVUEVUSWTX
-      BVWEVWDXAQSPVVKUXPUXTUVNVUTXCUXQVWEDUXPXDVWGDUXOUXPXEVWEDUXPXFPTQVVRVVGUV
-      SLZVVFUYKOUVRLZUYAVVRVVKHLVWOVVJWPZVVKVVGHUVSWIXGVVFUXLUYKUVRVWAWFVVFUXTO
-      ZUVNLZDUBVMZUYIUXSVHZNZDMZVWPUYAVWSUYJVWROUVMLZDMVXCDVWRUVMWQVXDVXBDVXDUY
-      JVVFOUVLLZUYJUXTOILZNVXAVWTNVXBUYJVVFUXTUVLIVQVXEVXAVXFVWTVXEUYIVVEOUVKLZ
-      VVEUYIUFRZVXAUYIVVEUVKVUEUXRWPZWRVXHUYIVVEUVKRVXGUYIVVEUFWBUYIVVEUVKVRWAU
-      XRUYICVSZWSXHUYIUXTVUEVUTWTXBVXAVWTXAQSPVVFUXPUXTUVNVUSWFUYAVXADUXTXDVXCD
-      UXSUXTXEVXADUXTXFPTQXBPVVKVVFUXLOZOZUWQLZDAVMZUYIUYBVHZNZDMZVVOVVBVXMUYJV
-      XLOZUWPLZDMVXQDVXLUWPWQVXSVXPDVXSVXRUWBLZVXRUWOLZNVXPVXRUWBUWOWGVXTVXNVYA
-      VXOVXTUYJVXKOUVHLUYJUXLOILVXNUYJVVKVXKUVHVWQWFUYJVVFUXLIVVTWFUYIUXLVUEVWA
-      WTQUYJVVKVVFOOUWNLZUYIUXRUXNFVCZXMZFXIZVHZVYAVXOUYIVVJVVEOZOZUWMLZFDVMZVY
-      DVOZFVPZVYBVYFVYHUWLLZWCVYKWCZFMZWCVYIVYLVYMVYOVYMVYCVLZVYHOZUWKLZFMVYOFV
-      YHUWKWQVYRVYNFVYRVYQUWCLZVYQUWJLZVOVYKVYQUWCUWJWEVYSVYJVYTVYDVYSVYPUYIOIL
-      VYJVYPUYIVYGIVVJVVEVWMVXIWHZXCVYCUYIFVSZVUEWTPVYTVYPVYGOUWILVYCUXNUXROOUW
-      HLZVYDVYPUYIVYGUWIVUEWFVYCUXNUXRUWHWUBVWNVXJXJVYCUXNOZUWGLZVYCUXROUOLZNZV
-      YCUXRXKZVYCUNZUXNXLZNZWUCVYDWUGWUJWUHNWUKWUEWUJWUFWUHWUEUYIWUDUWFRZDMUYIW
-      UIVHZUYIUXNXLZNZDMWUJDWUDUWFXNWULWUODWULUYIVYCUWERZUYIUXNIRZNWUOUYIVYCUXN
-      UWEIXOWUPWUMWUQWUNVYCUYIUWDRUYIUKVYCUIZVHWUPWUMVYCUYIUKWUBVUEXPUYIVYCUWDW
-      BWUIWURUYIVYCYDXQTUYIUXNVUEVWNUUAXBPSWUNWUJDWUIVYCWUBXRUYIWUIUXNUUBUUCQWU
-      FVYCUXRUORWUHVYCUXRUOVRUXRVYCWUBUUDWAXBWUJWUHXAPVYCUXNUXRUWGUOVQUXRUXNVYC
-      UUGTQXSXTSPYAVYHUWLUYIVYGVUEWUAWHYBVYKFYETUYIVVJVVEUWMVUEVWMVXIXJVYDFUYIU
-      UETUYJVVKVVFUXLUWNVWAYCUYBVYEUYIUXNUXRFVWNVXJUUHXQTXBPSPVVKVVFUXLUYKUWQVV
-      AYCVVBVXODUXLXDVXQDUYBUXLXEVXODUXLXFPTXBVVLUWAUWRWGUXQUYAVVBUUITSPSVVCCBU
-      UJQUUFUUKQVUMUXLUYHOVALUXLUYHVARUYOUXLUYHUYKVAVVAXCUXLUYHVAVRUXLUYHVUFUUL
-      XHXSXTSPYAVUBUXGUYHUYKVUFVVAWHYBUYPAYETXBPSEUYLUXIWDUYTUYIUYQEXIUUMZLUYSU
-      YGWUSUYIUYFAEUUNUUOUYQEUYIUUPPTUURUUSGGUXJYFYFUXIUVIUXHIYGYHUXGUXFUXDUXEU
-      XCUVJUXBGHYFYIYJUXAUWTUWSUWTUWAUWRUVQUVTUVPUVOUVNUVMKUVLIUVKUFUUQYHUUTYGY
-      KYLYPZYMYNYNHUVSYIUVRUVNWUTYNYNYJYQUWQUWPKUWBUWOUVHIYGYNYNUWNUWMUWLUWKKUW
-      CUWJIYGYMUWIUWHUWGUOUWFUWEIUWDUKUVAUVBYHYGYKXRUVCYKYRYNYOYLYPYSYRYTYQYLYP
-      YTYQKYLUVDZYPWVAYPYQYNVAUVEYMYOXRYSYKXRUVFUVG $.
+    ceex $p |- ^c e. _V $= ? $.
       $( [3-Mar-2015] $)
   $}
 
-  ${
-    $d a b $.  $d a c $.  $d a d $.  $d a p $.  $d a q $.  $d b c $.  $d b d $.
-    $d b p $.  $d b q $.  $d c d $.  $d c p $.  $d c q $.  $d d p $.  $d d q $.
-    $d M a $.  $d M b $.  $d M c $.  $d M d $.  $d M p $.  $d M q $.  $d N a $.
-    $d N b $.  $d N c $.  $d N d $.  $d N p $.  $d N q $.  $d p q $.
-    $( There is at most one cardinal specified in the definition of cardinal
-       exponentiation. $)
-    cencmo $p |- ( ( N e. NC /\ M e. NC ) -> E* p ( p e. NC /\
-          E. a E. b ( ~P1 a e. N /\ ~P1 b e. M /\ p = Nc ( a ^m b ) ) ) ) $=
-       ( vc vd vq cncs wcel wa cv cpw1 cmap cnc wceq w3a wex cen wbr co wi wral
-       weq wmo 2exbii ee4anv bitri ncseqnc biimpar adantrr adantrl eqtr3d pw1ex
-       3an6 vex eqnc sylib ad2ant2r ad2ant2l enmap1 enmap2 entr syl2an syl2anbr
-       enpw1 syl2anc ovex sylibr eqeq12 syl5ibrcom exp32 3impd exlimdvv syl5bir
-       a1d ralrimivv eqeq1 3anbi3d 2exbidv wb pw1eq eleq1d adantr adantl oveq12
-       nceqd eqeq2d 3anbi123d cbvex2v syl6bb rmo4 ) BIJZAIJZKZDLZMZBJZELZMZAJZC
-       LZWPWSNUAZOZPZQZERDRZFLZMZBJZGLZMZAJZHLZXHXKNUAZOZPZQZGRFRZKZCHUDZUBZHIU
-       CCIUCXBIJZXGKCUEWOYBCHIIWOYBYCXNIJKXTWRXJKZXAXMKZXEXQKZQZGRFRZERDRZWOYAY
-       IXFXRKZGRFRZERDRXTYHYKDEYGYJFGWRXJXAXMXEXQUOUFUFXFXRDEFGUGUHWOYHYADEWOYG
-       YAFGWOYDYEYFYAWOYDYEYFYAUBWOYDYEKKZYAYFXDXPPZYLXCXOSTZYMYLWQXISTZWTXLSTZ
-       YNWMYDYOWNYEWMYDKZWQOZXIOZPYOYQBYRYSWMWRBYRPZXJWMYTWRBWQUIUJUKWMXJBYSPZW
-       RWMUUAXJBXIUIUJULUMWQXIWPDUPUNUQURUSWNYEYPWMYDWNYEKZWTOZXLOZPYPUUBAUUCUU
-       DWNXAAUUCPZXMWNUUEXAAWTUIUJUKWNXMAUUDPZXAWNUUFXMAXLUIUJULUMWTXLWSEUPUNUQ
-       URUTYOWPXHSTZWSXKSTZYNYPWPXHVFWSXKVFUUGXCXHWSNUAZSTUUIXOSTYNUUHWPXHWSVAW
-       SXKXHVBXCUUIXOVCVDVEVGXCXOWPWSNVHUQVIXBXDXNXPVJVKVLVMVNVNVOVPVQXGXSCHIYA
-       XGWRXAXNXDPZQZERDRXSYAXFUUKDEYAXEUUJWRXAXBXNXDVRVSVTUUKXRDEFGDFUDZEGUDZK
-       ZWRXJXAXMUUJXQUULWRXJWAUUMUULWQXIBWPXHWBWCWDUUMXAXMWAUULUUMWTXLAWSXKWBWC
-       WEUUNXDXPXNUUNXCXOWPXHWSXKNWFWGWHWIWJWKWLVI $.
-       $( [3-Mar-2015] $)
+  ${ 
+     $( Membership in cardinal exponentiation.  Theorem XI.2.38 of
+     	[Rosser], p. 382. $)
+      elce $p |- ( ( A e. V /\ B e. NC /\ C e. NC ) ->
+        ( A e. ( B ^c C ) <-> E. x E. y ( ~P1 x e. A /\ ~P1 y e. B /\
+	  A ~~ ( x ^m y ) ) ) ) $= ? $.
   $}
 
   ${
@@ -54276,29 +54190,24 @@ $)
     ce2.1 $e |- A e. _V $.
     $( The value of base two cardinal exponentiation.  Theorem XI.2.70 of
        [Rosser]. $)
-    ce2 $p |- ( M = Nc ~P1 A -> ( 2c ^c M ) = Nc ~P A ) $=
-      ( vp vx vy cpw1 wceq c2c co cncs wcel cmap wex wa cvv mp2an c0 csn wne cv
-      cnc cce cpw oveq2 w3a cio 2nc pw1ex ncelncs ax-mp ovce cen wbr vvex sneqb
-      cpr vn0 necon3bii necomi eqid snex id adantr adantl neeq12d preq12 eqeq2d
-      mpbir anbi12d cla42ev el2c ncid 0ex enprmapc prex pw1eq cun df-pr uneq12i
-      pw1sn pw1un 3eqtr4i eqtri syl6eq eleq1d oveq12 breq1d 3anbi123d wreu pwex
-      mp3an wrex wmo eqeq1 eqcom ovex eqnc bitri syl6bb 3anbi3d 2exbidv rcla4ev
-      wb cencmo reu5 mpbir2an reiota2 mpbi ) BAGZUBZHIBUCJIXKUCJZAUDZUBZBXKIUCU
-      EXLDUAZKLEUAZGZILZFUAZGZXKLZXOXPXSMJZUBZHZUFZFNENZOZDUGZXNIKLZXKKLZXLYHHU
-      HXJPLYJACUIZXJPUJUKZXKIDEFULQXRYAYBXMUMUNZUFZFNENZYHXNHZRSZPSZUQZILZXJXKL
-      ZRPUQZAMJZXMUMUNZYOYTXPXSTZYSXPXSUQZHZOZFNENZYQYRTZYSYSHZUUIYRYQYRYQTPRTU
-      RYRYQPRPRUOUPUSVIUTYSVAUUHUUJUUKOEFYQYRRVBPVBXPYQHZXSYRHZOZUUEUUJUUGUUKUU
-      NXPYQXSYRUULUULUUMUULVCVDUUMUUMUULUUMVCVEVFUUNUUFYSYSXPXSYQYRVGVHVJVKQEFY
-      SVLVIXJYKVMRPTUUBUUBHUUDPRURUTUUBVARPAUUBVNUOCVOQYNYTUUAUUDUFEFUUBARPVPCX
-      PUUBHZXSAHZOZXRYTYAUUAYMUUDUUOXRYTXDUUPUUOXQYSIUUOXQUUBGZYSXPUUBVQUURYQYR
-      VRZGZYSUUBUUSHUURUUTHRPVSUUBUUSVQUKYQGZYRGZVRYQSZYRSZVRUUTYSUVAUVCUVBUVDR
-      VNWAPUOWAVTYQYRWBYQYRVSWCWDWEWFVDUUPYAUUAXDUUOUUPXTXJXKXSAVQWFVEUUQYBUUCX
-      MUMXPUUBXSAMWGWHWIVKWLZXNKLZYFDKWJZYOYPXDXMPLUVFACWKXMPUJUKZUVGYFDKWMZYGD
-      WNZUVFYOUVIUVHUVEYFYODXNKXOXNHZYEYNEFUVKYDYMXRYAUVKYDXNYCHZYMXOXNYCWOUVLY
-      CXNHYMXNYCWPYBXMXPXSMWQWRWSWTXAXBZXCQYIYJUVJUHYLXKIDEFXEQYFDKXFXGYFYODKXN
-      UVMXHQXIWDWE $.
+    ce2 $p |- ( M = Nc ~P1 A -> ( 2c ^c M ) = Nc ~P A ) $= ? $.
       $( [3-Mar-2015] $)
   $}
+
+  $( Compute an exponent of the cardinality of one.  Theorem 4.3 of
+     [Specker]. $)
+  ce2nc1 $p |- ( 2c ^c Nc 1c ) = Nc _V $=
+    ( c2c c1c cnc cce co cvv cpw cpw1 wceq df1c2 nceqi vvex ce2 ax-mp pwv eqtri
+    ) ABCZDEZFGZCZFCQFHZCIRTIBUAJKFQLMNSFOKP $.
+    $( [4-Mar-2015] $)
+
+  $( Compute an exponent of the cardinality of the unit power class of one.
+     Theorem 4.4 of [Specker]. $)
+  ce2ncpw11c $p |- ( 2c ^c Nc ~P1 1c ) = Nc 1c $=
+    ( c2c c1c cpw1 cnc cce co cpw wceq eqid 1cex ce2 ax-mp ncpw1c eqtri ) ABCDZ
+    EFZBGDZBDOOHPQHOIBOJKLMN $.
+    $( [4-Mar-2015] $)
+
 
   ${
     $d A x y $.
@@ -54355,20 +54264,6 @@ $)
        RUNUFUNUPURUGUHUKCDUSUQURTUPTUIUJ $.
        $( [4-Mar-2015] $)
   $}
-
-  $( Compute an exponent of the cardinality of one.  Theorem 4.3 of
-     [Specker]. $)
-  ce2nc1 $p |- ( 2c ^c Nc 1c ) = Nc _V $=
-    ( c2c c1c cnc cce co cvv cpw cpw1 wceq df1c2 nceqi vvex ce2 ax-mp pwv eqtri
-    ) ABCZDEZFGZCZFCQFHZCIRTIBUAJKFQLMNSFOKP $.
-    $( [4-Mar-2015] $)
-
-  $( Compute an exponent of the cardinality of the unit power class of one.
-     Theorem 4.4 of [Specker]. $)
-  ce2ncpw11c $p |- ( 2c ^c Nc ~P1 1c ) = Nc 1c $=
-    ( c2c c1c cpw1 cnc cce co cpw wceq eqid 1cex ce2 ax-mp ncpw1c eqtri ) ABCDZ
-    EFZBGDZBDOOHPQHOIBOJKLMN $.
-    $( [4-Mar-2015] $)
 
   ${
     tcnc.1 $e |- A e. _V $.
@@ -54632,13 +54527,13 @@ $)
       $( [3-Mar-2015] $)
   $}
 
-
   ${
     $d A n $.
     $( Lemma for ~ nchoice .  A finite cardinal is not two more than its
        T-raising. $)
     nchoicelem2 $p |- ( A e. Nn -> -. A = ( T_c A +c 2c ) ) $= ? $.
   $}
+
 
 $(
 #*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#
