@@ -49414,6 +49414,30 @@ $)
 
   $}
 
+  ${ $d A x $. $d A y $. $d B x $. $d B y $. $d R x $. $d R y $. $d x y $. 
+     brsnsi1.1 $e |- A e. _V $.
+     $( Binary relationship of a singleton to an arbitrary set in a
+     	singleton image. $)
+     brsnsi1 $p |- ( { A } SI R B <-> E. x ( B = { x } /\ A R x ) ) $=
+       ( vy csn csi wbr cv wceq w3a wex wa brsi excom eqcom vex bitri exbii
+       sneqb 3anbi1i 3anass breq1 anbi2d ceqsexv ) BGZCDHIUGFJZGZKZCAJZGKZUHUKD
+       IZLZAMFMZULBUKDIZNZAMZFAUGCDOUOUNFMZAMURUNFAPUSUQAUSUHBKZULUMNZNZFMUQUNV
+       BFUNUTULUMLVBUJUTULUMUJUIUGKUTUGUIQUHBFRUASUBUTULUMUCSTVAUQFBEUTUMUPULUH
+       BUKDUDUEUFSTSS $.
+       $( [9-Mar-2015] $)
+
+     $( Binary relationship of an arbitrary set to a singleton in a
+     	singleton image. $)
+     brsnsi2 $p |- ( B SI R { A } <-> E. x ( B = { x } /\ x R A ) ) $=
+       ( vy csn csi wbr cv wceq w3a wex wa brsi 3anass exbii 19.42v sneqb bitri
+       eqcom anbi1i breq2 ceqsexv anbi2i ) CBGZDHICAJZGKZUFFJZGKZUGUIDIZLZFMZAM
+       UHUGBDIZNZAMAFCUFDOUMUOAUMUHUJUKNZNZFMZUOULUQFUHUJUKPQURUHUPFMZNUOUHUPFR
+       USUNUHUSUIBKZUKNZFMUNUPVAFUJUTUKUJBUIKUTBUIESBUIUATUBQUKUNFBEUIBUGDUCUDT
+       UETTQT $.
+       $( [9-Mar-2015] $)
+
+  $}
+
   ${
     $d A x $.  $d B x $.  $d C x $.  $d R x $.
     brco1st.1 $e |- A e. _V $.
@@ -54404,6 +54428,7 @@ $)
        $.
        $( [6-Mar-2015] $)
   $}
+
 
   ${
     $d a b $.  $d a m $.  $d a n $.  $d a p $.  $d a y $.  $d b m $.  $d b n $.
