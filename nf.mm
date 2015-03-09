@@ -49260,6 +49260,7 @@ $)
   $c PProd $. $( Parallel product. $)
   $c Cross $. $( Cross product function. $)
   $c Pw1Fn $. $( The unit power class function. $)
+  $c FullFun $. $( The full function operation. $)
 
   $( Extend the definition of a class to include the tail cross product. $)
   ctxp $a class ( A (x) B ) $.
@@ -49313,6 +49314,9 @@ $)
      function. $)
   cpw1fn $a class Pw1Fn $.
 
+  $( Extend the definition of a class to include the full function
+     operation. $)
+  cfullfun $a class FullFun F $.
 
   $( Define the tail cross product of two classes.  Definition from [Holmes],
      p. 40.  See ~ brtxp for membership. $)
@@ -49381,6 +49385,12 @@ $)
      member.  This function is defined in such a way as to ensure
      stratification. $)
   df-pw1fn $a |- Pw1Fn = ( x e. 1c |-> ~P1 U. x ) $.
+
+  $( Define the full function operator.  This is a function over ` _V ` that
+     agrees with the function value of ` F ` at every point. $)
+  df-fullfun $a |- FullFun F = 
+   ( ( ( _I o. F ) \ ( ~ _I o. F ) ) u. 
+     ( ~ dom ( ( _I o. F ) \ ( ~ _I o. F ) ) X. { (/) } ) ) $.
 
   ${
     $d A x y z w $.  $d B x y z w $.  $d R x y z w $.
@@ -50474,6 +50484,167 @@ $)
        RWQYIGWCYHDQZWGVIYMWTYLGJYSWSYLGWCYKEQWGVIWDYNXBYIYLHUUAWQYIWSYLWEYHYKUU
        BWFWHWIWJWKWLABFWOGWMWN $.
        $( [26-Feb-2015] $)
+  $}
+
+  ${
+    $d A x $.  $d B x $.  $d R x $.
+    $( Binary relationship of composition with identity. $)
+    brcoi1 $p |- ( A ( _I o. R ) B <-> A R B ) $=
+       ( vx cid ccom wbr cvv wcel brex simprd cv wceq wa wex ancom wb vex bitri
+       brco ideqg2 ax-mp anbi1i exbii breq2 ceqsexgv syl5bb pm5.21nii ) ABECFZG
+       ZBHIZABCGZUJAHIZUKABUIJKULUMUKABCJKUJDLZBMZAUNCGZNZDOZUKULUJUPUNBEGZNZDO
+       URDABECTUTUQDUTUSUPNUQUPUSPUSUOUPUNHIUSUOQDRUNBHUAUBUCSUDSUPULDBHUNBACUE
+       UFUGUH $.
+       $( [9-Mar-2015] $)
+  $}
+
+  ${
+    $d A x $.  $d A y $.  $d B x $.  $d B y $.  $d F x $.  $d F y $.  $d x y $.
+    $( Lemma for ~ fnfullfun .  Binary relationship over part one of the full
+       function definition. $)
+    fnfullfunlem1 $p |- ( A ( ( _I o. F ) \ ( ~ _I o. F ) ) B <->
+        ( A F B /\ A. x ( A F x -> x = B ) ) ) $=
+        ( vy cid ccom wbr cvv wcel cv wceq wi wal wa brex simprd wb breq2 wn
+        ccompl cdif adantr weq eqeq2 imbi2d albidv anbi12d bibi12d brdif brcoi1
+        wex brco cop df-br vex opex elcompl bitr3i xchbinx bitri anbi2i exanali
+        ideq exbii 3bitrri con1bii anbi12i vtoclg pm5.21nii ) BCFDGZFUAZDGZUBZH
+        ZCIJZBCDHZBAKZDHZVRCLZMZANZOZVOBIJZVPBCVNPQVQVPWBVQWDVPBCDPQUCBEKZVNHZB
+        WEDHZVSAEUDZMZANZOZRVOWCRECIWECLZWFVOWKWCWECBVNSWLWGVQWJWBWECBDSWLWIWAA
+        WLWHVTVSWECVRUEUFUGUHUIWFBWEVKHZBWEVMHZTZOWKBWEVKVMUJWMWGWOWJBWEDUKWJWN
+        WNVSVRWEVLHZOZAULVSWHTZOZAULWJTABWEVLDUMWQWSAWPWRVSWPVRWEUNZVLJZWRVRWEV
+        LUOXAWTFJZWHWTFVRWEAUPEUPZUQURXBVRWEFHWHVRWEFUOVRWEXCVDUSUTVAVBVEVSWHAV
+        CVFVGVHVAVIVJ $.
+        $( [9-Mar-2015] $)
+  $}
+
+  ${
+    $d F x y z $.
+    $( Lemma for ~ fnfullfun .  Part one of the full function operator yields a
+       function. $)
+    fnfullfunlem2 $p |- Fun ( ( _I o. F ) \ ( ~ _I o. F ) ) $=
+       ( vx vy vz cid ccom ccompl cdif wfun wrel cv wbr wa weq wal relco reldif
+       wi ax-mp fnfullfunlem1 ax467to4 impcom ad2ant2rl syl2anb ax-gen mpbir2an
+       gen2 dffun2 ) EAFZEGAFZHZIUKJZBKZCKZUKLZUMDKZUKLZMCDNZRZDOZCOBOUIJULEAPU
+       IUJQSUTBCUSDUOUMUNALZUMUPALZDCNRDOZMVBVAURRZCOZMURUQDUMUNATCUMUPATVAVEUR
+       VCVBVEVAURVDCUAUBUCUDUEUGBCDUKUHUF $.
+       $( [9-Mar-2015] $)
+  $}
+
+  $( The full function operator yields a function over ` _V ` . $)
+  fnfullfun $p |- FullFun F Fn _V $=
+    ( cfullfun cvv wfn cid ccom ccompl cdif cdm c0 csn cxp cun cin wceq wfun
+      wa fnfullfunlem2 funfn mp2an mpbi wcel 0ex fnconstg pm3.2i incompl fnun wb
+      ax-mp df-fullfun uncompl eqcomi fneq1 fneq2 sylan9bb mpbir ) ABZCDZEAFEG
+    AFHZUSIZGZJKLZMZUTVAMZDZUSUTDZVBVADZQUTVANJOVEVFVGUSPVFARUSSUAJCUBVGUCVA
+    JCUDUIUEUTUFUTVAUSVBUGTUQVCOZCVDOZURVEUHAUJVDCUTUKULVHURVCCDVIVECUQVCUMC
+    VDVCUNUOTUP $.
+    $( [9-Mar-2015] $)
+
+  $( The full function of a set is a set. $)
+  fullfunexg $p |- ( F e. V -> FullFun F e. _V ) $=
+    ( wcel cfullfun cid ccom ccompl cdif cdm c0 csn cxp cun cvv df-fullfun idex
+    coexg mpan complex syl2anc difexg dmexg complexg 3syl snex sylancl syl5eqel
+    xpexg unexg ) ABCZADEAFZEGZAFZHZUNIZGZJKZLZMZNAOUJUNNCZURNCZUSNCUJUKNCZUMNC
+    ZUTENCUJVBPEANBQRULNCUJVCEPSULANBQRUKUMNNUATZUJUPNCZUQNCVAUJUTUONCVEVDUNNUB
+    UONUCUDJUEUPUQNNUHUFUNURNNUITUG $.
+    $( [9-Mar-2015] $)
+
+  ${
+    fullfunex.1 $e |- F e. _V $.
+    $( The full function of a set is a set. $)
+    fullfunex $p |- FullFun F e. _V $=
+      ( cvv wcel cfullfun fullfunexg ax-mp ) ACDAECDBACFG $.
+      $( [9-Mar-2015] $)
+  $}
+
+
+  ${
+    $d F x $.  $d F y $.  $d F z $.  $d x y $.  $d x z $.  $d y z $.
+    $( Lemma for ~ fvfullfun .  Calculate the domain of part one of the full
+       function definition. $)
+    fvfullfunlem1 $p |- dom ( ( _I o. F ) \ ( ~ _I o. F ) ) =
+       { x | E! y x F y } $=
+       ( vz cv wbr cid ccom wcel wex weq wi wal wa wn df-br notbii 3bitri exbii
+       vex weu ccompl cdif cdm eldm brdif brcoi1 brco cop elcompl bitr3i anbi2i
+       opex ideq bitri exanali con2bii bitr4i anbi12i wsb ax-17 eu1 sbie equcom
+       breq2 imbi12i albii bitr2i abbi2i ) AEZBEZCFZBUAZAGCHZGUBZCHZUCZUDZVJVRI
+       VJVKVQFZBJVLVJDEZCFZDBKZLZDMZNZBJZVMBVJVQUEVSWEBVSVJVKVNFZVJVKVPFZOZNWEV
+       JVKVNVPUFWGVLWIWDVJVKCUGWIWAWBOZNZDJZOWDWHWLWHWAVTVKVOFZNZDJWLDVJVKVOCUH
+       WNWKDWMWJWAWMVTVKUIZVOIWOGIZOWJVTVKVOPWOGVTVKDTBTZUMUJWPWBWPVTVKGFWBVTVK
+       GPVTVKWQUNUKQRULSUOQWLWDWAWBDUPUQURUSUOSVMVLVLBDUTZBDKZLZDMZNZBJWFVLBDVL
+       DVAVBXBWEBXAWDVLWTWCDWRWAWSWBVLWABDWABVAVKVTVJCVEVCBDVDVFVGULSVHRVI $.
+       $( [9-Mar-2015] $)
+  $}
+
+  ${
+    $d F x $.  $d F y $.  $d F z $.  $d x y $.  $d x z $.  $d y z $.
+    $( Lemma for ~ fvfullfun .  Part one of the full function definition is a
+       subset of the function. $)
+    fvfullfunlem2 $p |- ( ( _I o. F ) \ ( ~ _I o. F ) ) C_ F $=
+       ( vx vy vz cid ccom ccompl cdif wss cv cop wi wal wbr weq wa simpl df-br
+       wcel wrel fnfullfunlem1 bitr3i 3imtr3i gen2 wb relco reldif ssrel mpbir
+       mp2b ) EAFZEGAFZHZAIZBJZCJZKZUMSZUQASZLZCMBMZUTBCUOUPANZUODJANDCOLDMZPZV
+       BURUSVBVCQVDUOUPUMNURDUOUPAUAUOUPUMRUBUOUPARUCUDUKTUMTUNVAUEEAUFUKULUGBC
+       UMAUHUJUI $.
+       $( [9-Mar-2015] $)
+  $}
+
+  ${
+    $d F a $.  $d A a $.  $d F x $.  $d F y $.  $d F z $.  $d x y $.  $d x z $.
+    $d y z $.
+    $( Lemma for ~ fvfullfun .  Part one of the full function definition agrees
+       with the set itself over its domain. $)
+    fvfullfunlem3 $p |- ( A e. dom ( ( _I o. F ) \ ( ~ _I o. F ) ) ->
+       ( ( ( _I o. F ) \ ( ~ _I o. F ) ) ` A ) = ( F ` A ) ) $=
+       ( vx vy vz cid ccom wcel cfv wss wrel cv wbr wa wal weu anbi2i cvv ax-mp
+       wi ccompl cdif cdm cres wfun weq relres brres fvfullfunlem1 abeq2i bitri
+       wceq wsb ax-17 breq2 sbie biimpri wmo eumo mo3 ax-4 a4s sylbi syl anasss
+       mpan9 adantlr syl2anb ax-gen dffun2 mpbir2an cxp cin fvfullfunlem2 relco
+       gen2 crn reldif relssdmrn ssv xpss2 sstri pm3.2i df-res sseqtr4i funssfv
+       ssin mpbi mp3an12 fvres eqtr3d ) AFBGZFUABGZUBZUCZHZABWOUDZIZAWNIZABIWQU
+       EZWNWQJWPWRWSULWTWQKCLZDLZWQMZXAELZWQMZNDEUFZTZEOZDOCOBWOUGXHCDXGEXCXAXB
+       BMZXAXDBMZEPZNZXJXIDPZNZXFXEXCXIXAWOHZNXLXAXBBWOUHXOXKXIXKCWOCEBUIUJQUKX
+       EXJXONXNXAXDBWOUHXOXMXJXMCWOCDBUIUJQUKXIXNXFXKXIXJXMXFXIXJNZXIXIDEUMZNZX
+       MXFXRXPXQXJXIXIXJDEXJDUNXBXDXABUOUPQUQXMXIDURZXRXFTZXIDUSXSXTEOZDOXTXIDE
+       XIEUNUTYAXTDXTEVAVBVCVDVFVEVGVHVIVPCDEWQVJVKWNBWORVLZVMZWQWNBJZWNYBJZNWN
+       YCJYDYEBVNWNWOWNVQZVLZYBWNKZWNYGJWLKYHFBVOWLWMVRSWNVSSYFRJYGYBJYFVTYFRWO
+       WASWBWCWNBYBWGWHBWOWDWEAWQWNWFWIAWOBWJWK $.
+       $( [9-Mar-2015] $)
+  $}
+
+  ${
+    $d A x $.  $d F x $.  $d F y $.  $d x y $.
+    $( The value of the full function definition agrees with the function value
+       everywhere. $)
+    fvfullfun $p |- ( FullFun F ` A ) = ( F ` A ) $=
+       ( vx vy cvv wcel cfv wceq cv fveq2 cid ccom ccompl c0 wfn wa 0ex mp3an12
+       mpan eqtr4d cfullfun eqeq12d cdif cdm csn cxp cun df-fullfun cin incompl
+       fveq1i wfun fnfullfunlem2 funfn fnconstg ax-mp fvun1 fvfullfunlem3 eqtrd
+       wn vex elcompl fvun2 sylbir wbr weu fvfullfunlem1 abeq2i tz6.12-2 sylnbi
+       mpbi fvconst2 pm2.61i eqtri vtoclg fvprc ) AEFZABUAZGZABGZHZCIZVRGZWBBGZ
+       HWACAEWBAHWCVSWDVTWBAVRJWBABJUBWCWBKBLKMBLUCZWEUDZMZNUEUFZUGZGZWDWBVRWIB
+       UHUKWBWFFZWJWDHWKWJWBWEGZWDWFWGUINHZWKWJWLHZWFUJZWEWFOZWHWGOZWMWKPWNWEUL
+       WPBUMWEUNVKZNEFWQQWGNEUOUPZWFWGWEWHWBUQRSWBBURUSWKUTZWJWBWHGZWDWTWBWGFZW
+       JXAHZWBWFCVAVBZWMXBXCWOWPWQWMXBPXCWRWSWFWGWEWHWBVCRSVDWTWDNXAWKWBDIBVEDV
+       FZWDNHXECWFCDBVGVHDWBBVIVJWTXBXANHXDWGNWBQVLVDTTVMVNVOVQUTVSNVTAVRVPABVP
+       TVM $.
+       $( [9-Mar-2015] $)
+  $}
+
+  $( Binary relationship of the full function operation. $)
+  brfullfung $p |- ( A e. V -> ( A FullFun F B <-> ( F ` A ) = B ) ) $=
+    ( wcel cvv cfullfun wbr cfv wceq elex fvfullfun eqeq1i fnfullfun fnbrfvb
+      wb wfn mpan syl5rbbr syl ) ADEAFEZABCGZHZACIZBJZPADKUEAUBIZBJZUAUCUFUDBA
+    CLMUBFQUAUGUCPCNFABUBORST $.
+    $( [9-Mar-2015] $)
+
+  ${
+    brfullfun.1 $e |- A e. _V $.
+    $( Binary relationship of the full function operation. $)
+    brfullfun $p |- ( A FullFun F B <-> ( F ` A ) = B ) $=
+       ( cvv wcel cfullfun wbr cfv wceq wb brfullfung ax-mp ) AEFABCGHACIBJKDAB
+       CELM $.
+       $( [9-Mar-2015] $)
   $}
 
 $(
@@ -53433,7 +53604,7 @@ $)
 
   ${
     $d n m g a b $.
-    $( Define cardinal exponentiation.  Definition from [Rosser], p.  381. $)
+    $( Define cardinal exponentiation.  Definition from [Rosser], p. 381. $)
     df-ce $a |- ^c = ( n e. NC , m e. NC |-> 
        { g | E. a E. b ( ~P1 a e. n /\ ~P1 b e. m /\
           g ~~ ( a ^m b ) ) } ) $.
@@ -54138,9 +54309,12 @@ $)
       $( [3-Mar-2015] $)
   $}
 
-  ${ $d a b $. $d a f $. $d a g $. $d a t $. $d b f $. $d b g $. $d b t $. $d f t $. $d g t $. $d M a $. $d M b $. $d M g $. $d M t $. $d N a $. $d N b $. $d N g $. $d N t $. 
-     $( Lemma for ~ ovce . Set up stratification for the result. $)
-     ovcelem1 $p |- ( ( N e. V /\ M e. W ) -> { g | E. a E. b ( ~P1
+  ${
+    $d a b $.  $d a f $.  $d a g $.  $d a t $.  $d b f $.  $d b g $.  $d b t $.
+    $d f t $.  $d g t $.  $d M a $.  $d M b $.  $d M g $.  $d M t $.  $d N a $.
+    $d N b $.  $d N g $.  $d N t $.
+    $( Lemma for ~ ovce .  Set up stratification for the result. $)
+    ovcelem1 $p |- ( ( N e. V /\ M e. W ) -> { g | E. a E. b ( ~P1
        a e. N /\ ~P1 b e. M /\ g ~~ ( a ^m b ) ) } e. _V ) $=
        ( vt vf wcel wa cen wbr wex cpw1fn csset c1c cvv cop bitri cpw1 cmap w3a
        cv cab ccnv cima cxp cins3 cfns c2nd cimage ccom ctxp csi3 cins2 csymdif
@@ -54186,11 +54360,12 @@ $)
   ${
     $d a b $.  $d a m $.  $d a n $.  $d a p $.  $d b m $.  $d b n $.  $d b p $.
     $d M a $.  $d M b $.  $d M m $.  $d m n $.  $d m p $.  $d M p $.  $d N a $.
-    $d N b $.  $d N m $.  $d N n $.  $d n p $.  $d N p $.  $d a g $. $d b g $. $d g m $. $d g n $. $d M g $. $d N g $. 
+    $d N b $.  $d N m $.  $d N n $.  $d n p $.  $d N p $.  $d a g $.  $d b g $.
+    $d g m $.  $d g n $.  $d M g $.  $d N g $.
     $( The value of cardinal exponentiation. $)
     ovce $p |- ( ( N e. NC /\ M e. NC ) ->
-       ( N ^c M ) = { g | E. a E. b   
-       	 ( ~P1 a e. N /\ ~P1 b e. M /\ g ~~ ( a ^m b ) ) } ) $=
+       ( N ^c M ) = { g | E. a E. b 
+         ( ~P1 a e. N /\ ~P1 b e. M /\ g ~~ ( a ^m b ) ) } ) $=
       ( vn vm cncs wcel cv cpw1 co w3a wex cab cvv cce wceq eleq2 2exbidv df-ce
       cmap cen wbr ovcelem1 3anbi1d abbidv 3anbi2d ovmpt2g mpd3an3 ) CHIBHIDJZK
       ZCIZEJZKZBIZAJUKUNUBLUCUDZMZENDNZAOZPICBQLUTRABCHHDEUEFGCBHHULFJZIZUOGJZI
@@ -54199,9 +54374,11 @@ $)
       $( [3-Mar-2015] $)
   $}
 
-  ${ $d a n $. $d a t $. $d a u $. $d a x $. $d n t $. $d n u $. $d t u $. $d t x $. $d u x $. 
-     $( Lemma for ~ ceex .  Set up part of the stratification. $)
-     ceexlem1 $p |- ( <. { { a } } , n >. e. ( SSet o. SI Pw1Fn ) <->
+  ${
+    $d a n $.  $d a t $.  $d a u $.  $d a x $.  $d n t $.  $d n u $.  $d t u $.
+    $d t x $.  $d u x $.
+    $( Lemma for ~ ceex .  Set up part of the stratification. $)
+    ceexlem1 $p |- ( <. { { a } } , n >. e. ( SSet o. SI Pw1Fn ) <->
        ~P1 a e. n ) $=
        ( vt vu vx cv csn cpw1fn wbr csset wa wceq wcel excom bitri anbi1i exbii
        wex vex 3bitri csi cpw1 wel cop ccom w3a brsi 3anass eqcom sneqb brpw1fn
@@ -54221,7 +54398,9 @@ $)
     $d a b $.  $d a m $.  $d a n $.  $d a p $.  $d a y $.  $d b m $.  $d b n $.
     $d b p $.  $d b y $.  $d m n $.  $d m p $.  $d m y $.  $d n p $.  $d n y $.
     $d p y $.  $d x y $.  $d a x $.  $d b x $.  $d m x $.  $d n x $.  $d a f $.
-    $d b f $.  $d f x $.  $d p x $.  $d a g $. $d b g $. $d g m $. $d g n $. $d g p $. $d a t $. $d a u $. $d g t $. $d g u $. $d n t $. $d n u $. $d t u $. $d b t $. $d f t $.
+    $d b f $.  $d f x $.  $d p x $.  $d a g $.  $d b g $.  $d g m $.  $d g n $.
+    $d g p $.  $d a t $.  $d a u $.  $d g t $.  $d g u $.  $d n t $.  $d n u $.
+    $d t u $.  $d b t $.  $d f t $.
     $( Cardinal exponentiation is stratified. $)
     ceex $p |- ^c e. _V $=
       ( vn vm va vb vg vt vf cvv cncs csset cins2 cv wcel wex wa bitri otelins2
@@ -54272,12 +54451,14 @@ $)
       $( [3-Mar-2015] $)
   $}
 
-  ${ $d A g $. $d A x $. $d A y $. $d g x $. $d g y $. $d M g $. $d M x $. $d M y $. $d N g $. $d N x $. $d N y $. $d x y $. 
-     $( Membership in cardinal exponentiation.  Theorem XI.2.38 of
-     	[Rosser], p. 382. $)
-      elce $p |- ( ( N e. NC /\ M e. NC ) ->
+  ${
+    $d A g $.  $d A x $.  $d A y $.  $d g x $.  $d g y $.  $d M g $.  $d M x $.
+    $d M y $.  $d N g $.  $d N x $.  $d N y $.  $d x y $.
+    $( Membership in cardinal exponentiation.  Theorem XI.2.38 of [Rosser],
+       p. 382. $)
+    elce $p |- ( ( N e. NC /\ M e. NC ) ->
         ( A e. ( N ^c M ) <-> E. x E. y ( ~P1 x e. N /\ ~P1 y e. M /\
-	  A ~~ ( x ^m y ) ) ) ) $=
+          A ~~ ( x ^m y ) ) ) ) $=
         ( vg cncs wcel wa cvv cce co cv cpw1 cen wbr w3a wex wi a1i cmap simpld
         elex brex 3ad2ant3 exlimivv wb cab ovce eleq2d wceq breq1 3anbi3d elabg
         2exbidv sylan9bb ex pm5.21ndd ) EGHDGHIZCJHZCEDKLZHZAMZNEHZBMZNDHZCVCVE
@@ -54287,9 +54468,12 @@ $)
         $( [6-Mar-2015] $)
   $}
 
-  ${ $d a b $. $d a g $. $d a m $. $d a n $. $d a p $. $d b g $. $d b m $. $d b n $. $d b p $. $d g m $. $d g n $. $d g p $. $d m n $. $d m p $. $d n p $. 
-     $( Functionhood statement for cardinal exponentiation. $)
-     fnce $p |- ^c Fn ( NC X. NC ) $=
+  ${
+    $d a b $.  $d a g $.  $d a m $.  $d a n $.  $d a p $.  $d b g $.  $d b m $.
+    $d b n $.  $d b p $.  $d g m $.  $d g n $.  $d g p $.  $d m n $.  $d m p $.
+    $d n p $.
+    $( Functionhood statement for cardinal exponentiation. $)
+    fnce $p |- ^c Fn ( NC X. NC ) $=
        ( vn vm vp va vb vg cce cncs cxp wfn cv wcel wa cpw1 cmap co cen wbr w3a
        wex cab wceq copab2 copab weu cvv ovcelem1 isset sylib wmo moeq mpbiran2
        sylibr fnoprab cmpt2 df-ce df-mpt2 eqtri fneq1i df-xp fneq2i bitri mpbir
@@ -54300,10 +54484,11 @@ $)
        $( [6-Mar-2015] $)
   $}
 
-  ${ $d a b $. $d a g $. $d b g $. $d M a $. $d M b $. $d M g $.
-     $( A condition for cardinal exponentiation being non-empty.  Theorem
-     	XI.2.42 of [Rosser], p. 382. $)
-     ce0nnul $p |- ( M e. NC -> ( ( M ^c 0c ) =/= (/) <->
+  ${
+    $d a b $.  $d a g $.  $d b g $.  $d M a $.  $d M b $.  $d M g $.
+    $( A condition for cardinal exponentiation being non-empty.  Theorem
+       XI.2.42 of [Rosser], p. 382. $)
+    ce0nnul $p |- ( M e. NC -> ( ( M ^c 0c ) =/= (/) <->
        E. a ~P1 a e. M ) ) $=
        ( vg vb cncs wcel cv c0c cce co wex cpw1 cmap cen wbr w3a c0 wb wa wceq
        wne 0cnc elce mpan2 exbidv 19.42vv 3anass 2exbii nulel0c ovex enrflx 0ex
@@ -54317,13 +54502,69 @@ $)
        $( [6-Mar-2015] $)
   $}
 
-  ${ $d A a $. $d a b $. $d A b $. $d a g $. $d A g $. $d A p $. $d A t $. $d B a $. $d B b $. $d b g $. $d B g $. $d B p $. $d B t $. $d g p $. $d g t $. $d p t $. 
-     cenc.1 $e |- A e. _V $.
-     cenc.2 $e |- B e. _V $.
+  ${
+    $d a b $.  $d a g $.  $d a p $.  $d a q $.  $d b g $.  $d b p $.  $d b q $.
+    $d g p $.  $d g q $.  $d M a $.  $d M b $.  $d M g $.  $d N a $.  $d N b $.
+    $d N g $.  $d p q $.
+    $( The sum of two cardinals raised to ` 0c ` is non-empty iff each addend
+       raised to ` 0c ` is non-empty.  Theorem XI.2.43 of [Rosser], p. 383. $)
+    ce0addcnnul $p |- ( ( M e. NC /\ N e. NC ) ->
+       ( ( ( M +c N ) ^c 0c ) =/= (/) <-> 
+         ( ( M ^c 0c ) =/= (/) /\ ( N ^c 0c ) =/= (/) ) ) ) $=
+      ( vb vg va vp vq cncs wcel wa c0c cce co c0 wne wceq cpw1 wex cnc cvv cin
+      cplc cv cun wrex wb ncaddccl ce0nnul eladdc exbii syl6bb ncseqnc bi2anan9
+      syl wi biimpar wss ssun1 id syl5sseqr ssun2 jca sspw1 anbi12i eeanv sylib
+      vex bitr4i pw1eq eleq1d pw1ex ncid a4eiv ncelncs mp2b mpbir pm3.2i oveq1d
+      weq nceq neeq1d mpbiri ad2ant2l a1d exlimivv impcom oveq1 syl5ibr exlimdv
+      rexlimdvva sylbid syl6bbr csn cxp cen wbr vvex xpsnen mpbi snex xpex eqnc
+      enpw1 0ex addceq12i oveq1i pw1un vn0 xpnedisj ax-mp pw1in 3eqtr3i eladdci
+      pw10 mp3an eqeltri cla4ev mp2an eqnetrri addceq12 syl6bir exlimdvv impbid
+      unex ) AHIZBHIZJZABUBZKLMZNOZAKLMZNOZBKLMZNOZJZYGYJCUCZDUCZUANPZEUCZQZYPY
+      QUDZPZJZDBUECAUEZERZYOYGYHHIZYJUUEUFABUGUUFYJYTYHIZERUUEYHEUHUUGUUDEYTABC
+      DUIUJUKUNYGUUDYOEYGUUCYOCDABYGYPAIZYQBIZJZJAYPSZPZBYQSZPZJZUUCYOUOYGUUOUU
+      JYEUULUUHYFUUNUUIAYPULBYQULUMUPUUCYOUUOUUKKLMZNOZUUMKLMZNOZJZUUBYRUUTUUBF
+      UCZYSUQZYPUVAQZPZJZGUCZYSUQZYQUVFQZPZJZJZGRFRZYRUUTUOZUUBYPYTUQZYQYTUQZJZ
+      UVLUUBUVNUVOUUBUUAYPYTYPYQURUUBUSZUTUUBUUAYQYTYQYPVAUVQUTVBUVPUVEFRZUVJGR
+      ZJUVLUVNUVRUVOUVSFYPYSCVGZVCGYQYSDVGZVCVDUVEUVJFGVEVHVFUVKUVMFGUVKUUTYRUV
+      DUVIUUTUVBUVGUVDUVIJUUTUVCSZKLMZNOZUVHSZKLMZNOZJUWDUWGUWDYTUWBIZERZUWHUVC
+      UWBIEFEFVSYTUVCUWBYSUVAVIVJUVCUVAFVGVKZVLVMUVCTIUWBHIUWDUWIUFUWJUVCTVNUWB
+      EUHVOVPUWGYTUWEIZERZUWKUVHUWEIEGEGVSYTUVHUWEYSUVFVIVJUVHUVFGVGVKZVLVMUVHT
+      IUWEHIUWGUWLUFUWMUVHTVNUWEEUHVOVPVQUVDUUQUWDUVIUUSUWGUVDUUPUWCNUVDUUKUWBK
+      LYPUVCVTVRWAUVIUURUWFNUVIUUMUWEKLYQUVHVTVRWAUMWBWCWDWEUNWFUULYLUUQUUNYNUU
+      SUULYKUUPNAUUKKLWGWAUUNYMUURNBUUMKLWGWAUMWHUNWJWIWKYGYOYPQZAIZYQQZBIZJZDR
+      CRZYJYGYOUWOCRZUWQDRZJUWSYEYLUWTYFYNUXAACUHBDUHUMUWOUWQCDVEWLYGUWRYJCDYGU
+      WRAUWNSZPZBUWPSZPZJZYJYEUXCUWOYFUXEUWQAUWNULBUWPULUMUXFYJUXBUXDUBZKLMZNOY
+      PTWMZWNZQZSZYQNWMZWNZQZSZUBZKLMZUXHNUXQUXGKLUXLUXBUXPUXDUXLUXBPUXKUWNWOWP
+      ZUXJYPWOWPUXSYPTUVTWQWRUXJYPXCWSUXKUWNUXJYPUXIUVTTWTXAZVKZXBVPUXPUXDPUXOU
+      WPWOWPZUXNYQWOWPUYBYQNUWAXDWRUXNYQXCWSUXOUWPUXNYQUXMUWANWTXAZVKZXBVPXEXFU
+      XRNOZYTUXQIZERZUXJUXNUDZQZUXQIZUYGUYIUXKUXOUDZUXQUXJUXNXGUXKUXLIUXOUXPIUX
+      KUXOUAZNPUYKUXQIUXKUYAVLUXOUYDVLUXJUXNUAZQZNQZUYLNUYMNPUYNUYOPYPYQTNWQXHX
+      IUYMNVIXJUXJUXNXKXNXLUXKUXOUXLUXPXMXOXPUYFUYJEUYHUXJUXNUXTUYCYDYSUYHPYTUY
+      IUXQYSUYHVIVJXQXJUXQHIZUYEUYGUFUXLHIZUXPHIZUYPUXKTIUYQUYAUXKTVNXJUXOTIUYR
+      UYDUXOTVNXJUXLUXPUGXRUXQEUHXJVPXSUXFYIUXHNUXFYHUXGKLABUXBUXDXTVRWAWBYAYBW
+      KYC $.
+      $( [9-Mar-2015] $)
+  $}
 
-     $( Cardinal exponentiation in terms of cardinality.  Theorem XI.2.39
-     	of [Rosser], p. 382. $)
-     cenc $p |- ( Nc ~P1 A ^c Nc ~P1 B ) = Nc ( A ^m B ) $=
+  ${
+    $( A natural raised to cardinal zero is non-empty.  Theorem XI.2.44 of
+       [Rosser], p. 383. $)
+    ce0nn $p |- ( N e. Nn -> ( N ^c 0c ) =/= (/) ) $=
+       ( vm vn cv c0c cce co c0 wne cab cvv vex elcompl necon3bbii bitri abbi2i
+       eqeltrri wceq oveq1 neeq1d finds ) BDZEFGZHIZ???AEFGZHIBCA?UDBJKUDB???UD
+       UB?BLM?UCH?NOP?Q???UBARUCUEHUBAEFST??UA $.
+       $( [9-Mar-2015] $)
+  $}
+
+  ${
+    $d A a $.  $d a b $.  $d A b $.  $d a g $.  $d A g $.  $d A p $.  $d A t $.
+    $d B a $.  $d B b $.  $d b g $.  $d B g $.  $d B p $.  $d B t $.  $d g p $.
+    $d g t $.  $d p t $.
+    cenc.1 $e |- A e. _V $.
+    cenc.2 $e |- B e. _V $.
+    $( Cardinal exponentiation in terms of cardinality.  Theorem XI.2.39 of
+       [Rosser], p. 382. $)
+    cenc $p |- ( Nc ~P1 A ^c Nc ~P1 B ) = Nc ( A ^m B ) $=
        ( vg vp vt va vb cpw1 cnc co cmap cv wcel cen wbr wex wb cvv cce wa elnc
        w3a enpw1 bitr4i enmap1 enmap2 entr syl2an syl2anb ancoms sylan exlimivv
        3impa cncs pw1ex ncelncs ax-mp elce mp2an 3imtr4i ssriv ncid wceq eleq1d
@@ -54626,10 +54867,11 @@ $)
        $( [4-Mar-2015] $)
   $}
 
-  ${ $d x y t $.
-     $( Lemma for ~ spacval .  Set up stratification for the recursive
-     	relationship. $)
-     spacvallem1 $p |- { <. x , y >. | ( x e. NC /\ y e. NC /\ y = ( 2c ^c x
+  ${
+    $d x y t $.
+    $( Lemma for ~ spacval .  Set up stratification for the recursive
+       relationship. $)
+    spacvallem1 $p |- { <. x , y >. | ( x e. NC /\ y e. NC /\ y = ( 2c ^c x
         ) ) } e. _V $=
        ( vt cvv cxp cncs c2nd c1st c2c cce cin cv wcel cop wa opelxp anbi1i wbr
        wceq bitri ccnv csn cima cres ctxp crn co w3a copab cfv 2nc mpbiran fnce
@@ -54649,7 +54891,7 @@ $)
   $}
 
   ${
-    $d N n $. $d n x $. $d n y $. $d x y $. 
+    $d N n $.  $d n x $.  $d n y $.  $d x y $.
     $( The value of the special set generator. $)
     spacval $p |- ( N e. NC -> ( Sp[ac] ` N ) = 
          Clos1 ( { N } , { <. x , y >. | ( x e. NC /\ y e. NC /\ y = ( 2c ^c x
