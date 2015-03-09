@@ -53362,32 +53362,23 @@ $)
 
   ${
     $d A r $.  $d A s $.  $d B r $.  $d B s $.  $d p r $.  $d p x $.  $d p y $.
-    $d r s $.  $d r x $.  $d r y $.  $d s x $.  $d s y $.  $d x y $.
+    $d r s $.  $d r x $.  $d r y $.  $d s x $.  $d s y $.  $d x y $. $d r t $. $d t x $. $d t y $. 
     enprmaplem1.1 $e |- W = ( r e. ( A ^m B ) |-> ( `' r " { x } ) ) $.
     $( Lemma for ~ enprmap .  Set up stratification. $)
     enprmaplem1 $p |- W e. _V $=
-       ( vs vy vp cvv csset c1st c2nd cv cima wcel wa cop vex bitri cxp cmap co
-       cins2 ccnv csn cin csi ctxp c1c cins3 ccompl cmpt wceq copab df-mpt elin
-       csymdif opelxp mpbiran2 wel wal wex elima1c elsymdif otelins2 opelssetsn
-       wn wbr opex eleq1 ceqsexv oteltxp opsnelsi df-br bicomi eliniseg anbi12i
-       wb op1st2nd exbii 3bitr4i otelins3 bibi12i xchbinx exnal 3bitrri con1bii
-       3bitri elcompl dfcleq releqopab vvex xpex ovex ssetex ins2ex 1stex 2ndex
-       3eqtr4i cnvex snex imaex inex siex txpex ins3ex symdifex complex eqeltri
-       1cex ) DJJUAZBCUBUCZJUAZKUDZLMUEZANZUFZOZJUAZUGZUHZKUIZUJOZUKZURZUJOZULZ
-       UGZUGZJEXMENZUEXROZUMYKXMPZGNZYLUNZQZEGUODYJEGXMYLUPFYPEGYIYKYNRZYIPYQXN
-       PZYQYHPZQYPYQXNYHUQYRYMYSYOYRYMYNJPGSZYKYNXMJUSUTYQYGPZVHHGVAZHNZYLPZVSZ
-       HVBZYSYOUUFUUAUUAUUCUFZYQRZYFPZHVCUUEVHZHVCUUFVHHYQYFVDUUIUUJHUUIUUHXOPZ
-       UUHYEPZVSUUEUUHXOYEVEUUKUUBUULUUDUUKUUGYNRKPUUBUUGYKYNKESZVFUUCYNHSZYTVG
-       TUUGYKRZYDPZUUCXQYKVIZUULUUDINZUUCXQRZUNZIEVAZQZIVCZUUSYKPZUUPUUQUVAUVDI
-       UUSUUCXQUUNASZVJUURUUSYKVKVLUUPUURUFZUUORYCPZIVCUVCIUUOYCVDUVGUVBIUVGUVF
-       UUGRYBPZUVFYKRKPZQUVBUVFUUGYKYBKVMUVHUUTUVIUVAUVHUURUUCRZYAPZUURUUCLVIZU
-       URXQMVIZQZUUTUURUUCYAISZUUNVNUVKUVJLPZUVJXTPZQUVNUVJLXTUQUVPUVLUVQUVMUVL
-       UVPUURUUCLVOVPUVQUURXSPZUVMUVQUVRUUCJPUUNUURUUCXSJUSUTMXQUURVQTVRTUUCXQU
-       URUUNUVEVTWIUURYKUVOUUMVGVRTWATUUCXQYKVOWBUUGYKYNYDYTWCYKXQUUCVQWBWDWEWA
-       UUEHWFWGWHYQYGYKYNUUMYTVJWJHYNYLWKWBVRTWLWTXLYIJJWMWMWNXNYHXMJBCUBWOWMWN
-       YGYFUJXOYEKWPWQYDYCUJYBKYALXTWRXSJXPXRMWSXAXQXBXCWMWNXDXEWPXFXKXCXGXHXKX
-       CXIXDXDXJ $.
-       $( [3-Mar-2015] $)
+      ( vy vt csset c1st c2nd ccnv cv cima cop wcel wbr wa vex bitri co cvv cxp
+      cmap cins3 csn cres csi ctxp c1c csymdif ccompl cin cmpt wceq wel elima1c
+      cins2 oteltxp opsnelsi df-br brres eliniseg anbi2i bitr3i op1st2nd 3bitri
+      wex opelssetsn anbi12i exbii opex eleq1 bitr4i releqmpt eqtr4i ovex 1stex
+      ceqsexv 2ndex cnvex snex imaex resex siex ssetex txpex mptexlem eqeltri
+      1cex ) DBCUDUAZUBUCIUEJKLZAMZUFZNZUGZUHZIUIZUJNZURUKUJNULLUMZUBDEWKEMZLWN
+      NZUNWTFEGWKWSXBGMZUFZXAOZWSPZXCWMXAQZXCXBPXFHMZXCWMOZUOZHEUPZRZHVHZXGXFXH
+      UFZXEOWRPZHVHXMHXEWRUQXOXLHXOXNXDOWQPZXNXAOIPZRXLXNXDXAWQIUSXPXJXQXKXPXHX
+      COWPPZXHXCJQZXHWMKQZRZXJXHXCWPHSZGSZUTXRXHXCWPQZYAXHXCWPVAYDXSXHWOPZRYAXH
+      XCJWOVBYEXTXSKWMXHVCVDTVEXCWMXHYCASZVFVGXHXAYBESVIVJTVKTXMXIXAPZXGXKYGHXI
+      XCWMYCYFVLXHXIXAVMVSXCWMXAVAVNTXAWMXCVCVNVOVPWKWSBCUDVQWRUJWQIWPJWOVRWLWN
+      KVTWAWMWBWCWDWEWFWGWJWCWHWI $.
+      $( [3-Mar-2015] $)
   $}
 
   ${
