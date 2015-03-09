@@ -49898,7 +49898,9 @@ $)
       $( [18-Feb-2015] $)
   $}
 
-  ${ $d A x $. $d A z $. $d R x $. $d R y $. $d R z $. $d V y $. $d V z $. $d x y $. $d x z $. $d y z $. 
+  ${
+    $d A x $.  $d A z $.  $d R x $.  $d R y $.  $d R z $.  $d V y $.  $d V z $.
+    $d x y $.  $d x z $.  $d y z $.
     releqmpt.1 $e |- ( <. { y } , x >. e. R <-> y e. V ) $.
     $( Equality condition for a mapping. $)
     releqmpt $p |- ( ( A X. _V ) i^i
@@ -53088,7 +53090,8 @@ $)
     $d p t $.  $d p w $.  $d p x $.  $d p y $.  $d q r $.  $d q s $.  $d q t $.
     $d q w $.  $d q x $.  $d q y $.  $d r s $.  $d r t $.  $d r x $.  $d r z $.
     $d s t $.  $d s w $.  $d s x $.  $d s y $.  $d s z $.  $d t w $.  $d t x $.
-    $d t y $.  $d w x $.  $d w y $.  $d x y $.  $d x z $.  $d r w $. $d r y $. $d w z $. $d y z $. $d t z $. 
+    $d t y $.  $d w x $.  $d w y $.  $d x y $.  $d x z $.  $d r w $.  $d r y $.
+    $d w z $.  $d y z $.  $d t z $.
     enmap2lem1.1 $e |- W = ( s e. ( G ^m A ) |-> ( s o. `' r ) ) $.
     $( Lemma for ~ enmap2 .  Set up stratification. $)
     enmap2lem1 $p |- W e. _V $=
@@ -53216,7 +53219,7 @@ $)
     $d t y $.  $d w x $.  $d w y $.  $d x y $.  $d x z $.  $d a b $.  $d a c $.
     $d a p $.  $d a r $.  $d a s $.  $d A t $.  $d a x $.  $d b c $.  $d b p $.
     $d b r $.  $d b s $.  $d b x $.  $d c p $.  $d c r $.  $d c s $.  $d c x $.
-    $d G t $.  $d r y $. $d t z $. $d y z $. 
+    $d G t $.  $d r y $.  $d t z $.  $d y z $.
     enmap1lem1.1 $e |- W = ( s e. ( A ^m G ) |-> ( r o. s ) ) $.
     $( Lemma for ~ enmap1 .  Set up stratification. $)
     enmap1lem1 $p |- W e. _V $=
@@ -53362,7 +53365,8 @@ $)
 
   ${
     $d A r $.  $d A s $.  $d B r $.  $d B s $.  $d p r $.  $d p x $.  $d p y $.
-    $d r s $.  $d r x $.  $d r y $.  $d s x $.  $d s y $.  $d x y $. $d r t $. $d t x $. $d t y $. 
+    $d r s $.  $d r x $.  $d r y $.  $d s x $.  $d s y $.  $d x y $.  $d r t $.
+    $d t x $.  $d t y $.
     enprmaplem1.1 $e |- W = ( r e. ( A ^m B ) |-> ( `' r " { x } ) ) $.
     $( Lemma for ~ enprmap .  Set up stratification. $)
     enprmaplem1 $p |- W e. _V $=
@@ -53444,7 +53448,7 @@ $)
 
   ${
     $d B u $.  $d B v $.  $d p u $.  $d p v $.  $d u v $.  $d u x $.  $d u y $.
-    $d v x $.  $d v y $. $d p z $. $d u z $. $d x z $. $d y z $. 
+    $d v x $.  $d v y $.  $d p z $.  $d u z $.  $d x z $.  $d y z $.
     enprmaplem4.1 $e |- R = ( u e. B |-> if ( u e. p , x , y ) ) $.
     enprmaplem4.2 $e |- B e. _V $.
     $( Lemma for ~ enprmap .  More stratification condition setup. $)
@@ -54618,6 +54622,54 @@ $)
        XRXMXSXOWNXTXJXRSYAXTXIVPVQXHAVGVFVHYAXMXSSXTYAXLVRVSXKBVGVFVIYBXNWAWIPX
        HAXKBMVJVKVLVMVNXGXAXBWOXQSXDXFHIWIVSVQUTVAVBVCVO $.
        $( [6-Mar-2015] $)
+  $}
+
+  ${
+    $d a b $.  $d a g $.  $d b g $.  $d M a $.  $d M b $.  $d M g $.  $d N a $.
+    $d N b $.  $d N g $.
+    $( Cardinal exponentiation is non-empty iff the two sets raised to zero are
+       non-empty.  Theorem XI.2.47 of [Rosser], p. 384. $)
+    ce0nnulb $p |- ( ( N e. NC /\ M e. NC ) -> ( ( ( N ^c 0c ) =/= (/) /\ ( M
+        ^c 0c ) =/= (/) ) <-> ( N ^c M ) =/= (/) ) ) $=
+       ( va vb vg cncs wcel wa c0c cce co c0 wne cpw1 wex ce0nnul bi2anan9 wceq
+       cv cnc eeanv syl6bbr ncseqnc cmap vex cenc ovex ncid ne0i eqnetri oveq12
+       ax-mp neeq1d mpbiri syl6bir exlimdvv n0 cen wbr w3a 3simpa 2eximi syl6bi
+       elce exlimdv syl5bi impbid bitrd ) BFGZAFGZHZBIJKLMZAIJKLMZHZCSZNZBGZDSZ
+       NZAGZHZDOCOZBAJKZLMZVKVNVQCOZVTDOZHWBVIVLWEVJVMWFBCPADPQVQVTCDUAUBVKWBWD
+       VKWAWDCDVKWABVPTZRZAVSTZRZHZWDVIWHVQVJWJVTBVPUCAVSUCQWKWDWGWIJKZLMWLVOVR
+       UDKZTZLVOVRCUEDUEUFWMWNGWNLMWMVOVRUDUGUHWNWMUIULUJWKWCWLLBWGAWIJUKUMUNUO
+       UPWDESZWCGZEOVKWBEWCUQVKWPWBEVKWPVQVTWOWMURUSZUTZDOCOWBCDWOABVDWRWACDVQV
+       TWQVAVBVCVEVFVGVH $.
+       $( [9-Mar-2015] $)
+  $}
+
+  ${
+    $d a b $.  $d M a $.  $d M b $.  $d N a $.  $d N b $.
+    $( Biconditional closure law for cardinal exponentiation.  Theorem XI.2.48
+       of [Rosser], p. 384. $)
+    ceclb $p |- ( ( M e. NC /\ N e. NC ) ->
+       ( ( ( M ^c 0c ) =/= (/) /\ ( N ^c 0c ) =/= (/) ) <-> ( M ^c N ) e. NC )
+        ) $=
+       ( va vb cncs wcel wa c0c cce co c0 wne cv cpw1 wex ce0nnul bi2anan9 wceq
+       cnc ncseqnc eeanv syl6bbr oveq12 cmap vex cenc cvv ncelncs ax-mp eqeltri
+       syl6eqel syl6bir exlimdvv sylbid nulnnc mtbiri necon2ai ce0nnulb syl5ibr
+       ovex eleq1 impbid ) AEFZBEFZGZAHIJKLZBHIJKLZGZABIJZEFZVEVHCMZNZAFZDMZNZB
+       FZGZDOCOZVJVEVHVMCOZVPDOZGVRVCVFVSVDVGVTACPBDPQVMVPCDUAUBVEVQVJCDVEVQAVL
+       SZRZBVOSZRZGZVJVCWBVMVDWDVPAVLTBVOTQWEVIWAWCIJZEAWABWCIUCWFVKVNUDJZSZEVK
+       VNCUEDUEUFWGUGFWHEFVKVNUDUTWGUGUHUIUJUKULUMUNVJVHVEVIKLVJVIKVIKRVJKEFUOV
+       IKEVAUPUQBAURUSVB $.
+       $( [9-Mar-2015] $)
+  $}
+
+  ${
+    $( Closure law for cardinal exponentiation.  Corollary 3 of theorem XI.2.48
+       of [Rosser], p. 384. $)
+    cecl $p |- ( ( ( M e. NC /\ N e. NC ) /\ 
+          ( ( M ^c 0c ) e. NC /\ ( N ^c 0c ) e. NC ) ) -> ( M ^c N ) e. NC ) $=
+       ( cncs wcel wa c0c cce co c0 wne wceq nulnnc eleq1 mtbiri necon2ai ceclb
+       anim12i syl5ib imp ) ACDBCDEZAFGHZCDZBFGHZCDZEZABGHCDZUEUAIJZUCIJZETUFUB
+       UGUDUHUBUAIUAIKUBICDZLUAICMNOUDUCIUCIKUDUILUCICMNOQABPRS $.
+       $( [9-Mar-2015] $)
   $}
 
   ${
