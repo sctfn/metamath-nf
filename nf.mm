@@ -41956,6 +41956,19 @@ $)
       $( [22-Apr-2004] $)
   $}
 
+
+  ${
+    $d A x $.  $d B x $.  $d R x $.
+    $( Binary relationship of composition with identity. $)
+    brcoi1 $p |- ( A ( _I o. R ) B <-> A R B ) $=
+       ( vx cid ccom wbr cvv wcel brex simprd cv wceq wa wex ancom wb vex bitri
+       brco ideqg2 ax-mp anbi1i exbii breq2 ceqsexgv syl5bb pm5.21nii ) ABECFZG
+       ZBHIZABCGZUJAHIZUKABUIJKULUMUKABCJKUJDLZBMZAUNCGZNZDOZUKULUJUPUNBEGZNZDO
+       URDABECTUTUQDUTUSUPNUQUPUSPUSUOUPUNHIUSUOQDRUNBHUAUBUCSUDSUPULDBHUNBACUE
+       UFUGUH $.
+       $( [9-Mar-2015] $)
+  $}
+
   $( Composition with a restricted identity relation.  (Contributed by FL,
      19-Jun-2011.) $)
   coires1 $p |- ( Rel A
@@ -49330,9 +49343,7 @@ $)
 
   $( Define the image function of a class. $)
   df-image $a |- Image A =
-     ( ( _V X. _V ) \
-       ( ( ( _V (x) SSet ) (+) ( ( SSet o. `' SI A ) (x) _V ) ) 
-          " 1c ) ) $.
+     ( ( _V X. _V ) \ ( ( Ins2 SSet (+) Ins3 ( SSet o. `' SI A ) ) " 1c ) ) $.
 
   ${
     $d x y $.
@@ -49578,51 +49589,6 @@ $)
   $}
 
   ${
-    $d A x y s t $.  $d B x y s t $.  $d R x y s t $.
-    brimage.1 $e |- A e. _V $.
-    brimage.2 $e |- B e. _V $.
-    $( Binary relationship over the image function. $)
-    brimage $p |- ( A Image R B <-> B = ( R " A ) ) $=
-      ( vx vt vy vs cop cvv csset wcel wn cv wbr wex wa anbi1i bitri csymdif wb
-      ctxp csi ccnv ccom c1c cima wal cimage wceq elima1c elsymdif snex oteltxp
-      csn opex mpbiran df-br vex brssetsn 3bitr2i mpbiran2 brsi 19.41vv 3bitr4i
-      w3a brcnv exbii excom weq df-3an anass sneqb equcom 3anbi2i 2exbii anbi2d
-      breq1 breq2 anbi1d ceqsex2v 3bitri opelco bibi12i xchbinx 3bitrri con1bii
-      ancom elima2 exnal cxp cdif df-image eleq2i opelxp mpbir2an eldif dfcleq
-      ) ABJZKLUCZLCUDZUEZUFZKUCZUAZUGUHZMZNZFOZBMZXJCAUHZMZUBZFUIZABCUJZPZBXLUK
-      XOXHXHXJUPZWTJZXFMZFQXNNZFQXONFWTXFULXTYAFXTXSXAMZXSXEMZUBXNXSXAXEUMYBXKY
-      CXMYBXRBJZLMZXRBLPXKYBXRAJZKMYEXRAXJUNZDUQXRABKLUOURXRBLUSXJBFUTZEVAVBYCY
-      FXDMZXMYCYIYDKMXRBYGEUQXRABXDKUOVCXRGOZXCPZYJALPZRZGQZHOZAMZYOXJCPZRZHQZY
-      IXMYNYJYOUPZUKZXRIOZUPUKZYOUUBCPZVGZYLRZIQZHQZGQUUGGQZHQYSYMUUHGYJXRXBPZY
-      LRUUEIQHQZYLRYMUUHUUJUUKYLHIYJXRCVDSYKUUJYLXRYJXBVHSUUEYLHIVEVFVIUUGGHVJU
-      UIYRHUUIUUAIFVKZUUDYLRZVGZIQGQYQYTALPZRZYRUUFUUNGIUUFUUAUUCRZUUDRZYLRZUUN
-      UUEUURYLUUAUUCUUDVLSUUSUUQUUMRUUAUUCUUMVGUUNUUQUUDYLVMUUAUUCUUMVLUUCUULUU
-      AUUMUUCFIVKUULXJUUBYHVNFIVOTVPVBTVQUUMUUDUUORUUPGIYTXJYOUNYHUUAYLUUOUUDYJ
-      YTALVSVRUULUUDYQUUOUUBXJYOCVTWAWBUUPUUOYQRYRYQUUOWIUUOYPYQYOAHUTDVASTWCVI
-      WCGXRALXCWDHXJCAWJVFTWEWFVIXNFWKWGWHXQWTXPMWTKKWLZXGWMZMZXIABXPUSXPUVAWTC
-      WNWOUVBWTUUTMZXIUVCAKMBKMDEABKKWPWQWTUUTXGWRURWCFBXLWSVF $.
-      $( [11-Feb-2015] $)
-  $}
-
-  $( The image function of a set is a set. $)
-  imageexg $p |- ( A e. V -> Image A e. _V ) $=
-    ( wcel cvv cxp csset ctxp csi ccnv ccom csymdif c1c cima cdif df-image vvex
-    cimage ssetex sylancr sylancl txpex siexg cnvexg syl coexg txpexg symdifexg
-    xpex 1cex imaexg difexg syl5eqel ) ABCZAQDDEZDFGZFAHZIZJZDGZKZLMZNZDAOUMUND
-    CVADCZVBDCDDPPUHUMUTDCZLDCVCUMUODCUSDCZVDDFPRUAUMURDCZDDCVEUMFDCUQDCZVFRUMU
-    PDCVGABUBUPDUCUDFUQDDUESPURDDDUFTUOUSDDUGSUIUTLDDUJTUNVADDUKSUL $.
-    $( [11-Feb-2015] $)
-
-  ${
-    imageex.1 $e |- A e. _V $.
-    $( The image function of a set is a set. $)
-    imageex $p |- Image A e. _V $=
-      ( cvv wcel cimage imageexg ax-mp ) ACDAECDBACFG $.
-      $( [11-Feb-2015] $)
-  $}
-
-
-  ${
     $d A x $.  $d B x $.  $d C x $.
     op1st2nd.1 $e |- A e. _V $.
     op1st2nd.2 $e |- B e. _V $.
@@ -49662,6 +49628,30 @@ $)
       TZUJGZULIZUSBGZDIZUMUPFAJUSAOZUTUKULUSAUJPQVDVBUODUSABPQVAVCUSCGJIZUSCFRE
       SVAUTDJUAZIVCVEUBULVFUTDUCUDUSBCDJUEUFUGUHUI $.
       $( [13-Feb-2015] $)
+  $}
+
+
+  ${
+    $d A x y s t $.  $d B x y s t $.  $d R x y s t $.
+    brimage.1 $e |- A e. _V $.
+    brimage.2 $e |- B e. _V $.
+    $( Binary relationship over the image function. $)
+    brimage $p |- ( A Image R B <-> B = ( R " A ) ) $=
+      ( vx vt vy cop csset wcel wn cv wbr wex bitri wa exbii 3bitri cvv csymdif
+      cins2 csi ccnv ccom c1c cima wb wal cimage wceq elima1c elsymdif otelins2
+      cins3 csn vex opelssetsn otelins3 brcnv brsnsi2 anbi1i 19.41v excom anass
+      bitr4i breq1 anbi2d ceqsexv brssetsn anbi2i opelco elima2 3bitr4i bibi12i
+      snex ancom xchbinx exnal 3bitrri con1bii cxp df-br df-image eleq2i opelxp
+      cdif mpbir2an eldif mpbiran dfcleq ) ABIZJUBZJCUCZUDZUEZUOZUAZUFUGZKZLZFM
+      ZBKZXBCAUGZKZUHZFUIZABCUJZNZBXDUKXGWTWTXBUPZWLIZWRKZFOXFLZFOXGLFWLWRULXLX
+      MFXLXKWMKZXKWQKZUHXFXKWMWQUMXNXCXOXEXNXJBIJKXCXJABJDUNXBBFUQZEURPXOXJAIWP
+      KZXEXJABWPEUSXJGMZWONZXRAJNZQZGOZHMZAKZYCXBCNZQZHOZXQXEYBXRYCUPZUKZYEQZXT
+      QZHOZGOYKGOZHOYGYAYLGYAYJHOZXTQYLXSYNXTXSXRXJWNNYNXJXRWNUTHXBXRCXPVAPVBYJ
+      XTHVCVFRYKGHVDYMYFHYMYIYEXTQZQZGOYEYHAJNZQZYFYKYPGYIYEXTVERYOYRGYHYCVPYIX
+      TYQYEXRYHAJVGVHVIYRYEYDQYFYQYDYEYCAHUQDVJVKYEYDVQPSRSGXJAJWOVLHXBCAVMVNPV
+      OVRRXFFVSVTWAXIWLXHKWLTTWBZWSWGZKZXAABXHWCXHYTWLCWDWEUUAWLYSKZXAUUBATKBTK
+      DEABTTWFWHWLYSWSWIWJSFBXDWKVN $.
+      $( [11-Feb-2015] $)
   $}
 
   ${
@@ -49704,6 +49694,12 @@ $)
        $( [13-Feb-2015] $)
   $}
 
+  $( ` Ins2 ` preserves sethood. $)
+  ins2exg $p |- ( A e. V -> Ins2 A e. _V ) $=
+    ( wcel cins2 cvv ctxp df-ins2 vvex txpexg mpan syl5eqel ) ABCZADEAFZEAGEECL
+    MECHEAEBIJK $.
+    $( [9-Mar-2015] $)
+
   $( ` Ins3 ` preserves sethood. $)
   ins3exg $p |- ( A e. V -> Ins3 A e. _V ) $=
     ( wcel cins3 cvv ctxp df-ins3 vvex txpexg mpan2 syl5eqel ) ABCZADAEFZEAGLEE
@@ -49714,7 +49710,7 @@ $)
     insex.1 $e |- A e. _V $.
     $( ` Ins2 ` preserves sethood. $)
     ins2ex $p |- Ins2 A e. _V $=
-      ( cins2 cvv ctxp df-ins2 vvex txpex eqeltri ) ACDAEDAFDAGBHI $.
+      ( cvv wcel cins2 ins2exg ax-mp ) ACDAECDBACFG $.
       $( [12-Feb-2015] $)
 
     $( ` Ins3 ` preserves sethood. $)
@@ -49730,6 +49726,23 @@ $)
       $( [12-Feb-2015] $)
   $}
 
+
+  $( The image function of a set is a set. $)
+  imageexg $p |- ( A e. V -> Image A e. _V ) $=
+    ( wcel cimage cvv cxp csset cins2 csi ccnv ccom cins3 csymdif c1c cima cdif
+    vvex ssetex sylancr syl df-image siexg xpex ins2ex cnvexg ins3exg symdifexg
+    coexg 1cex imaexg sylancl difexg syl5eqel ) ABCZADEEFZGHZGAIZJZKZLZMZNOZPZE
+    AUAUNUQECZVCECZABUBVDUOECVBECZVEEEQQUCVDVAECZNECVFVDUPECUTECZVGGRUDVDUSECZV
+    HVDGECURECVIRUQEUEGUREEUHSUSEUFTUPUTEEUGSUIVANEEUJUKUOVBEEULSTUM $.
+    $( [11-Feb-2015] $)
+
+  ${
+    imageex.1 $e |- A e. _V $.
+    $( The image function of a set is a set. $)
+    imageex $p |- Image A e. _V $=
+      ( cvv wcel cimage imageexg ax-mp ) ACDAECDBACFG $.
+      $( [11-Feb-2015] $)
+  $}
 
   ${
     $d R x y z $.
@@ -50508,18 +50521,6 @@ $)
        RWQYIGWCYHDQZWGVIYMWTYLGJYSWSYLGWCYKEQWGVIWDYNXBYIYLHUUAWQYIWSYLWEYHYKUU
        BWFWHWIWJWKWLABFWOGWMWN $.
        $( [26-Feb-2015] $)
-  $}
-
-  ${
-    $d A x $.  $d B x $.  $d R x $.
-    $( Binary relationship of composition with identity. $)
-    brcoi1 $p |- ( A ( _I o. R ) B <-> A R B ) $=
-       ( vx cid ccom wbr cvv wcel brex simprd cv wceq wa wex ancom wb vex bitri
-       brco ideqg2 ax-mp anbi1i exbii breq2 ceqsexgv syl5bb pm5.21nii ) ABECFZG
-       ZBHIZABCGZUJAHIZUKABUIJKULUMUKABCJKUJDLZBMZAUNCGZNZDOZUKULUJUPUNBEGZNZDO
-       URDABECTUTUQDUTUSUPNUQUPUSPUSUOUPUNHIUSUOQDRUNBHUAUBUCSUDSUPULDBHUNBACUE
-       UFUGUH $.
-       $( [9-Mar-2015] $)
   $}
 
   ${
@@ -52974,29 +52975,22 @@ $)
     $d p y $.  $d t u $.  $d t x $.  $d t y $.  $d u x $.  $d u y $.  $d x y $.
     $( Lemma for ~ enpw1 .  Set up stratification for the reverse direction. $)
     enpw1lem1 $p |- { <. x , y >. | { x } g { y } } e. _V $=
-      ( vp va vt vu vb c1st c2nd cv csn wbr wceq wex bitri 3bitri exbii ceqsexv
-      wa cvv cxp ccnv csi ccom cin cima ctypdown copab cop wcel wrex risset vex
-      df-br opex eltypdown elima brin brco exancom w3a weq 3ancoma 3anass eqcom
-      brsi sneqb anbi1i breq2 brcnv equcom syl6bb anbi2d sneq eqeq2d snex ancom
-      opbr1st opbr2nd anbi12i op1st2nd 3bitr4ri releqopab vvex xpex 1stex cnvex
-      rexbii siex coex 2ndex inex imaex typdownex eqeltrri ) UAUAUBZIUCZUDZIUEZ
-      JUCZUDZJUEZUFZCKZUGZUHZUFAKZLZBKZLZXEMZABUIUAXLABXGXIXKUJZXEUKDKZXMNZDXEU
-      LZXLXHXJUJZXGUKZDXMXEUMXIXKXEUOXRXQLZXFUKXNXSXDMZDXEULXPXQXFXHXJAUNZBUNZU
-      PZUQDXSXDXEURXTXODXEXTXNXSWTMZXNXSXCMZTXNXIIMZXNXKJMZTXOXNXSWTXCUSYDYFYEY
-      GYDXNEKZIMZYHXSWSMZTEOYJYITZEOZYFEXNXSWSIUTYIYJEVAYLYHXINZYITZEOYFYKYNEYJ
-      YMYIYJYHFKZLZNZXSGKZLZNZYOYRWRMZVBZGOZFOZFAVCZYQTFOZYMFGYHXSWRVGUUDYQUUET
-      ZFOUUFUUCUUGFUUCYRXQNZYQUUATZTZGOUUGUUBUUJGUUBYTYQUUAVBYTUUITUUJYQYTUUAVD
-      YTYQUUAVEYTUUHUUIYTYSXSNUUHXSYSVFYRXQGUNVHPVIQRUUIUUGGXQYCUUHUUAUUEYQUUHU
-      UAYOXQWRMZUUEYRXQYOWRVJUUKXQYOIMAFVCUUEYOXQIVKXHXJYOYAYBVSAFVLQVMVNSPRYQU
-      UEFVAPYQYMFXHYAUUEYPXIYHYOXHVOVPSQVIRYIYFEXIXHVQZYHXIXNIVJSPQYEXNYOJMZYOX
-      SXBMZTZFOYOXKNZUUMTZFOYGFXNXSXBJUTUUOUUQFUUOUUNUUMTUUQUUMUUNVRUUNUUPUUMUU
-      NYOYHLZNZXSHKZLZNZYHUUTXAMZVBZHOZEOZEBVCZUUSTEOZUUPEHYOXSXAVGUVFUUSUVGTZE
-      OUVHUVEUVIEUVEUUTXQNZUUSUVCTZTZHOUVIUVDUVLHUVDUVBUUSUVCVBUVBUVKTUVLUUSUVB
-      UVCVDUVBUUSUVCVEUVBUVJUVKUVBUVAXSNUVJXSUVAVFUUTXQHUNVHPVIQRUVKUVIHXQYCUVJ
-      UVCUVGUUSUVJUVCYHXQXAMZUVGUUTXQYHXAVJUVMXQYHJMBEVCUVGYHXQJVKXHXJYHYAYBVTB
-      EVLQVMVNSPRUUSUVGEVAPUUSUUPEXJYBUVGUURXKYOYHXJVOVPSQVIPRUUMYGFXKXJVQZYOXK
-      XNJVJSQWAXIXKXNUULUVNWBQWIQWCWDWQXGUAUAWEWEWFXFXDXEWTXCWSIWRIWGWHWJWGWKXB
-      JXAJWLWHWJWLWKWMCUNWNWOWMWP $.
+      ( vp va vb cvv c1st c2nd cv csn wbr wceq wa wex ancom 3bitri anbi1i bitri
+      weq cxp ccnv csi ccom cin cima ctypdown copab cop wcel wrex vex eltypdown
+      opex elima brin brco brsnsi2 brcnv opbr1st equcom exbii sneq ceqsexv snex
+      eqeq2d breq2 opbr2nd anbi12i op1st2nd rexbii risset bitr2i releqopab vvex
+      df-br xpex 1stex cnvex siex coex 2ndex inex imaex typdownex eqeltrri ) GG
+      UAZHUBZUCZHUDZIUBZUCZIUDZUEZCJZUFZUGZUEAJZKZBJZKZWOLZABUHGXBABWQWRWTUIZWQ
+      UJXCKZWPUJZDJZWSXAUIZMZDWOUKZXBXCWPWRWTAULZBULZUNZUMXEXFXDWNLZDWOUKXIDXDW
+      NWOUOXMXHDWOXMXFXDWJLZXFXDWMLZNXFWSHLZXFXAILZNXHXFXDWJWMUPXNXPXOXQXNXFEJZ
+      HLZXRXDWILZNZEOXRWSMZXSNZEOXPEXFXDWIHUQYAYCEYAXTXSNYCXSXTPXTYBXSXTXRFJZKZ
+      MZYDXCWHLZNZFOFATZYFNZFOYBFXCXRWHXLURYHYJFYHYGYFNYJYFYGPYGYIYFYGXCYDHLAFT
+      YIYDXCHUSWRWTYDXJXKUTAFVAQRSVBYFYBFWRXJYIYEWSXRYDWRVCVFVDQRSVBXSXPEWSWRVE
+      ZXRWSXFHVGVDQXOXFXRILZXRXDWLLZNZEOXRXAMZYLNZEOXQEXFXDWLIUQYNYPEYNYMYLNYPY
+      LYMPYMYOYLYMYFYDXCWKLZNZFOFBTZYFNZFOYOFXCXRWKXLURYRYTFYRYQYFNYTYFYQPYQYSY
+      FYQXCYDILBFTYSYDXCIUSWRWTYDXJXKVHBFVAQRSVBYFYOFWTXKYSYEXAXRYDWTVCVFVDQRSV
+      BYLXQEXAWTVEZXRXAXFIVGVDQVIWSXAXFYKUUAVJQVKSXBXGWOUJXIWSXAWOVPDXGWOVLVMQV
+      NWGWQGGVOVOVQWPWNWOWJWMWIHWHHVRVSVTVRWAWLIWKIWBVSVTWBWAWCCULWDWEWCWF $.
       $( [26-Feb-2015] $)
   $}
 
@@ -54415,18 +54409,14 @@ $)
     $( Lemma for ~ ceex .  Set up part of the stratification. $)
     ceexlem1 $p |- ( <. { { a } } , n >. e. ( SSet o. SI Pw1Fn ) <->
        ~P1 a e. n ) $=
-       ( vt vu vx cv csn cpw1fn wbr csset wa wceq wcel excom bitri anbi1i exbii
-       wex vex 3bitri csi cpw1 wel cop ccom w3a brsi 3anass eqcom sneqb brpw1fn
-       snex breq1 syl6bb anbi2d 19.41v bitr4i anass an12 19.42v brssetsn anbi2i
-       ceqsexv opelco df-clel 3bitr4i ) BFZGZGZCFZHUAZIZVJAFZJIZKZCRZDFZVGUBZLZ
-       DAUCZKZDRZVIVMUDJVKUEMVRVMMVPVJVQGZLZVSKZVNKZDRZCRWFCRZDRWBVOWGCVOWEDRZV
-       NKWGVLWIVNVLVIEFZGZLZWDWJVQHIZUFZDRERWNERZDRWIEDVIVJHUGWNEDNWOWEDWOWJVHL
-       ZWDWMKZKZERWEWNWREWNWLWQKWRWLWDWMUHWLWPWQWLWKVILWPVIWKUIWJVHESUJOPOQWQWE
-       EVHVGULWPWMVSWDWPWMVHVQHIVSWJVHVQHUMVGVQBSUKUNUOVCOQTPWEVNDUPUQQWFCDNWHW
-       ADWHVSWDVNKZKZCRVSWSCRZKWAWFWTCWFWDVSVNKKWTWDVSVNURWDVSVNUSOQVSWSCUTXAVT
-       VSXAWCVMJIZVTVNXBCWCVQULVJWCVMJUMVCVQVMDSASVAOVBTQTCVIVMJVKVDDVRVMVEVF
-       $.
-       $( [6-Mar-2015] $)
+      ( vu vt cv csn cpw1fn csi wbr csset wa wex cpw1 wceq wel wcel exbii bitri
+      snex vex cop ccom brsnsi1 anbi1i 19.41v anass 3bitr2i excom breq1 ceqsexv
+      anbi2d brpw1fn brssetsn anbi12i opelco df-clel 3bitr4i ) BEZFZFZCEZGHZIZV
+      AAEZJIZKZCLZDEZURMZNZDAOZKZDLZUTVDUAJVBUBPVIVDPVGVAVHFZNZUSVHGIZVEKZKZCLZ
+      DLZVMVGVRDLZCLVTVFWACVFVOVPKZDLZVEKWBVEKZDLWAVCWCVEDUSVAGURSUCUDWBVEDUEWD
+      VRDVOVPVEUFQUGQVRCDUHRVSVLDVSVPVNVDJIZKZVLVQWFCVNVHSVOVEWEVPVAVNVDJUIUKUJ
+      VPVJWEVKURVHBTULVHVDDTATUMUNRQRCUTVDJVBUODVIVDUPUQ $.
+      $( [6-Mar-2015] $)
   $}
 
 
