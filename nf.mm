@@ -50647,6 +50647,17 @@ $)
        $( [9-Mar-2015] $)
   $}
 
+  ${
+    brfullfunop.1 $e |- A e. _V $.
+    brfullfunop.2 $e |- B e. _V $.
+    $( Binary relationship of the full function operation over an ordered
+       pair. $)
+    brfullfunop $p |- ( <. A , B >. FullFun F C <-> ( A F B ) = C ) $=
+      ( cop cfullfun wbr cfv wceq co opex brfullfun df-ov eqeq1i bitr4i ) ABGZC
+      DHIRDJZCKABDLZCKRCDABEFMNTSCABDOPQ $.
+      $( [9-Mar-2015] $)
+  $}
+
 $(
 =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
         Closure operation
@@ -54485,7 +54496,7 @@ $)
   $}
 
   ${
-    $d a b $.  $d a g $.  $d b g $.  $d M a $.  $d M b $.  $d M g $.
+    $d a b $.  $d a g $.  $d b g $.  $d M a $.  $d M b $.  $d M g $.  $d m t $.
     $( A condition for cardinal exponentiation being non-empty.  Theorem
        XI.2.42 of [Rosser], p. 382. $)
     ce0nnul $p |- ( M e. NC -> ( ( M ^c 0c ) =/= (/) <->
@@ -54500,6 +54511,17 @@ $)
        VSWKRWOWPVRQHWPVRQLQVQQUNUOUPUQURWOWPVLWLVTWLNWOVDVQQVOMUSUTVAVBVCVEVFVG
        WCBCVHVIVJ $.
        $( [6-Mar-2015] $)
+  $}
+
+  ${
+    $d A a $.  $d M a $.
+    $( Inference form of ~ ce0nnul . $)
+    ce0nnuli $p |- ( ( M e. NC /\ ~P1 A e. M ) -> ( M ^c 0c ) =/= (/) ) $=
+       ( va cncs wcel cpw1 wa c0c cce co c0 wne wex cvv elex pw1exb sylib pw1eq
+       cv wceq eleq1d cla4egv mpcom adantl wb ce0nnul adantr mpbird ) BDEZAFZBE
+       ZGBHIJKLZCSZFZBEZCMZUKUPUIANEZUKUPUKUJNEUQUJBOAPQUOUKCANUMATUNUJBUMARUAU
+       BUCUDUIULUPUEUKBCUFUGUH $.
+       $( [9-Mar-2015] $)
   $}
 
   ${
@@ -54547,13 +54569,25 @@ $)
   $}
 
   ${
+    $d m t $.  $d m n $.  $d N m $.
     $( A natural raised to cardinal zero is non-empty.  Theorem XI.2.44 of
        [Rosser], p. 383. $)
     ce0nn $p |- ( N e. Nn -> ( N ^c 0c ) =/= (/) ) $=
-       ( vm vn cv c0c cce co c0 wne cab cvv vex elcompl necon3bbii bitri abbi2i
-       eqeltrri wceq oveq1 neeq1d finds ) BDZEFGZHIZ???AEFGZHIBCA?UDBJKUDB???UD
-       UB?BLM?UCH?NOP?Q???UBARUCUEHUBAEFST??UA $.
-       $( [9-Mar-2015] $)
+      ( vm vn vt cv c0c cce co wne c1c c1st c2nd csn cima wcel wbr oveq1 neeq1d
+      c0 wceq cplc ccnv cres cfullfun ccompl cab cvv wn vex elcompl cop wrex wa
+      brres eliniseg anbi2i 0cex 3bitri rexbii elima risset 3bitr4i brfullfunop
+      necon3bbii bitri abbi2i 1stex 2ndex cnvex snex imaex resex ceex fullfunex
+      op1st2nd complex eqeltrri cncs cpw1 0cnc pw10 nulel0c ce0nnuli mp2an cnnc
+      weq eqeltri wi nnnc 1cnc 0ex pw1sn snel1c jctr wb ce0addcnnul syl5ibr syl
+      mpan2 finds ) BEZFGHZSIZFFGHZSIZCEZFGHZSIZXFJUAZFGHZSIZAFGHZSIBCAKLUBZFMZ
+      NZUCZGUDZUBZSMZNZNZUEZXCBUFUGXCBYBXAYBOXAYAOZUHXCXAYABUIZUJYCXBSYCXAFUKZX
+      TOZYESXQPXBSTDEZXAXPPZDXTULYGYETZDXTULYCYFYHYIDXTYHYGXAKPZYGXOOZUMYJYGFLP
+      ZUMYIYGXAKXOUNYKYLYJLFYGUOUPXAFYGYDUQVOURUSDXAXPXTUTDYEXTVAVBXQSYEUOXAFSG
+      YDUQVCURVDVEVFYAXPXTKXOVGXMXNLVHVIFVJVKVLXRXSXQGVMVNVISVJZVKVKVPVQXAFTXBX
+      DSXAFFGQRBCWFXBXGSXAXFFGQRXAXITXBXJSXAXIFGQRXAATXBXLSXAAFGQRFVROSVSZFOXEV
+      TYNSFWAWBWGSFWCWDXFWEOXFVROZXHXKWHXFWIXHXKYOXHJFGHSIZUMZXHYPJVROZXSVSZJOY
+      PWJYSXSMJSWKWLXSYMWMWGXSJWCWDWNYOYRXKYQWOWJXFJWPWSWQWRWT $.
+      $( [9-Mar-2015] $)
   $}
 
   ${
@@ -54873,21 +54907,19 @@ $)
        relationship. $)
     spacvallem1 $p |- { <. x , y >. | ( x e. NC /\ y e. NC /\ y = ( 2c ^c x
         ) ) } e. _V $=
-       ( vt cvv cxp cncs c2nd c1st c2c cce cin cv wcel cop wa opelxp anbi1i wbr
-       wceq bitri ccnv csn cima cres ctxp crn co w3a copab cfv 2nc mpbiran fnce
-       wfn fnbrfvb mpan sylbir wex elrn trtxp brres eliniseg anbi2i ancom elexi
-       vex op1st2nd 3bitri exbii opex breq1 ceqsexv syl6rbbr eqcom df-ov eqeq2i
-       wb bitr4i syl6bb adantr pm5.32i elin df-3an 3bitr4i releqopab vvex ncsex
-       xpex 2ndex 1stex cnvex snex imaex resex ceex txpex rnex inex eqeltrri )
-       DDEZFFEZGHUAZIUBZUCZUDZJUEZUFZKZKALZFMZBLZFMZXKIXIJUGZSZUHZABUIDXOABXHXI
-       XKNZXAMZXPXGMZOZXJXLOZXNOZXPXHMXOXSXTXROYAXQXTXRXIXKFFPQXTXRXNXJXRXNVQXL
-       XJXRIXINZJUJZXKSZXNXJYDYBXKJRZXRXJYBXAMZYDYEVQZYFIFMXJUKIXIFFPULJXAUNYFY
-       GUMXAYBXKJUOUPUQXRCLZXPXFRZCURYHYBSZYHXKJRZOZCURYECXPXFUSYIYLCYIYHXIXERZ
-       YKOYLYHXIXKXEJUTYMYJYKYMYHXIGRZYHXDMZOZYHIHRZYNOZYJYHXIGXDVAYPYNYQOYRYOY
-       QYNHIYHVBVCYNYQVDTIXIYHIFUKVEZAVFZVGVHQTVIYKYECYBIXIYSYTVJYHYBXKJVKVLVHV
-       MYDXKYCSXNYCXKVNXMYCXKIXIJVOVPVRVSVTWATXPXAXGWBXJXLXNWCWDWEWTXHDDWFWFWHX
-       AXGFFWGWGWHXFXEJGXDWIXBXCHWJWKIWLWMWNWOWPWQWRWRWS $.
-       $( [6-Mar-2015] $)
+      ( vt cvv cxp cncs cce c2nd c1st ccnv c2c cin wcel wceq cop wbr wex 3bitri
+      cv wa cfullfun cima cres ccom co copab opelxp opelco brcnv brres eliniseg
+      csn w3a anbi2i ancom 2nc elexi vex op1st2nd anbi1i exbii bitri opex breq1
+      ceqsexv brfullfunop eqcom anbi12i elin df-3an 3bitr4i releqopab vvex xpex
+      ncsex ceex fullfunex 2ndex 1stex cnvex snex imaex resex coex eqeltrri
+      inex ) DDEZFFEZGUAZHIJZKULZUBZUCZJZUDZLZLASZFMZBSZFMZWSKWQGUEZNZUMZABUFDX
+      CABWPWQWSOZWHMZXDWOMZTWRWTTZXBTXDWPMXCXEXGXFXBWQWSFFUGXFCSZKWQOZNZXHWSWIP
+      ZTZCQZXIWSWIPZXBXFWQXHWNPZXKTZCQXMCWQWSWIWNUHXPXLCXOXJXKXOXHWQWMPZXHKIPZX
+      HWQHPZTZXJWQXHWMUIXQXSXHWLMZTXSXRTXTXHWQHWLUJYAXRXSIKXHUKUNXSXRUORKWQXHKF
+      UPUQZAURZUSRUTVAVBXKXNCXIKWQYBYCVCXHXIWSWIVDVEXNXAWSNXBKWQWSGYBYCVFXAWSVG
+      VBRVHXDWHWOVIWRWTXBVJVKVLWGWPDDVMVMVNWHWOFFVOVOVNWIWNGVPVQWMHWLVRWJWKIVSV
+      TKWAWBWCVTWDWFWFWE $.
+      $( [6-Mar-2015] $)
   $}
 
   ${
