@@ -53656,28 +53656,28 @@ $)
   cce $a class ^c $.
 
   $( Define the set of all cardinal numbers.  We define them as equivelance
-     classes of sets of the same size.  Definition from [Rosser], p.  XXX. $)
+     classes of sets of the same size.  Definition from [Rosser], p. 372. $)
   df-ncs $a |- NC = ( _V /. ~~ ) $.
 
   ${
     $d x y a b $.
     $( Define cardinal less than or equal.  Definition from [Rosser], p.
-       XXX. $)
+       375. $)
     df-lec $a |- <_c = { <. a , b >. | E. x e. a E. y e. b x C_ y } $.
   $}
 
-  $( Define cardinal less than.  Definition from [Rosser], p.  XXX. $)
+  $( Define cardinal less than.  Definition from [Rosser], p.  375. $)
   df-ltc $a |- <c = ( <_c \ _I ) $.
 
   $( Define the cardinality operation.  This is the unique cardinal number
-     containing a given set.  Defintion from [Rosser], p.  XXX. $)
+     containing a given set.  Defintion from [Rosser], p.  371. $)
   df-nc $a |- Nc A = [ A ] ~~ $.
 
   ${
-    $d a b c x y $.
-    $( Define cardinal multiplication.  Definition from [Rosser], p.  XXX. $)
-    df-muc $a |- .c = ( a e. NC , b e. NC |->
-       ( iota c ( c e. NC /\ E. x e. a E. y e. b c = Nc ( x X. y ) ) ) ) $.
+    $d m n a b g $.
+    $( Define cardinal multiplication.  Definition from [Rosser], p.  378. $)
+    df-muc $a |- .c = ( m e. NC , n e. NC |->
+      { a | E. b e. m E. g e. n a ~~ ( b X. g ) } ) $.
   $}
 
   ${
@@ -53893,125 +53893,45 @@ $)
   $}
 
   ${
-    $d A a $.  $d a b $.  $d A b $.  $d a c $.  $d A c $.  $d a x $.  $d A x $.
-    $d a y $.  $d B b $.  $d b c $.  $d B c $.  $d b x $.  $d B x $.  $d b y $.
-    $d B y $.  $d c x $.  $d c y $.  $d x y $.
     $( The value of cardinal multiplication. $)
-    mucval $p |- ( ( A e. NC /\ B e. NC ) ->
-       ( A .c B ) = 
-       ( iota c ( c e. NC /\ E. x e. A E. y e. B c = Nc ( x X. y ) ) ) ) $=
-       ( va vb cncs cv wcel cxp cnc wceq wrex wa cio cmuc rexeq anbi2d iotabidv
-       rexbidv df-muc iotaex ovmpt2 ) FGCDHHEIZHJZUEAIBIKLMZBGIZNZAFIZNZOZEPUFU
-       GBDNZACNZOZEPQUFUIACNZOZEPUJCMZULUQEURUKUPUFUIAUJCRSTUHDMZUQUOEUSUPUNUFU
-       SUIUMACUGBUHDRUASTABFGEUBUOEUCUD $.
-       $( [24-Feb-2015] $)
-  $}
-
-  ${
-    $d A c $.  $d A d $.  $d A w $.  $d A x $.  $d A y $.  $d A z $.  $d B c $.
-    $d B d $.  $d B w $.  $d B x $.  $d B y $.  $d B z $.  $d c d $.  $d c w $.
-    $d c x $.  $d c y $.  $d c z $.  $d d w $.  $d d x $.  $d d y $.  $d d z $.
-    $d w x $.  $d w y $.  $d w z $.  $d x y $.  $d x z $.  $d y z $.  $d A a $.
-    $d a b $.  $d A b $.  $d a w $.  $d a x $.  $d a y $.  $d a z $.  $d B a $.
-    $d B b $.  $d b w $.  $d b x $.  $d b y $.  $d b z $.
-    $( There is a unique cardinal equal to the cross product of members of two
-       cardinals. $)
-    ncxpeu $p |- ( ( A e. NC /\ B e. NC ) ->
-       E! c e. NC E. x e. A E. y e. B c = Nc ( x X. y ) ) $=
-       ( vz vw va vb cncs wcel wa cv cnc wceq wrex wex eleq2 cen wbr vd cxp weq
-       wral wreu elncs anbi12i eeanv bitr4i vex ncid pm3.2i bi2anan9 mpbiri cvv
-       wi xpex ncelncs ax-mp eqid eqeq1 rcla4ev mp2an jctir 2eximi sylibr sylbi
-       r2ex rexcom rexbii bitri sylib reeanv 2rexbii anbi12d elnc ensymi sylan2
-       entr syl2anb xpen syl2an syl6bi exlimivv imp eqnc eqeq12 syl5ibrcom expr
-       adantlr rexlimdvv rexlimdvva syl5bir ralrimivva xpeq1 nceqd eqeq2d xpeq2
-       2rexbidv cbvrex2v syl6bb reu4 sylanbrc ) CJKZDJKZLZEMZAMZBMZUBZNZOZBDPZA
-       CPZEJPZXNUAMZFMZGMZUBZNZOZGDPZFCPZLZEUAUCZUPZUAJUDEJUDXNEJUEXFXLEJPZBDPZ
-       ACPZXOXFCXHNZOZDXINZOZLZBQAQZYIXFYKAQZYMBQZLYOXDYPXEYQACUFBDUFUGYKYMABUH
-       UIYOXHCKZXIDKZLZYGLZBQAQYIYNUUAABYNYTYGYNYTXHYJKZXIYLKZLUUBUUCXHAUJZUKXI
-       BUJZUKULYKYRUUBYMYSUUCCYJXHRDYLXIRUMUNXKJKZXKXKOZYGXJUOKUUFXHXIUUDUUEUQZ
-       XJUOURUSXKUTXLUUGEXKJXGXKXKVAVBVCVDVEYGABCDVHVFVGYIXMEJPZACPXOYHUUIACXLB
-       EDJVIVJXMAECJVIVKVLXFYFEUAJJYDXLYALZGDPBDPZFCPACPZXFXGJKXPJKLZLZYEUULXMY
-       BLZFCPACPYDUUKUUOAFCCXLYABGDDVMVNXMYBAFCCVMVKUUNUUKYEAFCCUUNYRXQCKZLZLUU
-       JYEBGDDUUNUUQYSXRDKZLZUUJYEUPZXFUUQUUSLZUUTUUMXFUVALZYEUUJXKXTOZUVBXJXSS
-       TZUVCXFUVAUVDXFCHMZNZOZDIMZNZOZLZIQHQZUVAUVDUPZXFUVGHQZUVJIQZLUVLXDUVNXE
-       UVOHCUFIDUFUGUVGUVJHIUHUIUVKUVMHIUVKUVAXHUVFKZXQUVFKZLZXIUVIKZXRUVIKZLZL
-       UVDUVGUUQUVRUVJUUSUWAUVGYRUVPUUPUVQCUVFXHRCUVFXQRVOUVJYSUVSUURUVTDUVIXIR
-       DUVIXRRVOUMUVRXHXQSTZXIXRSTZUVDUWAUVPXHUVESTZXQUVESTZUWBUVQXHUVEVPXQUVEV
-       PUWEUWDUVEXQSTUWBXQUVEVQXHUVEXQVSVRVTUVSXIUVHSTZXRUVHSTZUWCUVTXIUVHVPXRU
-       VHVPUWGUWFUVHXRSTUWCXRUVHVQXIUVHXRVSVRVTXHXQXIXRWAWBWCWDVGWEXJXSUUHWFVFX
-       GXKXPXTWGWHWJWIWKWLWMWNXNYCEUAJYEXNXPXKOZBDPACPYCYEXLUWHABCDXGXPXKVAWSUW
-       HYAXPXQXIUBZNZOABFGCDAFUCZXKUWJXPUWKXJUWIXHXQXIWOWPWQBGUCZUWJXTXPUWLUWIX
-       SXIXRXQWRWPWQWTXAXBXC $.
-       $( [24-Feb-2015] $)
+    ovmuc $p |- ( ( M e. NC /\ N e. NC ) ->
+       ( M .c N ) = { a | E. b e. M E. g e. N a ~~ ( b X. g ) } ) $= ? $.
   $}
 
   ${
     $d A c $.  $d A x $.  $d A y $.  $d B c $.  $d B x $.  $d B y $.  $d c x $.
     $d c y $.  $d x y $.
     $( Closure law for cardinal multiplicaton. $)
-    muccl $p |- ( ( A e. NC /\ B e. NC ) -> ( A .c B ) e. NC ) $=
-       ( vc vx vy cncs wcel wa cmuc co cxp cnc wceq wrex cio mucval wreu ncxpeu
-       cv reiotacl syl eqeltrd ) AFGBFGHZABIJCSZFGUDDSESKLMEBNDANZHCOZFDEABCPUC
-       UECFQUFFGDEABCRUECFTUAUB $.
-       $( [24-Feb-2015] $)
+    muccl $p |- ( ( A e. NC /\ B e. NC ) -> ( A .c B ) e. NC ) $= ? $.
   $}
 
   ${
-    $d A c $.  $d A x $.  $d A y $.  $d B c $.  $d B x $.  $d B y $.  $d C c $.
-    $d c x $.  $d C x $.  $d c y $.  $d C y $.  $d x y $.
-    $( Equality to cardinal multiplication. $)
-    eqmuc $p |- ( ( A e. NC /\ B e. NC /\ C e. NC ) ->
-       ( ( A .c B ) = C <-> E. x e. A E. y e. B C = Nc ( x X. y ) ) ) $=
-       ( vc cncs wcel w3a cmuc co wceq cv cxp cnc wrex wa cio mucval 3adant3 wb
-       eqeq1d wreu simp3 ncxpeu eqeq1 2rexbidv reiota2 syl2anc bitr4d ) CGHZDGH
-       ZEGHZIZCDJKZELFMZGHUPAMBMNOZLZBDPACPZQFRZELZEUQLZBDPACPZUNUOUTEUKULUOUTL
-       UMABCDFSTUBUNUMUSFGUCZVCVAUAUKULUMUDUKULVDUMABCDFUETUSVCFGEUPELURVBABCDU
-       PEUQUFUGUHUIUJ $.
-       $( [24-Feb-2015] $)
-  $}
-
-  ${
-    $d a b c x y z w $.
+    $d a b c d m n $.
     $( Cardinal multiplication is a set. $)
     mucex $p |- .c e. _V $=
-       ( va vb vc vx vy vz vw cncs cvv csset c1c cv wcel wa wex 3bitri otelins2
-       cop vex bitri cmuc cxp cins2 ccnv cins3 ccross csi3 cin cima cid csymdif
-       cins4 crn ccompl cdif cnc wceq wrex cio cmpt2 df-muc weq wb wal cab cuni
-       wel csn eluniab dfiota2 eleq2i wbr elrn df-br elin opex otelins3 opelcnv
-       opelssetsn elrn2 elsymdif snex opelxp mpbiran2 ncseqnc 2rexbidv oqelins4
-       anbi1i elima1c otsnelsi3 brcnv brcross 3bitr2i anbi12i exbii xpex opeq1d
-       wn sneq eleq1d ceqsexv df-rex 3bitr4i rexcom pm5.32i ideq bibi12i notbii
-       syl6rbbr elcompl alex 3bitr4ri releqmpt2 eqtr4i ncsex ssetex ins3ex vvex
-       cnvex ins2ex crossex si3ex ins4ex inex 1cex idex symdifex rnex mpt2exlem
-       imaex complex eqeltri ) UAHHUBIUBJUCZJUDZUEZHIUBZYMUCZYQUFUDZUGZULZYQUHZ
-       KUIZULZUHZKUIZULZUHZKUIZUHZUCZUCZUJUEZUKZUMZUNZUHZUMZUEUKKUIUOZIUAABHHCL
-       ZHMZUUSDLZELZUBZUPUQZEBLZURDALZURZNZCUSZUTUURDEABCVAABFHHUUQUVIFLZUVHCGV
-       BZVCZCVDZGVEVFZMFGVGZUVMNZGOZUVJUVIMUVJVHZUVFUVERZRZUUQMZUVMGUVJVIUVIUVN
-       UVJUVHCGVJVKUWAGLZUVTUUPVLZGOUVQGUVTUUPVMUWCUVPGUWCUWBUVTRZUUPMUWDYOMZUW
-       DUUOMZNUVPUWBUVTUUPVNUWDYOUUOVOUWEUVOUWFUVMUWEUWBUVRRYNMUVRUWBRJMUVOUWBU
-       VRUVSYNUVFUVEASZBSZVPZVQUWBUVRJVRUVJUWBFSZGSZVSPUWDUUNMZWRUVLWRZCOZWRUWF
-       UVMUWLUWNUWLUUSUWDRZUUMMZCOUWNCUWDUUMVTUWPUWMCUWPUWOUUKMZUWOUULMZVCZWRUW
-       MUWOUUKUULWAUWSUVLUWQUVHUWRUVKUWQUUSUVTRUUJMUUSUVSRZUUIMZUVHUUSUWBUVTUUJ
-       UWKQUUSUVRUVSUUIUVJWBZQUXAUWTYPMZUWTUUHMZNUUTUXDNUVHUWTYPUUHVOUXCUUTUXDU
-       XCUUTUVSIMUWIUUSUVSHIWCWDWHUUTUXDUVGUUTUVGUVCUUSMZEUVEURDUVFURZUXDUUTUVD
-       UXEDEUVFUVEUUSUVCWEWFUXDUXEDUVFURZEUVEURZUXFUVBVHZUWTRZUUGMZEOEBVGZUXGNZ
-       EOUXDUXHUXKUXMEUXKUXJYQMZUXJUUFMZNUXMUXJYQUUFVOUXNUXLUXOUXGUXNUXIUVSRYMM
-       UXIUVERJMUXLUXIUUSUVSYMCSZQUXIUVFUVEJUWGQUVBUVEESZUWHVSPUXOUXIUUSUVFRZRZ
-       UUEMZUXGUXIUUSUVFUVEUUEUWHWGUVAVHZUXSRZUUDMZDODAVGZUXENZDOUXTUXGUYCUYEDU
-       YCUYBYQMZUYBUUCMZNUYEUYBYQUUCVOUYFUYDUYGUXEUYFUYAUXRRYMMUYAUVFRJMUYDUYAU
-       XIUXRYMUVBWBZQUYAUUSUVFJUXPQUVAUVFDSZUWGVSPUYGUYAUXIUUSRZRZUUBMZUVCVHZUU
-       SRZJMZUXEUYAUXIUUSUVFUUBUWGWGUYLUVRUYKRZUUAMZFOUVJUVCUQZUVRUUSRZJMZNZFOU
-       YOFUYKUUAWIUYQVUAFUYQUYPYTMZUYPYQMZNVUAUYPYTYQVOVUBUYRVUCUYTVUBUVRUYAUXI
-       RRYSMZUYRUVRUYAUXIUUSYSUXPWGVUDUVJUVAUVBRZRYRMUVJVUEYRVLZUYRUVJUVAUVBYRU
-       WJUYIUXQWJUVJVUEYRVNVUFVUEUVJUFVLUYRUVJVUEUFWKUVAUVBUVJUYIUXQWLTWMTVUCUV
-       RUYJRYMMUYTUVRUYAUYJYMUVAWBQUVRUXIUUSJUYHQTWNTWOUYTUYOFUVCUVAUVBUYIUXQWP
-       ZUYRUYSUYNJUYRUVRUYMUUSUVJUVCWSWQWTXAPUVCUUSVUGUXPVSPWNTWODUXSUUDWIUXEDU
-       VFXBXCTWNTWOEUWTUUGWIUXGEUVEXBXCUXEEDUVEUVFXDTXIXEPPUWRUUSUWBRUJMUUSUWBU
-       JVLUVKUUSUWBUVTUJUVRUVSUXBUWIVPZVQUUSUWBUJVNUUSUWBUWKXFWMXGXHTWOTXHUWDUU
-       NUWBUVTUWKVUHVPXJUVLCXKXCWNPWOTXLXMXNHHUUQXOXOUUPYOUUOYNJXPXSXQUUNUUMUUK
-       UULUUJUUIYPUUHHIXOXRWPUUGKYQUUFYMJXPXTXTZUUEUUDKYQUUCVUIUUBUUAKYTYQYSYRU
-       FYAXSYBYCVUIYDYEYJYCYDYEYJYCYDYEYJYDXTXTUJYFXQYGYHYKYDYHYIYL $.
-       $( [24-Feb-2015] $)
+      ( vm vn va vb vc vd cncs csset cen c1c wbr wrex cop wcel wex otelins2 vex
+      cv wa bitri cmuc cxp cvv cins2 ccnv cins4 cin crn csi3 cima cins3 csymdif
+      ccross cdif cab cmpt2 df-muc csn wel elin snex opelssetsn 3bitri oqelins4
+      otsnelsi3 wceq elrn2 df-br brcnv brcross 3bitr2i anbi12i exbii xpex breq2
+      ceqsexv elima1c df-rex 3bitr4i bitr4i rexcom weq breq1 2rexbidv releqmpt2
+      elab eqtr4i ncsex ssetex ins2ex crossex cnvex ins4ex enex inex rnex si3ex
+      1cex imaex mpt2exlem eqeltri ) UAGGUBUCUBHUDZXBUDZXCUMUEZUFZIUEZUDZUDZUGZ
+      UHZUIZUFZUGZJUJZUFZUGZJUJZUKULJUJUNZUCUAABGGCRZDRZERZUBZIKZEBRZLDARZLZCUO
+      ZUPXREABCDUQABFGGXQYGFRZURZYEYDMZMZXQNZYHYBIKZEYDLDYELZYHYGNYAURZYKMZXPNZ
+      EOZYMDYELZEYDLZYLYNYREBUSZYSSZEOYTYQUUBEYQYPXCNZYPXONZSUUBYPXCXOUTUUCUUAU
+      UDYSUUCYOYJMXBNYOYDMHNUUAYOYIYJXBYHVAZPYOYEYDHAQZPYAYDEQZBQZVBVCUUDYOYIYE
+      MZMZXNNZYSYOYIYEYDXNUUHVDXTURZUUJMZXMNZDODAUSZYMSZDOUUKYSUUNUUPDUUNUUMXCN
+      ZUUMXLNZSUUPUUMXCXLUTUUQUUOUURYMUUQUULUUIMXBNUULYEMHNUUOUULYOUUIXBYAVAPUU
+      LYIYEHUUEPXTYEDQZUUFVBVCUURUULYOYIMMXKNXTYAYHMZMZXJNZYMUULYOYIYEXKUUFVDXT
+      YAYHXJUUSUUGFQZVEUVBXSUVAMZXINZCOXSYBVFZYHXSIKZSZCOYMCUVAXIVGUVEUVHCUVEUV
+      DXENZUVDXHNZSUVHUVDXEXHUTUVIUVFUVJUVGUVIXSXTYAMZMXDNXSUVKXDKZUVFXSXTYAYHX
+      DUVCVDXSUVKXDVHUVLUVKXSUMKUVFXSUVKUMVIXTYAXSUUSUUGVJTVKUVJXSUUTMXGNZUVGXS
+      XTUUTXGUUSPUVMXSYHMXFNXSYHXFKUVGXSYAYHXFUUGPXSYHXFVHXSYHIVIVKTVLTVMUVGYMC
+      YBXTYAUUSUUGVNXSYBYHIVOVPVCVCVLTVMDUUJXMVQYMDYEVRVSTVLTVMYSEYDVRVTEYKXPVQ
+      YMDEYEYDWAVSYFYNCYHUVCCFWBYCYMDEYEYDXSYHYBIWCWDWFVTWEWGGGXQWHWHXPJXCXOXBH
+      WIWJWJZXNXMJXCXLUVNXKXJXIXEXHXDUMWKWLWMXGXFIWNWLWJWJWOWPWQWMWOWRWSWMWOWRW
+      SWTXA $.
+      $( [24-Feb-2015] $)
   $}
 
   ${
@@ -54883,6 +54803,24 @@ $)
   tcnc1c $p |- T_c Nc 1c = Nc ~P1 1c $=
     ( c1c 1cex tcnc ) ABC $.
     $( [4-Mar-2015] $)
+
+  ${ $d M x $. $d M y $. $d N x $. $d N y $. $d x y $. 
+     $( Cardinal T is one-to-one.  Based on theorem 2.4 of [Specker]. $)
+     tc11 $p |- ( ( M e. NC /\ N e. NC ) -> ( T_c M = T_c N <-> M = N ) ) $=
+       ( vx vy cncs wcel wa cv cnc wceq wex ctc wb elncs cpw1 vex tcnc cen eqnc
+       wbr anbi12i eeanv bitr4i eqeq12i enpw1 pw1ex bitri tceq eqeqan12d eqeq12
+       3bitr4ri bibi12d mpbiri exlimivv sylbi ) AEFZBEFZGZACHZIZJZBDHZIZJZGZDKC
+       KZALZBLZJZABJZMZURVACKZVDDKZGVFUPVLUQVMCANDBNUAVAVDCDUBUCVEVKCDVEVKUTLZV
+       CLZJZUTVCJZMVPUSOZIZVBOZIZJZVQVNVSVOWAUSCPZQVBDPQUDUSVBRTVRVTRTVQWBUSVBU
+       EUSVBWCSVRVTUSWCUFSUKUGVEVIVPVJVQVAVDVGVNVHVOAUTUHBVCUHUIAUTBVCUJULUMUNU
+       O $.
+       $( [10-Mar-2015] $)
+  $}
+
+  ${
+     $( T-raising perserves order for cardinals.  Theorem 5.5 of [Specker]. $)
+     tlecg $p |- ( ( M e. NC /\ N e. NC ) -> ( M <_c N <-> T_c M <_c T_c N ) ) $= ? $.
+  $}
 
   $( Cardinal one is not zero. $)
   1ne0c $p |- 1c =/= 0c $=
