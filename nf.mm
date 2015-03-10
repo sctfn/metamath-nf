@@ -53560,10 +53560,11 @@ $)
        $( [3-Mar-2015] $)
   $}
 
-  ${ $d A x $. $d r x $. $d r y $. $d x y $. 
-     nenpw1pwlem1.1 $e |- S = { x e. A | -. x e. ( r ` { x } ) } $.
-     $( Lemma for ~ nenpw1pw .  Set up stratification. $)
-     nenpw1pwlem1 $p |- ( A e. V -> S e. _V ) $=
+  ${
+    $d A x $.  $d r x $.  $d r y $.  $d x y $.
+    nenpw1pwlem1.1 $e |- S = { x e. A | -. x e. ( r ` { x } ) } $.
+    $( Lemma for ~ nenpw1pw .  Set up stratification. $)
+    nenpw1pwlem1 $p |- ( A e. V -> S e. _V ) $=
        ( vy wcel cv csn cfv wn cin cvv csset vex wceq wa wex bitri dfrab2 eqtri
        cab crab cfullfun cdm ctypdown ccompl elcompl wel cop elin wbr brfullfun
        eldm2 snex df-br eqcom 3bitr3i opelssetsn anbi12i eltypdown fvex 3bitr4i
@@ -53576,11 +53577,13 @@ $)
        $( [10-Mar-2015] $)
   $}
 
-  ${ $d A r $. $d A x $. $d r x $. $d A u $. $d r u $. $d S u $. $d u y $. $d A y $. $d r y $. $d S y $. $d x y $. 
-     nenpw1pwlem2.1 $e |- S = { x e. A | -. x e. ( r ` { x } ) } $.
-     $( Lemma for ~ nenpw1pw . Establish the main theorem with an extra
-     	hypothesis. $)
-     nenpw1pwlem2 $p |- -. ~P1 A ~~ ~P A $=
+  ${
+    $d A r $.  $d A x $.  $d r x $.  $d A u $.  $d r u $.  $d S u $.  $d u y $.
+    $d A y $.  $d r y $.  $d S y $.  $d x y $.
+    nenpw1pwlem2.1 $e |- S = { x e. A | -. x e. ( r ` { x } ) } $.
+    $( Lemma for ~ nenpw1pw .  Establish the main theorem with an extra
+       hypothesis. $)
+    nenpw1pwlem2 $p |- -. ~P1 A ~~ ~P A $=
        ( vy vu wbr cv wcel wn wb wrex wex cvv syl csn cfv wceq eleq2d cpw1 nrex
        cpw cen pm5.19 a1i nex wf1o bren cdm f1odm syl6eqelr pw1exb nenpw1pwlem1
        vex dmex sylib wss crab ssrab2 eqsstri elpwg mpbiri crn wfo forn elrn wa
@@ -53601,10 +53604,11 @@ $)
        $( [10-Mar-2015] $)
   $}
 
-  ${ $d A r $. $d A x $. $d r x $. 
-     $( No unit power class is equinumerous with the corresponding power
-     	class.  Theorem XI.1.6 of [Rosser], p. 347. $)
-     nenpw1pw $p |- -. ~P1 A ~~ ~P A $=
+  ${
+    $d A r $.  $d A x $.  $d r x $.
+    $( No unit power class is equinumerous with the corresponding power class.
+       Theorem XI.1.6 of [Rosser], p. 347. $)
+    nenpw1pw $p |- -. ~P1 A ~~ ~P A $=
        ( vx vr cv csn cfv wcel wn crab eqid nenpw1pwlem2 ) BABDZLECDFGHBAIZCMJK
        $.
        $( [10-Mar-2015] $)
@@ -53661,21 +53665,21 @@ $)
 
   ${
     $d x y a b $.
-    $( Define cardinal less than or equal.  Definition from [Rosser], p.
-       375. $)
+    $( Define cardinal less than or equal.  Definition from [Rosser],
+       p. 375. $)
     df-lec $a |- <_c = { <. a , b >. | E. x e. a E. y e. b x C_ y } $.
   $}
 
-  $( Define cardinal less than.  Definition from [Rosser], p.  375. $)
+  $( Define cardinal less than.  Definition from [Rosser], p. 375. $)
   df-ltc $a |- <c = ( <_c \ _I ) $.
 
   $( Define the cardinality operation.  This is the unique cardinal number
-     containing a given set.  Defintion from [Rosser], p.  371. $)
+     containing a given set.  Defintion from [Rosser], p. 371. $)
   df-nc $a |- Nc A = [ A ] ~~ $.
 
   ${
     $d m n a b g $.
-    $( Define cardinal multiplication.  Definition from [Rosser], p.  378. $)
+    $( Define cardinal multiplication.  Definition from [Rosser], p. 378. $)
     df-muc $a |- .c = ( m e. NC , n e. NC |->
       { a | E. b e. m E. g e. n a ~~ ( b X. g ) } ) $.
   $}
@@ -53826,6 +53830,14 @@ $)
       $( [24-Feb-2015] $)
   $}
 
+  ${
+    ncelncsi.1 $e |- A e. _V $.
+    $( The cardinality of a set is a cardinal number. $)
+    ncelncsi $p |- Nc A e. NC $=
+       ( cvv wcel cnc cncs ncelncs ax-mp ) ACDAEFDBACGH $.
+       $( [10-Mar-2015] $)
+  $}
+
   $( A set is a member of its own cardinal. $)
   ncidg $p |- ( A e. V -> A e. Nc A ) $=
     ( wcel cen cec cnc wbr enrflxg elec sylibr df-nc syl6eleqr ) ABCZAADEZAFMAA
@@ -53893,16 +53905,63 @@ $)
   $}
 
   ${
+    $d a b $.  $d a c $.  $d a g $.  $d a m $.  $d a n $.  $d b c $.  $d b g $.
+    $d b m $.  $d b n $.  $d c g $.  $d g m $.  $d g n $.  $d M a $.  $d M b $.
+    $d M m $.  $d m n $.  $d M n $.  $d N a $.  $d N b $.  $d N g $.  $d N n $.
     $( The value of cardinal multiplication. $)
     ovmuc $p |- ( ( M e. NC /\ N e. NC ) ->
-       ( M .c N ) = { a | E. b e. M E. g e. N a ~~ ( b X. g ) } ) $= ? $.
+       ( M .c N ) = { a | E. b e. M E. g e. N a ~~ ( b X. g ) } ) $=
+      ( vc cncs wcel cv cen wbr wrex cvv wceq wa ccross c2nd c1st cop 3bitri vm
+      vn cxp cab cmuc ctxp crn cins4 ccnv cins2 cin cima elima df-br elrn2 elin
+      co wex oqelins4 elrn trtxp ancom op1st2nd anbi2i exbii opex breq1 ceqsexv
+      vex brcross otelins2 brcnv bitr3i anbi12i bitri xpex breq2 rexbii crossex
+      abbi2i 2ndex 1stex txpex rnex ins4ex enex cnvex ins2ex inex imaexg ancoms
+      mpan sylan syl5eqelr rexeq abbidv rexbidv df-muc ovmpt2g mpd3an3 ) BGHZCG
+      HZDIZEIZAIZUCZJKZACLZEBLZDUDZMHBCUEUQXJNXAXBOXJPQRUFZUFZUGZUHZJUIZUJZUJZU
+      KZUGZCULZBULZMXIDYAXCYAHXDXCXTKZEBLXIEXCXTBUMYBXHEBYBXDXCSZXTHXEYCXSKZACL
+      XHXDXCXTUNAYCXSCUMYDXGACYDXEYCSZXSHZXGXEYCXSUNYFFIZYESZXRHZFURYGXFNZXCYGJ
+      KZOZFURXGFYEXRUOYIYLFYIYHXNHZYHXQHZOYLYHXNXQUPYMYJYNYKYMYGXEXDSZSZXMHZXDX
+      ESZYGPKZYJYGXEXDXCXMDVIUSYQXCYPXLKZDURXCYRNZXCYGPKZOZDURYSDYPXLUTYTUUCDYT
+      UUBXCYOXKKZOUUBUUAOUUCXCYGYOPXKVAUUDUUAUUBUUDXCXEQKZXCXDRKZOUUFUUEOUUAXCX
+      EXDQRVAUUEUUFVBXDXEXCEVIZAVIZVCTVDUUBUUAVBTVEUUBYSDYRXDXEUUGUUHVFXCYRYGPV
+      GVHTXDXEYGUUGUUHVJTYNYGYCSXPHYGXCSXOHZYKYGXEYCXPUUHVKYGXDXCXOUUGVKUUIYGXC
+      XOKYKYGXCXOUNYGXCJVLVMTVNVOVEYKXGFXFXDXEUUGUUHVPYGXFXCJVQVHTVOVRTVRVOVTXB
+      XAYAMHZXBXTMHZXAUUJXSMHXBUUKXRXNXQXMXLPXKVSQRWAWBWCWCWDWEXPXOJWFWGWHWHWIW
+      DXSCMGWJWLXTBMGWJWMWKWNUAUBBCGGXGAUBIZLZEUAIZLZDUDXJUEUUMEBLZDUDMUUNBNUUO
+      UUPDUUMEUUNBWOWPUULCNZUUPXIDUUQUUMXHEBXGAUULCWOWQWPAUAUBDEWRWSWT $.
+      $( [10-Mar-2015] $)
   $}
 
   ${
-    $d A c $.  $d A x $.  $d A y $.  $d B c $.  $d B x $.  $d B y $.  $d c x $.
-    $d c y $.  $d x y $.
+    $d A x $.  $d A y $.  $d A z $.  $d B x $.  $d B y $.  $d B z $.  $d x y $.
+    $d x z $.  $d y z $.
+    mucnc.1 $e |- A e. _V $.
+    mucnc.2 $e |- B e. _V $.
+    $( Cardinal multiplication in terms of cardinality.  Theorem XI.2.27 of
+       [Rosser], p. 378. $)
+    mucnc $p |- ( Nc A .c Nc B ) = Nc ( A X. B ) $=
+       ( vx vy vz cnc cv cxp cen wbr wrex cab cncs wcel wceq ncelncsi wa wex co
+       cmuc ovmuc mp2an df-nc dfec2 elnc anbi12i ensym 2exbii r2ex enrflx breq1
+       cec bi2anan9 xpeq12 breq1d anbi12d cla42ev mpanl12 xpen sylib entr sylan
+       exlimivv impbii 3bitr4ri abbii 3eqtrri eqtri ) AHZBHZUBUAZEIZFIZGIZJZKLZ
+       GVLMFVKMZENZABJZHZVKOPVLOPVMVTQACRBDRGVKVLEFUCUDWBWAKUNWAVNKLZENVTWAUEEW
+       AKUFWCVSEVOVKPZVPVLPZSZVRSZGTFTVOAKLZVPBKLZSZVQVNKLZSZGTFTZVSWCWGWLFGWFW
+       JVRWKWDWHWEWIVOAUGVPBUGUHVNVQUIUHUJVRFGVKVLUKWCWMAAKLZBBKLZWCWMACULBDULW
+       LWNWOSZWCSFGABCDVOAQZVPBQZSZWJWPWKWCWQWHWNWRWIWOVOAAKUMVPBBKUMUOWSVQWAVN
+       KVOAVPBUPUQURUSUTWLWCFGWJWAVQKLZWKWCWJVQWAKLWTVOAVPBVAVQWAUIVBWAVQVNVCVD
+       VEVFVGVHVIVJ $.
+       $( [10-Mar-2015] $)
+  $}
+
+  ${
+    $d A x y $.  $d B x y $.
     $( Closure law for cardinal multiplicaton. $)
-    muccl $p |- ( ( A e. NC /\ B e. NC ) -> ( A .c B ) e. NC ) $= ? $.
+    muccl $p |- ( ( A e. NC /\ B e. NC ) -> ( A .c B ) e. NC ) $=
+      ( vx vy cncs wcel wa cv cnc wceq wex co elncs anbi12i eeanv bitr4i oveq12
+      cmuc cxp vex mucnc xpex ncelncsi eqeltri syl6eqel exlimivv sylbi ) AEFZBE
+      FZGZACHZIZJZBDHZIZJZGZDKCKZABRLZEFZUJUMCKZUPDKZGURUHVAUIVBCAMDBMNUMUPCDOP
+      UQUTCDUQUSULUORLZEAULBUORQVCUKUNSZIEUKUNCTZDTZUAVDUKUNVEVFUBUCUDUEUFUG $.
+      $( [10-Mar-2015] $)
   $}
 
   ${
@@ -54179,21 +54238,20 @@ $)
     $( Given a cardinal, there is a unique cardinal that contains the unit
        power class of its members. $)
     ncspw1eu $p |- ( A e. NC -> E! x e. NC E. y e. A x = Nc ~P1 y ) $=
-       ( vz vw cncs wcel cv cpw1 cnc wceq wrex wa weq wi wral wex c0 sylib cvv
-       wreu wne nulnnc eleq1 mtbiri necon2ai vex pw1ex ncelncs ax-mp eqid eqeq1
-       n0 rcla4ev mp2an jctr a1i eximdv mpd rexcom df-rex sylibr reeanv ncseqnc
-       bitri w3a biimpar adantrr adantrl eqtr3d ncpw1 eqeq2 anbi1d eqtr3 syl6bi
-       3adant2 3expa rexlimdvva syl5bir ralrimivva rexbidv pw1eq eqeq2d cbvrexv
-       syl nceqd syl6bb reu4 sylanbrc ) CFGZAHZBHZIZJZKZBCLZAFLZWPDHZEHZIZJZKZE
-       CLZMZADNZOZDFPAFPWPAFUAWJWLCGZWOAFLZMZBQZWQWJXGBQZXJWJCRUBXKWJCRCRKWJRFG
-       UCCRFUDUEUFBCUMSWJXGXIBXGXIOWJXGXHWNFGZWNWNKZXHWMTGXLWLBUGZUHWMTUIUJWNUK
-       WOXMAWNFWKWNWNULUNUOUPUQURUSWQXHBCLXJWOABFCUTXHBCVAVEVBWJXFADFFXDWOXBMZE
-       CLBCLWJWKFGWRFGMZMZXEWOXBBECCVCXQXOXEBECCWJXPXGWSCGZMZXOXEOZWJXPXSVFWNXA
-       KZXTWJXSYAXPWJXSMZWLJZWSJZKYAYBCYCYDWJXGCYCKZXRWJYEXGCWLVDVGVHWJXRCYDKZX
-       GWJYFXRCWSVDVGVIVJWLWSXNVKSVPYAXOWKXAKZXBMXEYAWOYGXBWNXAWKVLVMWKWRXAVNVO
-       WEVQVRVSVTWPXCADFXEWPWRWNKZBCLXCXEWOYHBCWKWRWNULWAYHXBBECBENZWNXAWRYIWMW
-       TWLWSWBWFWCWDWGWHWI $.
-       $( [2-Mar-2015] $)
+      ( vz vw cncs wcel cv cpw1 cnc wceq wrex wa weq wi wral wex c0 sylib eqeq1
+      wreu wne nulnnc eleq1 mtbiri necon2ai n0 vex pw1ex ncelncsi rcla4ev mp2an
+      eqid a1i eximdv mpd rexcom df-rex bitri sylibr reeanv w3a ncseqnc biimpar
+      jctr adantrr adantrl eqtr3d ncpw1 3adant2 eqeq2 anbi1d eqtr3 syl6bi 3expa
+      syl rexlimdvva syl5bir ralrimivva rexbidv pw1eq nceqd eqeq2d cbvrexv reu4
+      syl6bb sylanbrc ) CFGZAHZBHZIZJZKZBCLZAFLZWNDHZEHZIZJZKZECLZMZADNZOZDFPAF
+      PWNAFUAWHWJCGZWMAFLZMZBQZWOWHXEBQZXHWHCRUBXIWHCRCRKWHRFGUCCRFUDUEUFBCUGSW
+      HXEXGBXEXGOWHXEXFWLFGWLWLKZXFWKWJBUHZUIUJWLUMWMXJAWLFWIWLWLTUKULVEUNUOUPW
+      OXFBCLXHWMABFCUQXFBCURUSUTWHXDADFFXBWMWTMZECLBCLWHWIFGWPFGMZMZXCWMWTBECCV
+      AXNXLXCBECCWHXMXEWQCGZMZXLXCOZWHXMXPVBWLWSKZXQWHXPXRXMWHXPMZWJJZWQJZKXRXS
+      CXTYAWHXECXTKZXOWHYBXECWJVCVDVFWHXOCYAKZXEWHYCXOCWQVCVDVGVHWJWQXKVISVJXRX
+      LWIWSKZWTMXCXRWMYDWTWLWSWIVKVLWIWPWSVMVNVPVOVQVRVSWNXAADFXCWNWPWLKZBCLXAX
+      CWMYEBCWIWPWLTVTYEWTBECBENZWLWSWPYFWKWRWJWQWAWBWCWDWFWEWG $.
+      $( [2-Mar-2015] $)
   $}
 
   ${
@@ -54210,14 +54268,13 @@ $)
     $d A x y $.  $d B x y $.
     $( The defining property of the cardinal T operation. $)
     eqtc $p |- ( A e. NC -> ( T_c A = B <-> E. x e. A B = Nc ~P1 x ) ) $=
-       ( vy cncs wcel ctc wceq cv cpw1 cnc wrex wa simpr adantr eqeltrrd ex cvv
-       tccl wb vex pw1ex ncelncs ax-mp eleq1 mpbiri rexlimivw a1i wreu ncspw1eu
-       cio eqeq1 rexbidv reiota2 sylan2 ancoms df-tc eqeq1i syl6rbbr pm5.21ndd
-       wi ) BEFZCEFZBGZCHZCAIZJZKZHZABLZVBVEVCVBVEMVDCEVBVENVBVDEFVEBSOPQVJVCVA
-       VBVIVCABVIVCVHEFZVGRFVKVFAUAUBVGRUCUDCVHEUEUFUGUHVBVCVEVJTVBVCMVJDIZEFVL
-       VHHZABLZMDUKZCHZVEVCVBVJVPTZVBVCVNDEUIVQDABUJVNVJDECVLCHVMVIABVLCVHULUMU
-       NUOUPVDVOCABDUQURUSQUT $.
-       $( [2-Mar-2015] $)
+      ( vy cncs wcel ctc wceq cv cpw1 cnc wrex wa simpr tccl adantr eqeltrrd ex
+      wi wb vex pw1ex ncelncsi eleq1 mpbiri rexlimivw a1i wreu ncspw1eu rexbidv
+      cio eqeq1 reiota2 sylan2 ancoms df-tc eqeq1i syl6rbbr pm5.21ndd ) BEFZCEF
+      ZBGZCHZCAIZJZKZHZABLZUTVCVAUTVCMVBCEUTVCNUTVBEFVCBOPQRVHVASUTVGVAABVGVAVF
+      EFVEVDAUAUBUCCVFEUDUEUFUGUTVAVCVHTUTVAMVHDIZEFVIVFHZABLZMDUKZCHZVCVAUTVHV
+      MTZUTVAVKDEUHVNDABUIVKVHDECVICHVJVGABVICVFULUJUMUNUOVBVLCABDUPUQURRUS $.
+      $( [2-Mar-2015] $)
   $}
 
   ${
@@ -54245,23 +54302,22 @@ $)
     $( T raising distributes over addition. $)
     tcdi $p |- ( ( A e. NC /\ B e. NC ) -> 
        T_c ( A +c B ) = ( T_c A +c T_c B ) ) $=
-       ( vx vy cncs wcel wa cnc wceq wex cplc ctc cpw1 ax-mp mp2an tccl pw1eltc
-       c0 cvv tceq cv ccompl csn cxp eeanv cen wbr vex complex xpsnen snex xpex
-       0ex eqnc mpbir eqeq2i anbi12i 2exbii elncs 3bitr4ri cun ncelncs ncaddccl
-       cin ncid necompl xpnedisj eladdci mp3an pw1un pw1eq pw10 3eqtr3i eqeltri
-       pw1in nceleq mp4an addceq12 syl adantr adantl addceq12d 3eqtr4a exlimivv
-       sylbi ) AEFZBEFZGZACUAZRUBZUCZUDZHZIZBDUAZRUCZUDZHZIZGZDJCJZABKZLZALZBLZ
-       KZIZAWIHZIZBWOHZIZGZDJCJXICJZXKDJZGXAWHXIXKCDUEWTXLCDWNXIWSXKWMXHAWMXHIW
-       LWIUFUGWIWJCUHZRUMUIZUJWLWIWIWKXOWJUKULZUNUOUPWRXJBWRXJIWQWOUFUGWORDUHZU
-       MUJWQWOWOWPXRRUKULZUNUOUPUQURWFXMWGXNCAUSDBUSUQUTWTXGCDWTWMWRKZLZWMLZWRL
-       ZKZXCXFYAEFZYDEFZWLWQVAZMZYAFZYHYDFYAYDIXTEFZYEWMEFZWREFZYJWLSFYKXQWLSVB
-       NZWQSFYLXSWQSVBNZWMWRVCOZXTPNYBEFZYCEFZYFYKYPYMWMPNYLYQYNWRPNYBYCVCOYJYG
-       XTFZYIYOWLWMFZWQWRFZWLWQVDZRIZYRWLXQVEZWQXSVEZWIWOWJRXPRVFVGZWLWQWMWRVHV
-       IXTYGQOYHWLMZWQMZVAZYDWLWQVJUUFYBFZUUGYCFZUUFUUGVDZRIUUHYDFYKYSUUIYMUUCW
-       MWLQOYLYTUUJYNUUDWRWQQOUUAMZRMZUUKRUUBUULUUMIUUEUUARVKNWLWQVOVLVMUUFUUGY
-       BYCVHVIVNYAYDYHVPVQWTXBXTIXCYAIABWMWRVRXBXTTVSWTXDYBXEYCWNXDYBIWSAWMTVTW
-       SXEYCIWNBWRTWAWBWCWDWE $.
-       $( [2-Mar-2015] $)
+      ( vx vy cncs wcel wa cv c0 cnc wceq wex cplc ctc cpw1 mp2an ax-mp pw1eltc
+      tccl tceq ccompl csn cxp eeanv cen wbr vex complex xpsnen snex xpex mpbir
+      0ex eqnc eqeq2i anbi12i 2exbii 3bitr4ri cun ncelncsi ncaddccl cin necompl
+      elncs ncid xpnedisj eladdci mp3an pw1un pw1eq pw10 3eqtr3i eqeltri nceleq
+      pw1in mp4an addceq12 syl adantr adantl addceq12d 3eqtr4a exlimivv sylbi )
+      AEFZBEFZGZACHZIUAZUBZUCZJZKZBDHZIUBZUCZJZKZGZDLCLZABMZNZANZBNZMZKZAWHJZKZ
+      BWNJZKZGZDLCLXHCLZXJDLZGWTWGXHXJCDUDWSXKCDWMXHWRXJWLXGAWLXGKWKWHUEUFWHWIC
+      UGZIUMUHZUIWKWHWHWJXNWIUJUKZUNULUOWQXIBWQXIKWPWNUEUFWNIDUGZUMUIWPWNWNWOXQ
+      IUJUKZUNULUOUPUQWEXLWFXMCAVDDBVDUPURWSXFCDWSWLWQMZNZWLNZWQNZMZXBXEXTEFZYC
+      EFZWKWPUSZOZXTFZYGYCFXTYCKXSEFZYDWLEFZWQEFZYIWKXPUTZWPXRUTZWLWQVAPZXSSQYA
+      EFZYBEFZYEYJYOYLWLSQYKYPYMWQSQYAYBVAPYIYFXSFZYHYNWKWLFZWPWQFZWKWPVBZIKZYQ
+      WKXPVEZWPXRVEZWHWNWIIXOIVCVFZWKWPWLWQVGVHXSYFRPYGWKOZWPOZUSZYCWKWPVIUUEYA
+      FZUUFYBFZUUEUUFVBZIKUUGYCFYJYRUUHYLUUBWLWKRPYKYSUUIYMUUCWQWPRPYTOZIOZUUJI
+      UUAUUKUULKUUDYTIVJQWKWPVOVKVLUUEUUFYAYBVGVHVMXTYCYGVNVPWSXAXSKXBXTKABWLWQ
+      VQXAXSTVRWSXCYAXDYBWMXCYAKWRAWLTVSWRXDYBKWMBWQTVTWAWBWCWD $.
+      $( [2-Mar-2015] $)
   $}
 
   $( T raising does not change cardinal one. $)
@@ -54517,31 +54573,31 @@ $)
       weq nceq neeq1d mpbiri ad2ant2l a1d exlimivv impcom oveq1 syl5ibr exlimdv
       rexlimdvva sylbid syl6bbr csn cxp cen wbr vvex xpsnen mpbi snex xpex eqnc
       enpw1 0ex addceq12i oveq1i pw1un vn0 xpnedisj ax-mp pw1in 3eqtr3i eladdci
-      pw10 mp3an eqeltri cla4ev mp2an eqnetrri addceq12 syl6bir exlimdvv impbid
-      unex ) AHIZBHIZJZABUBZKLMZNOZAKLMZNOZBKLMZNOZJZYGYJCUCZDUCZUANPZEUCZQZYPY
-      QUDZPZJZDBUECAUEZERZYOYGYHHIZYJUUEUFABUGUUFYJYTYHIZERUUEYHEUHUUGUUDEYTABC
-      DUIUJUKUNYGUUDYOEYGUUCYOCDABYGYPAIZYQBIZJZJAYPSZPZBYQSZPZJZUUCYOUOYGUUOUU
-      JYEUULUUHYFUUNUUIAYPULBYQULUMUPUUCYOUUOUUKKLMZNOZUUMKLMZNOZJZUUBYRUUTUUBF
-      UCZYSUQZYPUVAQZPZJZGUCZYSUQZYQUVFQZPZJZJZGRFRZYRUUTUOZUUBYPYTUQZYQYTUQZJZ
-      UVLUUBUVNUVOUUBUUAYPYTYPYQURUUBUSZUTUUBUUAYQYTYQYPVAUVQUTVBUVPUVEFRZUVJGR
-      ZJUVLUVNUVRUVOUVSFYPYSCVGZVCGYQYSDVGZVCVDUVEUVJFGVEVHVFUVKUVMFGUVKUUTYRUV
-      DUVIUUTUVBUVGUVDUVIJUUTUVCSZKLMZNOZUVHSZKLMZNOZJUWDUWGUWDYTUWBIZERZUWHUVC
-      UWBIEFEFVSYTUVCUWBYSUVAVIVJUVCUVAFVGVKZVLVMUVCTIUWBHIUWDUWIUFUWJUVCTVNUWB
-      EUHVOVPUWGYTUWEIZERZUWKUVHUWEIEGEGVSYTUVHUWEYSUVFVIVJUVHUVFGVGVKZVLVMUVHT
-      IUWEHIUWGUWLUFUWMUVHTVNUWEEUHVOVPVQUVDUUQUWDUVIUUSUWGUVDUUPUWCNUVDUUKUWBK
-      LYPUVCVTVRWAUVIUURUWFNUVIUUMUWEKLYQUVHVTVRWAUMWBWCWDWEUNWFUULYLUUQUUNYNUU
-      SUULYKUUPNAUUKKLWGWAUUNYMUURNBUUMKLWGWAUMWHUNWJWIWKYGYOYPQZAIZYQQZBIZJZDR
-      CRZYJYGYOUWOCRZUWQDRZJUWSYEYLUWTYFYNUXAACUHBDUHUMUWOUWQCDVEWLYGUWRYJCDYGU
-      WRAUWNSZPZBUWPSZPZJZYJYEUXCUWOYFUXEUWQAUWNULBUWPULUMUXFYJUXBUXDUBZKLMZNOY
-      PTWMZWNZQZSZYQNWMZWNZQZSZUBZKLMZUXHNUXQUXGKLUXLUXBUXPUXDUXLUXBPUXKUWNWOWP
-      ZUXJYPWOWPUXSYPTUVTWQWRUXJYPXCWSUXKUWNUXJYPUXIUVTTWTXAZVKZXBVPUXPUXDPUXOU
-      WPWOWPZUXNYQWOWPUYBYQNUWAXDWRUXNYQXCWSUXOUWPUXNYQUXMUWANWTXAZVKZXBVPXEXFU
-      XRNOZYTUXQIZERZUXJUXNUDZQZUXQIZUYGUYIUXKUXOUDZUXQUXJUXNXGUXKUXLIUXOUXPIUX
-      KUXOUAZNPUYKUXQIUXKUYAVLUXOUYDVLUXJUXNUAZQZNQZUYLNUYMNPUYNUYOPYPYQTNWQXHX
-      IUYMNVIXJUXJUXNXKXNXLUXKUXOUXLUXPXMXOXPUYFUYJEUYHUXJUXNUXTUYCYDYSUYHPYTUY
-      IUXQYSUYHVIVJXQXJUXQHIZUYEUYGUFUXLHIZUXPHIZUYPUXKTIUYQUYAUXKTVNXJUXOTIUYR
-      UYDUXOTVNXJUXLUXPUGXRUXQEUHXJVPXSUXFYIUXHNUXFYHUXGKLABUXBUXDXTVRWAWBYAYBW
-      KYC $.
+      pw10 mp3an eqeltri unex ncelncsi mp2an eqnetrri addceq12 syl6bir exlimdvv
+      cla4ev impbid ) AHIZBHIZJZABUBZKLMZNOZAKLMZNOZBKLMZNOZJZYHYKCUCZDUCZUANPZ
+      EUCZQZYQYRUDZPZJZDBUECAUEZERZYPYHYIHIZYKUUFUFABUGUUGYKUUAYIIZERUUFYIEUHUU
+      HUUEEUUAABCDUIUJUKUNYHUUEYPEYHUUDYPCDABYHYQAIZYRBIZJZJAYQSZPZBYRSZPZJZUUD
+      YPUOYHUUPUUKYFUUMUUIYGUUOUUJAYQULBYRULUMUPUUDYPUUPUULKLMZNOZUUNKLMZNOZJZU
+      UCYSUVAUUCFUCZYTUQZYQUVBQZPZJZGUCZYTUQZYRUVGQZPZJZJZGRFRZYSUVAUOZUUCYQUUA
+      UQZYRUUAUQZJZUVMUUCUVOUVPUUCUUBYQUUAYQYRURUUCUSZUTUUCUUBYRUUAYRYQVAUVRUTV
+      BUVQUVFFRZUVKGRZJUVMUVOUVSUVPUVTFYQYTCVGZVCGYRYTDVGZVCVDUVFUVKFGVEVHVFUVL
+      UVNFGUVLUVAYSUVEUVJUVAUVCUVHUVEUVJJUVAUVDSZKLMZNOZUVISZKLMZNOZJUWEUWHUWEU
+      UAUWCIZERZUWIUVDUWCIEFEFVSUUAUVDUWCYTUVBVIVJUVDUVBFVGVKZVLVMUVDTIUWCHIUWE
+      UWJUFUWKUVDTVNUWCEUHVOVPUWHUUAUWFIZERZUWLUVIUWFIEGEGVSUUAUVIUWFYTUVGVIVJU
+      VIUVGGVGVKZVLVMUVITIUWFHIUWHUWMUFUWNUVITVNUWFEUHVOVPVQUVEUURUWEUVJUUTUWHU
+      VEUUQUWDNUVEUULUWCKLYQUVDVTVRWAUVJUUSUWGNUVJUUNUWFKLYRUVIVTVRWAUMWBWCWDWE
+      UNWFUUMYMUURUUOYOUUTUUMYLUUQNAUULKLWGWAUUOYNUUSNBUUNKLWGWAUMWHUNWJWIWKYHY
+      PYQQZAIZYRQZBIZJZDRCRZYKYHYPUWPCRZUWRDRZJUWTYFYMUXAYGYOUXBACUHBDUHUMUWPUW
+      RCDVEWLYHUWSYKCDYHUWSAUWOSZPZBUWQSZPZJZYKYFUXDUWPYGUXFUWRAUWOULBUWQULUMUX
+      GYKUXCUXEUBZKLMZNOYQTWMZWNZQZSZYRNWMZWNZQZSZUBZKLMZUXINUXRUXHKLUXMUXCUXQU
+      XEUXMUXCPUXLUWOWOWPZUXKYQWOWPUXTYQTUWAWQWRUXKYQXCWSUXLUWOUXKYQUXJUWATWTXA
+      ZVKZXBVPUXQUXEPUXPUWQWOWPZUXOYRWOWPUYCYRNUWBXDWRUXOYRXCWSUXPUWQUXOYRUXNUW
+      BNWTXAZVKZXBVPXEXFUXSNOZUUAUXRIZERZUXKUXOUDZQZUXRIZUYHUYJUXLUXPUDZUXRUXKU
+      XOXGUXLUXMIUXPUXQIUXLUXPUAZNPUYLUXRIUXLUYBVLUXPUYEVLUXKUXOUAZQZNQZUYMNUYN
+      NPUYOUYPPYQYRTNWQXHXIUYNNVIXJUXKUXOXKXNXLUXLUXPUXMUXQXMXOXPUYGUYKEUYIUXKU
+      XOUYAUYDXQYTUYIPUUAUYJUXRYTUYIVIVJYDXJUXRHIZUYFUYHUFUXMHIUXQHIUYQUXLUYBXR
+      UXPUYEXRUXMUXQUGXSUXREUHXJVPXTUXGYJUXINUXGYIUXHKLABUXCUXEYAVRWAWBYBYCWKYE
+      $.
       $( [9-Mar-2015] $)
   $}
 
@@ -54576,19 +54632,19 @@ $)
     $( Cardinal exponentiation in terms of cardinality.  Theorem XI.2.39 of
        [Rosser], p. 382. $)
     cenc $p |- ( Nc ~P1 A ^c Nc ~P1 B ) = Nc ( A ^m B ) $=
-       ( vg vp vt va vb cpw1 cnc co cmap cv wcel cen wbr wex wb cvv cce wa elnc
-       w3a enpw1 bitr4i enmap1 enmap2 entr syl2an syl2anb ancoms sylan exlimivv
-       3impa cncs pw1ex ncelncs ax-mp elce mp2an 3imtr4i ssriv ncid wceq eleq1d
-       pw1eq adantr adantl oveq12 breq2d 3anbi123d cla42ev mp3an12 eqssi ) AJZK
-       ZBJZKZUALZABMLZKZEVTWBFNZJZVQOZGNZJZVSOZENZWCWFMLZPQZUDZGRFRZWIWAPQZWIVT
-       OZWIWBOZWLWNFGWEWHWKWNWEWHUBWJWAPQZWKWNWEWCAPQZWFBPQZWQWHWEWDVPPQWRWDVPU
-       CWCAUEUFWHWGVRPQWSWGVRUCWFBUEUFWRWJAWFMLZPQWTWAPQWQWSWCAWFUGWFBAUHWJWTWA
-       UIUJUKWKWQWNWIWJWAUIULUMUOUNVQUPOZVSUPOZWOWMSVPTOXAACUQZVPTURUSZVRTOXBBD
-       UQZVRTURUSZFGWIVSVQUTVAWIWAUCZVBVCEWBVTWNHNZJZVQOZINZJZVSOZWIXHXKMLZPQZU
-       DZIRHRZWPWOVPVQOZVRVSOZWNXQVPXCVDVRXEVDXPXRXSWNUDHIABCDXHAVEZXKBVEZUBZXJ
-       XRXMXSXOWNXTXJXRSYAXTXIVPVQXHAVGVFVHYAXMXSSXTYAXLVRVSXKBVGVFVIYBXNWAWIPX
-       HAXKBMVJVKVLVMVNXGXAXBWOXQSXDXFHIWIVSVQUTVAVBVCVO $.
-       $( [6-Mar-2015] $)
+      ( vg vp vt va vb cpw1 cnc co cmap cv wcel cen wbr w3a wex wb cce wa enpw1
+      elnc bitr4i enmap1 enmap2 entr syl2an syl2anb ancoms sylan 3impa exlimivv
+      cncs pw1ex ncelncsi elce mp2an ssriv ncid wceq pw1eq eleq1d adantr adantl
+      3imtr4i oveq12 breq2d 3anbi123d cla42ev mp3an12 eqssi ) AJZKZBJZKZUALZABM
+      LZKZEVRVTFNZJZVOOZGNZJZVQOZENZWAWDMLZPQZRZGSFSZWGVSPQZWGVROZWGVTOZWJWLFGW
+      CWFWIWLWCWFUBWHVSPQZWIWLWCWAAPQZWDBPQZWOWFWCWBVNPQWPWBVNUDWAAUCUEWFWEVPPQ
+      WQWEVPUDWDBUCUEWPWHAWDMLZPQWRVSPQWOWQWAAWDUFWDBAUGWHWRVSUHUIUJWIWOWLWGWHV
+      SUHUKULUMUNVOUOOZVQUOOZWMWKTVNACUPZUQZVPBDUPZUQZFGWGVQVOURUSWGVSUDZVGUTEV
+      TVRWLHNZJZVOOZINZJZVQOZWGXFXIMLZPQZRZISHSZWNWMVNVOOZVPVQOZWLXOVNXAVAVPXCV
+      AXNXPXQWLRHIABCDXFAVBZXIBVBZUBZXHXPXKXQXMWLXRXHXPTXSXRXGVNVOXFAVCVDVEXSXK
+      XQTXRXSXJVPVQXIBVCVDVFXTXLVSWGPXFAXIBMVHVIVJVKVLXEWSWTWMXOTXBXDHIWGVQVOUR
+      USVGUTVM $.
+      $( [6-Mar-2015] $)
   $}
 
   ${
@@ -54617,22 +54673,22 @@ $)
     ceclb $p |- ( ( M e. NC /\ N e. NC ) ->
        ( ( ( M ^c 0c ) =/= (/) /\ ( N ^c 0c ) =/= (/) ) <-> ( M ^c N ) e. NC )
         ) $=
-       ( va vb cncs wcel wa c0c cce co c0 wne cv cpw1 wex ce0nnul bi2anan9 wceq
-       cnc ncseqnc eeanv syl6bbr oveq12 cmap vex cenc cvv ncelncs ax-mp eqeltri
-       syl6eqel syl6bir exlimdvv sylbid nulnnc mtbiri necon2ai ce0nnulb syl5ibr
-       ovex eleq1 impbid ) AEFZBEFZGZAHIJKLZBHIJKLZGZABIJZEFZVEVHCMZNZAFZDMZNZB
-       FZGZDOCOZVJVEVHVMCOZVPDOZGVRVCVFVSVDVGVTACPBDPQVMVPCDUAUBVEVQVJCDVEVQAVL
-       SZRZBVOSZRZGZVJVCWBVMVDWDVPAVLTBVOTQWEVIWAWCIJZEAWABWCIUCWFVKVNUDJZSZEVK
-       VNCUEDUEUFWGUGFWHEFVKVNUDUTWGUGUHUIUJUKULUMUNVJVHVEVIKLVJVIKVIKRVJKEFUOV
-       IKEVAUPUQBAURUSVB $.
-       $( [9-Mar-2015] $)
+      ( va vb cncs wcel wa c0c cce co c0 wne cpw1 wex ce0nnul bi2anan9 cnc wceq
+      cv ncseqnc syl6bbr oveq12 cmap vex cenc ncelncsi eqeltri syl6eqel syl6bir
+      eeanv ovex exlimdvv sylbid nulnnc mtbiri necon2ai ce0nnulb syl5ibr impbid
+      eleq1 ) AEFZBEFZGZAHIJKLZBHIJKLZGZABIJZEFZVCVFCSZMZAFZDSZMZBFZGZDNCNZVHVC
+      VFVKCNZVNDNZGVPVAVDVQVBVEVRACOBDOPVKVNCDUJUAVCVOVHCDVCVOAVJQZRZBVMQZRZGZV
+      HVAVTVKVBWBVNAVJTBVMTPWCVGVSWAIJZEAVSBWAIUBWDVIVLUCJZQEVIVLCUDDUDUEWEVIVL
+      UCUKUFUGUHUIULUMVHVFVCVGKLVHVGKVGKRVHKEFUNVGKEUTUOUPBAUQURUS $.
+      $( [9-Mar-2015] $)
   $}
 
-  ${ $d M a $.
-     $( If cardinal exponentiation to zero is a cardinal, then the
-     	base is the cardinality of some unit power class.  Corollary 2 of
-	theorem XI.2.48 of [Rosser], p. 384. $)
-     ce0ncpw1 $p |- ( ( M e. NC /\ ( M ^c 0c ) e. NC ) -> E. a M = Nc ~P1 a ) $=
+  ${
+    $d M a $.
+    $( If cardinal exponentiation to zero is a cardinal, then the base is the
+       cardinality of some unit power class.  Corollary 2 of theorem XI.2.48 of
+       [Rosser], p. 384. $)
+    ce0ncpw1 $p |- ( ( M e. NC /\ ( M ^c 0c ) e. NC ) -> E. a M = Nc ~P1 a ) $=
        ( cncs wcel c0c cce co cv cpw1 cnc wceq wex c0 wne nulnnc eleq1 necon2ai
        mtbiri ce0nnul ncseqnc exbidv bitr4d syl5ib imp ) ACDZAEFGZCDZABHIZJKZBL
        ZUGUFMNZUEUJUGUFMUFMKUGMCDOUFMCPRQUEUKUHADZBLUJABSUEUIULBAUHTUAUBUCUD $.
@@ -54650,10 +54706,11 @@ $)
        $( [9-Mar-2015] $)
   $}
 
-  ${ $d M a $.
-     $( The value of non-empty cardinal exponentiation.  Theorem XI.2.49
-     	of [Rosser], p. 385. $)
-     ce0 $p |- ( ( M e. NC /\ ( M ^c 0c ) e. NC ) -> ( M ^c 0c ) = 1c ) $=
+  ${
+    $d M a $.
+    $( The value of non-empty cardinal exponentiation.  Theorem XI.2.49 of
+       [Rosser], p. 385. $)
+    ce0 $p |- ( ( M e. NC /\ ( M ^c 0c ) e. NC ) -> ( M ^c 0c ) = 1c ) $=
        ( va cncs wcel c0c cce co wa csn cnc c1c wceq cpw1 wex ce0ncpw1 cmap vex
        c0 cv 0ex map0e ovex ncid eqeltrri cenc 0cncnul pw10 nceqi eqtr4i oveq12
        eleqtrri mpan2 syl5eleqr exlimiv syl ncseqnc adantl mpbird df1c3 syl6eqr
@@ -54760,9 +54817,9 @@ $)
   $}
 
   ${
-     $( The cardinality of a unit power class is not equal to the 
-     	cardinality of the power class.  Theorem XI.2.4 of [Rosser], p. 372. $)
-     ncpw1pwneg $p |- ( A e. V -> Nc ~P1 A =/= Nc ~P A ) $=
+    $( The cardinality of a unit power class is not equal to the cardinality of
+       the power class.  Theorem XI.2.4 of [Rosser], p. 372. $)
+    ncpw1pwneg $p |- ( A e. V -> Nc ~P1 A =/= Nc ~P A ) $=
        ( wcel cpw1 cnc cpw wne cen wbr wn nenpw1pw cvv wceq wb pw1exg eqncg syl
        necon3abid mpbiri ) ABCZADZEZAFZEZGUAUCHIZJAKTUEUBUDTUALCUBUDMUENABOUAUC
        LPQRS $.
@@ -54786,10 +54843,10 @@ $)
     tcnc.1 $e |- A e. _V $.
     $( Compute the T-raising of a cardinality. $)
     tcnc $p |- T_c Nc A = Nc ~P1 A $=
-       ( cnc ctc cncs wcel cpw1 wceq cvv ncelncs ax-mp tccl pw1ex pw1eltc mp2an
-       ncid nceleq mp4an ) ACZDZEFZAGZCZEFZUBTFZUBUCFTUCHSEFZUAAIFUFBAIJKZSLKUB
-       IFUDABMZUBIJKUFASFUEUGABPSANOUBUHPTUCUBQR $.
-       $( [4-Mar-2015] $)
+      ( cnc ctc cncs wcel cpw1 wceq ncelncsi tccl ax-mp pw1ex ncid mp2an nceleq
+      pw1eltc mp4an ) ACZDZEFZAGZCZEFUASFZUAUBFSUBHREFZTABIZRJKUAABLZIUDARFUCUE
+      ABMRAPNUAUFMSUBUAOQ $.
+      $( [4-Mar-2015] $)
   $}
 
   $( Compute the T-raising of the cardinality of the universe.  Part of Theorem
@@ -54804,9 +54861,10 @@ $)
     ( c1c 1cex tcnc ) ABC $.
     $( [4-Mar-2015] $)
 
-  ${ $d M x $. $d M y $. $d N x $. $d N y $. $d x y $. 
-     $( Cardinal T is one-to-one.  Based on theorem 2.4 of [Specker]. $)
-     tc11 $p |- ( ( M e. NC /\ N e. NC ) -> ( T_c M = T_c N <-> M = N ) ) $=
+  ${
+    $d M x $.  $d M y $.  $d N x $.  $d N y $.  $d x y $.
+    $( Cardinal T is one-to-one.  Based on theorem 2.4 of [Specker]. $)
+    tc11 $p |- ( ( M e. NC /\ N e. NC ) -> ( T_c M = T_c N <-> M = N ) ) $=
        ( vx vy cncs wcel wa cv cnc wceq wex ctc wb elncs cpw1 vex tcnc cen eqnc
        wbr anbi12i eeanv bitr4i eqeq12i enpw1 pw1ex bitri tceq eqeqan12d eqeq12
        3bitr4ri bibi12d mpbiri exlimivv sylbi ) AEFZBEFZGZACHZIZJZBDHZIZJZGZDKC
@@ -54818,8 +54876,9 @@ $)
   $}
 
   ${
-     $( T-raising perserves order for cardinals.  Theorem 5.5 of [Specker]. $)
-     tlecg $p |- ( ( M e. NC /\ N e. NC ) -> ( M <_c N <-> T_c M <_c T_c N ) ) $= ? $.
+    $( T-raising perserves order for cardinals.  Theorem 5.5 of [Specker]. $)
+    tlecg $p |- ( ( M e. NC /\ N e. NC ) -> ( M <_c N <-> T_c M <_c T_c N ) )
+        $= ? $.
   $}
 
   $( Cardinal one is not zero. $)
