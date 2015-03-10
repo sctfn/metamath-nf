@@ -29359,6 +29359,11 @@ $)
        $( [26-Feb-2015] $)
   $}
 
+  $( A unit power class is a subset of a power class. $)
+  pw1sspw $p |- ~P1 A C_ ~P A $=
+    ( cpw1 cpw c1c cin df-pw1 inss1 eqsstri ) ABACZDEIAFIDGH $.
+    $( [10-Mar-2015] $)
+
 $(
 =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
         Kuratowski relationships
@@ -53555,6 +53560,56 @@ $)
        $( [3-Mar-2015] $)
   $}
 
+  ${ $d A x $. $d r x $. $d r y $. $d x y $. 
+     nenpw1pwlem1.1 $e |- S = { x e. A | -. x e. ( r ` { x } ) } $.
+     $( Lemma for ~ nenpw1pw .  Set up stratification. $)
+     nenpw1pwlem1 $p |- ( A e. V -> S e. _V ) $=
+       ( vy wcel cv csn cfv wn cin cvv csset vex wceq wa wex bitri dfrab2 eqtri
+       cab crab cfullfun cdm ctypdown ccompl elcompl wel cop elin wbr brfullfun
+       eldm2 snex df-br eqcom 3bitr3i opelssetsn anbi12i eltypdown fvex 3bitr4i
+       exbii clel3 xchbinx abbi2i fullfunex ssetex inex dmex typdownex eqeltrri
+       complex inexg mpan syl5eqel ) BDHZCAIZVTJZEIZKZHZLZAUCZBMZNCWEABUDWGFWEA
+       BUAUBWFNHVSWGNHWBUEZOMZUFZUGZUHZWFNWEAWLVTWLHVTWKHZWDVTWKAPZUIWAWJHZGIZW
+       CQZAGUJZRZGSZWMWDWOWAWPUKZWIHZGSWTGWAWIUOXBWSGXBXAWHHZXAOHZRWSXAWHOULXCW
+       QXDWRWAWPWHUMWCWPQXCWQWAWPWBVTUPUNWAWPWHUQWCWPURUSVTWPWNGPUTVATVETVTWJWN
+       VBGVTWCWAWBVCVFVDVGVHWKWJWIWHOWBEPVIVJVKVLVMVOVNWFBNDVPVQVR $.
+       $( [10-Mar-2015] $)
+  $}
+
+  ${ $d A r $. $d A x $. $d r x $. $d A u $. $d r u $. $d S u $. $d u y $. $d A y $. $d r y $. $d S y $. $d x y $. 
+     nenpw1pwlem2.1 $e |- S = { x e. A | -. x e. ( r ` { x } ) } $.
+     $( Lemma for ~ nenpw1pw . Establish the main theorem with an extra
+     	hypothesis. $)
+     nenpw1pwlem2 $p |- -. ~P1 A ~~ ~P A $=
+       ( vy vu wbr cv wcel wn wb wrex wex cvv syl csn cfv wceq eleq2d cpw1 nrex
+       cpw cen pm5.19 a1i nex wf1o bren cdm f1odm syl6eqelr pw1exb nenpw1pwlem1
+       vex dmex sylib wss crab ssrab2 eqsstri elpwg mpbiri crn wfo forn elrn wa
+       f1ofo breldm adantl adantr eleqtrd elpw1 wi w3a breq1 3anbi2d weq fveq2d
+       id sneq eleq12d notbid elrab2 simp3 biantrurd simp2 wfn 3ad2ant1 snelpw1
+       f1ofn biimpri 3ad2ant3 fnbrfvb syl2anc mpbird bitr3d syl5bb syl6bi com12
+       3expa reximdva syl5bi mpd ex exlimdv sylbird eximi sylbi mto ) BUAZBUCZU
+       DHZFIZCJZXPKZLZFBMZDNZXSDXRFBXRKXOBJZXPUEUFUBUGXNXLXMDIZUHZDNXTXLXMDUIYC
+       XSDYCCXMJZXSYCCOJZYDYCBOJZYEYCXLOJYFYCXLYBUJZOXLXMYBUKZYBDUOUPULBUMUQABC
+       ODEUNPYEYDCBURCAIZYIQZYBRZJZKZABUSBEYMABUTVACBOVBVCPYCYDCYBVDZJZXSYCYNXM
+       CYCXLXMYBVEYNXMSXLXMYBVIXLXMYBVFPTYOGIZCYBHZGNYCXSGCYBVGYCYQXSGYCYQXSYCY
+       QVHZYPXLJZXSYRYPYGXLYQYPYGJYCYPCYBVJVKYCYGXLSYQYHVLVMYSYPXOQZSZFBMYRXSFY
+       PBVNYRUUAXRFBYCYQYAUUAXRVOUUAYCYQYAVPZXRUUAUUBYCYTCYBHZYAVPZXRUUAYQUUCYC
+       YAYPYTCYBVQVRXPYAXOYTYBRZJZKZVHZUUDXQYMUUGAXOBCAFVSZYLUUFUUIYIXOYKUUEUUI
+       WAUUIYJYTYBYIXOWBVTWCWDEWEUUDUUGUUHXQUUDYAUUGYCUUCYAWFWGUUDUUFXPUUDUUECX
+       OUUDUUECSZUUCYCUUCYAWHUUDYBXLWIZYTXLJZUUJUUCLYCUUCUUKYAXLXMYBWLWJYAYCUUL
+       UUCUULYAXOBWKWMWNXLYTCYBWOWPWQTWDWRWSWTXAXBXCXDXEXFXGXDXHXEXIXJXK $.
+       $( [10-Mar-2015] $)
+  $}
+
+  ${ $d A r $. $d A x $. $d r x $. 
+     $( No unit power class is equinumerous with the corresponding power
+     	class.  Theorem XI.1.6 of [Rosser], p. 347. $)
+     nenpw1pw $p |- -. ~P1 A ~~ ~P A $=
+       ( vx vr cv csn cfv wcel wn crab eqid nenpw1pwlem2 ) BABDZLECDFGHBAIZCMJK
+       $.
+       $( [10-Mar-2015] $)
+  $}
+
 $(
 =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
         Cardinal numbers
@@ -53694,20 +53749,12 @@ $)
   $}
 
   $( Binary relationship form of cardinal less than. $)
-  brltcg $p |- ( B e. V -> ( A <c B <-> ( A <_c B /\ A =/= B ) ) ) $=
-    ( wcel clec wbr cid wn wceq cltc wne ideqg notbid anbi2d df-ltc breqi brdif
-    wa cdif bitri df-ne anbi2i 3bitr4g ) BCDZABEFZABGFZHZRZUEABIZHZRABJFZUEABKZ
-    RUDUGUJUEUDUFUIABCLMNUKABEGSZFUHABJUMOPABEGQTULUJUEABUAUBUC $.
+  brltc $p |- ( A <c B <-> ( A <_c B /\ A =/= B ) ) $=
+    ( cltc wbr cvv wcel clec wne wa brex simprd adantr cid df-ltc breqi brdif
+      wn cdif bitri ideqg necon3bbid anbi2d syl5bb pm5.21nii ) ABCDZBEFZABGDZAB
+    HZIZUEAEFZUFABCJKUGUFUHUGUJUFABGJKLUEUGABMDZQZIZUFUIUEABGMRZDUMABCUNNOABG
+    MPSUFULUHUGUFUKABABETUAUBUCUD $.
     $( [4-Mar-2015] $)
-
-  ${
-    brltc.1 $e |- B e. _V $.
-    $( Binary relationship form of cardinal less than. $)
-    brltc $p |- ( A <c B <-> ( A <_c B /\ A =/= B ) ) $=
-       ( cvv wcel cltc wbr clec wne wa wb brltcg ax-mp ) BDEABFGABHGABIJKCABDLM
-       $.
-       $( [4-Mar-2015] $)
-  $}
 
   ${
     $d a b x y $.
@@ -54661,6 +54708,17 @@ $)
        $( [9-Mar-2015] $)
   $}
 
+  ${ $d M a $.
+     $( If cardinal exponentiation to zero is a cardinal, then the
+     	base is the cardinality of some unit power class.  Corollary 2 of
+	theorem XI.2.48 of [Rosser], p. 384. $)
+     ce0ncpw1 $p |- ( ( M e. NC /\ ( M ^c 0c ) e. NC ) -> E. a M = Nc ~P1 a ) $=
+       ( cncs wcel c0c cce co cv cpw1 cnc wceq wex c0 wne nulnnc eleq1 necon2ai
+       mtbiri ce0nnul ncseqnc exbidv bitr4d syl5ib imp ) ACDZAEFGZCDZABHIZJKZBL
+       ZUGUFMNZUEUJUGUFMUFMKUGMCDOUFMCPRQUEUKUHADZBLUJABSUEUIULBAUHTUAUBUCUD $.
+       $( [9-Mar-2015] $)
+  $}
+
   ${
     $( Closure law for cardinal exponentiation.  Corollary 3 of theorem XI.2.48
        of [Rosser], p. 384. $)
@@ -54669,6 +54727,19 @@ $)
        ( cncs wcel wa c0c cce co c0 wne wceq nulnnc eleq1 mtbiri necon2ai ceclb
        anim12i syl5ib imp ) ACDBCDEZAFGHZCDZBFGHZCDZEZABGHCDZUEUAIJZUCIJZETUFUB
        UGUDUHUBUAIUAIKUBICDZLUAICMNOUDUCIUCIKUDUILUCICMNOQABPRS $.
+       $( [9-Mar-2015] $)
+  $}
+
+  ${ $d M a $.
+     $( The value of non-empty cardinal exponentiation.  Theorem XI.2.49
+     	of [Rosser], p. 385. $)
+     ce0 $p |- ( ( M e. NC /\ ( M ^c 0c ) e. NC ) -> ( M ^c 0c ) = 1c ) $=
+       ( va cncs wcel c0c cce co wa csn cnc c1c wceq cpw1 wex ce0ncpw1 cmap vex
+       c0 cv 0ex map0e ovex ncid eqeltrri cenc 0cncnul pw10 nceqi eqtr4i oveq12
+       eleqtrri mpan2 syl5eleqr exlimiv syl ncseqnc adantl mpbird df1c3 syl6eqr
+       wb ) ACDZAEFGZCDZHZVCRIZJZKVEVCVGLZVFVCDZVEABSZMJZLZBNVIABOVLVIBVLVFVKRM
+       ZJZFGZVCVFVJRPGZJZVOVPVFVQVJBQZUAVPVJRPUBUCUDVJRVRTUEUKVLEVNLVCVOLERJVNU
+       FVMRUGUHUIAVKEVNFUJULUMUNUOVDVHVIVAVBVCVFUPUQURRTUSUT $.
        $( [9-Mar-2015] $)
   $}
 
@@ -54769,16 +54840,26 @@ $)
   $}
 
   ${
+     $( The cardinality of a unit power class is not equal to the 
+     	cardinality of the power class.  Theorem XI.2.4 of [Rosser], p. 372. $)
+     ncpw1pwneg $p |- ( A e. V -> Nc ~P1 A =/= Nc ~P A ) $=
+       ( wcel cpw1 cnc cpw wne cen wbr wn nenpw1pw cvv wceq wb pw1exg eqncg syl
+       necon3abid mpbiri ) ABCZADZEZAFZEZGUAUCHIZJAKTUEUBUDTUALCUBUDMUENABOUAUC
+       LPQRS $.
+       $( [10-Mar-2015] $)
+  $}
+
+  ${
     $d A x $.  $d A y $.  $d x y $.
     $( The cardinality of a unit power class is strictly less than the
        cardinality of the power class.  Theorem XI.2.17 of [Rosser], p. 376. $)
-    ltcpw1pwg $p |- ( A e. V -> Nc ~P1 A <_c Nc ~P A ) $=
-       ( vx vy wcel cv wss cpw cnc wrex cpw1 wbr cvv pw1exg ncidg syl pwexg c1c
-       clec ncex cin df-pw1 inss1 eqsstri a1i sseq1 sseq2 rcla42ev brlec sylibr
-       syl3anc ) ABEZCFZDFZGZDAHZIZJCAKZIZJZUSUQSLULURUSEZUPUQEZURUPGZUTULURMEV
-       AABNURMOPULUPMEVBABQUPMOPVCULURUPRUAUPAUBUPRUCUDUEUOVCURUNGCDURUPUSUQUMU
-       RUNUFUNUPURUGUHUKCDUSUQURTUPTUIUJ $.
-       $( [4-Mar-2015] $)
+    ltcpw1pwg $p |- ( A e. V -> Nc ~P1 A <c Nc ~P A ) $=
+      ( vx vy wcel cpw1 cnc cpw clec wbr wne cltc wss wrex cvv pw1exg ncidg syl
+      cv ncex pwexg pw1sspw sseq1 sseq2 rcla42ev mp3an3 brlec sylibr ncpw1pwneg
+      syl2anc brltc sylanbrc ) ABEZAFZGZAHZGZIJZUOUQKUOUQLJUMCSZDSZMZDUQNCUONZU
+      RUMUNUOEZUPUQEZVBUMUNOEVCABPUNOQRUMUPOEVDABUAUPOQRVCVDUNUPMZVBAUBVAVEUNUT
+      MCDUNUPUOUQUSUNUTUCUTUPUNUDUEUFUJCDUOUQUNTUPTUGUHABUIUOUQUKUL $.
+      $( [10-Mar-2015] $)
   $}
 
   ${
@@ -55007,6 +55088,7 @@ $)
        T-raising. $)
     nchoicelem2 $p |- ( A e. Nn -> -. A = ( T_c A +c 2c ) ) $= ? $.
   $}
+
 
 
 $(
