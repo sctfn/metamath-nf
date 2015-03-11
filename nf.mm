@@ -55068,6 +55068,24 @@ $)
        $( [11-Mar-2015] $)
   $}
 
+  ${ $d a b $. $d a p $. $d b p $. $d M a $. $d M b $. $d M p $. $d N a $. $d N b $. $d N p $. 
+     $( Cardinal less than or equal in terms of cardinal addition.  Theorem
+     	XI.2.22 of [Rosser], p. 377. $)
+     dflec2 $p |- ( ( M e. NC /\ N e. NC ) -> 
+       ( M <_c N <-> E. p e. NC N = ( M +c p ) ) ) $=
+       ( va vb cncs wcel wa clec wbr cv cplc wceq wrex wss cnc ncseqnc vex cun
+       wi brlecg bi2anan9 biimpar cdif difex ncelncsi c0 disjdif ncdisjun ax-mp
+       cin undif2 ssequn1 biimpi syl5eq syl5reqr addceq2 eqeq2d rcla4ev sylancr
+       nceqd wb id addceq1 eqeqan12d rexbidv ancoms rexlimdvva sylbid addlecncs
+       syl5ibr syl breq2 syl5ibrcom adantlr rexlimdva impbid ) AFGZBFGZHZABIJZB
+       ACKZLZMZCFNZVTWADKZEKZOZEBNDANWEDEABFFUAVTWHWEDEABVTWFAGZWGBGZHZHAWFPZMZ
+       BWGPZMZHZWHWETVTWPWKVRWMWIVSWOWJAWFQBWGQUBUCWHWEWPWNWLWBLZMZCFNZWHWGWFUD
+       ZPZFGWNWLXALZMZWSWTWGWFERDRZUEZUFWHXBWFWTSZPZWNWFWTUKUGMXGXBMWFWGUHWFWTX
+       DXEUIUJWHXFWGWHXFWFWGSZWGWFWGULWHXHWGMWFWGUMUNUOVAUPWRXCCXAFWBXAMWQXBWNW
+       BXAWLUQURUSUTWOWMWEWSVBWOWMHWDWRCFWOWMBWNWCWQWOVCAWLWBVDVEVFVGVKVLVHVIVT
+       WDWACFVRWBFGZWDWATVSVRXIHWAWDAWCIJAWBVJBWCAIVMVNVOVPVQ $.
+       $( [11-Mar-2015] $)
+  $}
 
   ${
     tcnc.1 $e |- A e. _V $.
