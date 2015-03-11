@@ -54097,17 +54097,6 @@ $)
     ( c0c c0 cnc cncs df0c2 0ex ncelncsi eqeltri ) ABCDEBFGH $.
     $( [24-Feb-2015] $)
 
-  ${
-    $d A x $.
-    $( Cardinal multiplication by zero.  Theorem XI.2.32 of [Rosser],
-       p. 379. $)
-    muc0 $p |- ( A e. NC -> ( A .c 0c ) = 0c ) $=
-       ( vx cncs wcel cv cnc wceq wex c0c co elncs oveq1 c0 cxp xp0 nceqi df0c2
-       cmuc oveq2i vex 0ex mucnc eqtri 3eqtr4i syl6eq exlimiv sylbi ) ACDABEZFZ
-       GZBHAIRJZIGZBAKUJULBUJUKUIIRJZIAUIIRLUHMNZFZMFZUMIUNMUHOPUMUIUPRJUOIUPUI
-       RQSUHMBTUAUBUCQUDUEUFUG $.
-       $( [10-Mar-2015] $)
-  $}
 
   ${
     $d f x $.  $d f y $.  $d f z $.  $d x y $.  $d x z $.  $d y z $.
@@ -54125,6 +54114,39 @@ $)
       XCWGWRVHWCXCIWMXHWKWCXCVIQSVJVKVLTVMPTVNVOVSVPWEWJAWHWGVQWCWHIWDWIEWCWHVR
       QSVTAEWAWB $.
       $( [24-Feb-2015] $)
+  $}
+
+
+  ${
+    df1c3.1 $e |- A e. _V $.
+    $( Cardinal one is the cardinality of a singleton. $)
+    df1c3 $p |- 1c = Nc { A } $=
+       ( c1c csn cnc wceq wcel snel1c cncs wb 1cnc ncseqnc ax-mp mpbir ) CADZEF
+       ZOCGZABHCIGPQJKCOLMN $.
+       $( [2-Mar-2015] $)
+  $}
+
+  ${
+    $d A x $.
+    $( Cardinal multiplication by zero.  Theorem XI.2.32 of [Rosser],
+       p. 379. $)
+    muc0 $p |- ( A e. NC -> ( A .c 0c ) = 0c ) $=
+       ( vx cncs wcel cv cnc wceq wex c0c co elncs oveq1 c0 cxp xp0 nceqi df0c2
+       cmuc oveq2i vex 0ex mucnc eqtri 3eqtr4i syl6eq exlimiv sylbi ) ACDABEZFZ
+       GZBHAIRJZIGZBAKUJULBUJUKUIIRJZIAUIIRLUHMNZFZMFZUMIUNMUHOPUMUIUPRJUOIUPUI
+       RQSUHMBTUAUBUCQUDUEUFUG $.
+       $( [10-Mar-2015] $)
+  $}
+
+  ${ $d A x $.
+     $( Cardinal multiplication by one. $)
+     mucid1 $p |- ( A e. NC -> ( A .c 1c ) = A ) $=
+       ( vx cncs wcel cv cnc wceq wex c1c cmuc co elncs csn cxp vex oveq2i snex
+       df1c3 mucnc cen wbr xpsnen xpex eqnc mpbir 3eqtri oveq1 id 3eqtr4a sylbi
+       exlimiv ) ACDABEZFZGZBHAIJKZAGZBALUNUPBUNUMIJKZUMUOAUQUMULMZFZJKULURNZFZ
+       UMIUSUMJULBOZRPULURVBULQZSVAUMGUTULTUAULULVBVBUBUTULULURVBVCUCUDUEUFAUMI
+       JUGUNUHUIUKUJ $.
+       $( [11-Mar-2015] $)
   $}
 
   ${
@@ -54254,15 +54276,6 @@ $)
     ( cvv cpw1 cpw cnc c1c vvex ncpwpw1 df1c2 pweqi nceqi wceq pwv pw1eq eqtr4i
     ax-mp 3eqtr4i ) ABZCZDACZBZDECZDEDAFGUAREQHIJETEQTHSAKTQKLSAMONJP $.
     $( [26-Feb-2015] $)
-
-  ${
-    df1c3.1 $e |- A e. _V $.
-    $( Cardinal one is the cardinality of a singleton. $)
-    df1c3 $p |- 1c = Nc { A } $=
-       ( c1c csn cnc wceq wcel snel1c cncs wb 1cnc ncseqnc ax-mp mpbir ) CADZEF
-       ZOCGZABHCIGPQJKCOLMN $.
-       $( [2-Mar-2015] $)
-  $}
 
   ${
     $( One plus one equals two.  Theorem *110.64 of [WhiteheadRussell].  This
@@ -55171,6 +55184,34 @@ $)
       VLAWNUCTUQWSXDBXBMZVNWSVLXBEFZXDXEUIVKVLWRUJVKWRXFVLAWNUSTBXBUTVAVKWRXEVN
       RVLVKWRGVNXEAXBHIAWNUABXBAHVBUFTSVCVDVEVFQVGVHVJQSVI $.
       $( [11-Mar-2015] $)
+  $}
+
+  ${ $d a b $. $d a c $. $d a m $. $d a n $. $d a p $. $d a q $. $d a x $. $d a y $. $d b c $. $d b m $. $d b n $. $d b p $. $d b q $. $d b x $. $d b y $. $d c m $. $d c n $. $d c p $. $d c q $. $d c x $. $d c y $. $d M a $. $d M b $. $d M c $. $d m n $. $d m p $. $d M p $. $d M q $. $d m x $. $d m y $. $d N a $. $d N b $. $d N c $. $d n p $. $d N q $. $d n x $. $d n y $. $d p q $. $d p x $. $d p y $. $d x y $. 
+     $( If a cardinal is less than or equal to a T-raising, then it is also a 
+     	T-raising. Theorem 5.6 of [Specker]. $)
+     letc $p |- ( ( M e. NC /\ N e. NC /\ M <_c T_c N ) -> 
+       E. p e. NC M = T_c p ) $=
+       ( vq va vb vc vx vy vn vm cncs wcel cv wceq wrex wa cnc wex vex ctc clec
+       wbr cplc wb tccl dflec2 sylan2 wi w3a elncs 3anbi123i eeeanv bitr4i cpw1
+       eqcom ncelncsi ncaddccl mp2an ncseqnc ax-mp bitri cin cun eladdc pw1equn
+       c0 bi2anan9 ineq12 eqeq1d anbi12d tceq tcnc syl6eq eqeq2d rcla4ev sylbir
+       eleq1 mpan ad2antrr syl6bi 3adant1 exlimivv com12 syl5bi rexlimivv sylbi
+       expimpd 3ad2ant2 addceq12 3adant2 eqeq12d eqeq1 rexbidv 3ad2ant1 imbi12d
+       mpbiri exlimiv 3expa rexlimdva sylbid 3impia ) ALMZBLMZABUAZUBUCZACNZUAZ
+       OZCLPZXCXDQZXFXEADNZUDZOZDLPZXJXDXCXELMXFXOUEBUFAXEDUGUHXKXNXJDLXCXDXLLM
+       ZXNXJUIZXCXDXPUJZAENZRZOZBFNZRZOZXLGNZRZOZUJZGSZFSESZXQXRYAESZYDFSZYGGSZ
+       UJYJXCYKXDYLXPYMEAUKFBUKGXLUKULYAYDYGEFGUMUNYIXQEFYHXQGYHXQYBUOZRZXTYFUD
+       ZOZXTXHOZCLPZUIYQYNYPMZYSYQYPYOOZYTYOYPUPYPLMZUUAYTUEXTLMZYFLMUUBXSETUQZ
+       YEGTUQXTYFURUSYPYNUTVAVBYTHNZINZVCZVGOZYNUUEUUFVDOZQZIYFPHXTPYSYNXTYFHIV
+       EUUJYSHIXTYFUUEXTMZUUFYFMZQZUUHUUIYSUUIYBJNZKNZVDOZUUEUUNUOZOZUUFUUOUOZO
+       ZUJZKSJSZUUMUUHQZYSJKUUEUUFYBHTITVFUVBUVCYSUVAUVCYSUIZJKUURUUTUVDUUPUURU
+       UTQZUVCUUQXTMZUUSYFMZQZUUQUUSVCZVGOZQYSUVEUUMUVHUUHUVJUURUUKUVFUUTUULUVG
+       UUEUUQXTVRUUFUUSYFVRVHUVEUUGUVIVGUUEUUQUUFUUSVIVJVKUVFYSUVGUVJUVFXTUUQRZ
+       OZYSUUCUVLUVFUEUUDXTUUQUTVAUUNRZLMUVLYSUUNJTZUQYRUVLCUVMLXGUVMOZXHUVKXTU
+       VOXHUVMUAUVKXGUVMVLUUNUVNVMVNVOVPVSVQVTWAWBWCWDWEWHWFWGWGYHXNYQXJYSYHXEY
+       OXMYPYDYAXEYOOYGYDXEYCUAYOBYCVLYBFTVMVNWIYAYGXMYPOYDAXLXTYFWJWKWLYAYDXJY
+       SUEYGYAXIYRCLAXTXHWMWNWOWPWQWRWCWGWSWTXAXB $.
+       $( [11-Mar-2015] $)
   $}
 
   $( Cardinal one is not zero. $)
