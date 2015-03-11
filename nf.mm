@@ -55036,13 +55036,12 @@ $)
     AEOPQUHUDUIULABRSTUAUBUC $.
     $( [11-Mar-2015] $)
 
-  $( Cardinal less than in terms of negated cardinal less than or equal. $)
-  ltnlec $p |- ( ( A e. NC /\ B e. NC ) -> ( A <c B <-> -. B <_c A ) ) $= ? $.
-
-  ${ $d M x $. $d M y $. $d M z $. $d N x $. $d N y $. $d N z $. $d x y $. $d x z $. $d y z $. 
-     $( For non-empty sets, cardinal sum always increases cardinal less than or
-     	equal.  Theorem XI.2.19 of [Rosser], p. 376. $)
-     addlec $p |- ( ( M e. V /\ N e. W /\ ( M +c N ) =/= (/) ) ->
+  ${
+    $d M x $.  $d M y $.  $d M z $.  $d N x $.  $d N y $.  $d N z $.  $d x y $.
+    $d x z $.  $d y z $.
+    $( For non-empty sets, cardinal sum always increases cardinal less than or
+       equal.  Theorem XI.2.19 of [Rosser], p. 376. $)
+    addlec $p |- ( ( M e. V /\ N e. W /\ ( M +c N ) =/= (/) ) ->
        M <_c ( M +c N ) ) $=
        ( vx vz vy wcel cplc c0 wne w3a clec cv wss wrex wex wa wceq cvv wbr cin
        cun eladdc ssun1 sseq2 mpbiri adantl rexlimivw reximi sylbi ancli rexcom
@@ -55055,19 +55054,21 @@ $)
   $}
 
   ${
-     $( For cardinals, cardinal sum always increases cardinal less than or
-     	equal.  Corollary of theorem XI.2.19 of [Rosser], p. 376. $)
-     addlecncs $p |- ( ( M e. NC /\ N e. NC ) -> M <_c ( M +c N ) ) $=
+    $( For cardinals, cardinal sum always increases cardinal less than or
+       equal.  Corollary of theorem XI.2.19 of [Rosser], p. 376. $)
+    addlecncs $p |- ( ( M e. NC /\ N e. NC ) -> M <_c ( M +c N ) ) $=
        ( cncs wcel cplc c0 wne clec wbr wa ncaddccl wceq nulnnc mtbiri necon2ai
        eleq1 syl addlec mpd3an3 ) ACDZBCDZABEZFGZAUBHITUAJUBCDZUCABKUDUBFUBFLUD
        FCDMUBFCPNOQABCCRS $.
        $( [11-Mar-2015] $)
   $}
 
-  ${ $d a b $. $d a p $. $d b p $. $d M a $. $d M b $. $d M p $. $d N a $. $d N b $. $d N p $. 
-     $( Cardinal less than or equal in terms of cardinal addition.  Theorem
-     	XI.2.22 of [Rosser], p. 377. $)
-     dflec2 $p |- ( ( M e. NC /\ N e. NC ) -> 
+  ${
+    $d a b $.  $d a p $.  $d b p $.  $d M a $.  $d M b $.  $d M p $.  $d N a $.
+    $d N b $.  $d N p $.
+    $( Cardinal less than or equal in terms of cardinal addition.  Theorem
+       XI.2.22 of [Rosser], p. 377. $)
+    dflec2 $p |- ( ( M e. NC /\ N e. NC ) -> 
        ( M <_c N <-> E. p e. NC N = ( M +c p ) ) ) $=
        ( va vb cncs wcel wa clec wbr cv cplc wceq wrex wss cnc ncseqnc vex cun
        wi brlecg bi2anan9 biimpar cdif difex ncelncsi c0 disjdif ncdisjun ax-mp
@@ -55119,15 +55120,56 @@ $)
        $( [10-Mar-2015] $)
   $}
 
-  ${ $d M p $. $d N p $. 
+  ${
+    $d a b $.  $d a c $.  $d a w $.  $d a x $.  $d A x $.  $d a y $.  $d A y $.
+    $d a z $.  $d A z $.  $d b c $.  $d b w $.  $d b x $.  $d B x $.  $d b y $.
+    $d B y $.  $d b z $.  $d B z $.  $d c w $.  $d c x $.  $d c z $.  $d w x $.
+    $d w y $.  $d w z $.  $d X c $.  $d X w $.  $d X x $.  $d x y $.  $d X y $.
+    $d x z $.  $d X z $.  $d y z $.
+    $( T raising rule for cardinal sum. $)
+    taddc $p |- ( ( ( A e. NC /\ B e. NC /\ X e. NC ) /\ 
+       T_c A = ( T_c B +c X ) ) -> E. c e. NC X = T_c c ) $=
+       ( vw vx vy vz va vb cncs wcel ctc wceq wa cv cnc wex vex sylbi cplc cpw1
+       w3a wrex wi elncs 3anbi123i eeeanv bitr4i cen wbr addceq1i eqeq12i eqcom
+       tcnc wb pw1ex ncelncsi ncaddccl mp2an ncseqnc ax-mp 3bitri cin c0 eladdc
+       cun pw1equn simp3 elnc ensym breq2 biimpcd eximdv exlimdv syl5bi adantld
+       syl5 rexlimiv rexlimivw tceq 3ad2ant1 adantr simpr 3adant1 eqeq12d eqeq1
+       addceq12d eqnc syl6bb exbidv 3ad2ant3 imbi12d mpbiri exlimivv imp df-rex
+       exlimiv anbi1i 19.41v exbii excom syl6eq eqeq2d ceqsexv bitri sylibr
+       ncex ) AKLZBKLZCKLZUCZAMZBMZCUAZNZOCEPZUBZQZNZERZCDPZMZNZDKUDZXLXPYAXLAF
+       PZQZNZBGPZQZNZCHPZQZNZUCZHRZGRFRZXPYAUEZXLYHFRZYKGRZYNHRZUCYQXIYSXJYTXKU
+       UAFAUFGBUFHCUFUGYHYKYNFGHUHUIYPYRFGYOYRHYOYRYGMZYJMZYMUAZNZYLXRUJUKZERZU
+       EUUEYFUBZYIUBZQZYMUAZLZUUGUUEUUHQZUUKNUUKUUMNZUULUUBUUMUUDUUKYFFSUOUUCUU
+       JYMYIGSZUOULUMUUMUUKUNUUKKLZUUNUULUPUUJKLYMKLUUPUUIYIUUOUQURYLHSZURUUJYM
+       USUTUUKUUHVAVBVCUULIPZJPZVDVENZUUHUURUUSVGNZOZJYMUDZIUUJUDUUGUUHUUJYMIJV
+       FUVCUUGIUUJUVBUUGJYMUUSYMLZUVAUUGUUTUVAYFYBXQVGNZUURYBUBNZUUSXRNZUCZERZD
+       RUVDUUGDEUURUUSYFISJSVHUVDUVIUUGDUVDUVHUUFEUVHUVGUVDUUFUVEUVFUVGVIUVDUUS
+       YLUJUKZUVGUUFUEZUUSYLVJUVJYLUUSUJUKZUVKUUSYLVKUVGUVLUUFUUSXRYLUJVLVMTTVR
+       VNVOVPVQVSVTTTYOXPUUEYAUUGYOXMUUBXOUUDYHYKXMUUBNYNAYGWAWBYKYNXOUUDNYHYKY
+       NOXNUUCCYMYKXNUUCNYNBYJWAWCYKYNWDWHWEWFYNYHYAUUGUPYKYNXTUUFEYNXTYMXSNUUF
+       CYMXSWGYLXRUUQWIWJWKWLWMWNWRWOTWPYEYBKLZYDOZDRYBXQQZNZYDOZERZDRZYAYDDKWQ
+       UVNUVRDUVNUVPERZYDOUVRUVMUVTYDEYBUFWSUVPYDEWTUIXAUVSUVQDRZERYAUVQDEXBUWA
+       XTEYDXTDUVOXQXHUVPYCXSCUVPYCUVOMXSYBUVOWAXQESUOXCXDXEXAXFVCXG $.
+       $( [11-Mar-2015] $)
+  $}
+
+  ${
+    $d M p q $.  $d N p q $.
     $( T-raising perserves order for cardinals.  Theorem 5.5 of [Specker]. $)
     tlecg $p |- ( ( M e. NC /\ N e. NC ) -> ( M <_c N <-> T_c M <_c T_c N ) )
         $=
-      ( vp cncs wcel wa clec wbr ctc cv cplc wceq wrex dflec2 wi tccl addlecncs
-      syl2an tcdi breqtrrd breq2d syl5ibrcom rexlimdva adantr sylbid impbid
-      tceq ) ADEZBDEZFZABGHZAIZBIZGHZUJUKBACJZKZLZCDMZUNABCNUHURUNOUIUHUQUNCDUH
-      UODEZFZUNUQULUPIZGHUTULULUOIZKZVAGUHULDEVBDEULVCGHUSAPUOPULVBQRAUOSTUQUMV
-      AULGBUPUGUAUBUCUDUE?UF $.
+      ( vp vq cncs wcel wa clec wbr ctc cv cplc wceq wrex dflec2 tccl rexlimdva
+      wi sylbid adantlr addlecncs syl2an tcdi breqtrrd breq2d syl5ibrcom adantr
+      tceq wb simplr simpll simprl simprr taddc syl31anc addceq2 eqeq2d biimpac
+      ncaddccl tc11 syl2anc breq2 sylbird syl5 expdimp an32s adantrl mpd impbid
+      expr ) AEFZBEFZGZABHIZAJZBJZHIZVMVNBACKZLZMZCENZVQABCOVKWAVQRVLVKVTVQCEVK
+      VREFZGZVQVTVOVSJZHIWCVOVOVRJZLZWDHVKVOEFZWEEFVOWFHIWBAPZVRPVOWEUAUBAVRUCU
+      DVTVPWDVOHBVSUHUEUFQUGSVMVQVPVOVRLZMZCENZVNVKWGVPEFVQWKUIVLWHBPVOVPCOUBVM
+      WJVNCEVMWBWJVNVMWBWJGZGZVRDKZJZMZDENZVNWMVLVKWBWJWQVKVLWLUJVKVLWLUKVMWBWJ
+      ULVMWBWJUMBAVRDUNUOVMWJWQVNRWBVMWJGWPVNDEVMWNEFZWJWPVNRVMWRGZWJWPVNWJWPGV
+      PVOWOLZMZWSVNWPWJXAWPWIWTVPVRWOVOUPUQURWSXAVPAWNLZJZMZVNWSXCWTVPVKWRXCWTM
+      VLAWNUCTUQWSXDBXBMZVNWSVLXBEFZXDXEUIVKVLWRUJVKWRXFVLAWNUSTBXBUTVAVKWRXEVN
+      RVLVKWRGVNXEAXBHIAWNUABXBAHVBUFTSVCVDVEVFQVGVHVJQSVI $.
       $( [11-Mar-2015] $)
   $}
 
