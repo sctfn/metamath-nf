@@ -46846,7 +46846,8 @@ $)
        UQDEUBUCEDUMUJUHTUDUE $.
        $( [26-Feb-2015] $)
 
-    $( Calculate the domain of a singleton image. $)
+    $( Calculate the domain of a singleton image.  Theorem X.4.29.I of [Rosser],
+       p. 301. $)
     dmsi $p |- dom SI R = ~P1 dom R $=
        ( vx va vy vb csi cdm cpw1 cv csn wceq wbr wex wcel wa bitri exbii excom
        eldm 3bitr4i w3a wrex 3anass 2exbii 19.42vv isseti 19.41v mpbiran anbi2i
@@ -46879,7 +46880,8 @@ $)
        $( [26-Feb-2015] $)
   $}
 
-  $( Calculate the range of a singleton image. $)
+  $( Calculate the range of a singleton image.  Theorem X.4.29.II of [Rosser],
+       p. 302. $)
   rnsi $p |- ran SI R = ~P1 ran R $=
     ( csi ccnv cdm cpw1 cnvsi dmeqi dmsi eqtri dfrn4 wceq pw1eq ax-mp 3eqtr4i
     crn ) ABZCZDZACZDZEZPOAOZEZRSBZDUAQUDAFGSHIPJUBTKUCUAKAJUBTLMN $.
@@ -50969,9 +50971,10 @@ $(
 $)
 
   $c Trans $. $( Transitive relationships $)
-  $c Irr $. $( Irreflexive relationships $)
+  $c Ref $. $( Reflextive relationships $)
+  $c Antisym $. $( Antisymmetric relationships $)
   $c Po $. $( Po orderings $)
-  $c Lin $. $( Linear relationships $)
+  $c Connex $. $( Connected relationships $)
   $c Or $. $( Or orderings $)
   $c Fr $. $( Founded relationships $)
   $c We $. $( We-orderings $)
@@ -50983,17 +50986,21 @@ $)
      relationships. $)
   ctrans $a class Trans $.
 
-  $( Extend the definition of a class to include the set of all irreflexive
+  $( Extend the definition of a class to include the set of all reflexive
      relationships. $)
-  cirr $a class Irr $.
+  cref $a class Ref $.
+
+  $( Extend the definition of a class to include the set of all antisymmetric
+     relationships. $)
+  cantisym $a class Antisym $.
 
   $( Extend the definition of a class to include the set of all partial
      orderings. $)
   cpartial $a class Po $.
 
-  $( Extend the definition of a class to include the set of all linear
+  $( Extend the definition of a class to include the set of all connected
      relationships. $)
-  clin $a class Lin $.
+  cconnex $a class Connex $.
 
   $( Extend the definition of a class to include the set of all strict linear
      orderings. $)
@@ -51025,25 +51032,30 @@ $)
     df-trans $a |- Trans = { <. r , a >. | 
        A. x e. a A. y e. a A. z e. a ( ( x r y /\ y r z ) -> x r z ) } $.
 
-    $( Define the set of all irreflexive relationships over a base set. $)
-    df-irr $a |- Irr = { <. r , a >. | A. x e. a -. x r x } $.
+    $( Define the set of all reflexive relationships over a base set. $)
+    df-ref $a |- Ref = { <. r , a >. | A. x e. a x r x } $.
+
+    $( Define the set of all antisymmetric relationships over a base set. $)
+    df-antisym $a |- Antisym = { <. r , a >. | 
+      A. x e. a A. y e. a ( ( x r y /\ y r x ) -> x = y ) } $.
 
     $( Define the set of all partial orderings over a base set. $)
-    df-partial $a |- Po = ( Trans i^i Irr ) $.
+    df-partial $a |- Po = ( ( Ref i^i Trans ) i^i Antisym ) $.
 
-    $( Define the set of all linear relationships over a base set. $)
-    df-lin $a |- Lin = { <. r , a >. | 
-       A. x e. a A. y e. a ( x r y \/ x = y \/ y r x ) } $.
+    $( Define the set of all connected relationships over a base set. $)
+    df-connex $a |- Connex = { <. r , a >. | 
+       A. x e. a A. y e. a ( x r y \/ y r x ) } $.
 
     $( Define the set of all strict orderings over a base set. $)
-    df-strict $a |- Or = ( Po i^i Lin ) $.
+    df-strict $a |- Or = ( Po i^i Connex ) $.
 
     $( Define the set of all founded relationships over a base set. $)
     df-found $a |- Fr = { <. r , a >. |
-       A. x ( ( x C_ a /\ x =/= (/) ) -> E. y e. x A. z e. x -. z r y ) } $.
+       A. x ( ( x C_ a /\ x =/= (/) ) ->
+       	      E. z e. x A. y e. x ( y r z -> y = z ) ) } $.
 
     $( Define the set of all well orderings over a base set. $)
-    df-we $a |- We = ( Fr i^i Lin ) $.
+    df-we $a |- We = ( Or i^i Fr ) $.
 
     $( Define the set of all extensional relationships over a base set. $)
     df-ext $a |- Ext = { <. r , a >. |
@@ -51061,7 +51073,7 @@ $)
     $d a p $.  $d a r $.  $d a x $.  $d a y $.  $d a z $.  $d p q $.  $d p r $.
     $d p x $.  $d p y $.  $d p z $.  $d q x $.  $d q y $.  $d q z $.  $d r x $.
     $d r y $.  $d r z $.  $d x y $.  $d x z $.  $d y z $.  $d s x $.  $d p s $.
-    $d r s $.
+    $d r s $.  $d r t $. $d t y $. $d t z $. $d p t $. $d t x $. 
 
     $( The class of all transitive relationships is a set. $)
     transex $p |- Trans e. _V $=
@@ -51124,109 +51136,81 @@ $)
        XKXMXJXKXPXMXQ $.
        $( [19-Feb-2015] $)
 
-    $( The class of all irreflexive relationships is a set. $)
-    irrex $p |- Irr e. _V $=
-       ( vx vr va vp vq cvv c1st c2nd ctxp c1c csset cv wbr cop wcel wex wa vex
-       3bitri 3bitr4i cirr cxp ccnv cin csi cima ccompl wn wral df-irr wrex csn
-       copab wel oteltxp opex opelssetsn wceq trtxp df-br elima1c bitr3i brsnsi
-       brcnv brin op1st2nd anbi12i ancom exbii sneq breq2d ceqsexv bitri anbi1i
-       snex rexbii elima risset df-rex notbii ralnex releqopab eqtr4i vvex xpex
-       elcompl 1stex cnvex 2ndex inex siex txpex imaex ssetex complex eqeltri
-       1cex ) UAFFUBZGUCZGHUDZUEZIZJUFZHIZKUFZKIZJUFZUGZUDZFUAALZXJBLZMZUHACLZU
-       IZBCUMXIABCUJXNBCXHXKXMNZXGOZUHXLAXMUKZUHXOXHOXNXPXQXJULZXONXFOZAPACUNZX
-       LQZAPXPXQXSYAAXSXRXKNZXEOZXRXMNKOZQXLXTQYAXRXKXMXEKUOYCXLYDXTXJXJNZULZXK
-       NZKOZYEXKOYCXLYEXKXJXJARZYIUPZBRZUQDLZYBXDMZDKUKYLYGURZDKUKYCYHYMYNDKYMY
-       LXRXCMZYLXKHMZQYLYFGMZYPQYNYLXRXKXCHUSYOYQYPYOYLXRNZXCOZYQYLXRXCUTYSELZU
-       LZYRNXBOZEPYTYEURZYLUUAGMZQZEPYQEYRXBVAUUBUUEEUUBUUAYLWSMZUUAXRXAMZQZUUD
-       UUCQUUEUUBUUAYRXBMUUHUUAYRXBUTUUAYLXRWSXAUSVBUUFUUDUUGUUCUUAYLGVDUUGYTXJ
-       WTMYTXJGMYTXJHMQUUCYTXJWTERYIVCYTXJGHVEXJXJYTYIYIVFSVGUUDUUCVHSVIUUDYQEY
-       EYJUUCUUAYFYLGYTYEVJVKVLSVMVNYFXKYLYEVOYKVFSVPDYBXDKVQDYGKVRTXJXJXKUTTXJ
-       XMYICRZUQVGXLXTVHSVIAXOXFVAXLAXMVSTVTXOXGXKXMYKUUIUPWFXLAXMWATWBWCWRXHFF
-       WDWDWEXGXFJXEKXDKXCHXBJWSXAGWGWHWTGHWGWIWJWKWLWQWMWIWLWNWMWNWLWQWMWOWJWP
-       $.
-       $( [19-Feb-2015] $)
+    $( The class of all reflexive relationships is a set. $)
+    refex $p |- Ref e. _V $=
+      ( vx vr va vp vt cvv c1st c2nd ctxp c1c csset cv wbr cop vex wa wex df-br
+      wcel 3bitri cref cxp ccnv cin csi cima ccompl wral df-ref wn opex elcompl
+      copab wel wrex csn elima1c oteltxp snex opelssetsn trtxp opelcnv opsnelsi
+      wceq brin op1st2nd 3bitr3i bitri anbi12i ancom sneq opeq2d eleq1d ceqsexv
+      exbii 3bitr4i anbi1i rexbii risset xchbinx df-rex rexnal 3bitr2ri con1bii
+      elima releqopab eqtr4i vvex xpex 1stex cnvex 2ndex inex siex txpex ssetex
+      1cex imaex complex eqeltri ) UAFFUBZGUCZGHUDZUEZIZJUFZHIZKUFZUGZKIZJUFZUG
+      ZUDZFUAALZXNBLZMZACLZUHZBCUMXMABCUIXRBCXLXOXQNZXLSXSXKSZUJXRXSXKXOXQBOZCO
+      ZUKULXRXTXTACUNZXPUJZPZAQZYDAXQUOXRUJXTXNUPZXSNXJSZAQYFAXSXJUQYHYEAYHYGXO
+      NZXISZYGXQNKSZPYDYCPYEYGXOXQXIKURYJYDYKYCYJYIXHSZXPYIXHYGXOXNUSYAUKULXNXN
+      NZUPZXONZKSZYMXOSYLXPYMXOXNXNAOZYQUKZYAUTDLZYIXGMZDKUOYSYOVDZDKUOYLYPYTUU
+      ADKYTYSYGXFMZYSXOHMZPYSYNGMZUUCPUUAYSYGXOXFHVAUUBUUDUUCYSYGNZXFSZYSYNNZGS
+      ZUUBUUDUUFELZUPZUUENXESZEQUUIYMVDZYSUUJNZGSZPZEQUUHEUUEXEUQUUKUUOEUUKUUJY
+      SNXBSZUUJYGNXDSZPUUNUULPUUOUUJYSYGXBXDURUUPUUNUUQUULUUJYSGVBUUQUUIXNNXCSZ
+      UULUUIXNXCEOYQVCUUIXNXCMUUIXNGMUUIXNHMPUURUULUUIXNGHVEUUIXNXCRXNXNUUIYQYQ
+      VFVGVHVIUUNUULVJTVOUUNUUHEYMYRUULUUMUUGGUULUUJYNYSUUIYMVKVLVMVNTYSYGXFRYS
+      YNGRVPVQYNXOYSYMUSYAVFTVRDYIXGKWEDYOKVSVPXNXNXORVPVTXNXQYQYBUTVIYDYCVJTVO
+      VHYDAXQWAXPAXQWBWCWDVHWFWGXAXLFFWHWHWIXKXJJXIKXHXGKXFHXEJXBXDGWJWKXCGHWJW
+      LWMWNWOWQWRWLWOWPWRWSWPWOWQWRWSWMWT $.
+      $( [11-Mar-2015] $)
 
-    $( The class of all linear relationships is a set. $)
-    linex $p |- Lin e. _V $=
-       ( vx vy vr va vp cvv csset cid ccnv c1c cv wbr wo cop wex wa bitri df-br
-       wcel 3bitr4i clin cxp cpw1 cun cswap cimage ctxp crn cins2 c1st c2nd cin
-       ccompl csi3 cins4 cima weq w3o wral copab df-lin wel eleq1 orbi12d ralxp
-       wceq wn wrex vex opex elcompl csn oteltxp snex opelssetsn opelxp snelpw1
-       elun mpbiran2 orbi12i opelcnv brimage bitr3i dfcnv2 eqeq2i anbi12i ancom
-       exbii elrn2 cnvex clel3 xchbinx elin otelins2 oqelins4 otsnelsi3 mpbiran
-       3bitri brcnv 3bitr2i op1st2nd elima1c df-rex elxp2 bitr4i ideq 3orbi123i
-       dfral2 df-3or 2ralbii releqopab eqtr4i vvex xpex ssetex idex unex swapex
-       pw1ex imageex txpex rnex ins2ex 1stex 2ndex inex si3ex ins4ex 1cex imaex
-       complex eqeltri ) UAFFUBZGHUCZFUBZUDZGIZUEUFZIZUGZUHZUDZUMZGUIZUUDUIZFUJ
-       IZUBZUKIZUIZULZUNZUOZULZJUPZULZJUPZUGZJUPZUMZULZFUAAKZBKZCKZLZABUQZUVBUV
-       AUVCLZURZBDKZUSAUVHUSZCDUTUUTABCDVAUVICDUUSECVBZEKZHSZMZUVKUVCIZSZMZEUVH
-       UVHUBZUSZUVAUVBNZUVCSZUVSHSZMZUVSUVNSZMZBUVHUSAUVHUSUVCUVHNZUUSSZUVIUVPU
-       WDEABUVHUVHUVKUVSVFZUVMUWBUVOUWCUWGUVJUVTUVLUWAUVKUVSUVCVCUVKUVSHVCVDUVK
-       UVSUVNVCVDVEUWFUVPVGZEUVQVHZVGUVRUWFUWEUURSZUWIUWEUURUVCUVHCVIZDVIZVJVKU
-       VKVLZUWENUUQSZEOUVKUVQSZUWHPZEOUWJUWIUWNUWPEUWNUWMUVCNZUUCSZUWMUVHNZUUPS
-       ZPUWHUWOPUWPUWMUVCUVHUUCUUPVMUWRUWHUWTUWOUWRUWQUUBSZUVPUWQUUBUWMUVCUVKVN
-       ZUWKVJVKUXAUWQYPSZUWQUUASZMUVPUWQYPUUAVRUXCUVMUXDUVOUXCUWQGSZUWQYOSZMUVM
-       UWQGYOVRUXEUVJUXFUVLUVKUVCEVIZUWKVOUXFUWMYNSZUVLUXFUXHUVCFSUWKUWMUVCYNFV
-       PVSUVKHVQQVTQUVAUWQNYTSZAOUVAUVNVFZEAVBZPZAOUXDUVOUXIUXLAUXIUVAUWMNYQSZU
-       VAUVCNYSSZPUXKUXJPUXLUVAUWMUVCYQYSVMUXMUXKUXNUXJUXMUWMUVANGSUXKUVAUWMGWA
-       UVKUVAUXGAVIZVOQUVCUVANYRSZUVAUEUVCUPZVFZUXNUXJUXPUVCUVAYRLUXRUVCUVAYRRU
-       VCUVAUEUWKUXOWBWCUVAUVCYRWAUVNUXQUVAUVCWDWETWFUXKUXJWGWRWHAUWQYTWIAUVKUV
-       NUVCUWKWJWKTVTQWLUWTUWGBUVHVHZAUVHVHZUWOUVAVLZUWSNZUUOSZAOADVBZUXSPZAOUW
-       TUXTUYCUYEAUYCUYBUUDSZUYBUUNSZPUYEUYBUUDUUNWMUYFUYDUYGUXSUYFUYAUVHNGSUYD
-       UYAUWMUVHGUXBWNUVAUVHUXOUWLVOQUVBVLZUYBNZUUMSZBOBDVBZUWGPZBOUYGUXSUYJUYL
-       BUYJUYIUUESZUYIUULSZPUYLUYIUUEUULWMUYMUYKUYNUWGUYMUYHUWSNUUDSUYHUVHNGSUY
-       KUYHUYAUWSUUDUVAVNWNUYHUWMUVHGUXBWNUVBUVHBVIZUWLVOWRUYNUYHUYAUWMNNUUKSUV
-       BUVAUVKNZNZUUJSZUWGUYHUYAUWMUVHUUKUWLWOUVBUVAUVKUUJUYOUXOUXGWPUYRUYQUUGS
-       ZUYQUUISZPUVKUVAUJLZUVKUVBUKLZPUWGUYQUUGUUIWMUYSVUAUYTVUBUYSUYPUUFSZUVAU
-       VKUUFLVUAUYSUVBFSVUCUYOUVBUYPFUUFVPWQUVAUVKUUFRUVAUVKUJWSWTUYTUVBUVKNUUH
-       SUVBUVKUUHLVUBUVBUVAUVKUUHUXOWNUVBUVKUUHRUVBUVKUKWSWTWFUVAUVBUVKUXOUYOXA
-       WRWRWFQWHBUYBUUMXBUWGBUVHXCTWFQWHAUWSUUOXBUXSAUVHXCTABUVKUVHUVHXDXEWFUWH
-       UWOWGWRWHEUWEUUQXBUWHEUVQXCTWLUVPEUVQXHXEUVGUWDABUVHUVHUVGUVTUWAUWCURUWD
-       UVDUVTUVEUWAUVFUWCUVAUVBUVCRUVEUVAUVBHLUWAUVAUVBUYOXFUVAUVBHRWCUVFUVAUVB
-       UVNLUWCUVAUVBUVCWSUVAUVBUVNRWCXGUVTUWAUWCXIQXJTXKXLYMUUSFFXMXMXNUURUUQJU
-       UCUUPUUBYPUUAGYOXOYNFHXPXSXMXNXQYTYQYSGXOWJYRUEXRXTWJYAYBXQYKUUOJUUDUUNG
-       XOYCZUUMJUUEUULUUDVUDYCUUKUUJUUGUUIFUUFXMUJYDWJXNUUHUKYEWJYCYFYGYHYFYIYJ
-       YFYIYJYAYIYJYKYFYL $.
-       $( [19-Feb-2015] $)
+    $( The class of all antisymmetric relationships is a set. $)
+    antisymex $p |- Antisym e. _V $= ? $.
+
+    $( The class of all connected relationships is a set. $)
+    connexex $p |- Connex e. _V $= ? $.
 
     $( The class of all founded relationships is a set. $)
     foundex $p |- Fr e. _V $=
-       ( vx vz vy vp vq cvv csset c1st cid c1c c2nd c0 cv wa wbr cop wcel bitri
-       wn wex va vr cfound cxp cins3 cins2 ccnv csi3 ctxp cima cins4 cin ccompl
-       cdif csn crn wss wne wral wrex wal copab df-found vex opex elcompl elrn2
-       wi oteltxp wel eldif otelins3 opelssetsn elin snex otelins2 3bitri df-br
-       wceq elima1c brcnv bitr3i otsnelsi3 ideq anbi12i ancom exbii sneq breq2d
-       ceqsexv 3bitr4i rexbii elima risset df-rex dfrex2 bitr2i con1bii xchbinx
-       oqelins4 op1st2nd brdif brsset brxp mpbiran2 elsn exanali con2bii bitr4i
-       necon3bbii releqopab eqtr4i ssetex ins3ex ins2ex 1stex cnvex si3ex txpex
-       vvex xpex idex 1cex imaex ins4ex 2ndex inex difex complex rnex eqeltri )
-       UCFFUDZGUEZYMUFZHUGZIUHZUIZJUJZUKZKUFZUFZUFZULZGUJZULZJUJZUNZJUJZUMZGLUO
-       ZFUDZUNZUIZUPZUMZULZFUCAMZUAMZUQZUUQLURZNZBMZCMZUBMZOZSBUUQUSZCUUQUTZVHA
-       VAZUBUAVBUUPACBUBUAVCUVHUBUAUUOUVDUURPZUUOQZUVAUVGSZNZATZSUVHUVJUVIUUNQZ
-       UVMUVIUUNUVDUURUBVDZUAVDZVEVFUVNUUQUVIPUUMQZATUVMAUVIUUMVGUVQUVLAUVQUUQU
-       VDPZUUIQZUUQUURPUULQZNUVKUVANUVLUUQUVDUURUUIUULVIUVSUVKUVTUVAUVSUVRUUHQZ
-       UVGUVRUUHUUQUVDAVDZUVOVEZVFUVCUOZUVRPZUUGQZCTCAVJZUVFNZCTUWAUVGUWFUWHCUW
-       FUWEYMQZUWEUUFQZSZNUWHUWEYMUUFVKUWIUWGUWKUVFUWIUWDUUQPGQUWGUWDUUQUVDGUVO
-       VLUVCUUQCVDZUWBVMRUVFUWJUWJUVEBUUQUTZUVFSUVBUOZUWEPZUUEQZBTBAVJZUVENZBTU
-       WJUWMUWPUWRBUWPUWOYNQZUWOUUDQZNUWRUWOYNUUDVNUWSUWQUWTUVEUWSUWNUVRPYMQUWN
-       UUQPGQUWQUWNUWDUVRYMUVCVOZVPUWNUUQUVDGUVOVLUVBUUQBVDZUWBVMVQUVBUVCPZUOZU
-       VDPZGQZUXCUVDQUWTUVEUXCUVDUVBUVCUXBUWLVEZUVOVMDMZUWOUUCOZDGUTUXHUXEVSZDG
-       UTUWTUXFUXIUXJDGUXIUXHUWOPZUUCQZUXHUXDHOZUXHUVDKOZNZUXJUXHUWOUUCVRUXLUXK
-       YSQZUXKUUBQZNUXOUXKYSUUBVNUXPUXMUXQUXNUXPUXHUWNUWDPZPZYRQZUXMUXHUWNUWDUV
-       RYRUWCWTUXTEMZUOZUXSPYQQZETUYAUXCVSZUXHUYBHOZNZETUXMEUXSYQVTUYCUYFEUYCUY
-       BUXHPYOQZUYBUXRPYPQZNUYEUYDNUYFUYBUXHUXRYOYPVIUYGUYEUYHUYDUYGUYBUXHYOOUY
-       EUYBUXHYOVRUYBUXHHWAWBUYHUYAUXCPIQZUYDUYAUVBUVCIEVDUXBUWLWCUYIUYAUXCIOUY
-       DUYAUXCIVRUYAUXCUXGWDWBRWEUYEUYDWFVQWGUYEUXMEUXCUXGUYDUYBUXDUXHHUYAUXCWH
-       WIWJVQRUXQUXHUWEPUUAQZUXNUXHUWNUWEUUAUVBVOVPUXHUVRPYTQUXHUVDPKQUYJUXNUXH
-       UUQUVDKUWBVPUXHUWDUVRYTUXAVPUXHUVDKVRWKRWERUXDUVDUXHUXCVOUVOXAVQWLDUWOUU
-       CGWMDUXEGWNWKUVBUVCUVDVRWKWERWGBUWEUUEVTUVEBUUQWOWKUVEBUUQWPWQWRWERWGCUV
-       RUUGVTUVFCUUQWOWKWSUVTUUQUURUULOZUVAUUQUURUULVRUYKUUQUURGOZUUQUURUUKOZSZ
-       NUVAUUQUURGUUKXBUYLUUSUYNUUTUUQUURUWBUVPXCUYMUUQLUYMUUQUUJQZUUQLVSUYMUYO
-       UURFQUVPUUQUURUUJFXDXEUUQLUWBXFRXJWERWBWEUVKUVAWFVQWGRWSUVMUVHUVAUVGAXGX
-       HXIXKXLYLUUOFFXTXTYAUUNUUMUUIUULUUHUUGJYMUUFGXMXNZUUEJYNUUDYMUYPXOUUCGYS
-       UUBYRYQJYOYPHXPXQIYBXRXSYCYDYEUUAYTKYFXOXOXOYGXMYDYGYCYDYHYCYDYIGUUKXMUU
-       JFLVOXTYAYHXSYJYIYGYK $.
-       $( [19-Feb-2015] $)
+      ( vx vy vz vt vp cvv csset c1st c2nd cid cv wa wbr cop wn wex bitri df-br
+      wcel anbi12i va cfound cxp cins3 cins2 ccnv csi3 ctxp c1c cima cins4 ccom
+      vr cin cdif ccompl c0 csn crn wss wne weq wi wral wrex wal copab df-found
+      vex opex elcompl elrn2 oteltxp wel eldif otelins3 opelssetsn elima1c elin
+      snex otelins2 wceq oqelins4 trtxp brcnv bitr3i otsnelsi3 ideq ancom exbii
+      breq2d ceqsexv 3bitri anbi2i op1st2nd rexbii elima risset 3bitr4i brco2nd
+      bitr4i sneqb notbii df-rex rexanali bitr2i con1bii brsset opelxp mpbiran2
+      sneq elsn df-ne exanali releqopab eqtr4i ssetex ins3ex ins2ex 1stex 2ndex
+      vvex xpex cnvex idex si3ex txpex 1cex imaex ins4ex coex inex complex rnex
+      difex eqeltri ) UBFFUCZGUDZYRUEZHIUFZJUGZUHZUIUJZUHZHUJZUKZYTIULZIULZIULZ
+      UFZUNZGUJZJUDZUOZUNZUIUJZUOZUIUJZUPZGUQURZFUCZUOZUHZUSZUPZUNZFUBAKZUAKZUT
+      ZUVGUQVAZLZBKZCKZUMKZMZBCVBZVCBUVGVDZCUVGVEZVCAVFZUMUAVGUVFABCUMUAVHUVSUM
+      UAUVEUVNUVHNZUVESUVTUVDSZOUVSUVTUVDUVNUVHUMVIZUAVIZVJVKUVSUWAUWAUVKUVROZL
+      ZAPZUVSOUWAUVGUVTNUVCSZAPUWFAUVTUVCVLUWGUWEAUWGUVGUVNNZUUSSZUVGUVHNZUVBSZ
+      LZUWEUVGUVNUVHUUSUVBVMUWLUWDUVKLUWEUWIUWDUWKUVKUWIUWHUURSZOUWDUWHUURUVGUV
+      NAVIZUWBVJZVKUWMUVRUVMURZUWHNZUUQSZCPCAVNZUVQLZCPUWMUVRUWRUWTCUWRUWQYRSZU
+      WQUUPSZOZLUWTUWQYRUUPVOUXAUWSUXCUVQUXAUWPUVGNGSUWSUWPUVGUVNGUWBVPUVMUVGCV
+      IZUWNVQQUVQUXBUXBUVOUVPOZLZBUVGVEZUVQOUXBBAVNZUXFLZBPZUXGUXBUVLURZUWQNZUU
+      OSZBPUXJBUWQUUOVRUXMUXIBUXMUXLYSSZUXLUUNSZLUXIUXLYSUUNVSUXNUXHUXOUXFUXNUX
+      KUWHNYRSZUXHUXKUWPUWHYRUVMVTZWAUXPUXKUVGNGSUXHUXKUVGUVNGUWBVPUVLUVGBVIZUW
+      NVQQQUXOUXLUULSZUXLUUMSZOZLUXFUXLUULUUMVOUXSUVOUYAUXEUXSUVLUVMNZURZUVNNZG
+      SZUVODKZUXLUUKMZDGVEUYFUYDWBZDGVEUXSUYEUYGUYHDGUYGUYFUXLNZUUKSZUYHUYFUXLU
+      UKRUYJUYIUUFSZUYIUUJSZLUYFUYCHMZUYFUVNIMZLUYHUYIUUFUUJVSUYKUYMUYLUYNUYKUY
+      FUXKUWPNZNZUUESZUYMUYFUXKUWPUWHUUEUWOWCUYQUYFUYCNZHSZUYMEKZUYPUUDMZEHVEUY
+      TUYRWBZEHVEUYQUYSVUAVUBEHVUAUYTUYFHMZUYTUYOUUCMZLVUCUYTUYCIMZLVUBUYTUYFUY
+      OHUUCWDVUDVUEVUCVUDUYTUYONZUUCSZVUEUYTUYOUUCRVUGUYFURZVUFNUUBSZDPUYFUYBWB
+      ZUYTVUHIMZLZDPVUEDVUFUUBVRVUIVULDVUIVUHUYTNYTSZVUHUYONUUASZLZVULVUHUYTUYO
+      YTUUAVMVUOVUKVUJLVULVUMVUKVUNVUJVUMVUHUYTYTMVUKVUHUYTYTRVUHUYTIWEWFVUNUYF
+      UYBNJSZVUJUYFUVLUVMJDVIZUXRUXDWGVUPUYFUYBJMVUJUYFUYBJRUYFUYBUVLUVMUXRUXDV
+      JZWHWFQTVUKVUJWIQQWJVUKVUEDUYBVURVUJVUHUYCUYTIUYFUYBXKWKWLWMQWNUYFUYCUYTV
+      UQUYBVTZWOWMWPEUYPUUDHWQEUYRHWRWSUYFUYCHRXAQUYLUYFUXLUUJMZUYNUYFUXLUUJRVU
+      TUXLUYFUUIMZUYNUYFUXLUUIWEVVAUWQUYFUUHMZUYNUXKUWQUYFUUHUVLVTUWPUWHUXQUWOV
+      JWTVVBUWHUYFUUGMZUYNUWPUWHUYFUUGUXQUWOWTVVCUVNUYFYTMUYNUVGUVNUYFYTUWNUWBW
+      TUVNUYFIWEQQQQWFTUYCUVNUYFVUSUWBWOWMQWPDUXLUUKGWQDUYDGWRWSUYEUYBUVNSUVOUY
+      BUVNVURUWBVQUVLUVMUVNRXAQUXTUVPUXTUYOJSZUVPUXKUWPUWHJUWOVPVVDUXKUWPJMZUVP
+      UXKUWPJRVVEUXKUWPWBUVPUXKUWPUXQWHUVLUVMUXRXBQWFQXCTQTQWJQUXFBUVGXDXAUVOUV
+      PBUVGXEXFXGTQWJCUWHUUQVRUVQCUVGXDWSXCQUWKUVIUVGUQWBZOZLZUVKUWKUWJGSZUWJUV
+      ASZOZLVVHUWJGUVAVOVVIUVIVVKVVGVVIUVGUVHGMUVIUVGUVHGRUVGUVHUWNUWCXHWFVVJVV
+      FVVJUVGUUTSZVVFVVJVVLUVHFSUWCUVGUVHUUTFXIXJUVGUQUWNXLQXCTQUVJVVGUVIUVGUQX
+      MWNXATUWDUVKWIQQWJQUVKUVRAXNXFXGQXOXPYQUVEFFYBYBYCUVDUVCUUSUVBUURUUQUIYRU
+      UPGXQXRZUUOUIYSUUNYRVVMXSUULUUMUUKGUUFUUJUUEUUDHHUUCXTUUBUIYTUUAIYAYDZJYE
+      YFYGYHYIYGXTYIYJUUIUUHIUUGIYTIVVNYAYKYAYKYAYKYDYLXQYIJYEXRYOYLYHYIYOYHYIY
+      MGUVAXQUUTFUQVTYBYCYOYGYNYMYLYP $.
+      $( [19-Feb-2015] $)
 
     $( The class of all extensional relationships is a set. $)
     extex $p |- Ext e. _V $=
@@ -51320,20 +51304,20 @@ $)
 
   $( The class of all partial orderings is a set. $)
   partialex $p |- Po e. _V $=
-    ( cpartial ctrans cirr cin cvv df-partial transex irrex inex eqeltri ) ABCD
-    EFBCGHIJ $.
-    $( [19-Feb-2015] $)
+    ( cpartial cref ctrans cin cantisym df-partial refex transex inex antisymex
+    cvv eqeltri ) ABCDZEDKFMEBCGHIJIL $.
+    $( [11-Mar-2015] $)
 
   $( The class of all strict orderings is a set. $)
   strictex $p |- Or e. _V $=
-    ( cstrict cpartial clin cin cvv df-strict partialex linex inex eqeltri ) AB
-    CDEFBCGHIJ $.
+    ( cstrict cpartial cconnex cin df-strict partialex connexex inex eqeltri
+    cvv ) ABCDJEBCFGHI $.
     $( [19-Feb-2015] $)
 
   $( The class of all well orderings is a set. $)
   weex $p |- We e. _V $=
-    ( cwe cfound clin cin cvv df-we foundex linex inex eqeltri ) ABCDEFBCGH
-    IJ $.
+    ( cwe cstrict cfound cin cvv df-we strictex foundex inex eqeltri ) ABCDEFBC
+    GHIJ $.
     $( [19-Feb-2015] $)
 
   $( The class of all equivalence relationships is a set. $)
@@ -51369,38 +51353,6 @@ $)
   $}
 
   ${
-    $d R r a x $.  $d A r a x $.  $d X x $.
-    irrd.1 $e |- ( ph -> R Irr A ) $.
-    irrd.2 $e |- ( ph -> X e. A ) $.
-    $( Irreflexivity relationship in natural deduction form. $)
-    irrd $p |- ( ph -> -. X R X ) $=
-      ( vx vr va wcel cv wbr wn wral cirr cvv wb wceq notbid syl wa brex df-irr
-      breq ralbidv raleq brabg ibi breq12 anidms rcla4v sylc ) ADBJGKZUMCLZMZGB
-      NZDDCLZMZFACBOLZUPEUSUPUSCPJBPJUAUSUPQCBOUBUMUMHKZLZMZGIKZNUOGVCNUPHICBPP
-      OUTCRZVBUOGVCVDVAUNUMUMUTCUDSUEUOGVCBUFGHIUCUGTUHTUOURGDBUMDRZUNUQVEUNUQQ
-      UMDUMDCUIUJSUKUL $.
-      $( [20-Feb-2015] $)
-  $}
-
-  ${
-    $d R r a x y $.  $d A r a x y $.  $d X x y $.  $d Y x y $.
-    lind.1 $e |- ( ph -> R Lin A ) $.
-    lind.2 $e |- ( ph -> X e. A ) $.
-    lind.3 $e |- ( ph -> Y e. A ) $.
-    $( Linear relationship in natural deduction form. $)
-    lind $p |- ( ph -> ( X R Y \/ X = Y \/ Y R X ) ) $=
-      ( vx vy vr va wcel cv wbr w3o wral wceq clin cvv wa weq jca wb brex biidd
-      breq 3orbi123d 2ralbidv raleq raleqbi1dv df-lin brabg syl ibi breq1 eqeq1
-      breq2 eqeq2 rcla42v sylc ) ADBMZEBMZUAINZJNZCOZIJUBZVEVDCOZPZJBQZIBQZDECO
-      ZDERZEDCOZPZAVBVCGHUCACBSOZVKFVPVKVPCTMBTMUAVPVKUDCBSUEVDVEKNZOZVGVEVDVQO
-      ZPZJLNZQIWAQVIJWAQZIWAQVKKLCBTTSVQCRZVTVIIJWAWAWCVRVFVGVGVSVHVDVEVQCUGWCV
-      GUFVEVDVQCUGUHUIWBVJIWABVIJWABUJUKIJKLULUMUNUOUNVIVODVECOZDVERZVEDCOZPIJD
-      EBBVDDRVFWDVGWEVHWFVDDVECUPVDDVEUQVDDVECURUHVEERWDVLWEVMWFVNVEEDCURVEEDUS
-      VEEDCUPUHUTVA $.
-      $( [20-Feb-2015] $)
-  $}
-
-  ${
     $d A a $.  $d a r $.  $d A r $.  $d a x $.  $d A x $.  $d a y $.  $d a z $.
     $d R a $.  $d R r $.  $d r x $.  $d R x $.  $d r y $.  $d R y $.  $d r z $.
     $d R z $.  $d X x $.  $d x y $.  $d X y $.  $d x z $.  $d X z $.  $d y z $.
@@ -51409,17 +51361,7 @@ $)
     frd.3 $e |- ( ph -> X C_ A ) $.
     frd.4 $e |- ( ph -> X =/= (/) ) $.
     $( Founded relationship in natural deduction form. $)
-    frd $p |- ( ph -> E. y e. X A. z e. X -. z R y ) $=
-      ( vx va vr wss c0 cv wa wi cvv wne wbr wn wral wrex wcel cfound brex wceq
-      wal wb notbid rexralbidv imbi2d albidv sseq2 anbi1d imbi1d df-found brabg
-      breq syl sseq1 neeq1 anbi12d raleq rexeqbi1dv imbi12d cla4gv sylc mp2and
-      ibi ) AGDOZGPUAZCQZBQZEUBZUCZCGUDZBGUEZJKAGFUFLQZDOZWAPUAZRZVRCWAUDZBWAUE
-      ZSZLUJZVMVNRZVTSZIAEDUGUBZWHHWKWHWKETUFDTUFRWKWHUKEDUGUHWAMQZOZWCRZVOVPNQ
-      ZUBZUCZCWAUDBWAUEZSZLUJWNWFSZLUJWHNMEDTTUGWOEUIZWSWTLXAWRWFWNXAWQVRBCWAWA
-      XAWPVQVOVPWOEVAULUMUNUOWLDUIZWTWGLXBWNWDWFXBWMWBWCWLDWAUPUQURUOLBCNMUSUTV
-      BVLVBWGWJLGFWAGUIZWDWIWFVTXCWBVMWCVNWAGDVCWAGPVDVEWEVSBWAGVRCWAGVFVGVHVIV
-      JVK $.
-      $( [20-Feb-2015] $)
+    frd $p |- ( ph -> E. y e. X A. z e. X ( z R y -> z = y ) ) $= ? $.
   $}
 
   ${
@@ -51487,36 +51429,11 @@ $)
       $( [22-Feb-2015] $)
   $}
 
-  $( Partial ordering as irreflexivity and transitivity. $)
-  potrir $p |- ( R Po A <-> ( R Trans A /\ R Irr A ) ) $=
-    ( cpartial wbr ctrans cirr cin wa df-partial breqi brin bitri ) BACDBAEFGZD
-    BAEDBAFDHBACMIJBAEFKL $.
-    $( [22-Feb-2015] $)
-
-  $( Total ordering as partial and linear ordering. $)
-  sopolin $p |- ( R Or A <-> ( R Po A /\ R Lin A ) ) $=
-    ( cstrict wbr cpartial clin cin wa df-strict breqi brin bitri ) BACDBAEFGZD
-    BAEDBAFDHBACMIJBAEFKL $.
-    $( [22-Feb-2015] $)
-
   $( Equivalence relationship as symmetric, transitive relationship. $)
   ersymtr $p |- ( R Er A <-> ( R Sym A /\ R Trans A ) ) $=
     ( cer wbr csym ctrans cin wa df-er breqi brin bitri ) BACDBAEFGZDBAEDBAFDHB
     ACMIJBAEFKL $.
     $( [22-Feb-2015] $)
-
-  ${
-    poasym.1 $e |- ( ph -> R Po A ) $.
-    poasym.2 $e |- ( ph -> X e. A ) $.
-    poasym.3 $e |- ( ph -> Y e. A ) $.
-    poasym.4 $e |- ( ph -> X R Y ) $.
-    $( Partial ordering is asymmetric. $)
-    poasym $p |- ( ph -> -. Y R X ) $=
-       ( wbr cpartial cirr ctrans potrir simprbi syl irrd wa adantr wcel simpr
-       simplbi trd mtand ) AEDCJZDDCJABCDACBKJZCBLJZFUFCBMJZUGBCNZOPGQAUERBCDED
-       AUHUEAUFUHFUFUHUGUIUBPSADBTUEGSZAEBTUEHSUJADECJUEISAUEUAUCUD $.
-       $( [22-Feb-2015] $)
-  $}
 
   ${
     $d A a $.  $d a r $.  $d A r $.  $d a x $.  $d A x $.  $d a y $.  $d A y $.
@@ -51525,16 +51442,14 @@ $)
     $d x y $.  $d x z $.  $d y z $.
     pod.1 $e |- ( ph -> R e. V ) $.
     pod.2 $e |- ( ph -> A e. W ) $.
-    pod.3 $e |- ( ( ph /\ x e. A ) -> -. x R x ) $.
+    pod.3 $e |- ( ( ph /\ x e. A ) -> x R x ) $.
     pod.4 $e |- ( ( ph /\ ( x e. A /\ y e. A /\ z e. A ) /\ 
        ( x R y /\ y R z ) ) -> x R z ) $.
-    $( An irreflexive, transitive ordering is a partial ordering. $)
-    pod $p |- ( ph -> R Po A ) $=
-       ( vr va wbr cirr cv wn wral wcel cpartial trrd ralrimiva wb wceq ralbidv
-       ctrans breq notbid raleq df-irr brabg syl2anc mpbird potrir sylanbrc ) A
-       FEUGOFEPOZFEUAOABCDEFGHIJLUBAUQBQZURFOZRZBESZAUTBEKUCAFGTEHTUQVAUDIJURUR
-       MQZOZRZBNQZSUTBVESVAMNFEGHPVBFUEZVDUTBVEVFVCUSURURVBFUHUIUFUTBVEEUJBMNUK
-       ULUMUNEFUOUP $.
+    pod.5 $e |- ( ( ph /\ ( x e. A /\ y e. A ) /\ ( x R y /\ y R x ) ) ->
+      x = y ) $.
+    $( A reflexive, transitive, and anti-symmetric ordering is a partial 
+       ordering. $)
+    pod $p |- ( ph -> R Po A ) $= ? $.
        $( [22-Feb-2015] $)
   $}
 
@@ -51545,59 +51460,26 @@ $)
     $d r z $.  $d R z $.  $d x z $.  $d y z $.
     issod.1 $e |- ( ph -> R e. V ) $.
     issod.2 $e |- ( ph -> A e. W ) $.
-    issod.3 $e |- ( ( ph /\ x e. A ) -> -. x R x ) $.
+    issod.3 $e |- ( ( ph /\ x e. A ) -> x R x ) $.
     issod.4 $e |- ( ( ph /\ ( x e. A /\ y e. A /\ z e. A ) /\ 
        ( x R y /\ y R z ) ) -> x R z ) $.
-    issod.5 $e |- ( ( ph /\ ( x e. A /\ y e. A ) ) ->
-       ( x R y \/ x = y \/ y R x ) ) $.
-    $( An irreflexive, transitive, linear relationship is a strict ordering. $)
-    issod $p |- ( ph -> R Or A ) $=
-       ( vr va wbr clin cv w3o wral cpartial cstrict pod weq ralrimivva wcel wb
-       wceq breq biidd 3orbi123d 2ralbidv raleq raleqbi1dv df-lin brabg syl2anc
-       mpbird sopolin sylanbrc ) AFEUAPFEQPZFEUBPABCDEFGHIJKLUCAVABRZCRZFPZBCUD
-       ZVCVBFPZSZCETZBETZAVGBCEEMUEAFGUFEHUFVAVIUGIJVBVCNRZPZVEVCVBVJPZSZCORZTB
-       VNTVGCVNTZBVNTVINOFEGHQVJFUHZVMVGBCVNVNVPVKVDVEVEVLVFVBVCVJFUIVPVEUJVCVB
-       VJFUIUKULVOVHBVNEVGCVNEUMUNBCNOUOUPUQUREFUSUT $.
-       $( [22-Feb-2015] $)
-  $}
-
-  ${
-    $d A x $.  $d A y $.  $d A z $.  $d ph x $.  $d ph y $.  $d ph z $.
-    $d R x $.  $d R y $.  $d R z $.  $d x y $.  $d x z $.  $d y z $.
-    isso2d.1 $e |- ( ph -> R e. V ) $.
-    isso2d.2 $e |- ( ph -> A e. W ) $.
-    isso2d.3 $e |- ( ( ph /\ ( x e. A /\ y e. A ) ) ->
-       ( x R y <-> -. ( x = y \/ y R x ) ) ) $.
-    isso2d.4 $e |- ( ( ph /\ ( x e. A /\ y e. A /\ z e. A ) /\ 
-       ( x R y /\ y R z ) ) -> x R z ) $.
-    $( Deduce strict ordering from its properties. $)
-    isso2d $p |- ( ph -> R Or A ) $=
-       ( cv wcel wbr wn wa weq wo wi equid orci wb eleq1 anbi2d equequ2 orbi12d
-       breq2 breq1 notbid bibi12d imbi12d chvarv con2bid mpbii anabsan2 w3o bi2
-       con1d 3orass df-or bitri sylibr syl issod ) ABCDEFGHIJABMZENZVFVFFOZPZAV
-       GVGQZQZBBRZVHSZVIVLVHBUAUBVKVHVMAVGCMZENZQZQZVFVNFOZBCRZVNVFFOZSZPZUCZTV
-       KVHVMPZUCZTCBCBRZVQVKWCWEWFVPVJAWFVOVGVGVNVFEUDUEUEWFVRVHWBWDVNVFVFFUHWF
-       WAVMWFVSVLVTVHCBBUFVNVFVFFUIUGUJUKULKUMUNUOUPLVQWCVRVSVTUQZKWCVRPWATZWGW
-       CWAVRVRWBURUSWGVRWASWHVRVSVTUTVRWAVAVBVCVDVE $.
-       $( [22-Feb-2015] $)
+    issod.5 $e |- ( ( ph /\ ( x e. A /\ y e. A ) /\ ( x R y /\ y R x ) ) ->
+      x = y ) $.
+    issod.6 $e |- ( ( ph /\ ( x e. A /\ y e. A ) ) ->
+       ( x R y \/ y R x ) ) $.
+    $( A reflexive, transitive, antisymmetric, and connected relationship is a 
+       strict ordering. $)
+    issod $p |- ( ph -> R Or A ) $= ? $.
   $}
 
   ${
     $d R x y z $.  $d ph x y z $.
     ord0.1 $e |- ( ph -> R e. V ) $.
     $( Anything partially orders the empty set. $)
-    po0 $p |- ( ph -> R Po (/) ) $=
-      ( vx vy vz c0 cvv wcel 0ex a1i cv wbr wn noel pm2.21i adantl w3a wa pod
-      3ad2ant1 3ad2ant2 ) AEFGHBCIDHIJAKLEMZHJZUDUDBNOZAUEUFUDPZQRUEFMZHJZGMZHJ
-      ZSAUDUJBNZUDUHBNUHUJBNTUEUIULUKUEULUGQUBUCUA $.
-      $( [22-Feb-2015] $)
+    po0 $p |- ( ph -> R Po (/) ) $= ? $.
 
     $( Anything totally orders the empty set. $)
-    so0 $p |- ( ph -> R Or (/) ) $=
-      ( vx vy vz c0 cvv wcel 0ex a1i cv wbr weq wo wn wb noel pm2.21i wa isso2d
-      ad2antrl w3a 3ad2ant1 3ad2ant2 ) AEFGHBCIDHIJAKLEMZHJZUGFMZBNZEFOUIUGBNPQ
-      RZAUIHJZUHUKUGSZTUCUHULGMZHJZUDAUGUNBNZUJUIUNBNUAUHULUPUOUHUPUMTUEUFUB $.
-      $( [22-Feb-2015] $)
+    so0 $p |- ( ph -> R Or (/) ) $= ? $.
   $}
 
   ${
@@ -56218,18 +56100,22 @@ htmldef "Trans" as
     " <FONT FACE=sans-serif>Trans</FONT> ";
   althtmldef "Trans" as ' <FONT FACE=sans-serif>Trans</FONT> ';
   latexdef "Trans" as "{\rm Trans}";
-htmldef "Irr" as
-    " <FONT FACE=sans-serif>Irr</FONT> ";
-  althtmldef "Irr" as ' <FONT FACE=sans-serif>Irr</FONT> ';
-  latexdef "Irr" as "{\rm Irr}";
+htmldef "Ref" as
+    " <FONT FACE=sans-serif>Ref</FONT> ";
+  althtmldef "Ref" as ' <FONT FACE=sans-serif>Ref</FONT> ';
+  latexdef "Ref" as "{\rm Ref}";
+htmldef "Antisym" as
+    " <FONT FACE=sans-serif>Antisym</FONT> ";
+  althtmldef "Antisym" as ' <FONT FACE=sans-serif>Antisym</FONT> ';
+  latexdef "Antisym" as "{\rm Antisym}";
 htmldef "Po" as
     " <FONT FACE=sans-serif>Po</FONT> ";
   althtmldef "Po" as ' <FONT FACE=sans-serif>Po</FONT> ';
   latexdef "Po" as "{\rm Po}";
-htmldef "Lin" as
-    " <FONT FACE=sans-serif>Lin</FONT> ";
-  althtmldef "Lin" as ' <FONT FACE=sans-serif>Lin</FONT> ';
-  latexdef "Lin" as "{\rm Lin}";
+htmldef "Connex" as
+    " <FONT FACE=sans-serif>Connex</FONT> ";
+  althtmldef "Connex" as ' <FONT FACE=sans-serif>Connex</FONT> ';
+  latexdef "Connex" as "{\rm Connex}";
 htmldef "Or" as
     " <FONT FACE=sans-serif>Or</FONT> ";
   althtmldef "Or" as ' <FONT FACE=sans-serif>Or</FONT> ';
