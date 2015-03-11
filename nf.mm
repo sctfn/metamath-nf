@@ -55043,6 +55043,32 @@ $)
     AEOPQUHUDUIULABRSTUAUBUC $.
     $( [11-Mar-2015] $)
 
+  ${ $d M x $. $d M y $. $d M z $. $d N x $. $d N y $. $d N z $. $d x y $. $d x z $. $d y z $. 
+     $( For non-empty sets, cardinal sum always increases cardinal less than or
+     	equal.  Theorem XI.2.19 of [Rosser], p. 376. $)
+     addlec $p |- ( ( M e. V /\ N e. W /\ ( M +c N ) =/= (/) ) ->
+       M <_c ( M +c N ) ) $=
+       ( vx vz vy wcel cplc c0 wne w3a clec cv wss wrex wex wa wceq cvv wbr cin
+       cun eladdc ssun1 sseq2 mpbiri adantl rexlimivw reximi sylbi ancli rexcom
+       eximi df-rex bitri 3imtr4i 3ad2ant3 addcexg brlecg syldan 3adant3 mpbird
+       n0 wb ) ACHZBDHZABIZJKZLAVHMUAZENZFNZOZFVHPEAPZVIVFVNVGVLVHHZFQVOVMEAPZR
+       ZFQZVIVNVOVQFVOVPVOVKGNZUBJSZVLVKVSUCZSZRZGBPZEAPVPVLABEGUDWDVMEAWCVMGBW
+       BVMVTWBVMVKWAOVKVSUEVLWAVKUFUGUHUIUJUKULUNFVHVDVNVPFVHPVRVMEFAVHUMVPFVHU
+       OUPUQURVFVGVJVNVEZVIVFVGVHTHWEABCDUSEFAVHCTUTVAVBVC $.
+       $( [11-Mar-2015] $)
+  $}
+
+  ${
+     $( For cardinals, cardinal sum always increases cardinal less than or
+     	equal.  Corollary of theorem XI.2.19 of [Rosser], p. 376. $)
+     addlecncs $p |- ( ( M e. NC /\ N e. NC ) -> M <_c ( M +c N ) ) $=
+       ( cncs wcel cplc c0 wne clec wbr wa ncaddccl wceq nulnnc mtbiri necon2ai
+       eleq1 syl addlec mpd3an3 ) ACDZBCDZABEZFGZAUBHITUAJUBCDZUCABKUDUBFUBFLUD
+       FCDMUBFCPNOQABCCRS $.
+       $( [11-Mar-2015] $)
+  $}
+
+
   ${
     tcnc.1 $e |- A e. _V $.
     $( Compute the T-raising of a cardinality. $)
