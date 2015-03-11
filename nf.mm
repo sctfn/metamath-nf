@@ -55026,13 +55026,6 @@ $)
        $( [11-Mar-2015] $)
   $}
 
-  $( Cardinal less implies negated cardinal less than or equal.  Corollary 1 of
-     theorem XI.2.20 of [Rosser], p. 377. $)
-  ltnlecim $p |- ( ( A e. NC /\ B e. NC ) -> ( A <c B -> -. B <_c A ) ) $=
-    ( cltc wbr clec wne wa cncs wcel wn brltc wceq sbth expdimp necon3ad syl5bi
-    expimpd ) ABCDABEDZABFZGAHIBHIGZBAEDZJZABKTRSUBTRGUAABTRUAABLABMNOQP $.
-    $( [11-Mar-2015] $)
-
   $( Cardinal less than is equivalent to one-way cardinal less than or equal.
      Theorem XI.2.21 of [Rosser], p. 377. $)
   ltlenlec $p |- ( ( M e. NC /\ N e. NC ) -> 
@@ -55042,6 +55035,9 @@ $)
     HIZBHIZGZUDBAEDZJZGABKUHUDUEUJUHUDGZUIABUKABLZUIUFULUIMUGUDUFAAEDULUIANAB
     AEOPQUHUDUIULABRSTUAUBUC $.
     $( [11-Mar-2015] $)
+
+  $( Cardinal less than in terms of negated cardinal less than or equal. $)
+  ltnlec $p |- ( ( A e. NC /\ B e. NC ) -> ( A <c B <-> -. B <_c A ) ) $= ? $.
 
   ${ $d M x $. $d M y $. $d M z $. $d N x $. $d N y $. $d N z $. $d x y $. $d x z $. $d y z $. 
      $( For non-empty sets, cardinal sum always increases cardinal less than or
@@ -55123,10 +55119,16 @@ $)
        $( [10-Mar-2015] $)
   $}
 
-  ${
+  ${ $d M p $. $d N p $. 
     $( T-raising perserves order for cardinals.  Theorem 5.5 of [Specker]. $)
     tlecg $p |- ( ( M e. NC /\ N e. NC ) -> ( M <_c N <-> T_c M <_c T_c N ) )
-        $= ? $.
+        $=
+      ( vp cncs wcel wa clec wbr ctc cv cplc wceq wrex dflec2 wi tccl addlecncs
+      syl2an tcdi breqtrrd breq2d syl5ibrcom rexlimdva adantr sylbid impbid
+      tceq ) ADEZBDEZFZABGHZAIZBIZGHZUJUKBACJZKZLZCDMZUNABCNUHURUNOUIUHUQUNCDUH
+      UODEZFZUNUQULUPIZGHUTULULUOIZKZVAGUHULDEVBDEULVCGHUSAPUOPULVBQRAUOSTUQUMV
+      AULGBUPUGUAUBUCUDUE?UF $.
+      $( [11-Mar-2015] $)
   $}
 
   $( Cardinal one is not zero. $)
