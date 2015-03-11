@@ -24464,7 +24464,6 @@ $)
       $( [22-Jul-2012] $)
   $}
 
-
 $(
 =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
            The empty set
@@ -24824,6 +24823,13 @@ $)
   difid $p |- ( A \ A ) = (/) $=
     ( cdif ccompl cin c0 df-dif incompl eqtri ) AABAACDEAAFAGH $.
     $( [22-Apr-2004] $)
+
+
+  $( The intersection of an intersection and a difference is empty. $)
+  inindif $p |- ( ( A i^i B ) i^i ( A \ B ) ) = (/) $=
+    ( cin cdif ccompl c0 df-dif ineq2i inindi incompl in0 eqtri 3eqtr2i ) ABCZA
+    BDZCNABEZCZCABPCZCZFOQNABGHABPISAFCFRFABJHAKLM $.
+    $( [10-Mar-2015] $)
 
   $( The difference between a class and the empty set.  Part of Exercise 4.4 of
      [Stoll] p. 16. $)
@@ -26496,7 +26502,6 @@ $)
       $( [29-Apr-1994] $)
   $}
 
-
   $( Preservation of a subclass relationship by class difference. $)
   ssdifss $p |- ( A C_ B -> ( A \ C ) C_ B ) $=
     ( cdif wss difss sstr mpan ) ACDZAEABEIBEACFIABGH $.
@@ -26713,6 +26718,12 @@ $)
   inss2 $p |- ( A i^i B ) C_ B $=
     ( cin incom inss1 eqsstr3i ) ABCBACBBADBAEF $.
     $( [27-Apr-1994] $)
+
+
+  $( A difference is a subset of the complement of its second argument. $)
+  difsscompl $p |- ( A \ B ) C_ ~ B $=
+    ( cdif ccompl cin df-dif inss2 eqsstri ) ABCABDZEIABFAIGH $.
+    $( [10-Mar-2015] $)
 
   ${
     $d x A $.  $d x B $.  $d x C $.
@@ -26968,7 +26979,6 @@ $)
   vss $p |- ( _V C_ A <-> A = _V ) $=
     ( cvv wss wa wceq ssv biantrur eqss bitr4i ) BACZABCZJDABEKJAFGABHI $.
     $( [26-Jun-2011] $) $( [17-Sep-2003] $)
-
 
 $(
 =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
@@ -50904,6 +50914,15 @@ $)
       CWICDEHVAZVBXHXGXKXJXGIWICWDWIWNDVCVDVHZVIWKXLACVTCLWKUSXHXLVTWICDEHVEXNV
       IVFVJVKWPXJAICVTWDWNDVCVLVMVNVOVPVSVRWBECBXMVBWAVRACVTBCDEHVEVFVJVQ $.
       $( [13-Feb-2015] $)
+
+   $d S x $.
+   $( A closure is equal to the base set together with the image
+      of the closure under ` R ` .  Theorem X.4.37 of [Rosser], p. 303. $)
+   clos1baseima $p |- C = ( S u. ( R " C ) ) $=
+     ( vx vy cima cun cv wcel wbr wrex elima orbi2i elun clos1basesuc 3bitr4ri
+     wo eqriv ) GACBAIZJZGKZCLZUDUBLZTUEHKUDBMHANZTUDUCLUDALUFUGUEHUDBAOPUDCUBQ
+     HUDABCDEFRSUA $.
+     $( [10-Mar-2015] $)
   $}
 
   ${
@@ -53994,6 +54013,38 @@ $)
   $}
 
   ${
+     $d A x $. $d A y $. $d B x $. $d B y $. $d x y $. 
+     $( Cardinal multiplication commutes.  Theorem XI.2.28 of [Rosser],
+     	p. 378. $)
+     muccom $p |- ( ( A e. NC /\ B e. NC ) -> ( A .c B ) = ( B .c A ) ) $=
+       ( vx vy cncs wcel wa cv cnc wceq wex cmuc co elncs anbi12i eeanv cxp vex
+       mucnc oveq12 bitr4i cen xpcomen xpex eqnc mpbir 3eqtr4i 3eqtr4a exlimivv
+       wbr ancoms sylbi ) AEFZBEFZGZACHZIZJZBDHZIZJZGZDKCKZABLMZBALMZJZUOURCKZV
+       ADKZGVCUMVGUNVHCANDBNOURVACDPUAVBVFCDVBUQUTLMZUTUQLMZVDVEUPUSQZIZUSUPQZI
+       ZVIVJVLVNJVKVMUBUJUPUSCRZDRZUCVKVMUPUSVOVPUDUEUFUPUSVOVPSUSUPVPVOSUGAUQB
+       UTLTVAURVEVJJBUTAUQLTUKUHUIUL $.
+       $( [10-Mar-2015] $)
+  $}
+
+  ${ $d A x $. $d A y $. $d A z $. $d B x $. $d B y $. $d B z $. $d C x $. $d C y $. $d C z $. $d x y $. $d x z $. $d y z $. 
+     $( Cardinal multiplication associates.  Theorem XI.2.29 of [Rosser],
+     	p. 378. $)
+     mucass $p |- ( ( A e. NC /\ B e. NC /\ C e. NC ) ->
+       ( ( A .c B ) .c C ) = ( A .c ( B .c C ) ) ) $=
+       ( vx vy vz cncs wcel w3a cv cnc wceq wex cmuc elncs cxp vex xpex mucnc
+       co 3anbi123i eeeanv bitr4i cen xpassen mpbir oveq1i eqtri oveq2i 3eqtr4i
+       wbr eqnc wa oveq12 oveqan12d 3impa 3impb 3eqtr4a exlimiv exlimivv sylbi
+       id ) AGHZBGHZCGHZIZADJZKZLZBEJZKZLZCFJZKZLZIZFMZEMDMZABNTZCNTZABCNTZNTZL
+       ZVFVIDMZVLEMZVOFMZIVRVCWDVDWEVEWFDAOEBOFCOUAVIVLVODEFUBUCVQWCDEVPWCFVPVH
+       VKNTZVNNTZVHVKVNNTZNTZVTWBVGVJPZVMPZKZVGVJVMPZPZKZWHWJWMWPLWLWOUDUKVGVJV
+       MDQZEQZFQZUEWLWOWKVMVGVJWQWRRZWSRULUFWHWKKZVNNTWMWGXAVNNVGVJWQWRSUGWKVMW
+       TWSSUHWJVHWNKZNTWPWIXBVHNVJVMWRWSSUIVGWNWQVJVMWRWSRSUHUJVIVLVOVTWHLVIVLU
+       MVOVSWGCVNNAVHBVKNUNVOVBUOUPVIVLVOWBWJLVIVLVOUMAVHWAWINVIVBBVKCVNNUNUOUQ
+       URUSUTVA $.
+       $( [10-Mar-2015] $)
+  $}
+
+  ${
     $d A p $.  $d A q $.  $d A r $.  $d A x $.  $d B p $.  $d B q $.  $d B r $.
     $d B x $.  $d p q $.  $d p x $.  $d q x $.  $d r x $.
     ncdisjun.1 $e |- A e. _V $.
@@ -54024,16 +54075,27 @@ $)
   $}
 
   $( Cardinal zero is the cardinality of the empty set. $)
-  0cncnul $p |- 0c = Nc (/) $=
+  df0c2 $p |- 0c = Nc (/) $=
     ( vx c0 cen cec cv wbr cab cnc c0c dfec2 df-nc wceq wcel en0 ensym 3bitr4ri
     el0c abbi2i 3eqtr4ri ) BCDBAEZCFZAGBHIABCJBKUAAITBCFTBLUATIMTNBTOTQPRS $.
     $( [24-Feb-2015] $)
 
   $( Cardinal zero is a cardinal number. $)
   0cnc $p |- 0c e. NC $=
-    ( vx c0c cncs wcel cv cnc wceq wex c0 0cncnul 0ex eqeq2d cla4ev ax-mp elncs
-    nceq mpbir ) BCDBAEZFZGZAHZBIFZGZUAJTUCAIKRIGSUBBRIPLMNABOQ $.
+    ( c0c c0 cnc cncs df0c2 0ex ncelncsi eqeltri ) ABCDEBFGH $.
     $( [24-Feb-2015] $)
+
+  ${
+     $d A x $. 
+     $( Cardinal multiplication by zero.  Theorem XI.2.32 of [Rosser],
+     	p. 379. $)
+     muc0 $p |- ( A e. NC -> ( A .c 0c ) = 0c ) $=
+       ( vx cncs wcel cv cnc wceq wex c0c co elncs oveq1 c0 cxp xp0 nceqi df0c2
+       cmuc oveq2i vex 0ex mucnc eqtri 3eqtr4i syl6eq exlimiv sylbi ) ACDABEZFZ
+       GZBHAIRJZIGZBAKUJULBUJUKUIIRJZIAUIIRLUHMNZFZMFZUMIUNMUHOPUMUIUPRJUOIUPUI
+       RQSUHMBTUAUBUCQUDUEUFUG $.
+       $( [10-Mar-2015] $)
+  $}
 
   ${
     $d f x $.  $d f y $.  $d f z $.  $d x y $.  $d x z $.  $d y z $.
@@ -54712,7 +54774,7 @@ $)
        [Rosser], p. 385. $)
     ce0 $p |- ( ( M e. NC /\ ( M ^c 0c ) e. NC ) -> ( M ^c 0c ) = 1c ) $=
        ( va cncs wcel c0c cce co wa csn cnc c1c wceq cpw1 wex ce0ncpw1 cmap vex
-       c0 cv 0ex map0e ovex ncid eqeltrri cenc 0cncnul pw10 nceqi eqtr4i oveq12
+       c0 cv 0ex map0e ovex ncid eqeltrri cenc df0c2 pw10 nceqi eqtr4i oveq12
        eleqtrri mpan2 syl5eleqr exlimiv syl ncseqnc adantl mpbird df1c3 syl6eqr
        wb ) ACDZAEFGZCDZHZVCRIZJZKVEVCVGLZVFVCDZVEABSZMJZLZBNVIABOVLVIBVLVFVKRM
        ZJZFGZVCVFVJRPGZJZVOVPVFVQVJBQZUAVPVJRPUBUCUDVJRVRTUEUKVLEVNLVCVOLERJVNU
@@ -54837,6 +54899,53 @@ $)
       RUMUNUOEZUPUQEZVBUMUNOEVCABPUNOQRUMUPOEVDABUAUPOQRVCVDUNUPMZVBAUBVAVEUNUT
       MCDUNUPUOUQUSUNUTUCUTUPUNUDUEUFUJCDUOUQUNTUPTUGUHABUIUOUQUKUL $.
       $( [10-Mar-2015] $)
+  $}
+
+  ${ $d B b $. $d R b $. 
+     sbthlem1.1 $e |- R e. _V $.
+     $( Lemma for ~ sbth .  Set up similarity with a range.  Theorem XI.1.14
+     	of [Rosser], p. 350. $)
+     sbthlem1 $p |- ( ( ( Fun R /\ Fun `' R ) /\ 
+       ( B e. V /\ B C_ dom R /\ ran R C_ B ) ) -> ran R ~~ B ) $=
+       ( vb wss wfun wa cen wbr wi wceq cdif cin df-dif pm3.2i difex c0 inindif
+       cun wcel cdm crn ccnv cv sseq1 sseq2 anbi12d breq2 imbi2d imbi12d cclos1
+       w3a ccompl eqsstri inss2 sstri difsscompl ssin mpbi syl6sseqr eqssd rnex
+       a1i vex clos1ex enrflx breq1 mpbiri mpan2 syl2anc inundif 3brtr3g expcom
+       syl unen vtoclg 3impib impcom ) ACUAZABUBZFZBUCZAFZUMBGBUDGHZWCAIJZVTWBW
+       DWEWFKZEUEZWAFZWCWHFZHZWEWCWHIJZKZKWBWDHZWGKEACWHALZWKWNWMWGWOWIWBWJWDWH
+       AWAUFWHAWCUGUHWOWLWFWEWHAWCIUIUJUKWEWKWLWEWKHZWCWHWCMZBULZNZWCWRMZTZWHWR
+       NZWHWRMZTZWCWHIWPWSXBIJZWTXCIJZXAXDIJZ?WPWTXCLZXFWPWTXC?WPXCWCWRUNZNZWTX
+       CXJFZWPXCWCFZXCXIFZHXKXLXMXCWHWCNZWCXCWHXINXNWHWRO?UOWHWCUPUQWHWRURPXCWC
+       XIUSUTVDWCWROVAVBXHXFXCXCIJXCWHWREVEZBWQWHWCXOBDVCQDVFQVGWTXCXCIVHVIVOXE
+       XFHWSWTNRLZXBXCNRLZHXGXPXQWCWRSWHWRSPWSXBWTXCVPVJVKWCWRVLWHWRVLVMVNVQVRV
+       S $.
+       $( [10-Mar-2015] $)
+  $}
+
+  ${ $d A r $. $d A s $. $d B r $. $d B s $. $d C r $. $d C s $. $d D r $. $d D s $. $d r s $. 
+     $( Lemma for ~ sbth .  If ` A ` is equinumerous with a subset of ` B ` 
+     	and vice-versa, then ` A ` is equinumerous with ` B ` .  
+	Theorem XI.1.15 of [Rosser], p. 353. $)
+     sbthlem2 $p |- ( ( ( A ~~ C /\ C C_ B ) /\ ( B ~~ D /\ D C_ A ) ) ->
+       A ~~ B ) $=
+       ( vr vs cen wbr wss wf1o wex bitr4i crn cdm wceq syl ad2antlr wfun ccnv
+       wa cv wi bren anbi12i eeanv ccom simprl wfo f1ofo ad2antrr f1odm 3sstr4d
+       forn dmcosseq eqtrd f1ofun funco syl2anr wfn dff1o2 simp2bi syl2an cnvco
+       funeqi sylibr jca adantr w3a funfn anbi1i eqid df-3an mpbiran2 vex f1oen
+       coex eqbrtrrd cvv wcel simprr sseqtr4d rncoss syl5sseq sbthlem1 syl13anc
+       rnex syl6eqelr entr syl2anc ex exlimivv sylbi imp an4s ensymi ad2antrl )
+       ACGHZCBIZTZBDGHZDAIZTTADGHZDBGHZABGHWQWTWRXAXBWQWTTZWRXATZXBXDACEUAZJZBD
+       FUAZJZTZFKEKZXEXBUBZXDXGEKZXIFKZTXKWQXMWTXNACEUCBDFUCUDXGXIEFUELXJXLEFXJ
+       XEXBXJXETZAXHXFUFZMZGHXQDGHZXBXOXPNZAXQGXOXSXFNZAXOXFMZXHNZIXSXTOXOCBYAY
+       BXJWRXAUGXGYACOZXIXEXGACXFUHYCACXFUIACXFUMPUJXIYBBOXGXEBDXHUKQULXHXFUNPX
+       GXTAOXIXEACXFUKUJUOZXOXSXQXPJZXSXQGHXOXPRZXPSZRZTZYEXJYIXEXJYFYHXIXHRXFR
+       YFXGBDXHUPACXFUPXHXFUQURXJXFSZXHSZUFZRZYHXGYJRZYKRZYMXIXGXFAUSYNYCACXFUT
+       VAXIXHBUSYOXHMZDOZBDXHUTVAYJYKUQVBYGYLXHXFVCVDVEVFVGZYEXPXSUSZYHXQXQOZVH
+       ZYIXSXQXPUTYIYSYHTZUUAYFYSYHXPVIVJUUAUUBYTXQVKYSYHYTVLVMLLVEXSXQXPXHXFFV
+       NZEVNVPZVOPVQXOYIDVRVSZDXSIXQDIXRYRXIUUEXGXEXIDYPVRXIBDXHUHYQBDXHUIBDXHU
+       MPZXHUUCWFWGQXODAXSXJWRXAVTYDWAXOYPXQDXHXFWBXIYQXGXEUUFQWCDXPVRUUDWDWEAX
+       QDWHWIWJWKWLWMWNWTXCWSXABDWOWPADBWHWI $.
+       $( [10-Mar-2015] $)
   $}
 
   ${
