@@ -26980,6 +26980,16 @@ $)
     ( cvv wss wa wceq ssv biantrur eqss bitr4i ) BACZABCZJDABEKJAFGABHI $.
     $( [26-Jun-2011] $) $( [17-Sep-2003] $)
 
+  ${
+    $d A x $.  $d B x $.
+    $( Contraposition law for subset. $)
+    sscon34 $p |- ( A C_ B <-> ~ B C_ ~ A ) $=
+       ( vx cv wcel wi wal ccompl wss wn con34b vex elcompl imbi12i albii dfss2
+       bitr4i 3bitr4i ) CDZAEZSBEZFZCGSBHZEZSAHZEZFZCGABIUCUEIUBUGCUBUAJZTJZFUG
+       TUAKUDUHUFUISBCLZMSAUJMNQOCABPCUCUEPR $.
+       $( [11-Mar-2015] $)
+  $}
+
 $(
 =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
                        The union of a class
@@ -50915,10 +50925,10 @@ $)
       IVFVJVKWPXJAICVTWDWNDVCVLVMVNVOVPVSVRWBECBXMVBWAVRACVTBCDEHVEVFVJVQ $.
       $( [13-Feb-2015] $)
 
-   $d S x $.
-   $( A closure is equal to the base set together with the image
-      of the closure under ` R ` .  Theorem X.4.37 of [Rosser], p. 303. $)
-   clos1baseima $p |- C = ( S u. ( R " C ) ) $=
+    $d S x $.
+    $( A closure is equal to the base set together with the image of the
+       closure under ` R ` .  Theorem X.4.37 of [Rosser], p. 303. $)
+    clos1baseima $p |- C = ( S u. ( R " C ) ) $=
      ( vx vy cima cun cv wcel wbr wrex elima orbi2i elun clos1basesuc 3bitr4ri
      wo eqriv ) GACBAIZJZGKZCLZUDUBLZTUEHKUDBMHANZTUDUCLUDALUFUGUEHUDBAOPUDCUBQ
      HUDABCDEFRSUA $.
@@ -54013,10 +54023,10 @@ $)
   $}
 
   ${
-     $d A x $. $d A y $. $d B x $. $d B y $. $d x y $. 
-     $( Cardinal multiplication commutes.  Theorem XI.2.28 of [Rosser],
-     	p. 378. $)
-     muccom $p |- ( ( A e. NC /\ B e. NC ) -> ( A .c B ) = ( B .c A ) ) $=
+    $d A x $.  $d A y $.  $d B x $.  $d B y $.  $d x y $.
+    $( Cardinal multiplication commutes.  Theorem XI.2.28 of [Rosser],
+       p. 378. $)
+    muccom $p |- ( ( A e. NC /\ B e. NC ) -> ( A .c B ) = ( B .c A ) ) $=
        ( vx vy cncs wcel wa cv cnc wceq wex cmuc co elncs anbi12i eeanv cxp vex
        mucnc oveq12 bitr4i cen xpcomen xpex eqnc mpbir 3eqtr4i 3eqtr4a exlimivv
        wbr ancoms sylbi ) AEFZBEFZGZACHZIZJZBDHZIZJZGZDKCKZABLMZBALMZJZUOURCKZV
@@ -54026,10 +54036,12 @@ $)
        $( [10-Mar-2015] $)
   $}
 
-  ${ $d A x $. $d A y $. $d A z $. $d B x $. $d B y $. $d B z $. $d C x $. $d C y $. $d C z $. $d x y $. $d x z $. $d y z $. 
-     $( Cardinal multiplication associates.  Theorem XI.2.29 of [Rosser],
-     	p. 378. $)
-     mucass $p |- ( ( A e. NC /\ B e. NC /\ C e. NC ) ->
+  ${
+    $d A x $.  $d A y $.  $d A z $.  $d B x $.  $d B y $.  $d B z $.  $d C x $.
+    $d C y $.  $d C z $.  $d x y $.  $d x z $.  $d y z $.
+    $( Cardinal multiplication associates.  Theorem XI.2.29 of [Rosser],
+       p. 378. $)
+    mucass $p |- ( ( A e. NC /\ B e. NC /\ C e. NC ) ->
        ( ( A .c B ) .c C ) = ( A .c ( B .c C ) ) ) $=
        ( vx vy vz cncs wcel w3a cv cnc wceq wex cmuc elncs cxp vex xpex mucnc
        co 3anbi123i eeeanv bitr4i cen xpassen mpbir oveq1i eqtri oveq2i 3eqtr4i
@@ -54086,10 +54098,10 @@ $)
     $( [24-Feb-2015] $)
 
   ${
-     $d A x $. 
-     $( Cardinal multiplication by zero.  Theorem XI.2.32 of [Rosser],
-     	p. 379. $)
-     muc0 $p |- ( A e. NC -> ( A .c 0c ) = 0c ) $=
+    $d A x $.
+    $( Cardinal multiplication by zero.  Theorem XI.2.32 of [Rosser],
+       p. 379. $)
+    muc0 $p |- ( A e. NC -> ( A .c 0c ) = 0c ) $=
        ( vx cncs wcel cv cnc wceq wex c0c co elncs oveq1 c0 cxp xp0 nceqi df0c2
        cmuc oveq2i vex 0ex mucnc eqtri 3eqtr4i syl6eq exlimiv sylbi ) ACDABEZFZ
        GZBHAIRJZIGZBAKUJULBUJUKUIIRJZIAUIIRLUHMNZFZMFZUMIUNMUHOPUMUIUPRJUOIUPUI
@@ -54901,38 +54913,79 @@ $)
       $( [10-Mar-2015] $)
   $}
 
-  ${ $d B b $. $d R b $. 
-     sbthlem1.1 $e |- R e. _V $.
-     $( Lemma for ~ sbth .  Set up similarity with a range.  Theorem XI.1.14
-     	of [Rosser], p. 350. $)
-     sbthlem1 $p |- ( ( ( Fun R /\ Fun `' R ) /\ 
+  ${
+    sbthlem1.1 $e |- R e. _V $.
+    sbthlem1.2 $e |- X e. _V $.
+    sbthlem1.3 $e |- G = Clos1 ( ( X \ ran R ) , R ) $.
+    sbthlem1.4 $e |- A = ( X i^i G ) $.
+    sbthlem1.5 $e |- B = ( X \ G ) $.
+    sbthlem1.6 $e |- C = ( ran R i^i G ) $.
+    sbthlem1.7 $e |- D = ( ran R \ G ) $.
+    $( Lemma for ~ sbth .  Set up similarity with a range.  Theorem XI.1.14 of
+       [Rosser], p. 350. $)
+    sbthlem1 $p |- ( ( ( Fun R /\ Fun `' R ) /\ 
+       ( X C_ dom R /\ ran R C_ X ) ) -> ran R ~~ X ) $=
+       ( wa wss cun cen cin c0 wfun ccnv cdm crn wbr cima cres wf1 wf df-f1 wfn
+       wf1o ssid df-f mpbiran2 funfn bitr4i anbi1i bitri biimpri inss1 syl5eqss
+       sstr mpan adantr f1ores syl2an cvv cdif cclos1 rnex clos1ex eqeltri inex
+       difex resex f1oen syl clos1baseima ineq2i disjdif uneq1i uncom un0 eqtri
+       indi 3eqtri inss2 a1i wceq imassrn simprr difss jctil unss sylib sseqin2
+       syl5ss syl5eq sseqtr4d ssun2 sseqtr4i sseq1d mpbiri ssin syl6sseqr eqssd
+       imaeq2d breqtrrd enrflx ccompl difsscompl df-dif clos1base mpbi compleqi
+       sscon34 iinun dblcompl sseqtri sslin ax-mp eqsstri incompl sstri 3sstr4g
+       uneq2i ssdif syl5breq ineq12i inindif unen mpanr12 syl2anc ensym uneq12i
+       inundif 3brtr3g ) EUAZEUBUAZOZGEUCZPZEUDZGPZOZOZCDQZABQZUUDGRUUGUUIUUHRU
+       EZUUHUUIRUEUUGACRUEZBDRUEZUUJUUGAEAUFZCRUUGAUUMEAUGZULZAUUMRUEUUAUUBUUDE
+       UHZAUUBPZUUOUUFUUPUUAUUPUUBUUDEUIZYTOUUAUUBUUDEUJUURYSYTUUREUUBUKZYSUURU
+       USUUDUUDPUUDUMUUBUUDEUNUOEUPUQURUSUTUUCUUQUUEUUCAGFSZUUBKUUTGPUUCUUTUUBP
+       GFVAUUTGUUBVCVDVBVEUUBUUDAEVFVGAUUMUUNEAHAUUTVHKGFIFGUUDVIZEVJVHJEUVAGUU
+       DIEHVKVOZHVLVMZVNVMVPVQVRUUGCUUMUUGCEFUFZUUMUUGCUUDUVDSZUVDCUUDFSZUUDUVA
+       UVDQZSZUVEMFUVGUUDFEUVAUVBHJVSZVTUVHUUDUVASZUVEQTUVEQZUVEUUDUVAUVDWFUVJT
+       UVEUUDGWAWBUVKUVETQUVETUVEWCUVEWDWEWGWGUVEUVDPUUGUUDUVDWHWIVBUUGAFEUUGAU
+       UTFKUUGFGPUUTFWJUUGFUVGGUVIUUGUVAGPZUVDGPZOUVGGPUUGUVMUVLUUGUVDUUDGEFWKU
+       UAUUCUUEWLZWRGUUDWMWNUVAUVDGWOWPVBFGWQWPWSXHZWTUUGUUMUVFCUUGUUMUUDPZUUMF
+       PZOUUMUVFPUUGUVQUVPUUGUVQUVDFPUVDUVGFUVDUVAXAUVIXBUUGUUMUVDFUVOXCXDEAWKW
+       NUUMUUDFXEWPMXFXGXIUUGBBDRBBGFVIZVHLGFIUVCVOVMXJUUGBDUUGUVRUUDFXKZSZBDUU
+       GUVRUUDPZUVRUVSPZOUVRUVTPUUGUWBUWAUWBUUGGFXLWIUVRGGXKZUUDQZSZUUDUVRGUVSS
+       ZUWEGFXMUVSUWDPUWFUWEPUVSUVAXKZUWDUVAFPUVSUWGPFEUVAJXNUVAFXQXOUWGGUUDXKZ
+       SZXKUWCUWHXKZQUWDUVAUWIGUUDXMXPGUWHXRUWJUUDUWCUUDXSYGWGXTUVSUWDGYAYBYCUW
+       EGUUDSZUUDUWEGUWCSZUWKQTUWKQZUWKGUWCUUDWFUWLTUWKGYDWBUWMUWKTQUWKTUWKWCUW
+       KWDWEWGGUUDWHYCYEWNUVRUUDUVSXEWPLDUUDFVIZUVTNUUDFXMWEYFUUGUWNUVRDBUUGUUE
+       UWNUVRPUVNUUDGFYHVRNLYFXGYIUUKUULOABSZTWJCDSZTWJUUJUWOUUTUVRSTAUUTBUVRKL
+       YJGFYKWEUWPUVFUWNSTCUVFDUWNMNYJUUDFYKWEACBDYLYMYNUUIUUHYOWPUUHUVFUWNQUUD
+       CUVFDUWNMNYPUUDFYQWEUUIUUTUVRQGAUUTBUVRKLYPGFYQWEYR $.
+       $( [11-Mar-2015] $)
+  $}
+
+  ${
+    $d B b $.  $d R b $.
+    sbthlem2.1 $e |- R e. _V $.
+    $( Lemma for ~ sbth .  Eliminate hypotheses from ~ sbthlem1 .  Theorem
+       XI.1.14 of [Rosser], p. 350. $)
+    sbthlem2 $p |- ( ( ( Fun R /\ Fun `' R ) /\ 
        ( B e. V /\ B C_ dom R /\ ran R C_ B ) ) -> ran R ~~ B ) $=
-       ( vb wss wfun wa cen wbr wi wceq cdif cin df-dif pm3.2i difex c0 inindif
-       cun wcel cdm crn ccnv cv sseq1 sseq2 anbi12d breq2 imbi2d imbi12d cclos1
-       w3a ccompl eqsstri inss2 sstri difsscompl ssin mpbi syl6sseqr eqssd rnex
-       a1i vex clos1ex enrflx breq1 mpbiri mpan2 syl2anc inundif 3brtr3g expcom
-       syl unen vtoclg 3impib impcom ) ACUAZABUBZFZBUCZAFZUMBGBUDGHZWCAIJZVTWBW
-       DWEWFKZEUEZWAFZWCWHFZHZWEWCWHIJZKZKWBWDHZWGKEACWHALZWKWNWMWGWOWIWBWJWDWH
-       AWAUFWHAWCUGUHWOWLWFWEWHAWCIUIUJUKWEWKWLWEWKHZWCWHWCMZBULZNZWCWRMZTZWHWR
-       NZWHWRMZTZWCWHIWPWSXBIJZWTXCIJZXAXDIJZ?WPWTXCLZXFWPWTXC?WPXCWCWRUNZNZWTX
-       CXJFZWPXCWCFZXCXIFZHXKXLXMXCWHWCNZWCXCWHXINXNWHWRO?UOWHWCUPUQWHWRURPXCWC
-       XIUSUTVDWCWROVAVBXHXFXCXCIJXCWHWREVEZBWQWHWCXOBDVCQDVFQVGWTXCXCIVHVIVOXE
-       XFHWSWTNRLZXBXCNRLZHXGXPXQWCWRSWHWRSPWSXBWTXCVPVJVKWCWRVLWHWRVLVMVNVQVRV
-       S $.
+       ( vb wcel cdm wss crn w3a wfun ccnv wa cen wbr wi cv cdif cin eqid sseq1
+       wceq sseq2 anbi12d breq2 imbi2d cclos1 vex sbthlem1 expcom vtoclg 3impib
+       imbi12d impcom ) ACFZABGZHZBIZAHZJBKBLKMZURANOZUOUQUSUTVAPZEQZUPHZURVCHZ
+       MZUTURVCNOZPZPUQUSMZVBPEACVCAUBZVFVIVHVBVJVDUQVEUSVCAUPUAVCAURUCUDVJVGVA
+       UTVCAURNUEUFUMUTVFVGVCVCURRBUGZSZVCVKRZURVKSZURVKRZBVKVCDEUHVKTVLTVMTVNT
+       VOTUIUJUKULUN $.
        $( [10-Mar-2015] $)
   $}
 
-  ${ $d A r $. $d A s $. $d B r $. $d B s $. $d C r $. $d C s $. $d D r $. $d D s $. $d r s $. 
-     $( Lemma for ~ sbth .  If ` A ` is equinumerous with a subset of ` B ` 
-     	and vice-versa, then ` A ` is equinumerous with ` B ` .  
-	Theorem XI.1.15 of [Rosser], p. 353. $)
-     sbthlem2 $p |- ( ( ( A ~~ C /\ C C_ B ) /\ ( B ~~ D /\ D C_ A ) ) ->
+  ${
+    $d A r $.  $d A s $.  $d B r $.  $d B s $.  $d C r $.  $d C s $.  $d D r $.
+    $d D s $.  $d r s $.
+    $( Lemma for ~ sbth .  If ` A ` is equinumerous with a subset of ` B ` and
+       vice-versa, then ` A ` is equinumerous with ` B ` .  Theorem XI.1.15 of
+       [Rosser], p. 353. $)
+    sbthlem3 $p |- ( ( ( A ~~ C /\ C C_ B ) /\ ( B ~~ D /\ D C_ A ) ) ->
        A ~~ B ) $=
        ( vr vs cen wbr wss wf1o wex bitr4i crn cdm wceq syl ad2antlr wfun ccnv
        wa cv wi bren anbi12i eeanv ccom simprl wfo f1ofo ad2antrr f1odm 3sstr4d
        forn dmcosseq eqtrd f1ofun funco syl2anr wfn dff1o2 simp2bi syl2an cnvco
        funeqi sylibr jca adantr w3a funfn anbi1i eqid df-3an mpbiran2 vex f1oen
-       coex eqbrtrrd cvv wcel simprr sseqtr4d rncoss syl5sseq sbthlem1 syl13anc
+       coex eqbrtrrd cvv wcel simprr sseqtr4d rncoss syl5sseq sbthlem2 syl13anc
        rnex syl6eqelr entr syl2anc ex exlimivv sylbi imp an4s ensymi ad2antrl )
        ACGHZCBIZTZBDGHZDAIZTTADGHZDBGHZABGHWQWTWRXAXBWQWTTZWRXATZXBXDACEUAZJZBD
        FUAZJZTZFKEKZXEXBUBZXDXGEKZXIFKZTXKWQXMWTXNACEUCBDFUCUDXGXIEFUELXJXLEFXJ
@@ -54947,6 +55000,48 @@ $)
        QDWHWIWJWKWLWMWNWTXCWSXABDWOWPADBWHWI $.
        $( [10-Mar-2015] $)
   $}
+
+  ${
+    $d A a $.  $d a b $.  $d A b $.  $d a d $.  $d A d $.  $d a g $.  $d A g $.
+    $d B a $.  $d B b $.  $d b d $.  $d B d $.  $d b g $.  $d B g $.  $d d g $.
+    $( The Schroder-Bernstein Theorem.  This theorem gives the antisymmetry law
+       for cardinal less than or equal.  Translated out, it means that, if
+       ` A ` is no larger than ` B ` and ` B ` is no larger than ` A ` , then
+       ` Nc A = Nc B ` .  Theorem XI.2.20 of [Rosser], p. 376. $)
+    sbth $p |- ( ( A e. NC /\ B e. NC ) -> 
+          ( ( A <_c B /\ B <_c A ) -> A = B ) ) $=
+       ( vg vb vd va cncs wcel wa clec wbr cv wss wrex brlecg reeanv cnc wi cen
+       wceq ancoms anbi12d 2rexbii bitri syl6bbr ncseqnc bi2anan9 biimpar ensym
+       wb simplr sylib simprl simpll simprr sbthlem3 syl22anc entr syl2anc elnc
+       anbi12i vex eqnc imbi2i 3imtr4i rexlimivv rexeq rexbidv sylan9bbr eqeq12
+       ex imbi12d mpbiri syl rexlimdvva sylbid ) AGHZBGHZIZABJKZBAJKZIZCLZDLZMZ
+       ELZFLZMZIZFANZDBNZEBNCANZABTZVSWBWEDBNZCANZWHFANZEBNZIZWLVSVTWOWAWQCDABG
+       GOVRVQWAWQUJEFBAGGOUAUBWLWNWPIZEBNCANWRWKWSCEABWEWHDFBAPUCWNWPCEABPUDUEV
+       SWKWMCEABVSWCAHZWFBHZIZIAWCQZTZBWFQZTZIZWKWMRZVSXGXBVQXDWTVRXFXAAWCUFBWF
+       UFUGUHXGXHWIFXCNZDXENZXCXETZRWIXKDFXEXCWDWFSKZWGWCSKZIZWIWCWFSKZRWDXEHZW
+       GXCHZIWIXKRXNWIXOXNWIIZWCWDSKZXLXOXRWCWGSKZWGWDSKZXSXRXMXTXLXMWIUKZWGWCU
+       IULXRXMWEXLWHYAYBXNWEWHUMXLXMWIUNZXNWEWHUOWGWDWCWFUPUQWCWGWDURUSYCWCWDWF
+       URUSVKXPXLXQXMWDWFUTWGWCUTVAXKXOWIWCWFCVBVCVDVEVFXGWKXJWMXKXFWKWJDXENXDX
+       JWJDBXEVGXDWJXIDXEWIFAXCVGVHVIAXCBXEVJVLVMVNVOVP $.
+       $( [11-Mar-2015] $)
+  $}
+
+  $( Cardinal less implies negated cardinal less than or equal.  Corollary 1 of
+     theorem XI.2.20 of [Rosser], p. 377. $)
+  ltnlecim $p |- ( ( A e. NC /\ B e. NC ) -> ( A <c B -> -. B <_c A ) ) $=
+    ( cltc wbr clec wne wa cncs wcel wn brltc wceq sbth expdimp necon3ad syl5bi
+    expimpd ) ABCDABEDZABFZGAHIBHIGZBAEDZJZABKTRSUBTRGUAABTRUAABLABMNOQP $.
+    $( [11-Mar-2015] $)
+
+  $( Cardinal less than is equivalent to one-way cardinal less than or equal.
+     Theorem XI.2.21 of [Rosser], p. 377. $)
+  ltlenlec $p |- ( ( M e. NC /\ N e. NC ) -> 
+    ( M <c N <-> ( M <_c N /\ -. N <_c M ) ) ) $=
+    ( cltc wbr clec wne wa cncs wcel wn brltc wceq wi nclecid breq1 syl5ibcom
+    ad2antrr sbth expdimp impbid necon3abid pm5.32da syl5bb ) ABCDABEDZABFZGA
+    HIZBHIZGZUDBAEDZJZGABKUHUDUEUJUHUDGZUIABUKABLZUIUFULUIMUGUDUFAAEDULUIANAB
+    AEOPQUHUDUIULABRSTUAUBUC $.
+    $( [11-Mar-2015] $)
 
   ${
     tcnc.1 $e |- A e. _V $.
