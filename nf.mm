@@ -51431,7 +51431,17 @@ $)
     frd.3 $e |- ( ph -> X C_ A ) $.
     frd.4 $e |- ( ph -> X =/= (/) ) $.
     $( Founded relationship in natural deduction form. $)
-    frd $p |- ( ph -> E. y e. X A. z e. X ( z R y -> z = y ) ) $= ? $.
+    frd $p |- ( ph -> E. y e. X A. z e. X ( z R y -> z = y ) ) $=
+      ( vx va vr wss c0 cv wi wa cvv wne wbr weq wral wrex wcel wal cfound brex
+      wceq breq imbi1d rexralbidv imbi2d albidv sseq2 anbi1d df-found brabg syl
+      wb ibi sseq1 neeq1 anbi12d raleq rexeqbi1dv imbi12d cla4gv sylc mp2and )
+      AGDOZGPUAZCQZBQZEUBZCBUCZRZCGUDZBGUEZJKAGFUFLQZDOZWAPUAZSZVRCWAUDZBWAUEZR
+      ZLUGZVLVMSZVTRZIAEDUHUBZWHHWKWHWKETUFDTUFSWKWHVAEDUHUIWAMQZOZWCSZVNVONQZU
+      BZVQRZCWAUDBWAUEZRZLUGWNWFRZLUGWHNMEDTTUHWOEUJZWSWTLXAWRWFWNXAWQVRBCWAWAX
+      AWPVPVQVNVOWOEUKULUMUNUOWLDUJZWTWGLXBWNWDWFXBWMWBWCWLDWAUPUQULUOLCBNMURUS
+      UTVBUTWGWJLGFWAGUJZWDWIWFVTXCWBVLWCVMWAGDVCWAGPVDVEWEVSBWAGVRCWAGVFVGVHVI
+      VJVK $.
+      $( [12-Mar-2015] $)
   $}
 
   ${
@@ -51499,11 +51509,68 @@ $)
       $( [22-Feb-2015] $)
   $}
 
+  ${
+    $d A a $. $d a r $. $d A r $. $d a x $. $d A x $. $d ph x $. $d R a $. $d R r $. $d r x $. $d R x $. 
+    refrd.1 $e |- ( ph -> R e. V ) $.
+    refrd.2 $e |- ( ph -> A e. W ) $.
+    refrd.3 $e |- ( ( ph /\ x e. A ) -> x R x ) $.
+    $( Deduce reflexitiviy from its properties. $)
+    refrd $p |- ( ph -> R Ref A ) $=
+      ( vr va cref wbr cv wral ralrimiva wcel wb wceq breq ralbidv raleq df-ref
+      brabg syl2anc mpbird ) ADCLMZBNZUHDMZBCOZAUIBCIPADEQCFQUGUJRGHUHUHJNZMZBK
+      NZOUIBUMOUJJKDCEFLUKDSULUIBUMUHUHUKDTUAUIBUMCUBBJKUCUDUEUF $.
+      $( [12-Mar-2015] $)
+  $}
+
+  ${
+    $d A a $. $d a r $. $d A r $. $d a x $. $d A x $. $d a y $. $d A y $. $d ph x $. $d ph y $. $d R a $. $d R r $. $d r x $. $d R x $. $d r y $. $d R y $. $d x y $. 
+    antird.1 $e |- ( ph -> R e. V ) $.
+    antird.2 $e |- ( ph -> A e. W ) $.
+    antird.3 $e |- ( ( ph /\ ( x e. A /\ y e. A ) /\ ( x R y /\ y R x ) ) ->
+       x = y ) $.
+    $( Deduce antisymmetry from its properties. $)
+    antird $p |- ( ph -> R Antisym A ) $=
+      ( vr va cantisym wbr cv wa wi wral wcel breq 3expia ralrimivva wb anbi12d
+      weq wceq imbi1d 2ralbidv raleq raleqbi1dv df-antisym brabg syl2anc mpbird
+      ) AEDMNZBOZCOZENZUQUPENZPZBCUEZQZCDRZBDRZAVBBCDDAUPDSUQDSPUTVAJUAUBAEFSDG
+      SUOVDUCHIUPUQKOZNZUQUPVENZPZVAQZCLOZRBVJRVBCVJRZBVJRVDKLEDFGMVEEUFZVIVBBC
+      VJVJVLVHUTVAVLVFURVGUSUPUQVEETUQUPVEETUDUGUHVKVCBVJDVBCVJDUIUJBCKLUKULUMU
+      N $.
+      $( [12-Mar-2015] $)
+  $}
+
+  ${ $d A a $. $d a r $. $d A r $. $d a x $. $d A x $. $d a y $. $d A y $. $d ph x $. $d ph y $. $d R a $. $d R r $. $d r x $. $d R x $. $d r y $. $d R y $. $d x y $. 
+     connexrd.1 $e |- ( ph -> R e. V ) $.
+     connexrd.2 $e |- ( ph -> A e. W ) $.
+     connexrd.3 $e |- ( ( ph /\ x e. A /\ y e. A ) -> ( x R y \/ y R x ) ) $.
+     $( Deduce connectivity from its properties. $)
+     connexrd $p |- ( ph -> R Connex A ) $=
+       ( vr va cconnex wbr cv wo wral wcel 3expib breq wb wceq orbi12d 2ralbidv
+       ralrimivv raleq raleqbi1dv df-connex brabg syl2anc mpbird ) AEDMNZBOZCOZ
+       ENZUNUMENZPZCDQZBDQZAUQBCDDAUMDRUNDRUQJSUEAEFRDGRULUSUAHIUMUNKOZNZUNUMUT
+       NZPZCLOZQBVDQUQCVDQZBVDQUSKLEDFGMUTEUBZVCUQBCVDVDVFVAUOVBUPUMUNUTETUNUMU
+       TETUCUDVEURBVDDUQCVDDUFUGBCKLUHUIUJUK $.
+       $( [12-Mar-2015] $)
+  $}
+
   $( Equivalence relationship as symmetric, transitive relationship. $)
   ersymtr $p |- ( R Er A <-> ( R Sym A /\ R Trans A ) ) $=
     ( cer wbr csym ctrans cin wa df-er breqi brin bitri ) BACDBAEFGZDBAEDBAFDHB
     ACMIJBAEFKL $.
     $( [22-Feb-2015] $)
+
+  $( Partial ordering as reflexive, transitive, antisymmetric relationship. $)
+  porta $p |- ( R Po A <-> ( R Ref A /\ R Trans A /\ R Antisym A ) ) $=
+    ( cref ctrans cin cantisym wbr wa cpartial w3a brin anbi1i bitri df-partial
+    breqi df-3an 3bitr4i ) BACDEZFEZGZBACGZBADGZHZBAFGZHZBAIGUAUBUDJTBARGZUDHUE
+    BARFKUFUCUDBACDKLMBAISNOUAUBUDPQ $.
+    $( [12-Mar-2015] $)
+
+  $( Linear ordering as partial, connected relationship. $)
+  sopc $p |- ( R Or A <-> ( R Po A /\ R Connex A ) ) $=
+    ( cstrict wbr cpartial cconnex cin wa df-strict breqi brin bitri ) BACDBAEF
+    GZDBAEDBAFDHBACMIJBAEFKL $.
+    $( [12-Mar-2015] $)
 
   ${
     $d A a $.  $d a r $.  $d A r $.  $d a x $.  $d A x $.  $d a y $.  $d A y $.
@@ -51519,8 +51586,10 @@ $)
       x = y ) $.
     $( A reflexive, transitive, and anti-symmetric ordering is a partial 
        ordering. $)
-    pod $p |- ( ph -> R Po A ) $= ? $.
-       $( [22-Feb-2015] $)
+    pod $p |- ( ph -> R Po A ) $=
+      ( cref wbr ctrans cantisym cpartial refrd trrd antird porta syl3anbrc ) A
+      FENOFEPOFEQOFEROABEFGHIJKSABCDEFGHIJLTABCEFGHIJMUAEFUBUC $.
+      $( [22-Feb-2015] $)
   $}
 
   ${
@@ -51528,28 +51597,45 @@ $)
     $d ph x $.  $d ph y $.  $d R a $.  $d R r $.  $d r x $.  $d R x $.
     $d r y $.  $d R y $.  $d x y $.  $d a z $.  $d A z $.  $d ph z $.
     $d r z $.  $d R z $.  $d x z $.  $d y z $.
-    issod.1 $e |- ( ph -> R e. V ) $.
-    issod.2 $e |- ( ph -> A e. W ) $.
-    issod.3 $e |- ( ( ph /\ x e. A ) -> x R x ) $.
-    issod.4 $e |- ( ( ph /\ ( x e. A /\ y e. A /\ z e. A ) /\ 
+    sod.1 $e |- ( ph -> R e. V ) $.
+    sod.2 $e |- ( ph -> A e. W ) $.
+    sod.3 $e |- ( ( ph /\ x e. A ) -> x R x ) $.
+    sod.4 $e |- ( ( ph /\ ( x e. A /\ y e. A /\ z e. A ) /\ 
        ( x R y /\ y R z ) ) -> x R z ) $.
-    issod.5 $e |- ( ( ph /\ ( x e. A /\ y e. A ) /\ ( x R y /\ y R x ) ) ->
+    sod.5 $e |- ( ( ph /\ ( x e. A /\ y e. A ) /\ ( x R y /\ y R x ) ) ->
       x = y ) $.
-    issod.6 $e |- ( ( ph /\ ( x e. A /\ y e. A ) ) ->
+    sod.6 $e |- ( ( ph /\ x e. A /\ y e. A ) ->
        ( x R y \/ y R x ) ) $.
     $( A reflexive, transitive, antisymmetric, and connected relationship is a 
        strict ordering. $)
-    issod $p |- ( ph -> R Or A ) $= ? $.
+    sod $p |- ( ph -> R Or A ) $=
+      ( cpartial wbr cconnex cstrict pod connexrd sopc sylanbrc ) AFEOPFEQPFERP
+      ABCDEFGHIJKLMSABCEFGHIJNTEFUAUB $.
+      $( [12-Mar-2015] $)
   $}
 
   ${
     $d R x y z $.  $d ph x y z $.
     ord0.1 $e |- ( ph -> R e. V ) $.
     $( Anything partially orders the empty set. $)
-    po0 $p |- ( ph -> R Po (/) ) $= ? $.
+    po0 $p |- ( ph -> R Po (/) ) $=
+      ( vx vy vz c0 cvv wcel 0ex a1i cv wbr noel pm2.21i adantl w3a wa 3ad2ant2
+      3ad2ant1 weq adantr pod ) AEFGHBCIDHIJAKLEMZHJZUEUEBNZAUFUGUEOZPQUFFMZHJZ
+      GMZHJZRAUEUKBNZUEUIBNZUIUKBNSUFUJUMULUFUMUHPUATUFUJSAEFUBZUNUIUEBNSUFUOUJ
+      UFUOUHPUCTUD $.
+      $( [12-Mar-2015] $)
+
+    $( Anything is connected over the empty set. $)
+    connex0 $p |- ( ph -> R Connex (/) ) $=
+      ( vx vy c0 cvv wcel 0ex a1i cv wbr wo noel pm2.21i 3ad2ant2 connexrd ) AE
+      FGBCHDGHIAJKELZGIZASFLZBMUASBMNZUAGITUBSOPQR $.
+      $( [12-Mar-2015] $)
 
     $( Anything totally orders the empty set. $)
-    so0 $p |- ( ph -> R Or (/) ) $= ? $.
+    so0 $p |- ( ph -> R Or (/) ) $=
+      ( c0 cpartial wbr cconnex cstrict po0 connex0 sopc sylanbrc ) ABEFGBEHGBE
+      IGABCDJABCDKEBLM $.
+      $( [12-Mar-2015] $)
   $}
 
   ${
