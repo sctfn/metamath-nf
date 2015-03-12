@@ -54961,6 +54961,13 @@ $)
        $( [4-Mar-2015] $)
   $}
 
+  $( Cardinal zero is a minimal element of cardinal less than or equal.  Lemma
+     1 of theorem XI.2.15 of [Rosser], p. 376. $)
+  le0nc $p |- ( A e. NC -> 0c <_c A ) $=
+      ( cncs wcel c0 wne c0c clec wbr nulnnc eleq1 mtbiri necon2ai lec0cg mpdan
+      wceq ) ABCZADEFAGHPADADOPDBCIADBJKLABMN $.
+      $( [12-Mar-2015] $)
+
   ${
     $( The cardinality of a unit power class is not equal to the cardinality of
        the power class.  Theorem XI.2.4 of [Rosser], p. 372. $)
@@ -55155,9 +55162,10 @@ $)
        $( [11-Mar-2015] $)
   $}
 
-  ${ $d A x $. $d A y $. $d B x $. $d B y $. $d C x $. $d C y $. $d x y $. 
-     $( Cardinal less than or equal is transitive. $)
-     lectr $p |- ( ( A e. NC /\ B e. NC /\ C e. NC ) -> 
+  ${
+    $d A x $.  $d A y $.  $d B x $.  $d B y $.  $d C x $.  $d C y $.  $d x y $.
+    $( Cardinal less than or equal is transitive. $)
+    lectr $p |- ( ( A e. NC /\ B e. NC /\ C e. NC ) -> 
        ( ( A <_c B /\ B <_c C ) -> A <_c C ) ) $=
        ( vx vy cncs wcel w3a clec wbr wa cv cplc wceq wb dflec2 3adant3 3adant1
        wrex anbi12d reeanv syl6bbr addceq1 addcass syl6eq eqeq2d simp1 ncaddccl
@@ -55169,9 +55177,10 @@ $)
        $( [12-Mar-2015] $)
   $}
 
-  ${ $d x y z $.
-     $( Cardinal less than or equal partially orders the cardinals. $)
-     lecponc $p |- <_c Po NC $=
+  ${
+    $d x y z $.
+    $( Cardinal less than or equal partially orders the cardinals. $)
+    lecponc $p |- <_c Po NC $=
        ( vx vy vz clec cncs cpartial wbr wtru cvv wcel lecex a1i nclecid adantl
        ncsex cv w3a wa imp 3adant1 lectr weq sbth pod trud ) DEFGHABCEDIIDIJHKL
        EIJHOLAPZEJZUFUFDGHUFMNUGBPZEJZCPZEJQZUFUHDGZUHUJDGRZUFUJDGZHUKUMUNUFUHU
@@ -55180,8 +55189,76 @@ $)
   $}
 
   ${
-     $( Cardinal less than or equal is total over the naturals. $)
-     leconnnc $p |- ( ( A e. Nn /\ B e. Nn ) -> ( A <_c B \/ B <_c A ) ) $= ? $.
+    $d M x $.  $d N x $.  $d P x $.
+    $( Addition law for cardinal less than.  Theorem XI.2.23 of [Rosser],
+       p. 377. $)
+    leaddc1 $p |- ( ( ( M e. NC /\ N e. NC /\ P e. NC ) /\ M <_c N ) ->
+               ( M +c P ) <_c ( N +c P ) ) $=
+       ( vx cncs wcel w3a clec wbr cplc cv wceq wrex wb dflec2 3adant3 ncaddccl
+       wi wa addlecncs sylan addceq1 addc32 syl6eq syl5ibrcom rexlimdva 3adant2
+       breq2d sylbid imp ) BEFZCEFZAEFZGZBCHIZBAJZCAJZHIZUNUOCBDKZJZLZDEMZURUKU
+       LUOVBNUMBCDOPUKUMVBURRULUKUMSZVAURDEVCUSEFZSURVAUPUPUSJZHIZVCUPEFVDVFBAQ
+       UPUSTUAVAUQVEUPHVAUQUTAJVECUTAUBBUSAUCUDUHUEUFUGUIUJ $.
+       $( [12-Mar-2015] $)
+  $}
+
+  $( Addition law for cardinal less than.  Theorem XI.2.23 of [Rosser],
+     p. 377. $)
+  leaddc2 $p |- ( ( ( M e. NC /\ N e. NC /\ P e. NC ) /\ N <_c P ) ->
+               ( M +c N ) <_c ( M +c P ) ) $=
+    ( cncs wcel w3a clec wbr wa cplc 3anrot leaddc1 sylanb addccom 3brtr4g ) BD
+    EZCDEZADEZFZCAGHZICBJZABJZBCJBAJGSQRPFTUAUBGHPQRKBCALMBCNBANO $.
+    $( [12-Mar-2015] $)
+
+
+  ${
+    $d a p $.  $d a q $.  $d a x $.  $d N a $.  $d p q $.  $d p x $.  $d q x $.
+    $( Any cardinal is either zero or no greater than one.  Theorem XI.2.24 of
+       [Rosser], p. 377. $)
+    nc0le1 $p |- ( N e. NC -> ( N = 0c \/ 1c <_c N ) ) $=
+       ( va vx vq vp wcel cv cnc wceq wex c0c c1c clec wbr wo c0 wss wrex sylbi
+       vex cncs elncs nceq df0c2 syl6eqr orcd wne wel csn snss ncid sseq2 sseq1
+       snel1c rcla42ev mp3an12 exlimiv 1cex ncex brlec rexcom 3imtr4i pm2.61ine
+       n0 bitri olcd eqeq1 breq2 orbi12d mpbiri ) AUAFABGZHZIZBJAKIZLAMNZOZBAUB
+       VMVPBVMVPVLKIZLVLMNZOZVSVKPVKPIZVQVRVTVLPHKVKPUCUDUEUFVKPUGZVRVQCBUHZCJD
+       GZEGZQZDLREVLRZWAVRWBWFCWBCGZUIZVKQZWFWGVKCTZUJVKVLFWHLFWIWFVKBTUKWGWJUN
+       WEWIWCVKQEDVKWHVLLWDVKWCULWCWHVKUMUOUPSUQCVKVDVRWEEVLRDLRWFDELVLURVKUSUT
+       WEDELVLVAVEVBVFVCVMVNVQVOVRAVLKVGAVLLMVHVIVJUQS $.
+       $( [12-Mar-2015] $)
+  $}
+
+  ${
+    $d A a $.  $d a m $.  $d a n $.  $d A n $.  $d B n $.  $d m n $.  $d m p $.
+    $d n p $.
+    $( Cardinal less than or equal is total over the naturals. $)
+    leconnnc $p |- ( ( A e. Nn /\ B e. Nn ) -> ( A <_c B \/ B <_c A ) ) $=
+       ( va vp cnnc wcel clec wbr wo cv wceq breq2 breq1 orbi12d imbi2d c0c c1c
+       wi cncs wa vn vm cplc wn cab ccnv csn cima cun cvv elun eliniseg elimasn
+       cop df-br bitr4i orbi12i bitri abbi2i uneq2i unab eqtri imor abbii abexv
+       eqtr4i lecex cnvex snex imaex unex eqeltrri weq nnnc syl orc wrex dflec2
+       le0nc nc0le1 1cnc ax-mp mpbiri orim1i a1i mpd orcomd adantl simpll simpr
+       simplr leaddc2 syl31anc ex orim12d biimprd com12 rexlimdva adantr sylbid
+       addlecncs mpan2 peano2nc lectr mpd3an3 mpan2d ancoms olc syl6 syl2an a2d
+       jaod finds vtoclga imp ) AEFZBEFZABGHZBAGHZIZXQXPXTXPAUAJZGHZYAAGHZIZRXP
+       XTRUABEYABKZYDXTXPYEYBXRYCXSYABAGLYABAGMNOXPYAEFZYDYFCJZYAGHZYAYGGHZIZRZ
+       YFPYAGHZYAPGHZIZRYFUBJZYAGHZYAYOGHZIZRYFYOQUCZYAGHZYAYSGHZIZRYFYDRCUBAYF
+       UDZCUEZGUFZYAUGZUHZGUUFUHZUIZUIZYKCUEZUJUUJUUCYJIZCUEZUUKUUJUUDYJCUEZUIU
+       UMUUIUUNUUDYJCUUIYGUUIFYGUUGFZYGUUHFZIYJYGUUGUUHUKUUOYHUUPYIGYAYGULUUPYA
+       YGUNGFYIGYAYGUMYAYGGUOUPUQURUSUTUUCYJCVAVBYKUULCYFYJVCVDVFUUDUUIUUCCVEUU
+       GUUHUUEUUFGVGVHYAVIZVJGUUFVGUUQVJVKVKVLYGPKZYJYNYFUURYHYLYIYMYGPYAGMYGPY
+       AGLNOCUBVMZYJYRYFUUSYHYPYIYQYGYOYAGMYGYOYAGLNOYGYSKZYJUUBYFUUTYHYTYIUUAY
+       GYSYAGMYGYSYAGLNOYGAKZYJYDYFUVAYHYBYIYCYGAYAGMYGAYAGLNOYFYLYNYFYASFZYLYA
+       VNZYAVSVOYLYMVPVOYOEFZYFYRUUBUVDYFYRUUBRZUVDYOSFZUVBUVEYFYOVNUVCUVFUVBTZ
+       YPUUBYQUVGYPYAYODJZUCZKZDSVQZUUBYOYADVRUVFUVKUUBRUVBUVFUVJUUBDSUVFUVHSFZ
+       TZYSUVIGHZUVIYSGHZIZUVJUUBRUVMQUVHGHZUVHQGHZIZUVPUVLUVSUVFUVLUVRUVQUVLUV
+       HPKZUVQIZUVRUVQIZUVHVTUWAUWBRUVLUVTUVRUVQUVTUVRPQGHZQSFZUWCWAQVSWBUVHPQG
+       MWCWDWEWFWGWHUVMUVQUVNUVRUVOUVMUVQUVNUVMUVQTZUVFUWDUVLUVQUVNUVFUVLUVQWIU
+       WDUWEWAWEUVFUVLUVQWKUVMUVQWJUVHYOQWLWMWNUVMUVRUVOUVMUVRTZUVFUVLUWDUVRUVO
+       UVFUVLUVRWIUVFUVLUVRWKUWDUWFWAWEUVMUVRWJQYOUVHWLWMWNWOWFUVJUVPUUBUVJUUBU
+       VPUVJYTUVNUUAUVOYAUVIYSGLYAUVIYSGMNWPWQVOWRWSWTUVGYQUUAUUBUVBUVFYQUUARUV
+       BUVFTYQYOYSGHZUUAUVFUWGUVBUVFUWDUWGWAYOQXAXBWHUVBUVFYSSFZYQUWGTUUARUVFUW
+       HUVBYOXCWHYAYOYSXDXEXFXGUUAYTXHXIXLXJWNXKXMWQXNWQXO $.
+       $( [12-Mar-2015] $)
   $}
 
   ${
@@ -55410,8 +55487,9 @@ $)
 
   ${
     $d A n m a $.
-    $( Lemma for ~ nncdiv3 .  Inductive step. $)
-    nncdiv3lem3 $p |- ( A e. Nn ->
+    $( Divisibility by three rule for finite cardinals.  Part of Theorem 3.4 of
+       [Specker]. $)
+    nncdiv3 $p |- ( A e. Nn ->
       E. n e. Nn ( A = ( ( n +c n ) +c n ) \/ 
                    A = ( ( ( n +c n ) +c n ) +c 1c ) \/
                    A = ( ( ( n +c n ) +c n ) +c 2c ) ) ) $=
@@ -55442,25 +55520,39 @@ $)
   $}
 
   ${
-    $d A n $.
-    $( Divisibility by three rule for finite cardinals.  Theorem 3.4 of
-       [Specker]. $)
-    nncdiv3 $p |- ( A e. Nn -> E. n e. Nn 
-       ( A = ( ( n +c n ) +c n ) <->
-         -. ( A = ( ( ( n +c n ) +c n ) +c 1c ) \/
-              A = ( ( ( n +c n ) +c n ) +c 2c ) ) ) ) $=
-       ( cnnc wcel cplc wceq c1c c2c w3o wrex wo wn wb wa wi c0c wne df-ne mpbi
-       necomi cv nncdiv3lem3 1ne0c addcid1 eqeq1i nncaddccl anidms peano1 1cnnc
-       mpancom addccan2 mp3an23 syl syl5bbr mtbiri 2ne0c ioran sylanbrc orbi12d
-       2nnc eqeq1 notbid syl5ibrcom ad2antlr 3orrot df-3or biimpi adantl impbid
-       bitri ord ex reximdva mpd ) ACDZABUAZVPEZVPEZFZAVRGEZFZAVRHEZFZIZBCJVSWA
-       WCKZLZMZBCJABUBVOWDWGBCVOVPCDZNZWDWGWIWDNVSWFWHVSWFOVOWDWHWFVSVRVTFZVRWB
-       FZKZLZWHWJLWKLWMWHWJPGFZPGQWNLGPUCTPGRSWJVRPEZVTFZWHWNWOVRVTVRUDZUEWHVRC
-       DZWPWNMZVQCDZWHWRWHWTVPVPUFUGVQVPUFUJZWRPCDZGCDWSUHUIGVRPUKULUMUNUOWHWKP
-       HFZPHQXCLHPUPTPHRSWKWOWBFZWHXCWOVRWBWQUEWHWRXDXCMZXAWRXBHCDXEUHUTHVRPUKU
-       LUMUNUOWJWKUQURVSWEWLVSWAWJWCWKAVRVTVAAVRWBVAUSVBVCVDWDWFVSOWIWDWEVSWDWE
-       VSKZWDWAWCVSIXFVSWAWCVEWAWCVSVFVJVGVKVHVIVLVMVN $.
-       $( [4-Mar-2015] $)
+     $( Three times a natural is not one more than three times a natural.  
+     	Another part of Theorem 3.4 of [Specker]. $)
+     nnc3n3p1 $p |- ( ( A e. Nn /\ B e. Nn ) -> 
+        -. ( ( A +c A ) +c A ) = ( ( ( B +c B ) +c B ) +c 1c ) ) $= ? $.
+  $}
+
+  ${
+     $( Three times a natural is not two more than three times a natural.  
+     	Another part of Theorem 3.4 of [Specker]. $)
+     nnc3n3p2 $p |- ( ( A e. Nn /\ B e. Nn ) -> 
+        -. ( ( A +c A ) +c A ) = ( ( ( B +c B ) +c B ) +c 2c ) ) $=
+       ( cnnc wcel wa cplc c1c wceq wn peano2 nnc3n3p1 sylan ancoms eqcom addc4
+       c2c addceq1i nncaddccl anidms mpancom addc32 1p1e2c 3eqtrri eqtri eqeq1i
+       addceq2i addcass bitri sylnibr wb 2nnc sylancl suc11nnc syl2an mtbid ) A
+       CDZBCDZEZAAFZAFZGFZBBFZBFZPFZGFZHZUTVDHZURBGFZVHFZVHFZVAHZVFUQUPVKIZUQVH
+       CDUPVLBJVHAKLMVFVEVAHVKVAVENVEVJVAVEVIBFZGFVJVDVMGVMVBGGFZFZBFVCVNFVDVIV
+       OBBGBGOQVBVNBUAVNPVCUBUFUCQVIBGUGUDUEUHUIUPUTCDZVDCDZVFVGUJUQUSCDZUPVPUP
+       VRAARSUSARTUQVCCDZPCDVQVBCDZUQVSUQVTBBRSVBBRTUKVCPRULUTVDUMUNUO $.
+       $( [12-Mar-2015] $)
+  $}
+
+  ${
+     $( One more than three times a natural is not two more than three 
+     	times a natural.  Final part of Theorem 3.4 of [Specker]. $)
+     nnc3p1n3p2 $p |- ( ( A e. Nn /\ B e. Nn ) -> 
+        -. ( ( ( A +c A ) +c A ) +c 1c ) = 
+	   ( ( ( B +c B ) +c B ) +c 2c ) ) $=
+       ( cnnc wcel wa cplc c1c wceq nnc3n3p1 wb nncaddccl anidms mpancom peano2
+       c2c syl suc11nnc syl2an mtbird addcass 1p1e2c addceq2i eqtr2i sylnibr
+       eqeq2i ) ACDZBCDZEZAAFZAFZGFZBBFZBFZGFZGFZHZUKUMOFZHUHUPUJUNHZABIUFUJCDZ
+       UNCDZUPURJUGUICDZUFUSUFVAAAKLUIAKMUGUMCDZUTULCDZUGVBUGVCBBKLULBKMUMNPUJU
+       NQRSUQUOUKUOUMGGFZFUQUMGGTVDOUMUAUBUCUEUD $.
+       $( [12-Mar-2015] $)
   $}
 
   ${
@@ -55501,7 +55593,27 @@ $)
     $( Lemma for ~ nchoice .  A finite cardinal is not one more than its
        T-raising. $)
     nchoicelem1 $p |- ( A e. Nn -> -. A = ( T_c A +c 1c ) ) $=
-      (  ) ? $.
+      ( vn cnnc wcel cplc wceq c1c c2c ctc syl2anc cncs nnnc syl addceq1d eqtrd
+      wn tcdi mtbird tceq addcass cv w3o wrex nncdiv3 nntccl nnc3n3p1 nncaddccl
+      id1 anidms eqeq2d id eqeq12d notbid syl5ibrcom 1cnc sylancl a1i addceq12d
+      tc1c peano2 suc11nnc nnc3n3p2 2nnc eqcomd addceq2i 1p1e2c eqtr2i addceq1i
+      wb addccom 3eqtr3i 3eqtr4i addc4 ax-mp ncaddccl eqeq1d eqcom sylnib 3jaod
+      3eqtr3g rexlimiv ) ACDABUAZWBEZWBEZFZAWDGEZFZAWDHEZFZUBZBCUCAAIZGEZFZPZAB
+      UDWJWNBCWBCDZWEWNWGWIWOWNWEWDWDIZGEZFZPWOWRWDWBIZWSEZWSEZGEZFZWOWOWSCDXCP
+      WOUHZWBUEWBWSUFJZWOWQXBWDWOWPXAGWOWPWCIZWSEZXAWOWCKDZWBKDZWPXGFWOWCCDZXHW
+      OXJWBWBUGUIZWCLMWBLZWCWBQJWOXFWTWSWOXIXIXFWTFXLXLWBWBQJNOZNUJRWEWMWRWEAWD
+      WLWQWEUKWEWKWPGAWDSNULUMUNWOWNWGWFWFIZGEZFZPWOXPWDXNFZWOXQXCXEWOXNXBWDWOX
+      NWPGIZEZXBWOWDKDZGKDZXNXSFWOWDCDZXTWOXJWOYBXKXDWCWBUGJZWDLMUOWDGQUPWOWPXA
+      XRGXMXRGFWOUSUQUROUJRWOYBXNCDZXPXQVIYCWOWFCDZYDWOYBYEYCWDUTMWFUEMWDXNVAJR
+      WGWMXPWGAWFWLXOWGUKWGWKXNGAWFSNULUMUNWOWNWIWHWHIZGEZFZPWOYGWHFZYHWOYIWBGE
+      ZIZYKEZYKEZWHFZWOYKCDZWOYNPWOYJCDZYOWBUTZYJUEMXDYKWBVBJWOYGYMWHWOYGYJYJEZ
+      YJEZIZYMWOYFXREZWHGEZIZYGYTWOUUCUUAWOWHKDZYAUUCUUAFWOWHCDZUUDWOYBHCDUUEYC
+      VCWDHUGUPWHLMUOWHGQUPVDXRGYFUSVEUUBYSFUUCYTFWDHGEZEZWCGGEZEZYJEZUUBYSWCWB
+      UUFEZEWCUUHYJEZEUUGUUJUUKUULWCWBHEZGEUUHWBEZGEUUKUULUUMUUNGUUNWBUUHEUUMUU
+      HWBVJUUHHWBVFVEVGVHWBHGTUUHWBGTVKVEWCWBUUFTWCUUHYJTVLWDHGTYRUUIYJWBGWBGVM
+      VHVLUUBYSSVNVTWOYTYRIZYKEZYMWOYRKDZYJKDZYTUUPFWOUURUURUUQWOYPUURYQYJLMZUU
+      SYJYJVOJUUSYRYJQJWOUUOYLYKWOUURUURUUOYLFUUSUUSYJYJQJNOOVPRYGWHVQVRWIWMYHW
+      IAWHWLYGWIUKWIWKYFGAWHSNULUMUNVSWAM $.
       $( [3-Mar-2015] $)
   $}
 
@@ -55509,7 +55621,28 @@ $)
     $d A n $.
     $( Lemma for ~ nchoice .  A finite cardinal is not two more than its
        T-raising. $)
-    nchoicelem2 $p |- ( A e. Nn -> -. A = ( T_c A +c 2c ) ) $= ? $.
+    nchoicelem2 $p |- ( A e. Nn -> -. A = ( T_c A +c 2c ) ) $=
+      ( vn cnnc wcel cplc wceq c1c c2c ctc wn nntccl syl2anc cncs nncaddccl syl
+      tcdi addceq1d mtbird sylancl addceq2i cv w3o wrex nncdiv3 nnc3n3p2 anidms
+      id1 nnnc eqtrd eqeq2d tceq eqeq12d notbid syl5ibrcom 2nnc suc11nnc addc32
+      id tc1c eqtri eqeq2i sylnibr 1cnc peano2 nnc3p1n3p2 eqcom addceq1i 1p1e2c
+      wb addcass addc4 tc2c 3eqtr4i addceq12i 3eqtr3ri syl6eq addceq12d 3eqtr4a
+      2nc 3jaod rexlimiv ) ACDABUAZWBEZWBEZFZAWDGEZFZAWDHEZFZUBZBCUCAAIZHEZFZJZ
+      ABUDWJWNBCWBCDZWEWNWGWIWOWNWEWDWDIZHEZFZJWOWRWDWBIZWSEZWSEZHEZFZWOWOWSCDX
+      CJWOUGZWBKWBWSUELWOWQXBWDWOWPXAHWOWPWCIZWSEZXAWOWCMDZWBMDZWPXFFWOWCCDZXGW
+      OXIWBWBNUFZWCUHOWBUHZWCWBPLWOXEWTWSWOXHXHXEWTFXKXKWBWBPLQUIZQUJRZWEWMWRWE
+      AWDWLWQWEURWEWKWPHAWDUKQULUMUNWOWNWGWFWFIZHEZFZJWOXPWFWPGIZEZHEZFZWOWFWQG
+      EZFZXTWOYBWRXMWOWDCDZWQCDZYBWRVIWOXIWOYCXJXDWCWBNLZWOWPCDZHCDYDWOYCYFYEWD
+      KOUOWPHNSWDWQUPLRXSYAWFXSWQXQEYAWPXQHUQXQGWQUSTUTVAVBWOXOXSWFWOXNXRHWOWDM
+      DZGMDZXNXRFWOYCYGYEWDUHOZVCWDGPSQUJRWGWMXPWGAWFWLXOWGURWGWKXNHAWFUKQULUMU
+      NWOWNWIWHWHIZHEZFZJWOYLWHWBGEZIZYNEZYNEZGEZFZWOYQWHFZYRWOYNCDZWOYSJWOYMCD
+      YTWBVDYMKOXDYNWBVELWHYQVFVBWOYKYQWHWOXAHIZEZHEZWSGEZUUDEZUUDEZGEZYKYQUUEW
+      SEZGEZGEUUHGGEZEUUGUUCUUHGGVJUUIUUFGUUEWSGVJVGUUHUUBUUJHUUHWTUUAEZWSEUUBU
+      UEUUKWSWTUUJEWTHEUUEUUKUUJHWTVHTWSGWSGVKUUAHWTVLTVMVGWTUUAWSUQUTVHVNVOWOY
+      JUUBHWOYJWPUUAEZUUBWOYGHMDYJUULFYIVSWDHPSWOWPXAUUAXLQUIQWOYPUUFGWOYOUUEYN
+      UUDWOYNUUDYNUUDWOYNWSXQEZUUDWOXHYHYNUUMFXKVCWBGPSXQGWSUSTVPZUUNVQUUNVQQVR
+      UJRWIWMYLWIAWHWLYKWIURWIWKYJHAWHUKQULUMUNVTWAO $.
+      $( [12-Mar-2015] $)
   $}
 
 
