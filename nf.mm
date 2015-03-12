@@ -46846,8 +46846,8 @@ $)
        UQDEUBUCEDUMUJUHTUDUE $.
        $( [26-Feb-2015] $)
 
-    $( Calculate the domain of a singleton image.  Theorem X.4.29.I of [Rosser],
-       p. 301. $)
+    $( Calculate the domain of a singleton image.  Theorem X.4.29.I of
+       [Rosser], p. 301. $)
     dmsi $p |- dom SI R = ~P1 dom R $=
        ( vx va vy vb csi cdm cpw1 cv csn wceq wbr wex wcel wa bitri exbii excom
        eldm 3bitr4i w3a wrex 3anass 2exbii 19.42vv isseti 19.41v mpbiran anbi2i
@@ -46881,7 +46881,7 @@ $)
   $}
 
   $( Calculate the range of a singleton image.  Theorem X.4.29.II of [Rosser],
-       p. 302. $)
+     p. 302. $)
   rnsi $p |- ran SI R = ~P1 ran R $=
     ( csi ccnv cdm cpw1 cnvsi dmeqi dmsi eqtri dfrn4 wceq pw1eq ax-mp 3eqtr4i
     crn ) ABZCZDZACZDZEZPOAOZEZRSBZDUAQUDAFGSHIPJUBTKUCUAKAJUBTLMN $.
@@ -51052,7 +51052,7 @@ $)
     $( Define the set of all founded relationships over a base set. $)
     df-found $a |- Fr = { <. r , a >. |
        A. x ( ( x C_ a /\ x =/= (/) ) ->
-       	      E. z e. x A. y e. x ( y r z -> y = z ) ) } $.
+              E. z e. x A. y e. x ( y r z -> y = z ) ) } $.
 
     $( Define the set of all well orderings over a base set. $)
     df-we $a |- We = ( Or i^i Fr ) $.
@@ -51073,7 +51073,7 @@ $)
     $d a p $.  $d a r $.  $d a x $.  $d a y $.  $d a z $.  $d p q $.  $d p r $.
     $d p x $.  $d p y $.  $d p z $.  $d q x $.  $d q y $.  $d q z $.  $d r x $.
     $d r y $.  $d r z $.  $d x y $.  $d x z $.  $d y z $.  $d s x $.  $d p s $.
-    $d r s $.  $d r t $. $d t y $. $d t z $. $d p t $. $d t x $. $d a t $.
+    $d r s $.  $d r t $.  $d t y $.  $d t z $.  $d p t $.  $d t x $.  $d a t $.
 
     $( The class of all transitive relationships is a set. $)
     transex $p |- Trans e. _V $=
@@ -51510,7 +51510,8 @@ $)
   $}
 
   ${
-    $d A a $. $d a r $. $d A r $. $d a x $. $d A x $. $d ph x $. $d R a $. $d R r $. $d r x $. $d R x $. 
+    $d A a $.  $d a r $.  $d A r $.  $d a x $.  $d A x $.  $d ph x $.
+    $d R a $.  $d R r $.  $d r x $.  $d R x $.
     refrd.1 $e |- ( ph -> R e. V ) $.
     refrd.2 $e |- ( ph -> A e. W ) $.
     refrd.3 $e |- ( ( ph /\ x e. A ) -> x R x ) $.
@@ -51523,7 +51524,9 @@ $)
   $}
 
   ${
-    $d A a $. $d a r $. $d A r $. $d a x $. $d A x $. $d a y $. $d A y $. $d ph x $. $d ph y $. $d R a $. $d R r $. $d r x $. $d R x $. $d r y $. $d R y $. $d x y $. 
+    $d A a $.  $d a r $.  $d A r $.  $d a x $.  $d A x $.  $d a y $.  $d A y $.
+    $d ph x $.  $d ph y $.  $d R a $.  $d R r $.  $d r x $.  $d R x $.
+    $d r y $.  $d R y $.  $d x y $.
     antird.1 $e |- ( ph -> R e. V ) $.
     antird.2 $e |- ( ph -> A e. W ) $.
     antird.3 $e |- ( ( ph /\ ( x e. A /\ y e. A ) /\ ( x R y /\ y R x ) ) ->
@@ -51539,12 +51542,15 @@ $)
       $( [12-Mar-2015] $)
   $}
 
-  ${ $d A a $. $d a r $. $d A r $. $d a x $. $d A x $. $d a y $. $d A y $. $d ph x $. $d ph y $. $d R a $. $d R r $. $d r x $. $d R x $. $d r y $. $d R y $. $d x y $. 
-     connexrd.1 $e |- ( ph -> R e. V ) $.
-     connexrd.2 $e |- ( ph -> A e. W ) $.
-     connexrd.3 $e |- ( ( ph /\ x e. A /\ y e. A ) -> ( x R y \/ y R x ) ) $.
-     $( Deduce connectivity from its properties. $)
-     connexrd $p |- ( ph -> R Connex A ) $=
+  ${
+    $d A a $.  $d a r $.  $d A r $.  $d a x $.  $d A x $.  $d a y $.  $d A y $.
+    $d ph x $.  $d ph y $.  $d R a $.  $d R r $.  $d r x $.  $d R x $.
+    $d r y $.  $d R y $.  $d x y $.
+    connexrd.1 $e |- ( ph -> R e. V ) $.
+    connexrd.2 $e |- ( ph -> A e. W ) $.
+    connexrd.3 $e |- ( ( ph /\ x e. A /\ y e. A ) -> ( x R y \/ y R x ) ) $.
+    $( Deduce connectivity from its properties. $)
+    connexrd $p |- ( ph -> R Connex A ) $=
        ( vr va cconnex wbr cv wo wral wcel 3expib breq wb wceq orbi12d 2ralbidv
        ralrimivv raleq raleqbi1dv df-connex brabg syl2anc mpbird ) AEDMNZBOZCOZ
        ENZUNUMENZPZCDQZBDQZAUQBCDDAUMDRUNDRUQJSUEAEFRDGRULUSUAHIUMUNKOZNZUNUMUT
@@ -51584,7 +51590,7 @@ $)
        ( x R y /\ y R z ) ) -> x R z ) $.
     pod.5 $e |- ( ( ph /\ ( x e. A /\ y e. A ) /\ ( x R y /\ y R x ) ) ->
       x = y ) $.
-    $( A reflexive, transitive, and anti-symmetric ordering is a partial 
+    $( A reflexive, transitive, and anti-symmetric ordering is a partial
        ordering. $)
     pod $p |- ( ph -> R Po A ) $=
       ( cref wbr ctrans cantisym cpartial refrd trrd antird porta syl3anbrc ) A
@@ -51606,7 +51612,7 @@ $)
       x = y ) $.
     sod.6 $e |- ( ( ph /\ x e. A /\ y e. A ) ->
        ( x R y \/ y R x ) ) $.
-    $( A reflexive, transitive, antisymmetric, and connected relationship is a 
+    $( A reflexive, transitive, antisymmetric, and connected relationship is a
        strict ordering. $)
     sod $p |- ( ph -> R Or A ) $=
       ( cpartial wbr cconnex cstrict pod connexrd sopc sylanbrc ) AFEOPFEQPFERP
@@ -51670,6 +51676,19 @@ $)
        ZNZHUFUNDGZUJUKUNEIUAULBCOZNACOUPUQUFUGUNUBUHULUOURUMUGUNCQZRUCUFUNUSRST
        UDUE $.
        $( [22-Feb-2015] $)
+  $}
+
+  ${
+    $d x y z $.
+    $( The subset relationship partially orders the universe. $)
+    ssetpov $p |- SSet Po _V $=
+       ( vx vy vz csset cvv cpartial wbr wtru wcel ssetex a1i vvex wss ssid vex
+       cv wa brsset anbi12i 3ad2ant3 mpbir w3a sstr 3imtr4i eqss bitr4i biimpri
+       weq pod trud ) DEFGHABCEDEEDEIHJKEEIHLKAPZUKDGZHUKEIZQULUKUKMUKNUKUKAOZU
+       NRUAKUKBPZDGZUOCPZDGZQZHUKUQDGZUMUOEIZUQEIUBUKUOMZUOUQMZQUKUQMUSUTUKUOUQ
+       UCUPVBURVCUKUOUNBOZRZUOUQVDCOZRSUKUQUNVFRUDTUPUOUKDGZQZHABUHZUMVAQVIVHVI
+       VBUOUKMZQVHUKUOUEUPVBVGVJVEUOUKVDUNRSUFUGTUIUJ $.
+       $( [12-Mar-2015] $)
   $}
 
 
@@ -54176,9 +54195,10 @@ $)
        $( [10-Mar-2015] $)
   $}
 
-  ${ $d A x $.
-     $( Cardinal multiplication by one. $)
-     mucid1 $p |- ( A e. NC -> ( A .c 1c ) = A ) $=
+  ${
+    $d A x $.
+    $( Cardinal multiplication by one. $)
+    mucid1 $p |- ( A e. NC -> ( A .c 1c ) = A ) $=
        ( vx cncs wcel cv cnc wceq wex c1c cmuc co elncs csn cxp vex oveq2i snex
        df1c3 mucnc cen wbr xpsnen xpex eqnc mpbir 3eqtri oveq1 id 3eqtr4a sylbi
        exlimiv ) ACDABEZFZGZBHAIJKZAGZBALUNUPBUNUMIJKZUMUOAUQUMULMZFZJKULURNZFZ
@@ -55224,10 +55244,16 @@ $)
       $( [11-Mar-2015] $)
   $}
 
-  ${ $d a b $. $d a c $. $d a m $. $d a n $. $d a p $. $d a q $. $d a x $. $d a y $. $d b c $. $d b m $. $d b n $. $d b p $. $d b q $. $d b x $. $d b y $. $d c m $. $d c n $. $d c p $. $d c q $. $d c x $. $d c y $. $d M a $. $d M b $. $d M c $. $d m n $. $d m p $. $d M p $. $d M q $. $d m x $. $d m y $. $d N a $. $d N b $. $d N c $. $d n p $. $d N q $. $d n x $. $d n y $. $d p q $. $d p x $. $d p y $. $d x y $. 
-     $( If a cardinal is less than or equal to a T-raising, then it is also a 
-     	T-raising. Theorem 5.6 of [Specker]. $)
-     letc $p |- ( ( M e. NC /\ N e. NC /\ M <_c T_c N ) -> 
+  ${
+    $d a b $.  $d a c $.  $d a m $.  $d a n $.  $d a p $.  $d a q $.  $d a x $.
+    $d a y $.  $d b c $.  $d b m $.  $d b n $.  $d b p $.  $d b q $.  $d b x $.
+    $d b y $.  $d c m $.  $d c n $.  $d c p $.  $d c q $.  $d c x $.  $d c y $.
+    $d M a $.  $d M b $.  $d M c $.  $d m n $.  $d m p $.  $d M p $.  $d M q $.
+    $d m x $.  $d m y $.  $d N a $.  $d N b $.  $d N c $.  $d n p $.  $d N q $.
+    $d n x $.  $d n y $.  $d p q $.  $d p x $.  $d p y $.  $d x y $.
+    $( If a cardinal is less than or equal to a T-raising, then it is also a
+       T-raising.  Theorem 5.6 of [Specker]. $)
+    letc $p |- ( ( M e. NC /\ N e. NC /\ M <_c T_c N ) -> 
        E. p e. NC M = T_c p ) $=
        ( vq va vb vc vx vy vn vm cncs wcel cv wceq wrex wa cnc wex vex ctc clec
        wbr cplc wb tccl dflec2 sylan2 wi w3a elncs 3anbi123i eeeanv bitr4i cpw1
