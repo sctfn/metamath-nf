@@ -55155,6 +55155,30 @@ $)
        $( [11-Mar-2015] $)
   $}
 
+  ${ $d A x $. $d A y $. $d B x $. $d B y $. $d C x $. $d C y $. $d x y $. 
+     $( Cardinal less than or equal is transitive. $)
+     lectr $p |- ( ( A e. NC /\ B e. NC /\ C e. NC ) -> 
+       ( ( A <_c B /\ B <_c C ) -> A <_c C ) ) $=
+       ( vx vy cncs wcel w3a clec wbr wa cv cplc wceq wb dflec2 3adant3 3adant1
+       wrex anbi12d reeanv syl6bbr addceq1 addcass syl6eq eqeq2d simp1 ncaddccl
+       biimpa addlecncs syl2an breq2 syl5ibrcom syl5 rexlimdvva sylbid ) AFGZBF
+       GZCFGZHZABIJZBCIJZKZBADLZMZNZCBELZMZNZKZEFSDFSZACIJZUTVCVFDFSZVIEFSZKVKU
+       TVAVMVBVNUQURVAVMOUSABDPQURUSVBVNOUQBCEPRTVFVIDEFFUAUBUTVJVLDEFFVJCAVDVG
+       MZMZNZUTVDFGVGFGKZKZVLVFVIVQVFVHVPCVFVHVEVGMVPBVEVGUCAVDVGUDUEUFUIVSVLVQ
+       AVPIJZUTUQVOFGVTVRUQURUSUGVDVGUHAVOUJUKCVPAIULUMUNUOUP $.
+       $( [12-Mar-2015] $)
+  $}
+
+  ${ $d x y z $.
+     $( Cardinal less than or equal partially orders the cardinals. $)
+     lecponc $p |- <_c Po NC $=
+       ( vx vy vz clec cncs cpartial wbr wtru cvv wcel lecex a1i nclecid adantl
+       ncsex cv w3a wa imp 3adant1 lectr weq sbth pod trud ) DEFGHABCEDIIDIJHKL
+       EIJHOLAPZEJZUFUFDGHUFMNUGBPZEJZCPZEJQZUFUHDGZUHUJDGRZUFUJDGZHUKUMUNUFUHU
+       JUASTUGUIRZULUHUFDGRZABUBZHUOUPUQUFUHUCSTUDUE $.
+       $( [12-Mar-2015] $)
+  $}
+
   ${
     tcnc.1 $e |- A e. _V $.
     $( Compute the T-raising of a cardinality. $)
