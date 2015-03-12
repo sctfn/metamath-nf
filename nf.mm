@@ -55180,6 +55180,11 @@ $)
   $}
 
   ${
+     $( Cardinal less than or equal is total over the naturals. $)
+     leconnnc $p |- ( ( A e. Nn /\ B e. Nn ) -> ( A <_c B \/ B <_c A ) ) $= ? $.
+  $}
+
+  ${
     tcnc.1 $e |- A e. _V $.
     $( Compute the T-raising of a cardinality. $)
     tcnc $p |- T_c Nc A = Nc ~P1 A $=
@@ -56301,6 +56306,14 @@ htmldef "Cross" as
     " <FONT FACE=sans-serif>Cross</FONT> ";
   althtmldef "Cross" as ' <FONT FACE=sans-serif>Cross</FONT> ';
   latexdef "Cross" as "{\rm Cross}";
+htmldef "Pw1Fn" as
+    " <FONT FACE=sans-serif>Pw1Fn</FONT> ";
+  althtmldef "Pw1Fn" as ' <FONT FACE=sans-serif>Pw1Fn</FONT> ';
+  latexdef "Pw1Fn" as "{\rm Pw1Fn}";
+htmldef "FullFun" as
+    " <FONT FACE=sans-serif>FullFun</FONT> ";
+  althtmldef "FullFun" as ' <FONT FACE=sans-serif>FullFun</FONT> ';
+  latexdef "FullFun" as "{\rm FullFun}";
 
 htmldef "Trans" as
     " <FONT FACE=sans-serif>Trans</FONT> ";
@@ -56357,6 +56370,15 @@ htmldef "~~" as
   althtmldef "~~" as ' &#8776; '; /* &ap; */
   latexdef "~~" as "\approx";
 
+htmldef "^m" as
+    " <IMG SRC='_hatm.gif' WIDTH=15 HEIGHT=19 TITLE='^m' ALIGN=TOP> ";
+  althtmldef "^m" as ' &uarr;<SUB><I>m</I></SUB> ';
+  latexdef "^m" as "\uparrow_m";
+htmldef "^pm" as
+    " <IMG SRC='_hatpm.gif' WIDTH=21 HEIGHT=19 TITLE='^pm' ALIGN=TOP> ";
+  althtmldef "^pm" as ' &uarr;<SUB><I>pm</I></SUB> ';
+  latexdef "^pm" as "\uparrow_{pm}";
+
 htmldef "NC" as
     " <FONT FACE=sans-serif>NC</FONT> ";
   althtmldef "NC" as ' <FONT FACE=sans-serif>NC</FONT> ';
@@ -56381,5 +56403,21 @@ htmldef "T_c" as
     " <FONT FACE=sans-serif>T</FONT><SUB>c</SUB> ";
   althtmldef "T_c" as ' <FONT FACE=sans-serif>T</FONT><SUB>c</SUB> ';
   latexdef "T_c" as "{\rm T}_c ";
+htmldef "2c" as "<IMG SRC='_2c.gif' WIDTH=13 HEIGHT=19 TITLE='2c' ALIGN=TOP>";
+  althtmldef "2c" as '2<SUB><I>c</I></SUB>';
+  latexdef "2c" as "2_c";
+htmldef "3c" as "<IMG SRC='_3c.gif' WIDTH=13 HEIGHT=19 TITLE='3c' ALIGN=TOP>";
+  althtmldef "3c" as '3<SUB><I>c</I></SUB>';
+  latexdef "3c" as "3_c";
+htmldef "^c" as
+    " <IMG SRC='_hatc.gif' WIDTH=15 HEIGHT=19 TITLE='^c' ALIGN=TOP> ";
+  althtmldef "^c" as ' &uarr;<SUB><I>c</I></SUB> ';
+  latexdef "^c" as "\uparrow_c";
+
+htmldef "Sp[ac]" as
+    " <FONT FACE=sans-serif>Sp</FONT><SUB>ac</SUB> ";
+  althtmldef "Sp[ac]" as ' <FONT FACE=sans-serif>Sp</FONT><SUB>ac</SUB> ';
+  latexdef "Sp[ac]" as "{\rm Sp}_{\rm ac}";
+
 
 $)
