@@ -55956,34 +55956,19 @@ $)
       $( [13-Mar-2015] $)
   $}
 
-  ${ $d a b $. $d a m $. $d a p $. $d a x $. $d a y $. $d b m $. $d b p $. $d b x $. $d b y $. $d M m $. $d m p $. $d N m $. $d N p $. $d x y $. 
+  ${ $d M n $. $d M p $. $d n p $. $d N p $. 
      $( Lemma for ~ nchoice . The initial value of ` Sp[ac] ` is a minimum
      	value.  Theorem 6.4 of [Specker]. $)
      nchoicelem4 $p |- ( ( M e. NC /\ N e. ( Sp[ac] ` M ) ) ->
        M <_c N ) $=
-       ( vx vy vp va vb cncs wcel clec wbr cv wi wceq c2c cce co w3a weq breq2
-       vm cspac cfv fveq2 eleq2d breq1 imbi12d copab cclos1 spacval spacvallem1
-       csn snex eqid wn cab cima cun cvv wo unab imasn imor abbii 3eqtr4i abexv
-       uneq2i lecex imaex unex eqeltrri vex elsn nclecid syl5ibr sylbi spacssnc
-       imbi2d wa eqsstr3d sseld eleq1 oveq2 eqeq2d 3anbi13d eqeq1 3anbi23d brab
-       c0c 2nc ceclr mp3an1 simprd ce2lt syldan wne brltc simplbi 3adant1 lectr
-       syl mpan2d 3expia syl5ibrcom com23 ex 3impd adantr syl5bi expimpd syland
-       cltc com12 a2d 3impia clos1is sylbid vtoclga imp ) AHIBAUBUCZIZABJKZBUAL
-       ZUBUCZIZYCBJKZMYAYBMUAAHYCANZYEYAYFYBYGYDXTBYCAUBUDUEYCABJUFUGYCHIZYEBYC
-       ULZCLZHIZDLZHIZYLOYJPQZNZRZCDUHZUIZIZYFYHYDYRBCDYCUJZUEYSYHYFYHYCELZJKZM
-       ZYHYCFLZJKZMZYHYCGLZJKZMZYHYFMEFGBYRYQYIYCUMZCDUKYRUNYHUOZEUPZJYIUQZURZU
-       UCEUPZUSUULUUBEUPZURUUKUUBUTZEUPUUNUUOUUKUUBEVAUUMUUPUULEYCJVBVGUUCUUQEY
-       HUUBVCVDVEUULUUMUUKEVFJYIVHUUJVIVJVKEFSUUBUUEYHUUAUUDYCJTVREGSUUBUUHYHUU
-       AUUGYCJTVRUUABNUUBYFYHUUABYCJTVRUUAYIIEUASZUUCUUAYCEVLVMYHUUBUURYCYCJKYC
-       VNUUAYCYCJTVOVPUUDYRIZUUDUUGYQKZUUFUUIUUSUUTVSZYHUUEUUHYHUVAUUEUUHMZYHUU
-       SUUDHIZUUTUVBYHYRHUUDYHYRYDHYTYCVQVTWAYHUVCUUTUVBUUTUVCUUGHIZUUGOUUDPQZN
-       ZRZYHUVCVSZUVBYPUVCYMYLUVENZRUVGCDUUDUUGYQFVLGVLCFSZYKUVCYOUVIYMYJUUDHWB
-       UVJYNUVEYLYJUUDOPWCWDWEDGSYMUVDUVIUVFUVCYLUUGHWBYLUUGUVEWFWGYQUNWHYHUVGU
-       VBMUVCYHUVCUVDUVFUVBYHUVCUVDUVFUVBMMUVHUVFUVDUVBUVHUVDUVBMUVFUVEHIZUUEYC
-       UVEJKZMZMYHUVCUVKUVMYHUVCUVKRUUEUUDUVEJKZUVLUVCUVKUVNYHUVCUVKVSZUUDUVEXL
-       KZUVNUVCUVKUUDWIPQHIZUVPUVOOWIPQHIZUVQOHIUVCUVKUVRUVQVSWJOUUDWKWLWMUUDWN
-       WOUVPUVNUUDUVEWPUUDUVEWQWRXAWSYCUUDUVEWTXBXCUVFUVDUVKUVBUVMUUGUVEHWBUVFU
-       UHUVLUUEUUGUVEYCJTVRUGXDXEXFXGXHXIXJXKXMXNXOXPXMXQXRXS $.
+       ( vp vn cv clec wbr c2c cce co csn cima cab cvv imasn breq2 cncs wcel wa
+       sylan lecex snex imaex eqeltrri nclecid cspac cltc spacssnc sselda ce2lt
+       cfv c0c wne brltc simplbi syl wi simpll adantr cnnc ceclnn1 mp3an1 lectr
+       2nnc syl3anc mpan2d impr spacis ) ACEZFGZAAFGADEZFGZAHVKIJZFGZABFGCDABFA
+       KZLVJCMNCAFOFVOUAAUBUCUDVIAAFPVIVKAFPVIVMAFPVIBAFPAUEAQRZVKAUFUKZRZSZVKU
+       LIJQRZVLVNVSVTSZVLVKVMFGZVNWAVKVMUGGZWBVSVKQRZVTWCVPVQQVKAUHUIZVKUJTWCWB
+       VKVMUMVKVMUNUOUPWAVPWDVMQRZVLWBSVNUQVPVRVTURVSWDVTWEUSVSWDVTWFWEHUTRWDVT
+       WFVDHVKVAVBTAVKVMVCVEVFVGVH $.
        $( [13-Mar-2015] $)
   $}
 
