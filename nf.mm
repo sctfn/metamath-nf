@@ -55227,8 +55227,9 @@ $)
        $( [12-Mar-2015] $)
   $}
 
-  ${ $d N m $.
-    $( Any cardinal is either zero or the successor of a cardinal.  Corollary 
+  ${
+    $d N m $.
+    $( Any cardinal is either zero or the successor of a cardinal.  Corollary
        of theorem XI.2.24 of [Rosser], p. 377. $)
     nc0suc $p |- ( N e. NC -> ( N = 0c \/ E. m e. NC N = ( m +c 1c ) ) ) $=
       ( cncs wcel c0c wceq c1c clec wbr wo cplc wrex nc0le1 1cnc dflec2 addccom
@@ -55272,9 +55273,10 @@ $)
        $( [12-Mar-2015] $)
   $}
 
-  ${ $d A p $. $d B p $. 
-     $( The sum of two cardinals is zero iff both addends are zero. $)
-     addceq0 $p |- ( ( A e. NC /\ B e. NC ) -> ( ( A +c B ) = 0c <->
+  ${
+    $d A p $.  $d B p $.
+    $( The sum of two cardinals is zero iff both addends are zero. $)
+    addceq0 $p |- ( ( A e. NC /\ B e. NC ) -> ( ( A +c B ) = 0c <->
        ( A = 0c /\ B = 0c ) ) ) $=
        ( vp cncs wcel wa cplc c0c wceq wn c1c wrex nc0suc ord wne 0cnsuc eqeq1d
        wi necon3bbid mpbiri wo ianor cv adantr addc32 eqnetri addceq1 rexlimivw
@@ -55552,10 +55554,12 @@ $)
     GZGZFGNEFGGQRFGGOSFOPRGZEGSNTEABCDHIPREJKINEFLQRFLM $.
     $( [13-Mar-2015] $)
 
-  ${ $d A a $. $d a m $. $d a n $. $d A n $. $d a p $. $d B n $. $d m n $. $d m p $. $d n p $. $d n q $. $d p q $. $d p x $. $d q x $. $d m q $. 
-     $( Three times a natural is not one more than three times a natural.  
-     	Another part of Theorem 3.4 of [Specker]. $)
-     nnc3n3p1 $p |- ( ( A e. Nn /\ B e. Nn ) -> 
+  ${
+    $d A a $.  $d a m $.  $d a n $.  $d A n $.  $d a p $.  $d B n $.  $d m n $.
+    $d m p $.  $d n p $.  $d n q $.  $d p q $.  $d p x $.  $d q x $.  $d m q $.
+    $( Three times a natural is not one more than three times a natural.
+       Another part of Theorem 3.4 of [Specker]. $)
+    nnc3n3p1 $p |- ( ( A e. Nn /\ B e. Nn ) -> 
         -. ( ( A +c A ) +c A ) = ( ( ( B +c B ) +c B ) +c 1c ) ) $=
        ( vn vp vq cnnc wcel cplc c1c wceq wn c0c caddcfn c1st c2nd cop addceq12
        wa anidms nncaddccl va vm vx cv wral wi ccnv csn cima cres ccom cin ctxp
@@ -55621,9 +55625,9 @@ $)
   $}
 
   ${
-     $( Three times a natural is not two more than three times a natural.  
-     	Another part of Theorem 3.4 of [Specker]. $)
-     nnc3n3p2 $p |- ( ( A e. Nn /\ B e. Nn ) -> 
+    $( Three times a natural is not two more than three times a natural.
+       Another part of Theorem 3.4 of [Specker]. $)
+    nnc3n3p2 $p |- ( ( A e. Nn /\ B e. Nn ) -> 
         -. ( ( A +c A ) +c A ) = ( ( ( B +c B ) +c B ) +c 2c ) ) $=
        ( cnnc wcel wa cplc c1c wceq wn peano2 nnc3n3p1 sylan ancoms eqcom addc4
        c2c addceq1i nncaddccl anidms mpancom addc32 1p1e2c 3eqtrri eqtri eqeq1i
@@ -55636,11 +55640,11 @@ $)
   $}
 
   ${
-     $( One more than three times a natural is not two more than three 
-     	times a natural.  Final part of Theorem 3.4 of [Specker]. $)
-     nnc3p1n3p2 $p |- ( ( A e. Nn /\ B e. Nn ) -> 
+    $( One more than three times a natural is not two more than three times a
+       natural.  Final part of Theorem 3.4 of [Specker]. $)
+    nnc3p1n3p2 $p |- ( ( A e. Nn /\ B e. Nn ) -> 
         -. ( ( ( A +c A ) +c A ) +c 1c ) = 
-	   ( ( ( B +c B ) +c B ) +c 2c ) ) $=
+           ( ( ( B +c B ) +c B ) +c 2c ) ) $=
        ( cnnc wcel wa cplc c1c wceq nnc3n3p1 wb nncaddccl anidms mpancom peano2
        c2c syl suc11nnc syl2an mtbird addcass 1p1e2c addceq2i eqtr2i sylnibr
        eqeq2i ) ACDZBCDZEZAAFZAFZGFZBBFZBFZGFZGFZHZUKUMOFZHUHUPUJUNHZABIUFUJCDZ
