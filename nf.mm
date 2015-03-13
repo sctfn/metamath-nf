@@ -55344,6 +55344,17 @@ $)
        $( [12-Mar-2015] $)
   $}
 
+  ${ $d A x $.
+     $( Ordering law for cardinal exponentiation to two.  Theorem XI.2.71
+     	of [Rosser], p. 390. $)
+     ce2lt $p |- ( ( M e. NC /\ ( M ^c 0c ) e. NC ) -> M <c ( 2c ^c M ) ) $=
+       ( vx cncs wcel c0c cce co wa cpw1 cnc wceq wex c2c cltc wbr ce0ncpw1 cpw
+       cv id cvv vex ltcpw1pwg ax-mp syl6eqbr ce2 breqtrrd exlimiv syl ) ACDAEF
+       GCDHABRZIJZKZBLAMAFGZNOZABPUKUMBUKAUIQJZULNUKAUJUNNUKSUITDUJUNNOBUAZUITU
+       BUCUDUIAUOUEUFUGUH $.
+       $( [13-Mar-2015] $)
+  $}
+
   ${
     tcnc.1 $e |- A e. _V $.
     $( Compute the T-raising of a cardinality. $)
@@ -55816,6 +55827,7 @@ $)
       WAVEXFVTXEQOGHIEFWAOAVDVFVGVHVIVJVKVLVMVNWNWMWEAVPBCVOWNTVQVRVS $.
       $( [13-Mar-2015] $)
   $}
+
 
 
 $(
