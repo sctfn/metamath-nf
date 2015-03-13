@@ -55986,12 +55986,26 @@ $)
        $( [13-Mar-2015] $)
   $}
 
-  ${
+  ${ $d M x $.
      $( Lemma for ~ nchoice .  Split the special set generator into
      	base and inductive values.  Theorem 6.6 of [Specker]. $)
      nchoicelem6 $p |- ( ( M e. NC /\ ( M ^c 0c ) e. NC ) ->
        ( Sp[ac] ` M ) = ( { M } u. ( Sp[ac] ` ( 2c ^c M ) ) ) ) $=
-       ? $.
+       ( vx cncs wcel c0c cce co wa cspac cfv c2c cvv wi wral wss a1i adantr wo
+       fvex spaccl csn cun cv simpl snex unex ssun1 snidg sseldi wceq elun elsn
+       vex orbi1i bitri spacid simpr syl3anc sseldd syl oveq2 eleq1d syl5ibrcom
+       spacssnc cnnc 2nnc ceclnn1 mp3an1 simprr simprl expr jaod ex com23 imp3a
+       syl5bi ssun2 sseli syl6 ralrimivw spacind syl22anc snssg 3expib jca unss
+       mpbid sylib eqssd ) ACDZAEFGCDZHZAIJZAUAZKAFGZIJZUBZWLWJWQLDZAWQDZBUCZWQ
+       DZWTEFGCDZHZKWTFGZWQDZMZBWMNWMWQOWJWKUDZWRWLWNWPAUEWOISUFPWJWSWKWJWNWQAW
+       NWPUGACUHUIQWLXFBWMWLXCXDWPDZXEWLXAXBXHWLXBXAXHWLXBXAXHMXAWTAUJZWTWPDZRZ
+       WLXBHZXHXAWTWNDZXJRXKWTWNWPUKXMXIXJWTABUMULUNUOXLXIXHXJWLXIXHMXBWLXHXIWO
+       WPDZWLWOCDZXNWLWMCWOWJWMCOWKAVDQWLWJAWMDZWKWOWMDZXGWJXPWKAUPZQWJWKUQAATU
+       RZUSZWOUPUTXIXDWOWPWTAKFVAVBVCQWLXBXJXHWLXBXJHZHXOXJXBXHWLXOYAKVEDWJWKXO
+       VFKAVGVHQWLXBXJVIWLXBXJVJWOWTTURVKVLVPVMVNVOWPWQXDWPWNVQVRVSVTBWQALWAWBW
+       LWNWMOZWPWMOZHWQWMOWLYBYCWJYBWKWJXPYBXRAWMCWCWGQWLXOWMLDZXQWTWMDZXBHXDWM
+       DZMZBWPNYCXTYDWLAISPXSWLYGBWPWJYGWKWJYEXBYFAWTTWDQVTBWMWOLWAWBWEWNWPWMWF
+       WHWI $.
        $( [13-Mar-2015] $)
   $}
 
