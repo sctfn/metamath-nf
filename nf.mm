@@ -50956,6 +50956,21 @@ $)
       $( [12-Feb-2015] $)
   $}
 
+  ${
+    $d C x $.  $d C y $.  $d R x $.  $d R y $.  $d S x $.  $d S y $.  $d x y $.
+    clos1nrel.1 $e |- S e. _V $.
+    clos1nrel.2 $e |- R e. _V $.
+    clos1nrel.3 $e |- C = Clos1 ( S , R ) $.
+    $( The value of a closure when the base set is not related to anything in
+       ` R ` . $)
+    clos1nrel $p |- ( ( R " S ) = (/) -> C = S ) $=
+       ( vx vy cima c0 wceq cv wcel wbr wa wi wal wral wss cvv wn eq0 wrex ra4e
+       elima sylibr con3i pm2.21d alimi sylbi ralrimivw clos1induct mp3an12 syl
+       ssid clos1base a1i eqssd ) BCIZJKZACUTGLZCMVAHLZBNZOZVBCMZPZHQZGARZACSZU
+       TVGGAUTVBUSMZUAZHQVGHUSUBVKVFHVKVDVEVDVJVDVCGCUCVJVCGCUDGVBBCUEUFUGUHUIU
+       JUKCTMCCSVHVIDCUOGHABCTCDEFULUMUNCASUTABCFUPUQUR $.
+       $( [13-Mar-2015] $)
+  $}
 
 $(
 #*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#
@@ -54829,6 +54844,18 @@ $)
   $}
 
   ${
+    $( Cardinal exponentiation to zero is a cardinal iff it is non-empty.
+       Corollary 1 of theorem XI.2.38 of [Rosser], p. 384. $)
+    ce0nulnc $p |- ( M e. NC -> ( ( M ^c 0c ) =/= (/) <-> ( M ^c 0c ) e. NC ) )
+        $=
+       ( vm c0c cce co c0 wne wa cncs wcel cv cpw1 wex nulel0c wceq pw1eq ax-mp
+       0ex wb 0cnc pw10 syl6eq eleq1d cla4ev ce0nnul mpbir biantru ceclb syl5bb
+       mpan2 ) ACDEZFGZULCCDEFGZHZAIJZUKIJZUMULUMBKZLZCJZBMZFCJZUTNUSVABFRUQFOZ
+       URFCVBURFLFUQFPUAUBUCUDQCIJZUMUTSTCBUEQUFUGUOVCUNUPSTACUHUJUI $.
+       $( [13-Mar-2015] $)
+  $}
+
+  ${
     $d M a $.
     $( If cardinal exponentiation to zero is a cardinal, then the base is the
        cardinality of some unit power class.  Corollary 2 of theorem XI.2.48 of
@@ -54849,6 +54876,16 @@ $)
        anim12i syl5ib imp ) ACDBCDEZAFGHZCDZBFGHZCDZEZABGHCDZUEUAIJZUCIJZETUFUB
        UGUDUHUBUAIUAIKUBICDZLUAICMNOUDUCIUCIKUDUILUCICMNOQABPRS $.
        $( [9-Mar-2015] $)
+  $}
+
+  ${
+    $( Reverse closure law for cardinal exponentiation. $)
+    ceclr $p |- ( ( M e. NC /\ N e. NC /\ ( M ^c N ) e. NC ) ->
+       ( ( M ^c 0c ) e. NC /\ ( N ^c 0c ) e. NC ) ) $=
+       ( cncs wcel cce co w3a c0c c0 wne wa ceclb biimp3ar wb ce0nulnc bi2anan9
+       3adant3 mpbid ) ACDZBCDZABEFCDZGAHEFZIJZBHEFZIJZKZUBCDZUDCDZKZSTUFUAABLM
+       STUFUINUASUCUGTUEUHAOBOPQR $.
+       $( [13-Mar-2015] $)
   $}
 
   ${
@@ -55743,6 +55780,24 @@ $)
       $( [12-Mar-2015] $)
   $}
 
+  ${
+    $d M p $.  $d M x $.  $d M y $.  $d p x $.  $d p y $.  $d x y $.
+    $( Lemma for ~ nchoice .  Compute the value of ` Sp[ac] ` when the argument
+       is not exponentiable.  Theorem 6.2 of [Specker]. $)
+    nchoicelem3 $p |- ( ( M e. NC /\ -. ( M ^c 0c ) e. NC ) ->
+        ( Sp[ac] ` M ) = { M } ) $=
+      ( vx vy vp cncs wcel c0c cce co wn wa cspac cfv cv c2c wceq w3a cvv eleq1
+      eqid csn copab cclos1 spacval adantr cima c0 wbr cop elimasn df-br bitr4i
+      wb vex oveq2 eqeq2d 3anbi13d weq eqeq1 3anbi23d brabg mpan2 biimpac ceclr
+      2nc simprd mp3an1 sylan2 3impb syl6bi syl5bi con3d imp eq0rdv spacvallem1
+      snex clos1nrel syl eqtrd ) AEFZAGHIEFZJZKZALMZAUAZBNZEFZCNZEFZWHOWFHIZPZQ
+      ZBCUBZUCZWEVTWDWNPWBBCAUDUEWCWMWEUFZUGPWNWEPWCDWOVTWBDNZWOFZJVTWQWAWQAWPW
+      MUHZVTWAWQAWPUIWMFWRWMAWPUJAWPWMUKULVTWRVTWPEFZWPOAHIZPZQZWAVTWPRFWRXBUMD
+      UNWLVTWIWHWTPZQXBBCAWPERWMWFAPZWGVTWKXCWIWFAESXDWJWTWHWFAOHUOUPUQCDURWIWS
+      XCXAVTWHWPESWHWPWTUSUTWMTVAVBVTWSXAWAWSXAKVTWTEFZWAXAWSXEWPWTESVCOEFZVTXE
+      WAVEXFVTXEQOGHIEFWAOAVDVFVGVHVIVJVKVLVMVNWNWMWEAVPBCVOWNTVQVRVS $.
+      $( [13-Mar-2015] $)
+  $}
 
 
 $(
