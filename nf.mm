@@ -55227,6 +55227,17 @@ $)
        $( [12-Mar-2015] $)
   $}
 
+  ${ $d N m $.
+    $( Any cardinal is either zero or the successor of a cardinal.  Corollary 
+       of theorem XI.2.24 of [Rosser], p. 377. $)
+    nc0suc $p |- ( N e. NC -> ( N = 0c \/ E. m e. NC N = ( m +c 1c ) ) ) $=
+      ( cncs wcel c0c wceq c1c clec wbr wo cplc wrex nc0le1 1cnc dflec2 addccom
+      cv wb wa eqeq2i rexbii syl6bb mpan orbi2d mpbid ) BCDZBEFZGBHIZJUGBAQZGKZ
+      FZACLZJBMUFUHULUGGCDZUFUHULRNUMUFSUHBGUIKZFZACLULGBAOUOUKACUNUJBGUIPTUAUB
+      UCUDUE $.
+      $( [12-Mar-2015] $)
+  $}
+
   ${
     $d A a $.  $d a m $.  $d a n $.  $d A n $.  $d B n $.  $d m n $.  $d m p $.
     $d n p $.
@@ -55258,6 +55269,21 @@ $)
        VPUVJYTUVNUUAUVOYAUVIYSGLYAUVIYSGMNWPWQVOWRWSWTUVGYQUUAUUBUVBUVFYQUUARUV
        BUVFTYQYOYSGHZUUAUVFUWGUVBUVFUWDUWGWAYOQXAXBWHUVBUVFYSSFZYQUWGTUUARUVFUW
        HUVBYOXCWHYAYOYSXDXEXFXGUUAYTXHXIXLXJWNXKXMWQXNWQXO $.
+       $( [12-Mar-2015] $)
+  $}
+
+  ${ $d A p $. $d B p $. 
+     $( The sum of two cardinals is zero iff both addends are zero. $)
+     addceq0 $p |- ( ( A e. NC /\ B e. NC ) -> ( ( A +c B ) = 0c <->
+       ( A = 0c /\ B = 0c ) ) ) $=
+       ( vp cncs wcel wa cplc c0c wceq wn c1c wrex nc0suc ord wne 0cnsuc eqeq1d
+       wi necon3bbid mpbiri wo ianor cv adantr addc32 eqnetri addceq1 rexlimivw
+       syl6 adantl addcass eqnetrri addceq2 jaod syl5bi addceq12 addcid2 syl6eq
+       con4d impbid1 ) ADEZBDEZFZABGZHIZAHIZBHIZFZVCVHVEVHJVFJZVGJZUAVCVEJZVFVG
+       UBVCVIVKVJVCVIACUCZKGZIZCDLZVKVAVIVORVBVAVFVOCAMNUDVNVKCDVNVKVMBGZHOVPVL
+       BGZKGHVLKBUEVQPUFVNVEVPHVNVDVPHAVMBUGQSTUHUIVCVJBVMIZCDLZVKVBVJVSRVAVBVG
+       VSCBMNUJVRVKCDVRVKAVMGZHOAVLGZKGVTHAVLKUKWAPULVRVEVTHVRVDVTHBVMAUMQSTUHU
+       IUNUOUSVHVDHHGHABHHUPHUQURUT $.
        $( [12-Mar-2015] $)
   $}
 
@@ -55523,7 +55549,9 @@ $)
      $( Three times a natural is not one more than three times a natural.  
      	Another part of Theorem 3.4 of [Specker]. $)
      nnc3n3p1 $p |- ( ( A e. Nn /\ B e. Nn ) -> 
-        -. ( ( A +c A ) +c A ) = ( ( ( B +c B ) +c B ) +c 1c ) ) $= ? $.
+        -. ( ( A +c A ) +c A ) = ( ( ( B +c B ) +c B ) +c 1c ) ) $=
+       (  ) ? $.
+       $( [13-Mar-2015] $)
   $}
 
   ${
