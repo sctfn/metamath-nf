@@ -55505,7 +55505,7 @@ $)
     EZOFGZBPDOFHIDBCNQBCJDAKLM $.
     $( [13-Mar-2015] $)
 
-  ${
+  ${ $d M x $.
      $( Distributive law for T-raising and cardinal exponentiation to two. $)
      tce2 $p |- ( ( M e. NC /\ ( M ^c 0c ) e. NC ) ->
       T_c ( 2c ^c M ) = ( 2c ^c T_c M ) ) $=
@@ -55901,6 +55901,20 @@ $)
        KZUVNUVCUVKUUDWIPQHIZUVPUVOOWIPQHIZUVQOHIUVCUVKUVRUVQVSWJOUUDWKWLWMUUDWN
        WOUVPUVNUUDUVEWPUUDUVEWQWRXAWSYCUUDUVEWTXBXCUVFUVDUVKUVBUVMUUGUVEHWBUVFU
        UHUVLUUEUUGUVEYCJTVRUGXDXEXFXGXHXIXJXKXMXNXOXPXMXQXRXS $.
+       $( [13-Mar-2015] $)
+  $}
+
+  ${
+     $( Lemma for ~ nchoice .  A cardinal is not a member of the special
+     	set of itself raised to two.  Theorem 6.5 of [Specker]. $)
+     nchoicelem5 $p |- ( ( M e. NC /\ ( M ^c 0c ) e. NC ) ->
+       -. M e. ( Sp[ac] ` ( 2c ^c M ) ) ) $=
+       ( cncs wcel c0c cce co wa c2c cspac cfv clec wbr wn cltc ce2lt wb 2nc c0
+       jctl ax-mp wne cnnc 2nnc ce0nn ce0nulnc mpbi cecl syl2an ltlenlec syldan
+       mpbid simprd nchoicelem4 sylan mtand ) ABCZADEFBCZGZAHAEFZIJCZUSAKLZURAU
+       SKLZVAMZURAUSNLZVBVCGZAOUPUQUSBCZVDVEPUPHBCZUPGHDEFZBCZUQGVFUQUPVGQSUQVI
+       VHRUAZVIHUBCVJUCHUDTVGVJVIPQHUETUFSHAUGUHZAUSUIUJUKULURVFUTVAVKUSAUMUNUO
+       $.
        $( [13-Mar-2015] $)
   $}
 
