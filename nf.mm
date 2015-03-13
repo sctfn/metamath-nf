@@ -55344,7 +55344,7 @@ $)
        $( [12-Mar-2015] $)
   $}
 
-  ${ $d A x $.
+  ${ $d M x $.
      $( Ordering law for cardinal exponentiation to two.  Theorem XI.2.71
      	of [Rosser], p. 390. $)
      ce2lt $p |- ( ( M e. NC /\ ( M ^c 0c ) e. NC ) -> M <c ( 2c ^c M ) ) $=
