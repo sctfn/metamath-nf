@@ -31977,6 +31977,13 @@ Image_k ( ( Ins3_k ~ ( ( Ins3_k SSet_k i^i Ins2_k SSet_k ) "_k
     FGJCDHLBDHI $.
     $( [25-Jan-2015] $)
 
+  $( Rearrange cardinal summation of six arguments. $)
+  addc6 $p |- ( ( ( A +c B ) +c ( C +c D ) ) +c ( E +c F ) ) =
+     ( ( ( A +c C ) +c E ) +c ( ( B +c D ) +c F ) ) $=
+    ( cplc addc4 addceq1i addc32 eqtri addcass 3eqtr3i ) ABGCDGGZEGZFGACGZEGZBD
+    GZGZFGNEFGGQRFGGOSFOPRGZEGSNTEABCDHIPREJKINEFLQRFLM $.
+    $( [13-Mar-2015] $)
+
   ${
     $d A a b c x $.  $d B a b c x $.
     $( The finite cardinals are closed under addition.  Theorem X.1.14 of
@@ -55613,13 +55620,6 @@ $)
       $( [2-Mar-2015] $)
   $}
 
-  $( Rearrange cardinal summation of six arguments. $)
-  addc6 $p |- ( ( ( A +c B ) +c ( C +c D ) ) +c ( E +c F ) ) =
-     ( ( ( A +c C ) +c E ) +c ( ( B +c D ) +c F ) ) $=
-    ( cplc addc4 addceq1i addc32 eqtri addcass 3eqtr3i ) ABGCDGGZEGZFGACGZEGZBD
-    GZGZFGNEFGGQRFGGOSFOPRGZEGSNTEABCDHIPREJKINEFLQRFLM $.
-    $( [13-Mar-2015] $)
-
   ${
     $d A a $.  $d a m $.  $d a n $.  $d A n $.  $d a p $.  $d B n $.  $d m n $.
     $d m p $.  $d n p $.  $d n q $.  $d p q $.  $d p x $.  $d q x $.  $d m q $.
@@ -55752,6 +55752,18 @@ $)
       $( [4-Mar-2015] $)
   $}
 
+  ${ $d x y $.
+     $( The special set generator generates a set of cardinal. $)
+     spacssnc $p |- ( N e. NC -> ( Sp[ac] ` N ) C_ NC ) $=
+       ( vx vy cncs wcel cspac cfv csn cv c2c cce wceq w3a copab cclos1 spacval
+       co cima cun wss snex spacvallem1 eqid clos1baseima snssi crn imassrn wex
+       wa cab rnopab simp2 exlimiv abssi eqsstri sstri jctir unss sylib eqsstrd
+       syl5eqss ) ADEZAFGAHZBIZDEZCIZDEZVFJVDKQLZMZBCNZOZDBCAPVBVKVCVJVKRZSZDVK
+       VJVCAUABCUBVKUCUDVBVCDTZVLDTZUIVMDTVBVNVOADUEVLVJUFZDVJVKUGVPVIBUHZCUJDV
+       IBCUKVQCDVIVGBVEVGVHULUMUNUOUPUQVCVLDURUSVAUT $.
+       $( [13-Mar-2015] $)
+  $}
+
   ${
     $d A n $.
     $( Lemma for ~ nchoice .  A finite cardinal is not one more than its
@@ -55828,7 +55840,36 @@ $)
       $( [13-Mar-2015] $)
   $}
 
-
+  ${ $d a b $. $d a m $. $d a p $. $d a x $. $d a y $. $d b m $. $d b p $. $d b x $. $d b y $. $d M m $. $d m p $. $d N m $. $d N p $. $d x y $. 
+     $( Lemma for ~ nchoice . The initial value of ` Sp[ac] ` is a minimum
+     	value.  Theorem 6.4 of [Specker]. $)
+     nchoicelem4 $p |- ( ( M e. NC /\ N e. ( Sp[ac] ` M ) ) ->
+       M <_c N ) $=
+       ( vx vy vp va vb cncs wcel clec wbr cv wi wceq c2c cce co w3a weq breq2
+       vm cspac cfv fveq2 eleq2d breq1 imbi12d copab cclos1 spacval spacvallem1
+       csn snex eqid wn cab cima cun cvv wo unab imasn imor abbii 3eqtr4i abexv
+       uneq2i lecex imaex unex eqeltrri vex elsn nclecid syl5ibr sylbi spacssnc
+       imbi2d wa eqsstr3d sseld eleq1 oveq2 eqeq2d 3anbi13d eqeq1 3anbi23d brab
+       c0c 2nc ceclr mp3an1 simprd ce2lt syldan wne brltc simplbi 3adant1 lectr
+       syl mpan2d 3expia syl5ibrcom com23 ex 3impd adantr syl5bi expimpd syland
+       cltc com12 a2d 3impia clos1is sylbid vtoclga imp ) AHIBAUBUCZIZABJKZBUAL
+       ZUBUCZIZYCBJKZMYAYBMUAAHYCANZYEYAYFYBYGYDXTBYCAUBUDUEYCABJUFUGYCHIZYEBYC
+       ULZCLZHIZDLZHIZYLOYJPQZNZRZCDUHZUIZIZYFYHYDYRBCDYCUJZUEYSYHYFYHYCELZJKZM
+       ZYHYCFLZJKZMZYHYCGLZJKZMZYHYFMEFGBYRYQYIYCUMZCDUKYRUNYHUOZEUPZJYIUQZURZU
+       UCEUPZUSUULUUBEUPZURUUKUUBUTZEUPUUNUUOUUKUUBEVAUUMUUPUULEYCJVBVGUUCUUQEY
+       HUUBVCVDVEUULUUMUUKEVFJYIVHUUJVIVJVKEFSUUBUUEYHUUAUUDYCJTVREGSUUBUUHYHUU
+       AUUGYCJTVRUUABNUUBYFYHUUABYCJTVRUUAYIIEUASZUUCUUAYCEVLVMYHUUBUURYCYCJKYC
+       VNUUAYCYCJTVOVPUUDYRIZUUDUUGYQKZUUFUUIUUSUUTVSZYHUUEUUHYHUVAUUEUUHMZYHUU
+       SUUDHIZUUTUVBYHYRHUUDYHYRYDHYTYCVQVTWAYHUVCUUTUVBUUTUVCUUGHIZUUGOUUDPQZN
+       ZRZYHUVCVSZUVBYPUVCYMYLUVENZRUVGCDUUDUUGYQFVLGVLCFSZYKUVCYOUVIYMYJUUDHWB
+       UVJYNUVEYLYJUUDOPWCWDWEDGSYMUVDUVIUVFUVCYLUUGHWBYLUUGUVEWFWGYQUNWHYHUVGU
+       VBMUVCYHUVCUVDUVFUVBYHUVCUVDUVFUVBMMUVHUVFUVDUVBUVHUVDUVBMUVFUVEHIZUUEYC
+       UVEJKZMZMYHUVCUVKUVMYHUVCUVKRUUEUUDUVEJKZUVLUVCUVKUVNYHUVCUVKVSZUUDUVEXL
+       KZUVNUVCUVKUUDWIPQHIZUVPUVOOWIPQHIZUVQOHIUVCUVKUVRUVQVSWJOUUDWKWLWMUUDWN
+       WOUVPUVNUUDUVEWPUUDUVEWQWRXAWSYCUUDUVEWTXBXCUVFUVDUVKUVBUVMUUGUVEHWBUVFU
+       UHUVLUUEUUGUVEYCJTVRUGXDXEXFXGXHXIXJXKXMXNXOXPXMXQXRXS $.
+       $( [13-Mar-2015] $)
+  $}
 
 $(
 #*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#
