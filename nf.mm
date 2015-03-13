@@ -54205,6 +54205,14 @@ $)
        $( [2-Mar-2015] $)
   $}
 
+  ${ $d A x $.
+    $( Cardinal one is the cardinality of a singleton. $)
+    df1c3g $p |- ( A e. V -> 1c = Nc { A } ) $=
+      ( vx c1c cv csn cnc wceq sneq nceqd eqeq2d vex df1c3 vtoclg ) DCEZFZGZHDA
+      FZGZHCABOAHZQSDTPROAIJKOCLMN $.
+      $( [13-Mar-2015] $)
+  $}
+
   ${
     $d A x $.
     $( Cardinal multiplication by zero.  Theorem XI.2.32 of [Rosser],
@@ -56008,6 +56016,18 @@ $)
        WHWI $.
        $( [13-Mar-2015] $)
   $}
+
+  $( Lemma for ~ nchoice .  Calculate the cardinality of a special
+     set generator.  Theorem 6.7 of [Specker]. $)
+  nchoicelem7 $p |- ( ( M e. NC /\ ( M ^c 0c ) e. NC ) ->
+     Nc ( Sp[ac] ` M ) = ( Nc ( Sp[ac] ` ( 2c ^c M ) ) +c 1c ) ) $=
+    ( cncs wcel c0c cce co cspac cfv cnc csn c2c cun c1c cplc nchoicelem6 nceqd
+    wa cin c0 wceq incom wn nchoicelem5 disjsn sylibr syl5eq snex fvex ncdisjun
+    syl df1c3g addceq1d adantr eqtr4d addccom syl6eq eqtrd ) ABCZADEFBCZQZAGHZI
+    AJZKAEFZGHZLZIZVDIZMNZUTVAVEAOPUTVFMVGNZVHUTVFVBIZVGNZVIUTVBVDRZSTVFVKTUTVL
+    VDVBRZSVBVDUAUTAVDCUBVMSTAUCVDAUDUEUFVBVDAUGVCGUHUIUJURVIVKTUSURMVJVGABUKUL
+    UMUNMVGUOUPUQ $.
+    $( [13-Mar-2015] $)
 
 $(
 #*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#
