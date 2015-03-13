@@ -54888,6 +54888,24 @@ $)
        $( [13-Mar-2015] $)
   $}
 
+  ${ $d m n $. $d m p $. $d m x $. $d m y $. $d n p $. $d n x $. $d n y $. $d p x $. $d p y $. $d x y $. 
+     $( Full functionhood statement for cardinal exponentiation. $)
+     fce $p |- ^c : ( NC X. NC ) --> ( NC u. { (/) } ) $=
+       ( vp vn vm vx vy cncs c0 cce fnce cv cfv wcel wral co wa wceq wne wex wo
+       bitri cxp csn cun wf wfn crn wss wn df-ne c0c cpw1 cmap cen wbr w3a elce
+       wi n0 3simpa ce0nnuli im2anan9 syl5 exlimdvv sylbid exlimdv syl5bi ceclb
+       sylibd syl5bir elun ovex elsn orbi2i orcom df-or sylibr rgen2a cop fveq2
+       ex df-ov syl6eqr eleq1d ralxp mpbir fnfvrnss mp2an df-f mpbir2an ) FFUAZ
+       FGUBZUCZHUDHWJUEZHUFWLUGZIWMAJZHKZWLLZAWJMZWNIWRBJZCJZHNZWLLZCFMBFMXBBCF
+       WSFLZWTFLZOZXAGPZUHZXAFLZUQZXBXGXAGQZXEXHXAGUIXEXJWSUJHNGQZWTUJHNGQZOZXH
+       XJWOXALZARXEXMAXAURXEXNXMAXEXNDJZUKWSLZEJZUKWTLZWOXOXQULNUMUNZUOZERDRXMD
+       EWOWTWSUPXEXTXMDEXTXPXROXEXMXPXRXSUSXCXPXKXDXRXLXCXPXKXOWSUTVTXDXRXLXQWT
+       UTVTVAVBVCVDVEVFWSWTVGVHVIXBXHXAWKLZSZXIXAFWKVJYBXHXFSZXIYAXFXHXAGWSWTHV
+       KVLVMYCXFXHSXIXHXFVNXFXHVOTTTVPVQWQXBABCFFWOWSWTVRZPZWPXAWLYEWPYDHKXAWOY
+       DHVSWSWTHWAWBWCWDWEAWJWLHWFWGWJWLHWHWI $.
+       $( [13-Mar-2015] $)
+  $}
+
   ${
     $d M a $.
     $( The value of non-empty cardinal exponentiation.  Theorem XI.2.49 of
