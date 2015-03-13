@@ -55858,6 +55858,28 @@ $)
       $( [13-Mar-2015] $)
   $}
 
+  ${ $d ch x $. $d M x $. $d M y $. $d N x $. $d ph y $. $d ps x $. $d ta x $. $d th x $. $d x y $. 
+     spacis.1 $e |- { x | ph } e. _V $.
+     spacis.2 $e |- ( x = M -> ( ph <-> ps ) ) $.
+     spacis.3 $e |- ( x = y -> ( ph <-> ch ) ) $.
+     spacis.4 $e |- ( x = ( 2c ^c y ) -> ( ph <-> th ) ) $.
+     spacis.5 $e |- ( x = N -> ( ph <-> ta ) ) $.
+     spacis.6 $e |- ( M e. NC -> ps ) $.
+     spacis.7 $e |- 
+       ( ( ( M e. NC /\ y e. ( Sp[ac] ` M ) ) /\ ( ( y ^c 0c ) e. NC /\ ch ) ) 
+          -> th ) $.
+     $( Induction scheme for the special set generator. $)
+     spacis $p |- ( ( M e. NC /\ N e. ( Sp[ac] ` M ) ) -> ta ) $=
+       ( cncs wcel wa cce cspac cfv cab cvv cv c0c co c2c wi wral wss id1 elabg
+       a1i mpbird ancom vex elab anbi2i ovex sylibr ex syl5bi ralrimiva spacind
+       bitri syl22anc sselda wb adantl mpbid ) HQRZIHUAUBZRZSIAFUCZRZEVLVMVOIVL
+       VLVOUDRZHVORZGUEZVORZVSUFTUGQRZSZUHVSTUGZVORZUIZGVMUJVMVOUKVLULVQVLJUNVL
+       VRBOABFHQKUMUOVLWEGVMWBWACSZVLVSVMRSZWDWBWAVTSWFVTWAUPVTCWAACFVSGUQLURUS
+       VFWGWFWDWGWFSDWDPADFWCUHVSTUTMURVAVBVCVDGVOHUDVEVGVHVNVPEVIVLAEFIVMNUMVJ
+       VK $.
+       $( [13-Mar-2015] $)
+  $}
+
   ${
     $d A n $.
     $( Lemma for ~ nchoice .  A finite cardinal is not one more than its
