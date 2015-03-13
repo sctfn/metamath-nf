@@ -55485,6 +55485,39 @@ $)
        $( [11-Mar-2015] $)
   $}
 
+  ${ $d M x $. $d N x $.
+     $( The exponent of a T-raising to a T-raising is always a cardinal. $)
+     cet $p |- ( ( M e. NC /\ N e. NC ) -> ( T_c M ^c T_c N ) e. NC ) $=
+       ( vx cncs wcel ctc c0c cce co tccl adantr adantl cnc wceq wex elncs tceq
+       oveq1d ax-mp syl6eqel wa cv c0 wne cpw1 vex ncelncsi pw1ex ncid eleqtrri
+       tcnc ce0nnuli mp2an wb ce0nulnc mpbi exlimiv sylbi cecl syl22anc ) ADEZB
+       DEZUAAFZDEZBFZDEZVCGHIZDEZVEGHIZDEZVCVEHIDEVAVDVBAJKVBVFVABJLVAVHVBVAACU
+       BZMZNZCOVHCAPVMVHCVMVGVLFZGHIZDVMVCVNGHAVLQRVOUCUDZVODEZVNDEZVKUEZVNEVPV
+       LDEVRVKCUFZUGVLJSZVSVSMVNVSVKVTUHUIVKVTUKUJVKVNULUMVRVPVQUNWAVNUOSUPZTUQ
+       URKVBVJVAVBBVLNZCOVJCBPWCVJCWCVIVODWCVEVNGHBVLQRWBTUQURLVCVEUSUT $.
+       $( [13-Mar-2015] $)
+  $}
+
+  $( The exponent of two to a T-raising is always a cardinal.  Theorem 5.8
+     of [Specker]. $)
+  ce2t $p |- ( M e. NC -> ( 2c ^c T_c M ) e. NC ) $=
+    ( cncs wcel c2c ctc cce co tc2c oveq1i 2nc cet mpan syl5eqelr ) ABCZDAEZFGD
+    EZOFGZBPDOFHIDBCNQBCJDAKLM $.
+    $( [13-Mar-2015] $)
+
+  ${
+     $( Distributive law for T-raising and cardinal exponentiation to two. $)
+     tce2 $p |- ( ( M e. NC /\ ( M ^c 0c ) e. NC ) ->
+      T_c ( 2c ^c M ) = ( 2c ^c T_c M ) ) $=
+       ( vx cncs wcel c0c cce co cpw1 cnc wceq c2c ctc cpw tcnc eqid ax-mp tceq
+       wa ce2 syl cv wex ce0ncpw1 vex ncpwpw1 3eqtr4i pw1ex eqtr4i oveq2 syl6eq
+       pwex oveq2d 3eqtr4a exlimiv ) ACDAEFGCDRABUAZHZIZJZBUBKAFGZLZKALZFGZJZAB
+       UCURVCBURKUQFGZLZKUPHIZFGZUTVBVEUPMIZVGUOMZIZLZVIHIVEVHVIUOBUDZUKNVDVJJZ
+       VEVKJUQUQJVMUQOUOUQVLSPVDVJQPUOVLUEUFVFVFJVGVHJVFOUPVFUOVLUGZSPUHURUSVDJ
+       UTVEJAUQKFUIUSVDQTURVAVFKFURVAUQLVFAUQQUPVNNUJULUMUNT $.
+       $( [13-Mar-2015] $)
+  $}
+
   $( Cardinal one is not zero. $)
   1ne0c $p |- 1c =/= 0c $=
     ( c0c c1c cplc addcid2 0cnsuc eqnetrri ) ABCBABDAEF $.
