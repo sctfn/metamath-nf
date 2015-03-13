@@ -54913,6 +54913,14 @@ $)
        $( [13-Mar-2015] $)
   $}
 
+  $( Closure law for cardinal exponentiation when the base is a natural. $)
+  ceclnn1 $p |- ( ( M e. Nn /\ N e. NC /\ ( N ^c 0c ) e. NC ) ->
+     ( M ^c N ) e. NC ) $=
+    ( cnnc wcel cncs c0c cce co w3a 3ad2ant1 simp2 c0 wne ce0nn wb ce0nulnc syl
+    nnnc mpbid simp3 cecl syl22anc ) ACDZBEDZBFGHEDZIAEDZUDAFGHZEDZUEABGHEDUCUD
+    UFUEARZJUCUDUEKUCUDUHUEUCUGLMZUHANUCUFUJUHOUIAPQSJUCUDUETABUAUB $.
+    $( [13-Mar-2015] $)
+
   ${
     $d M a $.
     $( The value of non-empty cardinal exponentiation.  Theorem XI.2.49 of
@@ -55786,7 +55794,7 @@ $)
   $}
 
   ${ $d x y $.
-     $( The special set generator generates a set of cardinal. $)
+     $( The special set generator generates a set of cardinals. $)
      spacssnc $p |- ( N e. NC -> ( Sp[ac] ` N ) C_ NC ) $=
        ( vx vy cncs wcel cspac cfv csn cv c2c cce wceq w3a copab cclos1 spacval
        co cima cun wss snex spacvallem1 eqid clos1baseima snssi crn imassrn wex
@@ -55795,6 +55803,59 @@ $)
        VJVCAUABCUBVKUCUDVBVCDTZVLDTZUIVMDTVBVNVOADUEVLVJUFZDVJVKUGVPVIBUHZCUJDV
        IBCUKVQCDVIVGBVEVGVHULUMUNUOUPUQVCVLDURUSVAUT $.
        $( [13-Mar-2015] $)
+  $}
+
+  ${ $d M x y $.
+     $( The initial value of the special set generator is an element. $)
+     spacid $p |- ( M e. NC -> M e. ( Sp[ac] ` M ) ) $=
+       ( vx vy cncs wcel csn cv c2c cce co wceq w3a copab cclos1 cspac cfv eqid
+       wss clos1base snssg mpbiri spacval eleqtrrd ) ADEZAAFZBGZDECGZDEUGHUFIJK
+       LBCMZNZAOPUDAUIEUEUIRUIUHUEUIQSAUIDTUABCAUBUC $.
+       $( [13-Mar-2015] $)
+  $}
+
+  ${ $d N x $. $d N y $. $d x y $. 
+     $( Closure law for the special set generator. $)
+     spaccl $p |- ( ( M e. NC /\ N e. ( Sp[ac] ` M ) /\ ( N ^c 0c ) e. NC ) ->
+        ( 2c ^c N ) e. ( Sp[ac] ` M ) ) $=
+       ( vx vy cncs wcel cspac cfv c0c cce co w3a c2c csn cv wceq syl2anc eleq1
+       cvv eqid copab cclos1 wbr simp2 spacval 3ad2ant1 eleqtrd spacssnc sselda
+       3adant3 simp3 cnnc 2nnc ceclnn1 mp3an1 eqidd oveq2 eqeq2d 3anbi13d eqeq1
+       wb ovex 3anbi23d brabg mpan2 3ad2ant2 mpbir3and clos1conn eleqtrrd ) AEF
+       ZBAGHZFZBIJKEFZLZMBJKZANZCOZEFZDOZEFZVSMVQJKZPZLZCDUAZUBZVKVNBWEFBVOWDUC
+       ZVOWEFVNBVKWEVJVLVMUDVJVLVKWEPVMCDAUEUFZUGVNWFBEFZVOEFZVOVOPZVJVLWHVMVJV
+       KEBAUHUIUJZVNWHVMWIWKVJVLVMUKMULFWHVMWIUMMBUNUOQVNVOUPVLVJWFWHWIWJLZVAZV
+       MVLVOSFWMMBJVBWCWHVTVSVOPZLWLCDBVOVKSWDVQBPZVRWHWBWNVTVQBERWOWAVOVSVQBMJ
+       UQURUSWNVTWIWNWJWHVSVOERVSVOVOUTVCWDTVDVEVFVGBVOWEWDVPWETVHQWGVI $.
+       $( [13-Mar-2015] $)
+  $}
+
+  ${ $d M x $. $d M z $. $d p q $. $d p x $. $d p z $. $d q x $. $d q z $. $d S x $. $d S z $. $d x z $. 
+    $( Inductive law for the special set generator. $)
+    spacind $p |- ( ( ( M e. NC /\ S e. V ) /\ 
+      ( M e. S /\ A. x e. ( Sp[ac] ` M ) ( ( x e. S /\ ( x ^c 0c ) e. NC ) -> 
+      ( 2c ^c x ) e. S ) ) ) -> ( Sp[ac] ` M ) C_ S ) $=
+      ( vp vq vz wcel cncs cv cce co wa c2c wi wceq w3a wal impexp bitri cclos1
+      cvv c0c cspac cfv wral wss elex csn copab spacval adantr wbr simplr snssi
+      adantl spacssnc sseld 2nc ceclr simprd mp3an1 ex imim1d a1dd 3anass albii
+      imbi1i 19.21v bi2.04 ovex eleq1 imbi12d ceqsalv imbi2i syl6ibr vex eqeq2d
+      weq oveq2 3anbi13d 3anbi23d eqid brab imim2d 3imtr4g syld imp ralimdva wb
+      eqeq1 raleq sylibd ad2ant2rl snex spacvallem1 clos1induct syl3anc eqsstrd
+      syl sylanl2 ) BDHCIHZBUBHZCBHZAJZBHZXEUCKLIHZMNXEKLZBHZOZACUDUEZUFZMZXKBU
+      GBDUHXBXCMZXMMZXKCUIZEJZIHZFJZIHZXSNXQKLZPZQZEFUJZUAZBXNXKYEPZXMXBYFXCEFC
+      UKZULULXOXCXPBUGZXFXEGJZYDUMZMYIBHZOZGRZAYEUFZYEBUGXBXCXMUNXMYHXNXDYHXLCB
+      UOULUPXBXLYNXCXDXBXLYNXBXLYMAXKUFZYNXBXJYMAXKXBXEXKHZXJYMOZXBYPXEIHZYQXBX
+      KIXECUQURXBYRYQXBYRMZXFXGXIOZOXFYJYKOZGRZOZXJYMYSYTUUBXFYSYTYRYIIHZYIXHPZ
+      QZYKOZGRZUUBYSYTYRXHIHZXIOZOZUUHYRYTUUKOXBYRYTUUJYRYRUUIXGXIYRUUIXGNIHZYR
+      UUIXGUSUULYRUUIQNUCKLIHXGNXEUTVAVBVCVDVEUPUUHYRUUDUUEMZYKOZOZGRZUUKUUGUUO
+      GUUGYRUUMMZYKOUUOUUFUUQYKYRUUDUUEVFVHYRUUMYKSTVGUUPYRUUNGRZOUUKYRUUNGVIUU
+      RUUJYRUURUUEUUDYKOZOZGRUUJUUNUUTGUUNUUDUUEYKOOUUTUUDUUEYKSUUDUUEYKVJTVGUU
+      SUUJGXHNXEKVKUUEUUDUUIYKXIYIXHIVLYIXHBVLVMVNTVOTTVPUUAUUGGYJUUFYKYCYRXTXS
+      XHPZQUUFEFXEYIYDAVQGVQEAVSZXRYRYBUVAXTXQXEIVLUVBYAXHXSXQXENKVTVRWAFGVSXTU
+      UDUVAUUEYRXSYIIVLXSYIXHWKWBYDWCWDVHVGVPWEXFXGXISYMXFUUAOZGRUUCYLUVCGXFYJY
+      KSVGXFUUAGVITWFVCWGWHWIXBYFYOYNWJYGYMAXKYEWLWTWMWHWNAGYEYDXPUBBCWOEFWPYEW
+      CWQWRWSXA $.
+      $( [13-Mar-2015] $)
   $}
 
   ${
@@ -55915,6 +55976,15 @@ $)
        SKLZVAMZURAUSNLZVBVCGZAOUPUQUSBCZVDVEPUPHBCZUPGHDEFZBCZUQGVFUQUPVGQSUQVI
        VHRUAZVIHUBCVJUCHUDTVGVJVIPQHUETUFSHAUGUHZAUSUIUJUKULURVFUTVAVKUSAUMUNUO
        $.
+       $( [13-Mar-2015] $)
+  $}
+
+  ${
+     $( Lemma for ~ nchoice .  Split the special set generator into
+     	base and inductive values.  Theorem 6.6 of [Specker]. $)
+     nchoicelem6 $p |- ( ( M e. NC /\ ( M ^c 0c ) e. NC ) ->
+       ( Sp[ac] ` M ) = ( { M } u. ( Sp[ac] ` ( 2c ^c M ) ) ) ) $=
+       ? $.
        $( [13-Mar-2015] $)
   $}
 
