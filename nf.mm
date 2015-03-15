@@ -29026,12 +29026,17 @@ $)
 
 $(
 =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-        Cardinal one and unit power classes
+        Cardinal one, unit unions, and unit power classes
 =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 $)
 
   $c 1c $. $( Cardinal one $)
   $c ~P1 $.  $( Unit power class: calligraphic P with subscript 1. $)
+  $c U.1 $. $( Unitary union. $)
+
+  $( Extend class notation to include the unit union of a class (read:  'unit 
+     union ` A ` ') $)
+  cuni1 $a class U.1 A $.
 
   $( Extend the definition of a class to include cardinal one. $)
   c1c $a class 1c $.
@@ -29048,6 +29053,14 @@ $)
 
   $( Define unit power class.  Definition from [Rosser]. $)
   df-pw1 $a |- ~P1 A = ( ~P A i^i 1c ) $.
+
+
+  $( Define the unit union of a class.  This operation is used implicitly
+     in both [Holmes] and [Haliperin] to complete their stratification
+     algorithms, although neither provide explicit notation for it.  See
+     ~ eluni1 for membership condition. $)
+  df-uni1 $a |- U.1 A = U. ( A i^i 1c ) $.
+
 
   ${
     $d A x y $.
@@ -29384,6 +29397,31 @@ $)
     ( cpw1 cpw c1c cin df-pw1 inss1 eqsstri ) ABACZDEIAFIDGH $.
     $( [10-Mar-2015] $)
 
+  ${
+    $d A x y $.  $d B x y $.
+    $( Membership in a unit union. $)
+    eluni1g $p |- ( A e. V -> ( A e. U.1 B <-> { A } e. B ) ) $=
+      ( vy vx cuni1 wcel wceq csn wex c1c cin cuni df-uni1 anbi1i bitr4i 3bitri
+      cv wa exbii eleq2i eluni elin ancom el1c 19.41v anbi2i 19.42v excom eleq2
+      an12 snex vex elsn2 syl6bb eleq1 anbi12d ceqsexv eqcom sneq eleq1d syl5bb
+      ceqsexgv ) ABFZGZDRZAHZVFIZBGZSZDJZACGAIZBGZVEABKLZMZGAERZGZVPVNGZSZEJZVK
+      VDVOABNUAEAVNUBVTVQVPVHHZVPBGZSZSZDJZEJWDEJZDJVKVSWEEVSVQWCDJZSWEVRWGVQVR
+      WBVPKGZSWHWBSZWGVPBKUCWBWHUDWIWADJZWBSWGWHWJWBDVPUEOWAWBDUFPQUGVQWCDUHPTW
+      DEDUIWFVJDWFWAVQWBSZSZEJAVFHZVISZVJWDWLEVQWAWBUKTWKWNEVHVFULWAVQWMWBVIWAV
+      QAVHGWMVPVHAUJAVFDUMUNUOVPVHBUPUQURWMVGVIAVFUSOQTQQVIVMDACVGVHVLBVFAUTVAV
+      CVB $.
+      $( [15-Mar-2015] $)
+  $}
+
+  ${
+    eluni1.1 $e |- A e. _V $.
+    $( Membership in a unit union. $)
+    eluni1 $p |- ( A e. U.1 B <-> { A } e. B ) $=
+      ( cvv wcel cuni1 csn wb eluni1g ax-mp ) ADEABFEAGBEHCABDIJ $.
+      $( [15-Mar-2015] $)
+  $}
+
+
 $(
 =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
         Kuratowski relationships
@@ -29402,7 +29440,6 @@ $)
   $c SSet_k $. $( Subset relationship $)
   $c Image_k $. $( Image functor $)
   $c _I_k $. $( Identity relationship $)
-  $c TypDown $. $( Type lowering $)
 
   $( Extend the definition of a class to include the Kuratowski cross
      product. $)
@@ -29447,10 +29484,6 @@ $)
   $( Extend the definition of a class to include the Kuratowski identity
      relationship. $)
   cidk $a class _I_k $.
-
-  $( Extend the definition of a class to include the type lowering
-     operation. $)
-  ctypdown $a class TypDown A $.
 
   ${
     $d A x y z w t u v $.  $d B x y z w t u v $.
@@ -29505,9 +29538,6 @@ $)
     $( Define the Kuratowski identity relationship. $)
     df-idk $a |- _I_k = { x | E. y E. z ( x = << y , z >> /\ y = z ) } $.
   $}
-
-  $( Define the type lowering operator.  See ~ eltypdown for membership. $)
-  df-typdown $a |- TypDown A = P6 ( _V X._k A ) $.
 
   ${
     $d A x y z w $.  $d B x y z w $.  $d C x y z w $.
@@ -30313,25 +30343,6 @@ $)
   $}
 
   ${
-    $d A x $.  $d B x $.
-    $( Membership in the type lowering operator. $)
-    eltypdowng $p |- ( A e. V -> ( A e. TypDown B <-> { A } e. B ) ) $=
-      ( vx wcel ctypdown cv csn copk cvv cxpk wal df-typdown eleq2i elp6 syl5bb
-      cp6 vex ax-gen wa snex opkelxpk albii 19.27v bitri mpbiran syl6bb ) ACEZA
-      BFZEZDGZAHZIJBKZEZDLZULBEZUJAUMQZEUHUOUIUQABMNDAUMCOPUOUKJEZDLZUPURDDRZSU
-      OURUPTZDLUSUPTUNVADUKULJBUTAUAUBUCURUPDUDUEUFUG $.
-      $( [13-Jan-2015] $)
-  $}
-
-  ${
-    eltypdown.1 $e |- A e. _V $.
-    $( Membership in the type lowering operator. $)
-    eltypdown $p |- ( A e. TypDown B <-> { A } e. B ) $=
-      ( cvv wcel ctypdown csn wb eltypdowng ax-mp ) ADEABFEAGBEHCABDIJ $.
-      $( [13-Jan-2015] $)
-  $}
-
-  ${
     $d A x y z $.
     $( A Kuratowski converse is a Kuratowski relationship. $)
     cnvkssvvk $p |- `'_k A C_ ( _V X._k _V ) $=
@@ -30514,17 +30525,27 @@ $)
       $( [13-Jan-2015] $)
   $}
 
-  $( The type lowering operator preserves sethood. $)
-  typdownexg $p |- ( A e. V -> TypDown A e. _V ) $=
-    ( wcel ctypdown cvv cxpk cp6 df-typdown xpkvexg p6exg syl syl5eqel ) ABCZAD
-    EAFZGZEAHMNECOECABINEJKL $.
+  ${ $d A x $. $d A z $. $d x z $. 
+     $( Alternate definition of unit union. $)
+     dfuni12 $p |- U.1 A = P6 ( _V X._k A ) $=
+       ( vx vz cuni1 cvv cxpk cp6 cv csn wcel copk wal 19.27v vex snex opkelxpk
+       wa albii ax-gen biantrur 3bitr4ri eluni1 wb elp6 ax-mp 3bitr4i eqriv ) B
+       ADZEAFZGZBHZIZAJZCHZULKUIJZCLZUKUHJUKUJJZUNEJZUMQZCLURCLZUMQUPUMURUMCMUO
+       USCUNULEACNZUKOPRUTUMURCVASTUAUKABNZUBUKEJUQUPUCVBCUKUIEUDUEUFUG $.
+       $( [15-Mar-2015] $)
+  $}
+
+  $( The unit union operator preserves sethood. $)
+  uni1exg $p |- ( A e. V -> U.1 A e. _V ) $=
+    ( wcel cuni1 cvv cxpk cp6 dfuni12 vvex xpkexg mpan p6exg syl syl5eqel ) ABC
+    ZADEAFZGZEAHOPECZQECEECORIEAEBJKPELMN $.
     $( [13-Jan-2015] $)
 
   ${
-    typdownex.1 $e |- A e. _V $.
-    $( The type lowering operator preserves sethood. $)
-    typdownex $p |- TypDown A e. _V $=
-      ( cvv wcel ctypdown typdownexg ax-mp ) ACDAECDBACFG $.
+    uni1ex.1 $e |- A e. _V $.
+    $( The unit union operator preserves sethood. $)
+    uni1ex $p |- U.1 A e. _V $=
+      ( cvv wcel cuni1 uni1exg ax-mp ) ACDAECDBACFG $.
       $( [14-Jan-2015] $)
   $}
 
@@ -30790,9 +30811,9 @@ $)
   ${
     $d A x y $.
     $( Alternate definition of class union for existence proof. $)
-    dfuni3 $p |- U. A = TypDown ( `'_k SSet_k "_k A ) $=
-      ( vx vy cuni cssetk ccnvk cimak ctypdown csn copk wcel wrex wel opkelcnvk
-      cv vex snex elssetk bitri rexbii eltypdown elimak eluni2 3bitr4ri eqriv )
+    dfuni3 $p |- U. A = U.1 ( `'_k SSet_k "_k A ) $=
+      ( vx vy cuni cssetk ccnvk cimak cuni1 csn copk wcel wrex wel opkelcnvk
+      cv vex snex elssetk bitri rexbii eluni1 elimak eluni2 3bitr4ri eqriv )
       BADZEFZAGZHZCOZBOZIZJUGKZCALZBCMZCALUKUIKZUKUFKUMUOCAUMULUJJEKUOUJULECPZU
       KQZNUKUJBPZUQRSTUPULUHKUNUKUHUSUACUGAULURUBSCUKAUCUDUE $.
       $( [14-Jan-2015] $)
@@ -30800,7 +30821,7 @@ $)
 
   $( The sum class of a set is a set. $)
   uniexg $p |- ( A e. V -> U. A e. _V ) $=
-    ( wcel cssetk ccnvk cimak ctypdown dfuni3 ssetkex cnvkex imakexg typdownexg
+    ( wcel cssetk ccnvk cimak cuni1 dfuni3 ssetkex cnvkex imakexg uni1exg
     cuni cvv mpan syl syl5eqel ) ABCZAMDEZAFZGZNAHRTNCZUANCSNCRUBDIJSANBKOTNLPQ
     $.
     $( [14-Jan-2015] $)
@@ -30816,9 +30837,9 @@ $)
   ${
     $d A x y z $.
     $( Alternate definition of class intersection for the existence proof. $)
-    dfint3 $p |- |^| A = ~ TypDown ( `'_k ~ SSet_k "_k A ) $=
-      ( vx vy cint cssetk ccompl ccnvk cimak ctypdown wel wral cv wcel csn copk
-      wn wrex vex elcompl 3bitri eltypdown elimak bitri opkelcnvk opkex elssetk
+    dfint3 $p |- |^| A = ~ U.1 ( `'_k ~ SSet_k "_k A ) $=
+      ( vx vy cint cssetk ccompl ccnvk cimak cuni1 wel wral cv wcel csn copk
+      wn wrex vex elcompl 3bitri eluni1 elimak bitri opkelcnvk opkex elssetk
       snex notbii rexbii rexnal con2bii elint2 3bitr4i eqriv ) BADZEFZGZAHZIZFZ
       BCJZCAKZBLZUSMZPVCUOMVCUTMVDVBVDCLZVCNZOUQMZCAQZVAPZCAQVBPVDVFURMVHVCURBR
       ZUACUQAVFVCUGZUBUCVGVICAVGVFVEOZUPMVLEMZPVIVEVFUPCRZVKUDVLEVFVEUESVMVAVCV
@@ -30828,8 +30849,8 @@ $)
 
   $( The intersection of a set is a set. $)
   intexg $p |- ( A e. V -> |^| A e. _V ) $=
-    ( wcel cssetk ccompl ccnvk cimak ctypdown cvv dfint3 ssetkex complex cnvkex
-    cint imakexg mpan typdownexg complexg 3syl syl5eqel ) ABCZANDEZFZAGZHZEZIAJ
+    ( wcel cssetk ccompl ccnvk cimak cuni1 cvv dfint3 ssetkex complex cnvkex
+    cint imakexg mpan uni1exg complexg 3syl syl5eqel ) ABCZANDEZFZAGZHZEZIAJ
     UAUDICZUEICUFICUCICUAUGUBDKLMUCAIBOPUDIQUEIRST $.
     $( [14-Jan-2015] $)
 
@@ -33055,13 +33076,13 @@ $)
     ncfinraiselem2 $p |- { m | A. a e. m A. b e. m E. n e. Nn
        ( ~P1 a e. n /\ ~P1 b e. n ) } e. _V $=
       ( vt vx cssetk cpw1 cvv wcel wa wrex snex copk bitr4i exbii df-rex 3bitri
-      csn wex csik cins2k cnnc cxpk c1c cpw cins3k csymdif cdif ccompl ctypdown
+      csn wex csik cins2k cnnc cxpk c1c cpw cins3k csymdif cdif ccompl cuni1
       cimak cin cv wral cab wn elcompl wceq elimak elpw11c anbi1i excom 3bitr4i
       19.41v wel opkeq1 eleq1d ceqsexv elin vex opksnelsik bitri opkex elpw131c
       elssetk otkelins2k otkelins3k opkelxpk mpbiran2 snelpw1 eqpw1relk anbi12i
-      eldif df-clel notbii rexnal xchbinx eltypdown dfral2 abbi2i ssetkex sikex
+      eldif df-clel notbii rexnal xchbinx eluni1 dfral2 abbi2i ssetkex sikex
       elpw121c ins2kex nncex pw1ex vvex xpkex 1cex pwex ins3kex symdifex imakex
-      difex inex complex typdownex eqeltrri ) GUAZXJUBZUCHZHZIUDZUEUFZIUDZGUGZX
+      difex inex complex uni1ex eqeltrri ) GUAZXJUBZUCHZHZIUDZUEUFZIUDZGUGZX
       KUHZUEHZHZHZULZUIZUAZUBZXQUMZXTULZUBZYGUGZUMZUMZXSULZUGZUIZYAULZUMZXSULZU
       JZUKZCUNZHZBUNZJZDUNZHZUUBJZKZBUCLZDAUNZUOZCUUIUOZAUPIUUKAYSUUISZYRJZUUJU
       QZCUUILZUQUUIYSJUUKUUMUULYQJZUUOUULYQUUIMZURUUPEUNZUULNZYPJZEXSLZUURYTSZS
@@ -34318,13 +34339,13 @@ n e. Nn ( ( ( n +c n ) +c 1c ) =/= (/) -> ( j +c j ) =/= ( ( n +c n ) +c 1c ) )
     nnpweqlem1 $p |- { m | A. a e. m A. b e. m E. n e. Nn ( ~P a
                                             e. n /\ ~P b e. n ) } e. _V $=
       ( vt vx cssetk cnnc wcel wa wrex csn copk snex bitri exbii df-rex 3bitr4i
-      wex 3bitri csik cins2k cins3k csymdif c1c cimak ccompl ccnvk cin ctypdown
-      cpw1 cdif cv cpw wral cab cvv vex eltypdown wn wceq opkeq1 eleq1d ceqsexv
+      wex 3bitri csik cins2k cins3k csymdif c1c cimak ccompl ccnvk cin cuni1
+      cpw1 cdif cv cpw wral cab cvv vex eluni1 wn wceq opkeq1 eleq1d ceqsexv
       wel elin opksnelsik elssetk opkex elimak anbi1i 19.41v bitr4i excom eldif
       elpw131c otkelins2k otkelins3k elpw12 r19.41v elpw121c opkelcnvk eqpwrelk
       rexcom4 anbi12i df-clel rexbii notbii rexnal 3bitr2i elpw11c dfral2 sikex
       elcompl abbi2i ssetkex ins2kex ins3kex symdifex 1cex pw1ex imakex complex
-      cnvkex inex nncex difex typdownex eqeltrri ) GUAZXJUBZGUBZXJUCZUDZUEUKZUK
+      cnvkex inex nncex difex uni1ex eqeltrri ) GUAZXJUBZGUBZXJUCZUDZUEUKZUK
       ZUFZUGZUHZUAZUBZGUCZUIZXPUFZUBZXRUAZUHZUBZYBUIZXPUFZUCZUIZHUKZUKZUFZUCZUL
       ZXPUKZUFZUIZXOUFZUGZUJZCUMZUNZBUMZIZDUMZUNZUUFIZJZBHKZDAUMZUOZCUUMUOZAUPU
       QUUOAUUCUUMUUCIUUMLZUUBIZUUOUUMUUBAURZUSUUPUUAIZUTUUNUTZCUUMKZUTUUQUUOUUS
@@ -34567,12 +34588,12 @@ n e. Nn ( ( ( n +c n ) +c 1c ) =/= (/) -> ( j +c j ) =/= ( ( n +c n ) +c 1c ) )
                   _S[fin] ( _T[fin] m , _T[fin] n ) ) } e. _V $=
       ( vt vy vx cxpk c1c cins3k cins2k cimak cin csn cv wcel wn wex copk exbii
       wa 3bitri cnnc cpw cvv cssetk csik csymdif cpw1 cdif ccompl c0 ccnvk cidk
-      cun ctypdown wsfin ctfin wal cab vex eltypdown wrex wceq snex elimak el1c
+      cun cuni1 wsfin ctfin wal cab vex eluni1 wrex wceq snex elimak el1c
       anbi1i 19.41v bitr4i df-rex excom 3bitr4i opkeq1 eleq1d ceqsexv opkelcnvk
       wi eldif opksnelsik elpw11c elin otkelins2k eqtfinrelk otkelins3k anbi12i
       srelk bitri opkex tfinex sfineq1 sfineq2 notbii annim elcompl alex abbi2i
       srelkex sikex tfinrelkex cnvkex ins2kex ins3kex inex pw1ex imakex complex
-      1cex difex typdownex eqeltrri ) UAUAFGUBUCFUDHUDUEIZUFZGUGZUGZUGZJUHUEHUD
+      1cex difex uni1ex eqeltrri ) UAUAFGUBUCFUDHUDUEIZUFZGUGZUGZUGZJUHUEHUD
       IZKXMJHZXKXMJUIUEHXOKXMJIKXNJKZUEZUJLZLZXSFXOUDUKHUAUCFXJXPKXNJKIULHUFXLJ
       IUHXLJHUFXMJUIXTUCFUHUMZUKZIZYCXQHZKZXLJZHZKZXLJZUHZUKZGJZUIZUNZAMZBMZUOZ
       YOUPZYPUPZUOZVPZBUQZAURUCUUBAYNYOYNNYOLZYMNZUUBYOYMAUSZUTUUCYLNZOUUAOZBPZ
@@ -34657,13 +34678,13 @@ n e. Nn ( ( ( n +c n ) +c 1c ) =/= (/) -> ( j +c j ) =/= ( ( n +c n ) +c 1c ) )
                           y a = _T[fin] x } e. _T[fin] n ) } e. _V $=
       ( vt vz vw cssetk csn cimak wcel wn copk wa wex snex bitri 3bitri 3bitr4i
       exbii csik cnnc cpw cpw1 cvv cxpk c0 cins2k ccnvk cins3k c1c csymdif cdif
-      cin cidk ccompl cun ctypdown cv wss ctfin wceq wrex cab wi wral eltypdown
+      cin cidk ccompl cun cuni1 cv wss ctfin wceq wrex cab wi wral eluni1
       vex opkeq1 eleq1d ceqsexv elin opksnelsik elssetk eldif opkelxpk mpbiran2
       snelpw1 elpw otkelins2k opkelcnvk eqtfinrelk opkex elimak elpw121c anbi1i
       wel 19.41v bitr4i df-rex excom elsymdif otkelins3k anbi12i bibi12i notbii
       elcompl wal abeq2 alex df-clel elpw11c tfinex clel3 dfral2 abbi2i ssetkex
       annim sikex nncex pwex pw1ex vvex xpkex tfinrelkex cnvkex ins2kex ins3kex
-      wb inex 1cex imakex symdifex complex difex typdownex eqeltrri ) HUAZUBUCZ
+      wb inex 1cex imakex symdifex complex difex uni1ex eqeltrri ) HUAZUBUCZ
       UDZUEUFZUAZUGIZIZYMUFHUHZHUIUJUBUEUFYHUHZUKUCUEUFHUJZYPULUKUDZUDZUDZJUMUA
       UJYOUNYSJUJUNYTJUNUHUOUJULYRJUHUMYRJUJULYSJUPYNUEUFUMUQZUIZUHZYQYOUUAUJZU
       NZYSJZUAZUHZULZYSJZUPZUAZUHZYQUNZYSJZUJZUNZYRJZUMZUNZYRJZUPZURZBUSZUBUTZD
@@ -35198,9 +35219,9 @@ n e. Nn ( ( ( n +c n ) +c 1c ) =/= (/) -> ( j +c j ) =/= ( ( n +c n ) +c 1c ) )
       cxpk cins2k cins3k cimak cfin cab cncfin wi wal wral tncveqnc1fin 1cspfin
       wsfin eqeltrd ncfinex sylibr simprl sfintfin ad2antll spfinsfincl syl2anc
       wss ex vex weq anbi1i 3imtr4g alrimiv ralrimiva c0 csn ccnvk cnnc csymdif
-      csik cpw cpw1 cdif cin cidk ccompl cun ctypdown wrex copk snex eqtfinrelk
-      elimak opkelcnvk rexbii eltypdown risset 3bitr4i abbi2i tfinrelkex cnvkex
-      bitri imakex typdownex eqeltrri spfininduct mp3an1 sselda wb elabg adantl
+      csik cpw cpw1 cdif cin cidk ccompl cun cuni1 wrex copk snex eqtfinrelk
+      elimak opkelcnvk rexbii eluni1 risset 3bitr4i abbi2i tfinrelkex cnvkex
+      bitri imakex uni1ex eqeltrri spfininduct mp3an1 sselda wb elabg adantl
       spfinex mpbid ) EUAFZAGFZHABIZJZGFZBUBZFZAJZGFZXEGXJAXEEUCZXJFZCIZXJFZDIZ
       XPUIZHZXRXJFZUDZDUEZCGUFZGXJURZXEXNJZGFZXOXEYFKUCGUGUHUJXIYGBXNEUKXGXNLXH
       YFGXGXNMNOULXEYCCGXEXPGFHZYBDYHXPJZGFZXSHZXRJZGFZXTYAYHYKYMYHYKHYJYLYIUIZ
@@ -37168,7 +37189,7 @@ $)
     $d A x y z t $.
     $( Lemma for set construction functions.  Create a mapping between the two
        types of ordered pair abstractions. $)
-    setconslem4 $p |- TypDown TypDown ( ( ( ( _V X._k _V ) X._k _V ) i^i 
+    setconslem4 $p |- U.1 U.1 ( ( ( ( _V X._k _V ) X._k _V ) i^i 
      `'_k ~ ( ( Ins3_k SI_k SI_k SSet_k (+)
           Ins2_k 
             ( Ins3_k ( SSet_k o._k SI_k `'_k Image_k ( ( Image_k ( ( Ins3_k ~ (
@@ -37197,11 +37218,11 @@ $)
           ~P1 ~P1 ~P1 ~P1 1c ) ) "_k A ) =
     { <. x , y >. | << x , y >> e. A } $=
       ( vt cvv cxpk cssetk csik cins3k cins2k cin cpw1 cimak ccompl cun wcel wa
-      csn wex bitri c1c csymdif cdif cimagek cnnc cidk ccnvk ccomk c0c ctypdown
+      csn wex bitri c1c csymdif cdif cimagek cnnc cidk ccnvk ccomk c0c cuni1
       vz cv copk cop wceq wrex snex elimak df-rex elin anbi2i an12 vex opkelxpk
       copab mpbiran2 elvvk anbi1i bitr4i exbii exrot3 opkex eleq1 opkeq1 eleq1d
       19.41vv anbi12d ceqsexv opkelcnvk setconslem3 ancom 2exbii elopab 3bitr4i
-      eltypdown eqriv ) UKEEFZEFZGHHIZGGIZGJZKUALLZMNIWKJWJJWIOUBWLLLZMUCWLMUDU
+      eluni1 eqriv ) UKEEFZEFZGHHIZGGIZGJZKUALLZMNIWKJWJJWIOUBWLLLZMUCWLMUDU
       EEFKUFUENEFKOUDUGZHUHIWKWKWNGUHUIRREFOIUBWLMNHIKWLMJOJUBWMMNZUGZKZCMZUJZU
       JZAULZBULZUMZCPZABVEZUKULZRZRZWRPZXFXAXBUNUOZXDQZBSASZXFWTPZXFXEPXIDULZXH
       UMZWQPZDCUPZXLDWQCXHXGUQZURXQXNXCUOZXNCPZXOWPPZQZQZDSZBSASZXLXQXTXPQZDSZY
@@ -37361,7 +37382,7 @@ $)
   ${
     $d x y z w a b c t $.
     $( Express the ` 1st ` function via the set construction functions. $)
-    df1st2 $p |- 1st = TypDown TypDown ( ( ( ( _V X._k _V ) X._k _V ) i^i 
+    df1st2 $p |- 1st = U.1 U.1 ( ( ( ( _V X._k _V ) X._k _V ) i^i 
      `'_k ~ ( ( Ins3_k SI_k SI_k SSet_k (+)
           Ins2_k 
             ( Ins3_k ( SSet_k o._k SI_k `'_k Image_k ( ( Image_k ( ( Ins3_k ~ (
@@ -37415,7 +37436,7 @@ $)
       "_k ~P1 ~P1 ~P1 ~P1 1c ) "_k ~P1 1c ) ) $=
       ( vx vy vz vt cssetk cins3k cins2k cin cpw1 cimak ccompl csik cun csymdif
       cv cvv cxpk csn wcel wex copk c1c cdif cimagek cnnc ccnvk ccomk c0c copab
-      cidk wceq ctypdown c1st wa wrex opkex elimak df-rex elpw11c anbi1i 19.41v
+      cidk wceq cuni1 c1st wa wrex opkex elimak df-rex elpw11c anbi1i 19.41v
       cop bitr4i exbii excom snex opkeq1 eleq1d ceqsexv vex setconslem7 opabbii
       bitri setconslem4 df-1st 3eqtr4ri ) AOZBOZUAZEFZGZEVTEGZHUBIZIZJKFWBGWAEL
       LFZMNWDIIZJUCWDJUDUEPQHUJUEKPQHMUDUFZLUGZGGWBWBWGEUGUHRRPQMFNWDJKLFHWDJZL
@@ -37431,8 +37452,8 @@ $)
   1stex $p |- 1st e. _V $=
     ( cvv cxpk cssetk csik cins3k cins2k cin cpw1 cimak ccompl cun csymdif cnnc
     vvex xpkex inex ssetkex ins3kex ins2kex imakex c1st cdif cimagek cidk ccnvk
-    c1c ccomk c0c csn ctypdown df1st2 setconslem5 addcexlem 1cex pw1ex imagekex
-    cnvkex nncex idkex complex unex sikex cokex snex symdifex typdownex eqeltri
+    c1c ccomk c0c csn cuni1 df1st2 setconslem5 addcexlem 1cex pw1ex imagekex
+    cnvkex nncex idkex complex unex sikex cokex snex symdifex uni1ex eqeltri
     ) UAAABZABZCDDEZCCEZCFZGUFHZHZIJEVLFVKFZVJKLVNHZHZIUBZVNIZUCZMABZGZUDMJZABZ
     GZKZUCZUEZDZUGZEVLVLWHCUGZUHUIZUIZABZKZEZLZVNIZJZDZEZGZVNIZFKFLVQIJZUEZGZVO
     WJFZFZXCDZDZEZKZLZVQIZJZVMIZIZUJZUJAUKXRXQXFXPVIXEVHAAANNONOXDULUQPXOVMXNXM
@@ -37610,7 +37631,7 @@ $)
   ${
     $d x y $.
     $( Express the ` SSet ` relationship via the set construction functors. $)
-    dfsset2 $p |- SSet = TypDown TypDown ( ( ( ( _V X._k _V ) X._k _V ) i^i 
+    dfsset2 $p |- SSet = U.1 U.1 ( ( ( ( _V X._k _V ) X._k _V ) i^i 
      `'_k ~ ( ( Ins3_k SI_k SI_k SSet_k (+)
           Ins2_k 
             ( Ins3_k ( SSet_k o._k SI_k `'_k Image_k ( ( Image_k ( ( Ins3_k ~ (
@@ -37638,7 +37659,7 @@ $)
     "_k ~P1 ~P1 1c ) ) ) "_k
           ~P1 ~P1 ~P1 ~P1 1c ) ) "_k SSet_k ) $=
       ( vx vy cv cssetk wcel copab cvv cxpk csik cins3k cins2k cin cimak ccompl
-      cpw1 cun csymdif cimagek cnnc ccnvk copk wss c1c cdif cidk ccomk ctypdown
+      cpw1 cun csymdif cimagek cnnc ccnvk copk wss c1c cdif cidk ccomk cuni1
       c0c csn csset vex opkelssetkg mp2an opabbii setconslem4 df-sset 3eqtr4ri
       wb ) ACZBCZUADEZABFUSUTUBZABFGGHGHDIIJZDDJZDKZLUCOOZMNJVEKVDKVCPQVFOOZMUD
       VFMRSGHLUESNGHLPRTZIUFJVEVEVHDUFUHUIUIGHPJQVFMNIJLVFMKPKQVGMNTLDMUGUGUJVA
@@ -37649,8 +37670,8 @@ $)
   $( The subset relationship is a set. $)
   ssetex $p |- SSet e. _V $=
     ( cvv cxpk cssetk csik cins3k cins2k cin cpw1 cimak ccompl cun csymdif cnnc
-    cimagek ccnvk ccomk csn ctypdown vvex xpkex csset c1c cdif cidk c0c dfsset2
-    setconslem5 cnvkex inex ssetkex imakex typdownex eqeltri ) UAAABZABZCDDEZCC
+    cimagek ccnvk ccomk csn cuni1 vvex xpkex csset c1c cdif cidk c0c dfsset2
+    setconslem5 cnvkex inex ssetkex imakex uni1ex eqeltri ) UAAABZABZCDDEZCC
     EZCFZGUBHHZIJEURFUQFUPKLUSHHZIUCUSINMABGUDMJABGKNOZDPEURURVACPUEQQABKELUSIJ
     DEGUSIFKFLUTIJZOZGZCIZRZRAUFVFVEVDCUOVCUNAAASSTSTVBUGUHUIUJUKULULUM $.
     $( [6-Jan-2015] $)
@@ -37720,7 +37741,7 @@ $)
     $d A a b c x y z $.  $d B a b c x y z $.
     $( Express Quine composition via Kuratowski composition. $)
     dfco1 $p |- ( A o. B ) = 
-TypDown TypDown ( ( ( ( _V X._k _V ) X._k _V ) i^i 
+U.1 U.1 ( ( ( ( _V X._k _V ) X._k _V ) i^i 
      `'_k ~ ( ( Ins3_k SI_k SI_k SSet_k (+)
           Ins2_k 
             ( Ins3_k ( SSet_k o._k SI_k `'_k Image_k ( ( Image_k ( ( Ins3_k ~ (
@@ -37804,7 +37825,7 @@ o._k
           ~P1 ~P1 ~P1 ~P1 1c ) ) "_k ~P1 ~P1 B ) ) ) $=
       ( vx vy vz va vb vc cv cvv cxpk cssetk csik cins3k cins2k cpw1 cimak wcel
       cin cop copk c1c ccompl cun csymdif cdif cimagek cnnc ccnvk ccomk c0c csn
-      cidk copab wbr wa wex ctypdown ccom vex opkelcok setconslem6 opeq1 eleq1d
+      cidk copab wbr wa wex cuni1 ccom vex opkelcok setconslem6 opeq1 eleq1d
       weq opeq2 opkelopkab df-br bitr4i anbi12i exbii bitri opabbii setconslem4
       df-co 3eqtr4ri ) CIZDIZUAJJJKZKLMMNZLLNZLOZSUBPPZQUCNWBOWAOVTUDUEWCPPZQUF
       WCQUGUHJKSUMUHUCJKSUDUGUIZMUJNWBWBWELUJUKULULJKUDNUEWCQUCMNSWCQOUDOUEWDQU
@@ -37819,8 +37840,8 @@ o._k
   $( The composition of two sets is a set. $)
   coexg $p |- ( ( A e. V /\ B e. W ) -> ( A o. B ) e. _V ) $=
     ( wcel cvv cxpk cssetk csik cins3k cins2k cin cpw1 cimak ccompl cun csymdif
-    ccomk vvex pw1exg wa ccom c1c cdif cimagek cnnc cidk ccnvk c0c csn ctypdown
-    dfco1 xpkex setconslem5 cnvkex syl imakexg sylancr cokexg syl2an typdownexg
+    ccomk vvex pw1exg wa ccom c1c cdif cimagek cnnc cidk ccnvk c0c csn cuni1
+    dfco1 xpkex setconslem5 cnvkex syl imakexg sylancr cokexg syl2an uni1exg
     inex 3syl syl5eqel ) ACEZBDEZUAZABUBFFGZFGZHIIJZHHJZHKZLUCMMZNOJVLKVKKVJPQV
     MMMZNUDVMNUEUFFGLUGUFOFGLPUEUHZIRJVLVLVOHRUIUJUJFGPJQVMNOIJLVMNKPKQVNNOZUHZ
     LZFVHGZVPLZAMZMZNZVTBMZMZNZRZNZUKZUKZFABULVGWHFEZWIFEWJFEVGVRFEWGFEZWKVIVQV
@@ -37842,7 +37863,7 @@ o._k
     $d A x y z w a b c $.
     $( Express singleton image in terms of the Kuratowski singleton image. $)
     dfsi2 $p |- SI A =
-TypDown TypDown ( ( ( ( _V X._k _V ) X._k _V ) i^i 
+U.1 U.1 ( ( ( ( _V X._k _V ) X._k _V ) i^i 
      `'_k ~ ( ( Ins3_k SI_k SI_k SSet_k (+)
           Ins2_k 
             ( Ins3_k ( SSet_k o._k SI_k `'_k Image_k ( ( Image_k ( ( Ins3_k ~ (
@@ -37898,7 +37919,7 @@ SI_k ( ( ( _V X._k ( _V X._k _V ) ) i^i
           ~P1 ~P1 ~P1 ~P1 1c ) ) "_k ~P1 ~P1 A ) ) $=
       ( vz vw vx vy va vb cv cvv cxpk cssetk csik cins3k cins2k cin cpw1 ccompl
       cimak cun wcel vc copk c1c csymdif cdif cimagek cnnc cidk ccnvk ccomk c0c
-      csn copab wbr w3a wex ctypdown csi wb vex opkelsikg mp2an cop setconslem6
+      csn copab wbr w3a wex cuni1 csi wb vex opkelsikg mp2an cop setconslem6
       wceq weq opeq1 eleq1d opeq2 opkelopkab df-br bitr4i 3anbi3i bitri opabbii
       2exbii setconslem4 df-si 3eqtr4ri ) BHZCHZUBIIIJZJKLLMZKKMZKNZOUCPPZRQMWE
       NWDNWCSUDWFPPZRUEWFRUFUGIJOUHUGQIJOSUFUIZLUJMWEWEWHKUJUKULULIJSMUDWFRQLMO
@@ -37913,8 +37934,8 @@ SI_k ( ( ( _V X._k ( _V X._k _V ) ) i^i
   $( The singleton image of a set is a set. $)
   siexg $p |- ( A e. V -> SI A e. _V ) $=
     ( wcel cvv cxpk cssetk csik cins3k cins2k cin cpw1 cimak ccompl cun csymdif
-    cimagek cnnc vvex xpkex 3syl csi c1c cdif cidk ccnvk ccomk c0c csn ctypdown
-    dfsi2 pw1exg setconslem5 inex imakexg sikexg cnvkex typdownexg syl5eqel
+    cimagek cnnc vvex xpkex 3syl csi c1c cdif cidk ccnvk ccomk c0c csn cuni1
+    dfsi2 pw1exg setconslem5 inex imakexg sikexg cnvkex uni1exg syl5eqel
     mpan ) ABCZAUADDEZDEZFGGHZFFHZFIZJUBKKZLMHVEIVDIVCNOVFKKZLUCVFLPQDEJUDQMDEJ
     NPUEZGUFHVEVEVHFUFUGUHUHDENHOVFLMGHJVFLINIOVGLMZUEZJZDVAEZVIJZAKZKZLZGZLZUI
     ZUIZDAUJUTVRDCZVSDCVTDCUTVPDCZVQDCZWAUTVNDCVODCZWBABUKVNDUKVMDCWDWBVLVIDVAR
@@ -53129,10 +53150,10 @@ $)
     $( Lemma for ~ enpw1 .  Set up stratification for the reverse direction. $)
     enpw1lem1 $p |- { <. x , y >. | { x } g { y } } e. _V $=
       ( vp va vb cvv c1st c2nd cv csn wbr wceq wa wex ancom 3bitri anbi1i bitri
-      weq cxp ccnv csi ccom cin cima ctypdown copab cop wcel wrex vex eltypdown
+      weq cxp ccnv csi ccom cin cima cuni1 copab cop wcel wrex vex eluni1
       opex elima brin brco brsnsi2 brcnv opbr1st equcom exbii sneq ceqsexv snex
       eqeq2d breq2 opbr2nd anbi12i op1st2nd rexbii risset bitr2i releqopab vvex
-      df-br xpex 1stex cnvex siex coex 2ndex inex imaex typdownex eqeltrri ) GG
+      df-br xpex 1stex cnvex siex coex 2ndex inex imaex uni1ex eqeltrri ) GG
       UAZHUBZUCZHUDZIUBZUCZIUDZUEZCJZUFZUGZUEAJZKZBJZKZWOLZABUHGXBABWQWRWTUIZWQ
       UJXCKZWPUJZDJZWSXAUIZMZDWOUKZXBXCWPWRWTAULZBULZUNZUMXEXFXDWNLZDWOUKXIDXDW
       NWOUOXMXHDWOXMXFXDWJLZXFXDWMLZNXFWSHLZXFXAILZNXHXFXDWJWMUPXNXPXOXQXNXFEJZ
@@ -53674,9 +53695,9 @@ $)
     $( Lemma for ~ nenpw1pw .  Set up stratification. $)
     nenpw1pwlem1 $p |- ( A e. V -> S e. _V ) $=
        ( vy wcel cv csn cfv wn cin cvv csset vex wceq wa wex bitri dfrab2 eqtri
-       cab crab cfullfun cdm ctypdown ccompl elcompl wel cop elin wbr brfullfun
-       eldm2 snex df-br eqcom 3bitr3i opelssetsn anbi12i eltypdown fvex 3bitr4i
-       exbii clel3 xchbinx abbi2i fullfunex ssetex inex dmex typdownex eqeltrri
+       cab crab cfullfun cdm cuni1 ccompl elcompl wel cop elin wbr brfullfun
+       eldm2 snex df-br eqcom 3bitr3i opelssetsn anbi12i eluni1 fvex 3bitr4i
+       exbii clel3 xchbinx abbi2i fullfunex ssetex inex dmex uni1ex eqeltrri
        complex inexg mpan syl5eqel ) BDHZCAIZVTJZEIZKZHZLZAUCZBMZNCWEABUDWGFWEA
        BUAUBWFNHVSWGNHWBUEZOMZUFZUGZUHZWFNWEAWLVTWLHVTWKHZWDVTWKAPZUIWAWJHZGIZW
        CQZAGUJZRZGSZWMWDWOWAWPUKZWIHZGSWTGWAWIUOXBWSGXBXAWHHZXAOHZRWSXAWHOULXCW
@@ -56700,10 +56721,10 @@ htmldef "SSet" as
     "<FONT FACE=sans-serif> SSet </FONT>";
   althtmldef "SSet" as '<FONT FACE=sans-serif> SSet </FONT>';
   latexdef "SSet" as "{\rm SSet}";
-htmldef "TypDown" as
-    "<FONT FACE=sans-serif> TypDown </FONT>";
-  althtmldef "TypDown" as '<FONT FACE=sans-serif> TypDown </FONT>';
-  latexdef "TypDown" as "{\rm TypDown}";
+htmldef "U." as
+    "<IMG SRC='bigcup1.gif' WIDTH=13 HEIGHT=19 TITLE='U.1' ALIGN=TOP>";
+  althtmldef "U." as '&xcup;<SUB>1</SUB>'; 
+  latexdef "U.1" as "\bigcup_1";
 htmldef "_I_k" as
     " <IMG SRC='rmci.gif' WIDTH=4 HEIGHT=19 TITLE='_I_k' ALIGN=TOP><SUB><I>k</I></SUB> ";
   althtmldef "_I_k" as ' I<SUB><I>k</I></SUB> ';
