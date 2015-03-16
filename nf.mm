@@ -25465,6 +25465,13 @@ $)
       $( [8-Apr-1994] $)
   $}
 
+  ${
+     $( Alternate definition of unordered triple of classes. $)
+     dftp3 $p |- { A , B , C } = ( { A } u. { B , C } ) $=
+       ( csn cun ctp cpr unass df-tp df-pr uneq1i eqtri uneq2i 3eqtr4i ) ADZBDZ
+       EZCDZEZOPREZEABCFZOBCGZEOPRHUAABGZRESABCIUCQRABJKLUBTOBCJMN $.
+       $( [16-Mar-2015] $)
+  $}
 
   ${
     $d x A $.  $d x B $.  $d x C $.
@@ -55277,6 +55284,19 @@ $)
   $}
 
   ${
+     $( Transitivity law for cardinal less than or equal and less than. $)
+     leltctr $p |- ( ( A e. NC /\ B e. NC /\ C e. NC ) ->
+       ( ( A <_c B /\ B <c C ) -> A <c C ) ) $=
+       ( cncs wcel w3a clec wbr cltc wa wne lectr expdimp adantrd wi wceq breq1
+       anbi1d biimpac brltc sbth ancoms 3adant1 eqcom syl6ibr syl5 necon3d expr
+       imp3a jcad 3imtr4g expimpd ) ADEZBDEZCDEZFZABGHZBCIHZACIHZUPUQJZBCGHZBCK
+       ZJZACGHZACKZJURUSUTVCVDVEUTVAVDVBUPUQVAVDABCLMNUTVAVBVEUPUQVAVBVEOUPUQVA
+       JZJACBCUPVFACPZBCPZVFVGJCBGHZVAJZUPVHVGVFVJVGUQVIVAACBGQRSUPVJCBPZVHUNUO
+       VJVKOZUMUOUNVLCBUAUBUCBCUDUEUFMUGUHUIUJBCTACTUKUL $.
+       $( [16-Mar-2015] $)
+  $}
+
+  ${
     $d x y z $.
     $( Cardinal less than or equal partially orders the cardinals. $)
     lecponc $p |- <_c Po NC $=
@@ -55388,6 +55408,21 @@ $)
        $( [12-Mar-2015] $)
   $}
 
+  ${ $d M x $. $d x y $. $d x z $. $d y z $. 
+     $( An anti-closure condition for cardinal exponentiation to zero.
+     	Theorem 4.6 of [Specker]. $)
+      ce0ncl $p |- ( M e. NC -> ( -. ( M ^c 0c ) e. NC <-> Nc 1c <c M ) ) $=
+        ( vx vy vz cncs wcel c0c cce wn c1c cnc wbr clec wa 1cex wrex ncid ncex
+        cv wss co cltc wb ncelncsi ltlenlec mpan cpw1 wceq wex ce0ncpw1 pw1ss1c
+        pw1ex sseq1 sseq2 rcla42ev mp3an brlec mpbir breq1 mpbiri exlimiv con3d
+        vex syl ex adantld sylbid impbid ) AEFZAGHUAEFZIZJKZAUBLZ?VIVMVLAMLZAVL
+        MLZIZNZVKVLEFVIVMVQUCJOUDVLAUEUFVIVPVKVNVIVJVOVIVJVOVIVJNABSZUGZKZUHZBU
+        IVOABUJWAVOBWAVOVTVLMLZWBCSZDSZTZDVLPCVTPZVSVTFJVLFVSJTZWFVSVRBVCULQJOQ
+        VRUKWEWGVSWDTCDVSJVTVLWCVSWDUMWDJVSUNUOUPCDVTVLVSRJRUQURAVTVLMUSUTVAVDV
+        EVBVFVGVH $.
+        $( [16-Mar-2015] $)
+  $}
+
   ${ $d M x $.
      $( Ordering law for cardinal exponentiation to two.  Theorem XI.2.71
      	of [Rosser], p. 390. $)
@@ -55397,6 +55432,20 @@ $)
        GCDHABRZIJZKZBLAMAFGZNOZABPUKUMBUKAUIQJZULNUKAUJUNNUKSUITDUJUNNOBUAZUITU
        BUCUDUIAUOUEUFUGUH $.
        $( [13-Mar-2015] $)
+  $}
+
+  ${ $d M y $. $d N y $. 
+     $( Partial ordering law for base two cardinal exponentiation.  Theorem
+     	4.8 of [Specker]. $)
+     ce2le $p |- ( ( ( M e. NC /\ N e. NC /\ ( N ^c 0c ) e. NC ) /\ M <_c N ) ->
+       ( 2c ^c M ) <_c ( 2c ^c N ) ) $=
+       ( vy cncs wcel c0c cce co w3a clec wbr c2c wi cpw1 cnc wceq wex ce0ncpw1
+       wa cv cpw breq2 oveq2 eqid vex ce2 syl6eq breq2d imbi12d syl5ibr exlimiv
+       ax-mp syl com12 3impib imp ) ADEZBDEZBFGHDEZIABJKZLAGHZLBGHZJKZUQURUSUTV
+       CMZURUSSZUQVDVEBCTZNOZPZCQUQVDMZBCRVHVICUQVDVHAVGJKZVAVFUAOZJKZM?VHUTVJV
+       CVLBVGAJUBVHVBVKVAJVHVBLVGGHZVKBVGLGUCVGVGPVMVKPVGUDVFVGCUEUFULUGUHUIUJU
+       KUMUNUOUP $.
+       $( [16-Mar-2015] $)
   $}
 
   ${
@@ -55553,6 +55602,30 @@ $)
        VEVKJUQUQJVMUQOUOUQVLSPVDVJQPUOVLUEUFVFVFJVGVHJVFOUPVFUOVLUGZSPUHURUSVDJ
        UTVEJAUQKFUIUSVDQTURVAVFKFURVAUQLVFAUQQUPVNNUJULUMUNT $.
        $( [13-Mar-2015] $)
+  $}
+
+  ${ $d M x $.
+     $( A T-raising raised to zero is always a cardinal. $)
+     te0c $p |- ( M e. NC -> ( T_c M ^c 0c ) e. NC ) $=
+       ( vx cncs wcel cv cpw1 ctc wex c0c cce co cnc wceq elncs pw1ex ncid tceq
+       vex wb syl tcnc syl6eq syl5eleqr eximi sylbi c0 wne tccl ce0nulnc bitr3d
+       ce0nnul mpbid ) ACDZBEZFZAGZDZBHZUPIJKZCDZUMAUNLZMZBHURBANVBUQBVBUOUOLZU
+       PUOUNBRZOPVBUPVAGVCAVAQUNVDUAUBUCUDUEUMUSUFUGZURUTUMUPCDZVEURSAUHZUPBUKT
+       UMVFVEUTSVGUPUITUJUL $.
+       $( [16-Mar-2015] $)
+  $}
+
+  ${ $d M x y z $.
+     $( A T-raising is less than or equal to the cardinality of cardinal 
+     	one. $)
+     tlenc1c $p |- ( M e. NC -> T_c M <_c Nc 1c ) $=
+       ( vx vy vz cncs wcel cv cnc wceq wex ctc c1c clec wbr cpw1 wss wrex ncid
+       elncs ncex tceq vex tcnc syl6eq pw1ex pw1ss1c sseq1 sseq2 rcla42ev mp3an
+       1cex brlec mpbir syl6eqbr exlimiv sylbi ) AEFABGZHZIZBJAKZLHZMNZBASUSVBB
+       USUTUQOZHZVAMUSUTURKVDAURUAUQBUBZUCUDVDVAMNCGZDGZPZDVAQCVDQZVCVDFLVAFVCL
+       PZVIVCUQVEUERLUKRUQUFVHVJVCVGPCDVCLVDVAVFVCVGUGVGLVCUHUIUJCDVDVAVCTLTULU
+       MUNUOUP $.
+       $( [16-Mar-2015] $)
   $}
 
   $( Cardinal one is not zero. $)
@@ -56049,6 +56122,42 @@ $)
     VDVBRZSVBVDUAUTAVDCUBVMSTAUCVDAUDUEUFVBVDAUGVCGUHUIUJURVIVKTUSURMVJVGABUKUL
     UMUNMVGUOUPUQ $.
     $( [13-Mar-2015] $)
+
+  ${
+     $( Lemma for ~ nchoice .  Calculate the cardinality of the special
+     	set generator when near the end of raisability.  Theorem 6.8 of
+	[Specker]. $)
+     nchoicelem8 $p |- ( ( M e. NC /\ -. ( M ^c 0c ) e. NC ) ->
+       ( Nc ( Sp[ac] ` T_c M ) = 2c \/ Nc ( Sp[ac] ` T_c M ) = 3c ) ) $=
+       ( cncs wcel c0c cce co wa c1c cnc clec wbr cspac cfv wceq wo cltc adantr
+       c2c cplc cvv wn ctc c3c ce0ncl biimpa wne brltc simplbi wb 1cex ncelncsi
+       syl tlecg mpan cpw1 tcnc1c breq1i wi pw1ex a1i tccl simpr ce2le syl31anc
+       te0c ce2ncpw11c orc orbi1i pm2.1 df-ne mpbir ordir mpbiran2 bitri sylibr
+       ex csn ce2t biimpar nchoicelem3 syl2anc nceqd df1c3 syl6eqr tcncv oveq1i
+       ovex vvex ax-mp eqeltrri nchoicelem7 mp2an cpw ltcpw1pwg df1c2 nceqi pwv
+       eqcomi 3brtr4i ce2nc1 ncex 3eqtr4i addceq1i eqtri fveq2 syl5reqr orim12d
+       fveq2i syl5 imp addceq1 orim12i eqeq1d orbi12d syl5ibr mpd 1p1e2c eqeq2i
+       2p1e3c orbi12i sylib syl5bi syld sylbid ) ABCZADEFBCUAZGZHIZAJKZAUBZLMIZ
+       RNZYKUCNZOZYGYHAPKZYIYEYFYOAUDUEYOYIYHAUFYHAUGUHULYGYIYHUBZYJJKZYNYEYIYQ
+       UIZYFYHBCZYEYRHUJUKZYHAUMUNQYQHUOZIZYJJKZYGYNYPUUBYJJUPUQYGUUCRUUBEFZRYJ
+       EFZJKZYNYEUUCUUFURYFYEUUCUUFYEUUCGZUUBBCZYJBCZYJDEFBCZUUCUUFUUHUUGUUAHUJ
+       USUKUTYEUUIUUCAVAZQYEUUJUUCAVEZQYEUUCVBUUBYJVCVDVPQUUFYHUUEJKZYGYNUUDYHU
+       UEJVFUQYGUUMYNYGUUMGZYKHHSZNZYKUUOHSZNZOZYNUUNUUELMZIZHNZUVAUUONZOZUUSYG
+       UUMUVDUUMYHUUEPKZYHUUENZOZYGUVDUUMUUMUVFOZUVGUUMUVFVGUVGUUMYHUUEUFZGZUVF
+       OZUVHUVEUVJUVFYHUUEUGVHUVKUVHUVIUVFOZUVLUVFUAZUVFOUVFVIUVIUVMUVFYHUUEVJV
+       HVKUUMUVIUVFVLVMVNVOYGUVEUVBUVFUVCYEUVEUVBURYFYEUVEUVBYEUVEGZUVAUUEVQZIH
+       UVNUUTUVOUVNUUEBCZUUEDEFBCUAZUUTUVONYEUVPUVEAVRZQYEUVQUVEYEUVPUVQUVEUIUV
+       RUUEUDULVSUUEVTWAWBUUERYJEWGWCWDVPQUVFUVCURYGUVFUUOYHLMZIZUVAUVTRYHEFZLM
+       ZIZHSZUUOYSYHDEFZBCUVTUWDNYTTIZUBZDEFZUWEBUWGYHDEWEWFUWFBCZUWHBCTWHUKZUW
+       FVEWIWJYHWKWLUWCHHUWFLMZIUWFVQZIUWCHUWKUWLUWIUWFDEFBCUAZUWKUWLNUWJUWMYHU
+       WFPKZTUOZIZTWMZIZYHUWFPTTCUWPUWRPKWHTTWNWIHUWOWOWPUWRUWFUWQTWQWPWRWSUWIU
+       WMUWNUIUWJUWFUDWIVKUWFVTWLWPUWBUWKUWAUWFLWTXHWPUWFTXAWCXBXCXDUVFUVSUUTYH
+       UUELXEWBXFUTXGXIXJYGUVDUUSURUUMUVDUUSYGUVAHSZUUONZUWSUUQNZOUVBUWTUVCUXAU
+       VAHHXKUVAUUOHXKXLYGUUPUWTUURUXAYGYKUWSUUOYEYKUWSNZYFYEUUIUUJUXBUUKUULYJW
+       KWAQZXMYGYKUWSUUQUXCXMXNXOQXPUUPYLUURYMUUORYKXQXRUUQUCYKUUQRHSUCUUORHXQX
+       CXSXDXRXTYAVPYBYCYBYDXP $.
+       $( [16-Mar-2015] $)
+  $}
 
 $(
 #*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#
