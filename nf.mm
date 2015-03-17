@@ -53750,6 +53750,21 @@ $)
        $( [10-Mar-2015] $)
   $}
 
+  ${ $d A a $. $d a b $. $d A b $. $d B b $. 
+     $( If ` A ` and ` B ` are equinumerous, then so are their power
+     	sets.  Theorem XI.1.36 of [Rosser], p. 369. $)
+     enpw $p |- ( A ~~ B -> ~P A ~~ ~P B ) $=
+       ( va vb cvv wcel cen wbr cpw cv wi wceq pweq imbi12d c0 cmap co vn0 vvex
+       0ex wa brex breq1 breq1d breq2 breq2d cpr enmap2 wne eqid enprmapc mp2an
+       vex ensym mpbir entr mpan2 sylancr syl vtocl2g mpcom ) AEFBEFUAABGHZAIZB
+       IZGHZABGUBCJZDJZGHZVFIZVGIZGHZKAVGGHZVCVJGHZKVBVEKCDABEEVFALZVHVLVKVMVFA
+       VGGUCVNVIVCVJGVFAMUDNVGBLZVLVBVMVEVGBAGUEVOVJVDVCGVGBMUFNVHEOUGZVFPQZVPV
+       GPQZGHZVKVFVGVPUHVSVIVQGHZVQVJGHZVKVTVQVIGHZEOUIZVPVPLZWBRVPUJZEOVFVPSTC
+       UMUKULVIVQUNUOVSVRVJGHZWAWCWDWFRWEEOVGVPSTDUMUKULVQVRVJUPUQVIVQVJUPURUSU
+       TVA $.
+       $( [17-Mar-2015] $)
+  $}
+
 $(
 =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
         Cardinal numbers
@@ -55408,21 +55423,6 @@ $)
        $( [12-Mar-2015] $)
   $}
 
-  ${ $d M x $. $d x y $. $d x z $. $d y z $. 
-     $( An anti-closure condition for cardinal exponentiation to zero.
-     	Theorem 4.6 of [Specker]. $)
-      ce0ncl $p |- ( M e. NC -> ( -. ( M ^c 0c ) e. NC <-> Nc 1c <c M ) ) $=
-        ( vx vy vz cncs wcel c0c cce wn c1c cnc wbr clec wa 1cex wrex ncid ncex
-        cv wss co cltc wb ncelncsi ltlenlec mpan cpw1 wceq wex ce0ncpw1 pw1ss1c
-        pw1ex sseq1 sseq2 rcla42ev mp3an brlec mpbir breq1 mpbiri exlimiv con3d
-        vex syl ex adantld sylbid impbid ) AEFZAGHUAEFZIZJKZAUBLZ?VIVMVLAMLZAVL
-        MLZIZNZVKVLEFVIVMVQUCJOUDVLAUEUFVIVPVKVNVIVJVOVIVJVOVIVJNABSZUGZKZUHZBU
-        IVOABUJWAVOBWAVOVTVLMLZWBCSZDSZTZDVLPCVTPZVSVTFJVLFVSJTZWFVSVRBVCULQJOQ
-        VRUKWEWGVSWDTCDVSJVTVLWCVSWDUMWDJVSUNUOUPCDVTVLVSRJRUQURAVTVLMUSUTVAVDV
-        EVBVFVGVH $.
-        $( [16-Mar-2015] $)
-  $}
-
   ${ $d M x $.
      $( Ordering law for cardinal exponentiation to two.  Theorem XI.2.71
      	of [Rosser], p. 390. $)
@@ -55432,20 +55432,6 @@ $)
        GCDHABRZIJZKZBLAMAFGZNOZABPUKUMBUKAUIQJZULNUKAUJUNNUKSUITDUJUNNOBUAZUITU
        BUCUDUIAUOUEUFUGUH $.
        $( [13-Mar-2015] $)
-  $}
-
-  ${ $d M y $. $d N y $. 
-     $( Partial ordering law for base two cardinal exponentiation.  Theorem
-     	4.8 of [Specker]. $)
-     ce2le $p |- ( ( ( M e. NC /\ N e. NC /\ ( N ^c 0c ) e. NC ) /\ M <_c N ) ->
-       ( 2c ^c M ) <_c ( 2c ^c N ) ) $=
-       ( vy cncs wcel c0c cce co w3a clec wbr c2c wi cpw1 cnc wceq wex ce0ncpw1
-       wa cv cpw breq2 oveq2 eqid vex ce2 syl6eq breq2d imbi12d syl5ibr exlimiv
-       ax-mp syl com12 3impib imp ) ADEZBDEZBFGHDEZIABJKZLAGHZLBGHZJKZUQURUSUTV
-       CMZURUSSZUQVDVEBCTZNOZPZCQUQVDMZBCRVHVICUQVDVHAVGJKZVAVFUAOZJKZM?VHUTVJV
-       CVLBVGAJUBVHVBVKVAJVHVBLVGGHZVKBVGLGUCVGVGPVMVKPVGUDVFVGCUEUFULUGUHUIUJU
-       KUMUNUOUP $.
-       $( [16-Mar-2015] $)
   $}
 
   ${
@@ -55571,6 +55557,50 @@ $)
        $( [11-Mar-2015] $)
   $}
 
+  ${ $d M n $. $d M x $. $d n x $. 
+     $( If ` ( M ^c 0c ) ` is a cardinal, then ` M ` is a T-raising of some
+     	cardinal. $)
+     ce0t $p |- ( ( M e. NC /\ ( M ^c 0c ) e. NC ) -> E. n e. NC M = T_c n ) $=
+       ( vx cncs wcel c0c cce co wa cv cpw1 cnc wceq wex wrex ce0ncpw1 ncelncsi
+       ctc vex tcnc eqcomi tceq eqeq2d rcla4ev mp2an rexbidv mpbiri exlimiv syl
+       eqeq1 ) BDEBFGHDEIBCJZKLZMZCNBAJZRZMZADOZBCPUMUQCUMUQULUOMZADOZUKLZDEULU
+       TRZMZUSUKCSZQVAULUKVCTUAURVBAUTDUNUTMUOVAULUNUTUBUCUDUEUMUPURADBULUOUJUF
+       UGUHUI $.
+       $( [17-Mar-2015] $)
+  $}
+
+
+  ${ $d M y $. $d N y $. $d M p $. $d M q $. $d N p $. $d p q $. $d p r $. $d p s $. $d p x $. $d p y $. $d q r $. $d q s $. $d q x $. $d q y $. $d r s $. $d r x $. $d r y $. $d s y $. $d x y $.  
+     $( Partial ordering law for base two cardinal exponentiation.  Theorem
+     	4.8 of [Specker]. $)
+     ce2le $p |- ( ( ( M e. NC /\ N e. NC /\ ( N ^c 0c ) e. NC ) /\ M <_c N ) ->
+       ( 2c ^c M ) <_c ( 2c ^c N ) ) $=
+       ( vp vq vx vy vr cncs wcel cce co clec wbr wa cv wceq wrex c2c wi cnc vs
+       c0c w3a ctc ce0t 3adant1 adantr letc wb tlecg ancoms elncs anbi12i eeanv
+       wex bitr4i cpw wss cen enpw elnc 3imtr4i adantl sspwb biimpi sseq1 sseq2
+       rcla42ev syl3anc ex rexlimivv ncex brlec cpw1 vex tcnc ce2 ax-mp 3brtr4g
+       breq12 tceq oveq2d breqan12d imbi12d mpbiri exlimivv sylbi sylbird an32s
+       imp breq1 anbi2d anbi1d oveq2 breq1d com12 rexlimdva mpd 3expa 3ad2antl1
+       breq2 breq2d ) AHIZBHIZBUBJKHIZUCZABLMZNBCOZUDZPZCHQZRAJKZRBJKZLMZXFXKXG
+       XDXEXKXCCBUEUFUGXCXDXGXKXNSXEXCXGNZXJXNCHXJXOXHHIZNZXNXJXQXNSXCAXILMZNZX
+       PNZXLRXIJKZLMZSXCXPXRYBXCXPXRYBXCXPXRUCADOZUDZPZDHQZYBAXHDUHXPXRYFYBSXCX
+       PXRNZYEYBDHYEYGYCHIZNZYBYEYIYBSXPYDXILMZNZYHNZRYDJKZYALMZSXPYHYJYNXPYHNZ
+       YJYNYOYJYCXHLMZYNYHXPYPYJUIYCXHUJUKYHXPYPYNSZYHXPNZYCEOZTZPZXHFOZTZPZNZF
+       UOEUOZYQYRUUAEUOZUUDFUOZNUUFYHUUGXPUUHEYCULFXHULUMUUAUUDEFUNUPUUEYQEFUUE
+       YQYTUUCLMZRYTUDZJKZRUUCUDZJKZLMZSUUIYSUQZTZUUBUQZTZUUKUUMLXHYCURZDUUCQCY
+       TQGOZUAOZURZUAUURQGUUPQZUUIUUPUURLMUUSUVCCDYTUUCXHYTIZYCUUCIZNZUUSUVCUVF
+       UUSNXHUQZUUPIZYCUQZUURIZUVGUVIURZUVCUVFUVHUUSUVDUVHUVEXHYSUSMUVGUUOUSMUV
+       DUVHXHYSUTXHYSVAUVGUUOVAVBUGUGUVFUVJUUSUVEUVJUVDYCUUBUSMUVIUUQUSMUVEUVJY
+       CUUBUTYCUUBVAUVIUUQVAVBVCUGUUSUVKUVFUUSUVKXHYCVDVEVCUVBUVKUVGUVAURGUAUVG
+       UVIUUPUURUUTUVGUVAVFUVAUVIUVGVGVHVIVJVKCDYTUUCYSVLUUBVLVMGUAUUPUURUUOVLU
+       UQVLVMVBUUJYSVNTPUUKUUPPYSEVOZVPYSUUJUVLVQVRUULUUBVNTPUUMUURPUUBFVOZVPUU
+       BUULUVMVQVRVSUUEYPUUIYNUUNYCYTXHUUCLVTUUAUUDYMUUKYAUUMLUUAYDUUJRJYCYTWAW
+       BUUDXIUULRJXHUUCWAWBWCWDWEWFWGUKWHWJWIYEYIYLYBYNYEYGYKYHYEXRYJXPAYDXILWK
+       WLWMYEXLYMYALAYDRJWNWOWDWEWPWQUFWRWSWIXJXQXTXNYBXJXOXSXPXJXGXRXCBXIALXAW
+       LWMXJXMYAXLLBXIRJWNXBWDWEWPWQWTWR $.
+       $( [16-Mar-2015] $)
+  $}
+
   ${ $d M x $. $d N x $.
      $( The exponent of a T-raising to a T-raising is always a cardinal. $)
      cet $p |- ( ( M e. NC /\ N e. NC ) -> ( T_c M ^c T_c N ) e. NC ) $=
@@ -55613,6 +55643,25 @@ $)
        PUOUNBRZOPVBUPVAGVCAVAQUNVDUAUBUCUDUEUMUSUFUGZURUTUMUPCDZVEURSAUHZUPBUKT
        UMVFVEUTSVGUPUITUJUL $.
        $( [16-Mar-2015] $)
+  $}
+
+
+  ${ $d M x $. $d x y $. $d x z $. $d y z $. 
+     $( An anti-closure condition for cardinal exponentiation to zero.
+     	Theorem 4.6 of [Specker]. $)
+      ce0ncl $p |- ( M e. NC -> ( -. ( M ^c 0c ) e. NC <-> Nc 1c <c M ) ) $=
+        ( vx vy vz cncs wcel c0c cce co wn c1c cnc wbr wa clec wceq ncelncsi cv
+        cvv wss cltc wne oveq1 ctc oveq1i vvex te0c eqeltrri syl6eqelr necon3bi
+        tcncv ax-mp adantl jca brltc sylibr ex 1cex ltlenlec mpan cpw1 ce0ncpw1
+        wex wrex pw1ex ncid pw1ss1c sseq1 sseq2 rcla42ev mp3an ncex brlec mpbir
+        wb vex breq1 mpbiri exlimiv syl con3d adantld sylbid impbid ) AEFZAGHIZ
+        EFZJZKLZAUAMZWEWHWJWEWHNZWIAOMZWIAUBZNWJWKWLWM?WHWMWEWGWIAWIAPWFWIGHIZE
+        WIAGHUCSLZUDZGHIZWNEWPWIGHUKUEWOEFWQEFSUFQWOUGULUHUIUJUMUNWIAUOUPUQWEWJ
+        WLAWIOMZJZNZWHWIEFWEWJWTVOKURQWIAUSUTWEWSWHWLWEWGWRWEWGWRWEWGNABRZVAZLZ
+        PZBVCWRABVBXDWRBXDWRXCWIOMZXECRZDRZTZDWIVDCXCVDZXBXCFKWIFXBKTZXIXBXABVP
+        VEVFKURVFXAVGXHXJXBXGTCDXBKXCWIXFXBXGVHXGKXBVIVJVKCDXCWIXBVLKVLVMVNAXCW
+        IOVQVRVSVTUQWAWBWCWD $.
+        $( [16-Mar-2015] $)
   $}
 
   ${ $d M x y z $.
