@@ -25466,8 +25466,8 @@ $)
   $}
 
   ${
-     $( Alternate definition of unordered triple of classes. $)
-     dftp3 $p |- { A , B , C } = ( { A } u. { B , C } ) $=
+    $( Alternate definition of unordered triple of classes. $)
+    dftp3 $p |- { A , B , C } = ( { A } u. { B , C } ) $=
        ( csn cun ctp cpr unass df-tp df-pr uneq1i eqtri uneq2i 3eqtr4i ) ADZBDZ
        EZCDZEZOPREZEABCFZOBCGZEOPRHUAABGZRESABCIUCQRABJKLUBTOBCJMN $.
        $( [16-Mar-2015] $)
@@ -29041,7 +29041,7 @@ $)
   $c ~P1 $.  $( Unit power class: calligraphic P with subscript 1. $)
   $c U.1 $. $( Unitary union. $)
 
-  $( Extend class notation to include the unit union of a class (read:  'unit 
+  $( Extend class notation to include the unit union of a class (read:  'unit
      union ` A ` ') $)
   cuni1 $a class U.1 A $.
 
@@ -29062,10 +29062,10 @@ $)
   df-pw1 $a |- ~P1 A = ( ~P A i^i 1c ) $.
 
 
-  $( Define the unit union of a class.  This operation is used implicitly
-     in both [Holmes] and [Haliperin] to complete their stratification
-     algorithms, although neither provide explicit notation for it.  See
-     ~ eluni1 for membership condition. $)
+  $( Define the unit union of a class.  This operation is used implicitly in
+     both [Holmes] and [Haliperin] to complete their stratification algorithms,
+     although neither provide explicit notation for it.  See ~ eluni1 for
+     membership condition. $)
   df-uni1 $a |- U.1 A = U. ( A i^i 1c ) $.
 
 
@@ -30532,9 +30532,10 @@ $)
       $( [13-Jan-2015] $)
   $}
 
-  ${ $d A x $. $d A z $. $d x z $. 
-     $( Alternate definition of unit union. $)
-     dfuni12 $p |- U.1 A = P6 ( _V X._k A ) $=
+  ${
+    $d A x $.  $d A z $.  $d x z $.
+    $( Alternate definition of unit union. $)
+    dfuni12 $p |- U.1 A = P6 ( _V X._k A ) $=
        ( vx vz cuni1 cvv cxpk cp6 cv csn wcel copk wal 19.27v vex snex opkelxpk
        wa albii ax-gen biantrur 3bitr4ri eluni1 wb elp6 ax-mp 3bitr4i eqriv ) B
        ADZEAFZGZBHZIZAJZCHZULKUIJZCLZUKUHJUKUJJZUNEJZUMQZCLURCLZUMQUPUMURUMCMUO
@@ -53750,10 +53751,11 @@ $)
        $( [10-Mar-2015] $)
   $}
 
-  ${ $d A a $. $d a b $. $d A b $. $d B b $. 
-     $( If ` A ` and ` B ` are equinumerous, then so are their power
-     	sets.  Theorem XI.1.36 of [Rosser], p. 369. $)
-     enpw $p |- ( A ~~ B -> ~P A ~~ ~P B ) $=
+  ${
+    $d A a $.  $d a b $.  $d A b $.  $d B b $.
+    $( If ` A ` and ` B ` are equinumerous, then so are their power sets.
+       Theorem XI.1.36 of [Rosser], p. 369. $)
+    enpw $p |- ( A ~~ B -> ~P A ~~ ~P B ) $=
        ( va vb cvv wcel cen wbr cpw cv wi wceq pweq imbi12d c0 cmap co vn0 vvex
        0ex wa brex breq1 breq1d breq2 breq2d cpr enmap2 wne eqid enprmapc mp2an
        vex ensym mpbir entr mpan2 sylancr syl vtocl2g mpcom ) AEFBEFUAABGHZAIZB
@@ -54248,7 +54250,8 @@ $)
        $( [2-Mar-2015] $)
   $}
 
-  ${ $d A x $.
+  ${
+    $d A x $.
     $( Cardinal one is the cardinality of a singleton. $)
     df1c3g $p |- ( A e. V -> 1c = Nc { A } ) $=
       ( vx c1c cv csn cnc wceq sneq nceqd eqeq2d vex df1c3 vtoclg ) DCEZFZGZHDA
@@ -54946,9 +54949,11 @@ $)
        $( [13-Mar-2015] $)
   $}
 
-  ${ $d m n $. $d m p $. $d m x $. $d m y $. $d n p $. $d n x $. $d n y $. $d p x $. $d p y $. $d x y $. 
-     $( Full functionhood statement for cardinal exponentiation. $)
-     fce $p |- ^c : ( NC X. NC ) --> ( NC u. { (/) } ) $=
+  ${
+    $d m n $.  $d m p $.  $d m x $.  $d m y $.  $d n p $.  $d n x $.  $d n y $.
+    $d p x $.  $d p y $.  $d x y $.
+    $( Full functionhood statement for cardinal exponentiation. $)
+    fce $p |- ^c : ( NC X. NC ) --> ( NC u. { (/) } ) $=
        ( vp vn vm vx vy cncs c0 cce fnce cv cfv wcel wral co wa wceq wne wex wo
        bitri cxp csn cun wf wfn crn wss wn df-ne c0c cpw1 cmap cen wbr w3a elce
        wi n0 3simpa ce0nnuli im2anan9 syl5 exlimdvv sylbid exlimdv syl5bi ceclb
@@ -55299,8 +55304,8 @@ $)
   $}
 
   ${
-     $( Transitivity law for cardinal less than or equal and less than. $)
-     leltctr $p |- ( ( A e. NC /\ B e. NC /\ C e. NC ) ->
+    $( Transitivity law for cardinal less than or equal and less than. $)
+    leltctr $p |- ( ( A e. NC /\ B e. NC /\ C e. NC ) ->
        ( ( A <_c B /\ B <c C ) -> A <c C ) ) $=
        ( cncs wcel w3a clec wbr cltc wa wne lectr expdimp adantrd wi wceq breq1
        anbi1d biimpac brltc sbth ancoms 3adant1 eqcom syl6ibr syl5 necon3d expr
@@ -55423,10 +55428,11 @@ $)
        $( [12-Mar-2015] $)
   $}
 
-  ${ $d M x $.
-     $( Ordering law for cardinal exponentiation to two.  Theorem XI.2.71
-     	of [Rosser], p. 390. $)
-     ce2lt $p |- ( ( M e. NC /\ ( M ^c 0c ) e. NC ) -> M <c ( 2c ^c M ) ) $=
+  ${
+    $d M x $.
+    $( Ordering law for cardinal exponentiation to two.  Theorem XI.2.71 of
+       [Rosser], p. 390. $)
+    ce2lt $p |- ( ( M e. NC /\ ( M ^c 0c ) e. NC ) -> M <c ( 2c ^c M ) ) $=
        ( vx cncs wcel c0c cce co wa cpw1 cnc wceq wex c2c cltc wbr ce0ncpw1 cpw
        cv id cvv vex ltcpw1pwg ax-mp syl6eqbr ce2 breqtrrd exlimiv syl ) ACDAEF
        GCDHABRZIJZKZBLAMAFGZNOZABPUKUMBUKAUIQJZULNUKAUJUNNUKSUITDUJUNNOBUAZUITU
@@ -55557,10 +55563,11 @@ $)
        $( [11-Mar-2015] $)
   $}
 
-  ${ $d M n $. $d M x $. $d n x $. 
-     $( If ` ( M ^c 0c ) ` is a cardinal, then ` M ` is a T-raising of some
-     	cardinal. $)
-     ce0t $p |- ( ( M e. NC /\ ( M ^c 0c ) e. NC ) -> E. n e. NC M = T_c n ) $=
+  ${
+    $d M n $.  $d M x $.  $d n x $.
+    $( If ` ( M ^c 0c ) ` is a cardinal, then ` M ` is a T-raising of some
+       cardinal. $)
+    ce0t $p |- ( ( M e. NC /\ ( M ^c 0c ) e. NC ) -> E. n e. NC M = T_c n ) $=
        ( vx cncs wcel c0c cce co wa cv cpw1 cnc wceq wex wrex ce0ncpw1 ncelncsi
        ctc vex tcnc eqcomi tceq eqeq2d rcla4ev mp2an rexbidv mpbiri exlimiv syl
        eqeq1 ) BDEBFGHDEIBCJZKLZMZCNBAJZRZMZADOZBCPUMUQCUMUQULUOMZADOZUKLZDEULU
@@ -55569,11 +55576,13 @@ $)
        $( [17-Mar-2015] $)
   $}
 
-
-  ${ $d M y $. $d N y $. $d M p $. $d M q $. $d N p $. $d p q $. $d p r $. $d p s $. $d p x $. $d p y $. $d q r $. $d q s $. $d q x $. $d q y $. $d r s $. $d r x $. $d r y $. $d s y $. $d x y $.  
-     $( Partial ordering law for base two cardinal exponentiation.  Theorem
-     	4.8 of [Specker]. $)
-     ce2le $p |- ( ( ( M e. NC /\ N e. NC /\ ( N ^c 0c ) e. NC ) /\ M <_c N ) ->
+  ${
+    $d M y $.  $d N y $.  $d M p $.  $d M q $.  $d N p $.  $d p q $.  $d p r $.
+    $d p s $.  $d p x $.  $d p y $.  $d q r $.  $d q s $.  $d q x $.  $d q y $.
+    $d r s $.  $d r x $.  $d r y $.  $d s y $.  $d x y $.
+    $( Partial ordering law for base two cardinal exponentiation.  Theorem 4.8
+       of [Specker]. $)
+    ce2le $p |- ( ( ( M e. NC /\ N e. NC /\ ( N ^c 0c ) e. NC ) /\ M <_c N ) ->
        ( 2c ^c M ) <_c ( 2c ^c N ) ) $=
        ( vp vq vx vy vr cncs wcel cce co clec wbr wa cv wceq wrex c2c wi cnc vs
        c0c w3a ctc ce0t 3adant1 adantr letc wb tlecg ancoms elncs anbi12i eeanv
@@ -55601,9 +55610,10 @@ $)
        $( [16-Mar-2015] $)
   $}
 
-  ${ $d M x $. $d N x $.
-     $( The exponent of a T-raising to a T-raising is always a cardinal. $)
-     cet $p |- ( ( M e. NC /\ N e. NC ) -> ( T_c M ^c T_c N ) e. NC ) $=
+  ${
+    $d M x $.  $d N x $.
+    $( The exponent of a T-raising to a T-raising is always a cardinal. $)
+    cet $p |- ( ( M e. NC /\ N e. NC ) -> ( T_c M ^c T_c N ) e. NC ) $=
        ( vx cncs wcel ctc c0c cce co tccl adantr adantl cnc wceq wex elncs tceq
        oveq1d ax-mp syl6eqel wa cv c0 wne cpw1 vex ncelncsi pw1ex ncid eleqtrri
        tcnc ce0nnuli mp2an wb ce0nulnc mpbi exlimiv sylbi cecl syl22anc ) ADEZB
@@ -55614,16 +55624,17 @@ $)
        $( [13-Mar-2015] $)
   $}
 
-  $( The exponent of two to a T-raising is always a cardinal.  Theorem 5.8
-     of [Specker]. $)
+  $( The exponent of two to a T-raising is always a cardinal.  Theorem 5.8 of
+     [Specker]. $)
   ce2t $p |- ( M e. NC -> ( 2c ^c T_c M ) e. NC ) $=
     ( cncs wcel c2c ctc cce co tc2c oveq1i 2nc cet mpan syl5eqelr ) ABCZDAEZFGD
     EZOFGZBPDOFHIDBCNQBCJDAKLM $.
     $( [13-Mar-2015] $)
 
-  ${ $d M x $.
-     $( Distributive law for T-raising and cardinal exponentiation to two. $)
-     tce2 $p |- ( ( M e. NC /\ ( M ^c 0c ) e. NC ) ->
+  ${
+    $d M x $.
+    $( Distributive law for T-raising and cardinal exponentiation to two. $)
+    tce2 $p |- ( ( M e. NC /\ ( M ^c 0c ) e. NC ) ->
       T_c ( 2c ^c M ) = ( 2c ^c T_c M ) ) $=
        ( vx cncs wcel c0c cce co cpw1 cnc wceq c2c ctc cpw tcnc eqid ax-mp tceq
        wa ce2 syl cv wex ce0ncpw1 vex ncpwpw1 3eqtr4i pw1ex eqtr4i oveq2 syl6eq
@@ -55634,9 +55645,10 @@ $)
        $( [13-Mar-2015] $)
   $}
 
-  ${ $d M x $.
-     $( A T-raising raised to zero is always a cardinal. $)
-     te0c $p |- ( M e. NC -> ( T_c M ^c 0c ) e. NC ) $=
+  ${
+    $d M x $.
+    $( A T-raising raised to zero is always a cardinal. $)
+    te0c $p |- ( M e. NC -> ( T_c M ^c 0c ) e. NC ) $=
        ( vx cncs wcel cv cpw1 ctc wex c0c cce co cnc wceq elncs pw1ex ncid tceq
        vex wb syl tcnc syl6eq syl5eleqr eximi sylbi c0 wne tccl ce0nulnc bitr3d
        ce0nnul mpbid ) ACDZBEZFZAGZDZBHZUPIJKZCDZUMAUNLZMZBHURBANVBUQBVBUOUOLZU
@@ -55646,28 +55658,41 @@ $)
   $}
 
 
-  ${ $d M x $. $d x y $. $d x z $. $d y z $. 
-     $( An anti-closure condition for cardinal exponentiation to zero.
-     	Theorem 4.6 of [Specker]. $)
-      ce0ncl $p |- ( M e. NC -> ( -. ( M ^c 0c ) e. NC <-> Nc 1c <c M ) ) $=
-        ( vx vy vz cncs wcel c0c cce co wn c1c cnc wbr wa clec wceq ncelncsi cv
-        cvv wss cltc wne oveq1 ctc oveq1i vvex te0c eqeltrri syl6eqelr necon3bi
-        tcncv ax-mp adantl jca brltc sylibr ex 1cex ltlenlec mpan cpw1 ce0ncpw1
-        wex wrex pw1ex ncid pw1ss1c sseq1 sseq2 rcla42ev mp3an ncex brlec mpbir
-        wb vex breq1 mpbiri exlimiv syl con3d adantld sylbid impbid ) AEFZAGHIZ
-        EFZJZKLZAUAMZWEWHWJWEWHNZWIAOMZWIAUBZNWJWKWLWM?WHWMWEWGWIAWIAPWFWIGHIZE
-        WIAGHUCSLZUDZGHIZWNEWPWIGHUKUEWOEFWQEFSUFQWOUGULUHUIUJUMUNWIAUOUPUQWEWJ
-        WLAWIOMZJZNZWHWIEFWEWJWTVOKURQWIAUSUTWEWSWHWLWEWGWRWEWGWRWEWGNABRZVAZLZ
-        PZBVCWRABVBXDWRBXDWRXCWIOMZXECRZDRZTZDWIVDCXCVDZXBXCFKWIFXBKTZXIXBXABVP
-        VEVFKURVFXAVGXHXJXBXGTCDXBKXCWIXFXBXGVHXGKXBVIVJVKCDXCWIXBVLKVLVMVNAXCW
-        IOVQVRVSVTUQWAWBWCWD $.
+  ${
+    $d M n $.
+    $( ` ( M ^c 0c ) ` is a cardinal iff ` M ` is a T-raising of some
+       cardinal. $)
+    ce0tb $p |- ( M e. NC -> ( ( M ^c 0c ) e. NC <-> E. n e. NC M = T_c n ) )
+        $=
+       ( cncs wcel c0c cce co cv wceq wrex ce0t ex te0c oveq1 eleq1d syl5ibrcom
+       ctc rexlimiv impbid1 ) BCDZBEFGZCDZBAHZQZIZACJZTUBUFABKLUEUBACUCCDUBUEUD
+       EFGZCDUCMUEUAUGCBUDEFNOPRS $.
+       $( [17-Mar-2015] $)
+  $}
+
+  ${
+    $d M x $.  $d x y $.  $d x z $.  $d y z $.  $d M n $.  $d n x $.  $d p q $.
+    $d p x $.  $d q x $.
+    $( An anti-closure condition for cardinal exponentiation to zero.  Theorem
+       4.6 of [Specker]. $)
+    ce0ncl $p |- ( M e. NC -> ( -. ( M ^c 0c ) e. NC <-> Nc 1c <c M ) ) $=
+        ( vn vx vp vq cncs wcel wn c1c cnc clec wbr ctc wceq wrex wss ncid 1cex
+        cv wi c0c cce co cltc ce0tb wex elncs cpw1 tceq vex tcnc syl6eq pw1ss1c
+        wa pw1ex sseq1 sseq2 rcla42ev mp3an ncex brlec syl6eqbr exlimiv biimprd
+        mpbir sylbi breq1 com12 syl rexlimiv impbid bitrd notbid ex pm4.71rd wb
+        a1i ncelncsi ltlenlec mpan bitr4d ) AFGZAUAUBUCFGZHZIJZAKLZAWEKLZHZUNZW
+        EAUDLZWBWDWHWIWBWCWGWBWCABSZMZNZBFOZWGBAUEWBWNWGWNWGTWBWMWGBFWKFGZWLWEK
+        LZWMWGTWOWKCSZJZNZCUFWPCWKUGWSWPCWSWLWQUHZJZWEKWSWLWRMXAWKWRUIWQCUJZUKU
+        LXAWEKLDSZESZPZEWEODXAOZWTXAGIWEGWTIPZXFWTWQXBUOQIRQWQUMXEXGWTXDPDEWTIX
+        AWEXCWTXDUPXDIWTUQURUSDEXAWEWTUTIUTVAVEVBVCVFWMWPWGWMWGWPAWLWEKVGVDVHVI
+        VJVQ?VKVLVMWBWHWFWBWHWF?VNVOVLWEFGWBWJWIVPIRVRWEAVSVTWA $.
         $( [16-Mar-2015] $)
   $}
 
-  ${ $d M x y z $.
-     $( A T-raising is less than or equal to the cardinality of cardinal 
-     	one. $)
-     tlenc1c $p |- ( M e. NC -> T_c M <_c Nc 1c ) $=
+  ${
+    $d M x y z $.
+    $( A T-raising is less than or equal to the cardinality of cardinal one. $)
+    tlenc1c $p |- ( M e. NC -> T_c M <_c Nc 1c ) $=
        ( vx vy vz cncs wcel cv cnc wceq wex ctc c1c clec wbr cpw1 wss wrex ncid
        elncs ncex tceq vex tcnc syl6eq pw1ex pw1ss1c sseq1 sseq2 rcla42ev mp3an
        1cex brlec mpbir syl6eqbr exlimiv sylbi ) AEFABGZHZIZBJAKZLHZMNZBASUSVBB
@@ -55944,9 +55969,10 @@ $)
       $( [4-Mar-2015] $)
   $}
 
-  ${ $d x y $.
-     $( The special set generator generates a set of cardinals. $)
-     spacssnc $p |- ( N e. NC -> ( Sp[ac] ` N ) C_ NC ) $=
+  ${
+    $d x y $.
+    $( The special set generator generates a set of cardinals. $)
+    spacssnc $p |- ( N e. NC -> ( Sp[ac] ` N ) C_ NC ) $=
        ( vx vy cncs wcel cspac cfv csn cv c2c cce wceq w3a copab cclos1 spacval
        co cima cun wss snex spacvallem1 eqid clos1baseima snssi crn imassrn wex
        wa cab rnopab simp2 exlimiv abssi eqsstri sstri jctir unss sylib eqsstrd
@@ -55956,18 +55982,20 @@ $)
        $( [13-Mar-2015] $)
   $}
 
-  ${ $d M x y $.
-     $( The initial value of the special set generator is an element. $)
-     spacid $p |- ( M e. NC -> M e. ( Sp[ac] ` M ) ) $=
+  ${
+    $d M x y $.
+    $( The initial value of the special set generator is an element. $)
+    spacid $p |- ( M e. NC -> M e. ( Sp[ac] ` M ) ) $=
        ( vx vy cncs wcel csn cv c2c cce co wceq w3a copab cclos1 cspac cfv eqid
        wss clos1base snssg mpbiri spacval eleqtrrd ) ADEZAAFZBGZDECGZDEUGHUFIJK
        LBCMZNZAOPUDAUIEUEUIRUIUHUEUIQSAUIDTUABCAUBUC $.
        $( [13-Mar-2015] $)
   $}
 
-  ${ $d N x $. $d N y $. $d x y $. 
-     $( Closure law for the special set generator. $)
-     spaccl $p |- ( ( M e. NC /\ N e. ( Sp[ac] ` M ) /\ ( N ^c 0c ) e. NC ) ->
+  ${
+    $d N x $.  $d N y $.  $d x y $.
+    $( Closure law for the special set generator. $)
+    spaccl $p |- ( ( M e. NC /\ N e. ( Sp[ac] ` M ) /\ ( N ^c 0c ) e. NC ) ->
         ( 2c ^c N ) e. ( Sp[ac] ` M ) ) $=
        ( vx vy cncs wcel cspac cfv c0c cce co w3a c2c csn cv wceq syl2anc eleq1
        cvv eqid copab cclos1 wbr simp2 spacval 3ad2ant1 eleqtrd spacssnc sselda
@@ -55981,7 +56009,9 @@ $)
        $( [13-Mar-2015] $)
   $}
 
-  ${ $d M x $. $d M z $. $d p q $. $d p x $. $d p z $. $d q x $. $d q z $. $d S x $. $d S z $. $d x z $. 
+  ${
+    $d M x $.  $d M z $.  $d p q $.  $d p x $.  $d p z $.  $d q x $.  $d q z $.
+    $d S x $.  $d S z $.  $d x z $.
     $( Inductive law for the special set generator. $)
     spacind $p |- ( ( ( M e. NC /\ S e. V ) /\ 
       ( M e. S /\ A. x e. ( Sp[ac] ` M ) ( ( x e. S /\ ( x ^c 0c ) e. NC ) -> 
@@ -56009,18 +56039,20 @@ $)
       $( [13-Mar-2015] $)
   $}
 
-  ${ $d ch x $. $d M x $. $d M y $. $d N x $. $d ph y $. $d ps x $. $d ta x $. $d th x $. $d x y $. 
-     spacis.1 $e |- { x | ph } e. _V $.
-     spacis.2 $e |- ( x = M -> ( ph <-> ps ) ) $.
-     spacis.3 $e |- ( x = y -> ( ph <-> ch ) ) $.
-     spacis.4 $e |- ( x = ( 2c ^c y ) -> ( ph <-> th ) ) $.
-     spacis.5 $e |- ( x = N -> ( ph <-> ta ) ) $.
-     spacis.6 $e |- ( M e. NC -> ps ) $.
-     spacis.7 $e |- 
+  ${
+    $d ch x $.  $d M x $.  $d M y $.  $d N x $.  $d ph y $.  $d ps x $.
+    $d ta x $.  $d th x $.  $d x y $.
+    spacis.1 $e |- { x | ph } e. _V $.
+    spacis.2 $e |- ( x = M -> ( ph <-> ps ) ) $.
+    spacis.3 $e |- ( x = y -> ( ph <-> ch ) ) $.
+    spacis.4 $e |- ( x = ( 2c ^c y ) -> ( ph <-> th ) ) $.
+    spacis.5 $e |- ( x = N -> ( ph <-> ta ) ) $.
+    spacis.6 $e |- ( M e. NC -> ps ) $.
+    spacis.7 $e |- 
        ( ( ( M e. NC /\ y e. ( Sp[ac] ` M ) ) /\ ( ( y ^c 0c ) e. NC /\ ch ) ) 
           -> th ) $.
-     $( Induction scheme for the special set generator. $)
-     spacis $p |- ( ( M e. NC /\ N e. ( Sp[ac] ` M ) ) -> ta ) $=
+    $( Induction scheme for the special set generator. $)
+    spacis $p |- ( ( M e. NC /\ N e. ( Sp[ac] ` M ) ) -> ta ) $=
        ( cncs wcel wa cce cspac cfv cab cvv cv c0c co c2c wi wral wss id1 elabg
        a1i mpbird ancom vex elab anbi2i ovex sylibr ex syl5bi ralrimiva spacind
        bitri syl22anc sselda wb adantl mpbid ) HQRZIHUAUBZRZSIAFUCZRZEVLVMVOIVL
@@ -56107,10 +56139,11 @@ $)
       $( [13-Mar-2015] $)
   $}
 
-  ${ $d M n $. $d M p $. $d n p $. $d N p $. 
-     $( Lemma for ~ nchoice . The initial value of ` Sp[ac] ` is a minimum
-     	value.  Theorem 6.4 of [Specker]. $)
-     nchoicelem4 $p |- ( ( M e. NC /\ N e. ( Sp[ac] ` M ) ) ->
+  ${
+    $d M n $.  $d M p $.  $d n p $.  $d N p $.
+    $( Lemma for ~ nchoice .  The initial value of ` Sp[ac] ` is a minimum
+       value.  Theorem 6.4 of [Specker]. $)
+    nchoicelem4 $p |- ( ( M e. NC /\ N e. ( Sp[ac] ` M ) ) ->
        M <_c N ) $=
        ( vp vn cv clec wbr c2c cce co csn cima cab cvv imasn breq2 cncs wcel wa
        sylan lecex snex imaex eqeltrri nclecid cspac cltc spacssnc sselda ce2lt
@@ -56124,9 +56157,9 @@ $)
   $}
 
   ${
-     $( Lemma for ~ nchoice .  A cardinal is not a member of the special
-     	set of itself raised to two.  Theorem 6.5 of [Specker]. $)
-     nchoicelem5 $p |- ( ( M e. NC /\ ( M ^c 0c ) e. NC ) ->
+    $( Lemma for ~ nchoice .  A cardinal is not a member of the special set of
+       itself raised to two.  Theorem 6.5 of [Specker]. $)
+    nchoicelem5 $p |- ( ( M e. NC /\ ( M ^c 0c ) e. NC ) ->
        -. M e. ( Sp[ac] ` ( 2c ^c M ) ) ) $=
        ( cncs wcel c0c cce co wa c2c cspac cfv clec wbr wn cltc ce2lt wb 2nc c0
        jctl ax-mp wne cnnc 2nnc ce0nn ce0nulnc mpbi cecl syl2an ltlenlec syldan
@@ -56137,10 +56170,11 @@ $)
        $( [13-Mar-2015] $)
   $}
 
-  ${ $d M x $.
-     $( Lemma for ~ nchoice .  Split the special set generator into
-     	base and inductive values.  Theorem 6.6 of [Specker]. $)
-     nchoicelem6 $p |- ( ( M e. NC /\ ( M ^c 0c ) e. NC ) ->
+  ${
+    $d M x $.
+    $( Lemma for ~ nchoice .  Split the special set generator into base and
+       inductive values.  Theorem 6.6 of [Specker]. $)
+    nchoicelem6 $p |- ( ( M e. NC /\ ( M ^c 0c ) e. NC ) ->
        ( Sp[ac] ` M ) = ( { M } u. ( Sp[ac] ` ( 2c ^c M ) ) ) ) $=
        ( vx cncs wcel c0c cce co wa cspac cfv c2c cvv wi wral wss a1i adantr wo
        fvex spaccl csn cun cv simpl snex unex ssun1 snidg sseldi wceq elun elsn
@@ -56160,8 +56194,8 @@ $)
        $( [13-Mar-2015] $)
   $}
 
-  $( Lemma for ~ nchoice .  Calculate the cardinality of a special
-     set generator.  Theorem 6.7 of [Specker]. $)
+  $( Lemma for ~ nchoice .  Calculate the cardinality of a special set
+     generator.  Theorem 6.7 of [Specker]. $)
   nchoicelem7 $p |- ( ( M e. NC /\ ( M ^c 0c ) e. NC ) ->
      Nc ( Sp[ac] ` M ) = ( Nc ( Sp[ac] ` ( 2c ^c M ) ) +c 1c ) ) $=
     ( cncs wcel c0c cce co cspac cfv cnc csn c2c cun c1c cplc nchoicelem6 nceqd
@@ -56173,10 +56207,10 @@ $)
     $( [13-Mar-2015] $)
 
   ${
-     $( Lemma for ~ nchoice .  Calculate the cardinality of the special
-     	set generator when near the end of raisability.  Theorem 6.8 of
-	[Specker]. $)
-     nchoicelem8 $p |- ( ( M e. NC /\ -. ( M ^c 0c ) e. NC ) ->
+    $( Lemma for ~ nchoice .  Calculate the cardinality of the special set
+       generator when near the end of raisability.  Theorem 6.8 of
+       [Specker]. $)
+    nchoicelem8 $p |- ( ( M e. NC /\ -. ( M ^c 0c ) e. NC ) ->
        ( Nc ( Sp[ac] ` T_c M ) = 2c \/ Nc ( Sp[ac] ` T_c M ) = 3c ) ) $=
        ( cncs wcel c0c cce co wa c1c cnc clec wbr cspac cfv wceq wo cltc adantr
        c2c cplc cvv wn ctc c3c ce0ncl biimpa wne brltc simplbi wb 1cex ncelncsi
