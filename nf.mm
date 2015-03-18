@@ -51606,6 +51606,16 @@ $)
   $}
 
   ${
+     antid.1 $e |- ( ph -> R Antisym A ) $.
+     antid.2 $e |- ( ph -> X e. A ) $.
+     antid.3 $e |- ( ph -> Y e. A ) $.
+     antid.4 $e |- ( ph -> X R Y ) $.
+     antid.5 $e |- ( ph -> Y R X ) $.
+     $( The antisymmetry property. $)
+     antid $p |- ( ph -> X = Y ) $= ? $.
+  $}
+
+  ${
     $d A a $.  $d a r $.  $d A r $.  $d a x $.  $d A x $.  $d a y $.  $d A y $.
     $d ph x $.  $d ph y $.  $d R a $.  $d R r $.  $d r x $.  $d R x $.
     $d r y $.  $d R y $.  $d x y $.
@@ -51620,6 +51630,22 @@ $)
        NZPZCLOZQBVDQUQCVDQZBVDQUSKLEDFGMUTEUBZVCUQBCVDVDVFVAUOVBUPUMUNUTETUNUMU
        TETUCUDVEURBVDDUQCVDDUFUGBCKLUHUIUJUK $.
        $( [12-Mar-2015] $)
+  $}
+
+  ${ $d A a $. $d a r $. $d A r $. $d a x $. $d A x $. $d a y $. $d A y $. $d R a $. $d R r $. $d r x $. $d R x $. $d r y $. $d R y $. $d X x $. $d x y $. $d X y $. $d Y y $. 
+     connexd.1 $e |- ( ph -> R Connex A ) $.
+     connexd.2 $e |- ( ph -> X e. A ) $.
+     connexd.3 $e |- ( ph -> Y e. A ) $.
+     $( The connectivity property. $)
+     connexd $p |- ( ph -> ( X R Y \/ Y R X ) ) $=
+       ( vx vy vr va cconnex wbr wo cv wral cvv wcel wceq wa brex breq 2ralbidv
+       wb orbi12d raleq raleqbi1dv df-connex brabg syl wi breq1 rcla42v syl2anc
+       ibi breq2 syl5 mpd ) ACBMNZDECNZEDCNZOZFUTIPZJPZCNZVEVDCNZOZJBQZIBQZAVCU
+       TVJUTCRSBRSUAUTVJUECBMUBVDVEKPZNZVEVDVKNZOZJLPZQIVOQVHJVOQZIVOQVJKLCBRRM
+       VKCTZVNVHIJVOVOVQVLVFVMVGVDVEVKCUCVEVDVKCUCUFUDVPVIIVOBVHJVOBUGUHIJKLUIU
+       JUKUPADBSEBSVJVCULGHVHVCDVECNZVEDCNZOIJDEBBVDDTVFVRVGVSVDDVECUMVDDVECUQU
+       FVEETVRVAVSVBVEEDCUQVEEDCUMUFUNUOURUS $.
+       $( [18-Mar-2015] $)
   $}
 
   $( Equivalence relationship as symmetric, transitive relationship. $)
@@ -55463,6 +55489,29 @@ $)
        $( [13-Mar-2015] $)
   $}
 
+  ${ $d M x $. $d A x $. $d A f $. $d A g $. $d A p $. $d A q $. $d A y $. $d f g $. $d f p $. $d f q $. $d f x $. $d f y $. $d g p $. $d g q $. $d g x $. $d g y $. $d M y $. $d p q $. $d p x $. $d p y $. $d q x $. $d q y $. $d x y $. 
+     lenc.1 $e |- A e. _V $.
+     $( Less than or equal condition for the cardinality of a number. $)
+     lenc $p |- ( M e. NC -> ( M <_c Nc A <-> E. x e. M x C_ A ) ) $=
+       ( vy vp vq vf vg wcel cv wex clec wbr wss wrex wf1o cen elnc vex cncs wb
+       cnc wceq elncs ncex brlec wa wi bren bitri anbi12i eeanv bitr4i w3a cima
+       cres ccnv ccom f1of1 3ad2ant2 simp3 f1ores syl2anc f1ocnv 3ad2ant1 f1oco
+       wf1 resex cnvex coex f1oen 3syl sylibr imass2 3ad2ant3 wfo f1ofo sseqtrd
+       foima syl sseq1 rcla4ev 3expia exlimivv sylbi rexlimivv nclec eqnc breq1
+       sylbir syl5ib rexlimiv impbii rexeq bibi12d mpbiri exlimiv ) CUAJCEKZUCZ
+       UDZELCBUCZMNZAKZBOZACPZUBZECUEXAXGEXAXGWTXBMNZXEAWTPZUBXHXIXHFKZGKZOZGXB
+       PFWTPXIFGWTXBWSUFBUFUGXLXIFGWTXBXJWTJZXKXBJZUHZXJWSHKZQZXKBIKZQZUHZILHLZ
+       XLXIUIZXOXQHLZXSILZUHYAXMYCXNYDXMXJWSRNYCXJWSSXJWSHUJUKXNXKBRNYDXKBSXKBI
+       UJUKULXQXSHIUMUNXTYBHIXQXSXLXIXQXSXLUOZXRXJUPZWTJZYFBOZXIYEYFWSRNZYGYEWS
+       YFXRXJUQZXPURZUSZQZYFWSYLURZQYIYEXJYFYJQZWSXJYKQZYMYEXKBXRVHZXLYOXSXQYQX
+       LXKBXRUTVAXQXSXLVBXKBXJXRVCVDXQXSYPXLXJWSXPVEVFWSXJYFYJYKVGVDWSYFYLVEYFW
+       SYNYLYJYKXRXJITFTVIXPHTVJVKVJVLVMYFWSSVNYEYFXRXKUPZBXLXQYFYROXSXJXKXRVOV
+       PXSXQYRBUDZXLXSXKBXRVQYSXKBXRVRXKBXRVTWAVAVSXEYHAYFWTXDYFBWBWCVDWDWEWFWG
+       WFXEXHAWTXEXDUCZXBMNZXDWTJZXHXDBATZDWHUUBYTWTUDZUUAXHUBUUDXDWSRNUUBXDWSU
+       UCWIXDWSSUNYTWTXBMWJWKWLWMWNXAXCXHXFXICWTXBMWJXEACWTWOWPWQWRWF $.
+       $( [18-Mar-2015] $)
+  $}
+
   ${
     tcnc.1 $e |- A e. _V $.
     $( Compute the T-raising of a cardinality. $)
@@ -55693,43 +55742,22 @@ $)
        $( [17-Mar-2015] $)
   $}
 
-  ${
-    $d M x $.  $d x y $.  $d x z $.  $d y z $.  $d M n $.  $d n x $.  $d p q $.
-    $d p x $.  $d q x $.  $d f g $. $d f p $. $d f q $. $d f x $. $d f y $. $d g p $. $d g q $. $d g x $. $d g y $. $d M y $. $d p y $. $d q y $. $d a x $. $d a y $. 
-    $( An anti-closure condition for cardinal exponentiation to zero.  Theorem
-       4.6 of [Specker]. $)
-    ce0ncl $p |- ( M e. NC -> ( -. ( M ^c 0c ) e. NC <-> Nc 1c <c M ) ) $=
-      ( vx va vy vp vf vg cncs wcel cv wceq wex c1c wbr wb wa vex wss wf1o cen
-      vq cnc c0c cce co wn cltc elncs clec ctc wrex df-rex anbi1i 19.41v bitr4i
-      cpw1 exbii excom ncex tceq tcnc syl6eq ceqsexv bitri ncelncsi ce0tb ax-mp
-      eqeq2d brlec bren anbi12i elnc eeanv 3bitr4i w3a ccnv ccom cima imaco wfo
-      wi f1ocnv f1ofo foima 3ad2ant1 simp3 eqsstrd imass2 syl syl5eqss 3ad2ant2
-      3syl sseqtrd cnvex coex imaex sspw12 cres wf1 f1of1 syl2anc f1oco imaeq2d
-      f1ores syl5eq f1oeq3 mpbird resex f1oen breq2 syl5ibcom eximdv syl5bi mpd
-      eqnc sylibr exlimivv sylbi rexlimivv id pw1ss1c pw1ex 1cex nclec syl6eqbr
-      3expia exlimiv impbii notbii pm4.71ri ltlenlec mp2an oveq1 eleq1d bibi12d
-      notbid mpbiri ) AHIABJZUBZKZBLAUCUDUEZHIZUFZMUBZAUGNZOZBAUHYTUUFBYTUUFYSU
-      CUDUEZHIZUFZUUDYSUGNZOUUIUUDYSUINZYSUUDUINZUFZPZUUJUUIUUMUUNUUHUULYSCJZUJ
-      ZKZCHUKZYSDJZUPZUBZKZDLZUUHUULUURUUOHIZUUQPZCLZUVCUUQCHULUVFUUOUUSUBZKZUU
-      QPZDLZCLZUVCUVEUVJCUVEUVHDLZUUQPUVJUVDUVLUUQDUUOUHUMUVHUUQDUNUOUQUVKUVICL
-      ZDLUVCUVICDURUVMUVBDUUQUVBCUVGUUSUSUVHUUPUVAYSUVHUUPUVGUJUVAUUOUVGUTUUSDQ
-      ZVAVBVHVCUQVDVDVDYSHIZUUHUUROYRBQZVEZCYSVFVGUULUVCUULEJZUAJZRZUAUUDUKEYSU
-      KUVCEUAYSUUDYRUSMUSVIUVTUVCEUAYSUUDUVRYSIZUVSUUDIZPZUVRYRFJZSZUVSMGJZSZPZ
-      GLFLZUVTUVCWAZUVRYRTNZUVSMTNZPUWEFLZUWGGLZPUWCUWIUWKUWMUWLUWNUVRYRFVJUVSM
-      GVJVKUWAUWKUWBUWLUVRYRVLUVSMVLVKUWEUWGFGVMVNUWHUWJFGUWEUWGUVTUVCUWEUWGUVT
-      VOZYRUUTTNZDLZUVCUWOUWFUWDVPZVQZYRVRZMRZUWQUWOUWTUWFUVSVRZMUWOUWTUWFUWRYR
-      VRZVRZUXBUWFUWRYRVSZUWOUXCUVSRUXDUXBRUWOUXCUVRUVSUWEUWGUXCUVRKZUVTUWEYRUV
-      RUWRSZYRUVRUWRVTUXFUVRYRUWDWBZYRUVRUWRWCYRUVRUWRWDWLWEZUWEUWGUVTWFZWGUXCU
-      VSUWFWHWIWJUWGUWEUXBMKZUVTUWGUVSMUWFVTUXKUVSMUWFWCUVSMUWFWDWIWKWMUXAUWTUU
-      TKZDLUWOUWQDUWTUWSYRUWFUWRGQZUWDFQWNZWOUVPWPWQUWOUXLUWPDUWOYRUWTTNZUXLUWP
-      UWOYRUWTUWFUVRWRZUWRVQZSZUXOUWOUXRYRUWFUVRVRZUXQSZUWOUVRUXSUXPSZUXGUXTUWO
-      UVSMUWFWSZUVTUYAUWGUWEUYBUVTUVSMUWFWTWKUXJUVSMUVRUWFXDXAUWEUWGUXGUVTUXHWE
-      YRUVRUXSUXPUWRXBXAUWOUWTUXSKUXRUXTOUWOUWTUXDUXSUXEUWOUXCUVRUWFUXIXCXEUWTU
-      XSYRUXQXFWIXGYRUWTUXQUXPUWRUWFUVRUXMEQXHUXNWOXIWIUWTUUTYRTXJXKXLXMXNUVBUW
-      PDYRUUTUVPXOUQXPYFXQXRXSXRUVBUULDUVBYSUVAUUDUIUVBXTUUTMRUVAUUDUINUUSYAUUT
-      MUUSUVNYBYCYDVGYEYGYHVNYIUUMUUK?YJVDUUDHIUVOUUJUUNOMYCVEUVQUUDYSYKYLUOYTU
-      UCUUIUUEUUJYTUUBUUHYTUUAUUGHAYSUCUDYMYNYPAYSUUDUGXJYOYQYGXR $.
-      $( [16-Mar-2015] $)
+  ${ $d M n $. $d M x $. $d n x $. $d n y $. $d x y $. 
+     $( Cardinal exponentiation to zero is a cardinal iff the number
+     	is less than the size of cardinal one. $)
+     ce0lenc1 $p |- ( M e. NC -> ( ( M ^c 0c ) e. NC <-> M <_c Nc 1c ) ) $=
+       ( vn vx vy cncs wcel cv ctc wceq wrex c1c cnc clec wbr wex cpw1 tceq vex
+       tcnc wss c0c cce co ce0tb elncs syl6eq pw1ss1c pw1ex 1cex nclec syl6eqbr
+       ax-mp exlimiv sylbi breq1 syl5ibrcom rexlimiv lenc wa wi ncseqnc biimpar
+       sspw12 ncelncsi eqeq1d rcla4ev mp2an eqcom syl6bb rexbidv mpbiri syl5ibr
+       nceq eqeq1 syl rexlimdva sylbid impbid2 bitrd ) AEFZAUAUBUCEFABGZHZIZBEJ
+       ZAKLZMNZBAUDVTWDWFWCWFBEWAEFZWFWCWBWEMNZWGWACGZLZIZCOWHCWAUEWKWHCWKWBWIP
+       ZLZWEMWKWBWJHWMWAWJQWICRZSUFWLKTWMWEMNWIUGWLKWIWNUHUIUJULUKUMUNAWBWEMUOU
+       PUQVTWFWIKTZCAJWDCKAUIURVTWOWDCAVTWIAFZUSAWJIZWOWDUTVTWQWPAWIVAVBWOWDWQW
+       JWBIZBEJZWOWIDGZPZIZDOWSDWIWNVCXBWSDXBWSWBXALZIZBEJZWTLZEFXFHZXCIZXEWTDR
+       ZVDWTXISXDXHBXFEWAXFIWBXGXCWAXFQVEVFVGXBWRXDBEXBWRXCWBIXDXBWJXCWBWIXAVMV
+       EXCWBVHVIVJVKUMUNWQWCWRBEAWJWBVNVJVLVOVPVQVRVS $.
+       $( [18-Mar-2015] $)
   $}
 
   ${
@@ -56249,40 +56277,35 @@ $)
     UMUNMVGUOUPUQ $.
     $( [13-Mar-2015] $)
 
+
+  ${
+    $d M x $.  $d x y $.  $d x z $.  $d y z $.  $d M n $.  $d n x $.  $d p q $.
+    $d p x $.  $d q x $.  $d f g $. $d f p $. $d f q $. $d f x $. $d f y $. $d g p $. $d g q $. $d g x $. $d g y $. $d M y $. $d p y $. $d q y $. $d a x $. $d a y $. 
+    $( Lemma for ~ nchoice .  An anti-closure condition for cardinal 
+       exponentiation to zero.  Theorem 4.5 of [Specker]. $)
+    nchoicelem8 $p |- ( ( <_c We NC /\ M e. NC ) -> 
+    	   ( -. ( M ^c 0c ) e. NC <-> Nc 1c <c M ) ) $=
+      ( clec cncs cwe wbr wcel wa wn c1c cstrict cfound cin breqi brin cpartial
+      bitri simprbi adantr a1i cantisym c0c cce cnc cltc ce0lenc1 notbid adantl
+      co wb cconnex wo df-we sopc sylbi simpl simpr 1cex ncelncsi connexd sylan
+      wne ord wi wceq nclecid ax-mp syl6eqbrr necon3bi jcad simplbi cref ctrans
+      id df-partial 3syl simplr simprl simprr antid expr necon3ad expimpd brltc
+      impbid syl6bbr bitrd ) BCDEZACFZGZAUAUBUHCFZHZAIUCZBEZHZWLAUDEZWHWKWNUIWG
+      WHWJWMAUEUFUGWIWNWLABEZWLAVAZGZWOWIWNWRWIWNWPWQWIWMWPWGBCUJEZWHWMWPUKWGBC
+      JEZBCKEZGZWSWGBCJKLZEXBBCDXCULMBCJKNPZWTWSXAWTBCOEZWSCBUMZQRUNWSWHGZCBAWL
+      WSWHUOWSWHUPWLCFZXGIUQURZSUSUTVBWNWQVCWIWMWLAWLAVDZAWLWLBXJVMXHWLWLBEXIWL
+      VEVFVGVHSVIWIWPWQWNWIWPGWMWLAWIWPWMXJWIWPWMGZGZCBWLAWIBCTEZXKWGXMWHWGWTXE
+      XMWGWTXAXDVJWTXEWSXFVJXEBCVKVLLZEZXMXEBCXNTLZEXOXMGBCOXPVNMBCXNTNPQVORRXH
+      XLXISWGWHXKVPWIWPWMVQWIWPWMVRVSVTWAWBWDWLAWCWEWF $.
+      $( [18-Mar-2015] $)
+  $}
+
   ${
     $( Lemma for ~ nchoice .  Calculate the cardinality of the special set
        generator when near the end of raisability.  Theorem 6.8 of
        [Specker]. $)
-    nchoicelem8 $p |- ( ( M e. NC /\ -. ( M ^c 0c ) e. NC ) ->
-       ( Nc ( Sp[ac] ` T_c M ) = 2c \/ Nc ( Sp[ac] ` T_c M ) = 3c ) ) $=
-       ( cncs wcel c0c cce co wa c1c cnc clec wbr cspac cfv wceq wo cltc adantr
-       c2c cplc cvv wn ctc c3c ce0ncl biimpa wne brltc simplbi wb 1cex ncelncsi
-       syl tlecg mpan cpw1 tcnc1c breq1i wi pw1ex a1i tccl simpr ce2le syl31anc
-       te0c ce2ncpw11c orc orbi1i pm2.1 df-ne mpbir ordir mpbiran2 bitri sylibr
-       ex csn ce2t biimpar nchoicelem3 syl2anc nceqd df1c3 syl6eqr tcncv oveq1i
-       ovex vvex ax-mp eqeltrri nchoicelem7 mp2an cpw ltcpw1pwg df1c2 nceqi pwv
-       eqcomi 3brtr4i ce2nc1 ncex 3eqtr4i addceq1i eqtri fveq2 syl5reqr orim12d
-       fveq2i syl5 imp addceq1 orim12i eqeq1d orbi12d syl5ibr mpd 1p1e2c eqeq2i
-       2p1e3c orbi12i sylib syl5bi syld sylbid ) ABCZADEFBCUAZGZHIZAJKZAUBZLMIZ
-       RNZYKUCNZOZYGYHAPKZYIYEYFYOAUDUEYOYIYHAUFYHAUGUHULYGYIYHUBZYJJKZYNYEYIYQ
-       UIZYFYHBCZYEYRHUJUKZYHAUMUNQYQHUOZIZYJJKZYGYNYPUUBYJJUPUQYGUUCRUUBEFZRYJ
-       EFZJKZYNYEUUCUUFURYFYEUUCUUFYEUUCGZUUBBCZYJBCZYJDEFBCZUUCUUFUUHUUGUUAHUJ
-       USUKUTYEUUIUUCAVAZQYEUUJUUCAVEZQYEUUCVBUUBYJVCVDVPQUUFYHUUEJKZYGYNUUDYHU
-       UEJVFUQYGUUMYNYGUUMGZYKHHSZNZYKUUOHSZNZOZYNUUNUUELMZIZHNZUVAUUONZOZUUSYG
-       UUMUVDUUMYHUUEPKZYHUUENZOZYGUVDUUMUUMUVFOZUVGUUMUVFVGUVGUUMYHUUEUFZGZUVF
-       OZUVHUVEUVJUVFYHUUEUGVHUVKUVHUVIUVFOZUVLUVFUAZUVFOUVFVIUVIUVMUVFYHUUEVJV
-       HVKUUMUVIUVFVLVMVNVOYGUVEUVBUVFUVCYEUVEUVBURYFYEUVEUVBYEUVEGZUVAUUEVQZIH
-       UVNUUTUVOUVNUUEBCZUUEDEFBCUAZUUTUVONYEUVPUVEAVRZQYEUVQUVEYEUVPUVQUVEUIUV
-       RUUEUDULVSUUEVTWAWBUUERYJEWGWCWDVPQUVFUVCURYGUVFUUOYHLMZIZUVAUVTRYHEFZLM
-       ZIZHSZUUOYSYHDEFZBCUVTUWDNYTTIZUBZDEFZUWEBUWGYHDEWEWFUWFBCZUWHBCTWHUKZUW
-       FVEWIWJYHWKWLUWCHHUWFLMZIUWFVQZIUWCHUWKUWLUWIUWFDEFBCUAZUWKUWLNUWJUWMYHU
-       WFPKZTUOZIZTWMZIZYHUWFPTTCUWPUWRPKWHTTWNWIHUWOWOWPUWRUWFUWQTWQWPWRWSUWIU
-       WMUWNUIUWJUWFUDWIVKUWFVTWLWPUWBUWKUWAUWFLWTXHWPUWFTXAWCXBXCXDUVFUVSUUTYH
-       UUELXEWBXFUTXGXIXJYGUVDUUSURUUMUVDUUSYGUVAHSZUUONZUWSUUQNZOUVBUWTUVCUXAU
-       VAHHXKUVAUUOHXKXLYGUUPUWTUURUXAYGYKUWSUUOYEYKUWSNZYFYEUUIUUJUXBUUKUULYJW
-       KWAQZXMYGYKUWSUUQUXCXMXNXOQXPUUPYLUURYMUUORYKXQXRUUQUCYKUUQRHSUCUUORHXQX
-       CXSXDXRXTYAVPYBYCYBYDXP $.
-       $( [16-Mar-2015] $)
+    nchoicelem9 $p |- ( ( <_c We NC /\ M e. NC /\ -. ( M ^c 0c ) e. NC ) ->
+       ( Nc ( Sp[ac] ` T_c M ) = 2c \/ Nc ( Sp[ac] ` T_c M ) = 3c ) ) $= ? $.
   $}
 
 $(
