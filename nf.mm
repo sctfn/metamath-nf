@@ -31151,11 +31151,12 @@ $)
   $}
 
 
-  ${ $d A x $.
-     sspw12.1 $e |- A e. _V $.
-     $( A set is a subset of cardinal one iff it is the unit power class
-     	of some other set. $)
-     sspw12 $p |- ( A C_ 1c <-> E. x A = ~P1 x ) $=
+  ${
+    $d A x $.
+    sspw12.1 $e |- A e. _V $.
+    $( A set is a subset of cardinal one iff it is the unit power class of some
+       other set. $)
+    sspw12 $p |- ( A C_ 1c <-> E. x A = ~P1 x ) $=
        ( c1c wss cv cpw1 wceq wex cuni eqpw1uni uniex eqeq2d cla4ev syl pw1ss1c
        pw1eq sseq1 mpbiri exlimiv impbii ) BDEZBAFZGZHZAIZUBBBJZGZHZUFBKUEUIAUG
        BCLUCUGHUDUHBUCUGQMNOUEUBAUEUBUDDEUCPBUDDRSTUA $.
@@ -40571,6 +40572,29 @@ $)
       TUNULUKHZUMPZETZVDUMEUKUAVGVBADKZETVDVFVHEVFVAADKZUMPVHVEVIUMAULDUBUCVAUM
       ADUDQUEVBAEDUFQRVCUSADUMUSEUPUOUGULUPBCUHUISRUSUQADUPBCUJSRR $.
       $( [19-Feb-2015] $)
+
+    $( Membership in an image under two unit power classes. $)
+    elimapw12 $p |- ( A e. ( B " ~P1 ~P1 C ) <-> 
+             E. x e. C <. { { x } } , A >. e. B ) $=
+      ( vt cpw1 cima wcel cv csn cop wrex elimapw1 wex df-rex wceq elpw1 anbi1i
+      wa bitri r19.41v bitr4i exbii rexcom4 opeq1d eleq1d ceqsexv rexbii bitr3i
+      snex sneq ) BCDFZFGHEIZJZBKZCHZEULLZAIZJZJZBKZCHZADLZEBCULMUQUMULHZUPSZEN
+      ZVCUPEULOVFUMUSPZUPSZADLZENZVCVEVIEVEVGADLZUPSVIVDVKUPAUMDQRVGUPADUAUBUCV
+      JVHENZADLVCVHAEDUDVLVBADUPVBEUSURUJVGUOVACVGUNUTBUMUSUKUEUFUGUHUITTT $.
+      $( [18-Mar-2015] $)
+
+
+    $( Membership in an image under three unit power classes. $)
+    elimapw13 $p |- ( A e. ( B " ~P1 ~P1 ~P1 C ) <-> 
+             E. x e. C <. { { { x } } } , A >. e. B ) $=
+      ( vt cpw1 cima wcel cv csn cop wrex elimapw12 wa df-rex wceq elpw1 bitr4i
+      wex bitri anbi1i r19.41v exbii rexcom4 sneqd opeq1d eleq1d ceqsexv rexbii
+      snex sneq ) BCDFZFFGHEIZJZJZBKZCHZEULLZAIZJZJZJZBKZCHZADLZEBCULMURUMULHZU
+      QNZESZVEUQEULOVHUMUTPZUQNZESZADLZVEVHVJADLZESVLVGVMEVGVIADLZUQNVMVFVNUQAU
+      MDQUAVIUQADUBRUCVJAEDUDRVKVDADUQVDEUTUSUJVIUPVCCVIUOVBBVIUNVAUMUTUKUEUFUG
+      UHUITTT $.
+      $( [18-Mar-2015] $)
+
   $}
 
   ${
@@ -51605,14 +51629,17 @@ $)
       $( [12-Mar-2015] $)
   $}
 
-  ${ $d A a $. $d a r $. $d A r $. $d a x $. $d A x $. $d a y $. $d A y $. $d R a $. $d R r $. $d r x $. $d R x $. $d r y $. $d R y $. $d X x $. $d x y $. $d X y $. $d Y y $. 
-     antid.1 $e |- ( ph -> R Antisym A ) $.
-     antid.2 $e |- ( ph -> X e. A ) $.
-     antid.3 $e |- ( ph -> Y e. A ) $.
-     antid.4 $e |- ( ph -> X R Y ) $.
-     antid.5 $e |- ( ph -> Y R X ) $.
-     $( The antisymmetry property. $)
-     antid $p |- ( ph -> X = Y ) $=
+  ${
+    $d A a $.  $d a r $.  $d A r $.  $d a x $.  $d A x $.  $d a y $.  $d A y $.
+    $d R a $.  $d R r $.  $d r x $.  $d R x $.  $d r y $.  $d R y $.  $d X x $.
+    $d x y $.  $d X y $.  $d Y y $.
+    antid.1 $e |- ( ph -> R Antisym A ) $.
+    antid.2 $e |- ( ph -> X e. A ) $.
+    antid.3 $e |- ( ph -> Y e. A ) $.
+    antid.4 $e |- ( ph -> X R Y ) $.
+    antid.5 $e |- ( ph -> Y R X ) $.
+    $( The antisymmetry property. $)
+    antid $p |- ( ph -> X = Y ) $=
        ( vx vy wbr wceq cv wa wi wral cvv wcel vr va cantisym brex breq anbi12d
        weq wb imbi1d 2ralbidv raleq raleqbi1dv df-antisym brabg syl breq1 breq2
        ibi eqeq1 imbi12d eqeq2 rcla42v syl2anc mpd mp2and ) ADECMZEDCMZDENZIJAK
@@ -51642,12 +51669,15 @@ $)
        $( [12-Mar-2015] $)
   $}
 
-  ${ $d A a $. $d a r $. $d A r $. $d a x $. $d A x $. $d a y $. $d A y $. $d R a $. $d R r $. $d r x $. $d R x $. $d r y $. $d R y $. $d X x $. $d x y $. $d X y $. $d Y y $. 
-     connexd.1 $e |- ( ph -> R Connex A ) $.
-     connexd.2 $e |- ( ph -> X e. A ) $.
-     connexd.3 $e |- ( ph -> Y e. A ) $.
-     $( The connectivity property. $)
-     connexd $p |- ( ph -> ( X R Y \/ Y R X ) ) $=
+  ${
+    $d A a $.  $d a r $.  $d A r $.  $d a x $.  $d A x $.  $d a y $.  $d A y $.
+    $d R a $.  $d R r $.  $d r x $.  $d R x $.  $d r y $.  $d R y $.  $d X x $.
+    $d x y $.  $d X y $.  $d Y y $.
+    connexd.1 $e |- ( ph -> R Connex A ) $.
+    connexd.2 $e |- ( ph -> X e. A ) $.
+    connexd.3 $e |- ( ph -> Y e. A ) $.
+    $( The connectivity property. $)
+    connexd $p |- ( ph -> ( X R Y \/ Y R X ) ) $=
        ( vx vy vr va cconnex wbr wo cv wral cvv wcel wceq wa brex breq 2ralbidv
        wb orbi12d raleq raleqbi1dv df-connex brabg syl wi breq1 rcla42v syl2anc
        ibi breq2 syl5 mpd ) ACBMNZDECNZEDCNZOZFUTIPZJPZCNZVEVDCNZOZJBQZIBQZAVCU
@@ -54114,9 +54144,9 @@ $)
   $}
 
   ${
-     eqnc2.1 $e |- X e. _V $.
-     $( Alternate condition for equality to a cardinality. $)
-     eqnc2 $p |- ( A = Nc X <-> ( A e. NC /\ X e. A ) ) $=
+    eqnc2.1 $e |- X e. _V $.
+    $( Alternate condition for equality to a cardinality. $)
+    eqnc2 $p |- ( A = Nc X <-> ( A e. NC /\ X e. A ) ) $=
        ( cnc wceq cncs wcel ncelncsi eleq1 mpbiri ncseqnc biadan2 ) ABDZEZAFGZB
        AGNOMFGBCHAMFIJABKL $.
        $( [18-Mar-2015] $)
@@ -55109,11 +55139,12 @@ $)
     $( [4-Mar-2015] $)
 
 
-  ${ $d A x y $. $d B x y $.
-     nclec.1 $e |- A e. _V $.
-     nclec.2 $e |- B e. _V $.
-     $( A relationship between cardinality, subset, and cardinal less than. $)
-     nclec $p |- ( A C_ B -> Nc A <_c Nc B ) $=
+  ${
+    $d A x y $.  $d B x y $.
+    nclec.1 $e |- A e. _V $.
+    nclec.2 $e |- B e. _V $.
+    $( A relationship between cardinality, subset, and cardinal less than. $)
+    nclec $p |- ( A C_ B -> Nc A <_c Nc B ) $=
        ( vx vy wss cv cnc wrex clec wcel ncid sseq1 sseq2 rcla42ev mp3an12 ncex
        wbr brlec sylibr ) ABGZEHZFHZGZFBIZJEAIZJZUGUFKSAUGLBUFLUBUHACMBDMUEUBAU
        DGEFABUGUFUCAUDNUDBAOPQEFUGUFARBRTUA $.
@@ -55516,10 +55547,14 @@ $)
        $( [13-Mar-2015] $)
   $}
 
-  ${ $d M x $. $d A x $. $d A f $. $d A g $. $d A p $. $d A q $. $d A y $. $d f g $. $d f p $. $d f q $. $d f x $. $d f y $. $d g p $. $d g q $. $d g x $. $d g y $. $d M y $. $d p q $. $d p x $. $d p y $. $d q x $. $d q y $. $d x y $. 
-     lenc.1 $e |- A e. _V $.
-     $( Less than or equal condition for the cardinality of a number. $)
-     lenc $p |- ( M e. NC -> ( M <_c Nc A <-> E. x e. M x C_ A ) ) $=
+  ${
+    $d M x $.  $d A x $.  $d A f $.  $d A g $.  $d A p $.  $d A q $.  $d A y $.
+    $d f g $.  $d f p $.  $d f q $.  $d f x $.  $d f y $.  $d g p $.  $d g q $.
+    $d g x $.  $d g y $.  $d M y $.  $d p q $.  $d p x $.  $d p y $.  $d q x $.
+    $d q y $.  $d x y $.
+    lenc.1 $e |- A e. _V $.
+    $( Less than or equal condition for the cardinality of a number. $)
+    lenc $p |- ( M e. NC -> ( M <_c Nc A <-> E. x e. M x C_ A ) ) $=
        ( vy vp vq vf vg wcel cv wex clec wbr wss wrex wf1o cen elnc vex cncs wb
        cnc wceq elncs ncex brlec wa wi bren bitri anbi12i eeanv bitr4i w3a cima
        cres ccnv ccom f1of1 3ad2ant2 simp3 f1ores syl2anc f1ocnv 3ad2ant1 f1oco
@@ -55769,10 +55804,11 @@ $)
        $( [17-Mar-2015] $)
   $}
 
-  ${ $d M n $. $d M x $. $d n x $. $d n y $. $d x y $. 
-     $( Cardinal exponentiation to zero is a cardinal iff the number
-     	is less than the size of cardinal one. $)
-     ce0lenc1 $p |- ( M e. NC -> ( ( M ^c 0c ) e. NC <-> M <_c Nc 1c ) ) $=
+  ${
+    $d M n $.  $d M x $.  $d n x $.  $d n y $.  $d x y $.
+    $( Cardinal exponentiation to zero is a cardinal iff the number is less
+       than the size of cardinal one. $)
+    ce0lenc1 $p |- ( M e. NC -> ( ( M ^c 0c ) e. NC <-> M <_c Nc 1c ) ) $=
        ( vn vx vy cncs wcel cv ctc wceq wrex c1c cnc clec wbr wex cpw1 tceq vex
        tcnc wss c0c cce co ce0tb elncs syl6eq pw1ss1c pw1ex 1cex nclec syl6eqbr
        ax-mp exlimiv sylbi breq1 syl5ibrcom rexlimiv lenc wa wi ncseqnc biimpar
@@ -55810,18 +55846,21 @@ $)
     ( c1c cplc c2c c0c 1p1e2c 0cnsuc eqnetrri ) AABCDEAFG $.
     $( [4-Mar-2015] $)
 
-  ${ $d A x $.
-     $( A set is finite iff its cardinality is a natural. $)
-     finnc $p |- ( A e. Fin <-> Nc A e. Nn ) $=
+  ${
+    $d A x $.
+    $( A set is finite iff its cardinality is a natural. $)
+    finnc $p |- ( A e. Fin <-> Nc A e. Nn ) $=
        ( vx cv cnc wceq cnnc wrex wcel cfin cncs wb nnnc ncseqnc rexbiia risset
        syl elfin 3bitr4ri ) BCZADZEZBFGASHZBFGTFHAIHUAUBBFSFHSJHUAUBKSLSAMPNBTF
        OBAQR $.
        $( [18-Mar-2015] $)
   $}
 
-  ${ $d p q $. $d p x $. $d p z $. $d q x $. $d q z $. $d x z $. $d y z $. $d p t $. $d p u $. $d q t $. $d q u $. $d t u $. $d t x $. $d x y $. 
-     $( The stratified T raising function is a set. $)
-     tcfnex $p |- TcFn e. _V $=
+  ${
+    $d p q $.  $d p x $.  $d p z $.  $d q x $.  $d q z $.  $d x z $.  $d y z $.
+    $d p t $.  $d p u $.  $d q t $.  $d q u $.  $d t u $.  $d t x $.  $d x y $.
+    $( The stratified T raising function is a set. $)
+    tcfnex $p |- TcFn e. _V $=
        ( vx vz vp vq vu vt c1c cvv csset cid cv cop wcel wex wa wbr bitri exbii
        vex 3bitri vy ctcfn cxp cins3 ccnv cncs cpw1fn ccom ctxp cima cpw1 cins2
        csi cin csymdif crn ccompl cuni ctc cmpt df-tcfn csn wel cnc wceq weq wb
@@ -55861,17 +55900,18 @@ $)
   $}
 
   ${
-     $( Functionhood statement for the stratified T-raising function. $)
-     fntcfn $p |- TcFn Fn 1c $=
+    $( Functionhood statement for the stratified T-raising function. $)
+    fntcfn $p |- TcFn Fn 1c $=
        ( vx cv cuni ctc cvv wcel ctcfn c1c wfn df-tcfn fnmpt tcex a1i mprg ) AB
        ZCZDZEFZGHIAHAHQGEAJKROHFPLMN $.
        $( [18-Mar-2015] $)
   $}
 
-  ${ $d A x $.
-     brtcfn.1 $e |- A e. _V $.
-     $( Binary relationship form of the stratified T-raising function. $)
-     brtcfn $p |- ( { A } TcFn B <-> B = T_c A ) $=
+  ${
+    $d A x $.
+    brtcfn.1 $e |- A e. _V $.
+    $( Binary relationship form of the stratified T-raising function. $)
+    brtcfn $p |- ( { A } TcFn B <-> B = T_c A ) $=
        ( vx csn ctcfn cfv wceq ctc wbr c1c wcel snel1c cv cuni unieq unisn tceq
        syl6eq syl df-tcfn tcex fvmpt ax-mp eqeq1i wb fntcfn fnbrfvb mp2an eqcom
        wfn 3bitr3i ) AEZFGZBHZAIZBHUMBFJZBUPHUNUPBUMKLZUNUPHACMZDUMDNZOZIZUPKFU
@@ -56138,6 +56178,16 @@ $)
   $}
 
   ${
+    $d n x y $.
+    $( The special set generator is a function over the cardinals. $)
+    fnspac $p |- Sp[ac] Fn NC $=
+       ( vn vx vy cv csn cncs wcel c2c cce co wceq w3a copab cclos1 cvv df-spac
+       cspac wfn fnmpt snex spacvallem1 clos1ex a1i mprg ) ADZEZBDZFGCDZFGUHHUG
+       IJKLBCMZNZOGZQFRAFAFUJQOBCAPSUKUEFGUIUFUETBCUAUBUCUD $.
+       $( [18-Mar-2015] $)
+  $}
+
+  ${
     $d x y $.
     $( The special set generator generates a set of cardinals. $)
     spacssnc $p |- ( N e. NC -> ( Sp[ac] ` N ) C_ NC ) $=
@@ -56377,11 +56427,13 @@ $)
 
   ${
     $d M x $.  $d x y $.  $d x z $.  $d y z $.  $d M n $.  $d n x $.  $d p q $.
-    $d p x $.  $d q x $.  $d f g $. $d f p $. $d f q $. $d f x $. $d f y $. $d g p $. $d g q $. $d g x $. $d g y $. $d M y $. $d p y $. $d q y $. $d a x $. $d a y $. 
-    $( Lemma for ~ nchoice .  An anti-closure condition for cardinal 
+    $d p x $.  $d q x $.  $d f g $.  $d f p $.  $d f q $.  $d f x $.  $d f y $.
+    $d g p $.  $d g q $.  $d g x $.  $d g y $.  $d M y $.  $d p y $.  $d q y $.
+    $d a x $.  $d a y $.
+    $( Lemma for ~ nchoice .  An anti-closure condition for cardinal
        exponentiation to zero.  Theorem 4.5 of [Specker]. $)
     nchoicelem8 $p |- ( ( <_c We NC /\ M e. NC ) -> 
-    	   ( -. ( M ^c 0c ) e. NC <-> Nc 1c <c M ) ) $=
+           ( -. ( M ^c 0c ) e. NC <-> Nc 1c <c M ) ) $=
       ( clec cncs cwe wbr wcel wa wn c1c cstrict cfound cin breqi brin cpartial
       bitri simprbi adantr a1i cantisym c0c cce cnc cltc ce0lenc1 notbid adantl
       co wb cconnex wo df-we sopc sylbi simpl simpr 1cex ncelncsi connexd sylan
@@ -56430,25 +56482,95 @@ $)
       $( [18-Mar-2015] $)
   $}
 
-  ${ $d t m $.
-     $( Lemma for ~ nchoice .  Set up stratification for ~ nchoicelem11 . $)
-     nchoicelem10 $p |- { t | A. m e. NC ( t = Nc ( Sp[ac] `
-             T_c m ) -> Nc ( Sp[ac] ` m ) e. Nn ) } e. _V $=
-       ( vx cv ctc cspac cfv cnc wceq cnnc wcel wi cncs wral cab cvv wel wa wex
-       fvex eqnc2 df-clel anbi2i bitri imbi1i ralbii bitr4i abbi2i eqeltrri ) ?
-       ADZBDZEZFGZHIZUKFGHJKZLZBMNZAOPUQA??UJMKZCDUMICAQRCSZRZUOLZBMNUQ?UPVABMU
-       NUTUOUNURUMUJKZRUTUJUMULFTUAVBUSURCUMUJUBUCUDUEUFUGUH?UI $.
+  ${
+    $d c y $.  $d S t $.  $d S y $.  $d S z $.  $d t z $.  $d X y $.  $d X z $.
+    $d y z $.
+    nchoicelem10.1 $e |- S e. _V $.
+    nchoicelem10.2 $e |- X e. _V $.
+    $( Lemma for ~ nchoice .  Stratification helper lemma. $)
+    nchoicelem10 $p |- ( <. c , X >. e. ~ ( ( Ins3 SSet (+) Ins2 ~ ran ( `' ~
+                     SSet (x) ( `' SSet |` Fix ( SSet o. Image S ) ) ) ) " 1c )
+        <-> c = Clos1 ( X , S ) ) $=
+       ( vy vz vt csset cv wcel wn wss wa wbr wex vex 3bitri bitri anbi12i ccnv
+       cclos1 ccompl cimage ccom cfix cres ctxp crn csn cop cima wel elrn trtxp
+       wi wal brcnv df-br snex opex elcompl opelssetsn xchbinx brres elfix wceq
+       brco brimage exbii imaex sseq1 ceqsexv ancom annim exnal 3bitrri con1bii
+       brsset cab cint df-clos1 eleq2i elintab 3bitr4i releqel ) CFBAUBZIUCZUAZ
+       IUAZIAUDZUEZUFZUGZUHZUIZUCZBEFJZUJZBUKZWPKZLBGJZMZAXBULZXBMZNZFGUMZUPZGU
+       QZWTWQKWRWGKZXIXAXAXBWTWOOZGPXHLZGPXILGWTWOUNXKXLGXKXBWSWIOZXBBWNOZNZXFX
+       GLZNZXLXBWSBWIWNUOXOXPXFNXQXMXPXNXFXMWSXBWHOWSXBUKZWHKZXPXBWSWHURWSXBWHU
+       SXSXRIKXGXRIWSXBWRUTZGQZVAVBWRXBFQZYAVCVDRXNXBBWJOZXBWMKZNXFXBBWJWMVEYCX
+       CYDXEYCBXBIOXCXBBIURBXBEYAVSSYDXBXBWLOZXEXBWLVFYEXBHJZWKOZYFXBIOZNZHPYFX
+       DVGZYFXBMZNZHPXEHXBXBIWKVHYIYLHYGYJYHYKXBYFAYAHQZVIYFXBYMYAVSTVJYKXEHXDA
+       XBDYAVKYFXDXBVLVMRSTSTXPXFVNSXFXGVORVJXHGVPVQVRWTWPWSBXTEVAVBXJWRXFGVTWA
+       ZKXIWGYNWRABGWBWCXFGWRYBWDSWEWF $.
        $( [18-Mar-2015] $)
   $}
 
-  ${ $d M m $. $d m t $. $d m x $. $d M x $. $d k m $. $d k n $. $d k t $. $d m n $. $d n t $. $d t x $. 
-     $( Lemma for ~ nchoice .  If the T-raising of a cardinal yields
-     	a finite special set, then so does the initial set.  Theorem
-	7.1 of [Specker]. $)
-     nchoicelem11 $p |- ( ( M e. NC /\ ( Sp[ac] ` T_c M ) e. Fin ) ->
+  ${
+    $d a b $.  $d a m $.  $d a t $.  $d a u $.  $d a x $.  $d a y $.  $d b m $.
+    $d b t $.  $d b u $.  $d b x $.  $d b y $.  $d m t $.  $d m u $.  $d m x $.
+    $d m y $.  $d t u $.  $d t x $.  $d t y $.  $d u x $.  $d u y $.  $d x y $.
+    $( Lemma for ~ nchoice .  Set up stratification for ~ nchoicelem12 . $)
+    nchoicelem11 $p |- { t | A. m e. NC ( t = Nc ( Sp[ac] `
+             T_c m ) -> Nc ( Sp[ac] ` m ) e. Nn ) } e. _V $=
+       ( vu va vb cncs cvv csset cv wcel wceq cfin wn csn wa wex wbr snex bitri
+       exbii vx vy cxp cins3 ccompl ccnv c2c cce co copab cimage ccom cfix cres
+       w3a ctxp crn cins2 csymdif c1c cima csi cin ctcfn cpw1 ctc cspac cfv cnc
+       cdif cnnc wi wral cab vex elcompl wrex cop elimapw13 cclos1 tccl spacval
+       syl nceqd eqeq2d finnc eleq1d syl5bbr imbi12d notbid eldif opelco anbi1i
+       brsnsi1 19.41v bicomi excom anass breq1 anbi2d bitr4i sneq breq1d brtcfn
+       ceqsexv df-br opelcnv elin opelxp mpbiran2 wel ancom brsnsi2 spacvallem1
+       breq2 nchoicelem10 brcnv brssetsn anbi12i df-clel 3bitr4i eqnc2 clos1eq1
+       clos1ex tcex rexbii snelpw1 elima risset notbii vvex xpex ssetex complex
+       ncsex cnvex coex imaex siex pw1ex 3bitri syl6rbbr rexbiia rexnal con1bii
+       annim bitr2i abbi2i ins3ex imageex fixex resex rnex ins2ex symdifex 1cex
+       txpex inex tcfnex finex difex eqeltrri ) FGUCZHUDZHUEZUFZHUFZHUAIZFJUBIZ
+       FJUVIUGUVHUHUIKUOUAUBUJZUKZULZUMZUNZUPZUQZUEZURZUSZUTVAZUEZVBZUVGULZVCZU
+       FZVDVBZVBZULZUWALVAZVEZVEZGUCZVJZFVEZVEZVEZVAZUEZAIZBIZVFZVGVHZVIZKZUWTV
+       GVHZVIVKJZVLZBFVMZAVNGUXHAUWRUWSUWRJUWSUWQJZMUXHUWSUWQAVOZVPUXHUXIUXIUXG
+       MZBFVQZUXHMUXIUWTNZNZNZUWSVRZUWMJZBFVQUXLBUWSUWMFVSUXQUXKBFUWTFJZUXKUWSU
+       XANZUVJVTZVIZKZUXMUVJVTZLJZVLZMZUXQUXRUXGUYEUXRUXDUYBUXFUYDUXRUXCUYAUWSU
+       XRUXBUXTUXRUXAFJUXBUXTKUWTWAUAUBUXAWBWCWDWEUXFUXELJUXRUYDUXEWFUXRUXEUYCL
+       UAUBUWTWBWGWHWIWJUXQUXPUWHJZUXPUWLJZMZOUYBUYDMZOUYFUXPUWHUWLWKUYGUYBUYIU
+       YJUYGCIZUXAKZUWSUYKNZUVJVTZVIZKZOZCPZUYBUYGUXMUYKVDQZUYMNZUWSUWEQZOZCPZU
+       YRUYGUXODIZUWGQZVUDUWSUWEQZOZDPZVUCDUXOUWSUWEUWGWLVUHVUDEIZNZKZUXNVUIUWF
+       QZOZVUFOZEPZDPZVUCVUGVUODVUGVUMEPZVUFOZVUOVUEVUQVUFEUXNVUDUWFUXMRWNWMVUO
+       VURVUMVUFEWOWPSTVUPVUNDPZEPZVUCVUNDEWQVUTVULVUJUWSUWEQZOZEPZVUCVUSVVBEVU
+       SVUKVULVUFOZOZDPVVBVUNVVEDVUKVULVUFWRTVVDVVBDVUJVUIRVUKVUFVVAVULVUDVUJUW
+       SUWEWSWTXESTVVCVUIUYMKZUYSOZVVAOZCPZEPZVUCVVBVVIEVVBVVGCPZVVAOVVIVULVVKV
+       VACUXMVUIVDUWTRZWNWMVVGVVACWOXATVVJVVHEPZCPVUCVVHECWQVVMVUBCVVMVVFUYSVVA
+       OZOZEPVUBVVHVVOEVVFUYSVVAWRTVVNVUBEUYMUYKRZVVFVVAVUAUYSVVFVUJUYTUWSUWEVU
+       IUYMXBXCWTXESTSSSSSSVUBUYQCUYSUYLVUAUYPUWTUYKBVOXDVUAUWSFJZUYNUWSJZOZUYP
+       VUAUYTUWSVRUWEJZVVSUYTUWSUWEXFVVTUWSUYTVRZUWDJZVVSUYTUWSUWDXGVWBVWAUVCJZ
+       VWAUWCJZOVVSVWAUVCUWCXHVWCVVQVWDVVRVWCVVQUYTGJUYMRUWSUYTFGXIXJUWSVUIUVGQ
+       ZVUIUYTUWBQZOZEPZVUDUYNKZDAXKZOZDPZVWDVVRVWHVUIVUDNZKZVUDUYMUWAQZOZVWEOZ
+       EPZDPZVWLVWHVWQDPZEPVWSVWGVWTEVWGVWPDPZVWEOZVWTVWGVWFVWEOVXBVWEVWFXLVWFV
+       XAVWEDUYMVUIUWAVVPXMWMSVWPVWEDWOXATVWQEDWQSVWRVWKDVWRVWOUWSVWMUVGQZOZVWK
+       VWRVWNVWOVWEOZOZEPVXDVWQVXFEVWNVWOVWEWRTVXEVXDEVWMVUDRVWNVWEVXCVWOVUIVWM
+       UWSUVGXOWTXESVWOVWIVXCVWJVWOVUDUYMVRUWAJVWIVUDUYMUWAXFUVJUYMDUAUBXNZVVPX
+       PSVXCVWMUWSHQVWJUWSVWMHXQVUDUWSDVOUXJXRSXSSTSEUWSUYTUWBUVGWLDUYNUWSXTYAX
+       SSSSUWSUYNUVJUYMVVPVXGYDYBXAXSTSUYPUYBCUXAUWTYEUYLUYOUYAUWSUYLUYNUXTUYLU
+       YMUXSKUYNUXTKUYKUXAXBUVJUYMUXSYCWCWDWEXESUYHUYDVUDUXMUWAQZDLVQZVUDUYCKZD
+       LVQUYHUYDVXHVXJDLVXHVUDUXMVRUWAJVXJVUDUXMUWAXFUVJUXMDVXGVVLXPSYFUYHUXOUW
+       KJZVXIUYHVXKUWSGJUXJUXOUWSUWKGXIXJVXKUXNUWJJZVXIUXNUWJYGVXLUXMUWIJVXIUXM
+       UWIYGDUXMUWALYHSSSDUYCLYIYAYJXSUYBUYDUUFUUAUUBUUCSUXGBFUUDUUGUUESUUHUWQU
+       WMUWPUWHUWLUWEUWGUWDUVCUWCFGYOYKYLUWBUVGUWAUVTUVSUTUVDUVRHYMUUIUVQUVPUVO
+       UVFUVNUVEHYMYNYPUVGUVMHYMYPZUVLHUVKYMUVJVXGUUJYQUUKUULUUQUUMYNUUNUUOUUPY
+       RYNZYSVXMYQUURYPUWFVDUUSYSYSYQUWKGUWJUWIUWALVXNUUTYRYTYTYKYLUVAUWOUWNFYO
+       YTYTYTYRYNUVB $.
+       $( [18-Mar-2015] $)
+  $}
+
+  ${
+    $d M m $.  $d m t $.  $d m x $.  $d M x $.  $d k m $.  $d k n $.  $d k t $.
+    $d m n $.  $d n t $.  $d t x $.
+    $( Lemma for ~ nchoice .  If the T-raising of a cardinal yields a finite
+       special set, then so does the initial set.  Theorem 7.1 of [Specker]. $)
+    nchoicelem12 $p |- ( ( M e. NC /\ ( Sp[ac] ` T_c M ) e. Fin ) ->
         ( Sp[ac] ` M ) e. Fin ) $=
        ( vx vm vt vk cspac cfv wcel cncs cv cnc wceq cnnc wi wral c0c nceqd cce
-       co wa vn ctc cfin wrex finnc risset bitri cplc nchoicelem10 eqeq1 imbi1d
+       co wa vn ctc cfin wrex finnc risset bitri cplc nchoicelem11 eqeq1 imbi1d
        c1c ralbidv weq fveq2d eqeq2d fveq2 eleq1d imbi12d cbvralv syl6bb wne wn
        tceq c2c tccl te0c nchoicelem7 syl2anc 0cnsuc eqnetrd necomd df-ne sylib
        a1i pm2.21d rgen 2nnc ceclnn1 mp3an1 rcla4v syl ancoms adantrl adantl wb
