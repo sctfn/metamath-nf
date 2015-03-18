@@ -31150,6 +31150,18 @@ $)
       $( [3-Feb-2015] $)
   $}
 
+
+  ${ $d A x $.
+     sspw12.1 $e |- A e. _V $.
+     $( A set is a subset of cardinal one iff it is the unit power class
+     	of some other set. $)
+     sspw12 $p |- ( A C_ 1c <-> E. x A = ~P1 x ) $=
+       ( c1c wss cv cpw1 wceq wex cuni eqpw1uni uniex eqeq2d cla4ev syl pw1ss1c
+       pw1eq sseq1 mpbiri exlimiv impbii ) BDEZBAFZGZHZAIZUBBBJZGZHZUFBKUEUIAUG
+       BCLUCUGHUDUHBUCUGQMNOUEUBAUEUBUDDEUCPBUDDRSTUA $.
+       $( [17-Mar-2015] $)
+  $}
+
 $(
 =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
         Definite description binder (inverted iota)
@@ -55044,6 +55056,17 @@ $)
     $( [4-Mar-2015] $)
 
 
+  ${ $d A x y $. $d B x y $.
+     nclec.1 $e |- A e. _V $.
+     nclec.2 $e |- B e. _V $.
+     $( A relationship between cardinality, subset, and cardinal less than. $)
+     nclec $p |- ( A C_ B -> Nc A <_c Nc B ) $=
+       ( vx vy wss cv cnc wrex clec wcel ncid sseq1 sseq2 rcla42ev mp3an12 ncex
+       wbr brlec sylibr ) ABGZEHZFHZGZFBIZJEAIZJZUGUFKSAUGLBUFLUBUHACMBDMUEUBAU
+       DGEFABUGUFUCAUDNUDBAOPQEFUGUFARBRTUA $.
+       $( [17-Mar-2015] $)
+  $}
+
   ${
     $d A x y $.
     $( A non-empty set is less than or equal to itself.  Theorem XI.2.14 of
@@ -55672,21 +55695,41 @@ $)
 
   ${
     $d M x $.  $d x y $.  $d x z $.  $d y z $.  $d M n $.  $d n x $.  $d p q $.
-    $d p x $.  $d q x $.
+    $d p x $.  $d q x $.  $d f g $. $d f p $. $d f q $. $d f x $. $d f y $. $d g p $. $d g q $. $d g x $. $d g y $. $d M y $. $d p y $. $d q y $. $d a x $. $d a y $. 
     $( An anti-closure condition for cardinal exponentiation to zero.  Theorem
        4.6 of [Specker]. $)
     ce0ncl $p |- ( M e. NC -> ( -. ( M ^c 0c ) e. NC <-> Nc 1c <c M ) ) $=
-        ( vn vx vp vq cncs wcel wn c1c cnc clec wbr ctc wceq wrex wss ncid 1cex
-        cv wi c0c cce co cltc ce0tb wex elncs cpw1 tceq vex tcnc syl6eq pw1ss1c
-        wa pw1ex sseq1 sseq2 rcla42ev mp3an ncex brlec syl6eqbr exlimiv biimprd
-        mpbir sylbi breq1 com12 syl rexlimiv impbid bitrd notbid ex pm4.71rd wb
-        a1i ncelncsi ltlenlec mpan bitr4d ) AFGZAUAUBUCFGZHZIJZAKLZAWEKLZHZUNZW
-        EAUDLZWBWDWHWIWBWCWGWBWCABSZMZNZBFOZWGBAUEWBWNWGWNWGTWBWMWGBFWKFGZWLWEK
-        LZWMWGTWOWKCSZJZNZCUFWPCWKUGWSWPCWSWLWQUHZJZWEKWSWLWRMXAWKWRUIWQCUJZUKU
-        LXAWEKLDSZESZPZEWEODXAOZWTXAGIWEGWTIPZXFWTWQXBUOQIRQWQUMXEXGWTXDPDEWTIX
-        AWEXCWTXDUPXDIWTUQURUSDEXAWEWTUTIUTVAVEVBVCVFWMWPWGWMWGWPAWLWEKVGVDVHVI
-        VJVQ?VKVLVMWBWHWFWBWHWF?VNVOVLWEFGWBWJWIVPIRVRWEAVSVTWA $.
-        $( [16-Mar-2015] $)
+      ( vx va vy vp vf vg cncs wcel cv wceq wex c1c wbr wb wa vex wss wf1o cen
+      vq cnc c0c cce co wn cltc elncs clec ctc wrex df-rex anbi1i 19.41v bitr4i
+      cpw1 exbii excom ncex tceq tcnc syl6eq ceqsexv bitri ncelncsi ce0tb ax-mp
+      eqeq2d brlec bren anbi12i elnc eeanv 3bitr4i w3a ccnv ccom cima imaco wfo
+      wi f1ocnv f1ofo foima 3ad2ant1 simp3 eqsstrd imass2 syl syl5eqss 3ad2ant2
+      3syl sseqtrd cnvex coex imaex sspw12 cres wf1 f1of1 syl2anc f1oco imaeq2d
+      f1ores syl5eq f1oeq3 mpbird resex f1oen breq2 syl5ibcom eximdv syl5bi mpd
+      eqnc sylibr exlimivv sylbi rexlimivv id pw1ss1c pw1ex 1cex nclec syl6eqbr
+      3expia exlimiv impbii notbii pm4.71ri ltlenlec mp2an oveq1 eleq1d bibi12d
+      notbid mpbiri ) AHIABJZUBZKZBLAUCUDUEZHIZUFZMUBZAUGNZOZBAUHYTUUFBYTUUFYSU
+      CUDUEZHIZUFZUUDYSUGNZOUUIUUDYSUINZYSUUDUINZUFZPZUUJUUIUUMUUNUUHUULYSCJZUJ
+      ZKZCHUKZYSDJZUPZUBZKZDLZUUHUULUURUUOHIZUUQPZCLZUVCUUQCHULUVFUUOUUSUBZKZUU
+      QPZDLZCLZUVCUVEUVJCUVEUVHDLZUUQPUVJUVDUVLUUQDUUOUHUMUVHUUQDUNUOUQUVKUVICL
+      ZDLUVCUVICDURUVMUVBDUUQUVBCUVGUUSUSUVHUUPUVAYSUVHUUPUVGUJUVAUUOUVGUTUUSDQ
+      ZVAVBVHVCUQVDVDVDYSHIZUUHUUROYRBQZVEZCYSVFVGUULUVCUULEJZUAJZRZUAUUDUKEYSU
+      KUVCEUAYSUUDYRUSMUSVIUVTUVCEUAYSUUDUVRYSIZUVSUUDIZPZUVRYRFJZSZUVSMGJZSZPZ
+      GLFLZUVTUVCWAZUVRYRTNZUVSMTNZPUWEFLZUWGGLZPUWCUWIUWKUWMUWLUWNUVRYRFVJUVSM
+      GVJVKUWAUWKUWBUWLUVRYRVLUVSMVLVKUWEUWGFGVMVNUWHUWJFGUWEUWGUVTUVCUWEUWGUVT
+      VOZYRUUTTNZDLZUVCUWOUWFUWDVPZVQZYRVRZMRZUWQUWOUWTUWFUVSVRZMUWOUWTUWFUWRYR
+      VRZVRZUXBUWFUWRYRVSZUWOUXCUVSRUXDUXBRUWOUXCUVRUVSUWEUWGUXCUVRKZUVTUWEYRUV
+      RUWRSZYRUVRUWRVTUXFUVRYRUWDWBZYRUVRUWRWCYRUVRUWRWDWLWEZUWEUWGUVTWFZWGUXCU
+      VSUWFWHWIWJUWGUWEUXBMKZUVTUWGUVSMUWFVTUXKUVSMUWFWCUVSMUWFWDWIWKWMUXAUWTUU
+      TKZDLUWOUWQDUWTUWSYRUWFUWRGQZUWDFQWNZWOUVPWPWQUWOUXLUWPDUWOYRUWTTNZUXLUWP
+      UWOYRUWTUWFUVRWRZUWRVQZSZUXOUWOUXRYRUWFUVRVRZUXQSZUWOUVRUXSUXPSZUXGUXTUWO
+      UVSMUWFWSZUVTUYAUWGUWEUYBUVTUVSMUWFWTWKUXJUVSMUVRUWFXDXAUWEUWGUXGUVTUXHWE
+      YRUVRUXSUXPUWRXBXAUWOUWTUXSKUXRUXTOUWOUWTUXDUXSUXEUWOUXCUVRUWFUXIXCXEUWTU
+      XSYRUXQXFWIXGYRUWTUXQUXPUWRUWFUVRUXMEQXHUXNWOXIWIUWTUUTYRTXJXKXLXMXNUVBUW
+      PDYRUUTUVPXOUQXPYFXQXRXSXRUVBUULDUVBYSUVAUUDUIUVBXTUUTMRUVAUUDUINUUSYAUUT
+      MUUSUVNYBYCYDVGYEYGYHVNYIUUMUUK?YJVDUUDHIUVOUUJUUNOMYCVEUVQUUDYSYKYLUOYTU
+      UCUUIUUEUUJYTUUBUUHYTUUAUUGHAYSUCUDYMYNYPAYSUUDUGXJYOYQYGXR $.
+      $( [16-Mar-2015] $)
   $}
 
   ${
