@@ -53830,6 +53830,7 @@ $)
   $c 2c $. $( Cardinal two. $)
   $c 3c $. $( Cardinal three. $)
   $c ^c $. $( Cardinal exponentiation. $)
+  $c TcFn $. $( Stratified T-raising. $)
 
   $( Extend the definition of a class to include the set of cardinal
      numbers. $)
@@ -53859,6 +53860,10 @@ $)
 
   $( Extend the definition of a class to include cardinal exponentiation. $)
   cce $a class ^c $.
+
+  $( Extend the definition of a class to include the stratified T-raising
+     function. $)
+  ctcfn $a class TcFn $.
 
   $( Define the set of all cardinal numbers.  We define them as equivelance
      classes of sets of the same size.  Definition from [Rosser], p. 372. $)
@@ -53908,6 +53913,9 @@ $)
        { g | E. a E. b ( ~P1 a e. n /\ ~P1 b e. m /\
           g ~~ ( a ^m b ) ) } ) $.
   $}
+
+  $( Define the stratified T-raising function. $)
+  df-tcfn $a |- TcFn = ( x e. 1c |-> T_c U. x ) $.
 
   $( Cardinality equality law. $)
   nceq $p |- ( A = B -> Nc A = Nc B ) $=
@@ -54103,6 +54111,15 @@ $)
         UCUDVMVNVCNEZBVCLUEUFVNVMVOVCLOZHVLVNBVCLNNLNUGMVNUHTLVBNHVNUITVNUJVRVN
         VPTULVFVOVDVSVQVCRUKUMUNVDVFUOBVCUPUQTAVDVFURAVDBQUSUTVA $.
         $( [24-Feb-2015] $)
+  $}
+
+  ${
+     eqnc2.1 $e |- X e. _V $.
+     $( Alternate condition for equality to a cardinality. $)
+     eqnc2 $p |- ( A = Nc X <-> ( A e. NC /\ X e. A ) ) $=
+       ( cnc wceq cncs wcel ncelncsi eleq1 mpbiri ncseqnc biadan2 ) ABDZEZAFGZB
+       AGNOMFGBCHAMFIJABKL $.
+       $( [18-Mar-2015] $)
   $}
 
   ${
@@ -55793,6 +55810,76 @@ $)
     ( c1c cplc c2c c0c 1p1e2c 0cnsuc eqnetrri ) AABCDEAFG $.
     $( [4-Mar-2015] $)
 
+  ${ $d A x $.
+     $( A set is finite iff its cardinality is a natural. $)
+     finnc $p |- ( A e. Fin <-> Nc A e. Nn ) $=
+       ( vx cv cnc wceq cnnc wrex wcel cfin cncs wb nnnc ncseqnc rexbiia risset
+       syl elfin 3bitr4ri ) BCZADZEZBFGASHZBFGTFHAIHUAUBBFSFHSJHUAUBKSLSAMPNBTF
+       OBAQR $.
+       $( [18-Mar-2015] $)
+  $}
+
+  ${ $d p q $. $d p x $. $d p z $. $d q x $. $d q z $. $d x z $. $d y z $. $d p t $. $d p u $. $d q t $. $d q u $. $d t u $. $d t x $. $d x y $. 
+     $( The stratified T raising function is a set. $)
+     tcfnex $p |- TcFn e. _V $=
+       ( vx vz vp vq vu vt c1c cvv csset cid cv cop wcel wex wa wbr bitri exbii
+       vex 3bitri vy ctcfn cxp cins3 ccnv cncs cpw1fn ccom ctxp cima cpw1 cins2
+       csi cin csymdif crn ccompl cuni ctc cmpt df-tcfn csn wel cnc wceq weq wb
+       wrex wal oteltxp df-br brcnv brssetsn bitr3i opex elcompl elrn2 elsymdif
+       otelins2 elin opelxp mpbiran2 anbi1i ncseqnc rexbidv snex brsnsi1 19.41v
+       bitr4i excom anass anbi2d ceqsexv brpw1fn anbi12i opelco df-clel 3bitr4i
+       wn breq1 brsnsi opelssetsn elima1c eluni ancom elimapw11c df-rex pm5.32i
+       syl6rbbr otelins3 ideq bibi12i xchbinx exnal 3bitrri con1bii cab dfiota2
+       cio df-tc eqtri eleq2i releqmpt eqtr4i 1cex ssetex cnvex ncsex vvex xpex
+       eluniab pw1fnex siex coex txpex imaex pw1ex inex ins2ex rnex idex ins3ex
+       symdifex complex mptexlem eqeltri ) UBGHUCIUDIUEZUFHUCZIUGUMZUHZUUGUMZIU
+       IZGUJZUIZGUKZUJZUNZULZJUDZUOZUPZUQZUIZUPZULUOGUJUQUEUNZHUBAGAKZURZUSZUTU
+       VEAVAAUAGUVDUVHBKZUAKZVBZUVFLZLUVCMZBNUABVCZCKZUFMZUVODKZUKZVDVEZDUVGVHZ
+       OZCBVFZVGZCVIZOZBNZUVLUVDMUVJUVHMZUVMUWEBUVMUVIUVKLUUGMZUVIUVFLZUVBMZOUW
+       EUVIUVKUVFUUGUVBVJUWHUVNUWJUWDUWHUVIUVKUUGPZUVNUVIUVKUUGVKUWKUVKUVIIPUVN
+       UVIUVKIVLUVJUVIUASBSZVMQVNUWJUWIUVAMZWSUWDUWIUVAUVIUVFUWLASZVOVPUWDUWMUW
+       MUVOUWILZUUTMZCNUWCWSZCNUWDWSCUWIUUTVQUWPUWQCUWPUWOUURMZUWOUUSMZVGUWCUWO
+       UURUUSVRUWRUWAUWSUWBUWRUVOUVFLZUUQMUWTUUHMZUWTUUPMZOZUWAUVOUVIUVFUUQUWLV
+       SUWTUUHUUPVTUXCUVPUXBOUWAUXAUVPUXBUXAUVPUVFHMUWNUVOUVFUFHWAWBWCUVPUXBUVT
+       UVPUVTUVRUVOMZDUVGVHZUXBUVPUVSUXDDUVGUVOUVRWDWEUVQVBZVBZUWTLUUNMZDNUVQUV
+       GMZUXDOZDNUXBUXEUXHUXJDUXHUXGUVOLUUJMZUXGUVFLZUUMMZOUXDUXIOUXJUXGUVOUVFU
+       UJUUMVJUXKUXDUXMUXIUXGEKZUUIPZUXNUVOIPZOZENZFKZUVRVEZFCVCZOZFNZUXKUXDUXR
+       UXNUXSVBZVEZUXFUXSUGPZOZUXPOZFNZENUYHENZFNUYCUXQUYIEUXQUYGFNZUXPOUYIUXOU
+       YKUXPFUXFUXNUGUVQWFZWGWCUYGUXPFWHWIRUYHEFWJUYJUYBFUYJUYEUYFUXPOZOZENUYFU
+       YDUVOIPZOZUYBUYHUYNEUYEUYFUXPWKRUYMUYPEUYDUXSWFUYEUXPUYOUYFUXNUYDUVOIWTW
+       LWMUYFUXTUYOUYAUVQUXSDSZWNUXSUVOFSZCSVMWOTRTEUXGUVOIUUIWPFUVRUVOWQWRUYDU
+       XLLUULMZFNDFVCZFAVCZOZFNUXMUXIUYSVUBFUYSUYDUXGLUUKMZUYDUVFLIMZOVUBUYDUXG
+       UVFUUKIVJVUCUYTVUDVUAVUCUYDUXGUUKPZUYTUYDUXGUUKVKVUEUXSUXFUUGPUXFUXSIPUY
+       TUXSUXFUUGUYRUYLXAUXSUXFIVLUVQUXSUYQUYRVMTVNUXSUVFUYRUWNXBWOQRFUXLUULXCF
+       UVQUVFXDWRWOUXDUXIXETRDUWTUUNXFUXDDUVGXGWRXIXHQTUWSUVOUVILJMZUWBUVOUVIUV
+       FJUWNXJVUFUVOUVIJPUWBUVOUVIJVKUVOUVIUWLXKVNQXLXMRUWCCXNXOXPQWOQRBUVLUVCV
+       QUWGUVJUWDBXQURZMUWFUVHVUGUVJUVHUWACXSVUGDUVGCXTUWACBXRYAYBUWDBUVJYKQWRY
+       CYDGUVDYEUVCUUGUVBIYFYGZUVAUUTUURUUSUUQUUHUUPUFHYHYIYJUUNUUOUUJUUMIUUIYF
+       UGYLYMYNUULGUUKIUUGVUHYMYFYOYEYPYOGYEYQYPYRYSJUUAUUBUUCYTUUDYOYTUUEUUF
+       $.
+       $( [18-Mar-2015] $)
+  $}
+
+  ${
+     $( Functionhood statement for the stratified T-raising function. $)
+     fntcfn $p |- TcFn Fn 1c $=
+       ( vx cv cuni ctc cvv wcel ctcfn c1c wfn df-tcfn fnmpt tcex a1i mprg ) AB
+       ZCZDZEFZGHIAHAHQGEAJKROHFPLMN $.
+       $( [18-Mar-2015] $)
+  $}
+
+  ${ $d A x $.
+     brtcfn.1 $e |- A e. _V $.
+     $( Binary relationship form of the stratified T-raising function. $)
+     brtcfn $p |- ( { A } TcFn B <-> B = T_c A ) $=
+       ( vx csn ctcfn cfv wceq ctc wbr c1c wcel snel1c cv cuni unieq unisn tceq
+       syl6eq syl df-tcfn tcex fvmpt ax-mp eqeq1i wb fntcfn fnbrfvb mp2an eqcom
+       wfn 3bitr3i ) AEZFGZBHZAIZBHUMBFJZBUPHUNUPBUMKLZUNUPHACMZDUMDNZOZIZUPKFU
+       TUMHZVAAHVBUPHVCVAUMOAUTUMPACQSVAARTDUAAUBUCUDUEFKUKURUOUQUFUGUSKUMBFUHU
+       IUPBUJUL $.
+       $( [18-Mar-2015] $)
+  $}
+
 $(
 =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
         Specker's disproof of the axiom of choice
@@ -56341,6 +56428,57 @@ $)
       LMQXJXKXLAVNXTYFYRTXSXTYDYOYEYQXTYCYMMYNXTUUNUUOYCYMNUUPUUQYBWOVBZMYNNXTU
       WKXRXMXTYCYMOYPUWLOYPNXTYPOXNWSXRXMXOUKXPXQ $.
       $( [18-Mar-2015] $)
+  $}
+
+  ${ $d t m $.
+     $( Lemma for ~ nchoice .  Set up stratification for ~ nchoicelem11 . $)
+     nchoicelem10 $p |- { t | A. m e. NC ( t = Nc ( Sp[ac] `
+             T_c m ) -> Nc ( Sp[ac] ` m ) e. Nn ) } e. _V $=
+       ( vx cv ctc cspac cfv cnc wceq cnnc wcel wi cncs wral cab cvv wel wa wex
+       fvex eqnc2 df-clel anbi2i bitri imbi1i ralbii bitr4i abbi2i eqeltrri ) ?
+       ADZBDZEZFGZHIZUKFGHJKZLZBMNZAOPUQA??UJMKZCDUMICAQRCSZRZUOLZBMNUQ?UPVABMU
+       NUTUOUNURUMUJKZRUTUJUMULFTUAVBUSURCUMUJUBUCUDUEUFUGUH?UI $.
+       $( [18-Mar-2015] $)
+  $}
+
+  ${ $d M m $. $d m t $. $d m x $. $d M x $. $d k m $. $d k n $. $d k t $. $d m n $. $d n t $. $d t x $. 
+     $( Lemma for ~ nchoice .  If the T-raising of a cardinal yields
+     	a finite special set, then so does the initial set.  Theorem
+	7.1 of [Specker]. $)
+     nchoicelem11 $p |- ( ( M e. NC /\ ( Sp[ac] ` T_c M ) e. Fin ) ->
+        ( Sp[ac] ` M ) e. Fin ) $=
+       ( vx vm vt vk cspac cfv wcel cncs cv cnc wceq cnnc wi wral c0c nceqd cce
+       co wa vn ctc cfin wrex finnc risset bitri cplc nchoicelem10 eqeq1 imbi1d
+       c1c ralbidv weq fveq2d eqeq2d fveq2 eleq1d imbi12d cbvralv syl6bb wne wn
+       tceq c2c tccl te0c nchoicelem7 syl2anc 0cnsuc eqnetrd necomd df-ne sylib
+       a1i pm2.21d rgen 2nnc ceclnn1 mp3an1 rcla4v syl ancoms adantrl adantl wb
+       nnnc adantr fvex ncelncsi peano4nc sylancl tce2 sylbid imim1d imp peano2
+       biimprd syl6 sylibrd ex expimpd csn nchoicelem3 vex df1c3 1cnnc eqeltrri
+       syld syl6eqel a1d expcom adantld adantrd pm2.61i an32s ralrimiva syl6bbr
+       finds rcla4cv com23 rexlimiv sylbi impcom ) AUBZFGZUCHZAIHZAFGZUCHZYGBJZ
+       YFKZLZBMUDZYHYJNZYGYLMHYNYFUEBYLMUFUGYMYOBMYKMHZYHYMYJYPYKCJZUBZFGZKZLZY
+       QFGZKZMHZNZCIOZYHYMYJNZNDJZYTLZUUDNZCIOZPYTLZUUDNZCIOUAJZYTLZUUDNZCIOZUU
+       NULUHZEJZUBZFGZKZLZUUSFGZKZMHZNZEIOZUUFDUAYKDCUIUUHPLZUUJUUMCIUVIUUIUULU
+       UDUUHPYTUJUKUMDUAUNZUUJUUPCIUVJUUIUUOUUDUUHUUNYTUJUKUMUUHUURLZUUKUURYTLZ
+       UUDNZCIOUVHUVKUUJUVMCIUVKUUIUVLUUDUUHUURYTUJUKUMUVMUVGCEICEUNZUVLUVCUUDU
+       VFUVNYTUVBUURUVNYSUVAUVNYRUUTFYQUUSVDUOQUPUVNUUCUVEMUVNUUBUVDYQUUSFUQQUR
+       USUTVADBUNZUUJUUECIUVOUUIUUAUUDUUHYKYTUJUKUMUUMCIYQIHZUULUUDUVPPYTVBUULV
+       CUVPYTPUVPYTVEYRRSFGKZULUHZPUVPYRIHYRPRSIHYTUVRLYQVFYQVGYRVHVIUVRPVBUVPU
+       VQVJVOVKVLPYTVMVNVPVQUUNMHZUUQUVHUVSUUQTUVGEIUVSUUSIHZUUQUVGUUSPRSIHZUVS
+       UVTTZUUQTUVGNUWAUWBUUQUVGUWAUWBTZUUQUUNVEUUSRSZUBZFGZKZLZUWDFGZKZMHZNZUV
+       GUWAUVTUUQUWLNZUVSUVTUWAUWMUVTUWATUWDIHZUWMVEMHUVTUWAUWNVRVEUUSVSVTUUPUW
+       LCUWDIYQUWDLZUUOUWHUUDUWKUWOYTUWGUUNUWOYSUWFUWOYRUWEFYQUWDVDUOQUPUWOUUCU
+       WJMUWOUUBUWIYQUWDFUQQURUSWAWBWCWDUWCUWLUVGUWCUWLTZUVCUWJULUHZMHZUVFUWPUV
+       CUWKUWRUWCUWLUVCUWKNUWCUVCUWHUWKUWCUVCUURVEUUTRSZFGZKZULUHZLZUWHUWCUVBUX
+       BUURUWBUVBUXBLZUWAUVTUXDUVSUVTUUTIHUUTPRSIHUXDUUSVFUUSVGUUTVHVIWEWEUPUWC
+       UXCUUNUXALZUWHUWCUUNIHZUXAIHUXCUXEWFUWBUXFUWAUVSUXFUVTUUNWGWHWEUWTUWSFWI
+       WJUUNUXAWKWLUWCUWHUXEUWCUWGUXAUUNUWCUWFUWTUWCUWEUWSFUWAUVTUWEUWSLZUVSUVT
+       UWAUXGUUSWMWCWDUOQUPWRWNWNWOWPUWJWQWSUWPUVEUWQMUWCUVEUWQLZUWLUWAUVTUXHUV
+       SUVTUWAUXHUUSVHWCWDWHURWTXAXIXBUWAVCZUWBUVGUUQUXIUVTUVGUVSUVTUXIUVGUVTUX
+       ITZUVFUVCUXJUVEUUSXCZKZMUXJUVDUXKUUSXDQULUXLMUUSEXEXFXGXHXJXKXLXMXNXOXPX
+       QXAXSUUEUUGCAIYQALZUUAYMUUDYJUXMYTYLYKUXMYSYFUXMYRYEFYQAVDUOQUPUXMUUDYIK
+       ZMHYJUXMUUCUXNMUXMUUBYIYQAFUQQURYIUEXRUSXTWBYAYBYCYD $.
+       $( [18-Mar-2015] $)
   $}
 
 $(
