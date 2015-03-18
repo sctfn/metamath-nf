@@ -51605,14 +51605,24 @@ $)
       $( [12-Mar-2015] $)
   $}
 
-  ${
+  ${ $d A a $. $d a r $. $d A r $. $d a x $. $d A x $. $d a y $. $d A y $. $d R a $. $d R r $. $d r x $. $d R x $. $d r y $. $d R y $. $d X x $. $d x y $. $d X y $. $d Y y $. 
      antid.1 $e |- ( ph -> R Antisym A ) $.
      antid.2 $e |- ( ph -> X e. A ) $.
      antid.3 $e |- ( ph -> Y e. A ) $.
      antid.4 $e |- ( ph -> X R Y ) $.
      antid.5 $e |- ( ph -> Y R X ) $.
      $( The antisymmetry property. $)
-     antid $p |- ( ph -> X = Y ) $= ? $.
+     antid $p |- ( ph -> X = Y ) $=
+       ( vx vy wbr wceq cv wa wi wral cvv wcel vr va cantisym brex breq anbi12d
+       weq wb imbi1d 2ralbidv raleq raleqbi1dv df-antisym brabg syl breq1 breq2
+       ibi eqeq1 imbi12d eqeq2 rcla42v syl2anc mpd mp2and ) ADECMZEDCMZDENZIJAK
+       OZLOZCMZVJVICMZPZKLUGZQZLBRZKBRZVFVGPZVHQZACBUCMZVQFVTVQVTCSTBSTPVTVQUHC
+       BUCUDVIVJUAOZMZVJVIWAMZPZVNQZLUBOZRKWFRVOLWFRZKWFRVQUAUBCBSSUCWACNZWEVOK
+       LWFWFWHWDVMVNWHWBVKWCVLVIVJWACUEVJVIWACUEUFUIUJWGVPKWFBVOLWFBUKULKLUAUBU
+       MUNUOURUOADBTEBTVQVSQGHVOVSDVJCMZVJDCMZPZDVJNZQKLDEBBVIDNZVMWKVNWLWMVKWI
+       VLWJVIDVJCUPVIDVJCUQUFVIDVJUSUTVJENZWKVRWLVHWNWIVFWJVGVJEDCUQVJEDCUPUFVJ
+       EDVAUTVBVCVDVE $.
+       $( [18-Mar-2015] $)
   $}
 
   ${
@@ -56305,7 +56315,32 @@ $)
        generator when near the end of raisability.  Theorem 6.8 of
        [Specker]. $)
     nchoicelem9 $p |- ( ( <_c We NC /\ M e. NC /\ -. ( M ^c 0c ) e. NC ) ->
-       ( Nc ( Sp[ac] ` T_c M ) = 2c \/ Nc ( Sp[ac] ` T_c M ) = 3c ) ) $= ? $.
+       ( Nc ( Sp[ac] ` T_c M ) = 2c \/ Nc ( Sp[ac] ` T_c M ) = 3c ) ) $=
+      ( clec cncs wbr wcel c0c cce co wn cspac cfv cnc c2c wceq c3c wo c1c cplc
+      wa wb cwe ctc cltc wne brltc simplbi 1cex ncelncsi tlecg mpan adantl cpw1
+      tcnc1c breq1i wi tccl pw1ex w3a ce2le ex mp3an1 syl2anc ce2ncpw11c orbi1i
+      te0c orc pm2.1 df-ne mpbir ordir mpbiran2 bitri sylibr nchoicelem8 sylan2
+      ce2t csn nchoicelem3 nceqd ovex df1c3 syl6eqr sylbird nclecid ax-mp ce2lt
+      ce0lenc1 mp2an cnnc 2nnc ceclnn1 mp3an mpbiri addceq1d nchoicelem7 1p1e2c
+      syl mpan2 eqcomi 3eqtr4g eqeq1d syl5ibcom adantr orim12d syl5 syl5bi syld
+      fveq2 sylbid addceq1 orim12i syl56 eqeq12d 2p1e3c orbi12d 3imtr4d 3impia
+      a1i ) BCUADZACEZAFGHCEIZAUBZJKLZMNZYCONZPZXSXTSZQLZAUCDZMYBGHZJKZLZQRZQQR
+      ZNZYMMQRZNZPZYAYFYIYHABDZYGYLQNZYLMNZPZYRYIYSYHAUDYHAUEUFYGYSYHUBZYBBDZUU
+      BXTYSUUDTZXSYHCEZXTUUEQUGUHZYHAUIUJUKUUDQULZLZYBBDZYGUUBUUCUUIYBBUMUNYGUU
+      JMUUIGHZYJBDZUUBXTUUJUULUOZXSXTYBCEZYBFGHCEZUUMAUPZAVEZUUICEZUUNUUOUUMUUH
+      QUGUQUHUURUUNUUOURUUJUULUUIYBUSUTVAVBUKUULYHYJBDZYGUUBUUKYHYJBVCUNUUSYHYJ
+      UCDZYHYJNZPZYGUUBUUSUUSUVAPZUVBUUSUVAVFUVBUUSYHYJUDZSZUVAPZUVCUUTUVEUVAYH
+      YJUEVDUVFUVCUVDUVAPZUVGUVAIZUVAPUVAVGUVDUVHUVAYHYJVHVDVIUUSUVDUVAVJVKVLVM
+      YGUUTYTUVAUUAYGUUTYJFGHCEIZYTXTXSYJCEZUVIUUTTAVPZYJVNVOXTUVIYTUOZXSXTUVJU
+      VLUVKUVJUVIYTUVJUVISZYLYJVQZLQUVMYKUVNYJVRVSYJMYBGVTWAWBUTWQUKWCXSUVAUUAU
+      OXTXSYHJKZLZMNUVAUUAXSMYHGHZJKZLZQRZYNUVPMXSUVSQQXSUVQFGHCEIZUVSQNZXSUWAY
+      HUVQUCDZUUFYHFGHCEZUWCUUGUWDYHYHBDZUUFUWEUUGYHWDWEUUFUWDUWETUUGYHWGWEVIZY
+      HWFWHXSUVQCEZUWAUWCTMWIEUUFUWDUWGWJUUGUWFMYHWKWLZUVQVNWRWMUWGUWAUWBUWHUWG
+      UWASZUVSUVQVQZLQUWIUVRUWJUVQVRVSUVQMYHGVTWAWBUJWQWNUUFUWDUVPUVTNUUGUWFYHW
+      OWHYNMWPWSZWTUVAUVPYLMUVAUVOYKYHYJJXHVSXAXBXCXDXEXFXGXFXIYTYOUUAYQYLQQXJY
+      LMQXJXKXLAVNXTYFYRTXSXTYDYOYEYQXTYCYMMYNXTUUNUUOYCYMNUUPUUQYBWOVBZMYNNXTU
+      WKXRXMXTYCYMOYPUWLOYPNXTYPOXNWSXRXMXOUKXPXQ $.
+      $( [18-Mar-2015] $)
   $}
 
 $(
