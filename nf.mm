@@ -51708,6 +51708,30 @@ $)
     $( [12-Mar-2015] $)
 
   ${
+    $d A x $.  $d A y $.  $d A z $.  $d ch x $.  $d ps y $.  $d ps z $.
+    $d R y $.  $d R z $.  $d th x $.  $d x y $.  $d x z $.  $d y z $.
+    frds.1 $e |- { x | ps } e. _V $.
+    frds.2 $e |- ( x = y -> ( ps <-> ch ) ) $.
+    frds.3 $e |- ( x = z -> ( ps <-> th ) ) $.
+    frds.4 $e |- ( ph -> R Fr A ) $.
+    frds.5 $e |- ( ph -> E. x e. A ps ) $.
+    $( Substitution schema verson of ~ frd . $)
+    frds $p |- ( ph -> E. y e. A ( ch /\ A. z e. A ( ( th /\ z R y ) -> z = y )
+        ) ) $=
+      ( cv wi wcel wa wrex cvv wbr weq cab wral cin dfrab2 df-rab eqtr3i cfound
+      crab brex syl simprd inexg sylancr syl5eqelr wss ssab2 a1i wex wne df-rex
+      c0 sylib abn0 sylibr frd eleq1 anbi12d rexab anass exbii bitri wal impexp
+      imbi2i bitr4i albii ralab df-ral 3bitr4i rexbii ) AGOZFOZIUAZGFUBZPZGEOZH
+      QZBRZEUCZUDZFWKSZCDWERWFPZGHUDZRZFHSZAFGHITWKMAWKBEUCZHUEZTBEHUJWSWKBEHUF
+      BEHUGUHAWRTQHTQZWSTQJAITQZWTAIHUIUAXAWTRMIHUIUKULUMWRHTTUNUOUPWKHUQABEHUR
+      USAWJEUTZWKVCVAABEHSXBNBEHVBVDWJEVEVFVGWOFWKSZWDHQZWPRZFUTZWMWQXCXDCRZWOR
+      ZFUTXFWJXGWOEFEFUBWIXDBCWHWDHVHKVIVJXHXEFXDCWOVKVLVMWLWOFWKWCHQZDRZWGPZGV
+      NXIWNPZGVNWLWOXKXLGXKXIDWGPZPXLXIDWGVOWNXMXIDWEWFVOVPVQVRWJXJWGGEEGUBWIXI
+      BDWHWCHVHLVIVSWNGHVTWAWBWPFHVBWAVD $.
+      $( [19-Mar-2015] $)
+  $}
+
+  ${
     $d A a $.  $d a r $.  $d A r $.  $d a x $.  $d A x $.  $d a y $.  $d A y $.
     $d a z $.  $d A z $.  $d ph x $.  $d ph y $.  $d ph z $.  $d R a $.
     $d R r $.  $d r x $.  $d R x $.  $d r y $.  $d R y $.  $d r z $.  $d R z $.
@@ -51772,6 +51796,7 @@ $)
       IGABCDJABCDKEBLM $.
       $( [12-Mar-2015] $)
   $}
+
 
   ${
     $d A a $.  $d a r $.  $d A r $.  $d a x $.  $d A x $.  $d a y $.  $d A y $.
