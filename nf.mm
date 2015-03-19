@@ -55921,8 +55921,60 @@ $)
   $}
 
   ${
-    $( A cardinal that is less than or equal to a natural is a natural. $)
-    nclenn $p |- ( ( M e. NC /\ N e. Nn /\ M <_c N ) -> M e. Nn ) $= ? $.
+    $d A n $.
+    ncfin.1 $e |- A e. _V $.
+    $( The cardinality of a set is a natural iff the set is finite. $)
+    ncfin $p |- ( Nc A e. Nn <-> A e. Fin ) $=
+       ( vn cnc cnnc wcel cv wrex cfin ncid eleq2 rcla4ev mpan2 wceq eqcom cncs
+       wa wb nnnc ncseqnc syl syl5bb biimpar eleq1d exbiri pm2.43a impbii elfin
+       rexlimiv bitr4i ) ADZEFZACGZFZCEHZAIFULUOULAUKFZUOABJUNUPCUKEUMUKAKLMUNU
+       LCEUNUMEFZULUQUNULUQUQUNQUKUMEUQUKUMNZUNURUMUKNZUQUNUKUMOUQUMPFUSUNRUMSU
+       MATUAUBUCUDUEUFUIUGCAUHUJ $.
+       $( [19-Mar-2015] $)
+  $}
+
+  ${
+    $d n x $.
+    $( Lemma for ~ nclenn .  Set up stratification for induction. $)
+    nclennlem1 $p |- { x | A. n e. NC ( n <_c x -> n e. Nn ) } e. _V $=
+       ( clec cnnc ccompl cres cncs cima cv wbr wcel wi wral wn elcompl wrex wa
+       vex bitri complex cab elima brres anbi2i rexbii rexanali 3bitrri con1bii
+       cvv abbi2i lecex nncex resex ncsex imaex eqeltrri ) CDEZFZGHZEZBIZAIZCJZ
+       VADKZLBGMZAUAUIVEAUTVBUTKVBUSKZNVEVBUSAROVEVFVFVAVBURJZBGPVCVDNZQZBGPVEN
+       BVBURGUBVGVIBGVGVCVAUQKZQVIVAVBCUQUCVJVHVCVADBROUDSUEVCVDBGUFUGUHSUJUSUR
+       GCUQUKDULTUMUNUOTUP $.
+       $( [19-Mar-2015] $)
+  $}
+
+  ${
+    $d m n $.  $d M n $.  $d m p $.  $d m q $.  $d m x $.  $d N n $.  $d n p $.
+    $d n q $.  $d n x $.  $d N x $.  $d p q $.
+    $( A cardinal that is less than or equal to a natural is a natural.
+       Theorem XI.3.3 of [Rosser], p. 391. $)
+    nclenn $p |- ( ( M e. NC /\ N e. Nn /\ M <_c N ) -> M e. Nn ) $=
+      ( vn vx vp vq cncs wcel cnnc clec wbr wi cv wral c0c c1c cplc wceq breq2
+      wa vm nclennlem1 imbi1d ralbidv weq le0nc 0cnc sbth mpan2 peano1 syl6eqel
+      imp ex mpan2d rgen w3a wrex wb peano2 syl dflec2 sylan2 ancoms 3adant3 wo
+      nnnc nc0suc addceq2 addcid1 syl6eq eqeq2d biimpa eleq1 biimpcd syl5 exp3a
+      3ad2ant1 addcass syl6eqr ncaddccl 3ad2antl2 peano4nc addlecncs syl5ibrcom
+      adantr syl2anc com23 adantl pm2.27 com24 3impia sylbid rexlimdva rexlimdv
+      syl8 jaod 3expia ralimdva finds breq1 imbi12d rcla4cv com12 3imp ) AGHZBI
+      HZABJKZAIHZXFXEXGXHLZXFCMZBJKZXJIHZLZCGNZXEXILXJDMZJKZXLLZCGNXJOJKZXLLZCG
+      NXJUAMZJKZXLLZCGNXJXTPQZJKZXLLZCGNXNDUABDCUBXOORZXQXSCGYFXPXRXLXOOXJJSUCU
+      DDUAUEZXQYBCGYGXPYAXLXOXTXJJSUCUDXOYCRZXQYECGYHXPYDXLXOYCXJJSUCUDXOBRZXQX
+      MCGYIXPXKXLXOBXJJSUCUDXSCGXJGHZXROXJJKZXLXJUFYJXRYKTZXLYJYLTXJOIYJYLXJORZ
+      YJOGHYLYMLUGXJOUHUIULUJUKUMUNUOXTIHZYBYECGYNYJYBYEYNYJYBUPZYDYCXJEMZQZRZE
+      GUQZXLYNYJYDYSURZYBYJYNYTYNYJYCGHZYTYNYCIHZUUAXTUSZYCVFUTXJYCEVAVBVCVDYOY
+      RXLEGYPGHYPORZYPFMZPQZRZFGUQZVEYOYRXLLZFYPVGYOUUDUUIUUHYNYJUUDUUILZYBYNUU
+      BUUJUUCUUBUUDYRXLUUDYRTYCXJRZUUBXLUUDYRUUKUUDYQXJYCUUDYQXJOQXJYPOXJVHXJVI
+      VJVKVLUUKUUBXLYCXJIVMVNVOVPUTVQYOUUGUUIFGYOUUEGHZTZUUGYRXLUUGYRTYCXJUUEQZ
+      PQZRZUUMXLUUGYRUUPUUGYQUUOYCUUGYQXJUUFQUUOYPUUFXJVHXJUUEPVRVSVKVLUUMUUPXT
+      UUNRZXLUUMXTGHZUUNGHZUUPUUQURYOUURUULYNYJUURYBXTVFVQWEYJYNUULUUSYBXJUUEVT
+      WAXTUUNWBWFYOUULUUQXLLZYNYJYBUULUUTLYNYJTZUUQUULYBXLUVAUUQUULYAYBXLLYJUUQ
+      UULYALLYNYJUULUUQYAYJUULUUQYALYJUULTYAUUQXJUUNJKXJUUEWCXTUUNXJJSWDUMWGWHY
+      AXLWIWOWJWKULWLVOVPWMWPVOWNWLWQWRWSXMXICAGXJARXKXGXLXHXJABJWTXJAIVMXAXBUT
+      XCXD $.
+      $( [19-Mar-2015] $)
   $}
 
 $(
@@ -56654,7 +56706,10 @@ $)
        $( [19-Mar-2015] $)
   $}
 
-  ${ $d m n $. $d m t $. $d m u $. $d m v $. $d m x $. $d m y $. $d n t $. $d n u $. $d n v $. $d n x $. $d n y $. $d t u $. $d t v $. $d t x $. $d t y $. $d u v $. $d u x $. $d u y $. $d v x $. $d v y $. $d x y $. 
+  ${
+    $d m n $.  $d m t $.  $d m u $.  $d m v $.  $d m x $.  $d m y $.  $d n t $.
+    $d n u $.  $d n v $.  $d n x $.  $d n y $.  $d t u $.  $d t v $.  $d t x $.
+    $d t y $.  $d u v $.  $d u x $.  $d u y $.  $d v x $.  $d v y $.  $d x y $.
     $( Lemma for ~ nchoice .  Set up stratification for ~ nchoicelem17 . $)
     nchoicelem16 $p |- { t |
 ( <_c We NC -> A. m e. NC ( Nc ( Sp[ac] ` m ) = ( 1c +c t ) -> ( ( Sp[ac] ` T_c
@@ -56744,7 +56799,8 @@ m ) e. Fin /\ ( Nc ( Sp[ac] ` T_c m ) = ( T_c Nc ( Sp[ac] ` m ) +c 1c ) \/ Nc (
       $( [19-Mar-2015] $)
   $}
 
-  ${ $d k m $. $d k n $. $d M m $. $d m n $. $d m t $. $d m x $. $d n t $. 
+  ${
+    $d k m $.  $d k n $.  $d M m $.  $d m n $.  $d m t $.  $d m x $.  $d n t $.
     $d k t $.  $d k x $.  $d M t $.  $d M x $.  $d t x $.
     $( Lemma for ~ nchoice .  If the special set of a cardinal is finite, then
        so is the special set of its T-raising, and there is a calculable
