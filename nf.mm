@@ -57013,6 +57013,25 @@ m ) e. Fin /\ ( Nc ( Sp[ac] ` T_c m ) = ( T_c Nc ( Sp[ac] ` m ) +c 1c ) \/ Nc (
        $( [20-Mar-2015] $)
   $}
 
+  ${ $d m n $.
+     $( Cardinal less than or equal does not well-order the cardinals.
+     	This is equivalent to saying that the axiom of choice from ZFC
+	is false in NF.  Theorem 7.5 of [Specker]. $)
+     nchoice $p |- -. <_c We NC $=
+       ( vn vm cncs cv ctc c1c cplc wceq c2c wo cnnc wrex wcel wn cspac cfin wa
+       cfv cnc eqeq1d clec cwe wbr nchoicelem1 ioran sylanbrc nrex nchoicelem19
+       nchoicelem2 finnc biimpi simpll simplr simprl nchoicelem17 simprd simprr
+       ad2antrl syl3anc fveq2d nceqd orbi12d mpbid tceq eqeq12d rcla4ev syl2anc
+       id addceq1d ex rexlimdva mpd mto ) UACUBUCZADZVOEZFGZHZVOVPIGZHZJZAKLZWA
+       AKVOKMVRNVTNWANVOUDVOUIVRVTUEUFUGVNBDZORZPMZWCEZWCHZQZBCLWBBUHVNWHWBBCVN
+       WCCMZQZWHWBWJWHQZWDSZKMZWLWLEZFGZHZWLWNIGZHZJZWBWEWMWJWGWEWMWDUJUKURWKWF
+       ORZSZWOHZXAWQHZJZWSWKWTPMZXDWKVNWIWEXEXDQVNWIWHULVNWIWHUMWJWEWGUNWCUOUSU
+       PWKXBWPXCWRWKXAWLWOWKWTWDWKWFWCOWJWEWGUQUTVAZTWKXAWLWQXFTVBVCWAWSAWLKVOW
+       LHZVRWPVTWRXGVOWLVQWOXGVHZXGVPWNFVOWLVDZVIVEXGVOWLVSWQXHXGVPWNIXIVIVEVBV
+       FVGVJVKVLVM $.
+       $( [20-Mar-2015] $)
+  $}
+
 $(
 #*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#
        Appendix:  Typesetting definitions for the tokens in this file
