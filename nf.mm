@@ -51611,6 +51611,20 @@ $)
   $}
 
   ${
+    $d A a $.  $d a r $.  $d A r $.  $d a x $.  $d A x $.  $d R a $.  $d R r $.
+    $d r x $.  $d R x $.  $d X x $.
+    refd.1 $e |- ( ph -> R Ref A ) $.
+    refd.2 $e |- ( ph -> X e. A ) $.
+    $( Natural deduction form of reflexitivity. $)
+    refd $p |- ( ph -> X R X ) $=
+       ( vx vr va cv wbr wral wcel cref cvv wa wb brex wceq syl breq df-ref ibi
+       ralbidv raleq brabg id breq12d rcla4cv sylc ) AGJZUKCKZGBLZDBMDDCKZACBNK
+       ZUMEUOUMUOCOMBOMPUOUMQCBNRUKUKHJZKZGIJZLULGURLUMHICBOONUPCSUQULGURUKUKUP
+       CUAUDULGURBUEGHIUBUFTUCTFULUNGDBUKDSZUKDUKDCUSUGZUTUHUIUJ $.
+       $( [20-Mar-2015] $)
+  $}
+
+  ${
     $d A a $.  $d a r $.  $d A r $.  $d a x $.  $d A x $.  $d a y $.  $d A y $.
     $d ph x $.  $d ph y $.  $d R a $.  $d R r $.  $d r x $.  $d R x $.
     $d r y $.  $d R y $.  $d x y $.
@@ -51772,6 +51786,33 @@ $)
       ABCDEFGHIJKLMSABCEFGHIJNTEFUAUB $.
       $( [12-Mar-2015] $)
   $}
+
+  ${
+    $d A x $.  $d A y $.  $d A z $.  $d ch x $.  $d ph y $.  $d ph z $.
+    $d ps y $.  $d ps z $.  $d R y $.  $d R z $.  $d th x $.  $d x y $.
+    $d x z $.  $d y z $.
+    weds.1 $e |- { x | ps } e. _V $.
+    weds.2 $e |- ( x = y -> ( ps <-> ch ) ) $.
+    weds.3 $e |- ( x = z -> ( ps <-> th ) ) $.
+    weds.4 $e |- ( ph -> R We A ) $.
+    weds.5 $e |- ( ph -> E. x e. A ps ) $.
+    $( Any property that holds for some element of a well-ordered set ` A ` has
+       an ` R ` minimal element satisfying that property. $)
+    weds $p |- ( ph -> E. y e. A ( ch /\ A. z e. A ( th -> y R z ) ) ) $=
+      ( wbr wa wi cfound cstrict syl cv weq wral wrex cwe cin df-we breqi bitri
+      brin simprbi frds wcel impexp cconnex simplbi cpartial sopc adantr simprl
+      wo simprr connexd ax1 a1i pm2.27 cref ctrans cantisym porta simp1bi sylbi
+      simpr refd adantrl breq1 syl5ibcom syl9r jaod mpd imim2d anassrs ralimdva
+      syl5bi anim2d reximdva ) ACDGUAZFUAZIOZPGFUBZQZGHUCZPZFHUDCDWHWGIOZQZGHUC
+      ZPZFHUDABCDEFGHIJKLAIHUEOZIHROZMWRIHSOZWSWRIHSRUFZOWTWSPIHUEXAUGUHIHSRUJU
+      IZUKTNULAWMWQFHAWHHUMZPZWLWPCXDWKWOGHAXCWGHUMZWKWOQWKDWIWJQZQAXCXEPZPZWOD
+      WIWJUNXHXFWNDXHWNWIVAXFWNQZXHHIWHWGAIHUOOZXGAWTXJAWRWTMWRWTWSXBUPTZWTIHUQ
+      OZXJHIURZUKTUSAXCXEUTAXCXEVBVCXHWNXIWIWNXIQXHWNXFVDVEWIXFWJXHWNWIWJVFXHWG
+      WGIOZWJWNAXEXNXCAXEPHIWGAIHVGOZXEAWTXOXKWTXLXJPXOXMXLXOXJXLXOIHVHOIHVIOHI
+      VJVKUSVLTUSAXEVMVNVOWGWHWGIVPVQVRVSVTWAWDWBWCWEWFVT $.
+      $( [20-Mar-2015] $)
+  $}
+
 
   ${
     $d R x y z $.  $d ph x y z $.
