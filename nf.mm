@@ -56950,6 +56950,69 @@ m ) e. Fin /\ ( Nc ( Sp[ac] ` T_c m ) = ( T_c Nc ( Sp[ac] ` m ) +c 1c ) \/ Nc (
       $( [19-Mar-2015] $)
   $}
 
+  ${
+    $d c x $.  $d c y $.  $d x y $.  $d c p $.  $d c q $.  $d p q $.  $d p x $.
+    $d q x $.
+    $( Lemma for ~ nchoice .  Set up stratification for ~ nchoicelem19 . $)
+    nchoicelem18 $p |- { x | ( Sp[ac] ` x ) e. Fin } e. _V $=
+       ( vp vq vc cncs ccompl csset ccnv cv wcel wceq c1c cima cfin cspac wo wa
+       bitri complex ssetex cins3 c2c cce co w3a cimage ccom cfix cres ctxp crn
+       copab cins2 csymdif cuni1 cin cun cfv cab cvv wn pm2.1 c0 cdm wfn fnspac
+       fndm ax-mp eleq2i ndmfv sylnbir 0fin syl6eqel pm4.71i orbi1i vex elcompl
+       elun elin csn cclos1 spacval eleq1d eluni1 wbr wrex cop spacvallem1 snex
+       df-br nchoicelem10 rexbii elima 3bitr4i syl6rbbr pm5.32i orbi12i mpbiran
+       risset andir abbi2i ncsex ins3ex cnvex imageex coex fixex resex symdifex
+       txpex rnex ins2ex 1cex imaex finex uni1ex inex unex eqeltrri ) EFZEGUAZG
+       FZHZGHZGBIZEJCIZEJYFUBYEUCUDKUEBCULZUFZUGZUHZUIZUJZUKZFZUMZUNZLMZFZNMZUO
+       ZUPZUQZAIZOURZNJZAUSUTUUEAUUBUUCUUBJZUUCEJZVAZUUGPZUUEUUGVBUUHUUGUUEQZPZ
+       UUHUUEQZUUJPUUFUUIUUEQUUHUULUUJUUHUUEUUHUUDVCNUUGUUCOVDZJUUDVCKUUMEUUCOE
+       VEUUMEKVFEOVGVHVIUUCOVJVKVLVMVNVOUUFUUCXTJZUUCUUAJZPUUKUUCXTUUAVRUUNUUHU
+       UOUUJUUCEAVPZVQUUOUUGUUCYTJZQUUJUUCEYTVSUUGUUQUUEUUGUUEUUCVTZYGWAZNJZUUQ
+       UUGUUDUUSNBCUUCWBWCUUQUURYSJZUUTUUCYSUUPWDDIZUURYRWEZDNWFUVBUUSKZDNWFUVA
+       UUTUVCUVDDNUVCUVBUURWGYRJUVDUVBUURYRWJYGUURDBCWHZUUCWIWKRWLDUURYRNWMDUUS
+       NWSWNRWOWPRWQRUUHUUGUUEWTWNWRXAXTUUAEXBSEYTXBYSYRNYQYPLYAYOGTXCYNYMYLYCY
+       KYBGTSXDYDYJGTXDYIGYHTYGUVEXEXFXGXHXJXKSXLXIXMXNSXOXNXPXQXRXS $.
+       $( [20-Mar-2015] $)
+  $}
+
+  ${
+    $d m n $.  $d m x $.  $d n x $.  $d m p $.  $d n p $.
+    $( Lemma for ~ nchoice .  Assuming well-ordering, there is a cardinal with
+       a finite special set that is its own T-raising.  Theorem 7.3 of
+       [Specker]. $)
+    nchoicelem19 $p |- ( <_c We NC -> 
+        E. m e. NC ( ( Sp[ac] ` m ) e. Fin /\ T_c m = m ) ) $=
+       ( vn vx vp clec cncs wbr cv cspac cfv cfin wcel wi wceq fveq2 eleq1d cvv
+       wa cnc syl cwe wral wrex ctc nchoicelem18 weq id ncelncsi csn c0c cce co
+       vvex wn c1c cltc cpw1 cpw ltcpw1pwg ax-mp df1c2 nceqi pwv eqcomi 3brtr4i
+       wb nchoicelem8 mpbiri nchoicelem3 sylancr snfi syl6eqel rcla4ev cantisym
+       mpan2 weds simpll cstrict cfound df-we breqi brin bitri simplbi cpartial
+       cin cconnex sopc cref ctrans porta simp3bi simplr tccl simprr c2c simprl
+       cplc nchoicelem17 syl3anc simpld breq2 imbi12d rcla4v syl3c letc syl2anc
+       3expia nchoicelem12 ad2ant2lr imp ad2ant2l mpd tlecg mpbid breq1 ralbidv
+       wo imbi2d anbi12d anbi2d tceq breq12d com12 an32s rexlimdva adantlr syld
+       antid exp32 imdistand reximdva ) EFUAGZAHZIJZKLZBHZIJZKLZYNYQEGZMZBFUBZR
+       ZAFUCYPYNUDZYNNZRZAFUCYMCHZIJZKLZYPYSCABFECUECAUFUUHYOKUUGYNIOPCBUFUUHYR
+       KUUGYQIOPYMUGYMQSZFLZUUJIJZKLZUUICFUCQUMUHZYMUULUUJUIZKYMUUKUUJUJUKULFLU
+       NZUULUUONUUNYMUUPUOSZUUJUPGZQUQZSZQURZSZUUQUUJUPQQLUUTUVBUPGUMQQUSUTUOUU
+       SVAVBUVBUUJUVAQVCVBVDVEYMUUKUUPUURVFUUNUUJVGVOVHUUJVIVJUUJVKVLUUIUUMCUUJ
+       FUUGUUJNUUHUULKUUGUUJIOPVMVJVPYMUUCUUFAFYMYNFLZRZYPUUBUUEUVDYPUUBUUEUVDU
+       UCRZFEUUDYNUVEYMEFVNGZYMUVCUUCVQZYMEFVRGZUVFYMUVHEFVSGZYMEFVRVSWFZGUVHUV
+       IREFUAUVJVTWAEFVRVSWBWCWDUVHEFWEGZUVFUVHUVKEFWGGFEWHWDUVKEFWIGEFWJGUVFFE
+       WKWLTTTUVEUVCUUDFLZYMUVCUUCWMZYNWNTZUVMUVEYNUUDEGZUUDYNEGZUVEUVLUUBUUDIJ
+       ZKLZUVOUVNUVDYPUUBWOUVEUVRUVQSZYOSUDZUOWRNUVSUVTWPWRNXRZUVEYMUVCYPUVRUWA
+       RUVGUVMUVDYPUUBWQYNWSWTXAUUAUVRUVOMBUUDFYQUUDNZYSUVRYTUVOUWBYRUVQKYQUUDI
+       OPYQUUDYNEXBXCXDXEZUVEUVOYNDHZUDZNZDFUCZUVPUVEUVCUVCUVOUWGMUVMUVMUVCUVCU
+       VOUWGYNYNDXFXHXGYMUUCUWGUVPMUVCYMUUCRUWFUVPDFYMUWDFLZUUCUWFUVPMUWFYMUWHR
+       ZUUCRZUVPUWFUWJUVPMUWIUWEIJZKLZYSUWEYQEGZMZBFUBZRZRZUWEUDZUWEEGZMUWQUWEU
+       WDEGZUWSUWQUWDIJZKLZUWTUWHUWLUXBYMUWOUWDXIXJUWHUWOUXBUWTMZYMUWLUWHUWOUXC
+       UWNUXCBUWDFBDUFZYSUXBUWMUWTUXDYRUXAKYQUWDIOPYQUWDUWEEXBXCXDXKXLXMUWQUWEF
+       LZUWHUWTUWSVFUWQUWHUXEYMUWHUWPWMZUWDWNTUXFUWEUWDXNXGXOUWFUWJUWQUVPUWSUWF
+       UUCUWPUWIUWFYPUWLUUBUWOUWFYOUWKKYNUWEIOPUWFUUAUWNBFUWFYTUWMYSYNUWEYQEXPX
+       SXQXTYAUWFUUDUWRYNUWEEYNUWEYBUWFUGYCXCVHYDYEYFYGYHXMUWCYIYJYKYLXM $.
+       $( [20-Mar-2015] $)
+  $}
+
 $(
 #*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#
        Appendix:  Typesetting definitions for the tokens in this file
