@@ -55641,6 +55641,27 @@ $)
        $( [23-Mar-2015] $)
   $}
 
+  ${ $d A a $. $d a b $. $d A b $. $d a f $. $d A f $. $d A g $. $d A h $. $d A i $. $d A p $. $d A q $. $d B a $. $d B b $. $d b f $. $d B f $. $d B g $. $d B h $. $d B i $. $d B p $. $d B q $. $d f g $. $d f h $. $d f i $. $d f p $. $d f q $. $d g h $. $d g i $. $d g p $. $d g q $. $d h i $. $d h p $. $d h q $. $d i p $. $d i q $. $d p q $. 
+     nclenc.1 $e |- A e. _V $.
+     nclenc.2 $e |- B e. _V $.
+     $( Comparison rule for cardinalities. $)
+     nclenc $p |- ( Nc A <_c Nc B <-> E. f f : A -1-1-> B ) $=
+       ( vp vq vg vh vi va vb wbr cv wf1 wex wrex wcel wa wf1o cnc clec cncs wb
+       ncelncsi dflec3 mp2an cen elnc bren bitri anbi12i eeanv bitr4i ccom ccnv
+       w3a f1of1 3ad2ant2 simp3 f1co syl2anc f1ocnv syl 3ad2ant1 vex coex cnvex
+       wi f1eq1 cla4ev 3expia exlimivv sylbi exlimdv rexlimivv ncid wceq exbidv
+       f1eq2 f1eq3 rcla42ev mp3an12 sylibr impbii ) AUAZBUAZUBMZABCNZOZCPZWHFNZ
+       GNZHNZOZHPZGWGQFWFQZWKWFUCRZWGUCRZWHWQUDADUEZBEUEZHWFWGFGUFUGWPWKFGWFWGW
+       LWFRZWMWGRZSZWOWKHXDWLAINZTZWMBJNZTZSZJPIPZWOWKVIZXDXFIPZXHJPZSXJXBXLXCX
+       MXBWLAUHMXLWLAUIWLAIUJUKXCWMBUHMXMWMBUIWMBJUJUKULXFXHIJUMUNXIXKIJXFXHWOW
+       KXFXHWOUQZABXGWNUOZXEUPZUOZOZWKXNWLBXOOZAWLXPOZXRXNWMBXGOZWOXSXHXFYAWOWM
+       BXGURUSXFXHWOUTWLWMBXGWNVAVBXFXHXTWOXFAWLXPTXTWLAXEVCAWLXPURVDVEAWLBXOXP
+       VAVBWJXRCXQXOXPXGWNJVFHVFVGXEIVFVHVGABWIXQVJVKVDVLVMVNVOVPVNWKKNZLNZWIOZ
+       CPZLWGQKWFQZWHAWFRBWGRWKYFADVQBEVQYEWKAYCWIOZCPKLABWFWGYBAVRYDYGCYBAYCWI
+       VTVSYCBVRYGWJCYCBAWIWAVSWBWCWRWSWHYFUDWTXACWFWGKLUFUGWDWE $.
+       $( [24-Mar-2015] $)
+  $}
+
   ${
     $d M x $.  $d A x $.  $d A f $.  $d A g $.  $d A p $.  $d A q $.  $d A y $.
     $d f g $.  $d f p $.  $d f q $.  $d f x $.  $d f y $.  $d g p $.  $d g q $.
