@@ -28660,6 +28660,202 @@ $)
     ax-sn $a |- E. y A. z ( z e. y <-> z = x ) $.
   $}
 
+$(
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+        Primitive forms for some axioms
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+$)
+
+  ${
+    $d a c $.  $d B c $.
+    $( Lemma for the primitive axioms.  Primitive form of equality to a
+       singleton. $)
+    axprimlem1 $p |- ( a = { B } <-> A. c ( c e. a <-> c = B ) ) $=
+       ( cv csn wceq wel wcel wb wal dfcleq vex elsn bibi2i albii bitri ) BDZAE
+       ZFCBGZCDZRHZIZCJSTAFZIZCJCQRKUBUDCUAUCSTACLMNOP $.
+       $( [25-Mar-2015] $)
+  $}
+
+  ${
+    $d a d $.  $d B d $.  $d C d $.
+    $( Lemma for the primitive axioms.  Primitive form of equality to an
+       unordered pair. $)
+    axprimlem2 $p |- ( a = { B , C } <-> A. d ( d e. a <-> ( d = B \/ d = C ) )
+        ) $=
+       ( cv cpr wceq wel wcel wb wal wo dfcleq vex elpr bibi2i albii bitri ) CE
+       ZABFZGDCHZDEZTIZJZDKUAUBAGUBBGLZJZDKDSTMUDUFDUCUEUAUBABDNOPQR $.
+       $( [25-Mar-2015] $)
+  $}
+
+  ${
+    $d a d $.  $d B d $.  $d B e $.  $d B f $.  $d C d $.  $d C f $.  $d d e $.
+    $d d f $.
+    $( Lemma for the primitive axioms.  Primitive form of equality to a
+       Kuratowski ordered pair. $)
+    axprimlem3 $p |- ( a = << B , C >> <-> A. d ( d e. a <-> ( A. e ( e e. d
+        <-> e = B ) \/ A. f ( f e. d <-> ( f = B \/ f = C ) ) ) ) ) $=
+       ( cv copk wceq csn cpr wel wo wb wal df-opk eqeq2i axprimlem2 axprimlem1
+       orbi12i bibi2i albii 3bitri ) EGZABHZIUDAJZABKZKZIFELZFGZUFIZUJUGIZMZNZF
+       OUICFLCGAINCOZDFLDGZAIUPBIMNDOZMZNZFOUEUHUDABPQUFUGEFRUNUSFUMURUIUKUOULU
+       QAFCSABFDRTUAUBUC $.
+       $( [25-Mar-2015] $)
+  $}
+
+
+  ${
+    $d a b $.  $d a c $.  $d a t $.  $d a w $.  $d a z $.  $d b w $.  $d c t $.
+    $d c w $.  $d t w $.  $d t x $.  $d t y $.  $d t z $.  $d w x $.  $d w y $.
+    $d w z $.  $d x y $.  $d x z $.  $d y z $.
+    $( ~ ax-xp presented without any set theory definitions. $)
+    axxpprim $p |- E. y A. z ( z e. y <-> E. w E. t ( A. a ( a e. z <-> ( A. b
+        ( b e. a <-> b = w ) \/ A. c ( c e. a <-> ( c = w \/ c = t ) ) ) ) /\ t
+        e. x ) ) $=
+      ( wel cv copk wceq wa wex wb wal weq wo ax-xp axprimlem3 albii exbii mpbi
+      anbi1i 2exbii bibi2i ) CBIZCJDJZEJZKLZEAIZMZENDNZOZCPZBNUGFCIGFIGDQOGPHFI
+      HDQHEQROHPROFPZUKMZENDNZOZCPZBNABCDESUOUTBUNUSCUMURUGULUQDEUJUPUKUHUIGHCF
+      TUDUEUFUAUBUC $.
+      $( [25-Mar-2015] $)
+  $}
+
+  ${
+    $d a b $.  $d a w $.  $d a y $.  $d a z $.  $d b c $.  $d b d $.  $d b w $.
+    $d b z $.  $d c z $.  $d d w $.  $d d z $.  $d e f $.  $d e w $.  $d e x $.
+    $d e z $.  $d f g $.  $d f h $.  $d f w $.  $d f z $.  $d g w $.  $d h w $.
+    $d h z $.  $d w x $.  $d w y $.  $d w z $.  $d x y $.  $d x z $.  $d y z $.
+    $( ~ ax-cnv presented without any set theory definitions. $)
+    axcnvprim $p |- E. y A. z A. w ( E. a ( A. b ( b e. a <-> ( A. c ( c e. b
+        <-> c = z ) \/ A. d ( d e. b <-> ( d = z \/ d = w ) ) ) ) /\ a e. y )
+        <-> E. e ( A. f ( f e. e <-> ( A. g ( g e. f <-> g = w ) \/ A. h ( h e.
+        f <-> ( h = w \/ h = z ) ) ) ) /\ e e. x ) ) $=
+      ( cv wb wal wex wel weq wo wa copk ax-cnv df-clel axprimlem3 anbi1i exbii
+      wcel wceq bitri bibi12i 2albii mpbi ) CMZDMZUAZBMZUGZUNUMUAZAMZUGZNZDOCOZ
+      BPJIQKJQKCRNKOLJQLCRLDRSNLOSNJOZIBQZTZIPZFEQGFQGDRNGOHFQHDRHCRSNHOSNFOZEA
+      QZTZEPZNZDOCOZBPABCDUBVBVLBVAVKCDUQVFUTVJUQIMUOUHZVDTZIPVFIUOUPUCVNVEIVMV
+      CVDUMUNKLIJUDUEUFUIUTEMURUHZVHTZEPVJEURUSUCVPVIEVOVGVHUNUMGHEFUDUEUFUIUJU
+      KUFUL $.
+      $( [25-Mar-2015] $)
+  $}
+
+  ${
+    $d a b $.  $d a x $.  $d a y $.  $d a z $.  $d b c $.  $d b d $.  $d b y $.
+    $d b z $.  $d c y $.  $d d y $.  $d d z $.  $d e x $.  $d e y $.  $d e z $.
+    $d x y $.  $d x z $.  $d y z $.
+    $( ~ ax-sset presented without any set theory definitions. $)
+    axssetprim $p |- E. x A. y A. z ( E. a ( A. b ( b e. a <-> ( A. c ( c e. b
+        <-> c = y ) \/ A. d ( d e. b <-> ( d = y \/ d = z ) ) ) ) /\ a e. x )
+        <-> A. e ( e e. y -> e e. z ) ) $=
+      ( cv copk wcel wel wi wal wb wex weq wo wa exbii ax-sset axprimlem3 bitri
+      wceq df-clel anbi1i bibi1i 2albii mpbi ) BIZCIZJZAIZKZDBLDCLMDNZOZCNBNZAP
+      FELGFLGBQOGNHFLHBQHCQROHNROFNZEALZSZEPZUOOZCNBNZAPABCDUAUQVCAUPVBBCUNVAUO
+      UNEIULUDZUSSZEPVAEULUMUEVEUTEVDURUSUJUKGHEFUBUFTUCUGUHTUI $.
+      $( [25-Mar-2015] $)
+  $}
+
+  ${
+    $d a b $.  $d a w $.  $d a y $.  $d a z $.  $d b c $.  $d b e $.  $d b w $.
+    $d b z $.  $d c d $.  $d c z $.  $d d z $.  $d e f $.  $d e g $.  $d e w $.
+    $d e z $.  $d f z $.  $d g w $.  $d h i $.  $d h w $.  $d h x $.  $d h z $.
+    $d i j $.  $d i k $.  $d i w $.  $d i z $.  $d j z $.  $d k w $.  $d k z $.
+    $d w x $.  $d w y $.  $d w z $.  $d x y $.  $d x z $.  $d y z $.
+    $( ~ ax-si presented without any set theory definitions. $)
+    axsiprim $p |- E. y A. z A. w ( E. a ( A. b ( b e. a <-> ( A. c ( c e. b
+        <-> A. d ( d e. c <-> d = z ) ) \/ A. e ( e e. b <-> ( A. f ( f e. e
+        <-> f = z ) \/ A. g ( g e. e <-> g = w ) ) ) ) ) /\ a e. y ) <-> E. h (
+        A. i ( i e. h <-> ( A. j ( j e. i <-> j = z ) \/ A. k ( k e. i <-> ( k
+        = z \/ k = w ) ) ) ) /\ h e. x ) ) $=
+      ( cv wb wal wex wel csn copk wcel weq wo wa ax-si wceq df-clel axprimlem3
+      axprimlem1 bibi2i albii orbi12i bitri anbi1i exbii bibi12i 2albii mpbi )
+      CPZUAZDPZUAZUBZBPZUCZVAVCUBZAPZUCZQZDRCRZBSMLTZNMTZONTOCUDQORZQZNRZEMTZFE
+      TFCUDQFRZGETGDUDQGRZUEZQZERZUEZQZMRZLBTZUFZLSZIHTJITJCUDQJRKITKCUDKDUDUEQ
+      KRUEQIRZHATZUFZHSZQZDRCRZBSABCDUGVLWOBVKWNCDVGWIVJWMVGLPVEUHZWGUFZLSWILVE
+      VFUIWQWHLWPWFWGWPVMVNNPVBUHZQZNRZVREPZVBUHZXAVDUHZUEZQZERZUEZQZMRWFVBVDNE
+      LMUJXHWEMXGWDVMWTVQXFWCWSVPNWRVOVNVANOUKULUMXEWBEXDWAVRXBVSXCVTVAEFUKVCEG
+      UKUNULUMUNULUMUOUPUQUOVJHPVHUHZWKUFZHSWMHVHVIUIXJWLHXIWJWKVAVCJKHIUJUPUQU
+      OURUSUQUT $.
+      $( [25-Mar-2015] $)
+  $}
+
+  ${
+    $d a b $.  $d a w $.  $d a x $.  $d a z $.  $d b c $.  $d b d $.  $d b w $.
+    $d b z $.  $d c w $.  $d d e $.  $d d w $.  $d d z $.  $d e z $.  $d w x $.
+    $d w y $.  $d w z $.  $d x y $.  $d x z $.  $d y z $.
+    $( ~ ax-typlower presented without any set theory definitions. $)
+    axtyplowerprim $p |- E. y A. z ( z e. y <-> A. w E. a ( A. b ( b e. a <-> (
+        A. c ( c e. b <-> c = w ) \/ A. d ( d e. b <-> ( d = w \/ A. e ( e e. d
+        <-> e = z ) ) ) ) ) /\ a e. x ) ) $=
+      ( wel cv wal wb wex weq wo wa wceq bibi2i albii csn copk wcel ax-typlower
+      df-clel axprimlem3 axprimlem1 orbi2i bitri anbi1i exbii mpbi ) CBJZDKZCKZ
+      UAZUBZAKZUCZDLZMZCLZBNUMGFJZHGJHDOMHLZIGJZIDOZEIJECOMELZPZMZILZPZMZGLZFAJ
+      ZQZFNZDLZMZCLZBNABCDUDVBVSBVAVRCUTVQUMUSVPDUSFKUQRZVNQZFNVPFUQURUEWAVOFVT
+      VMVNVTVCVDVEVFIKUPRZPZMZILZPZMZGLVMUNUPHIFGUFWGVLGWFVKVCWEVJVDWDVIIWCVHVE
+      WBVGVFUOIEUGUHSTUHSTUIUJUKUITSTUKUL $.
+      $( [25-Mar-2015] $)
+  $}
+
+  ${
+    $d a b $.  $d a t $.  $d a w $.  $d a y $.  $d a z $.  $d b c $.  $d b f $.
+    $d b t $.  $d b w $.  $d b z $.  $d c d $.  $d c z $.  $d d e $.  $d d z $.
+    $d e g $.  $d e z $.  $d f g $.  $d f h $.  $d f t $.  $d f w $.  $d f z $.
+    $d g z $.  $d h i $.  $d h j $.  $d h t $.  $d h w $.  $d i w $.  $d j t $.
+    $d j w $.  $d k l $.  $d k t $.  $d k x $.  $d k z $.  $d l m $.  $d l n $.
+    $d l t $.  $d l z $.  $d m z $.  $d n t $.  $d n z $.  $d t w $.  $d t x $.
+    $d t y $.  $d t z $.  $d w x $.  $d w y $.  $d w z $.  $d x y $.  $d x z $.
+    $d y z $.
+    $( ~ ax-ins2 presented without any set theory definitions. $)
+    axins2prim $p |- E. y A. z A. w A. t ( E. a ( A. b ( b e. a <-> ( A. c ( c
+        e. b <-> A. d ( d e. c <-> A. e ( e e. d <-> e = z ) ) ) \/ A. f ( f e.
+        b <-> ( A. g ( g e. f <-> A. e ( e e. g <-> e = z ) ) \/ A. h ( h e. f
+        <-> ( A. i ( i e. h <-> i = w ) \/ A. j ( j e. h <-> ( j = w \/ j = t )
+        ) ) ) ) ) ) ) /\ a e. y ) <-> E. k ( A. l ( l e. k <-> ( A. m ( m e. l
+        <-> m = z ) \/ A. n ( n e. l <-> ( n = z \/ n = t ) ) ) ) /\ k e. x ) )
+        $=
+       ( wal cv csn copk wcel wb wex wel weq wo ax-ins2 wceq df-clel axprimlem3
+       axprimlem1 bibi2i albii bitri orbi12i anbi1i exbii bibi12i 2albii mpbi
+       wa ) CUAZUBZUBZDUAZEUAZUCZUCZBUAZUDZVEVIUCZAUAZUDZUEZETZDTCTZBUFPOUGZQPU
+       GZRQUGZFRUGFCUHZUEFTZUEZRTZUEZQTZGPUGZHGUGZFHUGWCUEFTZUEZHTZIGUGJIUGJDUH
+       UEJTKIUGKDUHKEUHUIUEKTUIUEITZUIZUEZGTZUIZUEZPTZOBUGZVDZOUFZSLUGMSUGMCUHU
+       EMTNSUGNCUHNEUHUIUENTUIUESTZLAUGZVDZLUFZUEZETZDTCTZBUFABCDEUJVSXJBVRXICD
+       VQXHEVMXCVPXGVMOUAVKUKZXAVDZOUFXCOVKVLULXLXBOXKWTXAXKVTWAQUAVGUKZUEZQTZW
+       IGUAZVGUKZXPVJUKZUIZUEZGTZUIZUEZPTWTVGVJQGOPUMYCWSPYBWRVTXOWHYAWQXNWGQXM
+       WFWAXMWBRUAVFUKZUEZRTWFVFQRUNYEWERYDWDWBVERFUNUOUPUQUOUPXTWPGXSWOWIXQWMX
+       RWNXQWJHUAVFUKZUEZHTWMVFGHUNYGWLHYFWKWJVEHFUNUOUPUQVHVIJKGIUMURUOUPURUOU
+       PUQUSUTUQVPLUAVNUKZXEVDZLUFXGLVNVOULYIXFLYHXDXEVEVIMNLSUMUSUTUQVAUPVBUTV
+       C $.
+       $( [25-Mar-2015] $)
+  $}
+
+  ${
+    $d a b $.  $d a t $.  $d a w $.  $d a y $.  $d a z $.  $d b c $.  $d b f $.
+    $d b t $.  $d b w $.  $d b z $.  $d c d $.  $d c z $.  $d d e $.  $d d z $.
+    $d e g $.  $d e z $.  $d f g $.  $d f h $.  $d f t $.  $d f w $.  $d f z $.
+    $d g z $.  $d h i $.  $d h j $.  $d h t $.  $d h w $.  $d i w $.  $d j t $.
+    $d j w $.  $d k l $.  $d k w $.  $d k x $.  $d k z $.  $d l m $.  $d l n $.
+    $d l w $.  $d l z $.  $d m z $.  $d n w $.  $d n z $.  $d t w $.  $d t x $.
+    $d t y $.  $d t z $.  $d w x $.  $d w y $.  $d w z $.  $d x y $.  $d x z $.
+    $d y z $.
+    $( ~ ax-ins3 presented without any set theory definitions. $)
+    axins3prim $p |- E. y A. z A. w A. t ( E. a ( A. b ( b e. a <-> ( A. c ( c
+        e. b <-> A. d ( d e. c <-> A. e ( e e. d <-> e = z ) ) ) \/ A. f ( f e.
+        b <-> ( A. g ( g e. f <-> A. e ( e e. g <-> e = z ) ) \/ A. h ( h e. f
+        <-> ( A. i ( i e. h <-> i = w ) \/ A. j ( j e. h <-> ( j = w \/ j = t )
+        ) ) ) ) ) ) ) /\ a e. y ) <-> E. k ( A. l ( l e. k <-> ( A. m ( m e. l
+        <-> m = z ) \/ A. n ( n e. l <-> ( n = z \/ n = w ) ) ) ) /\ k e. x ) )
+        $=
+       ( wal cv csn copk wcel wb wex wel weq wo ax-ins3 wceq df-clel axprimlem3
+       axprimlem1 bibi2i albii bitri orbi12i anbi1i exbii bibi12i 2albii mpbi
+       wa ) CUAZUBZUBZDUAZEUAZUCZUCZBUAZUDZVEVHUCZAUAZUDZUEZETZDTCTZBUFPOUGZQPU
+       GZRQUGZFRUGFCUHZUEFTZUEZRTZUEZQTZGPUGZHGUGZFHUGWCUEFTZUEZHTZIGUGJIUGJDUH
+       UEJTKIUGKDUHKEUHUIUEKTUIUEITZUIZUEZGTZUIZUEZPTZOBUGZVDZOUFZSLUGMSUGMCUHU
+       EMTNSUGNCUHNDUHUIUENTUIUESTZLAUGZVDZLUFZUEZETZDTCTZBUFABCDEUJVSXJBVRXICD
+       VQXHEVMXCVPXGVMOUAVKUKZXAVDZOUFXCOVKVLULXLXBOXKWTXAXKVTWAQUAVGUKZUEZQTZW
+       IGUAZVGUKZXPVJUKZUIZUEZGTZUIZUEZPTWTVGVJQGOPUMYCWSPYBWRVTXOWHYAWQXNWGQXM
+       WFWAXMWBRUAVFUKZUEZRTWFVFQRUNYEWERYDWDWBVERFUNUOUPUQUOUPXTWPGXSWOWIXQWMX
+       RWNXQWJHUAVFUKZUEZHTWMVFGHUNYGWLHYFWKWJVEHFUNUOUPUQVHVIJKGIUMURUOUPURUOU
+       PUQUSUTUQVPLUAVNUKZXEVDZLUFXGLVNVOULYIXFLYHXDXEVEVHMNLSUMUSUTUQVAUPVBUTV
+       C $.
+       $( [25-Mar-2015] $)
+  $}
+
 
 $(
 =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
@@ -55641,11 +55837,16 @@ $)
        $( [23-Mar-2015] $)
   $}
 
-  ${ $d A a $. $d a b $. $d A b $. $d a f $. $d A f $. $d A g $. $d A h $. $d A i $. $d A p $. $d A q $. $d B a $. $d B b $. $d b f $. $d B f $. $d B g $. $d B h $. $d B i $. $d B p $. $d B q $. $d f g $. $d f h $. $d f i $. $d f p $. $d f q $. $d g h $. $d g i $. $d g p $. $d g q $. $d h i $. $d h p $. $d h q $. $d i p $. $d i q $. $d p q $. 
-     nclenc.1 $e |- A e. _V $.
-     nclenc.2 $e |- B e. _V $.
-     $( Comparison rule for cardinalities. $)
-     nclenc $p |- ( Nc A <_c Nc B <-> E. f f : A -1-1-> B ) $=
+  ${
+    $d A a $.  $d a b $.  $d A b $.  $d a f $.  $d A f $.  $d A g $.  $d A h $.
+    $d A i $.  $d A p $.  $d A q $.  $d B a $.  $d B b $.  $d b f $.  $d B f $.
+    $d B g $.  $d B h $.  $d B i $.  $d B p $.  $d B q $.  $d f g $.  $d f h $.
+    $d f i $.  $d f p $.  $d f q $.  $d g h $.  $d g i $.  $d g p $.  $d g q $.
+    $d h i $.  $d h p $.  $d h q $.  $d i p $.  $d i q $.  $d p q $.
+    nclenc.1 $e |- A e. _V $.
+    nclenc.2 $e |- B e. _V $.
+    $( Comparison rule for cardinalities. $)
+    nclenc $p |- ( Nc A <_c Nc B <-> E. f f : A -1-1-> B ) $=
        ( vp vq vg vh vi va vb wbr cv wf1 wex wrex wcel wa wf1o cnc clec cncs wb
        ncelncsi dflec3 mp2an cen elnc bren bitri anbi12i eeanv bitr4i ccom ccnv
        w3a f1of1 3ad2ant2 simp3 f1co syl2anc f1ocnv syl 3ad2ant1 vex coex cnvex
