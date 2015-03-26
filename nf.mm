@@ -28677,28 +28677,18 @@ $)
   $}
 
   ${
-    $d a d $.  $d B d $.  $d C d $.
-    $( Lemma for the primitive axioms.  Primitive form of equality to an
-       unordered pair. $)
-    axprimlem2 $p |- ( a = { B , C } <-> A. d ( d e. a <-> ( d = B \/ d = C ) )
-        ) $=
-       ( cv cpr wceq wel wcel wb wal wo dfcleq vex elpr bibi2i albii bitri ) CE
-       ZABFZGDCHZDEZTIZJZDKUAUBAGUBBGLZJZDKDSTMUDUFDUCUEUAUBABDNOPQR $.
-       $( [25-Mar-2015] $)
-  $}
-
-  ${
     $d a d $.  $d B d $.  $d B e $.  $d B f $.  $d C d $.  $d C f $.  $d d e $.
     $d d f $.
     $( Lemma for the primitive axioms.  Primitive form of equality to a
        Kuratowski ordered pair. $)
-    axprimlem3 $p |- ( a = << B , C >> <-> A. d ( d e. a <-> ( A. e ( e e. d
+    axprimlem2 $p |- ( a = << B , C >> <-> A. d ( d e. a <-> ( A. e ( e e. d
         <-> e = B ) \/ A. f ( f e. d <-> ( f = B \/ f = C ) ) ) ) ) $=
-       ( cv copk wceq csn cpr wel wo wb wal df-opk eqeq2i axprimlem2 axprimlem1
-       orbi12i bibi2i albii 3bitri ) EGZABHZIUDAJZABKZKZIFELZFGZUFIZUJUGIZMZNZF
-       OUICFLCGAINCOZDFLDGZAIUPBIMNDOZMZNZFOUEUHUDABPQUFUGEFRUNUSFUMURUIUKUOULU
-       QAFCSABFDRTUAUBUC $.
-       $( [25-Mar-2015] $)
+      ( cv wceq cpr wel wb wal wo wcel dfcleq vex elpr bibi2i albii bitri copk
+      csn df-opk eqeq2i axprimlem1 orbi12i ) EGZABUAZHUGAUBZABIZIZHZFEJZCFJCGAH
+      KCLZDFJZDGZAHUPBHMZKZDLZMZKZFLZUHUKUGABUCUDULUMFGZUKNZKZFLVBFUGUKOVEVAFVD
+      UTUMVDVCUIHZVCUJHZMUTVCUIUJFPQVFUNVGUSAFCUEVGUOUPUJNZKZDLUSDVCUJOVIURDVHU
+      QUOUPABDPQRSTUFTRSTT $.
+      $( [25-Mar-2015] $)
   $}
 
 
@@ -28710,7 +28700,7 @@ $)
     axxpprim $p |- E. y A. z ( z e. y <-> E. w E. t ( A. a ( a e. z <-> ( A. b
         ( b e. a <-> b = w ) \/ A. c ( c e. a <-> ( c = w \/ c = t ) ) ) ) /\ t
         e. x ) ) $=
-      ( wel cv copk wceq wa wex wb wal weq wo ax-xp axprimlem3 albii exbii mpbi
+      ( wel cv copk wceq wa wex wb wal weq wo ax-xp axprimlem2 albii exbii mpbi
       anbi1i 2exbii bibi2i ) CBIZCJDJZEJZKLZEAIZMZENDNZOZCPZBNUGFCIGFIGDQOGPHFI
       HDQHEQROHPROFPZUKMZENDNZOZCPZBNABCDESUOUTBUNUSCUMURUGULUQDEUJUPUKUHUIGHCF
       TUDUEUFUAUBUC $.
@@ -28727,7 +28717,7 @@ $)
         <-> c = z ) \/ A. d ( d e. b <-> ( d = z \/ d = w ) ) ) ) /\ a e. y )
         <-> E. e ( A. f ( f e. e <-> ( A. g ( g e. f <-> g = w ) \/ A. h ( h e.
         f <-> ( h = w \/ h = z ) ) ) ) /\ e e. x ) ) $=
-      ( cv wb wal wex wel weq wo wa copk ax-cnv df-clel axprimlem3 anbi1i exbii
+      ( cv wb wal wex wel weq wo wa copk ax-cnv df-clel axprimlem2 anbi1i exbii
       wcel wceq bitri bibi12i 2albii mpbi ) CMZDMZUAZBMZUGZUNUMUAZAMZUGZNZDOCOZ
       BPJIQKJQKCRNKOLJQLCRLDRSNLOSNJOZIBQZTZIPZFEQGFQGDRNGOHFQHDRHCRSNHOSNFOZEA
       QZTZEPZNZDOCOZBPABCDUBVBVLBVAVKCDUQVFUTVJUQIMUOUHZVDTZIPVFIUOUPUCVNVEIVMV
@@ -28744,7 +28734,7 @@ $)
     axssetprim $p |- E. x A. y A. z ( E. a ( A. b ( b e. a <-> ( A. c ( c e. b
         <-> c = y ) \/ A. d ( d e. b <-> ( d = y \/ d = z ) ) ) ) /\ a e. x )
         <-> A. e ( e e. y -> e e. z ) ) $=
-      ( cv copk wcel wel wi wal wb wex weq wo wa exbii ax-sset axprimlem3 bitri
+      ( cv copk wcel wel wi wal wb wex weq wo wa exbii ax-sset axprimlem2 bitri
       wceq df-clel anbi1i bibi1i 2albii mpbi ) BIZCIZJZAIZKZDBLDCLMDNZOZCNBNZAP
       FELGFLGBQOGNHFLHBQHCQROHNROFNZEALZSZEPZUOOZCNBNZAPABCDUAUQVCAUPVBBCUNVAUO
       UNEIULUDZUSSZEPVAEULUMUEVEUTEVDURUSUJUKGHEFUBUFTUCUGUHTUI $.
@@ -28763,7 +28753,7 @@ $)
         <-> f = z ) \/ A. g ( g e. e <-> g = w ) ) ) ) ) /\ a e. y ) <-> E. h (
         A. i ( i e. h <-> ( A. j ( j e. i <-> j = z ) \/ A. k ( k e. i <-> ( k
         = z \/ k = w ) ) ) ) /\ h e. x ) ) $=
-      ( cv wb wal wex wel csn copk wcel weq wo wa ax-si wceq df-clel axprimlem3
+      ( cv wb wal wex wel csn copk wcel weq wo wa ax-si wceq df-clel axprimlem2
       axprimlem1 bibi2i albii orbi12i bitri anbi1i exbii bibi12i 2albii mpbi )
       CPZUAZDPZUAZUBZBPZUCZVAVCUBZAPZUCZQZDRCRZBSMLTZNMTZONTOCUDQORZQZNRZEMTZFE
       TFCUDQFRZGETGDUDQGRZUEZQZERZUEZQZMRZLBTZUFZLSZIHTJITJCUDQJRKITKCUDKDUDUEQ
@@ -28784,7 +28774,7 @@ $)
         A. c ( c e. b <-> c = w ) \/ A. d ( d e. b <-> ( d = w \/ A. e ( e e. d
         <-> e = z ) ) ) ) ) /\ a e. x ) ) $=
       ( wel cv wal wb wex weq wo wa wceq bibi2i albii csn copk wcel ax-typlower
-      df-clel axprimlem3 axprimlem1 orbi2i bitri anbi1i exbii mpbi ) CBJZDKZCKZ
+      df-clel axprimlem2 axprimlem1 orbi2i bitri anbi1i exbii mpbi ) CBJZDKZCKZ
       UAZUBZAKZUCZDLZMZCLZBNUMGFJZHGJHDOMHLZIGJZIDOZEIJECOMELZPZMZILZPZMZGLZFAJ
       ZQZFNZDLZMZCLZBNABCDUDVBVSBVAVRCUTVQUMUSVPDUSFKUQRZVNQZFNVPFUQURUEWAVOFVT
       VMVNVTVCVDVEVFIKUPRZPZMZILZPZMZGLVMUNUPHIFGUFWGVLGWFVKVCWEVJVDWDVIIWCVHVE
@@ -28809,7 +28799,7 @@ $)
         ) ) ) ) ) ) ) /\ a e. y ) <-> E. k ( A. l ( l e. k <-> ( A. m ( m e. l
         <-> m = z ) \/ A. n ( n e. l <-> ( n = z \/ n = t ) ) ) ) /\ k e. x ) )
         $=
-       ( wal cv csn copk wcel wb wex wel weq wo ax-ins2 wceq df-clel axprimlem3
+       ( wal cv csn copk wcel wb wex wel weq wo ax-ins2 wceq df-clel axprimlem2
        axprimlem1 bibi2i albii bitri orbi12i anbi1i exbii bibi12i 2albii mpbi
        wa ) CUAZUBZUBZDUAZEUAZUCZUCZBUAZUDZVEVIUCZAUAZUDZUEZETZDTCTZBUFPOUGZQPU
        GZRQUGZFRUGFCUHZUEFTZUEZRTZUEZQTZGPUGZHGUGZFHUGWCUEFTZUEZHTZIGUGJIUGJDUH
@@ -28841,7 +28831,7 @@ $)
         ) ) ) ) ) ) ) /\ a e. y ) <-> E. k ( A. l ( l e. k <-> ( A. m ( m e. l
         <-> m = z ) \/ A. n ( n e. l <-> ( n = z \/ n = w ) ) ) ) /\ k e. x ) )
         $=
-       ( wal cv csn copk wcel wb wex wel weq wo ax-ins3 wceq df-clel axprimlem3
+       ( wal cv csn copk wcel wb wex wel weq wo ax-ins3 wceq df-clel axprimlem2
        axprimlem1 bibi2i albii bitri orbi12i anbi1i exbii bibi12i 2albii mpbi
        wa ) CUAZUBZUBZDUAZEUAZUCZUCZBUAZUDZVEVHUCZAUAZUDZUEZETZDTCTZBUFPOUGZQPU
        GZRQUGZFRUGFCUHZUEFTZUEZRTZUEZQTZGPUGZHGUGZFHUGWCUEFTZUEZHTZIGUGJIUGJDUH
@@ -56264,7 +56254,7 @@ $)
 
   ${
     $d m n $.  $d M n $.  $d m p $.  $d m q $.  $d m x $.  $d N n $.  $d n p $.
-    $d n q $.  $d n x $.  $d N x $.  $d p q $.
+    $d n q $.  $d n x $.  $d N x $.  $d p q $.  
     $( A cardinal that is less than or equal to a natural is a natural.
        Theorem XI.3.3 of [Rosser], p. 391. $)
     nclenn $p |- ( ( M e. NC /\ N e. Nn /\ M <_c N ) -> M e. Nn ) $=
@@ -56291,6 +56281,130 @@ $)
       AXLWIWOWJWKULWLVOVPWMWPVOWNWLWQWRWSXMXICAGXJARXKXGXLXHXJABJWTXJAIVMXAXBUT
       XCXD $.
       $( [19-Mar-2015] $)
+  $}
+
+  ${ $d t u $. $d t x $. $d u x $. 
+     $( Lemma for ~ nnltp1c .  Set up stratification. $)
+     nnltp1clem1 $p |- { x | x <c ( x +c 1c ) } e. _V $=
+       ( vt vu caddcfn c1st c2nd ccnv c1c ccom cltc wbr wcel wex brco wceq 1cex
+       cv wa 3bitri cnvex csn cima cres cfix cplc cab elfix exancom brcnv brres
+       cvv cop eliniseg anbi2i bitri vex op1st2nd anbi1i exbii ceqsexv braddcfn
+       opex breq1 eqcom addcex breq2 addcfnex 1stex 2ndex snex imaex resex coex
+       abbi2i ltcex fixex eqeltrri ) DEFGZHUAZUBZUCZGZIZGZJIZUDZAQZWGHUEZJKZAUF
+       UKWIAWFWGWFLWGWGWEKWGBQZJKZWJWGWDKZRBMZWIWGWEUGBWGWGWDJNWMWLWKRZBMWJWHOZ
+       WKRZBMWIWKWLBUHWNWPBWLWOWKWLWGWJWCKZWGHULZWJDKZWOWJWGWCUIWQWGCQZWBKZWTWJ
+       DKZRZCMWTWROZXBRZCMWSCWGWJDWBNXCXECXAXDXBXAWTWGWAKZWTWGEKZWTHFKZRZXDWGWT
+       WAUIXFXGWTVTLZRXIWTWGEVTUJXJXHXGFHWTUMUNUOWGHWTAUPZPUQSURUSXBWSCWRWGHXKP
+       VBWTWRWJDVCUTSWSWHWJOWOWGHWJXKPVAWHWJVDUOSURUSWKWIBWHWGHXKPVEWJWHWGJVFUT
+       SSVNWEWDJWCDWBVGWAEVTVHVRVSFVITHVJVKVLTVMTVOVMVPVQ $.
+       $( [25-Mar-2015] $)
+  $}
+
+  ${ $d n x $. $d N x $. 
+     $( Any natural is less than one plus itself. $)
+     nnltp1c $p |- ( N e. Nn -> N <c ( N +c 1c ) ) $=
+       ( vx vn cv c1c cplc cltc wbr c0c wceq addceq1 breq12d clec wne cncs wcel
+       id 1cnc brltc cnnc nnltp1clem1 weq 0cnc addlecncs 0cnsuc necomi mpbir2an
+       id1 mp2an wa wi nnnc peano2nc syl w3a leaddc1 ex mp3an3 syl2anc suc11nnc
+       wb peano2 mpdan biimpd necon3d anim12d 3imtr4g finds ) BDZVIEFZGHIIEFZGH
+       ZCDZVMEFZGHZVNVNEFZGHZAAEFZGHBCABUAVIIJZVIIVJVKGVSQVIIEKLBCUBZVIVMVJVNGV
+       TQVIVMEKLVIVNJZVIVNVJVPGWAQVIVNEKLVIAJZVIAVJVRGWBUHVIAEKLVLIVKMHZIVKNIOP
+       EOPZWCUCRIEUDUIVKIIUEUFIVKSUGVMTPZVMVNMHZVMVNNZUJVNVPMHZVNVPNZUJVOVQWEWF
+       WHWGWIWEVMOPZVNOPZWFWHUKZVMULZWEWJWKWMVMUMUNWJWKWDWLRWJWKWDUOWFWHEVMVNUP
+       UQURUSWEVNVPVMVNWEVNVPJZVMVNJZWEVNTPWNWOVAVMVBVMVNUTVCVDVEVFVMVNSVNVPSVG
+       VH $.
+       $( [25-Mar-2015] $)
+  $}
+
+  ${ $d m p $. $d m q $. $d m x $. $d m y $. $d p q $. $d p t $. $d p x $. $d p y $. $d q t $. $d q x $. $d t x $. $d x y $. 
+     $( Lemma for ~ nmembers1 .  Set up stratification. $)
+     nmembers1lem1 $p |- { x | { m e. Nn | ( 1c <_c m /\ m <_c x ) } e. T_c
+                                                  T_c x } e. _V $=
+       ( vp vq vt clec c1c cnnc cvv ctcfn cin cv wbr wa wcel 3bitri exbii bitri
+       wex cop csset cins3 csn cima cres csi cins2 csymdif ccompl ccnv ccom cxp
+       vy crn cuni1 crab ctc cab vex eluni1 snex wel w3a elrn2 elima1c otelins2
+       wceq elin opsnelsi opelres ancom df-br brres bitr4i anbi1i bitr3i anbi2i
+       elimasn breq2 breq1 anbi12d elrab 3bitr4i releqel opelxp mpbiran brsnsi2
+       opelco 19.42v excom an12 anbi1d ceqsexv brcnv brtcfn anbi12i tcex eqeq2d
+       tceq otelins3 opelssetsn df-3an imasn iniseg ineq12i eqtri ineq1i dfrab2
+       weq inab eqtr4i lecex imaex cnvex inex nncex eqeltrri eleq1 eleq2 abbi2i
+       ceqsex2v ssetex ins3ex resex siex ins2ex symdifex 1cex complex vvex coex
+       tcfnex xpex rnex uni1ex ) UAUBZFFGUCZUDZUEZHUEZUFZUGZUHZGUDZUIZUFZUGZIJU
+       JZUFZUUHUKZULZKZYPKZGUDZUNZUOZUOZGBLZFMZUURALZFMZNZBHUPZUUTUQZUQZOZAURIU
+       VFAUUQUUTUUQOUUTUCZUUPOUVGUCZUUOOZUVFUUTUUPAUSZUTUVGUUOUUTVAZUTUVICLZUVC
+       VGZDLZUVEVGZCDVBZVCZCSZDSZUVQDSCSUVFUVIUVNUVHTZUUNOZDSUVSDUVHUUNVDUWAUVR
+       DUWAUVLUCZUVTTZUUMOZCSUVRCUVTUUMVEUWDUVQCUWCUULOZUWCYPOZNUVMUVONZUVPNUWD
+       UVQUWEUWGUWFUVPUWEUWCUUGOZUWCUUKOZNUWGUWCUUGUUKVHUWHUVMUWIUVOUWHUWBUVHTU
+       UFOUVLUVGTUUEOUVMUWBUVNUVHUUFDUSZVFUVLUVGUUECUSZUVKVICUMUVCUUAUVGUVKUMLZ
+       UUTTZYTOZUWLHOZGUWLFMZUWLUUTFMZNZNZUWLUCUVGTUUAOUWLUVCOUWNUWMYSOZUWONUWO
+       UWTNUWSUWLUUTYSHVJUWTUWOVKUWTUWRUWOUWTUWLUUTYSMZUWRUWLUUTYSVLUXAUWQUWLYR
+       OZNUXBUWQNUWRUWLUUTFYRVMUWQUXBVKUXBUWPUWQUXBGUWLTFOUWPFGUWLVRGUWLFVLVNVO
+       PVPVQPUWLUUTYTUMUSUVJVIUVBUWRBUWLHBUMXIUUSUWPUVAUWQUURUWLGFVSUURUWLUUTFV
+       TWAWBWCWDPUWIUVTUUJOZUVNELZUUHMZUXDUVHUUIMZNZESZUVOUWIUWBIOUXCUVLVAZUWBU
+       VTIUUJWEWFEUVNUVHUUIUUHWHUXHUXEUXDUWBVGZUVLUVGUUHMZNZNZCSZESUXMESZCSZUVO
+       UXGUXNEUXGUXEUXLCSZNUXNUXFUXQUXECUVGUXDUUHUVKWGVQUXEUXLCWIVNQUXMECWJUXPU
+       VNUWBUUHMZUXKNZCSUVLUVDVGZUVNUVLUQZVGZNZCSUVOUXOUXSCUXOUXJUXEUXKNZNZESUX
+       SUXMUYEEUXEUXJUXKWKQUYDUXSEUWBUXIUXJUXEUXRUXKUXDUWBUVNUUHVSWLWMRQUXSUYCC
+       UXSUYBUXTNUYCUXRUYBUXKUXTUXRUWBUVNJMUYBUVNUWBJWNUVLUVNUWKWORUXKUVGUVLJMU
+       XTUVLUVGJWNUUTUVLUVJWORWPUYBUXTVKRQUYBUVOCUVDUUTWQUXTUYAUVEUVNUVLUVDWSWR
+       WMPPPWPRUWFUWBUVNTUAOUVPUWBUVNUVHUAUVGVAWTUVLUVNUWKUWJXARWPUWCUULYPVHUVM
+       UVOUVPXBWCQRQRUVQDCWJUVPUVCUVNOUVFCDUVCUVEYRFUJZUVGUDZKZHKZUVCIUYIUVBBUR
+       ZHKUVCUYHUYJHUYHUUSBURZUVABURZKUYJYRUYKUYGUYLBGFXCBFUUTXDXEUUSUVABXJXFXG
+       UVBBHXHXKUYHHYRUYGFYQXLGVAXMZUYFUVGFXLXNUVKXMXOXPXOXQUVDWQUVLUVCUVNXRUVN
+       UVEUVCXSYAPPXTUUPUUOUUNUUMGUULYPUUGUUKUUFUUEUUDUUCGYPUUBUAYBYCZUUAYTYSHF
+       YRXLUYMYDXPYDYEYFYGYHXMYIYEYFIUUJYJUUIUUHUUHJYLXNZYEUYOYKYMXOUYNXOYHXMYN
+       YOYOXQ $.
+       $( [25-Mar-2015] $)
+  $}
+
+  ${ $d m x $. $d N m $. $d m n $. $d n x $. $d N x $. $d k m $. $d k n $. 
+     $( Count the number of elements in a natural interval.  This
+     	theorem will take on a different form after we introduce the
+	Axiom of Counting. $)
+     nmembers1 $p |- ( N e. Nn -> 
+      { m e. Nn | ( 1c <_c m /\ m <_c N ) } e. T_c T_c N ) $=
+       ( vx c1c clec wbr wa cnnc crab ctc wcel c0c cplc wceq breq2 tceq wn cncs
+       syl wi vn vk cv nmembers1lem1 anbi2d rabbidv tc0c ax-mp eqtri syl6eq weq
+       eleq12d eqid c0 rabeq0 nnnc le0nc 0cnc sbth mpan2 mpan2d wrex wne 0cnsuc
+       addccom eqnetri necomi df-ne mpbi nrex wb 1cnc dflec2 mp2an mtbir mtbiri
+       a1i syl6 con2d imnan sylib mprgbir el0c mpbir csn wo simpl peano2 eleq1a
+       jaod addlecncs mpan syl6breq biimprd com12 adantr simp3 biantrurd orbi1d
+       cun w3a 3bitr3d 3expia pm5.21ndd simpr breq1 anbi12d elrab elun vex elsn
+       orbi12i bitri 3bitr4g eqrdv cltc nnltp1c ltlenlec syl2anc simprd intnand
+       ex mpbid a1d df-an con2bii 1cex addcex elsuci sylan2 ancoms eqeltrd tcdi
+       tc1c addceq2i tccl syl5eq eqtrd eleqtrrd finds ) DAUCZEFZUUACUCZEFZGZAHI
+       ZUUCJZJZKUUBUUALEFZGZAHIZLKZUUBUUAUAUCZEFZGZAHIZUUMJZJZKZUUBUUAUUMDMZEFZ
+       GZAHIZUUTJZJZKZUUBUUABEFZGZAHIZBJZJZKCUABCAUDUUCLNZUUFUUKUUHLUVLUUEUUJAH
+       UVLUUDUUIUUBUUCLUUAEOUEUFUVLUUHLJZJZLUVLUUGUVMNUUHUVNNUUCLPUUGUVMPSUVNUV
+       MLUVMLNUVNUVMNUGUVMLPUHUGUIUJULCUAUKZUUFUUPUUHUURUVOUUEUUOAHUVOUUDUUNUUB
+       UUCUUMUUAEOUEUFUVOUUGUUQNUUHUURNUUCUUMPUUGUUQPSULUUCUUTNZUUFUVCUUHUVEUVP
+       UUEUVBAHUVPUUDUVAUUBUUCUUTUUAEOUEUFUVPUUHUVEUVEUVPUUGUVDNUUHUVENUUCUUTPU
+       UGUVDPSUVEUMUJULUUCBNZUUFUVIUUHUVKUVQUUEUVHAHUVQUUDUVGUUBUUCBUUAEOUEUFUV
+       QUUGUVJNUUHUVKNUUCBPUUGUVJPSULUULUUKUNNZUVRUUJQZAHUUJAHUOUUAHKZUUBUUIQTU
+       VSUVTUUIUUBUVTUUIUUALNZUUBQUVTUUILUUAEFZUWAUVTUUARKZUWBUUAUPZUUAUQSUVTUW
+       CUUIUWBGUWATZUWDUWCLRKZUWEURUUALUSUTSVAUWAUUBDLEFZUWGLDUUCMZNZCRVBZUWICR
+       UWIQZUUCRKLUWHVCUWKUWHLUWHUUCDMLDUUCVEUUCVDVFVGLUWHVHVIVQVJDRKZUWFUWGUWJ
+       VKVLURDLCVMVNVOUUALDEOVPVRVSUUBUUIVTWAWBUUKWCWDUUMHKZUUSUVFUWMUUSGZUVCUU
+       RDMZUVEUWNUVCUUPUUTWEZWTZUWOUWMUVCUWQNUUSUWMUBUVCUWQUWMUBUCZHKZDUWREFZUW
+       RUUTEFZGZGZUWSUWTUWRUUMEFZGZGZUWRUUTNZWFZUWRUVCKUWRUWQKZUWMUWSUXCUXHUXCU
+       WSTUWMUWSUXBWGVQUWMUXFUWSUXGUXFUWSTUWMUWSUXEWGVQUWMUUTHKZUXGUWSTUUMWHZUU
+       THUWRWISWJUWMUWSUXCUXHVKUWMUWSGZUXBUXEUXGWFZUXCUXHUXLUWTUXBUXMUXBUWTTUXL
+       UWTUXAWGVQUXLUXEUWTUXGUXEUWTTUXLUWTUXDWGVQUWMUXGUWTTZUWSUWMDUUTEFZUXNUWM
+       DDUUMMZUUTEUWMUUMRKZDUXPEFZUUMUPZUWLUXQUXRVLDUUMWKWLSDUUMVEWMUXGUXOUWTUX
+       GUWTUXOUWRUUTDEOWNWOSWPWJUWMUWSUWTUXBUXMVKUWMUWSUWTXAZUXAUXDUXGWFUXBUXM?
+       UXTUWTUXAUWMUWSUWTWQZWRUXTUXDUXEUXGUXTUWTUXDUYAWRWSXBXCXDUXLUWSUXBUWMUWS
+       XEZWRUXLUXEUXFUXGUXLUWSUXEUYBWRWSXBYBXDUVBUXBAUWRHAUBUKZUUBUWTUVAUXAUUAU
+       WRDEOZUUAUWRUUTEXFXGXHUXIUWRUUPKZUWRUWPKZWFUXHUWRUUPUWPXIUYEUXFUYFUXGUUO
+       UXEAUWRHUYCUUBUWTUUNUXDUYDUUAUWRUUMEXFXGXHUWRUUTUBXJXKXLXMXNXOWPUUSUWMUW
+       QUWOKZUWMUUSUUTUUPKZQZUYGUWMUXJUXOUUTUUMEFZGZQZTZUYIUWMUYLUXJUWMUYJUXOUW
+       MUUMUUTEFZUYJQZUWMUUMUUTXPFZUYNUYOGZUUMXQUWMUXQUUTRKZUYPUYQVKUXSUWMUXJUY
+       RUXKUUTUPSUUMUUTXRXSYCXTYAYDUYHUYMUYHUXJUYKGUYMQUUOUYKAUUTHUUAUUTNUUBUXO
+       UUNUYJUUAUUTDEOUUAUUTUUMEXFXGXHUXJUYKYEXMYFWAUUPUURUUTUUMDUAXJYGYHYIYJYK
+       YLUWMUVEUWONUUSUWMUVEUUQDJZMZJZUWOUWMUVDUYTNZUVEVUANUWMUXQVUBUXSUXQUWLVU
+       BVLUUMDYMUTSUVDUYTPSUWMVUAUUQDMZJZUWOUYTVUCNVUAVUDNUYSDUUQYNYOUYTVUCPUHU
+       WMVUDUURUYSMZUWOUWMUUQRKZVUDVUENZUWMUXQVUFUXSUUMYPSVUFUWLVUGVLUUQDYMUTSU
+       YSDUURYNYOUJYQYRWPYSYBYT $.
+       $( [25-Mar-2015] $)
   $}
 
 $(
