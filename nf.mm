@@ -28693,92 +28693,87 @@ $)
 
 
   ${
-    $d a b $.  $d a c $.  $d a t $.  $d a w $.  $d a z $.  $d b w $.  $d c t $.
-    $d c w $.  $d t w $.  $d t x $.  $d t y $.  $d t z $.  $d w x $.  $d w y $.
-    $d w z $.  $d x y $.  $d x z $.  $d y z $.
+    $d a b $.  $d a t $.  $d a w $.  $d a z $.  $d b t $.  $d b w $.  $d t w $.
+    $d t x $.  $d t y $.  $d t z $.  $d w x $.  $d w y $.  $d w z $.  $d x y $.
+    $d x z $.  $d y z $.
     $( ~ ax-xp presented without any set theory definitions. $)
     axxpprim $p |- E. y A. z ( z e. y <-> E. w E. t ( A. a ( a e. z <-> ( A. b
-        ( b e. a <-> b = w ) \/ A. c ( c e. a <-> ( c = w \/ c = t ) ) ) ) /\ t
+        ( b e. a <-> b = w ) \/ A. b ( b e. a <-> ( b = w \/ b = t ) ) ) ) /\ t
         e. x ) ) $=
-      ( wel cv copk wceq wa wex wb wal weq wo ax-xp axprimlem2 albii exbii mpbi
-      anbi1i 2exbii bibi2i ) CBIZCJDJZEJZKLZEAIZMZENDNZOZCPZBNUGFCIGFIGDQOGPHFI
-      HDQHEQROHPROFPZUKMZENDNZOZCPZBNABCDESUOUTBUNUSCUMURUGULUQDEUJUPUKUHUIGHCF
-      TUDUEUFUAUBUC $.
+      ( wel cv copk wceq wa wex wb wal weq wo ax-xp axprimlem2 anbi1i 2exbii
+      bibi2i albii exbii mpbi ) CBHZCIDIZEIZJKZEAHZLZEMDMZNZCOZBMUFFCHGFHZGDPZN
+      GOUOUPGEPQNGOQNFOZUJLZEMDMZNZCOZBMABCDERUNVABUMUTCULUSUFUKURDEUIUQUJUGUHG
+      GCFSTUAUBUCUDUE $.
       $( [25-Mar-2015] $)
   $}
 
   ${
-    $d a b $.  $d a w $.  $d a y $.  $d a z $.  $d b c $.  $d b d $.  $d b w $.
-    $d b z $.  $d c z $.  $d d w $.  $d d z $.  $d e f $.  $d e w $.  $d e x $.
-    $d e z $.  $d f g $.  $d f h $.  $d f w $.  $d f z $.  $d g w $.  $d h w $.
-    $d h z $.  $d w x $.  $d w y $.  $d w z $.  $d x y $.  $d x z $.  $d y z $.
+    $d a b $.  $d a w $.  $d a x $.  $d a y $.  $d a z $.  $d b c $.  $d b w $.
+    $d b z $.  $d c w $.  $d c z $.  $d w x $.  $d w y $.  $d w z $.  $d x y $.
+    $d x z $.  $d y z $.
     $( ~ ax-cnv presented without any set theory definitions. $)
-    axcnvprim $p |- E. y A. z A. w ( E. a ( A. b ( b e. a <-> ( A. c ( c e. b
-        <-> c = z ) \/ A. d ( d e. b <-> ( d = z \/ d = w ) ) ) ) /\ a e. y )
-        <-> E. e ( A. f ( f e. e <-> ( A. g ( g e. f <-> g = w ) \/ A. h ( h e.
-        f <-> ( h = w \/ h = z ) ) ) ) /\ e e. x ) ) $=
-      ( cv wb wal wex wel weq wo wa copk ax-cnv df-clel axprimlem2 anbi1i exbii
-      wcel wceq bitri bibi12i 2albii mpbi ) CMZDMZUAZBMZUGZUNUMUAZAMZUGZNZDOCOZ
-      BPJIQKJQKCRNKOLJQLCRLDRSNLOSNJOZIBQZTZIPZFEQGFQGDRNGOHFQHDRHCRSNHOSNFOZEA
-      QZTZEPZNZDOCOZBPABCDUBVBVLBVAVKCDUQVFUTVJUQIMUOUHZVDTZIPVFIUOUPUCVNVEIVMV
-      CVDUMUNKLIJUDUEUFUIUTEMURUHZVHTZEPVJEURUSUCVPVIEVOVGVHUNUMGHEFUDUEUFUIUJU
-      KUFUL $.
+    axcnvprim $p |- E. y A. z A. w 
+       ( E. a ( A. b ( b e. a <-> ( A. c ( c e. b
+        <-> c = z ) \/ A. c ( c e. b <-> ( c = z \/ c = w ) ) ) ) /\ a e. y )
+        <-> E. a ( A. b ( b e. a <-> ( A. c ( c e. b <-> c = w ) \/ A. c ( c e.
+        b <-> ( c = w \/ c = z ) ) ) ) /\ a e. x ) ) $=
+      ( cv copk wcel wb wal wex wel weq wo wa wceq df-clel exbii ax-cnv bibi12i
+      axprimlem2 anbi1i bitri 2albii mpbi ) CHZDHZIZBHZJZUIUHIZAHZJZKZDLCLZBMFE
+      NZGFNZGCOZKGLUSUTGDOZPKGLPKFLZEBNZQZEMZURUSVAKGLUSVAUTPKGLPKFLZEANZQZEMZK
+      ZDLCLZBMABCDUAUQVKBUPVJCDULVEUOVIULEHZUJRZVCQZEMVEEUJUKSVNVDEVMVBVCUHUIGG
+      EFUCUDTUEUOVLUMRZVGQZEMVIEUMUNSVPVHEVOVFVGUIUHGGEFUCUDTUEUBUFTUG $.
       $( [25-Mar-2015] $)
   $}
 
   ${
-    $d a b $.  $d a x $.  $d a y $.  $d a z $.  $d b c $.  $d b d $.  $d b y $.
-    $d b z $.  $d c y $.  $d d y $.  $d d z $.  $d e x $.  $d e y $.  $d e z $.
-    $d x y $.  $d x z $.  $d y z $.
+    $d a b $.  $d a x $.  $d a y $.  $d a z $.  $d b c $.  $d b y $.  $d b z $.
+    $d c y $.  $d c z $.  $d x y $.  $d x z $.  $d y z $.
     $( ~ ax-sset presented without any set theory definitions. $)
     axssetprim $p |- E. x A. y A. z ( E. a ( A. b ( b e. a <-> ( A. c ( c e. b
-        <-> c = y ) \/ A. d ( d e. b <-> ( d = y \/ d = z ) ) ) ) /\ a e. x )
-        <-> A. e ( e e. y -> e e. z ) ) $=
-      ( cv copk wcel wel wi wal wb wex weq wo wa exbii ax-sset axprimlem2 bitri
-      wceq df-clel anbi1i bibi1i 2albii mpbi ) BIZCIZJZAIZKZDBLDCLMDNZOZCNBNZAP
-      FELGFLGBQOGNHFLHBQHCQROHNROFNZEALZSZEPZUOOZCNBNZAPABCDUAUQVCAUPVBBCUNVAUO
-      UNEIULUDZUSSZEPVAEULUMUEVEUTEVDURUSUJUKGHEFUBUFTUCUGUHTUI $.
+        <-> c = y ) \/ A. c ( c e. b <-> ( c = y \/ c = z ) ) ) ) /\ a e. x )
+        <-> A. a ( a e. y -> a e. z ) ) $=
+      ( cv copk wcel wel wi wal wb wex weq wo wa ax-sset wceq exbii anbi1i mpbi
+      df-clel axprimlem2 bitri bibi1i 2albii ) BGZCGZHZAGZIZDBJDCJKDLZMZCLBLZAN
+      EDJFEJZFBOZMFLUPUQFCOPMFLPMELZDAJZQZDNZUMMZCLBLZANABCDRUOVCAUNVBBCULVAUMU
+      LDGUJSZUSQZDNVADUJUKUCVEUTDVDURUSUHUIFFDEUDUATUEUFUGTUB $.
       $( [25-Mar-2015] $)
   $}
 
   ${
-    $d a b $.  $d a w $.  $d a y $.  $d a z $.  $d b c $.  $d b e $.  $d b w $.
-    $d b z $.  $d c d $.  $d c z $.  $d d z $.  $d e f $.  $d e g $.  $d e w $.
-    $d e z $.  $d f z $.  $d g w $.  $d h i $.  $d h w $.  $d h x $.  $d h z $.
-    $d i j $.  $d i k $.  $d i w $.  $d i z $.  $d j z $.  $d k w $.  $d k z $.
-    $d w x $.  $d w y $.  $d w z $.  $d x y $.  $d x z $.  $d y z $.
+    $d a b $.  $d a w $.  $d a x $.  $d a y $.  $d a z $.  $d b c $.  $d b w $.
+    $d b z $.  $d c d $.  $d c w $.  $d c z $.  $d d w $.  $d d z $.  $d w x $.
+    $d w y $.  $d w z $.  $d x y $.  $d x z $.  $d y z $.
     $( ~ ax-si presented without any set theory definitions. $)
     axsiprim $p |- E. y A. z A. w ( E. a ( A. b ( b e. a <-> ( A. c ( c e. b
-        <-> A. d ( d e. c <-> d = z ) ) \/ A. e ( e e. b <-> ( A. f ( f e. e
-        <-> f = z ) \/ A. g ( g e. e <-> g = w ) ) ) ) ) /\ a e. y ) <-> E. h (
-        A. i ( i e. h <-> ( A. j ( j e. i <-> j = z ) \/ A. k ( k e. i <-> ( k
-        = z \/ k = w ) ) ) ) /\ h e. x ) ) $=
-      ( cv wb wal wex wel csn copk wcel weq wo wa ax-si wceq df-clel axprimlem2
-      axprimlem1 bibi2i albii orbi12i bitri anbi1i exbii bibi12i 2albii mpbi )
-      CPZUAZDPZUAZUBZBPZUCZVAVCUBZAPZUCZQZDRCRZBSMLTZNMTZONTOCUDQORZQZNRZEMTZFE
-      TFCUDQFRZGETGDUDQGRZUEZQZERZUEZQZMRZLBTZUFZLSZIHTJITJCUDQJRKITKCUDKDUDUEQ
-      KRUEQIRZHATZUFZHSZQZDRCRZBSABCDUGVLWOBVKWNCDVGWIVJWMVGLPVEUHZWGUFZLSWILVE
-      VFUIWQWHLWPWFWGWPVMVNNPVBUHZQZNRZVREPZVBUHZXAVDUHZUEZQZERZUEZQZMRWFVBVDNE
-      LMUJXHWEMXGWDVMWTVQXFWCWSVPNWRVOVNVANOUKULUMXEWBEXDWAVRXBVSXCVTVAEFUKVCEG
-      UKUNULUMUNULUMUOUPUQUOVJHPVHUHZWKUFZHSWMHVHVIUIXJWLHXIWJWKVAVCJKHIUJUPUQU
-      OURUSUQUT $.
-      $( [25-Mar-2015] $)
+        <-> A. d ( d e. c <-> d = z ) ) \/ A. c ( c e. b <-> ( A. d ( d e. c
+        <-> d = z ) \/ A. d ( d e. c <-> d = w ) ) ) ) ) /\ a e. y ) <-> E. a (
+        A. b ( b e. a <-> ( A. c ( c e. b <-> c = z ) \/ A. c ( c e. b <-> ( c
+        = z \/ c = w ) ) ) ) /\ a e. x ) ) $=
+      ( cv wb wal wex wel weq wo wa wceq bibi2i albii bitri csn copk wcel ax-si
+      df-clel axprimlem2 axprimlem1 orbi12i anbi1i exbii bibi12i 2albii mpbi )
+      CIZUAZDIZUAZUBZBIZUCZUNUPUBZAIZUCZJZDKCKZBLFEMZGFMZHGMZHCNJHKZJZGKZVGVIVH
+      HDNJHKZOZJZGKZOZJZFKZEBMZPZELZVFVGGCNZJGKVGWBGDNOJGKOJFKZEAMZPZELZJZDKCKZ
+      BLABCDUDVEWHBVDWGCDUTWAVCWFUTEIZURQZVSPZELWAEURUSUEWKVTEWJVRVSWJVFVGGIZUO
+      QZJZGKZVGWMWLUQQZOZJZGKZOZJZFKVRUOUQGGEFUFXAVQFWTVPVFWOVKWSVOWNVJGWMVIVGU
+      NGHUGZRSWRVNGWQVMVGWMVIWPVLXBUPGHUGUHRSUHRSTUIUJTVCWIVAQZWDPZELWFEVAVBUEX
+      DWEEXCWCWDUNUPGGEFUFUIUJTUKULUJUM $.
+      $( [30-Mar-2015] $)
   $}
 
   ${
-    $d a b $.  $d a w $.  $d a x $.  $d a z $.  $d b c $.  $d b d $.  $d b w $.
-    $d b z $.  $d c w $.  $d d e $.  $d d w $.  $d d z $.  $d e z $.  $d w x $.
-    $d w y $.  $d w z $.  $d x y $.  $d x z $.  $d y z $.
+    $d a b $.  $d a w $.  $d a x $.  $d a z $.  $d b c $.  $d b w $.  $d b z $.
+    $d c d $.  $d c w $.  $d c z $.  $d d z $.  $d w x $.  $d w y $.  $d w z $.
+    $d x y $.  $d x z $.  $d y z $.
     $( ~ ax-typlower presented without any set theory definitions. $)
     axtyplowerprim $p |- E. y A. z ( z e. y <-> A. w E. a ( A. b ( b e. a <-> (
-        A. c ( c e. b <-> c = w ) \/ A. d ( d e. b <-> ( d = w \/ A. e ( e e. d
-        <-> e = z ) ) ) ) ) /\ a e. x ) ) $=
-      ( wel cv wal wb wex weq wo wa wceq bibi2i albii csn copk wcel ax-typlower
-      df-clel axprimlem2 axprimlem1 orbi2i bitri anbi1i exbii mpbi ) CBJZDKZCKZ
-      UAZUBZAKZUCZDLZMZCLZBNUMGFJZHGJHDOMHLZIGJZIDOZEIJECOMELZPZMZILZPZMZGLZFAJ
-      ZQZFNZDLZMZCLZBNABCDUDVBVSBVAVRCUTVQUMUSVPDUSFKUQRZVNQZFNVPFUQURUEWAVOFVT
-      VMVNVTVCVDVEVFIKUPRZPZMZILZPZMZGLVMUNUPHIFGUFWGVLGWFVKVCWEVJVDWDVIIWCVHVE
-      WBVGVFUOIEUGUHSTUHSTUIUJUKUITSTUKUL $.
+        A. c ( c e. b <-> c = w ) \/ A. c ( c e. b <-> ( c = w \/ A. d ( d e. c
+        <-> d = z ) ) ) ) ) /\ a e. x ) ) $=
+      ( wel cv wal wb wex weq wo wa wceq orbi2i bibi2i albii df-clel axprimlem2
+      csn copk wcel ax-typlower axprimlem1 bitri anbi1i exbii mpbi ) CBIZDJZCJZ
+      UCZUDZAJZUEZDKZLZCKZBMULFEIZGFIZGDNZLGKZVCVDHGIHCNLHKZOZLZGKZOZLZFKZEAIZP
+      ZEMZDKZLZCKZBMABCDUFVAVRBUTVQCUSVPULURVODUREJUPQZVMPZEMVOEUPUQUAVTVNEVSVL
+      VMVSVBVEVCVDGJUOQZOZLZGKZOZLZFKVLUMUOGGEFUBWFVKFWEVJVBWDVIVEWCVHGWBVGVCWA
+      VFVDUNGHUGRSTRSTUHUIUJUHTSTUJUK $.
       $( [25-Mar-2015] $)
   $}
 
@@ -56254,7 +56249,7 @@ $)
 
   ${
     $d m n $.  $d M n $.  $d m p $.  $d m q $.  $d m x $.  $d N n $.  $d n p $.
-    $d n q $.  $d n x $.  $d N x $.  $d p q $.  
+    $d n q $.  $d n x $.  $d N x $.  $d p q $.
     $( A cardinal that is less than or equal to a natural is a natural.
        Theorem XI.3.3 of [Rosser], p. 391. $)
     nclenn $p |- ( ( M e. NC /\ N e. Nn /\ M <_c N ) -> M e. Nn ) $=
@@ -56283,9 +56278,26 @@ $)
       $( [19-Mar-2015] $)
   $}
 
-  ${ $d t u $. $d t x $. $d u x $. 
-     $( Lemma for ~ nnltp1c .  Set up stratification. $)
-     nnltp1clem1 $p |- { x | x <c ( x +c 1c ) } e. _V $=
+  ${
+    $d M p $.  $d N p $.
+    $( Less than or equal statement for naturals. $)
+    lecnnc $p |- ( ( M e. Nn /\ N e. Nn ) -> ( M <_c N <-> 
+       E. p e. Nn N = ( M +c p ) ) ) $=
+       ( cnnc wcel wa clec wbr cv cplc wceq cncs wrex wb nnnc dflec2 syl2an wex
+       w3a df-rex simpl2 wi addlecncs sylan2 addccom syl6breq ancoms syl5ibrcom
+       simpr breq2 impancom 3adant2 imp nclenn syl3anc ex impbid1 3expia exbidv
+       pm5.32rd 3bitr4g bitrd ) ADEZBDEZFZABGHZBACIZJZKZCLMZVICDMZVCALEZBLEVFVJ
+       NVDAOZBOABCPQVEVGLEZVIFZCRVGDEZVIFZCRVJVKVEVOVQCVEVIVNVPVCVDVIVNVPNVCVDV
+       ISZVNVPVRVNVPVRVNFVNVDVGBGHZVPVRVNUIVCVDVIVNUAVRVNVSVCVIVNVSUBVDVCVNVIVS
+       VCVNFVSVIVGVHGHZVNVCVTVNVCFVGVGAJZVHGVCVNVLVGWAGHVMVGAUCUDVGAUEUFUGBVHVG
+       GUJUHUKULUMVGBUNUOUPVGOUQURUTUSVICLTVICDTVAVB $.
+       $( [30-Mar-2015] $)
+  $}
+
+  ${
+    $d t u $.  $d t x $.  $d u x $.
+    $( Lemma for ~ nnltp1c .  Set up stratification. $)
+    nnltp1clem1 $p |- { x | x <c ( x +c 1c ) } e. _V $=
        ( vt vu caddcfn c1st c2nd ccnv c1c ccom cltc wbr wcel wex brco wceq 1cex
        cv wa 3bitri cnvex csn cima cres cfix cplc cab elfix exancom brcnv brres
        cvv cop eliniseg anbi2i bitri vex op1st2nd anbi1i exbii ceqsexv braddcfn
@@ -56300,9 +56312,10 @@ $)
        $( [25-Mar-2015] $)
   $}
 
-  ${ $d n x $. $d N x $. 
-     $( Any natural is less than one plus itself. $)
-     nnltp1c $p |- ( N e. Nn -> N <c ( N +c 1c ) ) $=
+  ${
+    $d n x $.  $d N x $.
+    $( Any natural is less than one plus itself. $)
+    nnltp1c $p |- ( N e. Nn -> N <c ( N +c 1c ) ) $=
        ( vx vn cv c1c cplc cltc wbr c0c wceq addceq1 breq12d clec wne cncs wcel
        id 1cnc brltc cnnc nnltp1clem1 weq 0cnc addlecncs 0cnsuc necomi mpbir2an
        id1 mp2an wa wi nnnc peano2nc syl w3a leaddc1 ex mp3an3 syl2anc suc11nnc
@@ -56316,9 +56329,102 @@ $)
        $( [25-Mar-2015] $)
   $}
 
-  ${ $d m p $. $d m q $. $d m x $. $d m y $. $d p q $. $d p t $. $d p x $. $d p y $. $d q t $. $d q x $. $d t x $. $d x y $. 
-     $( Lemma for ~ nmembers1 .  Set up stratification. $)
-     nmembers1lem1 $p |- { x | { m e. Nn | ( 1c <_c m /\ m <_c x ) } e. T_c
+  ${ $d m p $. $d m q $. $d m t $. $d m x $. $d n p $. $d n q $. $d n t $. $d n x $. $d p q $. $d p t $. $d p x $. $d q t $. $d q x $. $d t x $. 
+    $( Stratification lemma for ~ nnleaddc1 . $)
+    nnleaddc1lem1 $p |- { x | ( ( m e. NC /\ n e. NC ) -> (
+             ( m +c x ) <_c ( n +c x ) -> m <_c n ) ) } e. _V $=
+      ( vp vq vt cv wcel wa cab caddcfn c2nd c1st clec wbr wex cop bitri 3bitri
+      wceq cncs ccnv csn cima cres ccom cins2 cvv cxp cin cins3 crn ccompl cplc
+      wn cun wi wo unab w3a elrn2 vex otelins2 opelcnv opelco brcnv brres ancom
+      elin eliniseg anbi1i op1st2nd exbii breq1 ceqsexv braddcfn opelxp mpbiran
+      opex eqcom anbi12i otelins3 df-br bitr4i df-3an excom addcex breq2 abbi2i
+      3bitr4i ceqsex2v compleqi complab eqtri uneq1i uneq2i imor orbi2i 3eqtr4i
+      abbii abexv 2ndex 1stex cnvex snex imaex resex coex ins2ex vvex xpex inex
+      addcfnex lecex ins3ex rnex complex unex eqeltrri ) BGZUAHCGZUAHIZUOZAJZKL
+      MUBZXTUCZUDZUEZUBZUFZUBZUGZUHKLYEYAUCZUDZUEZUBZUFZUBZUIZUJZNUKZUJZULZULZU
+      MZXTYANOZAJZUPZUPZYBXTAGZUNZYAUUJUNZNOZUUFUQZUQZAJZUHYDUUMUOZUUFURZAJZUPY
+      CUURURZAJUUIUUPYCUURAUSUUHUUSYDUUHUUQAJZUUGUPUUSUUEUVAUUGUUEUUMAJZUMUVAUU
+      DUVBUUMAUUDUUJUUDHZDGZUUKTZEGZUULTZUVDUVFNOZUTZDPZEPZUVIEPDPUUMUVCUVFUUJQ
+      ZUUCHZEPUVKEUUJUUCVAUVMUVJEUVMUVDUVLQZUUBHZDPUVJDUVLUUBVAUVOUVIDUVNYTHZUV
+      NUUAHZIUVEUVGIZUVHIUVOUVIUVPUVRUVQUVHUVPUVNYLHZUVNYSHZIUVRUVNYLYSVIUVSUVE
+      UVTUVGUVSUVDUUJQYKHZUUKUVDTZUVEUVDUVFUUJYKEVBVCUWAUUJUVDQYJHZXTUUJQZUVDKO
+      ZUWBUVDUUJYJVDUWCUUJFGZYIOZUWFUVDKOZIZFPUWFUWDTZUWHIZFPUWEFUUJUVDKYIVEUWI
+      UWKFUWGUWJUWHUWGUWFUUJYHOZUWJUUJUWFYHVFUWLUWFUUJLOZUWFYGHZIZUWFXTMOZUWMIZ
+      UWJUWFUUJLYGVGUWOUWNUWMIUWQUWMUWNVHUWNUWPUWMMXTUWFVJVKRXTUUJUWFBVBZAVBZVL
+      SRVKVMUWHUWEFUWDXTUUJUWRUWSVSUWFUWDUVDKVNVOSXTUUJUVDUWRUWSVPSUUKUVDVTSUVT
+      UVLYRHZUUJUVFQYQHZUVGUVTUVDUHHUWTDVBUVDUVLUHYRVQVRUVFUUJYQVDUXAYAUUJQZUVF
+      KOZUULUVFTUVGUXAUUJUWFYPOZUWFUVFKOZIZFPUWFUXBTZUXEIZFPUXCFUUJUVFKYPVEUXFU
+      XHFUXDUXGUXEUXDUWFUUJYOOZUWFYAMOZUWMIZUXGUUJUWFYOVFUXIUWMUWFYNHZIUXLUWMIU
+      XKUWFUUJLYNVGUWMUXLVHUXLUXJUWMMYAUWFVJVKSYAUUJUWFCVBZUWSVLSVKVMUXEUXCFUXB
+      YAUUJUXMUWSVSUWFUXBUVFKVNVOSYAUUJUVFUXMUWSVPUULUVFVTSSWARUVQUVDUVFQNHUVHU
+      VDUVFUUJNUWSWBUVDUVFNWCWDWAUVNYTUUAVIUVEUVGUVHWEWJVMRVMRUVIEDWFUVHUUKUVFN
+      OUUMDEUUKUULXTUUJUWRUWSWGYAUUJUXMUWSWGUVDUUKUVFNVNUVFUULUUKNWHWKSWIWLUUMA
+      WMWNWOUUQUUFAUSWNWPUUOUUTAUUOYCUUNURUUTYBUUNWQUUNUURYCUUMUUFWQWRRWTWSYDUU
+      HYCAXAUUEUUGUUDUUCUUBYTUUAYLYSYKYJKYIXMYHLYGXBYEYFMXCXDZXTXEXFXGXDXHXDXIU
+      HYRXJYQKYPXMYOLYNXBYEYMUXNYAXEXFXGXDXHXDXKXLNXNXOXLXPXPXQUUFAXAXRXRXS $.
+      $( [30-Mar-2015] $)
+  $}
+
+  ${
+    $d M m $.  $d m n $.  $d m p $.  $d m q $.  $d m x $.  $d N m $.  $d N n $.
+    $d n p $.  $d n q $.  $d n x $.  $d P m $.  $d P n $.  $d p q $.  $d p x $.
+    $d P x $.
+    $( Comparison rule for cardinal addition over finite cardinals. $)
+    nnleaddc1 $p |- ( ( M e. NC /\ N e. NC /\ P e. Nn ) ->
+       ( ( M +c P ) <_c ( N +c P ) <-> M <_c N ) ) $=
+       ( vm vx vq cncs wcel cplc clec wbr wi cv wceq imbi2d c1c addceq2 breq12d
+       c0c imbi1d vn cnnc w3a addceq1 breq1d breq1 imbi12d breq2d nnleaddc1lem1
+       vp breq2 wa addcid1 syl6eq weq addcass syl6eqr idd nnnc wrex wb ncaddccl
+       ancoms 3adant3 peano2nc syl 3adant2 dflec2 addc32 eqeq2i adantr peano4nc
+       syl2anc sylan addlecncs syl5ibrcom sylbid syl5bi rexlimdva imim1d 3expib
+       a2d finds com12 expcom vtoclga 3imp leaddc1 ex syl3an3 impbid ) BGHZCGHZ
+       AUBHZUCBAIZCAIZJKZBCJKZWLWMWNWQWRLZWMWNDMZAIZWPJKZWTCJKZLZLZLWMWNWSLZLDB
+       GWTBNZXEXFWMXGXDWSWNXGXBWQXCWRXGXAWOWPJWTBAUDUEWTBCJUFUGOOWMWTGHZXEXHWNX
+       AUAMZAIZJKZWTXIJKZLZLZLXHXELUACGXICNZXNXEXHXOXMXDWNXOXKXBXLXCXOXJWPXAJXI
+       CAUDUHXICWTJUKUGOOXHXIGHZXNWNXHXPULZXMXQWTEMZIZXIXRIZJKZXLLZLXQXLXLLZLXQ
+       WTUJMZIZXIYDIZJKZXLLZLXQYEPIZYFPIZJKZXLLZLXQXMLEUJAEDUAUIXRSNZYBYCXQYMYA
+       XLXLYMXSWTXTXIJYMXSWTSIWTXRSWTQWTUMUNYMXTXISIXIXRSXIQXIUMUNRTOEUJUOZYBYH
+       XQYNYAYGXLYNXSYEXTYFJXRYDWTQXRYDXIQRTOXRYDPIZNZYBYLXQYPYAYKXLYPXSYIXTYJJ
+       YPXSWTYOIYIXRYOWTQWTYDPUPUQYPXTXIYOIYJXRYOXIQXIYDPUPUQRTOXRANZYBXMXQYQYA
+       XKXLYQXSXAXTXJJXRAWTQXRAXIQRTOXQXLURYDUBHZXQYHYLYRYDGHZXQYHYLLZLYDUSYSXH
+       XPYTYSXHXPUCZYKYGXLUUAYKYJYIFMZIZNZFGUTZYGUUAYIGHZYJGHZYKUUEVAUUAYEGHZUU
+       FYSXHUUHXPXHYSUUHWTYDVBVCVDZYEVEVFUUAYFGHZUUGYSXPUUJXHXPYSUUJXIYDVBVCVGZ
+       YFVEVFYIYJFVHVMUUAUUDYGFGUUDYJYEUUBIZPIZNZUUAUUBGHZULZYGUUCUUMYJYEPUUBVI
+       VJUUPUUNYFUULNZYGUUPUUJUULGHZUUNUUQVAUUAUUJUUOUUKVKUUAUUHUUOUURUUIYEUUBV
+       BVNYFUULVLVMUUPYGUUQYEUULJKZUUAUUHUUOUUSUUIYEUUBVOVNYFUULYEJUKVPVQVRVSVQ
+       VTWAVFWBWCWDWEWFWDWFWGWNWLWMAGHZWRWQLAUSWLWMUUTUCWRWQABCWHWIWJWK $.
+       $( [30-Mar-2015] $)
+  $}
+
+  ${ $d M p $. $d M q $. $d N p $. $d N q $. $d p q $. 
+    $( Less than or equal condition for cardinal less than or equal over finite
+       cardinals. $)
+    nnlecp1 $p |- ( ( N e. Nn /\ M e. Nn ) -> 
+        ( N <_c ( M +c 1c ) <-> ( N <_c M \/ N = ( M +c 1c ) ) ) ) $=
+      ( vp vq cnnc wcel wa c1c cplc clec wbr wceq wb wi cncs nnnc adantl sylbid
+      c0c syl wo wrex peano2 lecnnc sylan2 nc0le1 addceq2 addcid1 syl6eq eqeq2d
+      cv olc eqcoms syl6bi a1i 1cnnc mpan addccom eqeq2i addcass syl6eqr biimpa
+      sylbi simplr nncaddccl adantlr suc11nnc addlecncs syl2an breq2 syl5ibrcom
+      syl2anc orc syl6 syl5 exp3a rexlimdva adantr jaod mpd 1cnc peano2nc lectr
+      sylancl syl3anc mpan2d nclecid breq1 impbid ) BEFZAEFZGZBAHIZJKZBAJKZBWML
+      ZUAZWLWNWMBCUKZIZLZCEUBZWQWKWJWMEFWNXAMAUCBWMCUDUEWLWTWQCEWLWREFZGZWRSLZH
+      WRJKZUAZWTWQNZXBXFWLXBWROFXFWRPWRUFTQXCXDXGXEXDXGNXCXDWTWMBLWQXDWSBWMXDWS
+      BSIBWRSBUGBUHUIUJWQBWMWPWOULUMUNUOXCXEWRHDUKZIZLZDEUBZXGXBXEXKMZWLHEFXBXL
+      UPHWRDUDUQQWLXKXGNXBWLXJXGDEWLXHEFZGZXJWTWQXJWTGWMBXHIZHIZLZXNWQXJWTXQXJW
+      RXHHIZLZWTXQMXIXRWRHXHURUSXSWSXPWMXSWSBXRIXPWRXRBUGBXHHUTVAUJVCVBXNXQAXOL
+      ZWQXNWKXOEFZXQXTMWJWKXMVDWJXMYAWKBXHVEVFAXOVGVLWJXMXTWQNWKWJXMGZXTWOWQYBW
+      OXTBXOJKZWJBOFZXHOFYCXMBPZXHPBXHVHVIAXOBJVJVKWOWPVMVNVFRVOVPVQVRRVSVTVQRW
+      LWOWNWPWLWOAWMJKZWNWKYFWJWKAOFZHOFYFAPZWAAHVHWDQWLYDYGWMOFZWOYFGWNNWJYDWK
+      YEVRWKYGWJYHQWKYIWJWKYGYIYHAWBZTQBAWMWCWEWFWKWPWNNWJWKWNWPWMWMJKZWKYGYKYH
+      YGYIYKYJWMWGTTBWMWMJWHVKQVSWI $.
+      $( [30-Mar-2015] $)
+  $}
+
+  ${
+    $d m p $.  $d m q $.  $d m x $.  $d m y $.  $d p q $.  $d p t $.  $d p x $.
+    $d p y $.  $d q t $.  $d q x $.  $d t x $.  $d x y $.
+    $( Lemma for ~ nmembers1 .  Set up stratification. $)
+    nmembers1lem1 $p |- { x | { m e. Nn | ( 1c <_c m /\ m <_c x ) } e. T_c
                                                   T_c x } e. _V $=
        ( vp vq vt clec c1c cnnc cvv ctcfn cin cv wbr wa wcel 3bitri exbii bitri
        wex cop csset cins3 csn cima cres csi cins2 csymdif ccompl ccnv ccom cxp
@@ -56357,54 +56463,53 @@ $)
        $( [25-Mar-2015] $)
   $}
 
-  ${ $d m x $. $d N m $. $d m n $. $d n x $. $d N x $. $d k m $. $d k n $. 
-     $( Count the number of elements in a natural interval.  This
-     	theorem will take on a different form after we introduce the
-	Axiom of Counting. $)
-     nmembers1 $p |- ( N e. Nn -> 
+  ${
+    $d m x $.  $d N m $.  $d m n $.  $d n x $.  $d N x $.  $d k m $.  $d k n $.
+    $( Count the number of elements in a natural interval.  This theorem will
+       take on a different form after we introduce the Axiom of Counting. $)
+    nmembers1 $p |- ( N e. Nn -> 
       { m e. Nn | ( 1c <_c m /\ m <_c N ) } e. T_c T_c N ) $=
-       ( vx c1c clec wbr wa cnnc crab ctc wcel c0c cplc wceq breq2 tceq wn cncs
-       syl wi vn vk cv nmembers1lem1 anbi2d rabbidv tc0c ax-mp eqtri syl6eq weq
-       eleq12d eqid c0 rabeq0 nnnc le0nc 0cnc sbth mpan2 mpan2d wrex wne 0cnsuc
-       addccom eqnetri necomi df-ne mpbi nrex wb 1cnc dflec2 mp2an mtbir mtbiri
-       a1i syl6 con2d imnan sylib mprgbir el0c mpbir csn wo simpl peano2 eleq1a
-       jaod addlecncs mpan syl6breq biimprd com12 adantr simp3 biantrurd orbi1d
-       cun w3a 3bitr3d 3expia pm5.21ndd simpr breq1 anbi12d elrab elun vex elsn
-       orbi12i bitri 3bitr4g eqrdv cltc nnltp1c ltlenlec syl2anc simprd intnand
-       ex mpbid a1d df-an con2bii 1cex addcex elsuci sylan2 ancoms eqeltrd tcdi
-       tc1c addceq2i tccl syl5eq eqtrd eleqtrrd finds ) DAUCZEFZUUACUCZEFZGZAHI
-       ZUUCJZJZKUUBUUALEFZGZAHIZLKZUUBUUAUAUCZEFZGZAHIZUUMJZJZKZUUBUUAUUMDMZEFZ
-       GZAHIZUUTJZJZKZUUBUUABEFZGZAHIZBJZJZKCUABCAUDUUCLNZUUFUUKUUHLUVLUUEUUJAH
-       UVLUUDUUIUUBUUCLUUAEOUEUFUVLUUHLJZJZLUVLUUGUVMNUUHUVNNUUCLPUUGUVMPSUVNUV
-       MLUVMLNUVNUVMNUGUVMLPUHUGUIUJULCUAUKZUUFUUPUUHUURUVOUUEUUOAHUVOUUDUUNUUB
-       UUCUUMUUAEOUEUFUVOUUGUUQNUUHUURNUUCUUMPUUGUUQPSULUUCUUTNZUUFUVCUUHUVEUVP
-       UUEUVBAHUVPUUDUVAUUBUUCUUTUUAEOUEUFUVPUUHUVEUVEUVPUUGUVDNUUHUVENUUCUUTPU
-       UGUVDPSUVEUMUJULUUCBNZUUFUVIUUHUVKUVQUUEUVHAHUVQUUDUVGUUBUUCBUUAEOUEUFUV
-       QUUGUVJNUUHUVKNUUCBPUUGUVJPSULUULUUKUNNZUVRUUJQZAHUUJAHUOUUAHKZUUBUUIQTU
-       VSUVTUUIUUBUVTUUIUUALNZUUBQUVTUUILUUAEFZUWAUVTUUARKZUWBUUAUPZUUAUQSUVTUW
-       CUUIUWBGUWATZUWDUWCLRKZUWEURUUALUSUTSVAUWAUUBDLEFZUWGLDUUCMZNZCRVBZUWICR
-       UWIQZUUCRKLUWHVCUWKUWHLUWHUUCDMLDUUCVEUUCVDVFVGLUWHVHVIVQVJDRKZUWFUWGUWJ
-       VKVLURDLCVMVNVOUUALDEOVPVRVSUUBUUIVTWAWBUUKWCWDUUMHKZUUSUVFUWMUUSGZUVCUU
-       RDMZUVEUWNUVCUUPUUTWEZWTZUWOUWMUVCUWQNUUSUWMUBUVCUWQUWMUBUCZHKZDUWREFZUW
-       RUUTEFZGZGZUWSUWTUWRUUMEFZGZGZUWRUUTNZWFZUWRUVCKUWRUWQKZUWMUWSUXCUXHUXCU
-       WSTUWMUWSUXBWGVQUWMUXFUWSUXGUXFUWSTUWMUWSUXEWGVQUWMUUTHKZUXGUWSTUUMWHZUU
-       THUWRWISWJUWMUWSUXCUXHVKUWMUWSGZUXBUXEUXGWFZUXCUXHUXLUWTUXBUXMUXBUWTTUXL
-       UWTUXAWGVQUXLUXEUWTUXGUXEUWTTUXLUWTUXDWGVQUWMUXGUWTTZUWSUWMDUUTEFZUXNUWM
-       DDUUMMZUUTEUWMUUMRKZDUXPEFZUUMUPZUWLUXQUXRVLDUUMWKWLSDUUMVEWMUXGUXOUWTUX
-       GUWTUXOUWRUUTDEOWNWOSWPWJUWMUWSUWTUXBUXMVKUWMUWSUWTXAZUXAUXDUXGWFUXBUXM?
-       UXTUWTUXAUWMUWSUWTWQZWRUXTUXDUXEUXGUXTUWTUXDUYAWRWSXBXCXDUXLUWSUXBUWMUWS
-       XEZWRUXLUXEUXFUXGUXLUWSUXEUYBWRWSXBYBXDUVBUXBAUWRHAUBUKZUUBUWTUVAUXAUUAU
-       WRDEOZUUAUWRUUTEXFXGXHUXIUWRUUPKZUWRUWPKZWFUXHUWRUUPUWPXIUYEUXFUYFUXGUUO
-       UXEAUWRHUYCUUBUWTUUNUXDUYDUUAUWRUUMEXFXGXHUWRUUTUBXJXKXLXMXNXOWPUUSUWMUW
-       QUWOKZUWMUUSUUTUUPKZQZUYGUWMUXJUXOUUTUUMEFZGZQZTZUYIUWMUYLUXJUWMUYJUXOUW
-       MUUMUUTEFZUYJQZUWMUUMUUTXPFZUYNUYOGZUUMXQUWMUXQUUTRKZUYPUYQVKUXSUWMUXJUY
-       RUXKUUTUPSUUMUUTXRXSYCXTYAYDUYHUYMUYHUXJUYKGUYMQUUOUYKAUUTHUUAUUTNUUBUXO
-       UUNUYJUUAUUTDEOUUAUUTUUMEXFXGXHUXJUYKYEXMYFWAUUPUURUUTUUMDUAXJYGYHYIYJYK
-       YLUWMUVEUWONUUSUWMUVEUUQDJZMZJZUWOUWMUVDUYTNZUVEVUANUWMUXQVUBUXSUXQUWLVU
-       BVLUUMDYMUTSUVDUYTPSUWMVUAUUQDMZJZUWOUYTVUCNVUAVUDNUYSDUUQYNYOUYTVUCPUHU
-       WMVUDUURUYSMZUWOUWMUUQRKZVUDVUENZUWMUXQVUFUXSUUMYPSVUFUWLVUGVLUUQDYMUTSU
-       YSDUURYNYOUJYQYRWPYSYBYT $.
-       $( [25-Mar-2015] $)
+      ( vx c1c clec wbr wa cnnc crab ctc wcel c0c cplc wceq breq2 tceq syl cncs
+      wn wi vn vk cv nmembers1lem1 anbi2d rabbidv tc0c ax-mp syl6eq eleq12d weq
+      eqtri rabeq0 nnnc le0nc 0cnc sbth sylancl mpan2d wrex wne addccom eqnetri
+      c0 0cnsuc necomi df-ne mpbi a1i nrex 1cnc dflec2 mp2an mtbir mtbiri con2d
+      wb syl6 imnan sylib mprgbir el0c mpbir csn cun wo peano2 eleq1a addlecncs
+      simpl sylancr syl6breq syl5ibrcom adantr w3a nnlecp1 ancoms 3adant3 simp3
+      jaod biantrurd orbi1d 3bitr3d pm5.21ndd simpr ex breq1 anbi12d elrab elun
+      3expia vex elsn orbi12i bitri 3bitr4g eqrdv cltc nnltp1c ltlenlec syl2anc
+      mpbid simprd intnand df-an con2bii 1cex addcex elsuci sylan2 eqeltrd tcdi
+      a1d tc1c addceq2i tccl syl5eq eqtrd eleqtrrd finds ) DAUCZEFZUUACUCZEFZGZ
+      AHIZUUCJZJZKUUBUUALEFZGZAHIZLKZUUBUUAUAUCZEFZGZAHIZUUMJZJZKZUUBUUAUUMDMZE
+      FZGZAHIZUUTJZJZKZUUBUUABEFZGZAHIZBJZJZKCUABCAUDUUCLNZUUFUUKUUHLUVLUUEUUJA
+      HUVLUUDUUIUUBUUCLUUAEOUEUFUVLUUHLJZJZLUVLUUGUVMNUUHUVNNUUCLPUUGUVMPQUVNUV
+      MLUVMLNUVNUVMNUGUVMLPUHUGULUIUJCUAUKZUUFUUPUUHUURUVOUUEUUOAHUVOUUDUUNUUBU
+      UCUUMUUAEOUEUFUVOUUGUUQNUUHUURNUUCUUMPUUGUUQPQUJUUCUUTNZUUFUVCUUHUVEUVPUU
+      EUVBAHUVPUUDUVAUUBUUCUUTUUAEOUEUFUVPUUGUVDNUUHUVENUUCUUTPUUGUVDPQUJUUCBNZ
+      UUFUVIUUHUVKUVQUUEUVHAHUVQUUDUVGUUBUUCBUUAEOUEUFUVQUUGUVJNUUHUVKNUUCBPUUG
+      UVJPQUJUULUUKVDNZUVRUUJSZAHUUJAHUMUUAHKZUUBUUISTUVSUVTUUIUUBUVTUUIUUALNZU
+      UBSUVTUUILUUAEFZUWAUVTUUARKZUWBUUAUNZUUAUOQUVTUWCLRKZUUIUWBGUWATUWDUPUUAL
+      UQURUSUWAUUBDLEFZUWFLDUUCMZNZCRUTZUWHCRUWHSZUUCRKLUWGVAUWJUWGLUWGUUCDMLDU
+      UCVBUUCVEVCVFLUWGVGVHVIVJDRKZUWEUWFUWIVQVKUPDLCVLVMVNUUALDEOVOVRVPUUBUUIV
+      SVTWAUUKWBWCUUMHKZUUSUVFUWLUUSGZUVCUURDMZUVEUWMUVCUUPUUTWDZWEZUWNUWLUVCUW
+      PNUUSUWLUBUVCUWPUWLUBUCZHKZDUWQEFZUWQUUTEFZGZGZUWRUWSUWQUUMEFZGZGZUWQUUTN
+      ZWFZUWQUVCKUWQUWPKZUWLUWRUXBUXGUXBUWRTUWLUWRUXAWJVIUWLUXEUWRUXFUXEUWRTUWL
+      UWRUXDWJVIUWLUUTHKZUXFUWRTUUMWGZUUTHUWQWHQWTUWLUWRUXBUXGVQUWLUWRGZUXAUXDU
+      XFWFZUXBUXGUXKUWSUXAUXLUXAUWSTUXKUWSUWTWJVIUXKUXDUWSUXFUXDUWSTUXKUWSUXCWJ
+      VIUWLUXFUWSTUWRUWLUWSUXFDUUTEFZUWLDDUUMMZUUTEUWLUWKUUMRKZDUXNEFVKUUMUNZDU
+      UMWIWKDUUMVBWLUWQUUTDEOWMWNWTUWLUWRUWSUXAUXLVQUWLUWRUWSWOZUWTUXCUXFWFZUXA
+      UXLUWLUWRUWTUXRVQZUWSUWRUWLUXSUUMUWQWPWQWRUXQUWSUWTUWLUWRUWSWSZXAUXQUXCUX
+      DUXFUXQUWSUXCUXTXAXBXCXKXDUXKUWRUXAUWLUWRXEZXAUXKUXDUXEUXFUXKUWRUXDUYAXAX
+      BXCXFXDUVBUXAAUWQHAUBUKZUUBUWSUVAUWTUUAUWQDEOZUUAUWQUUTEXGXHXIUXHUWQUUPKZ
+      UWQUWOKZWFUXGUWQUUPUWOXJUYDUXEUYEUXFUUOUXDAUWQHUYBUUBUWSUUNUXCUYCUUAUWQUU
+      MEXGXHXIUWQUUTUBXLXMXNXOXPXQWNUUSUWLUWPUWNKZUWLUUSUUTUUPKZSZUYFUWLUXIUXMU
+      UTUUMEFZGZSZTZUYHUWLUYKUXIUWLUYIUXMUWLUUMUUTEFZUYISZUWLUUMUUTXRFZUYMUYNGZ
+      UUMXSUWLUXOUUTRKZUYOUYPVQUXPUWLUXIUYQUXJUUTUNQUUMUUTXTYAYBYCYDYMUYGUYLUYG
+      UXIUYJGUYLSUUOUYJAUUTHUUAUUTNUUBUXMUUNUYIUUAUUTDEOUUAUUTUUMEXGXHXIUXIUYJY
+      EXOYFVTUUPUURUUTUUMDUAXLYGYHYIYJWQYKUWLUVEUWNNUUSUWLUVEUUQDJZMZJZUWNUWLUV
+      DUYSNZUVEUYTNUWLUXOUWKVUAUXPVKUUMDYLURUVDUYSPQUWLUYTUUQDMZJZUWNUYSVUBNUYT
+      VUCNUYRDUUQYNYOUYSVUBPUHUWLVUCUURUYRMZUWNUWLUUQRKZUWKVUCVUDNUWLUXOVUEUXPU
+      UMYPQVKUUQDYLURUYRDUURYNYOUIYQYRWNYSXFYT $.
+      $( [25-Mar-2015] $)
   $}
 
 $(
