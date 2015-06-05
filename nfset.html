@@ -41,7 +41,9 @@ COLOR="#006633"><B>New Foundations Explorer Home Page</B></FONT></TD>
 [external], <A HREF="http://plato.stanford.edu/entries/quine-nf/">
 Stanford Encyclopedia of Philosophy</A> [external]) is an alternative set
 theory to the Zermelo-Frankel set theory presented in the regular Metamath
-Proof Explorer.  Unlike ZFC, New Foundations is a direct derivative of
+Proof Explorer.
+Unlike the Zermelo-Frankel system with the Axiom of Choice
+(known as ZFC), New Foundations is a direct derivative of
 the set theory originally presented in <I>Principia Mathematica</I>.
 </TD></TR></TABLE>
 
@@ -60,13 +62,128 @@ the set theory originally presented in <I>Principia Mathematica</I>.
 <HR NOSHADE SIZE=1><A NAME="strat"></A><B><FONT COLOR="#006633">
 Stratification</FONT></B>
 
+<p>
+In "Principia Mathematica", Russell and Whitehead used a typing system
+to avoid the paradoxes of naive set theory,
+rather than restrict the size of sets (as Zermelo-Frankel theory does).
+This typing system was
+eventually refined by Russell down to Typed Set Theory (TST).
+In TST, unlimited comprehension is allowed
+(approximately, A e. _V is a theorem).
+TST avoids the standard paradoxes by being a multi-sorted system.
+That is, there are variables of type 0, 1, 2,... The WFFs are
+restricted so that you must say x[n] = y[n] and x[n] e. y[n+1], where n
+is a variable type.
+This means, among other things, that x e. x is not a well-formed formula,
+so we can't even sensibly speak of the Russell class.
+<p>
+Now, consider introducing virtual classes into this theory. You need
+to say things like V[n] = { x[n] | x[n] = x[n] } for each type n.
+This leads to a "hall of mirrors" type situation: each named object is
+duplicated for each type.
+<p>
+Quine noticed this and proposed collapsing
+the whole theory into a one-sorted set theory, where the comprehension
+axiom is restricted to formulas where you could theoretically introduce
+subscripts to make the formula a WFF of TST.
+Quine described this apporach in a paper titled
+&quot;New Foundations for Mathematical Logic,&quot;
+so this approach is now called &quot;New Foundations&quot; (NF)
+<A HREF="#Quine2">[Quine2]</A>.
+For more details, see the
+<A HREF="http://en.wikipedia.org/wiki/New_Foundations">Wikipedia
+article on NF</A>.
+
 
 <HR NOSHADE SIZE=1><A NAME="axioms"></A><B><FONT COLOR="#006633">
 The axioms</FONT></B>
 
+<p>
+The key axioms in NF are
+<a href="ax-ext.html">Extensionality</a>
+(two sets are identical if they contain the same elements) and
+a comprehension schema.
+The comprehension schema is stated using the concept of stratified formula;
+the approach is the Stratification Axiom from [Quine2].
+In short,
+a well-formed formula using only propositional symbols, predicate
+symbols, and ` e. ` is "stratified" iff you can make a (metalogical)
+mapping from the variables to the natural numbers such that any formulas
+of the form ` x = y ` have the same number, and any formulas of the form
+` x e. y ` have ` x ` as one less than ` y ` .  Quine's stratification
+axiom states that there is a set corresponding to any stratified
+formula.
+<p>
+We use Haliperin's axioms and prove existence of stratified sets using
+Haliperin's algorithm.
+Thus the stratification axiom of [Quine2] is
+implemented using these axioms from [Haliperin]:
+<ul>
+<li><a href="ax-nin.html">ax-nin</a> - Anti-intersection (set up boolean operations on sets)
+<li><a href="ax-xp.html">ax-xp</a> - Cross product
+<li><a href="ax-cnv.html">ax-cnv</a> - Converse
+<li><a href="ax-1c.html">ax-1c</a> - Cardinal One
+<li><a href="ax-sset.html">ax-sset</a> - Subset Relationship
+<li><a href="ax-si.html">ax-si</a> - Singleton Image
+<li><a href="ax-ins2.html">ax-ins2</a> - Insertion Two
+<li><a href="ax-ins3.html">ax-ins3</a> - Insertion Three
+<li><a href="ax-typlower.html">ax-typlower</a> - Type Lowering
+</ul>
+
+<p>
+The usual definition of the ordered pair, first proposed by Kuratowski
+in 1921 and used in the regular Metamath Proof Explorer,
+has a serious drawback for NF and related theories that use stratification.
+The Kuratowski ordered pair
+is defined as &lt;&lt; x , y &gt;&gt; = { { x } , { x , y } }.
+This leads to the ordered pair having a type two greater than its arguments.
+For example, in &lt;&lt; &lt;&lt; x , y &gt;&gt; , z &gt;&gt;,
+"z" would have a different type than "x" and "y",
+which makes multi-argument functions extremely awkward to work with.
+For example, "1st" and complex "+" would not form sets
+with the Kuratowski ordered pairs.
+
+<p>
+In contrast, the Quine definition of ordered pairs,
+used here as <a href="df-op.html">df-op</a>, is type level.
+That is, &lt;. x , y &gt;. has the same type as x and y,
+which means that the same holds of &lt;. &lt;. x , y &gt;. , z &gt;.
+This means that "1st" is a set with the Quine definition,
+as is complex "+".
+The Kuratowski ordered pair is defined
+(as <a href="df-opk.html">df-opk</a>), because
+it is a simple definition that can be used by the set construction axioms
+that follow it, but for typical uses the Quine definition of ordered pairs
+<a href="df-op.html">df-op</a> is used instead.
+
+<p>
+Perhaps one of the most remarkable aspects of NF is that the
+<A HREF="nchoice.html">Axiom of Choice (an axiom of the widely-used ZFC system)
+can be disproven in NF</A>.
+
+<p>
+A fair amount of the definitions and
+theorems (notably the ones on boolean set operations)
+are taken verbatim from the regular Metamath Proof Explorer
+source file set.mm (based on ZFC).
+This also follows the development in [Rosser] fairly closely
+An unusual aspect is the
+<a href="df-tcfn.html">stratified T-raising function TcFn</a>.
+The descriptions given here are based on a
+<a href="https://groups.google.com/forum/#!topic/metamath/yj1j4Ebb1bI">discussion on the metamath mailing list</a>.
+
 
 <HR NOSHADE SIZE=1><A NAME="theorems"></A><B><FONT COLOR="#006633">
 Some theorems</FONT></B>
+
+<MENU>
+<LI> <A HREF="1p1e2c.html">Proof of <I>Principia
+         Mathematica</I>'s version of 1+1=2</A></LI>
+<LI> <A HREF="vinf.html">Proof of the Axiom of Infinity</A></LI>
+<LI> <A HREF="ru.html">Russell's Paradox</A></LI>
+<LI> <A HREF="vvex.html">Proof that the universal class exists</A></LI>
+<LI> <A HREF="nchoice.html">Disproof of the Axiom of Choice</A></LI>
+</MENU>
 
 <HR NOSHADE SIZE=1><A NAME="bib"></A><B><FONT
 COLOR="#006633">Bibliography</FONT></B>&nbsp;&nbsp;&nbsp;
@@ -145,8 +262,8 @@ and Its Logic,</I> Harvard University Press, Cambridge, Massachusetts,
 revised edition (1969) [QA248.Q7 1969].</LI>
 
 <LI><A NAME="Quine2"></A> [Quine2] Quine, W.V., 1937a, &quot;New Foundations 
-  for Mathematical Logic,&quot; <I>American Mathematical Monthly,</I> 
-  44: 70-80 (1937) [QA1.A515].</LI>
+for Mathematical Logic,&quot; <I>American Mathematical Monthly,</I> 
+44: 70-80 (1937) [QA1.A515].</LI>
 
 <LI><A NAME="Rosser"></A> [Rosser] Rosser, John B., <I>Logic for Mathematicians,</I> Dover Publications, Mineola, N.Y. (2008) [BC135.R58 2008].</LI>
 
