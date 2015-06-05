@@ -1,5 +1,8 @@
 $( -*-text-*- $)
 
+$( Scott - look for "16-Apr-2015" to see what I changed.  Then you
+   can delete those comments. -Norm $)
+
 $(
 ###############################################################################
             CLASSICAL FIRST ORDER LOGIC WITH EQUALITY
@@ -15847,14 +15850,22 @@ $)
 
 $(
 ###############################################################################
-                ZF (ZERMELO-FRAENKEL) SET THEORY
+                NEW FOUNDATIONS (NF) SET THEORY
 ###############################################################################
-$)
 
-$(
-#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#
-                    New Foundations Set Theory
-#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#
+Here we introduce New Foundations set theory.
+We first introduce the axiom of extensionality in ~ ax-ext .
+We later add set construction axioms from
+{{Hailperin}}, such as ~ ax-nin ,
+that are designed to implement the
+Stratification Axiom from {{Quine2}}.
+
+We then introduce ordered pairs, relationships, and functions.
+Note that the definition of an ordered pair (in ~ df-op ) is different
+than the Kuratowski ordered pair definition (in ~ df-opk )
+typically used in ZFC, because the Kuratowski definition is not type-level.
+
+We conclude with orderings.
 $)
 
 $(
@@ -17243,8 +17254,8 @@ $( $v ._|_ $. $)
        (that has a free variable ` x ` ) to a theorem with a class variable
        ` A ` , we substitute ` x e. A ` for ` ph ` throughout and simplify,
        where ` A ` is a new class variable not already in the wff.  For more
-       information on class variables, see [Quine] pp. 15-21 and/or
-       [TakeutiZaring] pp. 10-13. $)
+       information on class variables, see Quine pp. 15-21 and/or TakeutiZaring
+       pp. 10-13. $)
     abeq2 $p |- ( A = { x | ph } <-> A. x ( x e. A <-> ph ) ) $=
       ( vy cab wceq cv wcel wb wal ax-17 hbab1 cleqf abid bibi2i albii bitri )
       CABEZFBGZCHZSRHZIZBJTAIZBJBDCRDGCHBKABDLMUBUCBUAATABNOPQ $.
@@ -23675,7 +23686,7 @@ $)
   ${
     $d A x y $.  $d B x y $.
     $( Soundness theorem for ~ df-nin . $)
-    ninjust $p |- { x | ( x e. A -/\ x e. B ) } = 
+    ninjust $p |- { x | ( x e. A -/\ x e. B ) } =
              { y | ( y e. A -/\ y e. B ) } $=
       ( cv wcel wnand weq eleq1 nandbi12d cbvabv ) AEZCFZLDFZGBEZCFZODFZGABABHM
       PNQLOCILODIJK $.
@@ -23685,9 +23696,19 @@ $)
   ${
     $d x y A $.  $d x y B $.
 
+    $( Scott - all bib refs must be in the strict format "<keyword> ...
+       [bibref] p. nnn" where <keyword> is from the list:
+
+       Theorem Lemma Lemmas Definition Compare Proposition Corollary Axiom Rule
+       Remark Exercise Problem Notation Example Part Section Property Figure
+       Postulate Equation Scheme Item Chapter
+
+       I changed the brackets to {{...}} in the bad ones to prevent errors in
+       building mmbiblio.html -NM 16-Apr-2015. $)
+
     $( Define the anti-intersection of two classes.  This operation is used
-       implicitly in [Haliperin], though there does not seem to be any notation
-       for it in the literature. $)
+       implicitly in {{Hailperin}}, though there does not seem to be any
+       notation for it in the literature. $)
     df-nin $a |- ( A -i^i B ) = { x | ( x e. A -/\ x e. B ) } $.
   $}
 
@@ -23704,13 +23725,13 @@ $)
   df-dif $a |- ( A \ B ) = ( A i^i ~ B ) $.
 
   $( Define the symmetric difference of two classes.  Definition IX.9.10 of
-     [Rosser], p. 238. $)
+     {{Rosser}}, p. 238. $)
   df-symdif $a |- ( A (+) B ) = ( ( A \ B ) u. ( B \ A ) ) $.
 
   ${
     $d A x $.  $d B x $.  $d C x $.
     $( Membership in anti-intersection. $)
-    elning $p |- ( A e. V -> 
+    elning $p |- ( A e. V ->
             ( A e. ( B -i^i C ) <-> ( A e. B -/\ A e. C ) ) ) $=
       ( vx cv wcel wnand cnin wceq eleq1 nandbi12d df-nin elab2g ) EFZBGZOCGZHA
       BGZACGZHEABCIDOAJPRQSOABKOACKLEBCMN $.
@@ -25433,9 +25454,9 @@ $)
        11-Feb-2015.) $)
     eltpg $p |- ( A e. V -> ( A e. { B , C , D } <->
        ( A = B \/ A = C \/ A = D ) ) ) $=
-      ( wcel cpr csn wo wceq ctp w3o elprg elsng orbi12d cun df-tp eleq2i elun
-      bitri df-3or 3bitr4g ) AEFZABCGZFZADHZFZIZABJZACJZIZADJZIABCDKZFZUIUJULLU
-      CUEUKUGULABCEMADENOUNAUDUFPZFUHUMUOABCDQRAUDUFSTUIUJULUAUB $.
+      ( wcel cpr csn wo wceq ctp w3o elprg elsng orbi12d cun df-tp eleq2i bitri
+      elun df-3or 3bitr4g ) AEFZABCGZFZADHZFZIZABJZACJZIZADJZIABCDKZFZUIUJULLUC
+      UEUKUGULABCEMADENOUNAUDUFPZFUHUMUOABCDQRAUDUFTSUIUJULUAUB $.
       $( [11-Feb-2015] $) $( [2-Feb-2014] $)
   $}
 
@@ -25468,9 +25489,9 @@ $)
   ${
     $( Alternate definition of unordered triple of classes. $)
     dftp3 $p |- { A , B , C } = ( { A } u. { B , C } ) $=
-       ( csn cun ctp cpr unass df-tp df-pr uneq1i eqtri uneq2i 3eqtr4i ) ADZBDZ
-       EZCDZEZOPREZEABCFZOBCGZEOPRHUAABGZRESABCIUCQRABJKLUBTOBCJMN $.
-       $( [16-Mar-2015] $)
+      ( csn cun ctp cpr unass df-tp df-pr uneq1i eqtri uneq2i 3eqtr4i ) ADZBDZE
+      ZCDZEZOPREZEABCFZOBCGZEOPRHUAABGZRESABCIUCQRABJKLUBTOBCJMN $.
+      $( [16-Mar-2015] $)
   $}
 
   ${
@@ -26893,7 +26914,7 @@ $)
 
   ${
     $d A x $.  $d B x $.
-    $( Alternate definition of proper subset.  Theorem IX.4.21 of [Rosser],
+    $( Alternate definition of proper subset.  Theorem IX.4.21 of {{Rosser}},
        p. 236. $)
     dfpss4 $p |- ( A C. B <-> ( A C_ B /\ E. x e. B -. x e. A ) ) $=
       ( wpss wss wn wa wcel wrex dfpss3 wral dfss3 dfral2 bitr2i con1bii anbi2i
@@ -26991,10 +27012,10 @@ $)
     $d A x $.  $d B x $.
     $( Contraposition law for subset. $)
     sscon34 $p |- ( A C_ B <-> ~ B C_ ~ A ) $=
-       ( vx cv wcel wi wal ccompl wss wn con34b vex elcompl imbi12i albii dfss2
-       bitr4i 3bitr4i ) CDZAEZSBEZFZCGSBHZEZSAHZEZFZCGABIUCUEIUBUGCUBUAJZTJZFUG
-       TUAKUDUHUFUISBCLZMSAUJMNQOCABPCUCUEPR $.
-       $( [11-Mar-2015] $)
+      ( vx cv wcel wi wal ccompl wss wn con34b vex elcompl imbi12i bitr4i albii
+      dfss2 3bitr4i ) CDZAEZSBEZFZCGSBHZEZSAHZEZFZCGABIUCUEIUBUGCUBUAJZTJZFUGTU
+      AKUDUHUFUISBCLZMSAUJMNOPCABQCUCUEQR $.
+      $( [11-Mar-2015] $)
   $}
 
 $(
@@ -28565,13 +28586,13 @@ $)
 
   ${
     $d x y z w $.
-    $( State the axiom of anti-intersection.  Axiom P2 of [Haliperin].  This
-       axiom sets up boolean opkerations on sets.
+    $( State the axiom of anti-intersection.  Axiom P1 of {{Hailperin}}.  This
+       axiom sets up boolean operations on sets.
 
        Note on this and the following axioms: this axiom, ~ ax-xp , ~ ax-cnv ,
        ~ ax-1c , ~ ax-sset , ~ ax-si , ~ ax-ins2 , ~ ax-ins3 , and
-       ~ ax-typlower are from [Haliperin], and are designed to implement the
-       Stratification Axiom from [Quine2].
+       ~ ax-typlower are from {{Hailperin}}, and are designed to implement the
+       Stratification Axiom from {{Quine2}}.
 
        A well-formed formula using only propositional symbols, predicate
        symbols, and ` e. ` is "stratified" iff you can make a (metalogical)
@@ -28582,8 +28603,8 @@ $)
        formula.
 
        Since we cannot state stratification from within the logic, we use
-       Haliperin's axioms and prove existence of stratified sets using
-       Haliperin's algorithm. $)
+       Hailperin's axioms and prove existence of stratified sets using
+       Hailperin's algorithm. $)
     ax-nin $a |- E. z A. w ( w e. z <-> ( w e. x -/\ w e. y ) ) $.
   $}
 
@@ -28591,15 +28612,15 @@ $)
     $d x y z w t $.
     $( State the axiom of cross product.  This axiom guarantees the existence
        of the (Kuratowski) cross product of ` _V ` with ` x ` .  Axiom P5 of
-       [Haliperin]. $)
-    ax-xp $a |- E. y A. z ( z e. y <-> 
+       {{Hailperin}}. $)
+    ax-xp $a |- E. y A. z ( z e. y <->
            E. w E. t ( z = << w , t >> /\ t e. x ) ) $.
   $}
 
   ${
     $d x y z w $.
     $( State the axiom of converse.  This axiom guarantees the existence of the
-       Kuratowski converse of ` x ` .  Axiom P7 of [Haliperin]. $)
+       Kuratowski converse of ` x ` .  Axiom P7 of {{Hailperin}}. $)
     ax-cnv $a |- E. y A. z A. w ( << z , w >> e. y <-> << w , z >> e. x ) $.
   $}
 
@@ -28607,7 +28628,7 @@ $)
     $d x y z w $.
     $( State the axiom of cardinal one.  This axiom guarantees the existence of
        the set of all singletons, which will become cardinal one later in our
-       development.  Axiom P8 of [Haliperin]. $)
+       development.  Axiom P8 of {{Hailperin}}. $)
     ax-1c $a |- E. x A. y ( y e. x <-> E. z A. w ( w e. y <-> w = z ) ) $.
   $}
 
@@ -28615,7 +28636,7 @@ $)
     $d x y z w $.
     $( State the axiom of the subset relationship.  This axiom guarantees the
        existence of the Kuratowski relationship representing subset.  Slight
-       generalization of axiom P8 of [Haliperin]. $)
+       generalization of axiom P9 of {{Hailperin}}. $)
     ax-sset $a |- E. x A. y A. z ( << y , z >> e. x <->
       A. w ( w e. y -> w e. z ) ) $.
   $}
@@ -28624,7 +28645,7 @@ $)
     $d x y z w $.
     $( State the axiom of the singleton image.  This axiom guarantees that
        guarantees the existence of a set that raises the "type" of another set
-       when considered as a relationship.  Axiom P2 of [Haliperin]. $)
+       when considered as a relationship.  Axiom P2 of {{Hailperin}}. $)
     ax-si $a |- E. y A. z A. w ( << { z } , { w } >> e. y <->
           << z , w >> e. x ) $.
   $}
@@ -28633,13 +28654,13 @@ $)
     $d x y z w t $.
     $( State the insertion two axiom.  This axiom sets up a set that inserts an
        extra variable at the second place of the relationship described by
-       ` x ` .  Axiom P3 of [Haliperin]. $)
+       ` x ` .  Axiom P3 of {{Hailperin}}. $)
     ax-ins2 $a |- E. y A. z A. w A. t (
       << { { z } } , << w , t >> >> e. y <-> << z , t >> e. x ) $.
 
     $( State the insertion three axiom.  This axiom sets up a set that inserts
        an extra variable at the third place of the relationship described by
-       ` x ` .  Axiom P4 of [Haliperin]. $)
+       ` x ` .  Axiom P4 of {{Hailperin}}. $)
     ax-ins3 $a |- E. y A. z A. w A. t (
       << { { z } } , << w , t >> >> e. y <-> << z , w >> e. x ) $.
   $}
@@ -28648,14 +28669,14 @@ $)
     $d x y z w $.
     $( The type lowering axiom.  This axiom eventually sets up both the
        existence of the sum set and the existence of the range of a
-       relationship. $)
+       relationship. Axiom P6 of {{Hailperin}}. $)
     ax-typlower $a |- E. y A. z ( z e. y <-> A. w << w , { z } >> e. x ) $.
   $}
 
   ${
     $d x y z $.
     $( The singleton axiom.  This axiom sets up the existence of a singleton
-       set.  This appears to have been an oversight on Haliperin's part, as it
+       set.  This appears to have been an oversight on Hailperin's part, as it
        is needed to prove the properties of Kuratowski ordered pairs. $)
     ax-sn $a |- E. y A. z ( z e. y <-> z = x ) $.
   $}
@@ -28671,9 +28692,9 @@ $)
     $( Lemma for the primitive axioms.  Primitive form of equality to a
        singleton. $)
     axprimlem1 $p |- ( a = { B } <-> A. c ( c e. a <-> c = B ) ) $=
-       ( cv csn wceq wel wcel wb wal dfcleq vex elsn bibi2i albii bitri ) BDZAE
-       ZFCBGZCDZRHZIZCJSTAFZIZCJCQRKUBUDCUAUCSTACLMNOP $.
-       $( [25-Mar-2015] $)
+      ( cv csn wceq wel wcel wb wal dfcleq vex elsn bibi2i albii bitri ) BDZAEZ
+      FCBGZCDZRHZIZCJSTAFZIZCJCQRKUBUDCUAUCSTACLMNOP $.
+      $( [25-Mar-2015] $)
   $}
 
   ${
@@ -28799,19 +28820,18 @@ $)
         ) ) ) ) ) ) ) /\ a e. y ) <-> E. k ( A. l ( l e. k <-> ( A. m ( m e. l
         <-> m = z ) \/ A. n ( n e. l <-> ( n = z \/ n = t ) ) ) ) /\ k e. x ) )
         $=
-       ( wal cv csn copk wcel wb wex wel weq wo ax-ins2 wceq df-clel axprimlem2
-       axprimlem1 bibi2i albii bitri orbi12i anbi1i exbii bibi12i 2albii mpbi
-       wa ) CUAZUBZUBZDUAZEUAZUCZUCZBUAZUDZVEVIUCZAUAZUDZUEZETZDTCTZBUFPOUGZQPU
-       GZRQUGZFRUGFCUHZUEFTZUEZRTZUEZQTZGPUGZHGUGZFHUGWCUEFTZUEZHTZIGUGJIUGJDUH
-       UEJTKIUGKDUHKEUHUIUEKTUIUEITZUIZUEZGTZUIZUEZPTZOBUGZVDZOUFZSLUGMSUGMCUHU
-       EMTNSUGNCUHNEUHUIUENTUIUESTZLAUGZVDZLUFZUEZETZDTCTZBUFABCDEUJVSXJBVRXICD
-       VQXHEVMXCVPXGVMOUAVKUKZXAVDZOUFXCOVKVLULXLXBOXKWTXAXKVTWAQUAVGUKZUEZQTZW
-       IGUAZVGUKZXPVJUKZUIZUEZGTZUIZUEZPTWTVGVJQGOPUMYCWSPYBWRVTXOWHYAWQXNWGQXM
-       WFWAXMWBRUAVFUKZUEZRTWFVFQRUNYEWERYDWDWBVERFUNUOUPUQUOUPXTWPGXSWOWIXQWMX
-       RWNXQWJHUAVFUKZUEZHTWMVFGHUNYGWLHYFWKWJVEHFUNUOUPUQVHVIJKGIUMURUOUPURUOU
-       PUQUSUTUQVPLUAVNUKZXEVDZLUFXGLVNVOULYIXFLYHXDXEVEVIMNLSUMUSUTUQVAUPVBUTV
-       C $.
-       $( [25-Mar-2015] $)
+      ( wal cv csn copk wcel wb wex wel weq wo wa ax-ins2 axprimlem2 axprimlem1
+      wceq df-clel bibi2i albii bitri orbi12i anbi1i exbii bibi12i 2albii mpbi
+      ) CUAZUBZUBZDUAZEUAZUCZUCZBUAZUDZVEVIUCZAUAZUDZUEZETZDTCTZBUFPOUGZQPUGZRQ
+      UGZFRUGFCUHZUEFTZUEZRTZUEZQTZGPUGZHGUGZFHUGWCUEFTZUEZHTZIGUGJIUGJDUHUEJTK
+      IUGKDUHKEUHUIUEKTUIUEITZUIZUEZGTZUIZUEZPTZOBUGZUJZOUFZSLUGMSUGMCUHUEMTNSU
+      GNCUHNEUHUIUENTUIUESTZLAUGZUJZLUFZUEZETZDTCTZBUFABCDEUKVSXJBVRXICDVQXHEVM
+      XCVPXGVMOUAVKUNZXAUJZOUFXCOVKVLUOXLXBOXKWTXAXKVTWAQUAVGUNZUEZQTZWIGUAZVGU
+      NZXPVJUNZUIZUEZGTZUIZUEZPTWTVGVJQGOPULYCWSPYBWRVTXOWHYAWQXNWGQXMWFWAXMWBR
+      UAVFUNZUEZRTWFVFQRUMYEWERYDWDWBVERFUMUPUQURUPUQXTWPGXSWOWIXQWMXRWNXQWJHUA
+      VFUNZUEZHTWMVFGHUMYGWLHYFWKWJVEHFUMUPUQURVHVIJKGIULUSUPUQUSUPUQURUTVAURVP
+      LUAVNUNZXEUJZLUFXGLVNVOUOYIXFLYHXDXEVEVIMNLSULUTVAURVBUQVCVAVD $.
+      $( [25-Mar-2015] $)
   $}
 
   ${
@@ -28831,19 +28851,18 @@ $)
         ) ) ) ) ) ) ) /\ a e. y ) <-> E. k ( A. l ( l e. k <-> ( A. m ( m e. l
         <-> m = z ) \/ A. n ( n e. l <-> ( n = z \/ n = w ) ) ) ) /\ k e. x ) )
         $=
-       ( wal cv csn copk wcel wb wex wel weq wo ax-ins3 wceq df-clel axprimlem2
-       axprimlem1 bibi2i albii bitri orbi12i anbi1i exbii bibi12i 2albii mpbi
-       wa ) CUAZUBZUBZDUAZEUAZUCZUCZBUAZUDZVEVHUCZAUAZUDZUEZETZDTCTZBUFPOUGZQPU
-       GZRQUGZFRUGFCUHZUEFTZUEZRTZUEZQTZGPUGZHGUGZFHUGWCUEFTZUEZHTZIGUGJIUGJDUH
-       UEJTKIUGKDUHKEUHUIUEKTUIUEITZUIZUEZGTZUIZUEZPTZOBUGZVDZOUFZSLUGMSUGMCUHU
-       EMTNSUGNCUHNDUHUIUENTUIUESTZLAUGZVDZLUFZUEZETZDTCTZBUFABCDEUJVSXJBVRXICD
-       VQXHEVMXCVPXGVMOUAVKUKZXAVDZOUFXCOVKVLULXLXBOXKWTXAXKVTWAQUAVGUKZUEZQTZW
-       IGUAZVGUKZXPVJUKZUIZUEZGTZUIZUEZPTWTVGVJQGOPUMYCWSPYBWRVTXOWHYAWQXNWGQXM
-       WFWAXMWBRUAVFUKZUEZRTWFVFQRUNYEWERYDWDWBVERFUNUOUPUQUOUPXTWPGXSWOWIXQWMX
-       RWNXQWJHUAVFUKZUEZHTWMVFGHUNYGWLHYFWKWJVEHFUNUOUPUQVHVIJKGIUMURUOUPURUOU
-       PUQUSUTUQVPLUAVNUKZXEVDZLUFXGLVNVOULYIXFLYHXDXEVEVHMNLSUMUSUTUQVAUPVBUTV
-       C $.
-       $( [25-Mar-2015] $)
+      ( wal cv csn copk wcel wb wex wel weq wo wa ax-ins3 axprimlem2 axprimlem1
+      wceq df-clel bibi2i albii bitri orbi12i anbi1i exbii bibi12i 2albii mpbi
+      ) CUAZUBZUBZDUAZEUAZUCZUCZBUAZUDZVEVHUCZAUAZUDZUEZETZDTCTZBUFPOUGZQPUGZRQ
+      UGZFRUGFCUHZUEFTZUEZRTZUEZQTZGPUGZHGUGZFHUGWCUEFTZUEZHTZIGUGJIUGJDUHUEJTK
+      IUGKDUHKEUHUIUEKTUIUEITZUIZUEZGTZUIZUEZPTZOBUGZUJZOUFZSLUGMSUGMCUHUEMTNSU
+      GNCUHNDUHUIUENTUIUESTZLAUGZUJZLUFZUEZETZDTCTZBUFABCDEUKVSXJBVRXICDVQXHEVM
+      XCVPXGVMOUAVKUNZXAUJZOUFXCOVKVLUOXLXBOXKWTXAXKVTWAQUAVGUNZUEZQTZWIGUAZVGU
+      NZXPVJUNZUIZUEZGTZUIZUEZPTWTVGVJQGOPULYCWSPYBWRVTXOWHYAWQXNWGQXMWFWAXMWBR
+      UAVFUNZUEZRTWFVFQRUMYEWERYDWDWBVERFUMUPUQURUPUQXTWPGXSWOWIXQWMXRWNXQWJHUA
+      VFUNZUEZHTWMVFGHUMYGWLHYFWKWJVEHFUMUPUQURVHVIJKGIULUSUPUQUSUPUQURUTVAURVP
+      LUAVNUNZXEUJZLUFXGLVNVOUOYIXFLYHXDXEVEVHMNLSULUTVAURVBUQVCVAVD $.
+      $( [25-Mar-2015] $)
   $}
 
 
@@ -29021,7 +29040,7 @@ $)
     $d X a $.  $d X b $.  $d X x $.  $d x z $.  $d X z $.
 
     $( Compute the power class of an adjoinment. $)
-    pwadjoin $p |- ~P ( A u. { X } ) = 
+    pwadjoin $p |- ~P ( A u. { X } ) =
        ( ~P A u. { a | E. b e. ~P A a = ( b u. { X } ) } ) $=
       ( vz vx cun cpw cv wceq wrex wcel wo wss elpw wn wa wi sylib com12 orbi2i
       csn cab vex weq eqeq1 rexbidv elab elun cdif wel eldifsn ssel bitri df-ne
@@ -29101,7 +29120,7 @@ $)
     $d A x y $.  $d B x y $.  $d C x y $.
     $( Reverse equality lemma for unordered pairs.  If two unordered pairs have
        the same first element, the second elements are equal. $)
-    preqr2g $p |- ( ( A e. V /\ B e. W ) -> 
+    preqr2g $p |- ( ( A e. V /\ B e. W ) ->
            ( { C , A } = { C , B } -> A = B ) ) $=
       ( vx vy cv cpr wceq weq wi preq2 eqeq1d eqeq1 imbi12d eqeq2d eqeq2 preqr2
       vex vtocl2g ) CFHZIZCGHZIZJZFGKZLCAIZUEJZAUDJZLUHCBIZJZABJZLFGABDEUBAJZUF
@@ -29244,14 +29263,14 @@ $)
     df-1c $a |- 1c = { x | E. y x = { y } } $.
   $}
 
-  $( Define unit power class.  Definition from [Rosser]. $)
+  $( Define unit power class.  Definition from {{Rosser}}. $)
   df-pw1 $a |- ~P1 A = ( ~P A i^i 1c ) $.
 
 
   $( Define the unit union of a class.  This operation is used implicitly in
-     both [Holmes] and [Haliperin] to complete their stratification algorithms,
-     although neither provide explicit notation for it.  See ~ eluni1 for
-     membership condition. $)
+     both {{Holmes}} and {{Hailperin}} to complete their stratification
+     algorithms, although neither provide explicit notation for it.  See
+     ~ eluni1 for membership condition. $)
   df-uni1 $a |- U.1 A = U. ( A i^i 1c ) $.
 
 
@@ -29354,7 +29373,7 @@ $)
 
 
     $( Membership in ` ~P1 ~P1 ~P1 1c ` $)
-    elpw131c $p |- ( A e. ~P1 ~P1 ~P1 1c <-> 
+    elpw131c $p |- ( A e. ~P1 ~P1 ~P1 1c <->
                 E. x A = { { { { x } } } } ) $=
       ( vy c1c cpw1 wcel cv csn wceq wex elpw1 wa df-rex elpw121c anbi1i 19.41v
       wrex bitr4i exbii bitri excom snex sneq eqeq2d ceqsexv ) BDEEZEFBCGZHZIZC
@@ -29365,7 +29384,7 @@ $)
 
 
     $( Membership in ` ~P1 ~P1 ~P1 ~P1 1c ` $)
-    elpw141c $p |- ( A e. ~P1 ~P1 ~P1 ~P1 1c <-> 
+    elpw141c $p |- ( A e. ~P1 ~P1 ~P1 ~P1 1c <->
                 E. x A = { { { { { x } } } } } ) $=
       ( vy c1c cpw1 wcel cv csn wceq wex elpw1 wa df-rex elpw131c anbi1i 19.41v
       wrex bitr4i exbii bitri excom snex sneq eqeq2d ceqsexv ) BDEEEZEFBCGZHZIZ
@@ -29375,7 +29394,7 @@ $)
       $( [14-Jan-2015] $)
 
     $( Membership in ` ~P1 ~P1 ~P1 ~P1 ~P1 1c ` $)
-    elpw151c $p |- ( A e. ~P1 ~P1 ~P1 ~P1 ~P1 1c <-> 
+    elpw151c $p |- ( A e. ~P1 ~P1 ~P1 ~P1 ~P1 1c <->
                 E. x A = { { { { { { x } } } } } } ) $=
       ( vy c1c cpw1 wcel cv csn wceq wex elpw1 wa df-rex elpw141c anbi1i 19.41v
       wrex bitr4i exbii bitri excom snex sneq eqeq2d ceqsexv ) BDEEEEZEFBCGZHZI
@@ -29385,7 +29404,7 @@ $)
       $( [14-Jan-2015] $)
 
     $( Membership in ` ~P1 ~P1 ~P1 ~P1 ~P1 ~P1 1c ` $)
-    elpw161c $p |- ( A e. ~P1 ~P1 ~P1 ~P1 ~P1 ~P1 1c <-> 
+    elpw161c $p |- ( A e. ~P1 ~P1 ~P1 ~P1 ~P1 ~P1 1c <->
                 E. x A = { { { { { { { x } } } } } } } ) $=
       ( vy c1c cpw1 wcel cv csn wceq wex elpw1 wa df-rex elpw151c anbi1i 19.41v
       wrex bitr4i exbii bitri excom snex sneq eqeq2d ceqsexv ) BDEEEEEZEFBCGZHZ
@@ -29396,7 +29415,7 @@ $)
 
 
     $( Membership in ` ~P1 ~P1 ~P1 ~P1 ~P1 ~P1 ~P1 1c ` $)
-    elpw171c $p |- ( A e. ~P1 ~P1 ~P1 ~P1 ~P1 ~P1 ~P1 1c <-> 
+    elpw171c $p |- ( A e. ~P1 ~P1 ~P1 ~P1 ~P1 ~P1 ~P1 1c <->
                 E. x A = { { { { { { { { x } } } } } } } } ) $=
       ( vy c1c cpw1 wcel cv csn wceq wex elpw1 wa df-rex elpw161c anbi1i 19.41v
       wrex bitr4i exbii bitri excom snex sneq eqeq2d ceqsexv ) BDEEEEEEZEFBCGZH
@@ -29407,8 +29426,8 @@ $)
 
 
     $( Membership in ` ~P1 ~P1 ~P1 ~P1 ~P1 ~P1 ~P1 ~P1 1c ` $)
-    elpw181c $p |- ( 
-     A e. ~P1 ~P1 ~P1 ~P1 ~P1 ~P1 ~P1 ~P1 1c <-> 
+    elpw181c $p |- (
+     A e. ~P1 ~P1 ~P1 ~P1 ~P1 ~P1 ~P1 ~P1 1c <->
                 E. x A = { { { { { { { { { x } } } } } } } } } ) $=
       ( vy c1c cpw1 wcel cv csn wceq wex elpw1 wa df-rex elpw171c anbi1i 19.41v
       wrex bitr4i exbii bitri excom snex sneq eqeq2d ceqsexv ) BDEEEEEEEZEFBCGZ
@@ -29419,8 +29438,8 @@ $)
 
 
     $( Membership in ` ~P1 ~P1 ~P1 ~P1 ~P1 ~P1 ~P1 ~P1 ~P1 1c ` $)
-    elpw191c $p |- ( 
-     A e. ~P1 ~P1 ~P1 ~P1 ~P1 ~P1 ~P1 ~P1 ~P1 1c <-> 
+    elpw191c $p |- (
+     A e. ~P1 ~P1 ~P1 ~P1 ~P1 ~P1 ~P1 ~P1 ~P1 1c <->
                 E. x A = { { { { { { { { { { x } } } } } } } } } } ) $=
       ( vy c1c cpw1 wcel cv csn wceq wex elpw1 wa df-rex elpw181c anbi1i 19.41v
       wrex bitr4i exbii bitri excom snex sneq eqeq2d ceqsexv ) BDEEEEEEEEZEFBCG
@@ -29430,8 +29449,8 @@ $)
       $( [24-Jan-2015] $)
 
     $( Membership in ` ~P1 ~P1 ~P1 ~P1 ~P1 ~P1 ~P1 ~P1 ~P1 ~P1 1c ` $)
-    elpw1101c $p |- ( 
-     A e. ~P1 ~P1 ~P1 ~P1 ~P1 ~P1 ~P1 ~P1 ~P1 ~P1 1c <-> 
+    elpw1101c $p |- (
+     A e. ~P1 ~P1 ~P1 ~P1 ~P1 ~P1 ~P1 ~P1 ~P1 ~P1 1c <->
                 E. x A = { { { { { { { { { { { x } } } } } } } } } } } ) $=
       ( vy c1c cpw1 wcel cv csn wceq wex elpw1 wa df-rex elpw191c anbi1i 19.41v
       wrex bitr4i exbii bitri excom snex sneq eqeq2d ceqsexv ) BDEEEEEEEEEZEFBC
@@ -29442,8 +29461,8 @@ $)
 
 
     $( Membership in ` ~P1 ~P1 ~P1 ~P1 ~P1 ~P1 ~P1 ~P1 ~P1 ~P1 ~P1 1c ` $)
-    elpw1111c $p |- ( 
-     A e. ~P1 ~P1 ~P1 ~P1 ~P1 ~P1 ~P1 ~P1 ~P1 ~P1 ~P1 1c <-> 
+    elpw1111c $p |- (
+     A e. ~P1 ~P1 ~P1 ~P1 ~P1 ~P1 ~P1 ~P1 ~P1 ~P1 ~P1 1c <->
                 E. x A = { { { { { { { { { { { { x } } } } } } } } } } } } ) $=
       ( vy c1c cpw1 wcel csn wceq wrex wex elpw1 df-rex elpw1101c anbi1i 19.41v
       cv wa bitr4i exbii bitri excom snex sneq eqeq2d ceqsexv ) BDEEEEEEEEEEZEF
@@ -29575,14 +29594,14 @@ $)
     $d A t $.  $d A x $.  $d B t $.  $d B x $.  $d t x $.
     $( The unit power class operation is one-to-one. $)
     pw111 $p |- ( ~P1 A = ~P1 B <-> A = B ) $=
-       ( vt vx cv csn wceq cpw1 wcel wb wi wal snex eleq1 snelpw1 bitri c1c wss
-       albii pw1ss1c bibi12d ceqsalv bibi12i wral ssofeq df-ral wex el1c imbi1i
-       mp2an 19.23v bitr4i alcom dfcleq 3bitr4i ) CEZDEZFZGZUPAHZIZUPBHZIZJZKZC
-       LZDLZUQAIZUQBIZJZDLUTVBGZABGVFVJDVFURUTIZURVBIZJZVJVDVNCURUQMUSVAVLVCVMU
-       PURUTNUPURVBNUAUBVLVHVMVIUQAOUQBOUCPSVKVDCQUDZVGUTQRVBQRVKVOJATBTCUTVBQU
-       EUJVOUPQIZVDKZCLZVGVDCQUFVRVEDLZCLVGVQVSCVQUSDUGZVDKVSVPVTVDDUPUHUIUSVDD
-       UKULSVECDUMPPPDABUNUO $.
-       $( [26-Feb-2015] $)
+      ( vt vx cv csn wceq cpw1 wcel wb wi wal eleq1 snelpw1 bitri albii c1c wss
+      snex pw1ss1c bibi12d ceqsalv bibi12i wral ssofeq mp2an df-ral el1c imbi1i
+      wex 19.23v bitr4i alcom dfcleq 3bitr4i ) CEZDEZFZGZUPAHZIZUPBHZIZJZKZCLZD
+      LZUQAIZUQBIZJZDLUTVBGZABGVFVJDVFURUTIZURVBIZJZVJVDVNCURUQSUSVAVLVCVMUPURU
+      TMUPURVBMUAUBVLVHVMVIUQANUQBNUCOPVKVDCQUDZVGUTQRVBQRVKVOJATBTCUTVBQUEUFVO
+      UPQIZVDKZCLZVGVDCQUGVRVEDLZCLVGVQVSCVQUSDUJZVDKVSVPVTVDDUPUHUIUSVDDUKULPV
+      ECDUMOOODABUNUO $.
+      $( [26-Feb-2015] $)
   $}
 
   $( A unit power class is a subset of a power class. $)
@@ -29683,23 +29702,23 @@ $)
     $( Define the Kuratowski cross product.  This definition through ~ df-idk
        set up the Kuratowski relationships.  These are used mainly to prove the
        properties of ~ df-op , and are not used thereafter. $)
-    df-xpk $a |- ( A X._k B ) = 
+    df-xpk $a |- ( A X._k B ) =
             { x | E. y E. z ( x = << y , z >> /\ ( y e. A /\ z e. B ) ) } $.
 
     $( Define the Kuratowski converse. $)
-    df-cnvk $a |- `'_k A = 
+    df-cnvk $a |- `'_k A =
              { x | E. y E. z ( x = << y , z >> /\ << z , y >> e. A ) } $.
 
     $( Define the Kuratowski second insertion operator. $)
     df-ins2k $a |- Ins2_k A =
-       { x | E. y E. z ( x = << y , z >> /\ 
-         E. t E. u E. v ( y = { { t } } /\ z = << u , v >> /\ 
+       { x | E. y E. z ( x = << y , z >> /\
+         E. t E. u E. v ( y = { { t } } /\ z = << u , v >> /\
             << t , v >> e. A ) ) } $.
 
     $( Define the Kuratowski third insertion operator. $)
     df-ins3k $a |- Ins3_k A =
-       { x | E. y E. z ( x = << y , z >> /\ 
-         E. t E. u E. v ( y = { { t } } /\ z = << u , v >> /\ 
+       { x | E. y E. z ( x = << y , z >> /\
+         E. t E. u E. v ( y = { { t } } /\ z = << u , v >> /\
             << t , u >> e. A ) ) } $.
 
     $( Define the Kuratowski image operator. $)
@@ -29715,7 +29734,7 @@ $)
 
     $( Define the Kuratowski singleton image operation. $)
     df-sik $a |- SI_k A = { x |
-       E. y E. z ( x = << y , z >> /\ 
+       E. y E. z ( x = << y , z >> /\
           E. t E. u ( y = { t } /\ z = { u } /\ << t , u >> e. A ) ) } $.
 
     $( Define the Kuratowski subset relationship. $)
@@ -29746,7 +29765,7 @@ $)
 
 
     $( Membership in a cross product. $)
-    elxpk2 $p |- ( A e. ( B X._k C ) <-> 
+    elxpk2 $p |- ( A e. ( B X._k C ) <->
            E. x e. B E. y e. C A = << x , y >> ) $=
       ( cv wcel wa copk wceq wex wrex cxpk ancom 2exbii r2ex elxpk 3bitr4ri ) A
       FZDGBFZEGHZCSTIJZHZBKAKUBUAHZBKAKUBBELADLCDEMGUCUDABUAUBNOUBABDEPABCDEQR
@@ -29828,7 +29847,7 @@ $)
     $d t w $.  $d t y $.  $d t z $.  $d w y $.  $d w z $.  $d x y $.  $d x z $.
     $( Any Kuratowski ordered pair abstraction is a subset of
        ` ( _V X._k _V ) ` . $)
-    opkabssvvk $p |- { x | E. y E. z ( x = << y , z >> /\ ph ) } C_ 
+    opkabssvvk $p |- { x | E. y E. z ( x = << y , z >> /\ ph ) } C_
        ( _V X._k _V ) $=
       ( vw vt cv copk wceq wa wex cvv cxpk wcel eqid vex opkeq12 eqeq2d cla42ev
       weq ax-mp elvvk mpbir eleq1 mpbiri adantr exlimivv abssi ) BGZCGZDGZHZIZA
@@ -29859,7 +29878,7 @@ $)
   ${
     $d A x y z $.  $d B x y z $.
     $( Subset for Kuratowski relationships. $)
-    ssrelk $p |- ( A C_ ( _V X._k _V ) -> 
+    ssrelk $p |- ( A C_ ( _V X._k _V ) ->
        ( A C_ B <-> A. x A. y ( << x , y >> e. A -> << x , y >> e. B ) ) ) $=
       ( vz cvv cxpk wss cv wcel wi wral copk wal ssofss wceq df-ral bitri eleq1
       wex elvvk imbi1i 19.23vv bitr4i albii alrot3 opkex imbi12d ceqsalv 2albii
@@ -30149,7 +30168,7 @@ $)
     opkelopkabg.3 $e |- ( z = C -> ( ps <-> ch ) ) $.
     $( Kuratowski ordered pair membership in an abstraction of Kuratowski
        ordered pairs. $)
-    opkelopkabg $p |- ( ( B e. V /\ C e. W ) -> 
+    opkelopkabg $p |- ( ( B e. V /\ C e. W ) ->
                  ( << B , C >> e. A <-> ch ) ) $=
       ( wcel wceq wa wex cvv wb copk cv opkex eqeq1 eqcom syl6bb anbi1d 2exbidv
       elab2 elex vex opkthg mp3an12 adantl exbidv 19.42v anbi2d ceqsexgv adantr
@@ -30202,7 +30221,7 @@ $)
   ${
     $d A x y z $.  $d B x y z $.  $d C x y z $.
     $( Kuratowski ordered pair membership in a Kuratowski converse. $)
-    opkelcnvkg $p |- ( ( A e. V /\ B e. W ) -> 
+    opkelcnvkg $p |- ( ( A e. V /\ B e. W ) ->
                 ( << A , B >> e. `'_k C <-> << B , A >> e. C ) ) $=
       ( vy vx vz copk wcel ccnvk df-cnvk wceq opkeq2 eleq1d opkeq1 opkelopkabg
       cv ) FRZGRZIZCJSAIZCJBAIZCJHGFCKABDEHGFCLTAMUAUBCTASNOSBMUBUCCSBAPOQ $.
@@ -30223,8 +30242,8 @@ $)
     $d A x y z w t u $.  $d B x y z w t u $.  $d C x y z w t u $.
     $( Kuratowski ordered pair membership in Kuratowski insertion operator. $)
     opkelins2kg $p |- ( ( A e. V /\ B e. W ) ->
-       ( << A , B >> e. Ins2_k C <-> 
-         E. x E. y E. z ( A = { { x } } /\ B = << y , z >> /\ 
+       ( << A , B >> e. Ins2_k C <->
+         E. x E. y E. z ( A = { { x } } /\ B = << y , z >> /\
               << x , z >> e. C ) ) ) $=
       ( vw vu vt cv csn wceq copk wcel w3a wex eqeq1 3exbidv cins2k opkelopkabg
       df-ins2k 3anbi1d 3anbi2d ) ILZALZMMZNZJLZBLCLZOZNZUGUKOFPZQZCRBRARDUHNZUM
@@ -30234,8 +30253,8 @@ $)
 
     $( Kuratowski ordered pair membership in Kuratowski insertion operator. $)
     opkelins3kg $p |- ( ( A e. V /\ B e. W ) ->
-       ( << A , B >> e. Ins3_k C <-> 
-         E. x E. y E. z ( A = { { x } } /\ B = << y , z >> /\ 
+       ( << A , B >> e. Ins3_k C <->
+         E. x E. y E. z ( A = { { x } } /\ B = << y , z >> /\
               << x , y >> e. C ) ) ) $=
       ( vw vu vt cv csn wceq copk wcel w3a wex eqeq1 3exbidv cins3k opkelopkabg
       df-ins3k 3anbi1d 3anbi2d ) ILZALZMMZNZJLZBLZCLOZNZUGUKOFPZQZCRBRARDUHNZUM
@@ -30310,14 +30329,14 @@ $)
   ${
     $d A x y $.  $d B x y $.  $d C x y $.
     $( Membership in a Kuratowski image. $)
-    elimakg $p |- ( C e. V -> 
+    elimakg $p |- ( C e. V ->
              ( C e. ( A "_k B ) <-> E. y e. B << y , C >> e. A ) ) $=
       ( vx cv copk wcel wrex cimak wceq opkeq2 eleq1d rexbidv df-imak elab2g )
       AGZFGZHZBIZACJRDHZBIZACJFDBCKESDLZUAUCACUDTUBBSDRMNOFABCPQ $.
       $( [13-Jan-2015] $)
 
     $( Membership in a Kuratowski image under ` _V ` . $)
-    elimakvg $p |- ( C e. V -> 
+    elimakvg $p |- ( C e. V ->
              ( C e. ( A "_k _V ) <-> E. y << y , C >> e. A ) ) $=
       ( wcel cvv cimak cv copk wrex wex elimakg rexv syl6bb ) CDECBFGEAHCIBEZAF
       JOAKABFCDLOAMN $.
@@ -30528,7 +30547,7 @@ $)
   ${
     $d A x y z $.  $d B x y z $.
     $( Membership in the Kuratowski identity relationship. $)
-    opkelidkg $p |- ( ( A e. V /\ B e. W ) -> 
+    opkelidkg $p |- ( ( A e. V /\ B e. W ) ->
               ( << A , B >> e. _I_k <-> A = B ) ) $=
       ( vx vy vz weq cv wceq cidk df-idk eqeq1 eqeq2 opkelopkabg ) EFHAFIZJABJG
       EFKABCDGEFLEIAPMPBANO $.
@@ -30722,11 +30741,11 @@ $)
     $d A x $.  $d A z $.  $d x z $.
     $( Alternate definition of unit union. $)
     dfuni12 $p |- U.1 A = P6 ( _V X._k A ) $=
-       ( vx vz cuni1 cvv cxpk cp6 cv csn wcel copk wal 19.27v vex snex opkelxpk
-       wa albii ax-gen biantrur 3bitr4ri eluni1 wb elp6 ax-mp 3bitr4i eqriv ) B
-       ADZEAFZGZBHZIZAJZCHZULKUIJZCLZUKUHJUKUJJZUNEJZUMQZCLURCLZUMQUPUMURUMCMUO
-       USCUNULEACNZUKOPRUTUMURCVASTUAUKABNZUBUKEJUQUPUCVBCUKUIEUDUEUFUG $.
-       $( [15-Mar-2015] $)
+      ( vx vz cuni1 cvv cxpk cp6 cv csn wcel copk wal 19.27v vex opkelxpk albii
+      wa snex ax-gen biantrur 3bitr4ri eluni1 wb elp6 ax-mp 3bitr4i eqriv ) BAD
+      ZEAFZGZBHZIZAJZCHZULKUIJZCLZUKUHJUKUJJZUNEJZUMQZCLURCLZUMQUPUMURUMCMUOUSC
+      UNULEACNZUKROPUTUMURCVASTUAUKABNZUBUKEJUQUPUCVBCUKUIEUDUEUFUG $.
+      $( [15-Mar-2015] $)
   $}
 
   $( The unit union operator preserves sethood. $)
@@ -30762,8 +30781,8 @@ $)
     sikexlem.1 $e |- A C_ ( 1c X._k 1c ) $.
     sikexlem.2 $e |- B C_ ( 1c X._k 1c ) $.
     $( Lemma for ~ sikexg .  Equality for two subsets of ` 1c ` squared . $)
-    sikexlem $p |- ( A = B <-> 
-              A. x A. y ( << { x } , { y } >> e. A <-> 
+    sikexlem $p |- ( A = B <->
+              A. x A. y ( << { x } , { y } >> e. A <->
                           << { x } , { y } >> e. B ) ) $=
       ( vz vw vt wceq cv wcel wb c1c copk wal wex wa bitr4i bitri cxpk wral csn
       wss ssofeq mp2an df-ral w3a elxpk el1c anbi12i eeanv anbi2i df-3an 2exbii
@@ -30807,7 +30826,7 @@ $)
     $( Alternate definition of Kuratowski image.  This is the first of a series
        of definitions throughout the file designed to prove existence of
        various operations. $)
-    dfimak2 $p |- ( A "_k B ) = 
+    dfimak2 $p |- ( A "_k B ) =
        ~ P6 ( ~ ( 1c X._k _V ) u. SI_k ~ ( A i^i ( B X._k _V ) ) ) $=
       ( vx vy vz c1c cvv cxpk ccompl cv copk wcel wn wex csn vex elcompl 3bitri
       wa bitri cimak cin csik cun cp6 wrex df-rex exancom wceq wb elp6 ax-mp wo
@@ -31006,18 +31025,17 @@ $)
     $d A x y $.
     $( Alternate definition of class union for existence proof. $)
     dfuni3 $p |- U. A = U.1 ( `'_k SSet_k "_k A ) $=
-      ( vx vy cuni cssetk ccnvk cimak cuni1 csn copk wcel wrex wel opkelcnvk
-      cv vex snex elssetk bitri rexbii eluni1 elimak eluni2 3bitr4ri eqriv )
-      BADZEFZAGZHZCOZBOZIZJUGKZCALZBCMZCALUKUIKZUKUFKUMUOCAUMULUJJEKUOUJULECPZU
-      KQZNUKUJBPZUQRSTUPULUHKUNUKUHUSUACUGAULURUBSCUKAUCUDUE $.
+      ( vx vy cuni cssetk ccnvk cimak cuni1 cv csn copk wcel wrex wel opkelcnvk
+      vex snex elssetk bitri rexbii eluni1 elimak eluni2 3bitr4ri eqriv ) BADZE
+      FZAGZHZCIZBIZJZKUGLZCAMZBCNZCAMUKUILZUKUFLUMUOCAUMULUJKELUOUJULECPZUKQZOU
+      KUJBPZUQRSTUPULUHLUNUKUHUSUACUGAULURUBSCUKAUCUDUE $.
       $( [14-Jan-2015] $)
   $}
 
   $( The sum class of a set is a set. $)
   uniexg $p |- ( A e. V -> U. A e. _V ) $=
-    ( wcel cssetk ccnvk cimak cuni1 dfuni3 ssetkex cnvkex imakexg uni1exg
-    cuni cvv mpan syl syl5eqel ) ABCZAMDEZAFZGZNAHRTNCZUANCSNCRUBDIJSANBKOTNLPQ
-    $.
+    ( wcel cuni cssetk ccnvk cimak cuni1 cvv dfuni3 ssetkex cnvkex imakexg mpan
+    uni1exg syl syl5eqel ) ABCZADEFZAGZHZIAJRTICZUAICSICRUBEKLSAIBMNTIOPQ $.
     $( [14-Jan-2015] $)
 
   ${
@@ -31032,20 +31050,20 @@ $)
     $d A x y z $.
     $( Alternate definition of class intersection for the existence proof. $)
     dfint3 $p |- |^| A = ~ U.1 ( `'_k ~ SSet_k "_k A ) $=
-      ( vx vy cint cssetk ccompl ccnvk cimak cuni1 wel wral cv wcel csn copk
-      wn wrex vex elcompl 3bitri eluni1 elimak bitri opkelcnvk opkex elssetk
-      snex notbii rexbii rexnal con2bii elint2 3bitr4i eqriv ) BADZEFZGZAHZIZFZ
-      BCJZCAKZBLZUSMZPVCUOMVCUTMVDVBVDCLZVCNZOUQMZCAQZVAPZCAQVBPVDVFURMVHVCURBR
-      ZUACUQAVFVCUGZUBUCVGVICAVGVFVEOZUPMVLEMZPVIVEVFUPCRZVKUDVLEVFVEUESVMVAVCV
-      EVJVNUFUHTUIVACAUJTUKCVCAVJULVCUSVJSUMUN $.
+      ( vx vy cint cssetk ccompl ccnvk cimak cuni1 wel wral cv wcel wn csn copk
+      wrex vex elcompl 3bitri eluni1 snex elimak bitri opkelcnvk elssetk notbii
+      opkex rexbii rexnal con2bii elint2 3bitr4i eqriv ) BADZEFZGZAHZIZFZBCJZCA
+      KZBLZUSMZNVCUOMVCUTMVDVBVDCLZVCOZPUQMZCAQZVANZCAQVBNVDVFURMVHVCURBRZUACUQ
+      AVFVCUBZUCUDVGVICAVGVFVEPZUPMVLEMZNVIVEVFUPCRZVKUEVLEVFVEUHSVMVAVCVEVJVNU
+      FUGTUIVACAUJTUKCVCAVJULVCUSVJSUMUN $.
       $( [14-Jan-2015] $)
   $}
 
   $( The intersection of a set is a set. $)
   intexg $p |- ( A e. V -> |^| A e. _V ) $=
-    ( wcel cssetk ccompl ccnvk cimak cuni1 cvv dfint3 ssetkex complex cnvkex
-    cint imakexg mpan uni1exg complexg 3syl syl5eqel ) ABCZANDEZFZAGZHZEZIAJ
-    UAUDICZUEICUFICUCICUAUGUBDKLMUCAIBOPUDIQUEIRST $.
+    ( wcel cint cssetk ccompl ccnvk cimak dfint3 ssetkex complex cnvkex imakexg
+    cuni1 cvv mpan uni1exg complexg 3syl syl5eqel ) ABCZADEFZGZAHZNZFZOAIUAUDOC
+    ZUEOCUFOCUCOCUAUGUBEJKLUCAOBMPUDOQUEORST $.
     $( [14-Jan-2015] $)
 
   ${
@@ -31059,7 +31077,7 @@ $)
   ${
     $d A x y $.
     $( Two ways to express the class of all sets that contain ` A ` . $)
-    setswith $p |- { x | A e. x } = 
+    setswith $p |- { x | A e. x } =
                 if ( A e. _V , ( SSet_k "_k { { A } } ) , (/) ) $=
       ( vy cvv wcel cv cab cssetk csn cimak c0 cif wceq copk wrex wa wex eqtr4d
       vex wn df-rex elsn anbi1i exbii snex opkeq1 eleq1d ceqsexv elssetkg mpan2
@@ -31084,7 +31102,7 @@ $)
     ndisjrelk.2 $e |- B e. _V $.
     $( Membership in a particular Kuratowski relationship is equivalent to
        non-disjointedness. $)
-    ndisjrelk $p |- ( 
+    ndisjrelk $p |- (
       << A , B >> e. ( ( Ins3_k SSet_k i^i Ins2_k SSet_k ) "_k ~P1 ~P1 1c )
       <-> ( A i^i B ) =/= (/) ) $=
       ( vt vx cv csn copk cssetk cin wcel wa cpw1 snex elin elssetk bitri exbii
@@ -31326,7 +31344,7 @@ $)
     $d A x $.  $d B x $.
     sspw1.1 $e |- A e. _V $.
     $( A condition for being a subclass of a unit power class.  Corollary 2 of
-       theorem IX.6.14 of [Rosser], p. 255. $)
+       theorem IX.6.14 of {{Rosser}}, p. 255. $)
     sspw1 $p |- ( A C_ ~P1 B <-> E. x ( x C_ B /\ A = ~P1 x ) ) $=
       ( cpw1 wss cv wceq wa wex cuni uniss unipw1 syl6sseq c1c pw1ss1c eqpw1uni
       sstr mpan2 sseq1 uniex pw1eq eqeq2d anbi12d cla4ev syl2anc syl5ibr impcom
@@ -31343,10 +31361,10 @@ $)
     $( A set is a subset of cardinal one iff it is the unit power class of some
        other set. $)
     sspw12 $p |- ( A C_ 1c <-> E. x A = ~P1 x ) $=
-       ( c1c wss cv cpw1 wceq wex cuni eqpw1uni uniex eqeq2d cla4ev syl pw1ss1c
-       pw1eq sseq1 mpbiri exlimiv impbii ) BDEZBAFZGZHZAIZUBBBJZGZHZUFBKUEUIAUG
-       BCLUCUGHUDUHBUCUGQMNOUEUBAUEUBUDDEUCPBUDDRSTUA $.
-       $( [17-Mar-2015] $)
+      ( c1c wss cv cpw1 wceq wex eqpw1uni uniex pw1eq eqeq2d cla4ev syl pw1ss1c
+      cuni sseq1 mpbiri exlimiv impbii ) BDEZBAFZGZHZAIZUBBBQZGZHZUFBJUEUIAUGBC
+      KUCUGHUDUHBUCUGLMNOUEUBAUEUBUDDEUCPBUDDRSTUA $.
+      $( [17-Mar-2015] $)
   $}
 
 $(
@@ -31737,31 +31755,31 @@ $)
 
   ${
     $d A x y z $.  $d B x y z $.
-    $( Define cardinal addition.  Definition from [Rosser], p. 275. $)
+    $( Define cardinal addition.  Definition from {{Rosser}}, p. 275. $)
     df-addc $a |- ( A +c B ) =
       { x | E. y e. A E. z e. B ( ( y i^i z ) = (/) /\ x = ( y u. z ) ) } $.
   $}
 
   ${
     $d b y $.
-    $( Define the finite cardinals.  Definition from [Rosser], p. 275. $)
+    $( Define the finite cardinals.  Definition from {{Rosser}}, p. 275. $)
     df-nnc $a |- Nn = |^| { b | ( 0c e. b /\ A. y e. b ( y +c 1c ) e. b ) } $.
   $}
 
-  $( Define the set of all finite sets.  Definition from [Rosser], p. 417. $)
+  $( Define the set of all finite sets.  Definition from {{Rosser}}, p. 417. $)
   df-fin $a |- Fin = U. Nn $.
 
   ${
     $d A x y z t w $.  $d B x y z t w $.
     $( Alternate definition of cardinal addition to establish
        stratification. $)
-    dfaddc2 $p |- ( A +c B ) = 
-( ( ( Ins3_k ~ ( ( Ins3_k SSet_k i^i Ins2_k SSet_k ) "_k ~P1 ~P1 1c ) \ 
-      ( ( Ins2_k Ins2_k SSet_k 
-          (+) 
+    dfaddc2 $p |- ( A +c B ) =
+( ( ( Ins3_k ~ ( ( Ins3_k SSet_k i^i Ins2_k SSet_k ) "_k ~P1 ~P1 1c ) \
+      ( ( Ins2_k Ins2_k SSet_k
+          (+)
           ( Ins2_k Ins3_k SSet_k u.
-            Ins3_k SI_k SI_k SSet_k ) ) 
-            "_k ~P1 ~P1 ~P1 ~P1 1c ) ) 
+            Ins3_k SI_k SI_k SSet_k ) )
+            "_k ~P1 ~P1 ~P1 ~P1 1c ) )
   "_k ~P1 ~P1 B ) "_k A ) $=
       ( vy vz vx vt vw cv wceq wa wrex cssetk cpw1 wcel copk csn wn snex 3bitri
       wex cplc cin c0 cun cab cins3k cins2k c1c cimak csik csymdif cdif df-addc
@@ -31791,11 +31809,11 @@ $)
 
   $( The expression at the heart of ~ dfaddc2 is a set. $)
   addcexlem $p |- ( Ins3_k
-            ~ ( ( Ins3_k SSet_k i^i Ins2_k SSet_k ) "_k ~P1 ~P1 1c ) \ 
-      ( ( Ins2_k Ins2_k SSet_k 
-          (+) 
+            ~ ( ( Ins3_k SSet_k i^i Ins2_k SSet_k ) "_k ~P1 ~P1 1c ) \
+      ( ( Ins2_k Ins2_k SSet_k
+          (+)
           ( Ins2_k Ins3_k SSet_k u.
-            Ins3_k SI_k SI_k SSet_k ) ) 
+            Ins3_k SI_k SI_k SSet_k ) )
             "_k ~P1 ~P1 ~P1 ~P1 1c ) ) e. _V $=
     ( cssetk cins3k cins2k cin c1c cpw1 ccompl csik cun csymdif ssetkex ins3kex
     cimak ins2kex inex 1cex pw1ex imakex complex sikex unex symdifex difex ) AB
@@ -31886,16 +31904,16 @@ $)
   ${
     $d x y z w t $.
     $( Definition of the finite cardinals for existence theorem. $)
-    dfnnc2 $p |- Nn = 
-     |^| ( { x | 0c e. x } \ 
-           ( ( SSet_k \ ( SSet_k o._k SI_k 
-Image_k ( ( Ins3_k ~ ( ( Ins3_k SSet_k i^i Ins2_k SSet_k ) "_k 
-            ~P1 ~P1 1c ) \ 
-      ( ( Ins2_k Ins2_k SSet_k 
-          (+) 
+    dfnnc2 $p |- Nn =
+     |^| ( { x | 0c e. x } \
+           ( ( SSet_k \ ( SSet_k o._k SI_k
+Image_k ( ( Ins3_k ~ ( ( Ins3_k SSet_k i^i Ins2_k SSet_k ) "_k
+            ~P1 ~P1 1c ) \
+      ( ( Ins2_k Ins2_k SSet_k
+          (+)
           ( Ins2_k Ins3_k SSet_k u.
-            Ins3_k SI_k SI_k SSet_k ) ) 
-            "_k ~P1 ~P1 ~P1 ~P1 1c ) ) 
+            Ins3_k SI_k SI_k SSet_k ) )
+            "_k ~P1 ~P1 ~P1 ~P1 1c ) )
   "_k ~P1 ~P1 1c ) ) ) "_k 1c ) ) $=
       ( vy vz vt vw cv wcel c1c wa cssetk cpw1 cimak wn vex wceq copk wex bitri
       cvv exbii cnnc c0c cplc wral cab cint cins3k cins2k cin csik csymdif cdif
@@ -31940,7 +31958,8 @@ Image_k ( ( Ins3_k ~ ( ( Ins3_k SSet_k i^i Ins2_k SSet_k ) "_k
     $d A a $.  $d a b $.  $d A b $.  $d a c $.  $d A c $.  $d b c $.  $d M a $.
     $d M b $.  $d M c $.  $d N a $.  $d N b $.  $d N c $.
 
-    $( Membership in cardinal addition.  Theorem X.1.1 of [Rosser], p. 275. $)
+    $( Membership in cardinal addition.  Theorem X.1.1 of {{Rosser}},
+       p. 275. $)
     eladdc $p |- ( A e. ( M +c N ) <->
         E. b e. M E. c e. N ( ( b i^i c ) = (/) /\ A = ( b u. c ) ) ) $=
       ( va cplc wcel cvv cv cin c0 wceq cun wa wrex elex id vex rexlimivw eqeq1
@@ -31978,7 +31997,7 @@ Image_k ( ( Ins3_k ~ ( ( Ins3_k SSet_k i^i Ins2_k SSet_k ) "_k
       $( [14-Jan-2015] $)
   $}
 
-  $( Cardinal zero is not a successor.  Compare Theorem X.1.2 of [Rosser],
+  $( Cardinal zero is not a successor.  Compare Theorem X.1.2 of {{Rosser}},
      p. 275. $)
   0cnsuc $p |- ( A +c 1c ) =/= 0c $=
     ( c1c cplc c0c wne wceq wn wcel 0nelsuc csn 0ex df-0c eleqtrri eleq2 mpbiri
@@ -31988,7 +32007,7 @@ Image_k ( ( Ins3_k ~ ( ( Ins3_k SSet_k i^i Ins2_k SSet_k ) "_k
 
   ${
     $d x y $.
-    $( Cardinal zero is a finite cardinal.  Theorem X.1.4 of [Rosser],
+    $( Cardinal zero is a finite cardinal.  Theorem X.1.4 of {{Rosser}},
        p. 276. $)
     peano1 $p |- 0c e. Nn $=
       ( vx vy c0c cnnc wcel cv c1c cplc wral wa cab cint wal df-nnc eleq2i 0cex
@@ -32000,7 +32019,7 @@ Image_k ( ( Ins3_k ~ ( ( Ins3_k SSet_k i^i Ins2_k SSet_k ) "_k
   ${
     $d A a x y $.
     $( The finite cardinals are closed under addition of one.  Theorem X.1.5 of
-       [Rosser], p. 276. $)
+       {{Rosser}}, p. 276. $)
     peano2 $p |- ( A e. Nn -> ( A +c 1c ) e. Nn ) $=
       ( va vx vy cv c1c cplc cnnc wcel wceq addceq1 eleq1d c0c wa wi wal eleq2i
       wral elintab bitri wel weq rcla4cv adantl a2i alimi cab df-nnc vex addcex
@@ -32020,7 +32039,7 @@ Image_k ( ( Ins3_k ~ ( ( Ins3_k SSet_k i^i Ins2_k SSet_k ) "_k
   ${
     $d A x y z $.
     $( Cardinal zero is a fixed point for cardinal addition.  Theorem X.1.8 of
-       [Rosser], p 276. $)
+       {{Rosser}}, p 276. $)
     addcid1 $p |- ( A +c 0c ) = A $=
       ( vx vy vz c0c cplc c0 csn df-0c addceq2i cv cin wceq cun wa wrex weq 0ex
       wcel ineq2 eqeq1d uneq2 eqeq2d anbi12d in0 biantrur syl6bbr eqeq2i equcom
@@ -32034,7 +32053,7 @@ Image_k ( ( Ins3_k ~ ( ( Ins3_k SSet_k i^i Ins2_k SSet_k ) "_k
 
   ${
     $d A x y z $.  $d B x y z $.
-    $( Cardinal sum commutes.  Theorem X.1.9 of [Rosser], p. 276. $)
+    $( Cardinal sum commutes.  Theorem X.1.9 of {{Rosser}}, p. 276. $)
     addccom $p |- ( A +c B ) = ( B +c A ) $=
       ( vy vz vx cv cin c0 wceq cun wa wrex cab cplc incom eqeq1i uncom anbi12i
       eqeq2i df-addc 2rexbii rexcom bitri abbii 3eqtr4i ) CFZDFZGZHIZEFZUFUGJZI
@@ -32044,14 +32063,14 @@ Image_k ( ( Ins3_k ~ ( ( Ins3_k SSet_k i^i Ins2_k SSet_k ) "_k
   $}
 
   $( Cardinal zero is a fixed point for cardinal addition.  Theorem X.1.8 of
-     [Rosser], p 276. $)
+     {{Rosser}}, p 276. $)
   addcid2 $p |- ( 0c +c A ) = A $=
     ( c0c cplc addccom addcid1 eqtri ) BACABCABADAEF $.
     $( [16-Jan-2015] $)
 
 
   ${
-    $( Cardinal one is a finite cardinal.  Theorem X.1.12 of [Rosser],
+    $( Cardinal one is a finite cardinal.  Theorem X.1.12 of {{Rosser}},
        p. 277. $)
     1cnnc $p |- 1c e. Nn $=
       ( c1c cplc cnnc addcid1 addccom eqtr3i wcel peano1 peano2 ax-mp eqeltri
@@ -32063,9 +32082,9 @@ Image_k ( ( Ins3_k ~ ( ( Ins3_k SSet_k i^i Ins2_k SSet_k ) "_k
     $d A a x y $.
     $( The principle of mathematical induction: a set containing cardinal zero
        and closed under the successor operator is a superset of the finite
-       cardinals.  Theorem X.1.6 of [Rosser], p. 276. $)
-    peano5 $p |- ( ( A e. V /\ 0c e. A /\ 
-                      A. x e. Nn ( x e. A -> ( x +c 1c ) e. A ) ) -> 
+       cardinals.  Theorem X.1.6 of {{Rosser}}, p. 276. $)
+    peano5 $p |- ( ( A e. V /\ 0c e. A /\
+                      A. x e. Nn ( x e. A -> ( x +c 1c ) e. A ) ) ->
             Nn C_ A ) $=
       ( vy wcel cnnc cin cvv c0c cv c1c wi wral wss mpan elin biimpri syl eleq2
       wa cplc nncex inexg peano1 imbi1i impexp bitri inss1 sseli peano2 a1i a2i
@@ -32092,7 +32111,7 @@ Image_k ( ( Ins3_k ~ ( ( Ins3_k SSet_k i^i Ins2_k SSet_k ) "_k
     $( Principle of finite induction over the finite cardinals, using implicit
        substitutions.  The first hypothesis ensures stratification of ` ph ` ,
        the next four set up the substitutions, and the last two set up the base
-       case and induction hypothesis.  Compare Theorem X.1.13 of [Rosser],
+       case and induction hypothesis.  Compare Theorem X.1.13 of {{Rosser}},
        p. 277. $)
     finds $p |- ( A e. Nn -> ta ) $=
       ( cnnc wcel cvv c0c elab cab cv c1c cplc wi wral wss 0cex vex 1cex addcex
@@ -32104,9 +32123,9 @@ Image_k ( ( Ins3_k ~ ( ( Ins3_k SSet_k i^i Ins2_k SSet_k ) "_k
 
   ${
     $d A x n m $.
-    $( All naturals are either zero or a successor.  Theorem X.1.7 of [Rosser],
-       p. 276. $)
-    nnc0suc $p |- ( A e. Nn <-> 
+    $( All naturals are either zero or a successor.  Theorem X.1.7 of
+       {{Rosser}}, p. 276. $)
+    nnc0suc $p |- ( A e. Nn <->
              ( A = 0c \/ E. x e. Nn A = ( x +c 1c ) ) ) $=
       ( vn vm cnnc wcel c0c wceq cv c1c wrex cssetk cins3k cpw1 cimak cvv eqeq1
       wo rexbidv orbi12d cplc csn cins2k cin ccompl csik cun csymdif cdif df-sn
@@ -32129,7 +32148,7 @@ Image_k ( ( Ins3_k ~ ( ( Ins3_k SSet_k i^i Ins2_k SSet_k ) "_k
   ${
     $d A b $.  $d A x $.  $d A y $.  $d b x $.  $d b y $.  $d M b $.  $d M y $.
     $d x y $.
-    $( Membership in a successor.  Theorem X.1.16 of [Rosser], p. 279. $)
+    $( Membership in a successor.  Theorem X.1.16 of {{Rosser}}, p. 279. $)
     elsuc $p |- ( A e. ( M +c 1c ) <->
        E. b e. M E. x e. ~ b A = ( b u. { x } ) ) $=
       ( vy c1c wcel cv cin c0 wceq cun wa wrex bitr4i anbi1i bitri exbii df-rex
@@ -32167,7 +32186,7 @@ Image_k ( ( Ins3_k ~ ( ( Ins3_k SSet_k i^i Ins2_k SSet_k ) "_k
     $d c x $.  $d C x $.  $d d x $.  $d e x $.
 
     $( Cardinal addition is associative.  Theorem X.1.11, corollary 1 of
-       [Rosser], p. 277. $)
+       {{Rosser}}, p. 277. $)
     addcass $p |- ( ( A +c B ) +c C ) = ( A +c ( B +c C ) ) $=
       ( va vb vd vc ve cv cin c0 wceq cun wex wrex bitri exbii rexbii rexcom4
       wa vx cplc wcel ancom anbi2i an12 indir eqeq1i un00 bitr4i 3bitr4i eqeq2i
@@ -32215,7 +32234,7 @@ Image_k ( ( Ins3_k ~ ( ( Ins3_k SSet_k i^i Ins2_k SSet_k ) "_k
   ${
     $d A a b c x $.  $d B a b c x $.
     $( The finite cardinals are closed under addition.  Theorem X.1.14 of
-       [Rosser], p. 278. $)
+       {{Rosser}}, p. 278. $)
     nncaddccl $p |- ( ( A e. Nn /\ B e. Nn ) -> ( A +c B ) e. Nn ) $=
       ( va vb vc vx cnnc wcel cplc cv wceq eleq1d imbi2d c1c cab cpw1 cimak cvv
       wi addceq2 addceq1 c0c wn cssetk cins3k cins2k cin ccompl csymdif cimagek
@@ -32269,8 +32288,8 @@ Image_k ( ( Ins3_k ~ ( ( Ins3_k SSet_k i^i Ins2_k SSet_k ) "_k
     $d w x $.
     $( Lemma for ~ nnsucelr .  Establish stratification for the inductive
        hypothesis. $)
-    nnsucelrlem1 $p |- { m | 
-     A. a A. x ( ( -. x e. a /\ ( a u. { x } ) e. ( m +c 1c ) ) -> a e. m ) } 
+    nnsucelrlem1 $p |- { m |
+     A. a A. x ( ( -. x e. a /\ ( a u. { x } ) e. ( m +c 1c ) ) -> a e. m ) }
      e. _V $=
       ( vt vw ve cssetk c1c cvv wn csn wcel wa wex wceq copk bitr4i exbii bitri
       snex csik cins3k cins2k cidk cun csymdif cpw1 cimak ccompl cin cdif ccnvk
@@ -32345,8 +32364,8 @@ Image_k ( ( Ins3_k ~ ( ( Ins3_k SSet_k i^i Ins2_k SSet_k ) "_k
     nnsucelrlem3.1 $e |- X e. _V $.
     $( Lemma for ~ nnsucelr .  Rearrange union and difference for a particular
        group of classes. $)
-    nnsucelrlem3 $p |- 
-       ( ( X =/= Y /\ ( A u. { X } ) = ( B u. { Y } ) /\ 
+    nnsucelrlem3 $p |-
+       ( ( X =/= Y /\ ( A u. { X } ) = ( B u. { Y } ) /\
            -. Y e. B ) -> B = ( ( A \ { Y } ) u. { X } ) ) $=
       ( wne csn cun wceq wcel wn w3a ccompl cin cdif indir df-dif eqtri sylib
       c0 eqcomi incompl uneq12i un0 difsn 3ad2ant3 syl5req simp2 df-ne 3ad2ant1
@@ -32377,8 +32396,8 @@ Image_k ( ( Ins3_k ~ ( ( Ins3_k SSet_k i^i Ins2_k SSet_k ) "_k
     nnsucelr.1 $e |- A e. _V $.
     nnsucelr.2 $e |- X e. _V $.
     $( Transfer membership in the successor of a natural into membership of the
-       natural itself.  Theorem X.1.17 of [Rosser], p. 525. $)
-    nnsucelr $p |- ( ( M e. Nn /\ 
+       natural itself.  Theorem X.1.17 of {{Rosser}}, p. 525. $)
+    nnsucelr $p |- ( ( M e. Nn /\
               ( -. X e. A /\ ( A u. { X } ) e. ( M +c 1c ) ) ) ->
               A e. M ) $=
       ( vx va vy vz vc vw wcel wn cun c1c wa cv wi wal wceq vm vn cnnc csn cplc
@@ -32444,7 +32463,7 @@ Image_k ( ( Ins3_k ~ ( ( Ins3_k SSet_k i^i Ins2_k SSet_k ) "_k
     $d b p $.  $d p x $.
 
     $( Either two naturals are disjoint or they are the same natural.  Theorem
-       X.1.18 of [Rosser], p. 526. $)
+       X.1.18 of {{Rosser}}, p. 526. $)
     nndisjeq $p |- ( ( M e. Nn /\ N e. Nn ) -> ( ( M i^i N ) = (/) \/ M = N ) )
         $=
       ( vn vp vm vq vb cnnc wcel cin c0 wceq wo cv wi weq wn c0c eqeq1d wa wral
@@ -32511,11 +32530,11 @@ Image_k ( ( Ins3_k ~ ( ( Ins3_k SSet_k i^i Ins2_k SSet_k ) "_k
     $d A x $.
     $( A singleton is finite. $)
     snfi $p |- { A } e. Fin $=
-       ( vx cvv wcel csn cfin cnnc wrex c1c 1cnnc snel1cg eleq2 rcla4ev sylancr
-       cv elfin sylibr wn c0 wceq snprc 0fin eleq1 mpbiri sylbi pm2.61i ) ACDZA
-       EZFDZUGUHBOZDZBGHZUIUGIGDUHIDZULJACKUKUMBIGUJIUHLMNBUHPQUGRUHSTZUIAUAUNU
-       ISFDUBUHSFUCUDUEUF $.
-       $( [23-Feb-2015] $)
+      ( vx cvv wcel csn cfin cv cnnc wrex c1c 1cnnc snel1cg eleq2 rcla4ev elfin
+      sylancr sylibr wn c0 wceq snprc 0fin eleq1 mpbiri sylbi pm2.61i ) ACDZAEZ
+      FDZUGUHBGZDZBHIZUIUGJHDUHJDZULKACLUKUMBJHUJJUHMNPBUHOQUGRUHSTZUIAUAUNUISF
+      DUBUHSFUCUDUEUF $.
+      $( [23-Feb-2015] $)
   $}
 
 $(
@@ -32564,29 +32583,29 @@ $)
   ${
     $d x y z w $.
     $( Define the less than or equal to relationship for finite cardinals.
-       Definition from Ex.  X.1.4 of [Rosser], p. 279. $)
+       Definition from Ex.  X.1.4 of {{Rosser}}, p. 279. $)
     df-lefin $a |- <_[fin] = { x | E. y E. z ( x = << y , z >> /\
         E. w e. Nn z = ( y +c w ) ) } $.
   $}
 
   ${
-    $d x y z w $.
+    $d m n p x y z w $.  $( 16-Apr-2015 NM added m n p to $d list $)
     $( Define the less than relationship for finite cardinals.  Definition from
-       [Rosser], p. 527. $)
+       {{Rosser}}, p. 527. $)
     df-ltfin $a |- <[fin] = { x | E. m E. n ( x = << m , n >> /\
         ( m =/= (/) /\ E. p e. Nn n = ( ( m +c p ) +c 1c ) ) ) } $.
   $}
 
   ${
     $d A x $.
-    $( Define the finite cardinal function.  Definition from [Rosser],
+    $( Define the finite cardinal function.  Definition from {{Rosser}},
        p. 527. $)
     df-ncfin $a |- Nc[fin] A = ( iota x ( x e. Nn /\ A e. x ) ) $.
   $}
 
   ${
     $d M n a $.
-    $( Define the finite T operator.  Definition from [Rosser], p. 528. $)
+    $( Define the finite T operator.  Definition from {{Rosser}}, p. 528. $)
     df-tfin $a |- _T[fin] M = if ( M = (/) , (/) ,
        ( iota n ( n e. Nn /\ E. a e. M ~P1 a e. n ) ) ) $.
   $}
@@ -32595,8 +32614,8 @@ $)
     $d x n $.
     $( Define the temporary set of all even numbers.  This differs from the
        final definition due to the non-null condition.  Definition from
-       [Rosser], p. 529. $)
-    df-evenfin $a |- Even[fin] = { x | 
+       {{Rosser}}, p. 529. $)
+    df-evenfin $a |- Even[fin] = { x |
                 ( E. n e. Nn x = ( n +c n ) /\ x =/= (/) ) } $.
   $}
 
@@ -32604,9 +32623,9 @@ $)
     $d x n $.
     $( Define the temporary set of all odd numbers.  This differs from the
        final definition due to the non-null condition.  Definition from
-       [Rosser], p. 529. $)
-    df-oddfin $a |- Odd[fin] = { x | 
-                ( E. n e. Nn x = ( ( n +c n ) +c 1c ) /\ 
+       {{Rosser}}, p. 529. $)
+    df-oddfin $a |- Odd[fin] = { x |
+                ( E. n e. Nn x = ( ( n +c n ) +c 1c ) /\
                             x =/= (/) ) } $.
   $}
 
@@ -32614,16 +32633,16 @@ $)
     $d M a $.  $d N a $.
     $( Define the finite S relationship.  This relationship encapsulates the
        idea of ` M ` being a "smaller" number than ` N ` .  Definition from
-       [Rosser], p. 530. $)
+       {{Rosser}}, p. 530. $)
     df-sfin $a |- ( _S[fin] ( M , N ) <-> ( M e. Nn /\ N e. Nn /\
              E. a ( ~P1 a e. M /\ ~P a e. N ) ) ) $.
   $}
 
   ${
     $d a x z $.
-    $( Define the finite Sp set.  Definition from [Rosser], p. 533. $)
+    $( Define the finite Sp set.  Definition from {{Rosser}}, p. 533. $)
     df-spfin $a |- Sp[fin] =
-       |^| { a | ( Nc[fin] _V e. a /\ 
+       |^| { a | ( Nc[fin] _V e. a /\
              A. x e. a A. z ( _S[fin] ( z , x ) -> z e. a ) ) } $.
   $}
 
@@ -32658,7 +32677,7 @@ $)
   ${
     $d A n $.  $d N n $.
     $( Cardinal sum always yields a larger set. $)
-    lefinaddc $p |- ( ( A e. V /\ N e. Nn ) -> 
+    lefinaddc $p |- ( ( A e. V /\ N e. Nn ) ->
                << A , ( A +c N ) >> e. <_[fin] ) $=
       ( vn wcel cnnc wa cplc copk clefin cv wceq wrex eqid addceq2 eqeq2d mpan2
       rcla4ev adantl cvv wb addcexg opklefing syldan mpbird ) ACEZBFEZGAABHZIJE
@@ -32670,8 +32689,8 @@ $)
   ${
     $d M a b x $.  $d N a b x $.
     $( Assuming a non-null successor, cardinal successor is one-to-one.
-       Theorem X.1.19 of [Rosser], p. 526. $)
-    prepeano4 $p |- ( ( ( M e. Nn /\ N e. Nn ) /\ 
+       Theorem X.1.19 of {{Rosser}}, p. 526. $)
+    prepeano4 $p |- ( ( ( M e. Nn /\ N e. Nn ) /\
      ( ( M +c 1c ) = ( N +c 1c ) /\ ( M +c 1c ) =/= (/) ) ) -> M = N ) $=
       ( va vb vx cnnc wcel wa c1c cplc wceq c0 wne cv wex csn wrex vex syl5bi
       n0 cun ccompl elsuc simplll simpllr simprl wn simprr elcompl sylib elsuci
@@ -32687,7 +32706,7 @@ $)
   ${
     $d A a b c $.
     $( Cardinal addition with the empty set.  Theorem X.1.20, corollary 1 of
-       [Rosser], p. 526. $)
+       {{Rosser}}, p. 526. $)
     addcnul1 $p |- ( A +c (/) ) = (/) $=
       ( va vb vc c0 cplc wceq cv wcel wn eq0 cin cun wrex rex0 a1i eladdc mtbir
       wa nrex mpgbir ) AEFZEGBHZUBIZJBBUBKUDCHZDHZLEGUCUEUFMGSZDENZCANUHCAUHJUE
@@ -32696,7 +32715,7 @@ $)
   $}
 
   $( If cardinal addition is non-empty, then both addends are non-empty.
-     Theorem X.1.20 of [Rosser], p. 526. $)
+     Theorem X.1.20 of {{Rosser}}, p. 526. $)
   addcnnul $p |- ( ( A +c B ) =/= (/) -> ( A =/= (/) /\ B =/= (/) ) ) $=
     ( cplc wne wceq addceq1 addccom addcnul1 eqtri syl6eq necon3i addceq2 jca
     c0 ) ABCZNDANDBNDANONANEONBCZNANBFPBNCNNBGBHIJKBNONBNEOANCNBNALAHJKM $.
@@ -32736,7 +32755,7 @@ $)
     $d k m $.  $d k n $.  $d k p $.  $d M m $.  $d m n $.  $d m p $.  $d N m $.
     $d N n $.  $d n p $.  $d P m $.  $d P n $.  $d P p $.
     $( Cancellation law for natural addition with a non-null condition. $)
-    preaddccan1 $p |- ( ( ( M e. Nn /\ N e. Nn /\ P e. Nn ) /\ 
+    preaddccan1 $p |- ( ( ( M e. Nn /\ N e. Nn /\ P e. Nn ) /\
     ( M +c P ) =/= (/) ) -> ( ( M +c P ) = ( N +c P ) <-> M = N ) ) $=
       ( vm vn vp cnnc wcel cplc c0 wne wa wceq wi neeq1d imbi2d c0c c1c addceq2
       cv vk w3a addceq1 eqeq1d eqeq1 imbi12d weq eqeq2d preaddccan1lem1 addcid1
@@ -32762,7 +32781,7 @@ $)
   $}
 
   $( Cancellation law for natural addition with a non-null condition. $)
-  preaddccan2 $p |- ( ( ( M e. Nn /\ N e. Nn /\ P e. Nn ) /\ 
+  preaddccan2 $p |- ( ( ( M e. Nn /\ N e. Nn /\ P e. Nn ) /\
   ( M +c N ) =/= (/) ) -> ( ( M +c N ) = ( M +c P ) <-> N = P ) ) $=
     ( cplc wceq cnnc w3a c0 wne wa addccom eqeq12i wb 3anrot neeq1i preaddccan1
     wcel syl2anb syl5bb ) BCDZBADZECBDZABDZEZBFQZCFQZAFQZGZTHIZJCAEZTUBUAUCBCKZ
@@ -32839,7 +32858,7 @@ $)
   $}
 
   $( Asymmetry law for finite less than. $)
-  ltfinasym $p |- ( ( A e. Nn /\ B e. Nn ) -> 
+  ltfinasym $p |- ( ( A e. Nn /\ B e. Nn ) ->
    ( << A , B >> e. <[fin] -> -. << B , A >> e. <[fin] ) ) $=
     ( cnnc wcel wa copk cltfin wn ltfinirr ad2antrr wi ltfintr 3anidm13 expdimp
     mtod ex ) ACDZBCDZEZABFGDZBAFGDZHSTEUAAAFGDZQUBHRTAIJSTUAUBQRTUAEUBKABALMNO
@@ -32894,7 +32913,7 @@ $)
     $d d y $.  $d d z $.  $d t w $.  $d t x $.  $d t y $.  $d t z $.  $d w x $.
     $d w y $.  $d w z $.  $d x y $.  $d x z $.  $d y z $.
 
-    $( Finite less than is stratitfied. $)
+    $( Finite less than is stratified. $)
     ltfinex $p |- <[fin] e. _V $=
       ( vx vt vc va vb vd cssetk csik cpw1 csn copk wceq wrex wa wex opksnelsik
       wcel snex 3bitri sikex vy vz cltfin cvv cxpk cins3k cins2k cin c1c ccompl
@@ -32988,7 +33007,7 @@ $)
   ${
     $d m n t $.
     $( Lemma for ~ ltfintri .  Establish stratification for induction. $)
-    ltfintrilem1 $p |- { m | ( n e. Nn -> ( m =/= (/) -> 
+    ltfintrilem1 $p |- { m | ( n e. Nn -> ( m =/= (/) ->
      ( << m , n >> e. <[fin] \/ m = n \/ << n , m >> e. <[fin] ) )
                                                       ) } e. _V $=
       ( vt cv wcel wn cab c0 csn cltfin cimak cun copk weq wi wo unab elun unex
@@ -33009,7 +33028,7 @@ $)
   ${
     $d M m n k p $.  $d N m n k p $.
     $( Trichotomy law for finite less than. $)
-    ltfintri $p |- ( ( M e. Nn /\ N e. Nn /\ 
+    ltfintri $p |- ( ( M e. Nn /\ N e. Nn /\
               M =/= (/) ) ->
        ( << M , N >> e. <[fin] \/ M = N \/ << N , M >> e. <[fin] ) ) $=
       ( vn vk cnnc wcel wne copk cltfin wceq w3o opkeq2 eleq1d opkeq1 3orbi123d
@@ -33056,7 +33075,7 @@ $)
   ${
     $d A x y $.  $d B x y $.
     $( Less than implies less than or equal. $)
-    ltlefin $p |- ( ( A e. V /\ B e. W ) -> 
+    ltlefin $p |- ( ( A e. V /\ B e. W ) ->
              ( << A , B >> e. <[fin] -> << A , B >> e. <_[fin] ) ) $=
       ( vx vy wcel wa c0 wne cv cplc c1c wceq cnnc wrex copk cltfin clefin wi
       addcass eqeq2i peano2 addceq2 eqeq2d rcla4ev sylan2b rexlimiva adantl a1i
@@ -33089,8 +33108,8 @@ $)
     $d a x $.  $d B a $.  $d B b $.  $d b c $.  $d b d $.  $d b k $.  $d b m $.
     $d b n $.  $d b t $.  $d b x $.  $d c d $.  $d c k $.  $d c m $.  $d c x $.
     $d d k $.  $d d m $.  $d d x $.  $d k m $.  $d k x $.  $d m n $.  $d m t $.
-    $( A subset of a finite set is itself finite.  Theorem X.1.21 of [Rosser],
-       p. 527. $)
+    $( A subset of a finite set is itself finite.  Theorem X.1.21 of
+       {{Rosser}}, p. 527. $)
     ssfin $p |- ( ( A e. V /\ B e. Fin /\ A C_ B ) -> A e. Fin ) $=
       ( va vb vn vm vt vx wcel cfin wss cv wi wceq wa wal cssetk cvv wex imbi2d
       vd vk vc sseq1 eleq1 imbi12d sseq2 imbi1d wel cnnc wrex elfin c0 c1c cplc
@@ -33151,7 +33170,7 @@ $)
   ${
     $d A x y $.
     $( If the universe is finite, then there is a unique natural containing any
-       set.  Theorem X.1.22 of [Rosser], p. 527. $)
+       set.  Theorem X.1.22 of {{Rosser}}, p. 527. $)
     vfinnc $p |- ( ( A e. V /\ _V e. Fin ) -> E! x e. Nn A e. x ) $=
       ( vy wcel cvv cfin wa cv cnnc wrex weq wi wral wss ssv ssfin mp3an3 elfin
       wreu sylib nnceleq ex rgen2a a1i eleq2 reu4 sylanbrc ) BCEZFGEZHZBAIZEZAJ
@@ -33180,9 +33199,9 @@ $)
 
   ${
     $d A x $.
-    $( Properties of finite cardinal number.  Theorem X.1.23 of [Rosser],
+    $( Properties of finite cardinal number.  Theorem X.1.23 of {{Rosser}},
        p. 527 $)
-    ncfinprop $p |- ( ( _V e. Fin /\ A e. V ) -> 
+    ncfinprop $p |- ( ( _V e. Fin /\ A e. V ) ->
                ( Nc[fin] A e. Nn /\ A e. Nc[fin] A ) ) $=
       ( vx wcel cvv cfin cncfin cnnc cio df-ncfin wreu vfinnc reiotacl syl5eqel
       wa cv syl wceq eqcomi wb eleq2 reiota2 syl2anc mpbiri jca ancoms ) ABDZEF
@@ -33217,7 +33236,7 @@ $)
   $}
 
   ${
-    $( Equality law for finite cardinality.  Theorem X.1.24 of [Rosser],
+    $( Equality law for finite cardinality.  Theorem X.1.24 of {{Rosser}},
        p. 527. $)
     ncfineleq $p |- ( ( _V e. Fin /\ A e. V /\ B e. W ) ->
        ( A e. Nc[fin] B <-> Nc[fin] A = Nc[fin] B ) ) $=
@@ -33234,8 +33253,8 @@ $)
     eqpwrelk.1 $e |- A e. _V $.
     eqpwrelk.2 $e |- B e. _V $.
     $( Represent equality to power class via a Kuratowski relationship. $)
-    eqpwrelk $p |- ( << { A } , B >> e. 
-              ~ ( ( Ins2_k SSet_k (+) Ins3_k SI_k SSet_k ) "_k 
+    eqpwrelk $p |- ( << { A } , B >> e.
+              ~ ( ( Ins2_k SSet_k (+) Ins3_k SI_k SSet_k ) "_k
                   ~P1 ~P1 1c ) <-> B = ~P A ) $=
       ( vx vt csn copk cssetk cpw1 wcel wn cv wb wex wceq wa snex cvv 3bitri
       cins2k csik cins3k csymdif c1c cimak wss ccompl cpw opkex elimak elpw121c
@@ -33257,7 +33276,7 @@ $)
     eqpw1relk.1 $e |- A e. _V $.
     eqpw1relk.2 $e |- B e. _V $.
     $( Represent equality to unit power class via a Kuratowski relationship. $)
-    eqpw1relk $p |- ( << A , { B } >> e. ( ( ~P 1c X._k _V ) \ 
+    eqpw1relk $p |- ( << A , { B } >> e. ( ( ~P 1c X._k _V ) \
   ( ( Ins3_k SSet_k (+) Ins2_k SI_k SSet_k )
     "_k ~P1 ~P1 ~P1 1c ) ) <-> A = ~P1 B ) $=
       ( vx vt csn copk c1c cvv wcel cssetk cpw1 wn wa cv wb snex bitri wex cxpk
@@ -33283,48 +33302,48 @@ $)
     ncfinraiselem2 $p |- { m | A. a e. m A. b e. m E. n e. Nn
        ( ~P1 a e. n /\ ~P1 b e. n ) } e. _V $=
       ( vt vx cssetk cpw1 cvv wcel wa wrex snex copk bitr4i exbii df-rex 3bitri
-      csn wex csik cins2k cnnc cxpk c1c cpw cins3k csymdif cdif ccompl cuni1
-      cimak cin cv wral cab wn elcompl wceq elimak elpw11c anbi1i excom 3bitr4i
-      19.41v wel opkeq1 eleq1d ceqsexv elin vex opksnelsik bitri opkex elpw131c
-      elssetk otkelins2k otkelins3k opkelxpk mpbiran2 snelpw1 eqpw1relk anbi12i
-      eldif df-clel notbii rexnal xchbinx eluni1 dfral2 abbi2i ssetkex sikex
-      elpw121c ins2kex nncex pw1ex vvex xpkex 1cex pwex ins3kex symdifex imakex
-      difex inex complex uni1ex eqeltrri ) GUAZXJUBZUCHZHZIUDZUEUFZIUDZGUGZX
-      KUHZUEHZHZHZULZUIZUAZUBZXQUMZXTULZUBZYGUGZUMZUMZXSULZUGZUIZYAULZUMZXSULZU
-      JZUKZCUNZHZBUNZJZDUNZHZUUBJZKZBUCLZDAUNZUOZCUUIUOZAUPIUUKAYSUUISZYRJZUUJU
-      QZCUUILZUQUUIYSJUUKUUMUULYQJZUUOUULYQUUIMZURUUPEUNZUULNZYPJZEXSLZUURYTSZS
-      ZUSZUUTKZETZCTZUUOEYPXSUULUUQUTUURXSJZUUTKZETUVECTZETUVAUVGUVIUVJEUVIUVDC
-      TZUUTKUVJUVHUVKUUTCUURVAVBUVDUUTCVEOPUUTEXSQUVECEVCVDUVGCAVFZUUNKZCTUUOUV
-      FUVMCUVFUVCUULNZYPJZUVNXJJZUVNYOJZKUVMUUTUVOEUVCUVBMZUVDUUSUVNYPUURUVCUUL
-      VGVHVIUVNXJYOVJUVPUVLUVQUUNUVPUVBUUINGJUVLUVBUUIGYTMZAVKZVLYTUUICVKZUVTVP
-      VMUVQUURUUDSZSZSZSZUSZUURUVNNZYNJZKZETZDTZUUHUQZDUUILZUUNUVQUWHEYALUURYAJ
-      ZUWHKZETZUWKEYNYAUVNUVCUULVNUTUWHEYAQUWPUWIDTZETUWKUWOUWQEUWOUWFDTZUWHKUW
-      QUWNUWRUWHDUURVOVBUWFUWHDVEOPUWIDEVCORUWKDAVFZUWLKZDTUWMUWJUWTDUWJUWEUVNN
-      ZYNJZUXAXKJZUXAYMJZUQZKUWTUWHUXBEUWEUWDMUWFUWGUXAYNUURUWEUVNVGVHVIUXAXKYM
-      WDUXCUWSUXEUWLUXCUWCUULNXJJUWBUUINGJUWSUWCUVCUULXJUWBMZUVRUUQVQUWBUUIGUUD
-      MZUVTVLUUDUUIDVKZUVTVPRUXDUUHUXDUWCUVCNZYLJZUURUUBSZSZUSZUURUXINZYKJZKZET
-      ZBTZUUHUWCUVCUULYLUXFUVRUUQVRUXOEXSLZUXPBTZETZUXJUXRUXSUVHUXOKZETUYAUXOEX
-      SQUYBUXTEUYBUXMBTZUXOKUXTUVHUYCUXOBUURVAVBUXMUXOBVEOPVMEYKXSUXIUWCUVCVNZU
-      TUXPBEVCVDUXRUUBUCJZUUGKZBTUUHUXQUYFBUXQUXLUXINZYKJZUYGXNJZUYGYJJZKUYFUXO
-      UYHEUXLUXKMZUXMUXNUYGYKUURUXLUXIVGVHVIUYGXNYJVJUYIUYEUYJUUGUYIUXLXMJZUXKX
-      LJUYEUYIUYLUXIIJUYDUXLUXIXMIUYKUYDVSVTUXKXLWAUUBUCWARUYJUYGYHJZUYGYIJZKUU
-      GUYGYHYIVJUYMUUCUYNUUFUYMUUBUVCNZYGJZUURFUNZSZSZSZUSZUURUYONZYFJZKZETZFTZ
-      UUCUUBUWCUVCYGBVKZUXFUVRVQUYPVUCEXTLUURXTJZVUCKZETZVUFEYFXTUYOUUBUVCVNUTV
-      UCEXTQVUJVUDFTZETVUFVUIVUKEVUIVUAFTZVUCKVUKVUHVULVUCFUURWNZVBVUAVUCFVEOPV
-      UDFEVCORVUFUYQUUAUSZFBVFZKZFTUUCVUEVUPFVUEUYTUYONZYFJZVUQYEJZVUQXQJZKVUPV
-      UCVUREUYTUYSMZVUAVUBVUQYFUURUYTUYOVGVHVIVUQYEXQVJVUSVUNVUTVUOVUSUYRUVCNYD
-      JUYQUVBNYCJVUNUYRUUBUVCYDUYQMZVUGUVRVQUYQUVBYCFVKZUVSVLUYQYTVVCUWAWBRVUTU
-      YRUUBNGJZVUOUYRUUBUVCGVVBVUGUVRVRUYQUUBVVCVUGVPZVMWCRPFUUAUUBWEORUUBUWCNZ
-      YGJZUYQUUEUSZVUOKZFTZUYNUUFVVGUURVVFNZYFJZEXTLZVUAVVLKZETZFTZVVJEYFXTVVFU
-      UBUWCVNUTVUHVVLKZETVVNFTZETVVMVVPVVQVVREVVQVULVVLKVVRVUHVULVVLVUMVBVUAVVL
-      FVEOPVVLEXTQVVNFEVCVDVVOVVIFVVOUYTVVFNZYFJZVVSYEJZVVSXQJZKVVIVVLVVTEUYTVV
-      AVUAVVKVVSYFUURUYTVVFVGVHVIVVSYEXQVJVWAVVHVWBVUOVWAUYRUWCNYDJUYQUWBNYCJVV
-      HUYRUUBUWCYDVVBVUGUXFVQUYQUWBYCVVCUXGVLUYQUUDVVCUXHWBRVWBVVDVUOUYRUUBUWCG
-      VVBVUGUXFVRVVEVMWCRPRUUBUWCUVCYGVUGUXFUVRVRFUUEUUBWEVDWCVMWCRPUUGBUCQORWF
-      WCRPUWLDUUIQOUUHDUUIWGRWCRPUUNCUUIQORWHUUIYRUVTWIUUJCUUIWJVDWKYRYQYPXSXJY
-      OGWLWMZYNYAXKYMXJVWCWOZYLYKXSXNYJXMIXLUCWPWQWQWRWSYHYIYGYFXTYEXQYDYCXPYBX
-      OIUEWTXAWRWSXRYAXQXKGWLXBZVWDXCXTXSUEWTWQZWQZWQZXDXEWMWOVWEXFVWGXDZWOYGVW
-      IXBXFXFVWFXDXBXEVWHXDXFVWFXDXGXHXI $.
+      csn wex csik cins2k cnnc cxpk c1c cpw cins3k csymdif cimak cdif cin cuni1
+      ccompl cv wral wn elcompl wceq elimak elpw11c anbi1i 19.41v excom 3bitr4i
+      cab wel opkeq1 eleq1d ceqsexv vex opksnelsik elssetk bitri opkex elpw131c
+      elin eldif otkelins2k opkelxpk mpbiran2 snelpw1 eqpw1relk anbi12i df-clel
+      elpw121c notbii rexnal xchbinx eluni1 dfral2 abbi2i ssetkex sikex ins2kex
+      otkelins3k nncex pw1ex vvex xpkex 1cex pwex ins3kex symdifex imakex difex
+      inex complex uni1ex eqeltrri ) GUAZXJUBZUCHZHZIUDZUEUFZIUDZGUGZXKUHZUEHZH
+      ZHZUIZUJZUAZUBZXQUKZXTUIZUBZYGUGZUKZUKZXSUIZUGZUJZYAUIZUKZXSUIZUMZULZCUNZ
+      HZBUNZJZDUNZHZUUBJZKZBUCLZDAUNZUOZCUUIUOZAVEIUUKAYSUUISZYRJZUUJUPZCUUILZU
+      PUUIYSJUUKUUMUULYQJZUUOUULYQUUIMZUQUUPEUNZUULNZYPJZEXSLZUURYTSZSZURZUUTKZ
+      ETZCTZUUOEYPXSUULUUQUSUURXSJZUUTKZETUVECTZETUVAUVGUVIUVJEUVIUVDCTZUUTKUVJ
+      UVHUVKUUTCUURUTVAUVDUUTCVBOPUUTEXSQUVECEVCVDUVGCAVFZUUNKZCTUUOUVFUVMCUVFU
+      VCUULNZYPJZUVNXJJZUVNYOJZKUVMUUTUVOEUVCUVBMZUVDUUSUVNYPUURUVCUULVGVHVIUVN
+      XJYOVPUVPUVLUVQUUNUVPUVBUUINGJUVLUVBUUIGYTMZAVJZVKYTUUICVJZUVTVLVMUVQUURU
+      UDSZSZSZSZURZUURUVNNZYNJZKZETZDTZUUHUPZDUUILZUUNUVQUWHEYALUURYAJZUWHKZETZ
+      UWKEYNYAUVNUVCUULVNUSUWHEYAQUWPUWIDTZETUWKUWOUWQEUWOUWFDTZUWHKUWQUWNUWRUW
+      HDUURVOVAUWFUWHDVBOPUWIDEVCORUWKDAVFZUWLKZDTUWMUWJUWTDUWJUWEUVNNZYNJZUXAX
+      KJZUXAYMJZUPZKUWTUWHUXBEUWEUWDMUWFUWGUXAYNUURUWEUVNVGVHVIUXAXKYMVQUXCUWSU
+      XEUWLUXCUWCUULNXJJUWBUUINGJUWSUWCUVCUULXJUWBMZUVRUUQVRUWBUUIGUUDMZUVTVKUU
+      DUUIDVJZUVTVLRUXDUUHUXDUWCUVCNZYLJZUURUUBSZSZURZUURUXINZYKJZKZETZBTZUUHUW
+      CUVCUULYLUXFUVRUUQWOUXOEXSLZUXPBTZETZUXJUXRUXSUVHUXOKZETUYAUXOEXSQUYBUXTE
+      UYBUXMBTZUXOKUXTUVHUYCUXOBUURUTVAUXMUXOBVBOPVMEYKXSUXIUWCUVCVNZUSUXPBEVCV
+      DUXRUUBUCJZUUGKZBTUUHUXQUYFBUXQUXLUXINZYKJZUYGXNJZUYGYJJZKUYFUXOUYHEUXLUX
+      KMZUXMUXNUYGYKUURUXLUXIVGVHVIUYGXNYJVPUYIUYEUYJUUGUYIUXLXMJZUXKXLJUYEUYIU
+      YLUXIIJUYDUXLUXIXMIUYKUYDVSVTUXKXLWAUUBUCWARUYJUYGYHJZUYGYIJZKUUGUYGYHYIV
+      PUYMUUCUYNUUFUYMUUBUVCNZYGJZUURFUNZSZSZSZURZUURUYONZYFJZKZETZFTZUUCUUBUWC
+      UVCYGBVJZUXFUVRVRUYPVUCEXTLUURXTJZVUCKZETZVUFEYFXTUYOUUBUVCVNUSVUCEXTQVUJ
+      VUDFTZETVUFVUIVUKEVUIVUAFTZVUCKVUKVUHVULVUCFUURWEZVAVUAVUCFVBOPVUDFEVCORV
+      UFUYQUUAURZFBVFZKZFTUUCVUEVUPFVUEUYTUYONZYFJZVUQYEJZVUQXQJZKVUPVUCVUREUYT
+      UYSMZVUAVUBVUQYFUURUYTUYOVGVHVIVUQYEXQVPVUSVUNVUTVUOVUSUYRUVCNYDJUYQUVBNY
+      CJVUNUYRUUBUVCYDUYQMZVUGUVRVRUYQUVBYCFVJZUVSVKUYQYTVVCUWAWBRVUTUYRUUBNGJZ
+      VUOUYRUUBUVCGVVBVUGUVRWOUYQUUBVVCVUGVLZVMWCRPFUUAUUBWDORUUBUWCNZYGJZUYQUU
+      EURZVUOKZFTZUYNUUFVVGUURVVFNZYFJZEXTLZVUAVVLKZETZFTZVVJEYFXTVVFUUBUWCVNUS
+      VUHVVLKZETVVNFTZETVVMVVPVVQVVREVVQVULVVLKVVRVUHVULVVLVUMVAVUAVVLFVBOPVVLE
+      XTQVVNFEVCVDVVOVVIFVVOUYTVVFNZYFJZVVSYEJZVVSXQJZKVVIVVLVVTEUYTVVAVUAVVKVV
+      SYFUURUYTVVFVGVHVIVVSYEXQVPVWAVVHVWBVUOVWAUYRUWCNYDJUYQUWBNYCJVVHUYRUUBUW
+      CYDVVBVUGUXFVRUYQUWBYCVVCUXGVKUYQUUDVVCUXHWBRVWBVVDVUOUYRUUBUWCGVVBVUGUXF
+      WOVVEVMWCRPRUUBUWCUVCYGVUGUXFUVRWOFUUEUUBWDVDWCVMWCRPUUGBUCQORWFWCRPUWLDU
+      UIQOUUHDUUIWGRWCRPUUNCUUIQORWHUUIYRUVTWIUUJCUUIWJVDWKYRYQYPXSXJYOGWLWMZYN
+      YAXKYMXJVWCWNZYLYKXSXNYJXMIXLUCWPWQWQWRWSYHYIYGYFXTYEXQYDYCXPYBXOIUEWTXAW
+      RWSXRYAXQXKGWLXBZVWDXCXTXSUEWTWQZWQZWQZXDXEWMWNVWEXFVWGXDZWNYGVWIXBXFXFVW
+      FXDXBXEVWHXDXFVWFXDXGXHXI $.
       $( [22-Jan-2015] $)
   $}
 
@@ -33339,7 +33358,7 @@ $)
 
 
     $( If two sets are in a particular finite cardinal, then their unit power
-       sets are in the same natural.  Theorem X.1.25 of [Rosser], p. 527. $)
+       sets are in the same natural.  Theorem X.1.25 of {{Rosser}}, p. 527. $)
     ncfinraise $p |- ( ( M e. Nn /\ A e. M /\ B e. M ) ->
        E. n e. Nn ( ~P1 A e. n /\ ~P1 B e. n ) ) $=
       ( va vb vc vx vd vy cnnc wcel cpw1 cv wa wrex wral c0c c0 wceq vm vk cplc
@@ -33447,7 +33466,7 @@ $)
     $d k w $.  $d k z $.  $d m w $.  $d m z $.  $d n w $.  $d n z $.  $d c m $.
     $d d m $.  $d m x $.  $d m y $.
     $( If the unit power classes of two sets are in the same natural, then so
-       are the sets themselves.  Theorem X.1.26 of [Rosser], p. 527. $)
+       are the sets themselves.  Theorem X.1.26 of {{Rosser}}, p. 527. $)
     ncfinlower $p |- ( ( M e. Nn /\ ~P1 A e. M /\ ~P1 B e. M ) ->
        E. n e. Nn ( A e. n /\ B e. n ) ) $=
       ( va vb vm vc vd ve vf cnnc wcel cv wa wrex wi c0 wceq eleq2 vk vx vy wel
@@ -33508,8 +33527,8 @@ $)
     $d M n $.  $d M p $.  $d n p $.  $d a m $.  $d b m $.  $d m n $.  $d m p $.
     $d a q $.  $d b q $.  $d M q $.  $d n q $.  $d p q $.
     $( For any non-empty finite cardinal, there is a unique natural containing
-       a unit power class of one of its elements.  Theorem X.1.27 of [Rosser],
-       p. 528. $)
+       a unit power class of one of its elements.  Theorem X.1.27 of
+       {{Rosser}}, p. 528. $)
     nnpw1ex $p |- ( ( M e. Nn /\ M =/= (/) ) ->
       E! n e. Nn E. a e. M ~P1 a e. n ) $=
       ( vp vb vq cnnc wcel cpw1 wrex weq wral wex w3a ncfinraise anbi2i nnceleq
@@ -33547,20 +33566,20 @@ $)
     eqtfinrelk.1 $e |- M e. _V $.
     eqtfinrelk.2 $e |- X e. _V $.
     $( Equality to a T raising expressed via a Kuratowski relationship. $)
-    eqtfinrelk $p |- ( << { M } , X >> e. ( ( { { (/) } } X._k { (/) } ) u. 
+    eqtfinrelk $p |- ( << { M } , X >> e. ( ( { { (/) } } X._k { (/) } ) u.
   ( ~ ( ( Ins2_k SSet_k (+)
-      Ins3_k 
+      Ins3_k
 ( ( Ins3_k `'_k SSet_k \
-    Ins2_k 
+    Ins2_k
 ( ( Ins2_k ( ( Nn X._k _V ) i^i
      ( ( Ins2_k SI_k SSet_k i^i
-         Ins3_k 
-           ( ( Ins3_k SI_k ( ( ~P 1c X._k _V ) \ 
+         Ins3_k
+           ( ( Ins3_k SI_k ( ( ~P 1c X._k _V ) \
   ( ( Ins3_k SSet_k (+) Ins2_k SI_k SSet_k )
-    "_k ~P1 ~P1 ~P1 1c ) ) i^i Ins2_k SSet_k ) "_k ~P1 ~P1 1c ) ) 
+    "_k ~P1 ~P1 ~P1 1c ) ) i^i Ins2_k SSet_k ) "_k ~P1 ~P1 1c ) )
        "_k ~P1 ~P1 ~P1 1c ) ) (+)
-    Ins3_k _I_k ) "_k ~P1 1c ) ) "_k ~P1 1c ) ) 
-      "_k ~P1 ~P1 1c ) 
+    Ins3_k _I_k ) "_k ~P1 1c ) ) "_k ~P1 1c ) )
+      "_k ~P1 ~P1 1c )
     \ ( { { (/) } } X._k _V ) ) ) <-> X = _T[fin] M ) $=
       ( vy va vz vt vn vx csn copk c0 cssetk cvv wcel wceq wa snex wex cxpk c1c
       cins2k ccnvk cins3k cnnc csik cpw csymdif cpw1 cimak cdif cin cidk ccompl
@@ -33622,20 +33641,20 @@ $)
   $}
 
   $( The expression at the core of ~ eqtfinrelk exists. $)
-  tfinrelkex $p |- ( ( { { (/) } } X._k { (/) } ) u. 
+  tfinrelkex $p |- ( ( { { (/) } } X._k { (/) } ) u.
   ( ~ ( ( Ins2_k SSet_k (+)
-      Ins3_k 
+      Ins3_k
 ( ( Ins3_k `'_k SSet_k \
-    Ins2_k 
+    Ins2_k
 ( ( Ins2_k ( ( Nn X._k _V ) i^i
      ( ( Ins2_k SI_k SSet_k i^i
-         Ins3_k 
-           ( ( Ins3_k SI_k ( ( ~P 1c X._k _V ) \ 
+         Ins3_k
+           ( ( Ins3_k SI_k ( ( ~P 1c X._k _V ) \
   ( ( Ins3_k SSet_k (+) Ins2_k SI_k SSet_k )
-    "_k ~P1 ~P1 ~P1 1c ) ) i^i Ins2_k SSet_k ) "_k ~P1 ~P1 1c ) ) 
+    "_k ~P1 ~P1 ~P1 1c ) ) i^i Ins2_k SSet_k ) "_k ~P1 ~P1 1c ) )
        "_k ~P1 ~P1 ~P1 1c ) ) (+)
-    Ins3_k _I_k ) "_k ~P1 1c ) ) "_k ~P1 1c ) ) 
-      "_k ~P1 ~P1 1c ) 
+    Ins3_k _I_k ) "_k ~P1 1c ) ) "_k ~P1 1c ) )
+      "_k ~P1 ~P1 1c )
     \ ( { { (/) } } X._k _V ) ) ) e. _V $=
     ( cxpk cssetk cins2k cins3k cvv c1c csymdif cpw1 cimak cdif ssetkex ins2kex
     cin xpkex ins3kex vvex symdifex pw1ex imakex difex csn ccnvk cnnc csik cidk
@@ -33661,7 +33680,7 @@ $)
     $d a n $.  $d a z $.  $d M a $.  $d M n $.  $d M z $.  $d n z $.
 
     $( Properties of the finite T operator for a non-empty natural.  Theorem
-       X.1.28 of [Rosser], p. 528. $)
+       X.1.28 of {{Rosser}}, p. 528. $)
     tfinprop $p |- ( ( M e. Nn /\ M =/= (/) ) ->
       ( _T[fin] M e. Nn /\ E. a e. M ~P1 a e. _T[fin] M ) ) $=
       ( vn cnnc wcel c0 wne wa ctfin cv cpw1 wrex wceq cio cif df-tfin wn df-ne
@@ -33676,7 +33695,7 @@ $)
   ${
     $d M x $.
     $( If ` M ` is a non-empty natural, then ` _T[fin] M ` is also non-empty.
-       Corollary 1 of Theorem X.1.28 of [Rosser], p. 528. $)
+       Corollary 1 of Theorem X.1.28 of {{Rosser}}, p. 528. $)
     tfinnnul $p |- ( ( M e. Nn /\ M =/= (/) ) -> _T[fin] M =/= (/) ) $=
       ( vx cnnc wcel c0 wne wa ctfin cv cpw1 wrex tfinprop rexlimivw adantl syl
       ne0i ) ACDAEFGAHZCDZBIJZQDZBAKZGQEFZABLUAUBRTUBBAQSPMNO $.
@@ -33686,7 +33705,7 @@ $)
   ${
     $d x y $.
     $( The finite T operator applied to the empty set is empty.  Theorem X.1.29
-       of [Rosser], p. 528. $)
+       of {{Rosser}}, p. 528. $)
     tfinnul $p |- _T[fin] (/) = (/) $=
       ( vx vy c0 ctfin wceq cv cnnc wcel cpw1 wrex cio cif df-tfin iftrue ax-mp
       wa eqid eqtri ) CDCCEZCAFZGHBFITHBCJPAKZLZCACBMSUBCECQSCUANOR $.
@@ -33709,7 +33728,7 @@ $)
     $d N b $.  $d N p $.
 
     $( The finite T operator is one-to-one over the naturals.  Theorem X.1.30
-       of [Rosser], p. 528. $)
+       of {{Rosser}}, p. 528. $)
     tfin11 $p |- ( ( M e. Nn /\ N e. Nn /\ _T[fin] M = _T[fin] N ) ->
             M = N ) $=
       ( va vb vp cnnc wcel ctfin wceq w3a wi c0 wa tfinnnul ex necon4d 3ad2ant1
@@ -33735,7 +33754,7 @@ $)
   ${
     $d A b $.  $d A n $.  $d b n $.  $d M b $.  $d M n $.
     $( The finite T operator on a natural contains the unit power class of any
-       element of the natural.  Theorem X.1.31 of [Rosser], p. 528. $)
+       element of the natural.  Theorem X.1.31 of {{Rosser}}, p. 528. $)
     tfinpw1 $p |- ( ( M e. Nn /\ A e. M ) -> ~P1 A e. _T[fin] M ) $=
       ( vb vn cnnc wcel wa ctfin cv cpw1 wrex c0 wne ne0i tfinprop sylan2 3expa
       expr rexlimdva mpd ncfinraise adantrr w3a simp3rl wceq simp3l syl simp3rr
@@ -33750,8 +33769,8 @@ $)
   ${
     $d A x $.
     $( Relationship between finite T operator and finite Nc operation in a
-       finite universe.  Corollary of Theorem X.1.31 of [Rosser], p. 529. $)
-    ncfintfin $p |- ( ( _V e. Fin /\ A e. V ) -> 
+       finite universe.  Corollary of Theorem X.1.31 of {{Rosser}}, p. 529. $)
+    ncfintfin $p |- ( ( _V e. Fin /\ A e. V ) ->
                _T[fin] Nc[fin] A = Nc[fin] ~P1 A ) $=
       ( cfin wcel wa cncfin ctfin cnnc cpw1 wceq ncfinprop simpld tfincl pw1exg
       cvv syl sylan2 tfinpw1 simprd nnceleq syl22anc ) OCDZABDZEZAFZGZHDZAIZFZH
@@ -33763,7 +33782,7 @@ $)
   ${
     $d M a b c t $.  $d N a b c t $.
     $( The finite T operation distributes over non-empty cardinal sum.  Theorem
-       X.1.32 of [Rosser], p. 529. $)
+       X.1.32 of {{Rosser}}, p. 529. $)
     tfindi $p |- ( ( M e. Nn /\ N e. Nn /\ ( M +c N ) =/= (/) ) ->
        _T[fin] ( M +c N ) = ( _T[fin] M +c _T[fin] N ) ) $=
       ( va vb vc cnnc wcel cplc c0 ctfin wceq cv cpw1 nncaddccl 3adant3 tfinpw1
@@ -33794,7 +33813,7 @@ $)
   ${
     $d A a b x $.
     $( The finite T operator over a successor. $)
-    tfinsuc $p |- ( ( A e. Nn /\ ( A +c 1c ) =/= (/) ) -> 
+    tfinsuc $p |- ( ( A e. Nn /\ ( A +c 1c ) =/= (/) ) ->
        _T[fin] ( A +c 1c ) = ( _T[fin] A +c 1c ) ) $=
       ( va vb vx cnnc wcel c1c cplc ctfin wceq cv cpw1 peano2 tfincl syl adantr
       wa tfinpw1 csn cun c0 wne wex sylan ccompl wrex elsuc adantrr wel elcompl
@@ -33811,7 +33830,7 @@ $)
   $}
 
   $( The finite T operator is idempotent over ` 1c ` .  Theorem X.1.34(a) of
-     [Rosser], p. 529. $)
+     {{Rosser}}, p. 529. $)
   tfin1c $p |- _T[fin] 1c = 1c $=
     ( c0c c1c cplc ctfin cnnc wcel wne wceq peano1 addcid2 csn 1cex snel1c ne0i
     c0 ax-mp eqnetri tfinsuc mp2an tfineq tfin0c addceq1i eqtri 3eqtr3i ) ABCZD
@@ -33850,7 +33869,7 @@ $)
   ${
     $d M x y $.  $d N x y $.
     $( Ordering rule for the finite T operation.  Corollary to theorem X.1.33
-       of [Rosser], p. 529. $)
+       of {{Rosser}}, p. 529. $)
     tfinltfin $p |- ( ( M e. Nn /\ N e. Nn ) ->
     ( << M , N >> e. <[fin] <->
       << _T[fin] M , _T[fin] N >> e. <[fin] ) ) $=
@@ -33873,7 +33892,7 @@ $)
       $( [1-Feb-2015] $)
   $}
 
-  $( Ordering rule for the finite T operation.  Theorem X.1.33 of [Rosser],
+  $( Ordering rule for the finite T operation.  Theorem X.1.33 of {{Rosser}},
      p. 529. $)
   tfinlefin $p |- ( ( M e. Nn /\ N e. Nn ) ->
     ( << M , N >> e. <_[fin] <->
@@ -34093,7 +34112,7 @@ $)
   ${
     $d A m n x $.
     $( The successor of an even natural is odd. $)
-    sucevenodd $p |- ( ( A e. Even[fin] /\ ( A +c 1c ) =/= (/) ) -> 
+    sucevenodd $p |- ( ( A e. Even[fin] /\ ( A +c 1c ) =/= (/) ) ->
                ( A +c 1c ) e. Odd[fin] ) $=
       ( vm vx cevenfin wcel c1c cplc c0 wa coddfin wceq cnnc wrex eqeq1 rexbidv
       wne cv neeq1 anbi12d cvv df-evenfin elab2g ibi addceq1 reximi adantr 1cex
@@ -34108,7 +34127,7 @@ $)
   ${
     $d A m n x $.
     $( The successor of an odd natural is even. $)
-    sucoddeven $p |- ( ( A e. Odd[fin] /\ ( A +c 1c ) =/= (/) ) -> 
+    sucoddeven $p |- ( ( A e. Odd[fin] /\ ( A +c 1c ) =/= (/) ) ->
                ( A +c 1c ) e. Even[fin] ) $=
       ( vm vn vx coddfin wcel c1c cplc c0 wa cevenfin cv wceq cnnc wrex rexbidv
       wne eqeq1 syl cvv neeq1 anbi12d df-oddfin elab2g wi peano2 addc32 addcass
@@ -34127,7 +34146,7 @@ $)
   ${
     $d x n $.
     $( Alternate definition of even number. $)
-    dfevenfin2 $p |- Even[fin] = 
+    dfevenfin2 $p |- Even[fin] =
        { x | E. n e. Nn ( x = ( n +c n ) /\ ( n +c n ) =/= (/) ) } $=
       ( cevenfin cv cplc wceq cnnc wrex c0 wne df-evenfin r19.41v neeq1 pm5.32i
       wa cab rexbii bitr3i abbii eqtri ) CADZBDZUBEZFZBGHUAIJZOZAPUDUCIJZOZBGHZ
@@ -34135,8 +34154,8 @@ $)
       $( [25-Jan-2015] $)
 
     $( Alternate definition of odd number. $)
-    dfoddfin2 $p |- Odd[fin] = 
-       { x | E. n e. Nn ( x = ( ( n +c n ) +c 1c ) /\ 
+    dfoddfin2 $p |- Odd[fin] =
+       { x | E. n e. Nn ( x = ( ( n +c n ) +c 1c ) /\
              ( ( n +c n ) +c 1c ) =/= (/) ) } $=
       ( coddfin cv cplc c1c wceq cnnc wrex c0 wne cab df-oddfin r19.41v pm5.32i
       wa neeq1 rexbii bitr3i abbii eqtri ) CADZBDZUCEFEZGZBHIUBJKZPZALUEUDJKZPZ
@@ -34147,7 +34166,7 @@ $)
   ${
     $d x y k n m $.
     $( Every non-empty finite cardinal is either even or odd.  Theorem X.1.35
-       of [Rosser], p. 529. $)
+       of {{Rosser}}, p. 529. $)
     evenoddnnnul $p |- ( Even[fin] u. Odd[fin] ) = ( Nn \ { (/) } ) $=
       ( vx vn vm vk cevenfin coddfin cnnc c0 wss cv wcel wne ssriv wi c0c neeq1
       c1c wo eleq1 imbi12d cun cdif wa evennn evennnul eldifsn sylanbrc oddnnul
@@ -34299,7 +34318,7 @@ n e. Nn ( ( ( n +c n ) +c 1c ) =/= (/) -> ( j +c j ) =/= ( ( n +c n ) +c 1c ) )
 
 
     $( The even finite cardinals and the odd ones are disjoint.  Theorem X.1.36
-       of [Rosser], p. 529. $)
+       of {{Rosser}}, p. 529. $)
     evenodddisj $p |- ( Even[fin] i^i Odd[fin] ) = (/) $=
       ( vx vn vp cv cplc wceq c0 wne wa cnnc c1c wn wi wcel c0c addceq12 anidms
       wral neeq1d imbi12d vk vj vm vq cevenfin coddfin cin dfevenfin2 dfoddfin2
@@ -34352,7 +34371,7 @@ n e. Nn ( ( ( n +c n ) +c 1c ) =/= (/) -> ( j +c j ) =/= ( ( n +c n ) +c 1c ) )
   ${
     $d M m n x $.
     $( If ` M ` is even , then so is ` _T[fin] M ` .  Theorem X.1.37 of
-       [Rosser], p. 530. $)
+       {{Rosser}}, p. 530. $)
     eventfin $p |- ( M e. Even[fin] -> _T[fin] M e. Even[fin] ) $=
       ( vn vx vm cevenfin wcel cv cplc wceq cnnc wrex c0 wa ctfin eqeq1 rexbidv
       wne neeq1 anbi12d wi df-evenfin elab2g ibi addceq2 addcnul1 cpw1 tfinprop
@@ -34372,7 +34391,7 @@ n e. Nn ( ( ( n +c n ) +c 1c ) =/= (/) -> ( j +c j ) =/= ( ( n +c n ) +c 1c ) )
   ${
     $d M n m x $.
     $( If ` M ` is odd , then so is ` _T[fin] M ` .  Theorem X.1.38 of
-       [Rosser], p. 530. $)
+       {{Rosser}}, p. 530. $)
     oddtfin $p |- ( M e. Odd[fin] -> _T[fin] M e. Odd[fin] ) $=
       ( vn vx vm coddfin wcel cv cplc c1c wceq cnnc c0 wne wa ctfin eqeq1 neeq1
       wrex wi syl rexbidv anbi12d df-oddfin elab2g ibi addceq2 addcnul1 addceq1
@@ -34467,7 +34486,7 @@ n e. Nn ( ( ( n +c n ) +c 1c ) =/= (/) -> ( j +c j ) =/= ( ( n +c n ) +c 1c ) )
     $d x z $.  $d y z $.
 
     $( Adjoining a new element to every member of ` L ` does not change its
-       size.  Theorem X.1.39 of [Rosser], p. 530. $)
+       size.  Theorem X.1.39 of {{Rosser}}, p. 530. $)
     nnadjoin $p |- ( ( N e. Nn /\ L e. N /\ X e. ~ U. L ) ->
          { x | E. b e. L x = ( b u. { X } ) } e. N ) $=
       ( vl vc vz wcel cuni ccompl cv cun wceq wrex cab wi c0 wn wa vy vn vk csn
@@ -34521,9 +34540,9 @@ n e. Nn ( ( ( n +c n ) +c 1c ) =/= (/) -> ( j +c j ) =/= ( ( n +c n ) +c 1c ) )
     $d A a $.  $d a b $.  $d A b $.  $d a t $.  $d A t $.  $d b t $.  $d M b $.
     $d N b $.  $d X a $.  $d X b $.  $d X t $.
 
-    $( Adjoining an element to a power class.  Theorem X.1.40 of [Rosser],
+    $( Adjoining an element to a power class.  Theorem X.1.40 of {{Rosser}},
        p. 530. $)
-    nnadjoinpw $p |- ( ( ( M e. Nn /\ N e. Nn ) /\ ( A e. M /\ X e. ~ A ) /\ 
+    nnadjoinpw $p |- ( ( ( M e. Nn /\ N e. Nn ) /\ ( A e. M /\ X e. ~ A ) /\
          ~P A e. N ) -> ~P ( A u. { X } ) e. ( N +c N ) ) $=
       ( va vb vt cnnc wcel wa ccompl cpw cun cv wceq wrex wss wn wral wal simp3
       w3a csn cab cplc pwadjoin cin cuni simp1r simp2r unipw compleqi syl6eleqr
@@ -34546,48 +34565,47 @@ n e. Nn ( ( ( n +c n ) +c 1c ) =/= (/) -> ( j +c j ) =/= ( ( n +c n ) +c 1c ) )
     nnpweqlem1 $p |- { m | A. a e. m A. b e. m E. n e. Nn ( ~P a
                                             e. n /\ ~P b e. n ) } e. _V $=
       ( vt vx cssetk cnnc wcel wa wrex csn copk snex bitri exbii df-rex 3bitr4i
-      wex 3bitri csik cins2k cins3k csymdif c1c cimak ccompl ccnvk cin cuni1
-      cpw1 cdif cv cpw wral cab cvv vex eluni1 wn wceq opkeq1 eleq1d ceqsexv
-      wel elin opksnelsik elssetk opkex elimak anbi1i 19.41v bitr4i excom eldif
-      elpw131c otkelins2k otkelins3k elpw12 r19.41v elpw121c opkelcnvk eqpwrelk
-      rexcom4 anbi12i df-clel rexbii notbii rexnal 3bitr2i elpw11c dfral2 sikex
-      elcompl abbi2i ssetkex ins2kex ins3kex symdifex 1cex pw1ex imakex complex
-      cnvkex inex nncex difex uni1ex eqeltrri ) GUAZXJUBZGUBZXJUCZUDZUEUKZUK
-      ZUFZUGZUHZUAZUBZGUCZUIZXPUFZUBZXRUAZUHZUBZYBUIZXPUFZUCZUIZHUKZUKZUFZUCZUL
-      ZXPUKZUFZUIZXOUFZUGZUJZCUMZUNZBUMZIZDUMZUNZUUFIZJZBHKZDAUMZUOZCUUMUOZAUPU
-      QUUOAUUCUUMUUCIUUMLZUUBIZUUOUUMUUBAURZUSUUPUUAIZUTUUNUTZCUUMKZUTUUQUUOUUS
-      UVAEUMZUUDLZLZVAZUVBUUPMZYTIZJZESZCSZCAVEZUUTJZCSUUSUVAUVIUVLCUVIUVDUUPMZ
-      YTIZUVMXJIZUVMYSIZJUVLUVGUVNEUVDUVCNZUVEUVFUVMYTUVBUVDUUPVBVCVDUVMXJYSVFU
-      VOUVKUVPUUTUVOUVCUUMMGIUVKUVCUUMGUUDNZUURVGUUDUUMCURZUURVHOUVPDAVEZUULUTZ
-      JZDSZUWADUUMKUUTUVPUVBUVMMZYQIZEYRKZUVBUUHLZLZLZLZVAZUWEJZESZDSZUWCEYQYRU
-      VMUVDUUPVIVJUVBYRIZUWEJZESUWLDSZESUWFUWNUWPUWQEUWPUWKDSZUWEJUWQUWOUWRUWED
-      UVBVPVKUWKUWEDVLVMPUWEEYRQUWLDEVNRUWMUWBDUWMUWJUVMMZYQIZUWSXKIZUWSYPIZUTZ
-      JUWBUWEUWTEUWJUWINUWKUWDUWSYQUVBUWJUVMVBVCVDUWSXKYPVOUXAUVTUXCUWAUXAUWHUU
-      PMXJIUWGUUMMGIUVTUWHUVDUUPXJUWGNZUVQUUMNZVQUWGUUMGUUHNZUURVGUUHUUMDURZUUR
-      VHTUXBUULUXBUWHUVDMZYOIZUVBUUFLZLZVAZUVBUXHMZYLIZJZESZBHKZUULUWHUVDUUPYOU
-      XDUVQUXEVRUXIUXNEYNKZUXQEYLYNUXHUWHUVDVIVJUVBYNIZUXNJZESUXOBHKZESUXRUXQUX
-      TUYAEUXTUXLBHKZUXNJUYAUXSUYBUXNBUVBHVSVKUXLUXNBHVTVMPUXNEYNQUXOBEHWDROUXP
-      UUKBHUXPUXKUXHMZYLIZUYCYEIZUYCYKIZJUUKUXNUYDEUXKUXJNUXLUXMUYCYLUVBUXKUXHV
-      BVCVDUYCYEYKVFUYEUUGUYFUUJUUFUVDMZYDIZFUMZUUEVAZFBVEZJZFSZUYEUUGUYHUVBUYG
-      MZYCIZEXPKZUVBUYILZLZLZVAZUYOJZESZFSZUYMEYCXPUYGUUFUVDVIVJUVBXPIZUYOJZESV
-      UAFSZESUYPVUCVUEVUFEVUEUYTFSZUYOJVUFVUDVUGUYOFUVBWAZVKUYTUYOFVLVMPUYOEXPQ
-      VUAFEVNRVUBUYLFVUBUYSUYGMZYCIZVUIYAIZVUIYBIZJUYLUYOVUJEUYSUYRNZUYTUYNVUIY
-      CUVBUYSUYGVBVCVDVUIYAYBVFVUKUYJVULUYKVUKUYQUVDMXTIUYIUVCMXSIZUYJUYQUUFUVD
-      XTUYINZBURZUVQVQUYIUVCXSFURZUVRVGVUNUVCUYIMXRIUYJUYIUVCXRVUQUVRWBUUDUYIUV
-      SVUQWCOTVULUYQUUFMGIZUYKUYQUUFUVDGVUOVUPUVQVRUYIUUFVUQVUPVHZOWETPTUUFUWHU
-      VDYDVUPUXDUVQVQFUUEUUFWFRUUFUWHMZYJIZUYIUUIVAZUYKJZFSZUYFUUJVVAUVBVUTMZYI
-      IZEXPKZUYTVVFJZESZFSZVVDEYIXPVUTUUFUWHVIVJVUDVVFJZESVVHFSZESVVGVVJVVKVVLE
-      VVKVUGVVFJVVLVUDVUGVVFVUHVKUYTVVFFVLVMPVVFEXPQVVHFEVNRVVIVVCFVVIUYSVUTMZY
-      IIZVVMYHIZVVMYBIZJVVCVVFVVNEUYSVUMUYTVVEVVMYIUVBUYSVUTVBVCVDVVMYHYBVFVVOV
-      VBVVPUYKVVOUYQUWHMYGIUWHUYQMYFIZVVBUYQUUFUWHYGVUOVUPUXDVQUYQUWHYFVUOUXDWB
-      VVQUWGUYIMXRIVVBUWGUYIXRUXFVUQVGUUHUYIUXGVUQWCOTVVPVURUYKUYQUUFUWHGVUOVUP
-      UXDVRVUSOWETPTUUFUWHUVDYJVUPUXDUVQVRFUUIUUFWFRWETWGTWHWETPTUWADUUMQUULDUU
-      MWIWJWETPUUSUVGEXOKZUVJEYTXOUUPUXEVJUVBXOIZUVGJZESUVHCSZESVVRUVJVVTVWAEVV
-      TUVECSZUVGJVWAVVSVWBUVGCUVBWKVKUVEUVGCVLVMPUVGEXOQUVHCEVNROUUTCUUMQRWHUUP
-      UUAUXEWNUUNCUUMWLROWOUUBUUAYTXOXJYSGWPWMZYQYRXKYPXJVWCWQYOYLYNYEYKYDYCXPY
-      AYBXTXSXRXQXNXPXLXMGWPWQXJVWCWRWSXOUEWTXAZXAZXBXCZXDWMWQGWPWRZXEVWEXBWQYJ
-      YIXPYHYBYGYFXRVWFWMXDWQVWGXEVWEXBWRXEYMHXFXAXAXBWRXGXPVWEXAXBXEVWDXBXCXHX
-      I $.
+      wex 3bitri csik cins2k cins3k csymdif c1c cpw1 cimak ccnvk cin cdif cuni1
+      ccompl cv cpw wral cab cvv vex eluni1 wceq wel opkeq1 eleq1d ceqsexv elin
+      opksnelsik elssetk opkex elimak elpw131c anbi1i 19.41v bitr4i excom eldif
+      wn otkelins2k otkelins3k elpw12 r19.41v rexcom4 elpw121c eqpwrelk anbi12i
+      df-clel rexbii notbii rexnal 3bitr2i elpw11c elcompl dfral2 ssetkex sikex
+      opkelcnvk abbi2i ins2kex ins3kex symdifex 1cex imakex complex cnvkex inex
+      pw1ex nncex difex uni1ex eqeltrri ) GUAZXJUBZGUBZXJUCZUDZUEUFZUFZUGZULZUH
+      ZUAZUBZGUCZUIZXPUGZUBZXRUAZUHZUBZYBUIZXPUGZUCZUIZHUFZUFZUGZUCZUJZXPUFZUGZ
+      UIZXOUGZULZUKZCUMZUNZBUMZIZDUMZUNZUUFIZJZBHKZDAUMZUOZCUUMUOZAUPUQUUOAUUCU
+      UMUUCIUUMLZUUBIZUUOUUMUUBAURZUSUUPUUAIZVPUUNVPZCUUMKZVPUUQUUOUUSUVAEUMZUU
+      DLZLZUTZUVBUUPMZYTIZJZESZCSZCAVAZUUTJZCSUUSUVAUVIUVLCUVIUVDUUPMZYTIZUVMXJ
+      IZUVMYSIZJUVLUVGUVNEUVDUVCNZUVEUVFUVMYTUVBUVDUUPVBVCVDUVMXJYSVEUVOUVKUVPU
+      UTUVOUVCUUMMGIUVKUVCUUMGUUDNZUURVFUUDUUMCURZUURVGOUVPDAVAZUULVPZJZDSZUWAD
+      UUMKUUTUVPUVBUVMMZYQIZEYRKZUVBUUHLZLZLZLZUTZUWEJZESZDSZUWCEYQYRUVMUVDUUPV
+      HVIUVBYRIZUWEJZESUWLDSZESUWFUWNUWPUWQEUWPUWKDSZUWEJUWQUWOUWRUWEDUVBVJVKUW
+      KUWEDVLVMPUWEEYRQUWLDEVNRUWMUWBDUWMUWJUVMMZYQIZUWSXKIZUWSYPIZVPZJUWBUWEUW
+      TEUWJUWINUWKUWDUWSYQUVBUWJUVMVBVCVDUWSXKYPVOUXAUVTUXCUWAUXAUWHUUPMXJIUWGU
+      UMMGIUVTUWHUVDUUPXJUWGNZUVQUUMNZVQUWGUUMGUUHNZUURVFUUHUUMDURZUURVGTUXBUUL
+      UXBUWHUVDMZYOIZUVBUUFLZLZUTZUVBUXHMZYLIZJZESZBHKZUULUWHUVDUUPYOUXDUVQUXEV
+      RUXIUXNEYNKZUXQEYLYNUXHUWHUVDVHVIUVBYNIZUXNJZESUXOBHKZESUXRUXQUXTUYAEUXTU
+      XLBHKZUXNJUYAUXSUYBUXNBUVBHVSVKUXLUXNBHVTVMPUXNEYNQUXOBEHWAROUXPUUKBHUXPU
+      XKUXHMZYLIZUYCYEIZUYCYKIZJUUKUXNUYDEUXKUXJNUXLUXMUYCYLUVBUXKUXHVBVCVDUYCY
+      EYKVEUYEUUGUYFUUJUUFUVDMZYDIZFUMZUUEUTZFBVAZJZFSZUYEUUGUYHUVBUYGMZYCIZEXP
+      KZUVBUYILZLZLZUTZUYOJZESZFSZUYMEYCXPUYGUUFUVDVHVIUVBXPIZUYOJZESVUAFSZESUY
+      PVUCVUEVUFEVUEUYTFSZUYOJVUFVUDVUGUYOFUVBWBZVKUYTUYOFVLVMPUYOEXPQVUAFEVNRV
+      UBUYLFVUBUYSUYGMZYCIZVUIYAIZVUIYBIZJUYLUYOVUJEUYSUYRNZUYTUYNVUIYCUVBUYSUY
+      GVBVCVDVUIYAYBVEVUKUYJVULUYKVUKUYQUVDMXTIUYIUVCMXSIZUYJUYQUUFUVDXTUYINZBU
+      RZUVQVQUYIUVCXSFURZUVRVFVUNUVCUYIMXRIUYJUYIUVCXRVUQUVRWOUUDUYIUVSVUQWCOTV
+      ULUYQUUFMGIZUYKUYQUUFUVDGVUOVUPUVQVRUYIUUFVUQVUPVGZOWDTPTUUFUWHUVDYDVUPUX
+      DUVQVQFUUEUUFWERUUFUWHMZYJIZUYIUUIUTZUYKJZFSZUYFUUJVVAUVBVUTMZYIIZEXPKZUY
+      TVVFJZESZFSZVVDEYIXPVUTUUFUWHVHVIVUDVVFJZESVVHFSZESVVGVVJVVKVVLEVVKVUGVVF
+      JVVLVUDVUGVVFVUHVKUYTVVFFVLVMPVVFEXPQVVHFEVNRVVIVVCFVVIUYSVUTMZYIIZVVMYHI
+      ZVVMYBIZJVVCVVFVVNEUYSVUMUYTVVEVVMYIUVBUYSVUTVBVCVDVVMYHYBVEVVOVVBVVPUYKV
+      VOUYQUWHMYGIUWHUYQMYFIZVVBUYQUUFUWHYGVUOVUPUXDVQUYQUWHYFVUOUXDWOVVQUWGUYI
+      MXRIVVBUWGUYIXRUXFVUQVFUUHUYIUXGVUQWCOTVVPVURUYKUYQUUFUWHGVUOVUPUXDVRVUSO
+      WDTPTUUFUWHUVDYJVUPUXDUVQVRFUUIUUFWERWDTWFTWGWDTPTUWADUUMQUULDUUMWHWIWDTP
+      UUSUVGEXOKZUVJEYTXOUUPUXEVIUVBXOIZUVGJZESUVHCSZESVVRUVJVVTVWAEVVTUVECSZUV
+      GJVWAVVSVWBUVGCUVBWJVKUVEUVGCVLVMPUVGEXOQUVHCEVNROUUTCUUMQRWGUUPUUAUXEWKU
+      UNCUUMWLROWPUUBUUAYTXOXJYSGWMWNZYQYRXKYPXJVWCWQYOYLYNYEYKYDYCXPYAYBXTXSXR
+      XQXNXPXLXMGWMWQXJVWCWRWSXOUEWTXEZXEZXAXBZXCWNWQGWMWRZXDVWEXAWQYJYIXPYHYBY
+      GYFXRVWFWNXCWQVWGXDVWEXAWRXDYMHXFXEXEXAWRXGXPVWEXEXAXDVWDXAXBXHXI $.
       $( [26-Jan-2015] $)
   $}
 
@@ -34595,7 +34613,7 @@ n e. Nn ( ( ( n +c n ) +c 1c ) =/= (/) -> ( j +c j ) =/= ( ( n +c n ) +c 1c ) )
     $d A a b c d e f x y m n j k $.  $d B a b c d e f x y m n j k $.
     $d M a b c d e f x y m n j k $.
     $( If two sets are the same finite size, then so are their power classes.
-       Theorem X.1.41 of [Rosser], p. 530. $)
+       Theorem X.1.41 of {{Rosser}}, p. 530. $)
     nnpweq $p |- ( ( M e. Nn /\ A e. M /\ B e. M ) ->
        E. n e. Nn ( ~P A e. n /\ ~P B e. n ) ) $=
       ( va vb ve vf cnnc wcel cpw cv wa wrex wral c0 c0c wceq pweq eleq1d vm vk
@@ -34719,7 +34737,8 @@ n e. Nn ( ( ( n +c n ) +c 1c ) =/= (/) -> ( j +c j ) =/= ( ( n +c n ) +c 1c ) )
       $( [27-Jan-2015] $)
   $}
 
-  $( Zero and one satisfy ` _S[fin] ` .  Theorem X.1.42 of [Rosser], p. 530. $)
+  $( Zero and one satisfy ` _S[fin] ` .  Theorem X.1.42 of {{Rosser}},
+     p. 530. $)
   sfin01 $p |- _S[fin] ( 0c , 1c ) $=
     ( va c0c c1c wsfin cnnc wcel cv cpw1 cpw wex peano1 1cnnc wceq csn pw10 0ex
     wa c0 snel1c el0c pw1eq eqeq1d syl5bb pweq pw0 syl6eq eleq1d anbi12d cla4ev
@@ -34730,7 +34749,7 @@ n e. Nn ( ( ( n +c n ) +c 1c ) =/= (/) -> ( j +c j ) =/= ( ( n +c n ) +c 1c ) )
 
   ${
     $d M x y n k $.  $d N x y n k $.  $d P x y n k $.
-    $( Equality law for the finite S operator.  Theorem X.1.43 of [Rosser],
+    $( Equality law for the finite S operator.  Theorem X.1.43 of {{Rosser}},
        p. 530. $)
     sfin112 $p |- ( ( _S[fin] ( M , N ) /\ _S[fin] ( M , P ) ) -> N = P ) $=
       ( vx vy vn vk wsfin wa cnnc wcel cpw1 cpw wex w3a wceq df-sfin wel wrex
@@ -34756,9 +34775,9 @@ n e. Nn ( ( ( n +c n ) +c 1c ) =/= (/) -> ( j +c j ) =/= ( ( n +c n ) +c 1c ) )
     $( If the unit power set of a set is in the successor of a finite cardinal,
        then there is a natural that is smaller than the finite cardinal and
        whose double is smaller than the successor of the cardinal.  Theorem
-       X.1.44 of [Rosser], p. 531. $)
+       X.1.44 of {{Rosser}}, p. 531. $)
     sfindbl $p |- ( ( M e. Nn /\ ~P1 A e. ( M +c 1c ) ) ->
-         E. n e. Nn ( _S[fin] ( M , n ) /\ 
+         E. n e. Nn ( _S[fin] ( M , n ) /\
             _S[fin] ( ( M +c 1c ) , ( n +c n ) ) ) ) $=
       ( vb vx vy vz vk va cpw1 wcel cnnc cv cun wceq wrex wa wex vex eleq1d c1c
       cplc csn ccompl wsfin elsuc w3a pw1eqadj wi wel wn wb eleq1 adantr eleq12
@@ -34791,46 +34810,46 @@ n e. Nn ( ( ( n +c n ) +c 1c ) =/= (/) -> ( j +c j ) =/= ( ( n +c n ) +c 1c ) )
   ${
     $d m n t x y $.
     $( Lemma for ~ sfintfin .  Set up induction stratification. $)
-    sfintfinlem1 $p |- { m | A. n ( _S[fin] ( m , n ) -> 
+    sfintfinlem1 $p |- { m | A. n ( _S[fin] ( m , n ) ->
                   _S[fin] ( _T[fin] m , _T[fin] n ) ) } e. _V $=
       ( vt vy vx cxpk c1c cins3k cins2k cimak cin csn cv wcel wn wex copk exbii
       wa 3bitri cnnc cpw cvv cssetk csik csymdif cpw1 cdif ccompl c0 ccnvk cidk
-      cun cuni1 wsfin ctfin wal cab vex eluni1 wrex wceq snex elimak el1c
-      anbi1i 19.41v bitr4i df-rex excom 3bitr4i opkeq1 eleq1d ceqsexv opkelcnvk
-      wi eldif opksnelsik elpw11c elin otkelins2k eqtfinrelk otkelins3k anbi12i
-      srelk bitri opkex tfinex sfineq1 sfineq2 notbii annim elcompl alex abbi2i
-      srelkex sikex tfinrelkex cnvkex ins2kex ins3kex inex pw1ex imakex complex
-      1cex difex uni1ex eqeltrri ) UAUAFGUBUCFUDHUDUEIZUFZGUGZUGZUGZJUHUEHUD
-      IZKXMJHZXKXMJUIUEHXOKXMJIKXNJKZUEZUJLZLZXSFXOUDUKHUAUCFXJXPKXNJKIULHUFXLJ
-      IUHXLJHUFXMJUIXTUCFUHUMZUKZIZYCXQHZKZXLJZHZKZXLJZUHZUKZGJZUIZUNZAMZBMZUOZ
-      YOUPZYPUPZUOZVPZBUQZAURUCUUBAYNYOYNNYOLZYMNZUUBYOYMAUSZUTUUCYLNZOUUAOZBPZ
-      OUUDUUBUUFUUHUUFCMZUUCQZYKNZCGVAZUUIYPLZVBZUUKSZCPZBPZUUHCYKGUUCYOVCZVDUU
-      IGNZUUKSZCPUUOBPZCPUULUUQUUTUVACUUTUUNBPZUUKSUVAUUSUVBUUKBUUIVEVFUUNUUKBV
-      GVHRUUKCGVIUUOBCVJVKUUPUUGBUUPUUMUUCQZYKNZUUCUUMQZYJNZUUGUUKUVDCUUMYPVCZU
-      UNUUJUVCYKUUIUUMUUCVLVMVNUUMUUCYJUVGUURVOUVFUVEXRNZUVEYINZOZSYQYTOZSUUGUV
-      EXRYIVQUVHYQUVJUVKUVHYOYPQXQNYQYOYPXQUUEBUSZVRYOYPUUEUVLWEWFUVIYTUVIUUIDM
-      ZLZLZVBZUUIUVEQZYHNZSZCPZDPZUVMYSVBZYRUVMUOZSZDPYTUVIUVRCXLVAUUIXLNZUVRSZ
-      CPZUWACYHXLUVEUUCUUMWGVDUVRCXLVIUWGUVSDPZCPUWAUWFUWHCUWFUVPDPZUVRSUWHUWEU
-      WIUVRDUUIVSVFUVPUVRDVGVHRUVSDCVJVHTUVTUWDDUVTUVOUVEQZYHNZUWJYCNZUWJYGNZSU
-      WDUVRUWKCUVOUVNVCUVPUVQUWJYHUUIUVOUVEVLVMVNUWJYCYGVTUWLUWBUWMUWCUWLUVMUUM
-      QYBNUUMUVMQYANUWBUVMUUCUUMYBDUSZUURUVGWAUVMUUMYAUWNUVGVOYPUVMUVLUWNWBTUWM
-      UVMUUCQZYFNZEMZYRVBZUWQUVMUOZSZEPZUWCUVMUUCUUMYFUWNUURUVGWCUWPUUIUWOQZYEN
-      ZCXLVAZUUIUWQLZLZVBZUXCSZCPZEPZUXACYEXLUWOUVMUUCWGVDUWEUXCSZCPUXHEPZCPUXD
-      UXJUXKUXLCUXKUXGEPZUXCSUXLUWEUXMUXCEUUIVSVFUXGUXCEVGVHRUXCCXLVIUXHECVJVKU
-      XIUWTEUXIUXFUWOQZYENZUXNYCNZUXNYDNZSUWTUXCUXOCUXFUXEVCUXGUXBUXNYEUUIUXFUW
-      OVLVMVNUXNYCYDVTUXPUWRUXQUWSUXPUWQUUCQYBNUUCUWQQYANUWRUWQUVMUUCYBEUSZUWNU
-      URWAUWQUUCYAUXRUURVOYOUWQUUEUXRWBTUXQUWQUVMQXQNUWSUWQUVMUUCXQUXRUWNUURWCU
-      WQUVMUXRUWNWEWFWDTRTUWSUWCEYRYOWHUWQYRUVMWIVNTWDTRUWCYTDYSYPWHUVMYSYRWJVN
-      TWKWDYQYTWLTTRTWKUUCYLUURWMUUABWNVKWFWOYMYLYKGYJXRYIXQWPWQYHXLYCYGYBYAWRW
-      SWTZYFYEXLYCYDUXSXQWPXAXBGXFXCZXDXAXBUXTXDXGWSXFXDXEXHXI $.
+      cun cuni1 wsfin ctfin wi wal cab eluni1 wrex wceq snex elimak el1c anbi1i
+      vex 19.41v bitr4i df-rex excom 3bitr4i opkeq1 eleq1d opkelcnvk opksnelsik
+      ceqsexv eldif srelk elpw11c elin otkelins2k eqtfinrelk otkelins3k anbi12i
+      bitri opkex tfinex sfineq1 sfineq2 notbii annim elcompl alex abbi2i sikex
+      srelkex tfinrelkex cnvkex ins2kex ins3kex inex pw1ex imakex difex complex
+      1cex uni1ex eqeltrri ) UAUAFGUBUCFUDHUDUEIZUFZGUGZUGZUGZJUHUEHUDIZKXMJHZX
+      KXMJUIUEHXOKXMJIKXNJKZUEZUJLZLZXSFXOUDUKHUAUCFXJXPKXNJKIULHUFXLJIUHXLJHUF
+      XMJUIXTUCFUHUMZUKZIZYCXQHZKZXLJZHZKZXLJZUHZUKZGJZUIZUNZAMZBMZUOZYOUPZYPUP
+      ZUOZUQZBURZAUSUCUUBAYNYOYNNYOLZYMNZUUBYOYMAVGZUTUUCYLNZOUUAOZBPZOUUDUUBUU
+      FUUHUUFCMZUUCQZYKNZCGVAZUUIYPLZVBZUUKSZCPZBPZUUHCYKGUUCYOVCZVDUUIGNZUUKSZ
+      CPUUOBPZCPUULUUQUUTUVACUUTUUNBPZUUKSUVAUUSUVBUUKBUUIVEVFUUNUUKBVHVIRUUKCG
+      VJUUOBCVKVLUUPUUGBUUPUUMUUCQZYKNZUUCUUMQZYJNZUUGUUKUVDCUUMYPVCZUUNUUJUVCY
+      KUUIUUMUUCVMVNVQUUMUUCYJUVGUURVOUVFUVEXRNZUVEYINZOZSYQYTOZSUUGUVEXRYIVRUV
+      HYQUVJUVKUVHYOYPQXQNYQYOYPXQUUEBVGZVPYOYPUUEUVLVSWFUVIYTUVIUUIDMZLZLZVBZU
+      UIUVEQZYHNZSZCPZDPZUVMYSVBZYRUVMUOZSZDPYTUVIUVRCXLVAUUIXLNZUVRSZCPZUWACYH
+      XLUVEUUCUUMWGVDUVRCXLVJUWGUVSDPZCPUWAUWFUWHCUWFUVPDPZUVRSUWHUWEUWIUVRDUUI
+      VTVFUVPUVRDVHVIRUVSDCVKVITUVTUWDDUVTUVOUVEQZYHNZUWJYCNZUWJYGNZSUWDUVRUWKC
+      UVOUVNVCUVPUVQUWJYHUUIUVOUVEVMVNVQUWJYCYGWAUWLUWBUWMUWCUWLUVMUUMQYBNUUMUV
+      MQYANUWBUVMUUCUUMYBDVGZUURUVGWBUVMUUMYAUWNUVGVOYPUVMUVLUWNWCTUWMUVMUUCQZY
+      FNZEMZYRVBZUWQUVMUOZSZEPZUWCUVMUUCUUMYFUWNUURUVGWDUWPUUIUWOQZYENZCXLVAZUU
+      IUWQLZLZVBZUXCSZCPZEPZUXACYEXLUWOUVMUUCWGVDUWEUXCSZCPUXHEPZCPUXDUXJUXKUXL
+      CUXKUXGEPZUXCSUXLUWEUXMUXCEUUIVTVFUXGUXCEVHVIRUXCCXLVJUXHECVKVLUXIUWTEUXI
+      UXFUWOQZYENZUXNYCNZUXNYDNZSUWTUXCUXOCUXFUXEVCUXGUXBUXNYEUUIUXFUWOVMVNVQUX
+      NYCYDWAUXPUWRUXQUWSUXPUWQUUCQYBNUUCUWQQYANUWRUWQUVMUUCYBEVGZUWNUURWBUWQUU
+      CYAUXRUURVOYOUWQUUEUXRWCTUXQUWQUVMQXQNUWSUWQUVMUUCXQUXRUWNUURWDUWQUVMUXRU
+      WNVSWFWETRTUWSUWCEYRYOWHUWQYRUVMWIVQTWETRUWCYTDYSYPWHUVMYSYRWJVQTWKWEYQYT
+      WLTTRTWKUUCYLUURWMUUABWNVLWFWOYMYLYKGYJXRYIXQWQWPYHXLYCYGYBYAWRWSWTZYFYEX
+      LYCYDUXSXQWQXAXBGXGXCZXDXAXBUXTXDXEWSXGXDXFXHXI $.
       $( [31-Jan-2015] $)
   $}
 
   ${
     $d M a b k m n p q $.  $d N a k n $.
     $( If two numbers obey ` _S[fin] ` , then do their T raisings.  Theorem
-       X.1.45 of [Rosser], p. 532. $)
-    sfintfin $p |- ( _S[fin] ( M , N ) -> 
+       X.1.45 of {{Rosser}}, p. 532. $)
+    sfintfin $p |- ( _S[fin] ( M , N ) ->
               _S[fin] ( _T[fin] M , _T[fin] N ) ) $=
       ( va vn vk cnnc wcel wa wsfin ctfin wi c0c c1c wceq sfineq1 wb tfineq syl
       imbi12d sfineq2 vm vp vq cv cpw wex w3a df-sfin 3simpa sylbi sfintfinlem1
@@ -34885,53 +34904,53 @@ n e. Nn ( ( ( n +c n ) +c 1c ) =/= (/) -> ( j +c j ) =/= ( ( n +c n ) +c 1c ) )
                           y a = _T[fin] x } e. _T[fin] n ) } e. _V $=
       ( vt vz vw cssetk csn cimak wcel wn copk wa wex snex bitri 3bitri 3bitr4i
       exbii csik cnnc cpw cpw1 cvv cxpk c0 cins2k ccnvk cins3k c1c csymdif cdif
-      cin cidk ccompl cun cuni1 cv wss ctfin wceq wrex cab wi wral eluni1
-      vex opkeq1 eleq1d ceqsexv elin opksnelsik elssetk eldif opkelxpk mpbiran2
-      snelpw1 elpw otkelins2k opkelcnvk eqtfinrelk opkex elimak elpw121c anbi1i
-      wel 19.41v bitr4i df-rex excom elsymdif otkelins3k anbi12i bibi12i notbii
-      elcompl wal abeq2 alex df-clel elpw11c tfinex clel3 dfral2 abbi2i ssetkex
-      annim sikex nncex pwex pw1ex vvex xpkex tfinrelkex cnvkex ins2kex ins3kex
-      wb inex 1cex imakex symdifex complex difex uni1ex eqeltrri ) HUAZUBUCZ
-      UDZUEUFZUAZUGIZIZYMUFHUHZHUIUJUBUEUFYHUHZUKUCUEUFHUJZYPULUKUDZUDZUDZJUMUA
-      UJYOUNYSJUJUNYTJUNUHUOUJULYRJUHUMYRJUJULYSJUPYNUEUFUMUQZUIZUHZYQYOUUAUJZU
-      NZYSJZUAZUHZULZYSJZUPZUAZUHZYQUNZYSJZUJZUNZYRJZUMZUNZYRJZUPZURZBUSZUBUTZD
-      USZAUSZVAVBZAUVDVCZDVDZCUSZVAZKZVEZBUVKVFZCVDUEUVOCUVCUVKUVCKUVKIZUVBKZUV
-      OUVKUVBCVHZVGUVPUVAKZLUVNLZBUVKVCZLUVQUVOUVSUWAEUSZUVDIZIZVBZUWBUVPMZUUTK
-      ZNZEOZBOZBCWGZUVTNZBOUVSUWAUWIUWLBUWIUWDUVPMZUUTKZUWMYHKZUWMUUSKZNUWLUWGU
-      WNEUWDUWCPZUWEUWFUWMUUTUWBUWDUVPVIVJVKUWMYHUUSVLUWOUWKUWPUVTUWOUWCUVKMZHK
-      UWKUWCUVKHUVDPZUVRVMUVDUVKBVHZUVRVNQUWPUWMYLKZUWMUURKZLZNUVEUVMLZNUVTUWMY
-      LUURVOUXAUVEUXCUXDUXAUWRYKKZUVDYIKZUVEUWCUVKYKUWSUVRVMUXEUWCYJKZUXFUXEUXG
-      UVKUEKUVRUWCUVKYJUEUWSUVRVPVQUVDYIVRQUVDUBUWTVSRUXBUVMUWBFUSZIZIZVBZUWBUW
-      MMZUUQKZNZEOZFOZUXHUVLVBZUVJUXHKZNZFOUXBUVMUXOUXSFUXOUXJUWMMZUUQKZUXTUUCK
-      ZUXTUUPKZNUXSUXMUYAEUXJUXIPUXKUXLUXTUUQUWBUXJUWMVIVJVKUXTUUCUUPVLUYBUXQUY
-      CUXRUYBUXHUVPMUUBKUVPUXHMUUAKUXQUXHUWDUVPUUBFVHZUWQUVKPZVTUXHUVPUUAUYDUYE
-      WAUVKUXHUVRUYDWBRUXHUWDMZUUOKZGUSZUVJVBZGFWGZNZGOZUYCUXRUYGUWBUYFMZUUNKZE
-      YSVCZUWBUYHIZIZIZVBZUYNNZEOZGOZUYLEUUNYSUYFUXHUWDWCWDUWBYSKZUYNNZEOUYTGOZ
-      EOUYOVUBVUDVUEEVUDUYSGOZUYNNVUEVUCVUFUYNGUWBWEWFUYSUYNGWHWITUYNEYSWJUYTGE
-      WKSVUAUYKGVUAUYRUYFMZUUNKZVUGUUMKZVUGYQKZNUYKUYNVUHEUYRUYQPUYSUYMVUGUUNUW
-      BUYRUYFVIVJVKVUGUUMYQVLVUIUYIVUJUYJVUIUYPUWDMUULKUYHUWCMZUUKKZUYIUYPUXHUW
-      DUULUYHPZUYDUWQVTUYHUWCUUKGVHZUWSVMVUKUUJKZLDGWGZUVIXSZLZDOZLZVULUYIVUOVU
-      SVUOUWBVUKMZUUIKZEYSVCZUWBUVFIZIZIZVBZVVBNZEOZDOZVUSEUUIYSVUKUYHUWCWCZWDV
-      UCVVBNZEOVVHDOZEOVVCVVJVVLVVMEVVLVVGDOZVVBNVVMVUCVVNVVBDUWBWEWFVVGVVBDWHW
-      ITVVBEYSWJVVHDEWKSVVIVURDVVIVVFVUKMZUUIKZVVOYQKZVVOUUHKZXSZLVURVVBVVPEVVF
-      VVEPVVGVVAVVOUUIUWBVVFVUKVIVJVKVVOYQUUHWLVVSVUQVVQVUPVVRUVIVVQVVDUYHMHKVU
-      PVVDUYHUWCHUVFPZVUNUWSWMUVFUYHDVHZVUNVNQVVRVVDUWCMUUGKZUVIVVDUYHUWCUUGVVT
-      VUNUWSVTUVFUVDMZUUFKZABWGZUVHNZAOZVWBUVIVWDUWBVWCMZUUEKZEYSVCZUWBUVGIZIZI
-      ZVBZVWINZEOZAOZVWGEUUEYSVWCUVFUVDWCWDVUCVWINZEOVWOAOZEOVWJVWQVWRVWSEVWRVW
-      NAOZVWINVWSVUCVWTVWIAUWBWEWFVWNVWIAWHWITVWIEYSWJVWOAEWKSVWPVWFAVWPVWMVWCM
-      ZUUEKZVXAYOKZVXAUUDKZNVWFVWIVXBEVWMVWLPVWNVWHVXAUUEUWBVWMVWCVIVJVKVXAYOUU
-      DVLVXCVWEVXDUVHVXCVWKUVDMHKVWEVWKUVFUVDHUVGPZVWAUWTVTUVGUVDAVHZUWTVNQVXDV
-      WKUVFMUUAKUVHVWKUVFUVDUUAVXEVWAUWTWMUVGUVFVXFVWAWBQWNRTRUVFUVDUUFVWAUWTVM
-      UVHAUVDWJSQWOWPRTRWPVUKUUJVVKWQUYIVUQDWRVUTUVIDUYHWSVUQDWTQSRVUJUYPUXHMHK
-      UYJUYPUXHUWDHVUMUYDUWQWMUYHUXHVUNUYDVNQWNRTRUXHUWDUVPUUOUYDUWQUYEWMGUVJUX
-      HXASWNRTUXBUXMEYRVCZUXPEUUQYRUWMUWDUVPWCWDUWBYRKZUXMNZEOUXNFOZEOVXGUXPVXI
-      VXJEVXIUXKFOZUXMNVXJVXHVXKUXMFUWBXBWFUXKUXMFWHWITUXMEYRWJUXNFEWKSQFUVJUVL
-      UVKXCXDSWPWNUVEUVMXHRWNRTUVSUWGEYRVCZUWJEUUTYRUVPUYEWDVXHUWGNZEOUWHBOZEOV
-      XLUWJVXMVXNEVXMUWEBOZUWGNVXNVXHVXOUWGBUWBXBWFUWEUWGBWHWITUWGEYRWJUWHBEWKS
-      QUVTBUVKWJSWPUVPUVAUYEWQUVNBUVKXESQXFUVBUVAUUTYRYHUUSHXGXIYLUURYKYJUEYIUB
-      XJXKXLXMXNXIUUQYRUUCUUPUUBUUAXOXPXQUUOUUNYSUUMYQUULUUKUUJUUIYSYQUUHHXGXRZ
-      UUGUUFUUEYSYOUUDHXGXQUUAXOXRXTYRUKYAXLZXLZYBXIXQYCVXRYBYDXIXQVXPXTVXRYBXR
-      XTVXQYBYEXTVXQYBYDYFYG $.
+      cin cidk ccompl cun cuni1 cv wss ctfin wceq wrex cab wi vex eluni1 opkeq1
+      wral wel eleq1d ceqsexv elin opksnelsik elssetk opkelxpk mpbiran2 snelpw1
+      eldif otkelins2k opkelcnvk eqtfinrelk opkex elimak elpw121c anbi1i 19.41v
+      bitr4i df-rex excom wb elsymdif otkelins3k anbi12i bibi12i notbii elcompl
+      elpw abeq2 df-clel elpw11c tfinex clel3 annim dfral2 abbi2i ssetkex sikex
+      wal alex nncex pwex pw1ex vvex xpkex tfinrelkex ins2kex ins3kex inex 1cex
+      cnvkex imakex symdifex complex difex uni1ex eqeltrri ) HUAZUBUCZUDZUEUFZU
+      AZUGIZIZYMUFHUHZHUIUJUBUEUFYHUHZUKUCUEUFHUJZYPULUKUDZUDZUDZJUMUAUJYOUNYSJ
+      UJUNYTJUNUHUOUJULYRJUHUMYRJUJULYSJUPYNUEUFUMUQZUIZUHZYQYOUUAUJZUNZYSJZUAZ
+      UHZULZYSJZUPZUAZUHZYQUNZYSJZUJZUNZYRJZUMZUNZYRJZUPZURZBUSZUBUTZDUSZAUSZVA
+      VBZAUVDVCZDVDZCUSZVAZKZVEZBUVKVIZCVDUEUVOCUVCUVKUVCKUVKIZUVBKZUVOUVKUVBCV
+      FZVGUVPUVAKZLUVNLZBUVKVCZLUVQUVOUVSUWAEUSZUVDIZIZVBZUWBUVPMZUUTKZNZEOZBOZ
+      BCVJZUVTNZBOUVSUWAUWIUWLBUWIUWDUVPMZUUTKZUWMYHKZUWMUUSKZNUWLUWGUWNEUWDUWC
+      PZUWEUWFUWMUUTUWBUWDUVPVHVKVLUWMYHUUSVMUWOUWKUWPUVTUWOUWCUVKMZHKUWKUWCUVK
+      HUVDPZUVRVNUVDUVKBVFZUVRVOQUWPUWMYLKZUWMUURKZLZNUVEUVMLZNUVTUWMYLUURVSUXA
+      UVEUXCUXDUXAUWRYKKZUVDYIKZUVEUWCUVKYKUWSUVRVNUXEUWCYJKZUXFUXEUXGUVKUEKUVR
+      UWCUVKYJUEUWSUVRVPVQUVDYIVRQUVDUBUWTWRRUXBUVMUWBFUSZIZIZVBZUWBUWMMZUUQKZN
+      ZEOZFOZUXHUVLVBZUVJUXHKZNZFOUXBUVMUXOUXSFUXOUXJUWMMZUUQKZUXTUUCKZUXTUUPKZ
+      NUXSUXMUYAEUXJUXIPUXKUXLUXTUUQUWBUXJUWMVHVKVLUXTUUCUUPVMUYBUXQUYCUXRUYBUX
+      HUVPMUUBKUVPUXHMUUAKUXQUXHUWDUVPUUBFVFZUWQUVKPZVTUXHUVPUUAUYDUYEWAUVKUXHU
+      VRUYDWBRUXHUWDMZUUOKZGUSZUVJVBZGFVJZNZGOZUYCUXRUYGUWBUYFMZUUNKZEYSVCZUWBU
+      YHIZIZIZVBZUYNNZEOZGOZUYLEUUNYSUYFUXHUWDWCWDUWBYSKZUYNNZEOUYTGOZEOUYOVUBV
+      UDVUEEVUDUYSGOZUYNNVUEVUCVUFUYNGUWBWEWFUYSUYNGWGWHTUYNEYSWIUYTGEWJSVUAUYK
+      GVUAUYRUYFMZUUNKZVUGUUMKZVUGYQKZNUYKUYNVUHEUYRUYQPUYSUYMVUGUUNUWBUYRUYFVH
+      VKVLVUGUUMYQVMVUIUYIVUJUYJVUIUYPUWDMUULKUYHUWCMZUUKKZUYIUYPUXHUWDUULUYHPZ
+      UYDUWQVTUYHUWCUUKGVFZUWSVNVUKUUJKZLDGVJZUVIWKZLZDOZLZVULUYIVUOVUSVUOUWBVU
+      KMZUUIKZEYSVCZUWBUVFIZIZIZVBZVVBNZEOZDOZVUSEUUIYSVUKUYHUWCWCZWDVUCVVBNZEO
+      VVHDOZEOVVCVVJVVLVVMEVVLVVGDOZVVBNVVMVUCVVNVVBDUWBWEWFVVGVVBDWGWHTVVBEYSW
+      IVVHDEWJSVVIVURDVVIVVFVUKMZUUIKZVVOYQKZVVOUUHKZWKZLVURVVBVVPEVVFVVEPVVGVV
+      AVVOUUIUWBVVFVUKVHVKVLVVOYQUUHWLVVSVUQVVQVUPVVRUVIVVQVVDUYHMHKVUPVVDUYHUW
+      CHUVFPZVUNUWSWMUVFUYHDVFZVUNVOQVVRVVDUWCMUUGKZUVIVVDUYHUWCUUGVVTVUNUWSVTU
+      VFUVDMZUUFKZABVJZUVHNZAOZVWBUVIVWDUWBVWCMZUUEKZEYSVCZUWBUVGIZIZIZVBZVWINZ
+      EOZAOZVWGEUUEYSVWCUVFUVDWCWDVUCVWINZEOVWOAOZEOVWJVWQVWRVWSEVWRVWNAOZVWINV
+      WSVUCVWTVWIAUWBWEWFVWNVWIAWGWHTVWIEYSWIVWOAEWJSVWPVWFAVWPVWMVWCMZUUEKZVXA
+      YOKZVXAUUDKZNVWFVWIVXBEVWMVWLPVWNVWHVXAUUEUWBVWMVWCVHVKVLVXAYOUUDVMVXCVWE
+      VXDUVHVXCVWKUVDMHKVWEVWKUVFUVDHUVGPZVWAUWTVTUVGUVDAVFZUWTVOQVXDVWKUVFMUUA
+      KUVHVWKUVFUVDUUAVXEVWAUWTWMUVGUVFVXFVWAWBQWNRTRUVFUVDUUFVWAUWTVNUVHAUVDWI
+      SQWOWPRTRWPVUKUUJVVKWQUYIVUQDXIVUTUVIDUYHWSVUQDXJQSRVUJUYPUXHMHKUYJUYPUXH
+      UWDHVUMUYDUWQWMUYHUXHVUNUYDVOQWNRTRUXHUWDUVPUUOUYDUWQUYEWMGUVJUXHWTSWNRTU
+      XBUXMEYRVCZUXPEUUQYRUWMUWDUVPWCWDUWBYRKZUXMNZEOUXNFOZEOVXGUXPVXIVXJEVXIUX
+      KFOZUXMNVXJVXHVXKUXMFUWBXAWFUXKUXMFWGWHTUXMEYRWIUXNFEWJSQFUVJUVLUVKXBXCSW
+      PWNUVEUVMXDRWNRTUVSUWGEYRVCZUWJEUUTYRUVPUYEWDVXHUWGNZEOUWHBOZEOVXLUWJVXMV
+      XNEVXMUWEBOZUWGNVXNVXHVXOUWGBUWBXAWFUWEUWGBWGWHTUWGEYRWIUWHBEWJSQUVTBUVKW
+      ISWPUVPUVAUYEWQUVNBUVKXESQXFUVBUVAUUTYRYHUUSHXGXHYLUURYKYJUEYIUBXKXLXMXNX
+      OXHUUQYRUUCUUPUUBUUAXPYAXQUUOUUNYSUUMYQUULUUKUUJUUIYSYQUUHHXGXRZUUGUUFUUE
+      YSYOUUDHXGXQUUAXPXRXSYRUKXTXMZXMZYBXHXQYCVXRYBYDXHXQVXPXSVXRYBXRXSVXQYBYE
+      XSVXQYBYDYFYG $.
       $( [30-Jan-2015] $)
   $}
 
@@ -34942,7 +34961,8 @@ n e. Nn ( ( ( n +c n ) +c 1c ) =/= (/) -> ( j +c j ) =/= ( ( n +c n ) +c 1c ) )
     $d k y $.  $d k z $.  $d N n $.  $d n x $.  $d n z $.  $d w x $.  $d w y $.
     $d w z $.  $d x z $.  $d y z $.
 
-    $( T-raising of a set of naturals.  Theorem X.1.46 of [Rosser], p. 532. $)
+    $( T-raising of a set of naturals.  Theorem X.1.46 of {{Rosser}},
+       p. 532. $)
     tfinnn $p |- ( ( N e. Nn /\ A C_ Nn /\ A e. N ) ->
        { a | E. x e. A a = _T[fin] x } e. _T[fin] N ) $=
       ( vy vb vw cnnc wcel wss cv ctfin wceq wrex cab wi c0 wn c0c wa vn vk wal
@@ -35001,7 +35021,7 @@ n e. Nn ( ( ( n +c n ) +c 1c ) =/= (/) -> ( j +c j ) =/= ( ( n +c n ) +c 1c ) )
     $d m u $.  $d M u $.  $d N n $.  $d n r $.  $d n s $.  $d n t $.  $d n u $.
     $d N u $.  $d P n $.  $d P u $.  $d Q n $.  $d Q u $.  $d r u $.  $d s u $.
     $d t u $.
-    $( Ordering law for finite smaller than.  Theorem X.1.47 of [Rosser],
+    $( Ordering law for finite smaller than.  Theorem X.1.47 of {{Rosser}},
        p. 532. $)
     sfinltfin $p |- ( ( ( _S[fin] ( M , N ) /\ _S[fin] ( P , Q ) ) /\
         << M , P >> e. <[fin] ) -> << N , Q >> e. <[fin] ) $=
@@ -35083,7 +35103,7 @@ n e. Nn ( ( ( n +c n ) +c 1c ) =/= (/) -> ( j +c j ) =/= ( ( n +c n ) +c 1c ) )
   ${
     $d M a $.  $d N a $.  $d P a $.
     $( The finite smaller relationship is one-to-one in its first argument.
-       Theorem X.1.48 of [Rosser], p. 533. $)
+       Theorem X.1.48 of {{Rosser}}, p. 533. $)
     sfin111 $p |- ( ( _S[fin] ( M , P ) /\ _S[fin] ( N , P ) ) ->
        M = N ) $=
       ( va wsfin wa copk cltfin wcel wo wn wceq cnnc wex df-sfin adantl simp1bi
@@ -35130,7 +35150,7 @@ n e. Nn ( ( ( n +c n ) +c 1c ) =/= (/) -> ( j +c j ) =/= ( ( n +c n ) +c 1c ) )
   ${
     $d a x z $.
     $( The cardinality of the universe is in the finite Sp set.  Theorem X.1.49
-       of [Rosser], p. 534. $)
+       of {{Rosser}}, p. 534. $)
     ncvspfin $p |- Nc[fin] _V e. Sp[fin] $=
       ( va vz vx cvv cncfin cv wcel wsfin wel wi wal wral wa cab cspfin ncfinex
       cint elintab simpl mpgbir df-spfin eleqtrri ) DEZUCAFZGZBFCFHBAIJBKCUDLZM
@@ -35143,7 +35163,7 @@ n e. Nn ( ( ( n +c n ) +c 1c ) =/= (/) -> ( j +c j ) =/= ( ( n +c n ) +c 1c ) )
     $d q z $.  $d X x $.  $d X y $.  $d x z $.  $d Z x $.  $d Z y $.  $d Z z $.
 
     $( If ` X ` is in ` Sp[fin] ` and ` Z ` is smaller than ` X ` , then ` Z `
-       is also in ` Sp[fin] ` .  Theorem X.1.50 of [Rosser], p. 534. $)
+       is also in ` Sp[fin] ` .  Theorem X.1.50 of {{Rosser}}, p. 534. $)
     spfinsfincl $p |- ( ( X e. Sp[fin] /\ _S[fin] ( Z , X ) ) ->
        Z e. Sp[fin] ) $=
       ( vy vz vx va vq vp wsfin cspfin wcel wi cnnc cv wa eleq1 imbi12d wel wal
@@ -35163,7 +35183,7 @@ n e. Nn ( ( ( n +c n ) +c 1c ) =/= (/) -> ( j +c j ) =/= ( ( n +c n ) +c 1c ) )
   ${
     $d a x $.  $d a z $.  $d B a $.  $d B x $.  $d B z $.  $d x z $.
 
-    $( Inductive principle for ` Sp[fin] ` .  Theorem X.1.51 of [Rosser],
+    $( Inductive principle for ` Sp[fin] ` .  Theorem X.1.51 of {{Rosser}},
        p. 534. $)
     spfininduct $p |- ( ( B e. V /\ Nc[fin] _V e. B /\
        A. x e. Sp[fin] A. z ( ( x e. B /\ _S[fin] ( z , x ) ) -> z e. B ) ) ->
@@ -35187,7 +35207,7 @@ n e. Nn ( ( ( n +c n ) +c 1c ) =/= (/) -> ( j +c j ) =/= ( ( n +c n ) +c 1c ) )
   ${
     $d x y z $.
     $( If the universe is finite, then ` Sp[fin] ` is a subset of the non-empty
-       naturals.  Theorem X.1.53 of [Rosser], p. 534. $)
+       naturals.  Theorem X.1.53 of {{Rosser}}, p. 534. $)
     vfinspnn $p |- ( _V e. Fin -> Sp[fin] C_ ( Nn \ { (/) } ) ) $=
       ( vx vz vy cvv cfin wcel cncfin cnnc c0 csn cv wsfin wa wi wal cspfin wne
       cdif ne0i eldifsn wral wss vvex ncfinprop mpan2 anim2i syl sylibr cpw wex
@@ -35202,7 +35222,7 @@ n e. Nn ( ( ( n +c n ) +c 1c ) =/= (/) -> ( j +c j ) =/= ( ( n +c n ) +c 1c ) )
 
   ${
     $( If the universe is finite, then ` Nc[fin] 1c ` is the base two log of
-       ` Nc[fin] _V ` .  Theorem X.1.54 of [Rosser], p. 534. $)
+       ` Nc[fin] _V ` .  Theorem X.1.54 of {{Rosser}}, p. 534. $)
     1cvsfin $p |- ( _V e. Fin -> _S[fin] ( Nc[fin] 1c , Nc[fin] _V ) ) $=
       ( va cvv cfin wcel c1c cncfin cnnc cpw1 cpw wex w3a 1cex ncfinprop simpld
       cv wa mpan2 vvex simprd eleq1d wsfin wceq pw1eq df1c2 syl6eqr pweq syl6eq
@@ -35216,7 +35236,7 @@ n e. Nn ( ( ( n +c n ) +c 1c ) =/= (/) -> ( j +c j ) =/= ( ( n +c n ) +c 1c ) )
 
   ${
     $( If the universe is finite, then the size of ` 1c ` is in ` Sp[fin] ` .
-       Corollary of Theorem X.1.54 of [Rosser], p. 534. $)
+       Corollary of Theorem X.1.54 of {{Rosser}}, p. 534. $)
     1cspfin $p |- ( _V e. Fin -> Nc[fin] 1c e. Sp[fin] ) $=
       ( cvv cfin wcel cncfin cspfin wsfin ncvspfin 1cvsfin spfinsfincl sylancr
       c1c ) ABCADZECKDZLFMECGHLMIJ $.
@@ -35225,7 +35245,7 @@ n e. Nn ( ( ( n +c n ) +c 1c ) =/= (/) -> ( j +c j ) =/= ( ( n +c n ) +c 1c ) )
 
   ${
     $( If the universe is finite, then the T-raising of the size of the
-       universe is equal to the size of ` 1c ` .  Theorem X.1.55 of [Rosser],
+       universe is equal to the size of ` 1c ` .  Theorem X.1.55 of {{Rosser}},
        p. 534. $)
     tncveqnc1fin $p |- ( _V e. Fin -> _T[fin] Nc[fin] _V = Nc[fin] 1c ) $=
       ( cvv cfin wcel cncfin ctfin cpw1 wceq vvex ncfintfin mpan2 df1c2 ncfineq
@@ -35235,9 +35255,9 @@ n e. Nn ( ( ( n +c n ) +c 1c ) =/= (/) -> ( j +c j ) =/= ( ( n +c n ) +c 1c ) )
 
   ${
     $( If the universe is finite, then the T-raising of the size of ` 1c ` is
-       smaller than the size itself.  Corollary of theorem X.1.56 of [Rosser],
-       p. 534. $)
-    t1csfin1c $p |- ( _V e. Fin -> 
+       smaller than the size itself.  Corollary of theorem X.1.56 of
+       {{Rosser}}, p. 534. $)
+    t1csfin1c $p |- ( _V e. Fin ->
                _S[fin] ( _T[fin] Nc[fin] 1c , Nc[fin] 1c ) ) $=
       ( cvv cfin wcel c1c cncfin ctfin wsfin 1cvsfin sfintfin wceq tncveqnc1fin
       syl wb sfineq2 mpbid ) ABCZDEZFZAEZFZGZRQGZPQSGUAHQSILPTQJUAUBMKTQRNLO $.
@@ -35247,9 +35267,9 @@ n e. Nn ( ( ( n +c n ) +c 1c ) =/= (/) -> ( j +c j ) =/= ( ( n +c n ) +c 1c ) )
   ${
     $d N a $.
     $( If the universe is finite, then the T-raising of all non-empty naturals
-       are no greater than the size of ` 1c ` .  Theorem X.1.56 of [Rosser],
+       are no greater than the size of ` 1c ` .  Theorem X.1.56 of {{Rosser}},
        p. 534. $)
-    vfintle $p |- ( ( _V e. Fin /\ N e. Nn /\ N =/= (/) ) -> 
+    vfintle $p |- ( ( _V e. Fin /\ N e. Nn /\ N =/= (/) ) ->
         << _T[fin] N , Nc[fin] 1c >> e. <_[fin] ) $=
       ( va cvv cfin wcel cnnc c0 w3a cncfin copk clefin ctfin wa wceq ncfinprop
       simp2 simpld mpan2 adantr 3ad2ant1 wne c1c cv wex n0 3adant2 simp3 simprd
@@ -35269,8 +35289,8 @@ n e. Nn ( ( ( n +c n ) +c 1c ) =/= (/) -> ( j +c j ) =/= ( ( n +c n ) +c 1c ) )
 
   ${
     $( If the universe is finite, then ` 1c ` is strictly smaller than the
-       universe.  Theorem X.1.57 of [Rosser], p. 534. $)
-    vfin1cltv $p |- ( _V e. Fin -> 
+       universe.  Theorem X.1.57 of {{Rosser}}, p. 534. $)
+    vfin1cltv $p |- ( _V e. Fin ->
                << Nc[fin] 1c , Nc[fin] _V >> e. <[fin] ) $=
       ( cvv wcel c1c cncfin cplc copk cltfin wceq ax-mp 1cex wa c0 mpan2 wn c0c
       cnnc ncfinprop simprd wne wb cfin cun uncompl ncfineq cin complex incompl
@@ -35291,8 +35311,8 @@ n e. Nn ( ( ( n +c n ) +c 1c ) =/= (/) -> ( j +c j ) =/= ( ( n +c n ) +c 1c ) )
   ${
     $d N a $.
     $( If the universe is finite, then the size of the universe is not the
-       T-raising of a natural.  Theorem X.1.58 of [Rosser], p. 534. $)
-    vfinncvntnn $p |- ( ( _V e. Fin /\ N e. Nn ) -> 
+       T-raising of a natural.  Theorem X.1.58 of {{Rosser}}, p. 534. $)
+    vfinncvntnn $p |- ( ( _V e. Fin /\ N e. Nn ) ->
                  _T[fin] N =/= Nc[fin] _V ) $=
       ( va cvv wcel cnnc wa ctfin cncfin wi c0 wceq vvex ncfinprop mpan2 cltfin
       wne copk simpld 3ad2ant1 c1c cfin simprd syl necomd tfineq tfinnul syl6eq
@@ -35311,9 +35331,9 @@ n e. Nn ( ( ( n +c n ) +c 1c ) =/= (/) -> ( j +c j ) =/= ( ( n +c n ) +c 1c ) )
   ${
     $d a x $.
     $( If the universe is finite, then its size is not a T raising of an
-       element of ` Sp[fin] ` .  Corollary of theorem X.1.58 of [Rosser],
+       element of ` Sp[fin] ` .  Corollary of theorem X.1.58 of {{Rosser}},
        p. 534. $)
-    vfinncvntsp $p |- ( _V e. Fin -> 
+    vfinncvntsp $p |- ( _V e. Fin ->
                  -. Nc[fin] _V e. { a | E. x e. Sp[fin] a = _T[fin] x } ) $=
       ( cvv cfin wcel cncfin cv ctfin wceq cspfin wrex cab wa wne cnnc csn cdif
       wn c0 vfinspnn difss syl6ss sselda vfinncvntnn syldan necomd df-ne nrexdv
@@ -35326,9 +35346,9 @@ n e. Nn ( ( ( n +c n ) +c 1c ) =/= (/) -> ( j +c j ) =/= ( ( n +c n ) +c 1c ) )
   ${
     $d n z x a b p g d $.
     $( Lemma for ~ vfinspss .  Establish part of the inductive step. $)
-    vfinspsslem1 $p |- ( 
-      ( ( _V e. Fin /\ _T[fin] n e. Sp[fin] ) /\ 
-        ( n e. Sp[fin] /\ _S[fin] ( z , _T[fin] n ) ) ) -> 
+    vfinspsslem1 $p |- (
+      ( ( _V e. Fin /\ _T[fin] n e. Sp[fin] ) /\
+        ( n e. Sp[fin] /\ _S[fin] ( z , _T[fin] n ) ) ) ->
       E. x e. Sp[fin] z = _T[fin] x ) $=
       ( vp va vb vd vg cvv wcel cv cspfin wa c1c wceq cnnc wrex syl cpw1 wex c0
       cfin ctfin wsfin cncfin cplc copk clefin simpl cdif vfinspnn difss syl6ss
@@ -35380,9 +35400,9 @@ n e. Nn ( ( ( n +c n ) +c 1c ) =/= (/) -> ( j +c j ) =/= ( ( n +c n ) +c 1c ) )
     $d x z $.  $d n w $.  $d n x $.  $d n z $.
     $( If the universe is finite, then ` Sp[fin] ` is a subset of its ` T `
        raisings and the cardinality of the universe.  Theorem X.1.59 of
-       [Rosser], p. 534. $)
-    vfinspss $p |- ( _V e. Fin -> 
-              Sp[fin] C_ 
+       {{Rosser}}, p. 534. $)
+    vfinspss $p |- ( _V e. Fin ->
+              Sp[fin] C_
               ( { a | E. x e. Sp[fin] a = _T[fin] x } u. { Nc[fin] _V } ) ) $=
       ( vw vz vn vt cvv wcel cv wceq cspfin wrex wsfin wa wi bitri cins3k cimak
       csn vex cfin ctfin cab cncfin cun wal wral wss wo weq tfineq vfinspsslem1
@@ -35419,36 +35439,36 @@ n e. Nn ( ( ( n +c n ) +c 1c ) =/= (/) -> ( j +c j ) =/= ( ( n +c n ) +c 1c ) )
   ${
     $d X x y z $.
     $( If the universe is finite, then ` Sp[fin] ` is closed under T-raising.
-       Theorem X.1.60 of [Rosser], p. 536. $)
-    vfinspclt $p |- ( ( _V e. Fin /\ X e. Sp[fin] ) -> 
+       Theorem X.1.60 of {{Rosser}}, p. 536. $)
+    vfinspclt $p |- ( ( _V e. Fin /\ X e. Sp[fin] ) ->
                _T[fin] X e. Sp[fin] ) $=
       ( vx vy vz cvv wcel cspfin wa cv ctfin c1c wceq tfineq eleq1d elab cssetk
       cxpk cins2k cins3k cimak cfin cab cncfin wi wal wral tncveqnc1fin 1cspfin
       wsfin eqeltrd ncfinex sylibr simprl sfintfin ad2antll spfinsfincl syl2anc
       wss ex vex weq anbi1i 3imtr4g alrimiv ralrimiva c0 csn ccnvk cnnc csymdif
-      csik cpw cpw1 cdif cin cidk ccompl cun cuni1 wrex copk snex eqtfinrelk
-      elimak opkelcnvk rexbii eluni1 risset 3bitr4i abbi2i tfinrelkex cnvkex
-      bitri imakex uni1ex eqeltrri spfininduct mp3an1 sselda wb elabg adantl
-      spfinex mpbid ) EUAFZAGFZHABIZJZGFZBUBZFZAJZGFZXEGXJAXEEUCZXJFZCIZXJFZDIZ
-      XPUIZHZXRXJFZUDZDUEZCGUFZGXJURZXEXNJZGFZXOXEYFKUCGUGUHUJXIYGBXNEUKXGXNLXH
-      YFGXGXNMNOULXEYCCGXEXPGFHZYBDYHXPJZGFZXSHZXRJZGFZXTYAYHYKYMYHYKHYJYLYIUIZ
-      YMYHYJXSUMXSYNYHYJXRXPUNUOYIYLUPUQUSXQYJXSXIYJBXPCUTZBCVAXHYIGXGXPMNOVBXI
-      YMBXRDUTBDVAXHYLGXGXRMNOVCVDVEXJEFXOYDYEVFVGZVGZYPQPRZPVHSVIEQPVKRZKVLEQP
-      SYSVJKVMZVMZVMZTVNVKSYRVOUUATSVOUUBTVORVPSVJYTTRVNYTTSVJUUATVQYQEQVNVRZVH
-      ZGTZVSZXJEXIBUUFXGVGZUUEFZXPXHLZCGVTZXGUUFFXIUUHXPUUGWAUUDFZCGVTUUJCUUDGU
-      UGXGWBZWDUUKUUICGUUKUUGXPWAUUCFUUIXPUUGUUCYOUULWEXGXPBUTZYOWCWMWFWMXGUUEU
-      UMWGCXHGWHWIWJUUEUUDGUUCWKWLXCWNWOWPCDXJEWQWRUQWSXFXKXMWTXEXIXMBAGXGALXHX
-      LGXGAMNXAXBXD $.
+      csik cpw cpw1 cdif cin cidk ccompl cuni1 wrex copk snex elimak eqtfinrelk
+      cun opkelcnvk bitri rexbii eluni1 risset 3bitr4i abbi2i tfinrelkex cnvkex
+      spfinex imakex uni1ex eqeltrri spfininduct mp3an1 sselda wb elabg adantl
+      mpbid ) EUAFZAGFZHABIZJZGFZBUBZFZAJZGFZXEGXJAXEEUCZXJFZCIZXJFZDIZXPUIZHZX
+      RXJFZUDZDUEZCGUFZGXJURZXEXNJZGFZXOXEYFKUCGUGUHUJXIYGBXNEUKXGXNLXHYFGXGXNM
+      NOULXEYCCGXEXPGFHZYBDYHXPJZGFZXSHZXRJZGFZXTYAYHYKYMYHYKHYJYLYIUIZYMYHYJXS
+      UMXSYNYHYJXRXPUNUOYIYLUPUQUSXQYJXSXIYJBXPCUTZBCVAXHYIGXGXPMNOVBXIYMBXRDUT
+      BDVAXHYLGXGXRMNOVCVDVEXJEFXOYDYEVFVGZVGZYPQPRZPVHSVIEQPVKRZKVLEQPSYSVJKVM
+      ZVMZVMZTVNVKSYRVOUUATSVOUUBTVORVPSVJYTTRVNYTTSVJUUATVQYQEQVNWDZVHZGTZVRZX
+      JEXIBUUFXGVGZUUEFZXPXHLZCGVSZXGUUFFXIUUHXPUUGVTUUDFZCGVSUUJCUUDGUUGXGWAZW
+      BUUKUUICGUUKUUGXPVTUUCFUUIXPUUGUUCYOUULWEXGXPBUTZYOWCWFWGWFXGUUEUUMWHCXHG
+      WIWJWKUUEUUDGUUCWLWMWNWOWPWQCDXJEWRWSUQWTXFXKXMXAXEXIXMBAGXGALXHXLGXGAMNX
+      BXCXD $.
       $( [30-Jan-2015] $)
   $}
 
   ${
     $d a x $.
     $( If the universe is finite, then ` Sp[fin] ` is equal to its T raisings
-       and the cardinality of the universe.  Theorem X.1.61 of [Rosser],
+       and the cardinality of the universe.  Theorem X.1.61 of {{Rosser}},
        p. 536. $)
-    vfinspeqtncv $p |- ( _V e. Fin -> 
-                  Sp[fin] = ( { a | E. x e. Sp[fin] a = _T[fin] x } u. 
+    vfinspeqtncv $p |- ( _V e. Fin ->
+                  Sp[fin] = ( { a | E. x e. Sp[fin] a = _T[fin] x } u.
                   { Nc[fin] _V } ) ) $=
       ( cvv cfin wcel cspfin cv ctfin wceq wrex cab cncfin csn cun vfinspss wss
       wa wi vfinspclt eleq1 biimprd com12 syl rexlimdva abssdv ncvspfin ncfinex
@@ -35461,8 +35481,8 @@ n e. Nn ( ( ( n +c n ) +c 1c ) =/= (/) -> ( j +c j ) =/= ( ( n +c n ) +c 1c ) )
   ${
     $d a x t $.
     $( If the universe is finite, then the size of ` Sp[fin] ` is equal to the
-       successor of its T-raising.  Theorem X.1.62 of [Rosser], p. 536. $)
-    vfinncsp $p |- ( _V e. Fin -> 
+       successor of its T-raising.  Theorem X.1.62 of {{Rosser}}, p. 536. $)
+    vfinncsp $p |- ( _V e. Fin ->
        Nc[fin] Sp[fin] = ( _T[fin] Nc[fin] Sp[fin] +c 1c ) ) $=
       ( va vx cvv wcel cspfin cncfin wceq wrex csn c1c cin cssetk cins2k cins3k
       vt cxpk cnnc cpw1 cimak wa cfin cv ctfin cab cun vfinspeqtncv ncfineq syl
@@ -35486,7 +35506,7 @@ n e. Nn ( ( ( n +c n ) +c 1c ) =/= (/) -> ( j +c j ) =/= ( ( n +c n ) +c 1c ) )
   $}
 
   ${
-    $( The universe is infinite.  Theorem X.1.63 of [Rosser], p. 536. $)
+    $( The universe is infinite.  Theorem X.1.63 of {{Rosser}}, p. 536. $)
     vinf $p |- -. _V e. Fin $=
       ( cvv cfin wcel cspfin cncfin noel cevenfin coddfin cin cnnc wne vfinncsp
       c0 wa adantr adantl eqnetrrd syl2anc eqeltrd ex cun csn spfinex ncfinprop
@@ -35503,7 +35523,7 @@ n e. Nn ( ( ( n +c n ) +c 1c ) =/= (/) -> ( j +c j ) =/= ( ( n +c n ) +c 1c ) )
 
   ${
     $d n m x a $.
-    $( The empty class is not a natural.  Theorem X.1.65 of [Rosser],
+    $( The empty class is not a natural.  Theorem X.1.65 of {{Rosser}},
        p. 536. $)
     nulnnn $p |- -. (/) e. Nn $=
       ( vx vn vm va c0 cnnc wcel cv wceq wne c0c csn ccompl cab cvv df-ne neeq1
@@ -35523,7 +35543,7 @@ n e. Nn ( ( ( n +c n ) +c 1c ) =/= (/) -> ( j +c j ) =/= ( ( n +c n ) +c 1c ) )
   $}
 
   $( The successor operation is one-to-one over the finite cardinals.  Theorem
-     X.1.66 of [Rosser], p. 537. $)
+     X.1.66 of {{Rosser}}, p. 537. $)
   peano4 $p |- ( ( M e. Nn /\ N e. Nn /\ ( M +c 1c ) = ( N +c 1c ) ) ->
      M = N ) $=
     ( cnnc wcel c1c cplc wceq w3a wa c0 3simpa simp3 peano2 nulnnn eleq1 mtbiri
@@ -35539,7 +35559,7 @@ n e. Nn ( ( ( n +c n ) +c 1c ) =/= (/) -> ( j +c j ) =/= ( ( n +c n ) +c 1c ) )
     $( [3-Feb-2015] $)
 
   $( Cancellation law for natural addition. $)
-  addccan1 $p |- ( ( M e. Nn /\ N e. Nn /\ P e. Nn ) -> 
+  addccan1 $p |- ( ( M e. Nn /\ N e. Nn /\ P e. Nn ) ->
       ( ( M +c P ) = ( N +c P ) <-> M = N ) ) $=
     ( cnnc wcel w3a cplc c0 wne wceq wb wa nncaddccl nulnnn mtbiri necon2ai syl
     eleq1 3adant2 preaddccan1 mpdan ) BDEZCDEZADEZFBAGZHIZUECAGJBCJKUBUDUFUCUBU
@@ -35547,7 +35567,7 @@ n e. Nn ( ( ( n +c n ) +c 1c ) =/= (/) -> ( j +c j ) =/= ( ( n +c n ) +c 1c ) )
     $( [3-Feb-2015] $)
 
   $( Cancellation law for natural addition. $)
-  addccan2 $p |- ( ( M e. Nn /\ N e. Nn /\ P e. Nn ) -> 
+  addccan2 $p |- ( ( M e. Nn /\ N e. Nn /\ P e. Nn ) ->
       ( ( M +c N ) = ( M +c P ) <-> N = P ) ) $=
     ( cnnc wcel w3a cplc c0 wne wceq wb wa nncaddccl nulnnn mtbiri necon2ai syl
     eleq1 3adant3 preaddccan2 mpdan ) BDEZCDEZADEZFBCGZHIZUEBAGJCAJKUBUCUFUDUBU
@@ -35589,21 +35609,23 @@ $)
 
     $( Define the phi operator.  This operation increments all the naturals in
        ` A ` and leaves all its other members the same. $)
-    df-phi $a |- Phi A = { y | 
+    df-phi $a |- Phi A = { y |
        E. x e. A y = if ( x e. Nn , ( x +c 1c ) , x ) } $.
 
-    $( Define the type-level ordered pair.  Definition from [Rosser],
+    $( Define the type-level ordered pair.  Definition from {{Rosser}},
        p. 281. $)
-    df-op $a |- <. A , B >. = 
+    df-op $a |- <. A , B >. =
        ( { x | E. y e. A x = Phi y } u.
          { x | E. y e. B x = ( Phi y u. { 0c } ) } ) $.
 
     $( Define the first projection operation.  This operation recovers the
-       first element of an ordered pair.  Definition from [Rosser], p. 281. $)
+       first element of an ordered pair.  Definition from {{Rosser}},
+       p. 281. $)
     df-proj1 $a |- Proj1 A = { x | Phi x e. A } $.
 
     $( Define the second projection operation.  This operation recovers the
-       second element of an ordered pair.  Definition from [Rosser], p. 281. $)
+       second element of an ordered pair.  Definition from {{Rosser}},
+       p. 281. $)
     df-proj2 $a |- Proj2 A = { x | ( Phi x u. { 0c } ) e. A } $.
   $}
 
@@ -35612,14 +35634,14 @@ $)
     $( Express the phi operator in terms of the Kuratowski set construction
        functions. $)
     dfphi2 $p |- Phi A = ( ( (
-       Image_k 
-      ( ( Ins3_k ~ ( ( Ins3_k SSet_k i^i Ins2_k SSet_k ) "_k ~P1 ~P1 1c ) \ 
-        ( ( Ins2_k Ins2_k SSet_k 
-          (+) 
+       Image_k
+      ( ( Ins3_k ~ ( ( Ins3_k SSet_k i^i Ins2_k SSet_k ) "_k ~P1 ~P1 1c ) \
+        ( ( Ins2_k Ins2_k SSet_k
+          (+)
           ( Ins2_k Ins3_k SSet_k u.
-            Ins3_k SI_k SI_k SSet_k ) ) 
-            "_k ~P1 ~P1 ~P1 ~P1 1c ) ) 
-            "_k ~P1 ~P1 1c ) i^i ( Nn X._k _V ) ) u. 
+            Ins3_k SI_k SI_k SSet_k ) )
+            "_k ~P1 ~P1 ~P1 ~P1 1c ) )
+            "_k ~P1 ~P1 1c ) i^i ( Nn X._k _V ) ) u.
        ( _I_k i^i ( ~ Nn X._k _V ) ) ) "_k A ) $=
       ( vx vy vz cssetk cins3k cins2k cin c1c cpw1 cimak cnnc cidk cv wcel wceq
       cvv wa wo wb cphi ccompl csik cun csymdif cdif cimagek cxpk cplc cif wrex
@@ -35669,15 +35691,15 @@ $)
     $( Lemma for ~ dfop2 and ~ dfproj22 . $)
     dfop2lem1 $p |- ( << x , y >> e. ~ ( ( Ins2_k SSet_k (+) Ins3_k ( ( `'_k
         Image_k ( ( Image_k ( ( Ins3_k ~ ( ( Ins3_k SSet_k i^i Ins2_k SSet_k )
-        "_k ~P1 ~P1 1c ) \ 
-      ( ( Ins2_k Ins2_k SSet_k 
-          (+) 
+        "_k ~P1 ~P1 1c ) \
+      ( ( Ins2_k Ins2_k SSet_k
+          (+)
           ( Ins2_k Ins3_k SSet_k u.
-            Ins3_k SI_k SI_k SSet_k ) ) 
-            "_k ~P1 ~P1 ~P1 ~P1 1c ) ) 
-  "_k ~P1 ~P1 1c ) i^i ( Nn X._k _V ) ) u. 
+            Ins3_k SI_k SI_k SSet_k ) )
+            "_k ~P1 ~P1 ~P1 ~P1 1c ) )
+  "_k ~P1 ~P1 1c ) i^i ( Nn X._k _V ) ) u.
      ( _I_k i^i ( ~ Nn X._k _V ) ) ) o._k SSet_k ) u. ( { { 0c } } X._k _V ) )
-        ) "_k 
+        ) "_k
      ~P1 ~P1 1c ) <-> y = ( Phi x u. { 0c } ) ) $=
       ( vz vt cv copk cssetk cins3k cpw1 cimak cun cvv c0c csn wcel wn wex wceq
       wa 3bitr4i cins2k cin c1c ccompl csik csymdif cdif cimagek cnnc cxpk cidk
@@ -35701,18 +35723,18 @@ $)
       $( [2-Jan-2015] $)
 
     $( Lemma for ~ dfop2 $)
-    dfop2lem2 $p |- ( ~ ( ( Ins2_k SSet_k (+) 
-     Ins3_k ( ( `'_k Image_k ( ( Image_k 
-      ( ( Ins3_k ~ ( ( Ins3_k SSet_k i^i Ins2_k SSet_k ) "_k ~P1 ~P1 1c ) \ 
-        ( ( Ins2_k Ins2_k SSet_k 
-          (+) 
+    dfop2lem2 $p |- ( ~ ( ( Ins2_k SSet_k (+)
+     Ins3_k ( ( `'_k Image_k ( ( Image_k
+      ( ( Ins3_k ~ ( ( Ins3_k SSet_k i^i Ins2_k SSet_k ) "_k ~P1 ~P1 1c ) \
+        ( ( Ins2_k Ins2_k SSet_k
+          (+)
           ( Ins2_k Ins3_k SSet_k u.
-            Ins3_k SI_k SI_k SSet_k ) ) 
-            "_k ~P1 ~P1 ~P1 ~P1 1c ) ) 
+            Ins3_k SI_k SI_k SSet_k ) )
+            "_k ~P1 ~P1 ~P1 ~P1 1c ) )
             "_k ~P1 ~P1 1c ) i^i ( Nn X._k _V ) ) u. ( _I_k i^i ( ~ Nn X._k _V
-        ) ) ) o._k 
+        ) ) ) o._k
               SSet_k ) u. ( { { 0c } } X._k _V ) ) ) "_k ~P1 ~P1 1c ) "_k B
-        ) 
+        )
      = { x | E. y e. B x = ( Phi y u. { 0c } ) } $=
       ( cv csn cun wrex cssetk cins2k cins3k cin cpw1 cimak ccompl csik csymdif
       cimagek cnnc cvv cxpk cphi c0c wceq c1c cdif cidk ccnvk ccomk wcel elimak
@@ -35722,25 +35744,25 @@ $)
       $( [2-Jan-2015] $)
 
     $( Express the ordered pair via the set construction functors. $)
-    dfop2 $p |- <. A , B >. = 
-       ( ( Image_k ( ( Image_k 
-      ( ( Ins3_k ~ ( ( Ins3_k SSet_k i^i Ins2_k SSet_k ) "_k ~P1 ~P1 1c ) \ 
-        ( ( Ins2_k Ins2_k SSet_k 
-          (+) 
+    dfop2 $p |- <. A , B >. =
+       ( ( Image_k ( ( Image_k
+      ( ( Ins3_k ~ ( ( Ins3_k SSet_k i^i Ins2_k SSet_k ) "_k ~P1 ~P1 1c ) \
+        ( ( Ins2_k Ins2_k SSet_k
+          (+)
           ( Ins2_k Ins3_k SSet_k u.
-            Ins3_k SI_k SI_k SSet_k ) ) 
-            "_k ~P1 ~P1 ~P1 ~P1 1c ) ) 
+            Ins3_k SI_k SI_k SSet_k ) )
+            "_k ~P1 ~P1 ~P1 ~P1 1c ) )
             "_k ~P1 ~P1 1c ) i^i ( Nn X._k _V ) ) u. ( _I_k i^i ( ~ Nn X._k _V
         ) ) ) "_k A ) u.
-         ( ~ ( ( Ins2_k SSet_k (+) Ins3_k ( ( `'_k Image_k ( ( Image_k 
-      ( ( Ins3_k ~ ( ( Ins3_k SSet_k i^i Ins2_k SSet_k ) "_k ~P1 ~P1 1c ) \ 
-        ( ( Ins2_k Ins2_k SSet_k 
-          (+) 
+         ( ~ ( ( Ins2_k SSet_k (+) Ins3_k ( ( `'_k Image_k ( ( Image_k
+      ( ( Ins3_k ~ ( ( Ins3_k SSet_k i^i Ins2_k SSet_k ) "_k ~P1 ~P1 1c ) \
+        ( ( Ins2_k Ins2_k SSet_k
+          (+)
           ( Ins2_k Ins3_k SSet_k u.
-            Ins3_k SI_k SI_k SSet_k ) ) 
-            "_k ~P1 ~P1 ~P1 ~P1 1c ) ) 
-            "_k ~P1 ~P1 1c ) i^i ( Nn X._k _V ) ) u. 
-               ( _I_k i^i ( ~ Nn X._k _V ) ) ) o._k SSet_k ) u. 
+            Ins3_k SI_k SI_k SSet_k ) )
+            "_k ~P1 ~P1 ~P1 ~P1 1c ) )
+            "_k ~P1 ~P1 1c ) i^i ( Nn X._k _V ) ) u.
+               ( _I_k i^i ( ~ Nn X._k _V ) ) ) o._k SSet_k ) u.
                ( { { 0c } } X._k _V ) ) ) "_k ~P1 ~P1 1c ) "_k B ) ) $=
       ( vx vy cv wceq wrex cab csn cun cssetk cins3k cins2k cin cpw1 cimak csik
       ccompl cvv cxpk cop cphi c0c c1c csymdif cdif cnnc cidk ccnvk ccomk df-op
@@ -35756,14 +35778,14 @@ $)
     $d x y A $.
     $( Express the first projection operator via the set construction
        functors. $)
-    dfproj12 $p |- Proj1 A = 
-     ( `'_k Image_k ( ( Image_k 
-      ( ( Ins3_k ~ ( ( Ins3_k SSet_k i^i Ins2_k SSet_k ) "_k ~P1 ~P1 1c ) \ 
-        ( ( Ins2_k Ins2_k SSet_k 
-          (+) 
+    dfproj12 $p |- Proj1 A =
+     ( `'_k Image_k ( ( Image_k
+      ( ( Ins3_k ~ ( ( Ins3_k SSet_k i^i Ins2_k SSet_k ) "_k ~P1 ~P1 1c ) \
+        ( ( Ins2_k Ins2_k SSet_k
+          (+)
           ( Ins2_k Ins3_k SSet_k u.
-            Ins3_k SI_k SI_k SSet_k ) ) 
-            "_k ~P1 ~P1 ~P1 ~P1 1c ) ) 
+            Ins3_k SI_k SI_k SSet_k ) )
+            "_k ~P1 ~P1 ~P1 ~P1 1c ) )
             "_k ~P1 ~P1 1c ) i^i ( Nn X._k _V ) ) u. ( _I_k i^i ( ~ Nn X._k _V
         ) ) ) "_k A ) $=
       ( vx vy wcel cssetk cins3k cins2k cin cpw1 cimak ccompl csik cimagek cnnc
@@ -35777,16 +35799,16 @@ $)
 
     $( Express the second projection operator via the set construction
        functors. $)
-    dfproj22 $p |- Proj2 A = ( `'_k ~ ( ( Ins2_k SSet_k (+) 
-    Ins3_k ( ( `'_k Image_k ( ( Image_k 
-      ( ( Ins3_k ~ ( ( Ins3_k SSet_k i^i Ins2_k SSet_k ) "_k ~P1 ~P1 1c ) \ 
-        ( ( Ins2_k Ins2_k SSet_k 
-          (+) 
+    dfproj22 $p |- Proj2 A = ( `'_k ~ ( ( Ins2_k SSet_k (+)
+    Ins3_k ( ( `'_k Image_k ( ( Image_k
+      ( ( Ins3_k ~ ( ( Ins3_k SSet_k i^i Ins2_k SSet_k ) "_k ~P1 ~P1 1c ) \
+        ( ( Ins2_k Ins2_k SSet_k
+          (+)
           ( Ins2_k Ins3_k SSet_k u.
-            Ins3_k SI_k SI_k SSet_k ) ) 
-            "_k ~P1 ~P1 ~P1 ~P1 1c ) ) 
-            "_k ~P1 ~P1 1c ) i^i ( Nn X._k _V ) ) u. 
-            ( _I_k i^i ( ~ Nn X._k _V ) ) ) o._k 
+            Ins3_k SI_k SI_k SSet_k ) )
+            "_k ~P1 ~P1 ~P1 ~P1 1c ) )
+            "_k ~P1 ~P1 1c ) i^i ( Nn X._k _V ) ) u.
+            ( _I_k i^i ( ~ Nn X._k _V ) ) ) o._k
     SSet_k ) u. ( { { 0c } } X._k _V ) ) ) "_k ~P1 ~P1 1c ) "_k A ) $=
       ( vx vy cv csn cun wcel cssetk cins2k cins3k cin cpw1 ccompl csik csymdif
       cimak cimagek cnnc cvv cxpk cproj2 cphi c0c cab c1c cdif cidk ccnvk ccomk
@@ -35952,7 +35974,7 @@ $)
       $( [3-Feb-2015] $)
   $}
 
-  $( The phi operator is one-to-one.  Theorem X.2.2 of [Rosser], p. 282. $)
+  $( The phi operator is one-to-one.  Theorem X.2.2 of {{Rosser}}, p. 282. $)
   phi11 $p |- ( A = B <-> Phi A = Phi B ) $=
     ( wceq cphi phieq phi11lem1 wss eqcoms eqssd impbii ) ABCADZBDZCZABEMABABFB
     AGLKBAFHIJ $.
@@ -35961,7 +35983,7 @@ $)
   ${
     $d A x y $.
     $( Cardinal zero is not a member of a phi operation.  Theorem X.2.3 of
-       [Rosser], p. 282. $)
+       {{Rosser}}, p. 282. $)
     0cnelphi $p |- -. 0c e. Phi A $=
       ( vy vx c0c cphi wcel cv cnnc c1c cplc cif wceq wrex wn 0cnsuc df-ne mpbi
       wne wa eqeq2d iffalse biimpac peano1 syl6eqelr iftrue eqcom syl6bb biimpd
@@ -35975,7 +35997,7 @@ $)
   ${
     $d A z $.  $d B z $.
     $( Lemma for ~ phi011 . $)
-    phi011lem1 $p |- ( ( Phi A u. { 0c } ) = ( Phi B u. { 0c } ) -> 
+    phi011lem1 $p |- ( ( Phi A u. { 0c } ) = ( Phi B u. { 0c } ) ->
       Phi A C_ Phi B ) $=
       ( vz cphi c0c csn wceq cv wcel wn ssun1 sseli eleq2 syl5ib 0cnelphi eleq1
       cun wi mtbiri wo con2i a1i elun df-sn abeq2i orbi2i bitri biimpi ord ee22
@@ -35985,7 +36007,7 @@ $)
       $( [3-Feb-2015] $)
   $}
 
-  $( ` ( Phi A u. { 0c } ) ` is one-to-one.  Theorem X.2.4 of [Rosser],
+  $( ` ( Phi A u. { 0c } ) ` is one-to-one.  Theorem X.2.4 of {{Rosser}},
      p. 282. $)
   phi011 $p |- ( A = B <-> ( Phi A u. { 0c } ) = ( Phi B u. { 0c } ) ) $=
     ( wceq cphi c0c csn cun phi11 uneq1 phi011lem1 eqcoms eqssd impbii bitri
@@ -35995,7 +36017,7 @@ $)
   ${
     $d A x y z $.  $d B x y z $.
     $( The first projection operator applied to an ordered pair yields its
-       first member.  Theorem X.2.7 of [Rosser], p. 282. $)
+       first member.  Theorem X.2.7 of {{Rosser}}, p. 282. $)
     proj1op $p |- Proj1 <. A , B >. = A $=
       ( vz vy vx cop cproj1 cv cphi wcel c0c cun wceq wrex wo cab eqeq1 rexbidv
       weq elab csn df-op eleq2i phiex phi11 equcom bitr3i syl6bb risset syl6bbr
@@ -36012,7 +36034,7 @@ $)
   ${
     $d A x y z $.  $d B x y z $.
     $( The second projection operator applied to an ordered pair yields its
-       second member.  Theorem X.2.8 of [Rosser], p. 283. $)
+       second member.  Theorem X.2.8 of {{Rosser}}, p. 283. $)
     proj2op $p |- Proj2 <. A , B >. = B $=
       ( vz vy vx cv cphi c0c cun wcel wceq wrex wo cab rexbidv elab weq 3bitr4i
       eqeq1 bitri cop cproj2 csn df-op eleq2i elun vex phiex snex phi011 equcom
@@ -36160,8 +36182,8 @@ $)
   ${
     $d A z w t u v $.  $d B z w t u v $.  $d C t z $.
     $( Express equality to an ordered pair. $)
-    eqop $p |- ( A = <. B , C >. <-> 
-       A. z ( z e. A <-> 
+    eqop $p |- ( A = <. B , C >. <->
+       A. z ( z e. A <->
           ( E. t e. B z = Phi t \/ E. t e. C z = ( Phi t u. { 0c } ) ) ) ) $=
       ( cop wceq cv wcel wb wal cphi wrex c0c csn cun wo cab bitri abid orbi12i
       dfcleq df-op eleq2i elun bibi2i albii ) CDEFZGAHZCIZUIUHIZJZAKUJUIBHLZGBD
@@ -36199,22 +36221,22 @@ $)
     $d A x y $.  $d B x y $.
     $( The phi operation distributes over union. $)
     phiun $p |- Phi ( A u. B ) = ( Phi A u. Phi B ) $=
-       ( vx vy cv cnnc wcel c1c cplc cif wceq cun wrex cab wo cphi rexun df-phi
-       abbii uneq12i unab eqtri 3eqtr4i ) CEDEZFGUDHIUDJKZDABLZMZCNUEDAMZUEDBMZ
-       OZCNZUFPAPZBPZLZUGUJCUEDABQSDCUFRUNUHCNZUICNZLUKULUOUMUPDCARDCBRTUHUICUA
-       UBUC $.
-       $( [20-Feb-2015] $)
+      ( vx vy cv cnnc wcel c1c cplc cif wceq cun wrex cab wo rexun abbii df-phi
+      cphi uneq12i unab eqtri 3eqtr4i ) CEDEZFGUDHIUDJKZDABLZMZCNUEDAMZUEDBMZOZ
+      CNZUFSASZBSZLZUGUJCUEDABPQDCUFRUNUHCNZUICNZLUKULUOUMUPDCARDCBRTUHUICUAUBU
+      C $.
+      $( [20-Feb-2015] $)
 
     $( The phi operation applied to a set disjoint from the naturals has no
        effect. $)
     phidisjnn $p |- ( ( A i^i Nn ) = (/) -> Phi A = A ) $=
-       ( vx vy cnnc cin c0 wceq cv wcel c1c cplc cif wrex wb wal cphi weq wa wn
-       syl6bbr wral disj biimpi r19.21bi iffalse eqeq2d equcom rexbidva alrimiv
-       syl risset cab df-phi eqeq1i abeq1 bitri sylibr ) ADEFGZBHZCHZDIZUTJKZUT
-       LZGZCAMZUSAIZNZBOZAPZAGZURVGBURVECBQZCAMVFURVDVKCAURUTAIRZVDBCQVKVLVCUTU
-       SVLVASZVCUTGURVMCAURVMCAUACADUBUCUDVAVBUTUEUJUFCBUGTUHCUSAUKTUIVJVEBULZA
-       GVHVIVNACBAUMUNVEBAUOUPUQ $.
-       $( [20-Feb-2015] $)
+      ( vx vy cnnc cin c0 wceq cv wcel c1c cplc cif wrex wb wal cphi wa syl6bbr
+      weq wn wral disj biimpi r19.21bi iffalse syl eqeq2d equcom risset alrimiv
+      rexbidva cab df-phi eqeq1i abeq1 bitri sylibr ) ADEFGZBHZCHZDIZUTJKZUTLZG
+      ZCAMZUSAIZNZBOZAPZAGZURVGBURVECBSZCAMVFURVDVKCAURUTAIQZVDBCSVKVLVCUTUSVLV
+      ATZVCUTGURVMCAURVMCAUACADUBUCUDVAVBUTUEUFUGCBUHRUKCUSAUIRUJVJVEBULZAGVHVI
+      VNACBAUMUNVEBAUOUPUQ $.
+      $( [20-Feb-2015] $)
   $}
 
 
@@ -37206,7 +37228,7 @@ $)
   ${
     $d x y z w $.
     $( Define a function that swaps the two elements of an ordered pair. $)
-    df-swap $a |- Swap = { <. x , y >. | 
+    df-swap $a |- Swap = { <. x , y >. |
              E. z E. w ( x = <. z , w >. /\ y = <. w , z >. ) } $.
   $}
 
@@ -37231,7 +37253,7 @@ $)
   ${
     $d A x y z w $.
     $( Define the singleton image of a class. $)
-    df-si $a |- SI A = { <. x , y >. | 
+    df-si $a |- SI A = { <. x , y >. |
        E. z E. w ( x = { z } /\ y = { w } /\ z A w ) } $.
   $}
 
@@ -37267,15 +37289,15 @@ $)
     setconslem1.1 $e |- A e. _V $.
     setconslem1.2 $e |- B e. _V $.
     $( Lemma for the set construction theorems. $)
-    setconslem1 $p |- ( << { A } , B >> e. 
+    setconslem1 $p |- ( << { A } , B >> e.
                  ( SSet_k o._k SI_k `'_k Image_k ( ( Image_k ( ( Ins3_k ~ ( (
-        Ins3_k SSet_k i^i Ins2_k SSet_k ) "_k ~P1 ~P1 1c ) \ 
-      ( ( Ins2_k Ins2_k SSet_k 
-          (+) 
+        Ins3_k SSet_k i^i Ins2_k SSet_k ) "_k ~P1 ~P1 1c ) \
+      ( ( Ins2_k Ins2_k SSet_k
+          (+)
           ( Ins2_k Ins3_k SSet_k u.
-            Ins3_k SI_k SI_k SSet_k ) ) 
-            "_k ~P1 ~P1 ~P1 ~P1 1c ) ) 
-  "_k ~P1 ~P1 1c ) i^i ( Nn X._k _V ) ) u. 
+            Ins3_k SI_k SI_k SSet_k ) )
+            "_k ~P1 ~P1 ~P1 ~P1 1c ) )
+  "_k ~P1 ~P1 1c ) i^i ( Nn X._k _V ) ) u.
   ( _I_k i^i ( ~ Nn X._k _V ) ) ) ) <->
                 E. x e. B A = Phi x ) $=
       ( vt vz csn cv copk cssetk cins3k cpw1 cimak cvv wcel wa wex wceq exbii
@@ -37295,19 +37317,19 @@ $)
       $( [6-Jan-2015] $)
 
     $( Lemma for the set construction theorems. $)
-    setconslem2 $p |- ( << { A } , B >> e. ( ( Ins2_k SSet_k i^i 
+    setconslem2 $p |- ( << { A } , B >> e. ( ( Ins2_k SSet_k i^i
     Ins3_k SI_k ~ ( ( Ins2_k SSet_k (+)
          Ins3_k ( ( `'_k Image_k ( ( Image_k ( ( Ins3_k ~ ( ( Ins3_k SSet_k i^i
-        Ins2_k SSet_k ) "_k ~P1 ~P1 1c ) \ 
-      ( ( Ins2_k Ins2_k SSet_k 
-          (+) 
+        Ins2_k SSet_k ) "_k ~P1 ~P1 1c ) \
+      ( ( Ins2_k Ins2_k SSet_k
+          (+)
           ( Ins2_k Ins3_k SSet_k u.
-            Ins3_k SI_k SI_k SSet_k ) ) 
-            "_k ~P1 ~P1 ~P1 ~P1 1c ) ) 
-  "_k ~P1 ~P1 1c ) i^i ( Nn X._k _V ) ) u. 
+            Ins3_k SI_k SI_k SSet_k ) )
+            "_k ~P1 ~P1 ~P1 ~P1 1c ) )
+  "_k ~P1 ~P1 1c ) i^i ( Nn X._k _V ) ) u.
   ( _I_k i^i ( ~ Nn X._k _V ) ) ) o._k SSet_k ) u. ( { { 0c } } X._k _V ) ) )
-        "_k 
-         ~P1 ~P1 1c ) ) 
+        "_k
+         ~P1 ~P1 1c ) )
     "_k ~P1 ~P1 1c ) <->
          E. x e. B A = ( Phi x u. { 0c } ) ) $=
       ( vt vy vz csn copk cssetk cins3k cimak cvv wcel wceq wex 3bitr4i bitri
@@ -37348,29 +37370,29 @@ $)
        Kuratowski and Quine ordered pairs. $)
     setconslem3 $p |- ( << { { A } } , << B , C >> >> e.
         ~ ( ( Ins3_k SI_k SI_k SSet_k (+)
-          Ins2_k 
+          Ins2_k
             ( Ins3_k ( SSet_k o._k SI_k `'_k Image_k ( ( Image_k ( ( Ins3_k ~ (
-        ( Ins3_k SSet_k i^i Ins2_k SSet_k ) "_k ~P1 ~P1 1c ) \ 
-      ( ( Ins2_k Ins2_k SSet_k 
-          (+) 
+        ( Ins3_k SSet_k i^i Ins2_k SSet_k ) "_k ~P1 ~P1 1c ) \
+      ( ( Ins2_k Ins2_k SSet_k
+          (+)
           ( Ins2_k Ins3_k SSet_k u.
-            Ins3_k SI_k SI_k SSet_k ) ) 
-            "_k ~P1 ~P1 ~P1 ~P1 1c ) ) 
-  "_k ~P1 ~P1 1c ) i^i ( Nn X._k _V ) ) u. 
+            Ins3_k SI_k SI_k SSet_k ) )
+            "_k ~P1 ~P1 ~P1 ~P1 1c ) )
+  "_k ~P1 ~P1 1c ) i^i ( Nn X._k _V ) ) u.
   ( _I_k i^i ( ~ Nn X._k _V ) ) ) ) u.
-              Ins2_k ( ( Ins2_k SSet_k i^i 
+              Ins2_k ( ( Ins2_k SSet_k i^i
     Ins3_k SI_k ~ ( ( Ins2_k SSet_k (+)
          Ins3_k ( ( `'_k Image_k ( ( Image_k ( ( Ins3_k ~ ( ( Ins3_k SSet_k i^i
-        Ins2_k SSet_k ) "_k ~P1 ~P1 1c ) \ 
-      ( ( Ins2_k Ins2_k SSet_k 
-          (+) 
+        Ins2_k SSet_k ) "_k ~P1 ~P1 1c ) \
+      ( ( Ins2_k Ins2_k SSet_k
+          (+)
           ( Ins2_k Ins3_k SSet_k u.
-            Ins3_k SI_k SI_k SSet_k ) ) 
-            "_k ~P1 ~P1 ~P1 ~P1 1c ) ) 
-  "_k ~P1 ~P1 1c ) i^i ( Nn X._k _V ) ) u. 
+            Ins3_k SI_k SI_k SSet_k ) )
+            "_k ~P1 ~P1 ~P1 ~P1 1c ) )
+  "_k ~P1 ~P1 1c ) i^i ( Nn X._k _V ) ) u.
   ( _I_k i^i ( ~ Nn X._k _V ) ) ) o._k SSet_k ) u. ( { { 0c } } X._k _V ) ) )
-        "_k 
-         ~P1 ~P1 1c ) ) 
+        "_k
+         ~P1 ~P1 1c ) )
     "_k ~P1 ~P1 1c ) ) ) "_k
           ~P1 ~P1 ~P1 ~P1 1c ) <-> A = <. B , C >. ) $=
       ( vx vy vt wcel wceq csn cun copk cssetk cins3k cins2k cimak wex snex c0c
@@ -37396,48 +37418,48 @@ $)
     $d A x y z t $.
     $( Lemma for set construction functions.  Create a mapping between the two
        types of ordered pair abstractions. $)
-    setconslem4 $p |- U.1 U.1 ( ( ( ( _V X._k _V ) X._k _V ) i^i 
+    setconslem4 $p |- U.1 U.1 ( ( ( ( _V X._k _V ) X._k _V ) i^i
      `'_k ~ ( ( Ins3_k SI_k SI_k SSet_k (+)
-          Ins2_k 
+          Ins2_k
             ( Ins3_k ( SSet_k o._k SI_k `'_k Image_k ( ( Image_k ( ( Ins3_k ~ (
-        ( Ins3_k SSet_k i^i Ins2_k SSet_k ) "_k ~P1 ~P1 1c ) \ 
-      ( ( Ins2_k Ins2_k SSet_k 
-          (+) 
+        ( Ins3_k SSet_k i^i Ins2_k SSet_k ) "_k ~P1 ~P1 1c ) \
+      ( ( Ins2_k Ins2_k SSet_k
+          (+)
           ( Ins2_k Ins3_k SSet_k u.
-            Ins3_k SI_k SI_k SSet_k ) ) 
-            "_k ~P1 ~P1 ~P1 ~P1 1c ) ) 
-  "_k ~P1 ~P1 1c ) i^i ( Nn X._k _V ) ) u. 
+            Ins3_k SI_k SI_k SSet_k ) )
+            "_k ~P1 ~P1 ~P1 ~P1 1c ) )
+  "_k ~P1 ~P1 1c ) i^i ( Nn X._k _V ) ) u.
   ( _I_k i^i ( ~ Nn X._k _V ) ) ) ) u.
-              Ins2_k ( ( Ins2_k SSet_k i^i 
+              Ins2_k ( ( Ins2_k SSet_k i^i
     Ins3_k SI_k ~ ( ( Ins2_k SSet_k (+)
          Ins3_k ( ( `'_k Image_k ( ( Image_k ( ( Ins3_k ~ ( ( Ins3_k SSet_k i^i
-        Ins2_k SSet_k ) "_k ~P1 ~P1 1c ) \ 
-      ( ( Ins2_k Ins2_k SSet_k 
-          (+) 
+        Ins2_k SSet_k ) "_k ~P1 ~P1 1c ) \
+      ( ( Ins2_k Ins2_k SSet_k
+          (+)
           ( Ins2_k Ins3_k SSet_k u.
-            Ins3_k SI_k SI_k SSet_k ) ) 
-            "_k ~P1 ~P1 ~P1 ~P1 1c ) ) 
-  "_k ~P1 ~P1 1c ) i^i ( Nn X._k _V ) ) u. 
+            Ins3_k SI_k SI_k SSet_k ) )
+            "_k ~P1 ~P1 ~P1 ~P1 1c ) )
+  "_k ~P1 ~P1 1c ) i^i ( Nn X._k _V ) ) u.
   ( _I_k i^i ( ~ Nn X._k _V ) ) ) o._k SSet_k ) u. ( { { 0c } } X._k _V ) ) )
-        "_k 
-         ~P1 ~P1 1c ) ) 
+        "_k
+         ~P1 ~P1 1c ) )
     "_k ~P1 ~P1 1c ) ) ) "_k
           ~P1 ~P1 ~P1 ~P1 1c ) ) "_k A ) =
     { <. x , y >. | << x , y >> e. A } $=
       ( vt cvv cxpk cssetk csik cins3k cins2k cin cpw1 cimak ccompl cun wcel wa
-      csn wex bitri c1c csymdif cdif cimagek cnnc cidk ccnvk ccomk c0c cuni1
-      vz cv copk cop wceq wrex snex elimak df-rex elin anbi2i an12 vex opkelxpk
-      copab mpbiran2 elvvk anbi1i bitr4i exbii exrot3 opkex eleq1 opkeq1 eleq1d
-      19.41vv anbi12d ceqsexv opkelcnvk setconslem3 ancom 2exbii elopab 3bitr4i
-      eluni1 eqriv ) UKEEFZEFZGHHIZGGIZGJZKUALLZMNIWKJWJJWIOUBWLLLZMUCWLMUDU
-      EEFKUFUENEFKOUDUGZHUHIWKWKWNGUHUIRREFOIUBWLMNHIKWLMJOJUBWMMNZUGZKZCMZUJZU
-      JZAULZBULZUMZCPZABVEZUKULZRZRZWRPZXFXAXBUNUOZXDQZBSASZXFWTPZXFXEPXIDULZXH
-      UMZWQPZDCUPZXLDWQCXHXGUQZURXQXNXCUOZXNCPZXOWPPZQZQZDSZBSASZXLXQXTXPQZDSZY
-      EXPDCUSYGYCBSASZDSYEYFYHDYFXTXOWHPZYAQZQZYHXPYJXTXOWHWPUTVAYKYIYBQZYHXTYI
-      YAVBYLXSBSASZYBQYHYIYMYBYIXNWGPZYMYIYNXHEPXRXNXHWGEDVCXRVDVFABXNVGTVHXSYB
-      ABVPVITTVJYCDABVKTTYDXKABYDXDXCXHUMZWPPZQZXKYBYQDXCXAXBVLZXSXTXDYAYPXNXCC
-      VMXSXOYOWPXNXCXHVNVOVQVRYQXDXJQXKYPXJXDYPXHXCUMWOPXJXCXHWOYRXRVSXFXAXBUKV
-      CZAVCBVCVTTVAXDXJWATTWBTTXMXGWSPXIXFWSYSWEXGWRXFUQWETXDABXFWCWDWF $.
+      csn wex bitri vz c1c csymdif cdif cimagek cnnc cidk ccnvk ccomk c0c cuni1
+      copk copab cop wceq wrex snex elimak df-rex elin anbi2i an12 vex opkelxpk
+      cv mpbiran2 elvvk anbi1i 19.41vv bitr4i exbii exrot3 opkex opkeq1 anbi12d
+      eleq1 eleq1d ceqsexv setconslem3 ancom 2exbii eluni1 elopab 3bitr4i eqriv
+      opkelcnvk ) UAEEFZEFZGHHIZGGIZGJZKUBLLZMNIWKJWJJWIOUCWLLLZMUDWLMUEUFEFKUG
+      UFNEFKOUEUHZHUIIWKWKWNGUIUJRREFOIUCWLMNHIKWLMJOJUCWMMNZUHZKZCMZUKZUKZAVEZ
+      BVEZULZCPZABUMZUAVEZRZRZWRPZXFXAXBUNUOZXDQZBSASZXFWTPZXFXEPXIDVEZXHULZWQP
+      ZDCUPZXLDWQCXHXGUQZURXQXNXCUOZXNCPZXOWPPZQZQZDSZBSASZXLXQXTXPQZDSZYEXPDCU
+      SYGYCBSASZDSYEYFYHDYFXTXOWHPZYAQZQZYHXPYJXTXOWHWPUTVAYKYIYBQZYHXTYIYAVBYL
+      XSBSASZYBQYHYIYMYBYIXNWGPZYMYIYNXHEPXRXNXHWGEDVCXRVDVFABXNVGTVHXSYBABVIVJ
+      TTVKYCDABVLTTYDXKABYDXDXCXHULZWPPZQZXKYBYQDXCXAXBVMZXSXTXDYAYPXNXCCVPXSXO
+      YOWPXNXCXHVNVQVOVRYQXDXJQXKYPXJXDYPXHXCULWOPXJXCXHWOYRXRWFXFXAXBUAVCZAVCB
+      VCVSTVAXDXJVTTTWATTXMXGWSPXIXFWSYSWBXGWRXFUQWBTXDABXFWCWDWE $.
       $( [7-Jan-2015] $)
   $}
 
@@ -37445,29 +37467,29 @@ $)
   $( Lemma for set construction theorems.  The big expression in the middle of
      ~ setconslem4 forms a set. $)
   setconslem5 $p |- ~ ( ( Ins3_k SI_k SI_k SSet_k (+)
-          Ins2_k 
+          Ins2_k
             ( Ins3_k ( SSet_k o._k SI_k `'_k Image_k ( ( Image_k ( ( Ins3_k ~ (
-      ( Ins3_k SSet_k i^i Ins2_k SSet_k ) "_k ~P1 ~P1 1c ) \ 
-      ( ( Ins2_k Ins2_k SSet_k 
-          (+) 
+      ( Ins3_k SSet_k i^i Ins2_k SSet_k ) "_k ~P1 ~P1 1c ) \
+      ( ( Ins2_k Ins2_k SSet_k
+          (+)
           ( Ins2_k Ins3_k SSet_k u.
-            Ins3_k SI_k SI_k SSet_k ) ) 
-            "_k ~P1 ~P1 ~P1 ~P1 1c ) ) 
-  "_k ~P1 ~P1 1c ) i^i ( Nn X._k _V ) ) u. 
+            Ins3_k SI_k SI_k SSet_k ) )
+            "_k ~P1 ~P1 ~P1 ~P1 1c ) )
+  "_k ~P1 ~P1 1c ) i^i ( Nn X._k _V ) ) u.
   ( _I_k i^i ( ~ Nn X._k _V ) ) ) ) u.
-              Ins2_k ( ( Ins2_k SSet_k i^i 
+              Ins2_k ( ( Ins2_k SSet_k i^i
     Ins3_k SI_k ~ ( ( Ins2_k SSet_k (+)
          Ins3_k ( ( `'_k Image_k ( ( Image_k ( ( Ins3_k ~ ( ( Ins3_k SSet_k i^i
-      Ins2_k SSet_k ) "_k ~P1 ~P1 1c ) \ 
-      ( ( Ins2_k Ins2_k SSet_k 
-          (+) 
+      Ins2_k SSet_k ) "_k ~P1 ~P1 1c ) \
+      ( ( Ins2_k Ins2_k SSet_k
+          (+)
           ( Ins2_k Ins3_k SSet_k u.
-            Ins3_k SI_k SI_k SSet_k ) ) 
-            "_k ~P1 ~P1 ~P1 ~P1 1c ) ) 
-  "_k ~P1 ~P1 1c ) i^i ( Nn X._k _V ) ) u. 
+            Ins3_k SI_k SI_k SSet_k ) )
+            "_k ~P1 ~P1 ~P1 ~P1 1c ) )
+  "_k ~P1 ~P1 1c ) i^i ( Nn X._k _V ) ) u.
   ( _I_k i^i ( ~ Nn X._k _V ) ) ) o._k SSet_k ) u. ( { { 0c } } X._k _V ) ) )
-      "_k 
-         ~P1 ~P1 1c ) ) 
+      "_k
+         ~P1 ~P1 1c ) )
     "_k ~P1 ~P1 1c ) ) ) "_k
           ~P1 ~P1 ~P1 ~P1 1c ) e. _V $=
     ( cssetk csik cins3k cins2k cin cpw1 cimak ccompl cun csymdif cnnc cvv cxpk
@@ -37484,31 +37506,31 @@ $)
     $d A x y z w t $.
     $( Lemma for the set construction functions.  Invert the expression from
        ~ setconslem4 . $)
-    setconslem6 $p |- ( ( ( _V X._k ( _V X._k _V ) ) i^i 
+    setconslem6 $p |- ( ( ( _V X._k ( _V X._k _V ) ) i^i
      ~ ( ( Ins3_k SI_k SI_k SSet_k (+)
-          Ins2_k 
+          Ins2_k
             ( Ins3_k ( SSet_k o._k SI_k `'_k Image_k ( ( Image_k ( ( Ins3_k ~ (
-        ( Ins3_k SSet_k i^i Ins2_k SSet_k ) "_k ~P1 ~P1 1c ) \ 
-      ( ( Ins2_k Ins2_k SSet_k 
-          (+) 
+        ( Ins3_k SSet_k i^i Ins2_k SSet_k ) "_k ~P1 ~P1 1c ) \
+      ( ( Ins2_k Ins2_k SSet_k
+          (+)
           ( Ins2_k Ins3_k SSet_k u.
-            Ins3_k SI_k SI_k SSet_k ) ) 
-            "_k ~P1 ~P1 ~P1 ~P1 1c ) ) 
-  "_k ~P1 ~P1 1c ) i^i ( Nn X._k _V ) ) u. 
+            Ins3_k SI_k SI_k SSet_k ) )
+            "_k ~P1 ~P1 ~P1 ~P1 1c ) )
+  "_k ~P1 ~P1 1c ) i^i ( Nn X._k _V ) ) u.
   ( _I_k i^i ( ~ Nn X._k _V ) ) ) ) u.
-              Ins2_k ( ( Ins2_k SSet_k i^i 
+              Ins2_k ( ( Ins2_k SSet_k i^i
     Ins3_k SI_k ~ ( ( Ins2_k SSet_k (+)
          Ins3_k ( ( `'_k Image_k ( ( Image_k ( ( Ins3_k ~ ( ( Ins3_k SSet_k i^i
-        Ins2_k SSet_k ) "_k ~P1 ~P1 1c ) \ 
-      ( ( Ins2_k Ins2_k SSet_k 
-          (+) 
+        Ins2_k SSet_k ) "_k ~P1 ~P1 1c ) \
+      ( ( Ins2_k Ins2_k SSet_k
+          (+)
           ( Ins2_k Ins3_k SSet_k u.
-            Ins3_k SI_k SI_k SSet_k ) ) 
-            "_k ~P1 ~P1 ~P1 ~P1 1c ) ) 
-  "_k ~P1 ~P1 1c ) i^i ( Nn X._k _V ) ) u. 
+            Ins3_k SI_k SI_k SSet_k ) )
+            "_k ~P1 ~P1 ~P1 ~P1 1c ) )
+  "_k ~P1 ~P1 1c ) i^i ( Nn X._k _V ) ) u.
   ( _I_k i^i ( ~ Nn X._k _V ) ) ) o._k SSet_k ) u. ( { { 0c } } X._k _V ) ) )
-        "_k 
-         ~P1 ~P1 1c ) ) 
+        "_k
+         ~P1 ~P1 1c ) )
     "_k ~P1 ~P1 1c ) ) ) "_k
           ~P1 ~P1 ~P1 ~P1 1c ) ) "_k ~P1 ~P1 A ) =
     { z | E. x E. y ( z = << x , y >> /\ <. x , y >. e. A ) } $=
@@ -37540,30 +37562,30 @@ $)
     $( Lemma for the set construction theorems.  Reorganized version of
        ~ setconslem3 . $)
     setconslem7 $p |- ( << { { C } } , << A , B >> >> e. ~ ( ( Ins2_k Ins3_k
-        SSet_k (+) 
+        SSet_k (+)
         ( Ins2_k Ins2_k ( SSet_k o._k SI_k `'_k Image_k ( ( Image_k ( ( Ins3_k
-        ~ ( ( Ins3_k SSet_k i^i Ins2_k SSet_k ) "_k ~P1 ~P1 1c ) \ 
-      ( ( Ins2_k Ins2_k SSet_k 
-          (+) 
+        ~ ( ( Ins3_k SSet_k i^i Ins2_k SSet_k ) "_k ~P1 ~P1 1c ) \
+      ( ( Ins2_k Ins2_k SSet_k
+          (+)
           ( Ins2_k Ins3_k SSet_k u.
-            Ins3_k SI_k SI_k SSet_k ) ) 
-            "_k ~P1 ~P1 ~P1 ~P1 1c ) ) 
-  "_k ~P1 ~P1 1c ) i^i ( Nn X._k _V ) ) u. 
+            Ins3_k SI_k SI_k SSet_k ) )
+            "_k ~P1 ~P1 ~P1 ~P1 1c ) )
+  "_k ~P1 ~P1 1c ) i^i ( Nn X._k _V ) ) u.
   ( _I_k i^i ( ~ Nn X._k _V ) ) ) ) u.
-          Ins3_k SI_k SI_k ( ( Ins2_k SSet_k i^i 
+          Ins3_k SI_k SI_k ( ( Ins2_k SSet_k i^i
     Ins3_k SI_k ~ ( ( Ins2_k SSet_k (+)
          Ins3_k ( ( `'_k Image_k ( ( Image_k ( ( Ins3_k ~ ( ( Ins3_k SSet_k i^i
-        Ins2_k SSet_k ) "_k ~P1 ~P1 1c ) \ 
-      ( ( Ins2_k Ins2_k SSet_k 
-          (+) 
+        Ins2_k SSet_k ) "_k ~P1 ~P1 1c ) \
+      ( ( Ins2_k Ins2_k SSet_k
+          (+)
           ( Ins2_k Ins3_k SSet_k u.
-            Ins3_k SI_k SI_k SSet_k ) ) 
-            "_k ~P1 ~P1 ~P1 ~P1 1c ) ) 
-  "_k ~P1 ~P1 1c ) i^i ( Nn X._k _V ) ) u. 
+            Ins3_k SI_k SI_k SSet_k ) )
+            "_k ~P1 ~P1 ~P1 ~P1 1c ) )
+  "_k ~P1 ~P1 1c ) i^i ( Nn X._k _V ) ) u.
   ( _I_k i^i ( ~ Nn X._k _V ) ) ) o._k SSet_k ) u. ( { { 0c } } X._k _V ) ) )
-        "_k 
-         ~P1 ~P1 1c ) ) 
-    "_k ~P1 ~P1 1c ) ) ) 
+        "_k
+         ~P1 ~P1 1c ) )
+    "_k ~P1 ~P1 1c ) ) )
       "_k ~P1 ~P1 ~P1 ~P1 1c ) <-> A = <. B , C >. ) $=
       ( vx vy vt wcel csn cun copk cssetk cins3k cimak csik wex bitri snex cphi
       cv wceq wrex c0c wal cins2k cin c1c cpw1 ccompl csymdif cdif cimagek cnnc
@@ -37589,69 +37611,69 @@ $)
   ${
     $d x y z w a b c t $.
     $( Express the ` 1st ` function via the set construction functions. $)
-    df1st2 $p |- 1st = U.1 U.1 ( ( ( ( _V X._k _V ) X._k _V ) i^i 
+    df1st2 $p |- 1st = U.1 U.1 ( ( ( ( _V X._k _V ) X._k _V ) i^i
      `'_k ~ ( ( Ins3_k SI_k SI_k SSet_k (+)
-          Ins2_k 
+          Ins2_k
             ( Ins3_k ( SSet_k o._k SI_k `'_k Image_k ( ( Image_k ( ( Ins3_k ~ (
-        ( Ins3_k SSet_k i^i Ins2_k SSet_k ) "_k ~P1 ~P1 1c ) \ 
-      ( ( Ins2_k Ins2_k SSet_k 
-          (+) 
+        ( Ins3_k SSet_k i^i Ins2_k SSet_k ) "_k ~P1 ~P1 1c ) \
+      ( ( Ins2_k Ins2_k SSet_k
+          (+)
           ( Ins2_k Ins3_k SSet_k u.
-            Ins3_k SI_k SI_k SSet_k ) ) 
-            "_k ~P1 ~P1 ~P1 ~P1 1c ) ) 
-  "_k ~P1 ~P1 1c ) i^i ( Nn X._k _V ) ) u. 
+            Ins3_k SI_k SI_k SSet_k ) )
+            "_k ~P1 ~P1 ~P1 ~P1 1c ) )
+  "_k ~P1 ~P1 1c ) i^i ( Nn X._k _V ) ) u.
   ( _I_k i^i ( ~ Nn X._k _V ) ) ) ) u.
-              Ins2_k ( ( Ins2_k SSet_k i^i 
+              Ins2_k ( ( Ins2_k SSet_k i^i
     Ins3_k SI_k ~ ( ( Ins2_k SSet_k (+)
          Ins3_k ( ( `'_k Image_k ( ( Image_k ( ( Ins3_k ~ ( ( Ins3_k SSet_k i^i
-        Ins2_k SSet_k ) "_k ~P1 ~P1 1c ) \ 
-      ( ( Ins2_k Ins2_k SSet_k 
-          (+) 
+        Ins2_k SSet_k ) "_k ~P1 ~P1 1c ) \
+      ( ( Ins2_k Ins2_k SSet_k
+          (+)
           ( Ins2_k Ins3_k SSet_k u.
-            Ins3_k SI_k SI_k SSet_k ) ) 
-            "_k ~P1 ~P1 ~P1 ~P1 1c ) ) 
-  "_k ~P1 ~P1 1c ) i^i ( Nn X._k _V ) ) u. 
+            Ins3_k SI_k SI_k SSet_k ) )
+            "_k ~P1 ~P1 ~P1 ~P1 1c ) )
+  "_k ~P1 ~P1 1c ) i^i ( Nn X._k _V ) ) u.
   ( _I_k i^i ( ~ Nn X._k _V ) ) ) o._k SSet_k ) u. ( { { 0c } } X._k _V ) ) )
-        "_k 
-         ~P1 ~P1 1c ) ) 
+        "_k
+         ~P1 ~P1 1c ) )
     "_k ~P1 ~P1 1c ) ) ) "_k
           ~P1 ~P1 ~P1 ~P1 1c ) ) "_k (
-~ ( ( Ins2_k Ins3_k SSet_k (+) 
+~ ( ( Ins2_k Ins3_k SSet_k (+)
         ( Ins2_k Ins2_k ( SSet_k o._k SI_k `'_k Image_k ( ( Image_k ( ( Ins3_k
-        ~ ( ( Ins3_k SSet_k i^i Ins2_k SSet_k ) "_k ~P1 ~P1 1c ) \ 
-      ( ( Ins2_k Ins2_k SSet_k 
-          (+) 
+        ~ ( ( Ins3_k SSet_k i^i Ins2_k SSet_k ) "_k ~P1 ~P1 1c ) \
+      ( ( Ins2_k Ins2_k SSet_k
+          (+)
           ( Ins2_k Ins3_k SSet_k u.
-            Ins3_k SI_k SI_k SSet_k ) ) 
-            "_k ~P1 ~P1 ~P1 ~P1 1c ) ) 
-  "_k ~P1 ~P1 1c ) i^i ( Nn X._k _V ) ) u. 
+            Ins3_k SI_k SI_k SSet_k ) )
+            "_k ~P1 ~P1 ~P1 ~P1 1c ) )
+  "_k ~P1 ~P1 1c ) i^i ( Nn X._k _V ) ) u.
   ( _I_k i^i ( ~ Nn X._k _V ) ) ) ) u.
-          Ins3_k SI_k SI_k ( ( Ins2_k SSet_k i^i 
+          Ins3_k SI_k SI_k ( ( Ins2_k SSet_k i^i
     Ins3_k SI_k ~ ( ( Ins2_k SSet_k (+)
          Ins3_k ( ( `'_k Image_k ( ( Image_k ( ( Ins3_k ~ ( ( Ins3_k SSet_k i^i
-        Ins2_k SSet_k ) "_k ~P1 ~P1 1c ) \ 
-      ( ( Ins2_k Ins2_k SSet_k 
-          (+) 
+        Ins2_k SSet_k ) "_k ~P1 ~P1 1c ) \
+      ( ( Ins2_k Ins2_k SSet_k
+          (+)
           ( Ins2_k Ins3_k SSet_k u.
-            Ins3_k SI_k SI_k SSet_k ) ) 
-            "_k ~P1 ~P1 ~P1 ~P1 1c ) ) 
-  "_k ~P1 ~P1 1c ) i^i ( Nn X._k _V ) ) u. 
+            Ins3_k SI_k SI_k SSet_k ) )
+            "_k ~P1 ~P1 ~P1 ~P1 1c ) )
+  "_k ~P1 ~P1 1c ) i^i ( Nn X._k _V ) ) u.
   ( _I_k i^i ( ~ Nn X._k _V ) ) ) o._k SSet_k ) u. ( { { 0c } } X._k _V ) ) )
-        "_k 
-         ~P1 ~P1 1c ) ) 
-    "_k ~P1 ~P1 1c ) ) ) 
+        "_k
+         ~P1 ~P1 1c ) )
+    "_k ~P1 ~P1 1c ) ) )
       "_k ~P1 ~P1 ~P1 ~P1 1c ) "_k ~P1 1c ) ) $=
       ( vx vy vz vt cssetk cins3k cins2k cin cpw1 cimak ccompl csik cun csymdif
       cv cvv cxpk csn wcel wex copk c1c cdif cimagek cnnc ccnvk ccomk c0c copab
-      cidk wceq cuni1 c1st wa wrex opkex elimak df-rex elpw11c anbi1i 19.41v
-      cop bitr4i exbii excom snex opkeq1 eleq1d ceqsexv vex setconslem7 opabbii
-      bitri setconslem4 df-1st 3eqtr4ri ) AOZBOZUAZEFZGZEVTEGZHUBIZIZJKFWBGWAEL
-      LFZMNWDIIZJUCWDJUDUEPQHUJUEKPQHMUDUFZLUGZGGWBWBWGEUGUHRRPQMFNWDJKLFHWDJZL
-      LFMNWFJKZWCJZSZABUIVQVRCOZVBUKZCTZABUIPPQPQWEWHFWIGMGNWFJKUFHWKJULULUMWLW
-      OABWLDOZWMRZRZUKZWPVSUAZWJSZUNZDTZCTZWOWLXADWCUOZXDDWJWCVSVQVRUPUQXEWPWCS
-      ZXAUNZDTZXDXADWCURXHXBCTZDTXDXGXIDXGWSCTZXAUNXIXFXJXACWPUSUTWSXACVAVCVDXB
-      CDVEVCVMVMXCWNCXCWRVSUAZWJSZWNXAXLDWRWQVFWSWTXKWJWPWRVSVGVHVIVQVRWMAVJBVJ
-      CVJVKVMVDVMVLABWKVNABCVOVP $.
+      cidk cop wceq cuni1 c1st wa wrex opkex elimak df-rex anbi1i 19.41v bitr4i
+      elpw11c exbii excom bitri snex opkeq1 ceqsexv vex setconslem7 setconslem4
+      eleq1d opabbii df-1st 3eqtr4ri ) AOZBOZUAZEFZGZEVTEGZHUBIZIZJKFWBGWAELLFZ
+      MNWDIIZJUCWDJUDUEPQHUJUEKPQHMUDUFZLUGZGGWBWBWGEUGUHRRPQMFNWDJKLFHWDJZLLFM
+      NWFJKZWCJZSZABUIVQVRCOZUKULZCTZABUIPPQPQWEWHFWIGMGNWFJKUFHWKJUMUMUNWLWOAB
+      WLDOZWMRZRZULZWPVSUAZWJSZUOZDTZCTZWOWLXADWCUPZXDDWJWCVSVQVRUQURXEWPWCSZXA
+      UOZDTZXDXADWCUSXHXBCTZDTXDXGXIDXGWSCTZXAUOXIXFXJXACWPVCUTWSXACVAVBVDXBCDV
+      EVBVFVFXCWNCXCWRVSUAZWJSZWNXAXLDWRWQVGWSWTXKWJWPWRVSVHVMVIVQVRWMAVJBVJCVJ
+      VKVFVDVFVNABWKVLABCVOVP $.
       $( [4-Feb-2015] $)
   $}
 
@@ -37659,20 +37681,20 @@ $)
   1stex $p |- 1st e. _V $=
     ( cvv cxpk cssetk csik cins3k cins2k cin cpw1 cimak ccompl cun csymdif cnnc
     vvex xpkex inex ssetkex ins3kex ins2kex imakex c1st cdif cimagek cidk ccnvk
-    c1c ccomk c0c csn cuni1 df1st2 setconslem5 addcexlem 1cex pw1ex imagekex
-    cnvkex nncex idkex complex unex sikex cokex snex symdifex uni1ex eqeltri
-    ) UAAABZABZCDDEZCCEZCFZGUFHZHZIJEVLFVKFZVJKLVNHZHZIUBZVNIZUCZMABZGZUDMJZABZ
-    GZKZUCZUEZDZUGZEVLVLWHCUGZUHUIZUIZABZKZEZLZVNIZJZDZEZGZVNIZFKFLVQIJZUEZGZVO
-    WJFZFZXCDZDZEZKZLZVQIZJZVMIZIZUJZUJAUKXRXQXFXPVIXEVHAAANNONOXDULUQPXOVMXNXM
-    VQVOXLVKCQRSXHXKXGWJCWIQWHWGWFWBWEVTWAVSVRVNUMVMUFUNUOZUOZTUPMAURNOPUDWDUSW
-    CAMURUTNOPVAUPUQZVBVCSSXJXIXCXBVNVLXACQSZWTWSWRWQVNVLWPYBWOWKWNWHCYAQVCWMAW
-    LVDNOVARVEXTTUTVBRPXTTVBVBRVAVEVPVNXTUOUOTUTXSTTVFVFVG $.
+    c1c ccomk c0c cuni1 df1st2 setconslem5 cnvkex addcexlem 1cex pw1ex imagekex
+    csn nncex idkex complex unex sikex cokex snex symdifex uni1ex eqeltri ) UAA
+    ABZABZCDDEZCCEZCFZGUFHZHZIJEVLFVKFZVJKLVNHZHZIUBZVNIZUCZMABZGZUDMJZABZGZKZU
+    CZUEZDZUGZEVLVLWHCUGZUHUQZUQZABZKZEZLZVNIZJZDZEZGZVNIZFKFLVQIJZUEZGZVOWJFZF
+    ZXCDZDZEZKZLZVQIZJZVMIZIZUIZUIAUJXRXQXFXPVIXEVHAAANNONOXDUKULPXOVMXNXMVQVOX
+    LVKCQRSXHXKXGWJCWIQWHWGWFWBWEVTWAVSVRVNUMVMUFUNUOZUOZTUPMAURNOPUDWDUSWCAMUR
+    UTNOPVAUPULZVBVCSSXJXIXCXBVNVLXACQSZWTWSWRWQVNVLWPYBWOWKWNWHCYAQVCWMAWLVDNO
+    VARVEXTTUTVBRPXTTVBVBRVAVEVPVNXTUOUOTUTXSTTVFVFVG $.
     $( [6-Jan-2015] $)
 
   ${
     $d A x y z w t $.
     $( Membership in the ` Swap ` function. $)
-    elswap $p |- ( A e. Swap <-> 
+    elswap $p |- ( A e. Swap <->
             E. x E. y A = <. <. x , y >. , <. y , x >. >. ) $=
       ( vz vw cswap wcel cv cop wceq wex copab df-swap eleq2i bitri 2exbii opex
       wa vex eqeq2d elopab exrot4 19.42vv w3a df-3an ancom opeq1 opeq2 ceqsex2v
@@ -37688,81 +37710,81 @@ $)
     $d x y z w t u v $.
     $( Express the ` Swap ` function via set construction operators. $)
     dfswap2 $p |- Swap = ( ( ~ ( ( Ins2_k Ins2_k SSet_k (+)
-       ( ( ( Ins2_k 
-( Ins2_k Ins3_k ( SSet_k o._k 
-              SI_k 
+       ( ( ( Ins2_k
+( Ins2_k Ins3_k ( SSet_k o._k
+              SI_k
                `'_k Image_k ( ( Image_k ( ( Ins3_k ~ ( ( Ins3_k SSet_k i^i
-        Ins2_k SSet_k ) "_k ~P1 ~P1 1c ) \ 
-      ( ( Ins2_k Ins2_k SSet_k 
-          (+) 
+        Ins2_k SSet_k ) "_k ~P1 ~P1 1c ) \
+      ( ( Ins2_k Ins2_k SSet_k
+          (+)
           ( Ins2_k Ins3_k SSet_k u.
-            Ins3_k SI_k SI_k SSet_k ) ) 
-            "_k ~P1 ~P1 ~P1 ~P1 1c ) ) 
+            Ins3_k SI_k SI_k SSet_k ) )
+            "_k ~P1 ~P1 ~P1 ~P1 1c ) )
   "_k ~P1 ~P1 1c ) i^i ( Nn X._k _V ) ) u. ( _I_k i^i ( ~ Nn X._k _V ) ) ) ) u.
-  Ins3_k SI_k SI_k ( ( Ins2_k SSet_k i^i 
+  Ins3_k SI_k SI_k ( ( Ins2_k SSet_k i^i
     Ins3_k SI_k ~ ( ( Ins2_k SSet_k (+)
          Ins3_k ( ( `'_k Image_k ( ( Image_k ( ( Ins3_k ~ ( ( Ins3_k SSet_k i^i
-        Ins2_k SSet_k ) "_k ~P1 ~P1 1c ) \ 
-      ( ( Ins2_k Ins2_k SSet_k 
-          (+) 
+        Ins2_k SSet_k ) "_k ~P1 ~P1 1c ) \
+      ( ( Ins2_k Ins2_k SSet_k
+          (+)
           ( Ins2_k Ins3_k SSet_k u.
-            Ins3_k SI_k SI_k SSet_k ) ) 
-            "_k ~P1 ~P1 ~P1 ~P1 1c ) ) 
-  "_k ~P1 ~P1 1c ) i^i ( Nn X._k _V ) ) u. 
+            Ins3_k SI_k SI_k SSet_k ) )
+            "_k ~P1 ~P1 ~P1 ~P1 1c ) )
+  "_k ~P1 ~P1 1c ) i^i ( Nn X._k _V ) ) u.
   ( _I_k i^i ( ~ Nn X._k _V ) ) ) o._k SSet_k ) u. ( { { 0c } } X._k _V ) ) )
-        "_k 
-         ~P1 ~P1 1c ) ) 
-    "_k ~P1 ~P1 1c ) ) i^i 
-          Ins3_k SI_k SI_k SI_k SI_k SI_k 
+        "_k
+         ~P1 ~P1 1c ) )
+    "_k ~P1 ~P1 1c ) ) i^i
+          Ins3_k SI_k SI_k SI_k SI_k SI_k
           Image_k ( ( Image_k ( ( Ins3_k ~ ( ( Ins3_k SSet_k i^i Ins2_k SSet_k
-        ) "_k ~P1 ~P1 1c ) \ 
-      ( ( Ins2_k Ins2_k SSet_k 
-          (+) 
+        ) "_k ~P1 ~P1 1c ) \
+      ( ( Ins2_k Ins2_k SSet_k
+          (+)
           ( Ins2_k Ins3_k SSet_k u.
-            Ins3_k SI_k SI_k SSet_k ) ) 
-            "_k ~P1 ~P1 ~P1 ~P1 1c ) ) 
+            Ins3_k SI_k SI_k SSet_k ) )
+            "_k ~P1 ~P1 ~P1 ~P1 1c ) )
   "_k ~P1 ~P1 1c ) i^i ( Nn X._k _V ) ) u. ( _I_k i^i ( ~ Nn X._k _V ) ) ) )
-        "_k 
-           ~P1 ~P1 ~P1 ~P1 ~P1 ~P1 1c ) u. 
-         ( ( Ins2_k 
-( Ins3_k SI_k SI_k 
-  ( SSet_k o._k 
+        "_k
+           ~P1 ~P1 ~P1 ~P1 ~P1 ~P1 1c ) u.
+         ( ( Ins2_k
+( Ins3_k SI_k SI_k
+  ( SSet_k o._k
     SI_k `'_k Image_k ( ( Image_k ( ( Ins3_k ~ ( ( Ins3_k SSet_k i^i Ins2_k
-        SSet_k ) "_k ~P1 ~P1 1c ) \ 
-      ( ( Ins2_k Ins2_k SSet_k 
-          (+) 
+        SSet_k ) "_k ~P1 ~P1 1c ) \
+      ( ( Ins2_k Ins2_k SSet_k
+          (+)
           ( Ins2_k Ins3_k SSet_k u.
-            Ins3_k SI_k SI_k SSet_k ) ) 
-            "_k ~P1 ~P1 ~P1 ~P1 1c ) ) 
+            Ins3_k SI_k SI_k SSet_k ) )
+            "_k ~P1 ~P1 ~P1 ~P1 1c ) )
   "_k ~P1 ~P1 1c ) i^i ( Nn X._k _V ) ) u. ( _I_k i^i ( ~ Nn X._k _V ) ) ) ) u.
-  Ins2_k Ins3_k ( ( Ins2_k SSet_k i^i 
+  Ins2_k Ins3_k ( ( Ins2_k SSet_k i^i
     Ins3_k SI_k ~ ( ( Ins2_k SSet_k (+)
          Ins3_k ( ( `'_k Image_k ( ( Image_k ( ( Ins3_k ~ ( ( Ins3_k SSet_k i^i
-        Ins2_k SSet_k ) "_k ~P1 ~P1 1c ) \ 
-      ( ( Ins2_k Ins2_k SSet_k 
-          (+) 
+        Ins2_k SSet_k ) "_k ~P1 ~P1 1c ) \
+      ( ( Ins2_k Ins2_k SSet_k
+          (+)
           ( Ins2_k Ins3_k SSet_k u.
-            Ins3_k SI_k SI_k SSet_k ) ) 
-            "_k ~P1 ~P1 ~P1 ~P1 1c ) ) 
-  "_k ~P1 ~P1 1c ) i^i ( Nn X._k _V ) ) u. 
+            Ins3_k SI_k SI_k SSet_k ) )
+            "_k ~P1 ~P1 ~P1 ~P1 1c ) )
+  "_k ~P1 ~P1 1c ) i^i ( Nn X._k _V ) ) u.
   ( _I_k i^i ( ~ Nn X._k _V ) ) ) o._k SSet_k ) u. ( { { 0c } } X._k _V ) ) )
-        "_k 
-         ~P1 ~P1 1c ) ) 
-    "_k ~P1 ~P1 1c ) ) i^i 
-            Ins3_k SI_k SI_k SI_k SI_k SI_k 
-                 ~ ( ( Ins2_k SSet_k (+) 
-                       Ins3_k 
+        "_k
+         ~P1 ~P1 1c ) )
+    "_k ~P1 ~P1 1c ) ) i^i
+            Ins3_k SI_k SI_k SI_k SI_k SI_k
+                 ~ ( ( Ins2_k SSet_k (+)
+                       Ins3_k
 ( ( `'_k Image_k ( ( Image_k ( ( Ins3_k ~ ( ( Ins3_k SSet_k i^i Ins2_k SSet_k )
-        "_k ~P1 ~P1 1c ) \ 
-      ( ( Ins2_k Ins2_k SSet_k 
-          (+) 
+        "_k ~P1 ~P1 1c ) \
+      ( ( Ins2_k Ins2_k SSet_k
+          (+)
           ( Ins2_k Ins3_k SSet_k u.
-            Ins3_k SI_k SI_k SSet_k ) ) 
-            "_k ~P1 ~P1 ~P1 ~P1 1c ) ) 
+            Ins3_k SI_k SI_k SSet_k ) )
+            "_k ~P1 ~P1 ~P1 ~P1 1c ) )
   "_k ~P1 ~P1 1c ) i^i ( Nn X._k _V ) ) u. ( _I_k i^i ( ~ Nn X._k _V ) ) ) o._k
-        SSet_k ) u. 
+        SSet_k ) u.
                               ( { { 0c } } X._k _V ) ) ) "_k
-                   ~P1 ~P1 1c ) ) "_k 
+                   ~P1 ~P1 1c ) ) "_k
            ~P1 ~P1 ~P1 ~P1 ~P1 ~P1 1c ) ) )
                     "_k ~P1 ~P1 ~P1 ~P1 1c )
                "_k ~P1 1c ) "_k _V ) $=
@@ -37838,80 +37860,80 @@ $)
   ${
     $d x y $.
     $( Express the ` SSet ` relationship via the set construction functors. $)
-    dfsset2 $p |- SSet = U.1 U.1 ( ( ( ( _V X._k _V ) X._k _V ) i^i 
+    dfsset2 $p |- SSet = U.1 U.1 ( ( ( ( _V X._k _V ) X._k _V ) i^i
      `'_k ~ ( ( Ins3_k SI_k SI_k SSet_k (+)
-          Ins2_k 
+          Ins2_k
             ( Ins3_k ( SSet_k o._k SI_k `'_k Image_k ( ( Image_k ( ( Ins3_k ~ (
-        ( Ins3_k SSet_k i^i Ins2_k SSet_k ) "_k ~P1 ~P1 1c ) \ 
-      ( ( Ins2_k Ins2_k SSet_k 
-          (+) 
+        ( Ins3_k SSet_k i^i Ins2_k SSet_k ) "_k ~P1 ~P1 1c ) \
+      ( ( Ins2_k Ins2_k SSet_k
+          (+)
           ( Ins2_k Ins3_k SSet_k u.
-            Ins3_k SI_k SI_k SSet_k ) ) 
-            "_k ~P1 ~P1 ~P1 ~P1 1c ) ) 
-  "_k ~P1 ~P1 1c ) i^i ( Nn X._k _V ) ) u. 
+            Ins3_k SI_k SI_k SSet_k ) )
+            "_k ~P1 ~P1 ~P1 ~P1 1c ) )
+  "_k ~P1 ~P1 1c ) i^i ( Nn X._k _V ) ) u.
   ( _I_k i^i ( ~ Nn X._k _V ) ) ) ) u.
-              Ins2_k ( ( Ins2_k SSet_k i^i 
+              Ins2_k ( ( Ins2_k SSet_k i^i
     Ins3_k SI_k ~ ( ( Ins2_k SSet_k (+)
          Ins3_k ( ( `'_k Image_k ( ( Image_k ( ( Ins3_k ~ ( ( Ins3_k SSet_k i^i
-        Ins2_k SSet_k ) "_k ~P1 ~P1 1c ) \ 
-      ( ( Ins2_k Ins2_k SSet_k 
-          (+) 
+        Ins2_k SSet_k ) "_k ~P1 ~P1 1c ) \
+      ( ( Ins2_k Ins2_k SSet_k
+          (+)
           ( Ins2_k Ins3_k SSet_k u.
-            Ins3_k SI_k SI_k SSet_k ) ) 
-            "_k ~P1 ~P1 ~P1 ~P1 1c ) ) 
-  "_k ~P1 ~P1 1c ) i^i ( Nn X._k _V ) ) u. 
+            Ins3_k SI_k SI_k SSet_k ) )
+            "_k ~P1 ~P1 ~P1 ~P1 1c ) )
+  "_k ~P1 ~P1 1c ) i^i ( Nn X._k _V ) ) u.
   ( _I_k i^i ( ~ Nn X._k _V ) ) ) o._k SSet_k ) u. ( { { 0c } } X._k _V ) ) )
-        "_k 
-         ~P1 ~P1 1c ) ) 
+        "_k
+         ~P1 ~P1 1c ) )
     "_k ~P1 ~P1 1c ) ) ) "_k
           ~P1 ~P1 ~P1 ~P1 1c ) ) "_k SSet_k ) $=
       ( vx vy cv cssetk wcel copab cvv cxpk csik cins3k cins2k cin cimak ccompl
-      cpw1 cun csymdif cimagek cnnc ccnvk copk wss c1c cdif cidk ccomk cuni1
-      c0c csn csset vex opkelssetkg mp2an opabbii setconslem4 df-sset 3eqtr4ri
-      wb ) ACZBCZUADEZABFUSUTUBZABFGGHGHDIIJZDDJZDKZLUCOOZMNJVEKVDKVCPQVFOOZMUD
-      VFMRSGHLUESNGHLPRTZIUFJVEVEVHDUFUHUIUIGHPJQVFMNIJLVFMKPKQVGMNTLDMUGUGUJVA
-      VBABUSGEUTGEVAVBURAUKBUKUSUTGGULUMUNABDUOABUPUQ $.
+      cpw1 cun csymdif cimagek cnnc ccnvk copk wss c1c cdif ccomk c0c csn cuni1
+      cidk csset wb vex opkelssetkg mp2an opabbii setconslem4 df-sset 3eqtr4ri
+      ) ACZBCZUADEZABFUSUTUBZABFGGHGHDIIJZDDJZDKZLUCOOZMNJVEKVDKVCPQVFOOZMUDVFM
+      RSGHLUISNGHLPRTZIUEJVEVEVHDUEUFUGUGGHPJQVFMNIJLVFMKPKQVGMNTLDMUHUHUJVAVBA
+      BUSGEUTGEVAVBUKAULBULUSUTGGUMUNUOABDUPABUQUR $.
       $( [7-Jan-2015] $)
   $}
 
   $( The subset relationship is a set. $)
   ssetex $p |- SSet e. _V $=
     ( cvv cxpk cssetk csik cins3k cins2k cin cpw1 cimak ccompl cun csymdif cnnc
-    cimagek ccnvk ccomk csn cuni1 vvex xpkex csset c1c cdif cidk c0c dfsset2
-    setconslem5 cnvkex inex ssetkex imakex uni1ex eqeltri ) UAAABZABZCDDEZCC
-    EZCFZGUBHHZIJEURFUQFUPKLUSHHZIUCUSINMABGUDMJABGKNOZDPEURURVACPUEQQABKELUSIJ
-    DEGUSIFKFLUTIJZOZGZCIZRZRAUFVFVEVDCUOVCUNAAASSTSTVBUGUHUIUJUKULULUM $.
+    cimagek ccnvk ccomk csn cuni1 vvex xpkex csset c1c cdif dfsset2 setconslem5
+    cidk c0c cnvkex inex ssetkex imakex uni1ex eqeltri ) UAAABZABZCDDEZCCEZCFZG
+    UBHHZIJEURFUQFUPKLUSHHZIUCUSINMABGUFMJABGKNOZDPEURURVACPUGQQABKELUSIJDEGUSI
+    FKFLUTIJZOZGZCIZRZRAUDVFVEVDCUOVCUNAAASSTSTVBUEUHUIUJUKULULUM $.
     $( [6-Jan-2015] $)
 
   ${
     $d A x y z t w $.  $d B x y z t w $.
     $( Express the image functor in terms of the set construction functions. $)
     dfima2 $p |- ( A " B ) =
-      ( ( ( ( _V X._k ( _V X._k _V ) ) i^i 
+      ( ( ( ( _V X._k ( _V X._k _V ) ) i^i
      ~ ( ( Ins3_k SI_k SI_k SSet_k (+)
-          Ins2_k 
+          Ins2_k
             ( Ins3_k ( SSet_k o._k SI_k `'_k Image_k ( ( Image_k ( ( Ins3_k ~ (
-        ( Ins3_k SSet_k i^i Ins2_k SSet_k ) "_k ~P1 ~P1 1c ) \ 
-      ( ( Ins2_k Ins2_k SSet_k 
-          (+) 
+        ( Ins3_k SSet_k i^i Ins2_k SSet_k ) "_k ~P1 ~P1 1c ) \
+      ( ( Ins2_k Ins2_k SSet_k
+          (+)
           ( Ins2_k Ins3_k SSet_k u.
-            Ins3_k SI_k SI_k SSet_k ) ) 
-            "_k ~P1 ~P1 ~P1 ~P1 1c ) ) 
-  "_k ~P1 ~P1 1c ) i^i ( Nn X._k _V ) ) u. 
+            Ins3_k SI_k SI_k SSet_k ) )
+            "_k ~P1 ~P1 ~P1 ~P1 1c ) )
+  "_k ~P1 ~P1 1c ) i^i ( Nn X._k _V ) ) u.
   ( _I_k i^i ( ~ Nn X._k _V ) ) ) ) u.
-              Ins2_k ( ( Ins2_k SSet_k i^i 
+              Ins2_k ( ( Ins2_k SSet_k i^i
     Ins3_k SI_k ~ ( ( Ins2_k SSet_k (+)
          Ins3_k ( ( `'_k Image_k ( ( Image_k ( ( Ins3_k ~ ( ( Ins3_k SSet_k i^i
-        Ins2_k SSet_k ) "_k ~P1 ~P1 1c ) \ 
-      ( ( Ins2_k Ins2_k SSet_k 
-          (+) 
+        Ins2_k SSet_k ) "_k ~P1 ~P1 1c ) \
+      ( ( Ins2_k Ins2_k SSet_k
+          (+)
           ( Ins2_k Ins3_k SSet_k u.
-            Ins3_k SI_k SI_k SSet_k ) ) 
-            "_k ~P1 ~P1 ~P1 ~P1 1c ) ) 
-  "_k ~P1 ~P1 1c ) i^i ( Nn X._k _V ) ) u. 
+            Ins3_k SI_k SI_k SSet_k ) )
+            "_k ~P1 ~P1 ~P1 ~P1 1c ) )
+  "_k ~P1 ~P1 1c ) i^i ( Nn X._k _V ) ) u.
   ( _I_k i^i ( ~ Nn X._k _V ) ) ) o._k SSet_k ) u. ( { { 0c } } X._k _V ) ) )
-        "_k 
-         ~P1 ~P1 1c ) ) 
+        "_k
+         ~P1 ~P1 1c ) )
     "_k ~P1 ~P1 1c ) ) ) "_k
           ~P1 ~P1 ~P1 ~P1 1c ) ) "_k ~P1 ~P1 A ) "_k B ) $=
       ( vx vy vw vt cv cvv cxpk cssetk csik cins3k cins2k cin cpw1 cimak ccompl
@@ -37947,114 +37969,114 @@ $)
   ${
     $d A a b c x y z $.  $d B a b c x y z $.
     $( Express Quine composition via Kuratowski composition. $)
-    dfco1 $p |- ( A o. B ) = 
-U.1 U.1 ( ( ( ( _V X._k _V ) X._k _V ) i^i 
+    dfco1 $p |- ( A o. B ) =
+U.1 U.1 ( ( ( ( _V X._k _V ) X._k _V ) i^i
      `'_k ~ ( ( Ins3_k SI_k SI_k SSet_k (+)
-          Ins2_k 
+          Ins2_k
             ( Ins3_k ( SSet_k o._k SI_k `'_k Image_k ( ( Image_k ( ( Ins3_k ~ (
-        ( Ins3_k SSet_k i^i Ins2_k SSet_k ) "_k ~P1 ~P1 1c ) \ 
-      ( ( Ins2_k Ins2_k SSet_k 
-          (+) 
+        ( Ins3_k SSet_k i^i Ins2_k SSet_k ) "_k ~P1 ~P1 1c ) \
+      ( ( Ins2_k Ins2_k SSet_k
+          (+)
           ( Ins2_k Ins3_k SSet_k u.
-            Ins3_k SI_k SI_k SSet_k ) ) 
-            "_k ~P1 ~P1 ~P1 ~P1 1c ) ) 
-  "_k ~P1 ~P1 1c ) i^i ( Nn X._k _V ) ) u. 
+            Ins3_k SI_k SI_k SSet_k ) )
+            "_k ~P1 ~P1 ~P1 ~P1 1c ) )
+  "_k ~P1 ~P1 1c ) i^i ( Nn X._k _V ) ) u.
   ( _I_k i^i ( ~ Nn X._k _V ) ) ) ) u.
-              Ins2_k ( ( Ins2_k SSet_k i^i 
+              Ins2_k ( ( Ins2_k SSet_k i^i
     Ins3_k SI_k ~ ( ( Ins2_k SSet_k (+)
          Ins3_k ( ( `'_k Image_k ( ( Image_k ( ( Ins3_k ~ ( ( Ins3_k SSet_k i^i
-        Ins2_k SSet_k ) "_k ~P1 ~P1 1c ) \ 
-      ( ( Ins2_k Ins2_k SSet_k 
-          (+) 
+        Ins2_k SSet_k ) "_k ~P1 ~P1 1c ) \
+      ( ( Ins2_k Ins2_k SSet_k
+          (+)
           ( Ins2_k Ins3_k SSet_k u.
-            Ins3_k SI_k SI_k SSet_k ) ) 
-            "_k ~P1 ~P1 ~P1 ~P1 1c ) ) 
-  "_k ~P1 ~P1 1c ) i^i ( Nn X._k _V ) ) u. 
+            Ins3_k SI_k SI_k SSet_k ) )
+            "_k ~P1 ~P1 ~P1 ~P1 1c ) )
+  "_k ~P1 ~P1 1c ) i^i ( Nn X._k _V ) ) u.
   ( _I_k i^i ( ~ Nn X._k _V ) ) ) o._k SSet_k ) u. ( { { 0c } } X._k _V ) ) )
-        "_k 
-         ~P1 ~P1 1c ) ) 
+        "_k
+         ~P1 ~P1 1c ) )
     "_k ~P1 ~P1 1c ) ) ) "_k
-          ~P1 ~P1 ~P1 ~P1 1c ) ) "_k 
-( ( ( ( _V X._k ( _V X._k _V ) ) i^i 
+          ~P1 ~P1 ~P1 ~P1 1c ) ) "_k
+( ( ( ( _V X._k ( _V X._k _V ) ) i^i
      ~ ( ( Ins3_k SI_k SI_k SSet_k (+)
-          Ins2_k 
+          Ins2_k
             ( Ins3_k ( SSet_k o._k SI_k `'_k Image_k ( ( Image_k ( ( Ins3_k ~ (
-        ( Ins3_k SSet_k i^i Ins2_k SSet_k ) "_k ~P1 ~P1 1c ) \ 
-      ( ( Ins2_k Ins2_k SSet_k 
-          (+) 
+        ( Ins3_k SSet_k i^i Ins2_k SSet_k ) "_k ~P1 ~P1 1c ) \
+      ( ( Ins2_k Ins2_k SSet_k
+          (+)
           ( Ins2_k Ins3_k SSet_k u.
-            Ins3_k SI_k SI_k SSet_k ) ) 
-            "_k ~P1 ~P1 ~P1 ~P1 1c ) ) 
-  "_k ~P1 ~P1 1c ) i^i ( Nn X._k _V ) ) u. 
+            Ins3_k SI_k SI_k SSet_k ) )
+            "_k ~P1 ~P1 ~P1 ~P1 1c ) )
+  "_k ~P1 ~P1 1c ) i^i ( Nn X._k _V ) ) u.
   ( _I_k i^i ( ~ Nn X._k _V ) ) ) ) u.
-              Ins2_k ( ( Ins2_k SSet_k i^i 
+              Ins2_k ( ( Ins2_k SSet_k i^i
     Ins3_k SI_k ~ ( ( Ins2_k SSet_k (+)
          Ins3_k ( ( `'_k Image_k ( ( Image_k ( ( Ins3_k ~ ( ( Ins3_k SSet_k i^i
-        Ins2_k SSet_k ) "_k ~P1 ~P1 1c ) \ 
-      ( ( Ins2_k Ins2_k SSet_k 
-          (+) 
+        Ins2_k SSet_k ) "_k ~P1 ~P1 1c ) \
+      ( ( Ins2_k Ins2_k SSet_k
+          (+)
           ( Ins2_k Ins3_k SSet_k u.
-            Ins3_k SI_k SI_k SSet_k ) ) 
-            "_k ~P1 ~P1 ~P1 ~P1 1c ) ) 
-  "_k ~P1 ~P1 1c ) i^i ( Nn X._k _V ) ) u. 
+            Ins3_k SI_k SI_k SSet_k ) )
+            "_k ~P1 ~P1 ~P1 ~P1 1c ) )
+  "_k ~P1 ~P1 1c ) i^i ( Nn X._k _V ) ) u.
   ( _I_k i^i ( ~ Nn X._k _V ) ) ) o._k SSet_k ) u. ( { { 0c } } X._k _V ) ) )
-        "_k 
-         ~P1 ~P1 1c ) ) 
+        "_k
+         ~P1 ~P1 1c ) )
     "_k ~P1 ~P1 1c ) ) ) "_k
-          ~P1 ~P1 ~P1 ~P1 1c ) ) "_k ~P1 ~P1 A ) 
-o._k 
-( ( ( _V X._k ( _V X._k _V ) ) i^i 
+          ~P1 ~P1 ~P1 ~P1 1c ) ) "_k ~P1 ~P1 A )
+o._k
+( ( ( _V X._k ( _V X._k _V ) ) i^i
      ~ ( ( Ins3_k SI_k SI_k SSet_k (+)
-          Ins2_k 
+          Ins2_k
             ( Ins3_k ( SSet_k o._k SI_k `'_k Image_k ( ( Image_k ( ( Ins3_k ~ (
-        ( Ins3_k SSet_k i^i Ins2_k SSet_k ) "_k ~P1 ~P1 1c ) \ 
-      ( ( Ins2_k Ins2_k SSet_k 
-          (+) 
+        ( Ins3_k SSet_k i^i Ins2_k SSet_k ) "_k ~P1 ~P1 1c ) \
+      ( ( Ins2_k Ins2_k SSet_k
+          (+)
           ( Ins2_k Ins3_k SSet_k u.
-            Ins3_k SI_k SI_k SSet_k ) ) 
-            "_k ~P1 ~P1 ~P1 ~P1 1c ) ) 
-  "_k ~P1 ~P1 1c ) i^i ( Nn X._k _V ) ) u. 
+            Ins3_k SI_k SI_k SSet_k ) )
+            "_k ~P1 ~P1 ~P1 ~P1 1c ) )
+  "_k ~P1 ~P1 1c ) i^i ( Nn X._k _V ) ) u.
   ( _I_k i^i ( ~ Nn X._k _V ) ) ) ) u.
-              Ins2_k ( ( Ins2_k SSet_k i^i 
+              Ins2_k ( ( Ins2_k SSet_k i^i
     Ins3_k SI_k ~ ( ( Ins2_k SSet_k (+)
          Ins3_k ( ( `'_k Image_k ( ( Image_k ( ( Ins3_k ~ ( ( Ins3_k SSet_k i^i
-        Ins2_k SSet_k ) "_k ~P1 ~P1 1c ) \ 
-      ( ( Ins2_k Ins2_k SSet_k 
-          (+) 
+        Ins2_k SSet_k ) "_k ~P1 ~P1 1c ) \
+      ( ( Ins2_k Ins2_k SSet_k
+          (+)
           ( Ins2_k Ins3_k SSet_k u.
-            Ins3_k SI_k SI_k SSet_k ) ) 
-            "_k ~P1 ~P1 ~P1 ~P1 1c ) ) 
-  "_k ~P1 ~P1 1c ) i^i ( Nn X._k _V ) ) u. 
+            Ins3_k SI_k SI_k SSet_k ) )
+            "_k ~P1 ~P1 ~P1 ~P1 1c ) )
+  "_k ~P1 ~P1 1c ) i^i ( Nn X._k _V ) ) u.
   ( _I_k i^i ( ~ Nn X._k _V ) ) ) o._k SSet_k ) u. ( { { 0c } } X._k _V ) ) )
-        "_k 
-         ~P1 ~P1 1c ) ) 
+        "_k
+         ~P1 ~P1 1c ) )
     "_k ~P1 ~P1 1c ) ) ) "_k
           ~P1 ~P1 ~P1 ~P1 1c ) ) "_k ~P1 ~P1 B ) ) ) $=
       ( vx vy vz va vb vc cv cvv cxpk cssetk csik cins3k cins2k cpw1 cimak wcel
       cin cop copk c1c ccompl cun csymdif cdif cimagek cnnc ccnvk ccomk c0c csn
-      cidk copab wbr wa wex cuni1 ccom vex opkelcok setconslem6 opeq1 eleq1d
-      weq opeq2 opkelopkab df-br bitr4i anbi12i exbii bitri opabbii setconslem4
-      df-co 3eqtr4ri ) CIZDIZUAJJJKZKLMMNZLLNZLOZSUBPPZQUCNWBOWAOVTUDUEWCPPZQUF
-      WCQUGUHJKSUMUHUCJKSUDUGUIZMUJNWBWBWELUJUKULULJKUDNUEWCQUCMNSWCQOUDOUEWDQU
-      CZSZAPPQZWGBPPQZUJZRZCDUNVQEIZBUOZWLVRAUOZUPZEUQZCDUNVSJKWFUISWJQURURABUS
-      WKWPCDWKVQWLUAWIRZWLVRUAWHRZUPZEUQWPEVQVRWHWICUTZDUTZVAWSWOEWQWMWRWNWQVQW
-      LTZBRZWMFIZGIZTZBRVQXETZBRXCHFGWIVQWLFGHBVBFCVEXFXGBXDVQXEVCVDGEVEXGXBBXE
-      WLVQVFVDWTEUTZVGVQWLBVHVIWRWLVRTZARZWNXFARWLXETZARXJHFGWHWLVRFGHAVBFEVEXF
-      XKAXDWLXEVCVDGDVEXKXIAXEVRWLVFVDXHXAVGWLVRAVHVIVJVKVLVMCDWJVNCDEABVOVP $.
+      cidk copab wbr wa wex cuni1 ccom vex opkelcok setconslem6 weq opeq1 opeq2
+      eleq1d opkelopkab df-br bitr4i anbi12i exbii opabbii setconslem4 3eqtr4ri
+      bitri df-co ) CIZDIZUAJJJKZKLMMNZLLNZLOZSUBPPZQUCNWBOWAOVTUDUEWCPPZQUFWCQ
+      UGUHJKSUMUHUCJKSUDUGUIZMUJNWBWBWELUJUKULULJKUDNUEWCQUCMNSWCQOUDOUEWDQUCZS
+      ZAPPQZWGBPPQZUJZRZCDUNVQEIZBUOZWLVRAUOZUPZEUQZCDUNVSJKWFUISWJQURURABUSWKW
+      PCDWKVQWLUAWIRZWLVRUAWHRZUPZEUQWPEVQVRWHWICUTZDUTZVAWSWOEWQWMWRWNWQVQWLTZ
+      BRZWMFIZGIZTZBRVQXETZBRXCHFGWIVQWLFGHBVBFCVCXFXGBXDVQXEVDVFGEVCXGXBBXEWLV
+      QVEVFWTEUTZVGVQWLBVHVIWRWLVRTZARZWNXFARWLXETZARXJHFGWHWLVRFGHAVBFEVCXFXKA
+      XDWLXEVDVFGDVCXKXIAXEVRWLVEVFXHXAVGWLVRAVHVIVJVKVOVLCDWJVMCDEABVPVN $.
       $( [7-Jan-2015] $)
   $}
 
   $( The composition of two sets is a set. $)
   coexg $p |- ( ( A e. V /\ B e. W ) -> ( A o. B ) e. _V ) $=
     ( wcel cvv cxpk cssetk csik cins3k cins2k cin cpw1 cimak ccompl cun csymdif
-    ccomk vvex pw1exg wa ccom c1c cdif cimagek cnnc cidk ccnvk c0c csn cuni1
-    dfco1 xpkex setconslem5 cnvkex syl imakexg sylancr cokexg syl2an uni1exg
-    inex 3syl syl5eqel ) ACEZBDEZUAZABUBFFGZFGZHIIJZHHJZHKZLUCMMZNOJVLKVKKVJPQV
-    MMMZNUDVMNUEUFFGLUGUFOFGLPUEUHZIRJVLVLVOHRUIUJUJFGPJQVMNOIJLVMNKPKQVNNOZUHZ
-    LZFVHGZVPLZAMZMZNZVTBMZMZNZRZNZUKZUKZFABULVGWHFEZWIFEWJFEVGVRFEWGFEZWKVIVQV
-    HFFFSSUMZSUMVPUNUOVBVEWCFEZWFFEZWLVFVEVTFEZWBFEZWNVSVPFVHSWMUMUNVBZVEWAFEWQ
-    ACTWAFTUPVTWBFFUQURVFWPWEFEZWOWRVFWDFEWSBDTWDFTUPVTWEFFUQURWCWFFFUSUTVRWGFF
-    UQURWHFVAWIFVAVCVD $.
+    ccomk vvex pw1exg ccom c1c cdif cimagek cnnc cidk ccnvk c0c csn cuni1 dfco1
+    wa xpkex setconslem5 cnvkex inex imakexg sylancr cokexg syl2an uni1exg 3syl
+    syl syl5eqel ) ACEZBDEZULZABUAFFGZFGZHIIJZHHJZHKZLUBMMZNOJVLKVKKVJPQVMMMZNU
+    CVMNUDUEFGLUFUEOFGLPUDUGZIRJVLVLVOHRUHUIUIFGPJQVMNOIJLVMNKPKQVNNOZUGZLZFVHG
+    ZVPLZAMZMZNZVTBMZMZNZRZNZUJZUJZFABUKVGWHFEZWIFEWJFEVGVRFEWGFEZWKVIVQVHFFFSS
+    UMZSUMVPUNUOUPVEWCFEZWFFEZWLVFVEVTFEZWBFEZWNVSVPFVHSWMUMUNUPZVEWAFEWQACTWAF
+    TVCVTWBFFUQURVFWPWEFEZWOWRVFWDFEWSBDTWDFTVCVTWEFFUQURWCWFFFUSUTVRWGFFUQURWH
+    FVAWIFVAVBVD $.
     $( [7-Jan-2015] $)
 
   ${
@@ -38070,84 +38092,83 @@ o._k
     $d A x y z w a b c $.
     $( Express singleton image in terms of the Kuratowski singleton image. $)
     dfsi2 $p |- SI A =
-U.1 U.1 ( ( ( ( _V X._k _V ) X._k _V ) i^i 
+U.1 U.1 ( ( ( ( _V X._k _V ) X._k _V ) i^i
      `'_k ~ ( ( Ins3_k SI_k SI_k SSet_k (+)
-          Ins2_k 
+          Ins2_k
             ( Ins3_k ( SSet_k o._k SI_k `'_k Image_k ( ( Image_k ( ( Ins3_k ~ (
-        ( Ins3_k SSet_k i^i Ins2_k SSet_k ) "_k ~P1 ~P1 1c ) \ 
-      ( ( Ins2_k Ins2_k SSet_k 
-          (+) 
+        ( Ins3_k SSet_k i^i Ins2_k SSet_k ) "_k ~P1 ~P1 1c ) \
+      ( ( Ins2_k Ins2_k SSet_k
+          (+)
           ( Ins2_k Ins3_k SSet_k u.
-            Ins3_k SI_k SI_k SSet_k ) ) 
-            "_k ~P1 ~P1 ~P1 ~P1 1c ) ) 
-  "_k ~P1 ~P1 1c ) i^i ( Nn X._k _V ) ) u. 
+            Ins3_k SI_k SI_k SSet_k ) )
+            "_k ~P1 ~P1 ~P1 ~P1 1c ) )
+  "_k ~P1 ~P1 1c ) i^i ( Nn X._k _V ) ) u.
   ( _I_k i^i ( ~ Nn X._k _V ) ) ) ) u.
-              Ins2_k ( ( Ins2_k SSet_k i^i 
+              Ins2_k ( ( Ins2_k SSet_k i^i
     Ins3_k SI_k ~ ( ( Ins2_k SSet_k (+)
          Ins3_k ( ( `'_k Image_k ( ( Image_k ( ( Ins3_k ~ ( ( Ins3_k SSet_k i^i
-        Ins2_k SSet_k ) "_k ~P1 ~P1 1c ) \ 
-      ( ( Ins2_k Ins2_k SSet_k 
-          (+) 
+        Ins2_k SSet_k ) "_k ~P1 ~P1 1c ) \
+      ( ( Ins2_k Ins2_k SSet_k
+          (+)
           ( Ins2_k Ins3_k SSet_k u.
-            Ins3_k SI_k SI_k SSet_k ) ) 
-            "_k ~P1 ~P1 ~P1 ~P1 1c ) ) 
-  "_k ~P1 ~P1 1c ) i^i ( Nn X._k _V ) ) u. 
+            Ins3_k SI_k SI_k SSet_k ) )
+            "_k ~P1 ~P1 ~P1 ~P1 1c ) )
+  "_k ~P1 ~P1 1c ) i^i ( Nn X._k _V ) ) u.
   ( _I_k i^i ( ~ Nn X._k _V ) ) ) o._k SSet_k ) u. ( { { 0c } } X._k _V ) ) )
-        "_k 
-         ~P1 ~P1 1c ) ) 
+        "_k
+         ~P1 ~P1 1c ) )
     "_k ~P1 ~P1 1c ) ) ) "_k
-          ~P1 ~P1 ~P1 ~P1 1c ) ) "_k 
-SI_k ( ( ( _V X._k ( _V X._k _V ) ) i^i 
+          ~P1 ~P1 ~P1 ~P1 1c ) ) "_k
+SI_k ( ( ( _V X._k ( _V X._k _V ) ) i^i
      ~ ( ( Ins3_k SI_k SI_k SSet_k (+)
-          Ins2_k 
+          Ins2_k
             ( Ins3_k ( SSet_k o._k SI_k `'_k Image_k ( ( Image_k ( ( Ins3_k ~ (
-        ( Ins3_k SSet_k i^i Ins2_k SSet_k ) "_k ~P1 ~P1 1c ) \ 
-      ( ( Ins2_k Ins2_k SSet_k 
-          (+) 
+        ( Ins3_k SSet_k i^i Ins2_k SSet_k ) "_k ~P1 ~P1 1c ) \
+      ( ( Ins2_k Ins2_k SSet_k
+          (+)
           ( Ins2_k Ins3_k SSet_k u.
-            Ins3_k SI_k SI_k SSet_k ) ) 
-            "_k ~P1 ~P1 ~P1 ~P1 1c ) ) 
-  "_k ~P1 ~P1 1c ) i^i ( Nn X._k _V ) ) u. 
+            Ins3_k SI_k SI_k SSet_k ) )
+            "_k ~P1 ~P1 ~P1 ~P1 1c ) )
+  "_k ~P1 ~P1 1c ) i^i ( Nn X._k _V ) ) u.
   ( _I_k i^i ( ~ Nn X._k _V ) ) ) ) u.
-              Ins2_k ( ( Ins2_k SSet_k i^i 
+              Ins2_k ( ( Ins2_k SSet_k i^i
     Ins3_k SI_k ~ ( ( Ins2_k SSet_k (+)
          Ins3_k ( ( `'_k Image_k ( ( Image_k ( ( Ins3_k ~ ( ( Ins3_k SSet_k i^i
-        Ins2_k SSet_k ) "_k ~P1 ~P1 1c ) \ 
-      ( ( Ins2_k Ins2_k SSet_k 
-          (+) 
+        Ins2_k SSet_k ) "_k ~P1 ~P1 1c ) \
+      ( ( Ins2_k Ins2_k SSet_k
+          (+)
           ( Ins2_k Ins3_k SSet_k u.
-            Ins3_k SI_k SI_k SSet_k ) ) 
-            "_k ~P1 ~P1 ~P1 ~P1 1c ) ) 
-  "_k ~P1 ~P1 1c ) i^i ( Nn X._k _V ) ) u. 
+            Ins3_k SI_k SI_k SSet_k ) )
+            "_k ~P1 ~P1 ~P1 ~P1 1c ) )
+  "_k ~P1 ~P1 1c ) i^i ( Nn X._k _V ) ) u.
   ( _I_k i^i ( ~ Nn X._k _V ) ) ) o._k SSet_k ) u. ( { { 0c } } X._k _V ) ) )
-        "_k 
-         ~P1 ~P1 1c ) ) 
+        "_k
+         ~P1 ~P1 1c ) )
     "_k ~P1 ~P1 1c ) ) ) "_k
           ~P1 ~P1 ~P1 ~P1 1c ) ) "_k ~P1 ~P1 A ) ) $=
       ( vz vw vx vy va vb cv cvv cxpk cssetk csik cins3k cins2k cin cpw1 ccompl
       cimak cun wcel vc copk c1c csymdif cdif cimagek cnnc cidk ccnvk ccomk c0c
-      csn copab wbr w3a wex cuni1 csi wb vex opkelsikg mp2an cop setconslem6
-      wceq weq opeq1 eleq1d opeq2 opkelopkab df-br bitr4i 3anbi3i bitri opabbii
-      2exbii setconslem4 df-si 3eqtr4ri ) BHZCHZUBIIIJZJKLLMZKKMZKNZOUCPPZRQMWE
-      NWDNWCSUDWFPPZRUEWFRUFUGIJOUHUGQIJOSUFUIZLUJMWEWEWHKUJUKULULIJSMUDWFRQLMO
-      WFRNSNUDWGRQZOAPPRZLZTZBCUMVTDHZULVEZWAEHZULVEZWMWOAUNZUOZEUPDUPZBCUMWBIJ
-      WIUIOWKRUQUQAURWLWSBCWLWNWPWMWOUBWJTZUOZEUPDUPZWSVTITWAITWLXBUSBUTCUTDEVT
-      WAWJIIVAVBXAWRDEWTWQWNWPWTWMWOVCZATZWQFHZGHZVCZATWMXFVCZATXDUAFGWJWMWOFGU
-      AAVDFDVFXGXHAXEWMXFVGVHGEVFXHXCAXFWOWMVIVHDUTEUTVJWMWOAVKVLVMVPVNVOBCWKVQ
-      BCDEAVRVS $.
+      csn copab wceq wbr w3a wex cuni1 csi wb vex opkelsikg cop setconslem6 weq
+      mp2an opeq1 eleq1d opeq2 opkelopkab df-br bitr4i 2exbii bitri setconslem4
+      3anbi3i opabbii df-si 3eqtr4ri ) BHZCHZUBIIIJZJKLLMZKKMZKNZOUCPPZRQMWENWD
+      NWCSUDWFPPZRUEWFRUFUGIJOUHUGQIJOSUFUIZLUJMWEWEWHKUJUKULULIJSMUDWFRQLMOWFR
+      NSNUDWGRQZOAPPRZLZTZBCUMVTDHZULUNZWAEHZULUNZWMWOAUOZUPZEUQDUQZBCUMWBIJWIU
+      IOWKRURURAUSWLWSBCWLWNWPWMWOUBWJTZUPZEUQDUQZWSVTITWAITWLXBUTBVACVADEVTWAW
+      JIIVBVFXAWRDEWTWQWNWPWTWMWOVCZATZWQFHZGHZVCZATWMXFVCZATXDUAFGWJWMWOFGUAAV
+      DFDVEXGXHAXEWMXFVGVHGEVEXHXCAXFWOWMVIVHDVAEVAVJWMWOAVKVLVPVMVNVQBCWKVOBCD
+      EAVRVS $.
       $( [7-Jan-2015] $)
   $}
 
   $( The singleton image of a set is a set. $)
   siexg $p |- ( A e. V -> SI A e. _V ) $=
     ( wcel cvv cxpk cssetk csik cins3k cins2k cin cpw1 cimak ccompl cun csymdif
-    cimagek cnnc vvex xpkex 3syl csi c1c cdif cidk ccnvk ccomk c0c csn cuni1
-    dfsi2 pw1exg setconslem5 inex imakexg sikexg cnvkex uni1exg syl5eqel
-    mpan ) ABCZAUADDEZDEZFGGHZFFHZFIZJUBKKZLMHVEIVDIVCNOVFKKZLUCVFLPQDEJUDQMDEJ
-    NPUEZGUFHVEVEVHFUFUGUHUHDENHOVFLMGHJVFLINIOVGLMZUEZJZDVAEZVIJZAKZKZLZGZLZUI
-    ZUIZDAUJUTVRDCZVSDCVTDCUTVPDCZVQDCZWAUTVNDCVODCZWBABUKVNDUKVMDCWDWBVLVIDVAR
-    DDRRSZSULUMVMVODDUNUSTVPDUOVKDCWCWAVBVJVADWERSVIULUPUMVKVQDDUNUSTVRDUQVSDUQ
-    TUR $.
+    cimagek cnnc vvex xpkex 3syl csi c1c cdif cidk ccnvk ccomk c0c cuni1 pw1exg
+    csn dfsi2 setconslem5 inex imakexg mpan sikexg cnvkex uni1exg syl5eqel ) AB
+    CZAUADDEZDEZFGGHZFFHZFIZJUBKKZLMHVEIVDIVCNOVFKKZLUCVFLPQDEJUDQMDEJNPUEZGUFH
+    VEVEVHFUFUGUJUJDENHOVFLMGHJVFLINIOVGLMZUEZJZDVAEZVIJZAKZKZLZGZLZUHZUHZDAUKU
+    TVRDCZVSDCVTDCUTVPDCZVQDCZWAUTVNDCVODCZWBABUIVNDUIVMDCWDWBVLVIDVARDDRRSZSUL
+    UMVMVODDUNUOTVPDUPVKDCWCWAVBVJVADWERSVIULUQUMVKVQDDUNUOTVRDURVSDURTUS $.
     $( [7-Jan-2015] $)
 
   ${
@@ -38220,7 +38241,7 @@ SI_k ( ( ( _V X._k ( _V X._k _V ) ) i^i
     $d w z $.  $d x y $.  $d x z $.  $d y z $.
 
     $( Binary relationship over a singleton image. $)
-    brsi $p |- ( A SI R B <-> 
+    brsi $p |- ( A SI R B <->
           E. x E. y ( A = { x } /\ B = { y } /\ x R y ) ) $=
       ( vz vw wbr cvv wcel wa cv csn wceq w3a wex snex eleq1 eqeq1 2exbidv brex
       csi pm3.2i bi2anan9 mpbiri 3adant3 exlimivv 3anbi1d df-si brabg pm5.21nii
@@ -40760,7 +40781,7 @@ $)
       $( [19-Feb-2015] $)
 
     $( Membership in an image under two unit power classes. $)
-    elimapw12 $p |- ( A e. ( B " ~P1 ~P1 C ) <-> 
+    elimapw12 $p |- ( A e. ( B " ~P1 ~P1 C ) <->
              E. x e. C <. { { x } } , A >. e. B ) $=
       ( vt cpw1 cima wcel cv csn cop wrex elimapw1 wex df-rex wceq elpw1 anbi1i
       wa bitri r19.41v bitr4i exbii rexcom4 opeq1d eleq1d ceqsexv rexbii bitr3i
@@ -40771,7 +40792,7 @@ $)
 
 
     $( Membership in an image under three unit power classes. $)
-    elimapw13 $p |- ( A e. ( B " ~P1 ~P1 ~P1 C ) <-> 
+    elimapw13 $p |- ( A e. ( B " ~P1 ~P1 ~P1 C ) <->
              E. x e. C <. { { { x } } } , A >. e. B ) $=
       ( vt cpw1 cima wcel cv csn cop wrex elimapw12 wa df-rex wceq elpw1 bitr4i
       wex bitri anbi1i r19.41v exbii rexcom4 sneqd opeq1d eleq1d ceqsexv rexbii
@@ -41937,7 +41958,7 @@ $)
   ${
     $d A x y $.  $d B x y $.  $d C x y $.  $d D x y $.
     $( The domain of an unordered pair of ordered pairs. $)
-    dmpropg $p |- ( ( C e. V /\ D e. W ) -> 
+    dmpropg $p |- ( ( C e. V /\ D e. W ) ->
              dom { <. A , C >. , <. B , D >. } = { A , B } ) $=
       ( vx vy cv cop cpr cdm wceq opeq2 preq1d dmeqd eqeq1d preq2d vex dmprop
       vtocl2g ) AGIZJZBHIZJZKZLZABKZMACJZUEKZLZUHMUIBDJZKZLZUHMGHCDEFUBCMZUGUKU
@@ -42244,12 +42265,12 @@ $)
     $d A x $.  $d B x $.  $d R x $.
     $( Binary relationship of composition with identity. $)
     brcoi1 $p |- ( A ( _I o. R ) B <-> A R B ) $=
-       ( vx cid ccom wbr cvv wcel brex simprd cv wceq wa wex ancom wb vex bitri
-       brco ideqg2 ax-mp anbi1i exbii breq2 ceqsexgv syl5bb pm5.21nii ) ABECFZG
-       ZBHIZABCGZUJAHIZUKABUIJKULUMUKABCJKUJDLZBMZAUNCGZNZDOZUKULUJUPUNBEGZNZDO
-       URDABECTUTUQDUTUSUPNUQUPUSPUSUOUPUNHIUSUOQDRUNBHUAUBUCSUDSUPULDBHUNBACUE
-       UFUGUH $.
-       $( [9-Mar-2015] $)
+      ( vx cid ccom wbr cvv wcel brex simprd cv wceq wa wex brco ancom wb bitri
+      vex ideqg2 ax-mp anbi1i exbii breq2 ceqsexgv syl5bb pm5.21nii ) ABECFZGZB
+      HIZABCGZUJAHIZUKABUIJKULUMUKABCJKUJDLZBMZAUNCGZNZDOZUKULUJUPUNBEGZNZDOURD
+      ABECPUTUQDUTUSUPNUQUPUSQUSUOUPUNHIUSUORDTUNBHUAUBUCSUDSUPULDBHUNBACUEUFUG
+      UH $.
+      $( [9-Mar-2015] $)
   $}
 
   $( Composition with a restricted identity relation.  (Contributed by FL,
@@ -46918,52 +46939,51 @@ $)
     $d x y z w t $.
     $( ` 1st ` is a mapping from ` ( _V X. _V ) ` onto the universe. $)
     1stfo $p |- 1st : ( _V X. _V ) -onto-> _V $=
-       ( vx vy vz vw vt cvv c1st wceq cv wbr weq wal cop wex vex br1st mpbir2an
-       wa wcel mpbir cxp wfo wfn crn wfun wrel wi df-1st relopabi anbi12i eeanv
-       cdm bitr4i eqtr2 opth simplbi syl exlimivv sylbi gen2 ax-gen dffun2 eldm
-       exbii elvv 3bitr4i eqriv df-fn eqv equid opbr1st opex breq1 cla4ev ax-mp
-       elrn mpgbir df-fo ) FFUAZFGUBGVSUCZGUDZFHZVTGUEZGULZVSHWCGUFAIZBIZGJZWEC
-       IZGJZRZBCKZUGZCLBLZALWEWFWHMHCNZABGABCUHUIWMAWLBCWJWEWFDIZMZHZWEWHEIZMZH
-       ZRZENDNZWKWJWQDNZWTENZRXBWGXCWIXDDWEWFBOZPEWEWHCOPUJWQWTDEUKUMXAWKDEXAWP
-       WSHZWKWEWPWSUNXFWKDEKWFWOWHWRUOUPUQURUSUTVAABCGVBQAWDVSWGBNWNBNWEWDSWEVS
-       SWGWNBCWEWFXEPVDBWEGVCBCWEVEVFVGGVSVHQWBWEWASZAAWAVIXGWFWEGJZBNZWEWEMZWE
-       GJZXIXKAAKAVJWEWEWEAOZXLVKTXHXKBXJWEWEXLXLVLWFXJWEGVMVNVOBWEGVPTVQVSFGVR
-       Q $.
-       $( [12-Feb-2015] $)
+      ( vx vy vz vw vt cvv c1st wceq cv wbr weq wal cop wex br1st mpbir2an wcel
+      wa vex mpbir cxp wfo wfn crn wfun cdm wrel df-1st relopabi anbi12i bitr4i
+      eeanv eqtr2 opth simplbi syl exlimivv sylbi gen2 ax-gen dffun2 exbii eldm
+      elvv 3bitr4i eqriv df-fn eqv equid opbr1st opex breq1 cla4ev ax-mp mpgbir
+      wi elrn df-fo ) FFUAZFGUBGVSUCZGUDZFHZVTGUEZGUFZVSHWCGUGAIZBIZGJZWECIZGJZ
+      RZBCKZVPZCLBLZALWEWFWHMHCNZABGABCUHUIWMAWLBCWJWEWFDIZMZHZWEWHEIZMZHZRZEND
+      NZWKWJWQDNZWTENZRXBWGXCWIXDDWEWFBSZOEWEWHCSOUJWQWTDEULUKXAWKDEXAWPWSHZWKW
+      EWPWSUMXFWKDEKWFWOWHWRUNUOUPUQURUSUTABCGVAPAWDVSWGBNWNBNWEWDQWEVSQWGWNBCW
+      EWFXEOVBBWEGVCBCWEVDVEVFGVSVGPWBWEWAQZAAWAVHXGWFWEGJZBNZWEWEMZWEGJZXIXKAA
+      KAVIWEWEWEASZXLVJTXHXKBXJWEWEXLXLVKWFXJWEGVLVMVNBWEGVQTVOVSFGVRP $.
+      $( [12-Feb-2015] $)
 
     $( ` 2nd ` is a mapping from ` ( _V X. _V ) ` onto the universe. $)
     2ndfo $p |- 2nd : ( _V X. _V ) -onto-> _V $=
-       ( vx vy vz vw vt cvv c2nd wceq cv wbr weq wal cop wex vex br2nd mpbir2an
-       wa bitr4i wcel cxp wfo wfn crn wfun cdm wi df-2nd relopabi anbi12i eeanv
-       wrel eqtr2 opth simprbi syl exlimivv sylbi gen2 ax-gen dffun2 eldm exbii
-       excom 3bitri elvv eqriv df-fn eqv equid opbr2nd mpbir breq1 cla4ev ax-mp
-       opex elrn mpgbir df-fo ) FFUAZFGUBGVTUCZGUDZFHZWAGUEZGUFZVTHWDGULAIZBIZG
-       JZWFCIZGJZRZBCKZUGZCLBLZALWFWIWGMHZCNZABGABCUHUIWNAWMBCWKWFDIZWGMZHZWFEI
-       ZWIMZHZRZENDNZWLWKWSDNZXBENZRXDWHXEWJXFDWFWGBOZPEWFWICOPUJWSXBDEUKSXCWLD
-       EXCWRXAHZWLWFWRXAUMXHDEKWLWQWGWTWIUNUOUPUQURUSUTABCGVAQAWEVTWFWETZWOBNCN
-       ZWFVTTXIWHBNWPBNXJBWFGVBWHWPBCWFWGXGPVCWOBCVDVECBWFVFSVGGVTVHQWCWFWBTZAA
-       WBVIXKWGWFGJZBNZWFWFMZWFGJZXMXOAAKAVJWFWFWFAOZXPVKVLXLXOBXNWFWFXPXPVPWGX
-       NWFGVMVNVOBWFGVQVLVRVTFGVSQ $.
-       $( [12-Feb-2015] $)
+      ( vx vy vz vw vt cvv c2nd wceq cv wbr wa weq wal cop wex vex br2nd bitr4i
+      mpbir2an wcel cxp wfo wfn crn wfun cdm wrel df-2nd relopabi anbi12i eeanv
+      eqtr2 opth simprbi syl exlimivv sylbi gen2 ax-gen dffun2 eldm exbii excom
+      wi 3bitri elvv eqriv df-fn eqv equid opbr2nd mpbir opex breq1 cla4ev elrn
+      ax-mp mpgbir df-fo ) FFUAZFGUBGVTUCZGUDZFHZWAGUEZGUFZVTHWDGUGAIZBIZGJZWFC
+      IZGJZKZBCLZVDZCMBMZAMWFWIWGNHZCOZABGABCUHUIWNAWMBCWKWFDIZWGNZHZWFEIZWINZH
+      ZKZEODOZWLWKWSDOZXBEOZKXDWHXEWJXFDWFWGBPZQEWFWICPQUJWSXBDEUKRXCWLDEXCWRXA
+      HZWLWFWRXAULXHDELWLWQWGWTWIUMUNUOUPUQURUSABCGUTSAWEVTWFWETZWOBOCOZWFVTTXI
+      WHBOWPBOXJBWFGVAWHWPBCWFWGXGQVBWOBCVCVECBWFVFRVGGVTVHSWCWFWBTZAAWBVIXKWGW
+      FGJZBOZWFWFNZWFGJZXMXOAALAVJWFWFWFAPZXPVKVLXLXOBXNWFWFXPXPVMWGXNWFGVNVOVQ
+      BWFGVPVLVRVTFGVSS $.
+      $( [12-Feb-2015] $)
   $}
 
   ${
     $d A x y z $.
     $( Alternate definition of domain. $)
     dfdm4 $p |- dom A = ( 1st " A ) $=
-       ( vx vy vz cdm c1st cima cv cop wcel wex wbr wrex wceq rexcom4 vex br1st
-       rexbii risset exbii 3bitr4ri eldm2 elima 3bitr4i eqriv ) BAEZFAGZBHZCHIZ
-       AJZCKZDHZUHFLZDAMZUHUFJUHUGJULUINZCKZDAMUODAMZCKUNUKUODCAOUMUPDACULUHBPQ
-       RUJUQCDUIASTUACUHAUBDUHFAUCUDUE $.
-       $( [23-Feb-2015] $)
+      ( vx vy vz cdm c1st cima cv cop wcel wex wbr wrex wceq rexcom4 vex rexbii
+      br1st risset exbii 3bitr4ri eldm2 elima 3bitr4i eqriv ) BAEZFAGZBHZCHIZAJ
+      ZCKZDHZUHFLZDAMZUHUFJUHUGJULUINZCKZDAMUODAMZCKUNUKUODCAOUMUPDACULUHBPRQUJ
+      UQCDUIASTUACUHAUBDUHFAUCUDUE $.
+      $( [23-Feb-2015] $)
 
     $( Alternate definition of range. $)
     dfrn5 $p |- ran A = ( 2nd " A ) $=
-       ( vy vx vz crn c2nd cima cv cop wcel wex wbr wrex wceq rexcom4 vex br2nd
-       rexbii risset exbii 3bitr4ri elrn2 elima 3bitr4i eqriv ) BAEZFAGZCHBHZIZ
-       AJZCKZDHZUHFLZDAMZUHUFJUHUGJULUINZCKZDAMUODAMZCKUNUKUODCAOUMUPDACULUHBPQ
-       RUJUQCDUIASTUACUHAUBDUHFAUCUDUE $.
-       $( [23-Feb-2015] $)
+      ( vy vx vz crn c2nd cima cv cop wcel wex wbr wrex wceq rexcom4 vex rexbii
+      br2nd risset exbii 3bitr4ri elrn2 elima 3bitr4i eqriv ) BAEZFAGZCHBHZIZAJ
+      ZCKZDHZUHFLZDAMZUHUFJUHUGJULUINZCKZDAMUODAMZCKUNUKUODCAOUMUPDACULUHBPRQUJ
+      UQCDUIASTUACUHAUBDUHFAUCUDUE $.
+      $( [23-Feb-2015] $)
   $}
 
   ${
@@ -46973,43 +46993,42 @@ $)
     $( Binary relationship of ` Swap ` . $)
     brswap $p |- ( A Swap B <-> E. x E. y ( A = <. x , y >. /\ B = <. y , x >.
         ) ) $=
-       ( va vb cswap cvv wcel wa cv cop wceq wex vex eleq1 mpbiri eqeq1 2exbidv
-       opex wbr brex anim12i exlimivv anbi1d anbi2d df-swap brabg pm5.21nii ) C
-       DGUACHIZDHIZJZCAKZBKZLZMZDUNUMLZMZJZBNANZCDGUBUSULABUPUJURUKUPUJUOHIUMUN
-       AOZBOZTCUOHPQURUKUQHIUNUMVBVATDUQHPQUCUDEKZUOMZFKZUQMZJZBNANUPVFJZBNANUT
-       EFCDHHGVCCMZVGVHABVIVDUPVFVCCUORUESVEDMZVHUSABVJVFURUPVEDUQRUFSEFABUGUHU
-       I $.
-       $( [23-Feb-2015] $)
+      ( va vb cswap cvv wcel wa cv cop wceq wex opex eleq1 mpbiri eqeq1 2exbidv
+      vex wbr brex anim12i exlimivv anbi1d anbi2d df-swap brabg pm5.21nii ) CDG
+      UACHIZDHIZJZCAKZBKZLZMZDUNUMLZMZJZBNANZCDGUBUSULABUPUJURUKUPUJUOHIUMUNATZ
+      BTZOCUOHPQURUKUQHIUNUMVBVAODUQHPQUCUDEKZUOMZFKZUQMZJZBNANUPVFJZBNANUTEFCD
+      HHGVCCMZVGVHABVIVDUPVFVCCUORUESVEDMZVHUSABVJVFURUPVEDUQRUFSEFABUGUHUI $.
+      $( [23-Feb-2015] $)
   $}
 
   ${
     $d a b x y $.
     $( The converse of ` Swap ` is ` Swap ` . $)
     cnvswap $p |- `' Swap = Swap $=
-       ( va vb vy vx cswap ccnv relcnv relswap cv cop wceq wex wbr ancom 2exbii
-       wa brcnv brswap excom 3bitri 3bitr4i eqbrriv ) ABEFZEEGHBIZCIZDIZJKZAIZU
-       FUEJKZPZCLDLZUIUGPZCLDLUHUDUCMZUHUDEMUJULDCUGUINOUMUDUHEMUJDLCLUKUHUDEQC
-       DUDUHRUJCDSTDCUHUDRUAUB $.
-       $( [23-Feb-2015] $)
+      ( va vb vy vx cswap ccnv relcnv relswap cv cop wceq wa ancom 2exbii brcnv
+      wex wbr brswap excom 3bitri 3bitr4i eqbrriv ) ABEFZEEGHBIZCIZDIZJKZAIZUFU
+      EJKZLZCPDPZUIUGLZCPDPUHUDUCQZUHUDEQUJULDCUGUIMNUMUDUHEQUJDPCPUKUHUDEOCDUD
+      UHRUJCDSTDCUHUDRUAUB $.
+      $( [23-Feb-2015] $)
   $}
 
   ${
     $d p q r x y z w $.
     $( ` Swap ` is a bijection over all ordered pairs. $)
     swapf1o $p |- Swap : ( _V X. _V ) -1-1-onto-> ( _V X. _V ) $=
-       ( vp vq vr vx vy vz vw cvv cswap wfn wceq cv wbr wa weq wal cop mpbir2an
-       wex brswap cxp wf1o ccnv wfun cdm wi relswap anbi12i ee4anv bitr4i eqtr2
-       wrel ancom opth 3bitr4i sylib eqeq12 biimprd mpan9 exlimivv sylbi ax-gen
-       an4s gen2 dffun2 wcel exrot3 vex opex isseti 19.42v mpbiran2 2exbii eldm
-       exbii 3bitri elvv eqriv df-fn cnvswap fneq1i mpbir dff1o4 ) HHUAZWDIUBIW
-       DJZIUCZWDJZWEIUDZIUEZWDKWHIULALZBLZIMZWJCLZIMZNZBCOZUFZCPBPZAPUGWRAWQBCW
-       OWJDLZELZQZKZWKWTWSQZKZNZWJFLZGLZQZKZWMXGXFQZKZNZNZGSFSZESDSZWPWOXEESDSZ
-       XLGSFSZNXOWLXPWNXQDEWJWKTZFGWJWMTUHXEXLDEFGUIUJXNWPDEXMWPFGXBXIXDXKWPXBX
-       INZXCXJKZXDXKNZWPXSXAXHKZXTWJXAXHUKDFOZEGOZNYDYCNYBXTYCYDUMWSWTXFXGUNWTW
-       SXGXFUNUOUPYAWPXTWKXCWMXJUQURUSVCUTUTVAVDVBABCIVERAWIWDWLBSZXBESDSZWJWIV
-       FWJWDVFYEXPBSXEBSZESDSYFWLXPBXRVOXEBDEVGYGXBDEYGXBXDBSBXCWTWSEVHDVHVIVJX
-       BXDBVKVLVMVPBWJIVNDEWJVQUOVRIWDVSRZWGWEYHWDWFIVTWAWBWDWDIWCR $.
-       $( [23-Feb-2015] $)
+      ( vp vq vr vx vy vz vw cvv cswap wfn wceq cv wbr weq wal cop wex mpbir2an
+      wa brswap cxp wf1o ccnv wfun cdm wrel relswap anbi12i ee4anv bitr4i eqtr2
+      wi ancom opth 3bitr4i sylib eqeq12 biimprd mpan9 an4s exlimivv sylbi gen2
+      ax-gen dffun2 wcel exbii exrot3 opex isseti 19.42v mpbiran2 2exbii 3bitri
+      vex eldm elvv eqriv df-fn cnvswap fneq1i mpbir dff1o4 ) HHUAZWDIUBIWDJZIU
+      CZWDJZWEIUDZIUEZWDKWHIUFALZBLZIMZWJCLZIMZSZBCNZULZCOBOZAOUGWRAWQBCWOWJDLZ
+      ELZPZKZWKWTWSPZKZSZWJFLZGLZPZKZWMXGXFPZKZSZSZGQFQZEQDQZWPWOXEEQDQZXLGQFQZ
+      SXOWLXPWNXQDEWJWKTZFGWJWMTUHXEXLDEFGUIUJXNWPDEXMWPFGXBXIXDXKWPXBXISZXCXJK
+      ZXDXKSZWPXSXAXHKZXTWJXAXHUKDFNZEGNZSYDYCSYBXTYCYDUMWSWTXFXGUNWTWSXGXFUNUO
+      UPYAWPXTWKXCWMXJUQURUSUTVAVAVBVCVDABCIVERAWIWDWLBQZXBEQDQZWJWIVFWJWDVFYEX
+      PBQXEBQZEQDQYFWLXPBXRVGXEBDEVHYGXBDEYGXBXDBQBXCWTWSEVODVOVIVJXBXDBVKVLVMV
+      NBWJIVPDEWJVQUOVRIWDVSRZWGWEYHWDWFIVTWAWBWDWDIWCR $.
+      $( [23-Feb-2015] $)
   $}
 
   ${
@@ -47028,13 +47047,13 @@ $)
     xpnedisj.2 $e |- C =/= D $.
     $( Cross products with non-equal singletons are disjoint. $)
     xpnedisj $p |- ( ( A X. { C } ) i^i ( B X. { D } ) ) = (/) $=
-       ( vx vy vz csn cxp cin c0 wceq cv wcel wn disj cop wrex eqeq2d rexbii wa
-       elxp2 opeq2 rexsn bitri wne df-ne mpbi elsni intnan opelxp syl6bb mtbiri
-       mto eleq1 rexlimivw sylbi mprgbir ) ACJZKZBDJZKZLMNGOZVDPZQZGVBGVBVDRVEV
-       BPZVEHOZCSZNZHATZVGVHVEVIIOZSZNZIVATZHATVLHIVEAVAUDVPVKHAVOVKICEVMCNVNVJ
-       VEVMCVIUEUAUFUBUGVKVGHAVKVFVIBPZCVCPZUCZVRVQVRCDNZCDUHVTQFCDUIUJCDUKUPUL
-       VKVFVJVDPVSVEVJVDUQVICBVCUMUNUOURUSUT $.
-       $( [23-Feb-2015] $)
+      ( vx vy vz csn cxp cin c0 wceq cv wcel wn disj cop wrex elxp2 opeq2 rexsn
+      eqeq2d rexbii bitri wa df-ne mpbi elsni intnan eleq1 opelxp syl6bb mtbiri
+      wne mto rexlimivw sylbi mprgbir ) ACJZKZBDJZKZLMNGOZVDPZQZGVBGVBVDRVEVBPZ
+      VEHOZCSZNZHATZVGVHVEVIIOZSZNZIVATZHATVLHIVEAVAUAVPVKHAVOVKICEVMCNVNVJVEVM
+      CVIUBUDUCUEUFVKVGHAVKVFVIBPZCVCPZUGZVRVQVRCDNZCDUPVTQFCDUHUICDUJUQUKVKVFV
+      JVDPVSVEVJVDULVICBVCUMUNUOURUSUT $.
+      $( [23-Feb-2015] $)
   $}
 
   ${
@@ -47042,19 +47061,19 @@ $)
     opfv1st.2 $e |- B e. _V $.
     $( The value of the ` 1st ` function on an ordered pair. $)
     opfv1st $p |- ( 1st ` <. A , B >. ) = A $=
-       ( cop c1st cfv wceq wbr eqid opbr1st mpbir wfun cdm wcel wb cvv cxp mp2b
-       1stfo wfo wf fof ffun opelxp mpbir2an fdm eleqtrri funbrfvb mp2an ) ABEZ
-       FGAHZUKAFIZUMAAHAJABACDKLFMZUKFNZOULUMPQQRZQFUAZUPQFUBZUNTUPQFUCZUPQFUDS
-       UKUPUOUKUPOAQOBQOCDABQQUEUFUQURUOUPHTUSUPQFUGSUHUKAFUIUJL $.
-       $( [23-Feb-2015] $)
+      ( cop c1st cfv wceq wbr eqid opbr1st mpbir wfun cdm wcel wb cvv cxp 1stfo
+      mp2b wfo wf fof ffun opelxp mpbir2an fdm eleqtrri funbrfvb mp2an ) ABEZFG
+      AHZUKAFIZUMAAHAJABACDKLFMZUKFNZOULUMPQQRZQFUAZUPQFUBZUNSUPQFUCZUPQFUDTUKU
+      PUOUKUPOAQOBQOCDABQQUEUFUQURUOUPHSUSUPQFUGTUHUKAFUIUJL $.
+      $( [23-Feb-2015] $)
 
     $( The value of the ` 2nd ` function on an ordered pair. $)
     opfv2nd $p |- ( 2nd ` <. A , B >. ) = B $=
-       ( cop c2nd cfv wceq wbr eqid opbr2nd mpbir wfun cdm wb cvv cxp wfo 2ndfo
-       wcel wf fof ffun mp2b opelxp mpbir2an ax-mp fdmi eleqtrri funbrfvb mp2an
-       ) ABEZFGBHZULBFIZUNBBHBJABBCDKLFMZULFNZTUMUNOPPQZPFRZUQPFUAZUOSUQPFUBZUQ
-       PFUCUDULUQUPULUQTAPTBPTCDABPPUEUFUQPFURUSSUTUGUHUIULBFUJUKL $.
-       $( [23-Feb-2015] $)
+      ( cop c2nd cfv wceq wbr eqid opbr2nd mpbir wfun cdm wcel wb cvv cxp 2ndfo
+      wfo wf fof ffun mp2b opelxp mpbir2an ax-mp fdmi eleqtrri funbrfvb mp2an )
+      ABEZFGBHZULBFIZUNBBHBJABBCDKLFMZULFNZOUMUNPQQRZQFTZUQQFUAZUOSUQQFUBZUQQFU
+      CUDULUQUPULUQOAQOBQOCDABQQUEUFUQQFURUSSUTUGUHUIULBFUJUKL $.
+      $( [23-Feb-2015] $)
   $}
 
   ${
@@ -47062,11 +47081,11 @@ $)
     $( Reconstruction of a member of a cross product in terms of its ordered
        pair components. $)
     1st2nd2 $p |- ( A e. ( B X. C ) -> A = <. ( 1st ` A ) , ( 2nd ` A ) >. ) $=
-    ( vx vy cxp wcel cv cop wceq wrex c1st cfv c2nd elxp2 opfv1st opfv2nd fveq2
-    vex rexlimivw opeq12i eqcomi id opeq12d 3eqtr4a sylbi ) ABCFGADHZEHZIZJZECK
-    ZDBKAALMZANMZIZJZDEABCOUKUODBUJUOECUJUIUILMZUINMZIZAUNURUIUPUGUQUHUGUHDSZES
-    ZPUGUHUSUTQUAUBUJUCUJULUPUMUQAUILRAUINRUDUETTUF $.
-    $( [20-Oct-2013] $)
+      ( vx vy cxp wcel cv cop wceq wrex c1st cfv c2nd elxp2 vex opfv1st opfv2nd
+      fveq2 rexlimivw opeq12i eqcomi id opeq12d 3eqtr4a sylbi ) ABCFGADHZEHZIZJ
+      ZECKZDBKAALMZANMZIZJZDEABCOUKUODBUJUOECUJUIUILMZUINMZIZAUNURUIUPUGUQUHUGU
+      HDPZEPZQUGUHUSUTRUAUBUJUCUJULUPUMUQAUILSAUINSUDUETTUF $.
+      $( [20-Oct-2013] $)
   $}
 
   ${
@@ -47075,15 +47094,15 @@ $)
     $d y z $.
     $( Implicational form of part of the definition of a function. $)
     fununiq $p |- ( ( Fun F /\ A F B /\ A F C ) -> B = C ) $=
-       ( vx vy vz cvv wcel wa wbr w3a wceq brex 3adant1 wi cv wal wb breq12 weq
-       wfun anim12i anandi sylibr dffun2 simprbi 3adant3 3adant2 anbi12d eqeq12
-       wrel imbi12d cla43gv syl5 exp4a 3impd 3expb mpcom ) AHIZBHIZCHIZJJZDUBZA
-       BDKZACDKZLZBCMZVEVFVCVDVEVFJZUTVAJZUTVBJZJVCVEVJVFVKABDNACDNUCUTVAVBUDUE
-       OUTVAVBVGVHPUTVAVBLZVDVEVFVHVLVDVEVFVHVDEQZFQZDKZVMGQZDKZJZFGUAZPZGRFRER
-       ZVLVIVHPZVDDULWAEFGDUFUGVTWBEFGABCHHHVMAMZVNBMZVPCMZLZVRVIVSVHWFVOVEVQVF
-       WCWDVOVESWEVMAVNBDTUHWCWEVQVFSWDVMAVPCDTUIUJWDWEVSVHSWCVNBVPCUKOUMUNUOUP
-       UQURUS $.
-       $( [24-Feb-2015] $)
+      ( vx vy vz cvv wcel wa wbr w3a wceq brex 3adant1 wi cv wal wb breq12 wfun
+      anim12i anandi sylibr wrel dffun2 simprbi 3adant3 3adant2 anbi12d imbi12d
+      weq eqeq12 cla43gv syl5 exp4a 3impd 3expb mpcom ) AHIZBHIZCHIZJJZDUAZABDK
+      ZACDKZLZBCMZVEVFVCVDVEVFJZUTVAJZUTVBJZJVCVEVJVFVKABDNACDNUBUTVAVBUCUDOUTV
+      AVBVGVHPUTVAVBLZVDVEVFVHVLVDVEVFVHVDEQZFQZDKZVMGQZDKZJZFGULZPZGRFRERZVLVI
+      VHPZVDDUEWAEFGDUFUGVTWBEFGABCHHHVMAMZVNBMZVPCMZLZVRVIVSVHWFVOVEVQVFWCWDVO
+      VESWEVMAVNBDTUHWCWEVQVFSWDVMAVPCDTUIUJWDWEVSVHSWCVNBVPCUMOUKUNUOUPUQURUS
+      $.
+      $( [24-Feb-2015] $)
   $}
 
   ${
@@ -47091,30 +47110,30 @@ $)
     $d R x $.  $d R y $.  $d x y $.
     $( A singleton image is a relationship. $)
     relsi $p |- Rel SI R $=
-       ( vx va vy vb cv csn wceq wbr w3a wex csi df-si relopabi ) BFCFZGHDFEFZG
-       HOPAIJEKCKBDALBDCEAMN $.
-       $( [26-Feb-2015] $)
+      ( vx va vy vb cv csn wceq wbr w3a wex csi df-si relopabi ) BFCFZGHDFEFZGH
+      OPAIJEKCKBDALBDCEAMN $.
+      $( [26-Feb-2015] $)
 
     $( Calculate the converse of a singleton image. $)
     cnvsi $p |- `' SI R = SI `' R $=
-       ( vx vy vb va csi ccnv relcnv relsi csn wceq wbr w3a wex 3ancoma 3anbi3i
-       cv brcnv bitr4i brsi 2exbii excom 3bitri 3bitr4i eqbrriv ) BCAFZGZAGZFZU
-       FHUHICQZDQZJKZBQZEQZJKZUKUNALZMZDNENZUOULUNUKUHLZMZDNENUMUJUGLZUMUJUILUQ
-       UTEDUQUOULUPMUTULUOUPOUSUPUOULUNUKARPSUAVAUJUMUFLUQENDNURUMUJUFRDEUJUMAT
-       UQDEUBUCEDUMUJUHTUDUE $.
-       $( [26-Feb-2015] $)
+      ( vx vy vb va csi ccnv relcnv relsi cv csn wceq wbr w3a wex 3ancoma brcnv
+      3anbi3i bitr4i brsi 2exbii excom 3bitri 3bitr4i eqbrriv ) BCAFZGZAGZFZUFH
+      UHICJZDJZKLZBJZEJZKLZUKUNAMZNZDOEOZUOULUNUKUHMZNZDOEOUMUJUGMZUMUJUIMUQUTE
+      DUQUOULUPNUTULUOUPPUSUPUOULUNUKAQRSUAVAUJUMUFMUQEODOURUMUJUFQDEUJUMATUQDE
+      UBUCEDUMUJUHTUDUE $.
+      $( [26-Feb-2015] $)
 
     $( Calculate the domain of a singleton image.  Theorem X.4.29.I of
-       [Rosser], p. 301. $)
+       {{Rosser}}, p. 301. $)
     dmsi $p |- dom SI R = ~P1 dom R $=
-       ( vx va vy vb csi cdm cpw1 cv csn wceq wbr wex wcel wa bitri exbii excom
-       eldm 3bitr4i w3a wrex 3anass 2exbii 19.42vv isseti 19.41v mpbiran anbi2i
-       snex ancom df-rex brsi elpw1 eqriv ) BAFZGZAGZHZBIZCIZJKZDIZEIZJZKZVAVDA
-       LZUAZEMZCMZDMZVBCURUBZUTUQNZUTUSNVIDMZCMVAURNZVBOZCMVKVLVNVPCVNVBVFVGOZE
-       MDMZOZVPVNVBVQOZEMDMVSVHVTDEVBVFVGUCUDVBVQDEUEPVSVBVOOVPVRVOVBVQDMZEMVGE
-       MVRVOWAVGEWAVFDMVGDVEVDUJUFVFVGDUGUHQVQDEREVAASTUIVBVOUKPPQVIDCRVBCURULT
-       VMUTVCUPLZDMVKDUTUPSWBVJDCEUTVCAUMQPCUTURUNTUO $.
-       $( [26-Feb-2015] $)
+      ( vx va vy vb csi cdm cpw1 cv csn wceq wbr wcel wa bitri exbii excom eldm
+      wex 3bitr4i wrex 3anass 2exbii 19.42vv isseti 19.41v mpbiran anbi2i ancom
+      w3a snex df-rex brsi elpw1 eqriv ) BAFZGZAGZHZBIZCIZJKZDIZEIZJZKZVAVDALZU
+      JZESZCSZDSZVBCURUAZUTUQMZUTUSMVIDSZCSVAURMZVBNZCSVKVLVNVPCVNVBVFVGNZESDSZ
+      NZVPVNVBVQNZESDSVSVHVTDEVBVFVGUBUCVBVQDEUDOVSVBVONVPVRVOVBVQDSZESVGESVRVO
+      WAVGEWAVFDSVGDVEVDUKUEVFVGDUFUGPVQDEQEVAARTUHVBVOUIOOPVIDCQVBCURULTVMUTVC
+      UPLZDSVKDUTUPRWBVJDCEUTVCAUMPOCUTURUNTUO $.
+      $( [26-Feb-2015] $)
 
     $d a c $.  $d a d $.  $d a z $.  $d b c $.  $d b d $.  $d b z $.  $d c d $.
     $d c x $.  $d c y $.  $d c z $.  $d d x $.  $d d y $.  $d d z $.  $d F a $.
@@ -47122,24 +47141,23 @@ $)
     $d y z $.
     $( The singleton image of a function is a function. $)
     funsi $p |- ( Fun F -> Fun SI F ) $=
-       ( vx vy vz va vb vc vd wfun cv wbr wa weq wi wal csn wceq w3a wex wb csi
-       brsi anbi12i ee4anv bitr4i fununiq 3exp breq1 bicomd adantr eqeq2 syl6bb
-       vex sneqb adantl imbi12d biimprcd exp3a 3impd eqeq1 3anbi1d imbi2d imp3a
-       syl6 exlimdvv syl5bi alrimiv alrimivv wrel relsi dffun2 mpbiran sylibr
-       syl ) AIZBJZCJZAUAZKZVPDJZVRKZLZCDMZNZDOZCOBOZVRIZVOWEBCVOWDDWBVPEJZPZQZ
-       VQFJZPZQZWHWKAKZRZVPGJZPZQZVTHJZPZQZWPWSAKZRZLZHSGSZFSESZVOWCWBWOFSESZXC
-       HSGSZLXFVSXGWAXHEFVPVQAUBGHVPVTAUBUCWOXCEFGHUDUEVOXEWCEFVOXDWCGHVOWOXCWC
-       VOWNEGMZXAXBRZWLVTQZNZNZWOXCWCNZNVOWNWHWSAKZFHMZNZXLVOWNXOXPWHWKWSAUFUGX
-       QXIXAXBXKXQXIXAXBXKNZXIXALZXRXQXSXBXOXKXPXIXBXOTXAXIXOXBWHWPWSAUHUIUJXAX
-       KXPTXIXAXKWLWTQXPVTWTWLUKWKWSFUMUNULUOUPUQURUSVDXMWJWMWNXNXMWJWMWNXNNZWJ
-       WMLZXTXMYAXNXLWNYAXCXJWCXKWJXCXJTWMWJWRXIXAXBWJWRWIWQQXIVPWIWQUTWHWPEUMU
-       NULVAUJWMWCXKTWJVQWLVTUTUOUPVBUQURUSVNVCVEVEVFVGVHWGVRVIWFAVJBCDVRVKVLVM
-       $.
-       $( [26-Feb-2015] $)
+      ( vx vy vz va vb vc vd wfun cv wbr wa weq wi wal csn wceq w3a wex wb brsi
+      anbi12i ee4anv bitr4i fununiq 3exp breq1 bicomd adantr eqeq2 sneqb syl6bb
+      csi vex adantl imbi12d biimprcd exp3a 3impd syl6 eqeq1 3anbi1d imbi2d syl
+      imp3a exlimdvv syl5bi alrimiv alrimivv wrel relsi dffun2 mpbiran sylibr )
+      AIZBJZCJZAUMZKZVPDJZVRKZLZCDMZNZDOZCOBOZVRIZVOWEBCVOWDDWBVPEJZPZQZVQFJZPZ
+      QZWHWKAKZRZVPGJZPZQZVTHJZPZQZWPWSAKZRZLZHSGSZFSESZVOWCWBWOFSESZXCHSGSZLXF
+      VSXGWAXHEFVPVQAUAGHVPVTAUAUBWOXCEFGHUCUDVOXEWCEFVOXDWCGHVOWOXCWCVOWNEGMZX
+      AXBRZWLVTQZNZNZWOXCWCNZNVOWNWHWSAKZFHMZNZXLVOWNXOXPWHWKWSAUEUFXQXIXAXBXKX
+      QXIXAXBXKNZXIXALZXRXQXSXBXOXKXPXIXBXOTXAXIXOXBWHWPWSAUGUHUIXAXKXPTXIXAXKW
+      LWTQXPVTWTWLUJWKWSFUNUKULUOUPUQURUSUTXMWJWMWNXNXMWJWMWNXNNZWJWMLZXTXMYAXN
+      XLWNYAXCXJWCXKWJXCXJTWMWJWRXIXAXBWJWRWIWQQXIVPWIWQVAWHWPEUNUKULVBUIWMWCXK
+      TWJVQWLVTVAUOUPVCUQURUSVDVEVFVFVGVHVIWGVRVJWFAVKBCDVRVLVMVN $.
+      $( [26-Feb-2015] $)
   $}
 
-  $( Calculate the range of a singleton image.  Theorem X.4.29.II of [Rosser],
-     p. 302. $)
+  $( Calculate the range of a singleton image.  Theorem X.4.29.II of
+     {{Rosser}}, p. 302. $)
   rnsi $p |- ran SI R = ~P1 ran R $=
     ( csi ccnv cdm cpw1 cnvsi dmeqi dmsi eqtri dfrn4 wceq pw1eq ax-mp 3eqtr4i
     crn ) ABZCZDZACZDZEZPOAOZEZRSBZDUAQUDAFGSHIPJUBTKUCUAKAJUBTLMN $.
@@ -49526,15 +49544,15 @@ $)
     $d x y z w $.
     $( Alternate definition of ` Swap ` as an operator abstraction. $)
     dfswap3 $p |- Swap = { <. <. x , y >. , z >. | z = <. y , x >. } $=
-       ( vw cswap cv cop wceq wa wex copab copab2 df-swap dfoprab2 eqtr4i ) EDF
-       AFZBFZGHCFQPGHZIBJAJDCKRABCLDCABMRABCDNO $.
-       $( [23-Feb-2015] $)
+      ( vw cswap cv cop wceq wa wex copab copab2 df-swap dfoprab2 eqtr4i ) EDFA
+      FZBFZGHCFQPGHZIBJAJDCKRABCLDCABMRABCDNO $.
+      $( [23-Feb-2015] $)
 
     $( Alternate definition of ` Swap ` as an operator mapping. $)
     dfswap4 $p |- Swap = ( x e. _V , y e. _V |-> <. y , x >. ) $=
-       ( vz cswap cv cop wceq copab2 cvv cmpt2 dfswap3 mpt2v eqtr4i ) DCEBEAEFZ
-       GABCHABIINJABCKABCNLM $.
-       $( [23-Feb-2015] $)
+      ( vz cswap cv cop wceq copab2 cvv cmpt2 dfswap3 mpt2v eqtr4i ) DCEBEAEFZG
+      ABCHABIINJABCKABCNLM $.
+      $( [23-Feb-2015] $)
   $}
 
 $(
@@ -49616,7 +49634,7 @@ $)
      operation. $)
   cfullfun $a class FullFun F $.
 
-  $( Define the tail cross product of two classes.  Definition from [Holmes],
+  $( Define the tail cross product of two classes.  Definition from {{Holmes}},
      p. 40.  See ~ brtxp for membership. $)
   df-txp $a |- ( A (x) B ) = ( ( `' 1st o. A ) i^i ( `' 2nd o. B ) ) $.
 
@@ -49625,10 +49643,6 @@ $)
 
   $( Define the fixed points of a relationship. $)
   df-fix $a |- Fix A = ran ( A i^i _I ) $.
-
-  $( Define the image function of a class. $)
-  df-image $a |- Image A =
-     ( ( _V X. _V ) \ ( ( Ins2 SSet (+) Ins3 ( SSet o. `' SI A ) ) " 1c ) ) $.
 
   ${
     $d x y $.
@@ -49654,12 +49668,18 @@ $)
   $( Define the third insertion operation. $)
   df-ins3 $a |- Ins3 A = ( A (x) _V ) $.
 
+  $( 16-Apr-2015 NM Moved df-image down to here since it references
+     Ins2 and Ins3 $)
+  $( Define the image function of a class. $)
+  df-image $a |- Image A =
+     ( ( _V X. _V ) \ ( ( Ins2 SSet (+) Ins3 ( SSet o. `' SI A ) ) " 1c ) ) $.
+
   $( Define the fourth insertion operation. $)
-  df-ins4 $a |- Ins4 A = 
+  df-ins4 $a |- Ins4 A =
    ( `' ( 1st (x) ( ( 1st o. 2nd ) (x) ( ( 1st o. 2nd ) o. 2nd ) ) ) " A ) $.
 
   $( Define the triple singleton image. $)
-  df-si3 $a |- SI_3 A = 
+  df-si3 $a |- SI_3 A =
   ( ( SI 1st (x) ( SI ( 1st o. 2nd ) (x) SI ( 2nd o. 2nd ) ) ) " ~P1 A ) $.
 
   $( Define the class of all functions. $)
@@ -49684,8 +49704,8 @@ $)
 
   $( Define the full function operator.  This is a function over ` _V ` that
      agrees with the function value of ` F ` at every point. $)
-  df-fullfun $a |- FullFun F = 
-   ( ( ( _I o. F ) \ ( ~ _I o. F ) ) u. 
+  df-fullfun $a |- FullFun F =
+   ( ( ( _I o. F ) \ ( ~ _I o. F ) ) u.
      ( ~ dom ( ( _I o. F ) \ ( ~ _I o. F ) ) X. { (/) } ) ) $.
 
   ${
@@ -49716,22 +49736,22 @@ $)
     $( Binary relationship of a singleton to an arbitrary set in a singleton
        image. $)
     brsnsi1 $p |- ( { A } SI R B <-> E. x ( B = { x } /\ A R x ) ) $=
-       ( vy csn csi wbr cv wceq w3a wex wa brsi excom eqcom vex bitri exbii
-       sneqb 3anbi1i 3anass breq1 anbi2d ceqsexv ) BGZCDHIUGFJZGZKZCAJZGKZUHUKD
-       IZLZAMFMZULBUKDIZNZAMZFAUGCDOUOUNFMZAMURUNFAPUSUQAUSUHBKZULUMNZNZFMUQUNV
-       BFUNUTULUMLVBUJUTULUMUJUIUGKUTUGUIQUHBFRUASUBUTULUMUCSTVAUQFBEUTUMUPULUH
-       BUKDUDUEUFSTSS $.
-       $( [9-Mar-2015] $)
+      ( vy csn csi wbr cv wceq w3a wex wa brsi excom eqcom vex bitri exbii
+      sneqb 3anbi1i 3anass breq1 anbi2d ceqsexv ) BGZCDHIUGFJZGZKZCAJZGKZUHUKDI
+      ZLZAMFMZULBUKDIZNZAMZFAUGCDOUOUNFMZAMURUNFAPUSUQAUSUHBKZULUMNZNZFMUQUNVBF
+      UNUTULUMLVBUJUTULUMUJUIUGKUTUGUIQUHBFRUASUBUTULUMUCSTVAUQFBEUTUMUPULUHBUK
+      DUDUEUFSTSS $.
+      $( [9-Mar-2015] $)
 
     $( Binary relationship of an arbitrary set to a singleton in a singleton
        image. $)
     brsnsi2 $p |- ( B SI R { A } <-> E. x ( B = { x } /\ x R A ) ) $=
-       ( vy csn csi wbr cv wceq w3a wex wa brsi 3anass exbii 19.42v sneqb bitri
-       eqcom anbi1i breq2 ceqsexv anbi2i ) CBGZDHICAJZGKZUFFJZGKZUGUIDIZLZFMZAM
-       UHUGBDIZNZAMAFCUFDOUMUOAUMUHUJUKNZNZFMZUOULUQFUHUJUKPQURUHUPFMZNUOUHUPFR
-       USUNUHUSUIBKZUKNZFMUNUPVAFUJUTUKUJBUIKUTBUIESBUIUATUBQUKUNFBEUIBUGDUCUDT
-       UETTQT $.
-       $( [9-Mar-2015] $)
+      ( vy csn csi wbr cv wceq w3a wex wa brsi 3anass exbii 19.42v sneqb bitri
+      eqcom anbi1i breq2 ceqsexv anbi2i ) CBGZDHICAJZGKZUFFJZGKZUGUIDIZLZFMZAMU
+      HUGBDIZNZAMAFCUFDOUMUOAUMUHUJUKNZNZFMZUOULUQFUHUJUKPQURUHUPFMZNUOUHUPFRUS
+      UNUHUSUIBKZUKNZFMUNUPVAFUJUTUKUJBUIKUTBUIESBUIUATUBQUKUNFBEUIBUGDUCUDTUET
+      TQT $.
+      $( [9-Mar-2015] $)
 
   $}
 
@@ -49825,7 +49845,7 @@ $)
   $}
 
   $( A tail cross product is a relationship. $)
-  reltxp $p |- Rel ( A (x) B ) $= 	     
+  reltxp $p |- Rel ( A (x) B ) $=
     ( ctxp wrel c1st ccnv ccom c2nd cin wss inss1 relco relss mp2 df-txp releqi
     mpbir ) ABCZDEFZAGZHFBGZIZDZUBTJTDUCTUAKSALUBTMNRUBABOPQ $.
     $( [24-Feb-2015] $)
@@ -49836,15 +49856,15 @@ $)
     $d C b $.  $d C x $.  $d C y $.  $d x y $.
     $( Restriction distributes over tail cross product. $)
     restxp $p |- ( ( A (x) B ) |` C ) = ( ( A |` C ) (x) ( B |` C ) ) $=
-       ( vx vy va vb ctxp cres cv wbr w3a wa 3anass anbi1i bitri 3bitr4i 2exbii
-       wex brres relres reltxp cop wceq wcel anandir anbi2i anass brtxp 19.41vv
-       biid 3anbi123i eqbrriv ) DEABHZCIZACIZBCIZHZUNCUAUPUQUBEJZFJZGJZUCUDZDJZ
-       UTAKZVCVABKZLZVCCUEZMZGSFSZVBVDVGMZVEVGMZLZGSFSZVCUSUOKZVCUSURKZVHVLFGVB
-       VDVEMZVGMZMZVBVJVKMZMVHVLVQVSVBVDVEVGUFUGVHVBVPMZVGMVRVFVTVGVBVDVENOVBVP
-       VGUHPVBVJVKNQRVCUSUNKZVGMVFGSFSZVGMVNVIWAWBVGFGVCUSABUIOVCUSUNCTVFVGFGUJ
-       QVOVBVCUTUPKZVCVAUQKZLZGSFSVMFGVCUSUPUQUIWEVLFGVBVBWCVJWDVKVBUKVCUTACTVC
-       VABCTULRPQUM $.
-       $( [24-Feb-2015] $)
+      ( vx vy va vb ctxp cres cv wbr w3a wex 3anass anbi1i bitri 3bitr4i 2exbii
+      wa brres relres reltxp cop wceq wcel anandir anbi2i anass brtxp 3anbi123i
+      19.41vv biid eqbrriv ) DEABHZCIZACIZBCIZHZUNCUAUPUQUBEJZFJZGJZUCUDZDJZUTA
+      KZVCVABKZLZVCCUEZSZGMFMZVBVDVGSZVEVGSZLZGMFMZVCUSUOKZVCUSURKZVHVLFGVBVDVE
+      SZVGSZSZVBVJVKSZSVHVLVQVSVBVDVEVGUFUGVHVBVPSZVGSVRVFVTVGVBVDVENOVBVPVGUHP
+      VBVJVKNQRVCUSUNKZVGSVFGMFMZVGSVNVIWAWBVGFGVCUSABUIOVCUSUNCTVFVGFGUKQVOVBV
+      CUTUPKZVCVAUQKZLZGMFMVMFGVCUSUPUQUIWEVLFGVBVBWCVJWDVKVBULVCUTACTVCVABCTUJ
+      RPQUM $.
+      $( [24-Feb-2015] $)
   $}
 
   ${
@@ -49880,13 +49900,13 @@ $)
     op1st2nd.2 $e |- B e. _V $.
     $( Express equality to an ordered pair via ` 1st ` and ` 2nd ` . $)
     op1st2nd $p |- ( ( C 1st A /\ C 2nd B ) <-> C = <. A , B >. ) $=
-       ( vx c1st wbr c2nd wa cop wceq cv wex wi opbr2nd breq1 mpbiri eqid mpbir
-       br1st vex biimpi opeq2d eqeq1 imbi12d exlimiv imp opbr1st pm3.2i anbi12d
-       sylbi impbii ) CAGHZCBIHZJZCABKZLZUNUOURUNCAFMZKZLZFNUOUROZFCADUAVAVBFVA
-       VBUTBIHZUTUQLZOVCUSBAVCUSBLAUSBDFUBPUCUDVAUOVCURVDCUTBIQCUTUQUEUFRUGULUH
-       URUPUQAGHZUQBIHZJVEVFVEAALASABADEUITVFBBLBSABBDEPTUJURUNVEUOVFCUQAGQCUQB
-       IQUKRUM $.
-       $( [12-Feb-2015] $)
+      ( vx c1st wbr c2nd wa cop wceq cv wex wi opbr2nd breq1 mpbiri eqid mpbir
+      br1st vex biimpi opeq2d eqeq1 imbi12d exlimiv sylbi opbr1st pm3.2i impbii
+      imp anbi12d ) CAGHZCBIHZJZCABKZLZUNUOURUNCAFMZKZLZFNUOUROZFCADUAVAVBFVAVB
+      UTBIHZUTUQLZOVCUSBAVCUSBLAUSBDFUBPUCUDVAUOVCURVDCUTBIQCUTUQUEUFRUGUHULURU
+      PUQAGHZUQBIHZJVEVFVEAALASABADEUITVFBBLBSABBDEPTUJURUNVEUOVFCUQAGQCUQBIQUM
+      RUK $.
+      $( [12-Feb-2015] $)
   $}
 
   ${
@@ -49948,36 +49968,35 @@ $)
     $d x y $.  $d x z $.  $d y z $.
     oqelins4.4 $e |- D e. _V $.
     $( Ordered quadruple membership in ` Ins4 ` . $)
-    oqelins4 $p |- ( <. A , <. B , <. C , D >. >. >. e. Ins4 R 
+    oqelins4 $p |- ( <. A , <. B , <. C , D >. >. >. e. Ins4 R
        <-> <. A , <. B , C >. >. e. R ) $=
-       ( vx vp vb va cop wcel cvv wa bitri wceq opeq1 c1st wbr wex vy vz anbi2i
-       cins4 elex opexb simplbi anim2i sylbi syl sylib wb eleq1d bibi12d imbi2d
-       cv wi opeq2d opeq2 c2nd ccom ctxp ccnv cima df-ins4 eleq2i brcnv w3a weq
-       wrex brtxp 3ancoma 3anass opex opbr1st equcom anbi1i 3bitri exbii 19.42v
-       vex eqeq2d anbi1d exbidv ceqsexv ancom 3anrot brco2nd 3anbi123i ceqsex2v
-       biid 2exbii rexbii elima risset 3bitr4i vtocl2g vtoclg imp pm5.21nii ) A
-       BCDKZKZKZEUDZLZAMLZBMLZCMLZNZNZABCKZKZELZXEXCMLZXJXCXDUEXNXFXGXAMLZNZNZX
-       JXNXFXBMLZNXQAXBUFXRXPXFBXAUFUCOXPXIXFXOXHXGXOXHDMLCDUFUGUHUHUIUJXMXLMLZ
-       XJXLEUEXSXFXKMLZNXJAXKUFXTXIXFBCUFUCOUKXFXIXEXMULZXIGUPZXBKZXDLZYBXKKZEL
-       ZULZUQXIYAUQGAMYBAPZYGYAXIYHYDXEYFXMYHYCXCXDYBAXBQUMYHYEXLEYBAXKQUMUNUOY
-       BUAUPZUBUPZDKZKZKZXDLZYBYIYJKZKZELZULYBBYKKZKZXDLZYBBYJKZKZELZULYGUAUBBC
-       MMYIBPZYNYTYQUUCUUDYMYSXDUUDYLYRYBYIBYKQURUMUUDYPUUBEUUDYOUUAYBYIBYJQURU
-       MUNYJCPZYTYDUUCYFUUEYSYCXDUUEYRXBYBUUEYKXABYJCDQURURUMUUEUUBYEEUUEUUAXKY
-       BYJCBUSURUMUNYNYMRRUTVAZUUFUTVAZVBZVBZVCZEVDZLZYQXDUUKYMEVEVFHUPZYMUUJSZ
-       HEVJUUMYPPZHEVJUULYQUUNUUOHEUUNYMUUMUUISZUUMYBIUPZKZPZYMUUQUUHSZNZITZUUO
-       UUMYMUUIVGUUPUUMJUPZUUQKZPZYMUVCRSZUUTVHZITZJTJGVIZUVEUUTNZITZNZJTUVBJIY
-       MUUMRUUHVKUVHUVLJUVHUVIUVJNZITUVLUVGUVMIUVGUVFUVEUUTVHUVFUVJNUVMUVEUVFUU
-       TVLUVFUVEUUTVMUVFUVIUVJUVFGJVIUVIYBYLUVCGWAZYIYKUAWAZYJDUBWAZFVNZVNZVOGJ
-       VPOVQVRVSUVIUVJIVTOVSUVKUVBJYBUVNUVIUVJUVAIUVIUVEUUSUUTUVIUVDUURUUMUVCYB
-       UUQQWBWCWDWEVRUVBUUQYOPZUUSNZITUUOUVAUVTIUVAUUTUUSNUVTUUSUUTWFUUTUVSUUSU
-       UTUUQUUMUVCKZPZYMUUMUUFSZYMUVCUUGSZVHZJTHTHUAVIZJUBVIZUWBVHZJTHTUVSHJYMU
-       UQUUFUUGVKUWEUWHHJUWEUWCUWDUWBVHUWHUWBUWCUWDWGUWCUWFUWDUWGUWBUWBUWCYLUUM
-       RSUAHVIUWFYBYLUUMRUVNUVRWHYIYKUUMUVOUVQVOUAHVPVRUWDYLUVCUUFSZUBJVIZUWGYB
-       YLUVCUUFUVNUVRWHUWIYKUVCRSUWJYIYKUVCRUVOUVQWHYJDUVCUVPFVOOUBJVPVRUWBWKWI
-       OWLUWBUUQYIUVCKZPUVSHJYIYJUVOUVPUWFUWAUWKUUQUUMYIUVCQWBUWGUWKYOUUQUVCYJY
-       IUSWBWJVRVQOVSUUSUUOIYOYIYJUVOUVPVNUVSUURYPUUMUUQYOYBUSWBWEOVRWMHYMUUJEW
-       NHYPEWOWPOWQWRWSWT $.
-       $( [13-Feb-2015] $)
+      ( vx vp vb va cop wcel cvv wa bitri wceq opeq1 c1st wbr wex vy cins4 elex
+      vz opexb anbi2i simplbi anim2i sylbi sylib wb cv wi eleq1d bibi12d imbi2d
+      syl opeq2d opeq2 c2nd ccom ctxp ccnv cima df-ins4 eleq2i wrex brcnv brtxp
+      w3a weq 3ancoma 3anass vex opex opbr1st equcom anbi1i 3bitri exbii 19.42v
+      eqeq2d anbi1d exbidv ceqsexv ancom 3anrot brco2nd biid 3anbi123i ceqsex2v
+      2exbii rexbii elima risset 3bitr4i vtocl2g vtoclg imp pm5.21nii ) ABCDKZK
+      ZKZEUBZLZAMLZBMLZCMLZNZNZABCKZKZELZXEXCMLZXJXCXDUCXNXFXGXAMLZNZNZXJXNXFXB
+      MLZNXQAXBUEXRXPXFBXAUEUFOXPXIXFXOXHXGXOXHDMLCDUEUGUHUHUIUQXMXLMLZXJXLEUCX
+      SXFXKMLZNXJAXKUEXTXIXFBCUEUFOUJXFXIXEXMUKZXIGULZXBKZXDLZYBXKKZELZUKZUMXIY
+      AUMGAMYBAPZYGYAXIYHYDXEYFXMYHYCXCXDYBAXBQUNYHYEXLEYBAXKQUNUOUPYBUAULZUDUL
+      ZDKZKZKZXDLZYBYIYJKZKZELZUKYBBYKKZKZXDLZYBBYJKZKZELZUKYGUAUDBCMMYIBPZYNYT
+      YQUUCUUDYMYSXDUUDYLYRYBYIBYKQURUNUUDYPUUBEUUDYOUUAYBYIBYJQURUNUOYJCPZYTYD
+      UUCYFUUEYSYCXDUUEYRXBYBUUEYKXABYJCDQURURUNUUEUUBYEEUUEUUAXKYBYJCBUSURUNUO
+      YNYMRRUTVAZUUFUTVAZVBZVBZVCZEVDZLZYQXDUUKYMEVEVFHULZYMUUJSZHEVGUUMYPPZHEV
+      GUULYQUUNUUOHEUUNYMUUMUUISZUUMYBIULZKZPZYMUUQUUHSZNZITZUUOUUMYMUUIVHUUPUU
+      MJULZUUQKZPZYMUVCRSZUUTVJZITZJTJGVKZUVEUUTNZITZNZJTUVBJIYMUUMRUUHVIUVHUVL
+      JUVHUVIUVJNZITUVLUVGUVMIUVGUVFUVEUUTVJUVFUVJNUVMUVEUVFUUTVLUVFUVEUUTVMUVF
+      UVIUVJUVFGJVKUVIYBYLUVCGVNZYIYKUAVNZYJDUDVNZFVOZVOZVPGJVQOVRVSVTUVIUVJIWA
+      OVTUVKUVBJYBUVNUVIUVJUVAIUVIUVEUUSUUTUVIUVDUURUUMUVCYBUUQQWBWCWDWEVSUVBUU
+      QYOPZUUSNZITUUOUVAUVTIUVAUUTUUSNUVTUUSUUTWFUUTUVSUUSUUTUUQUUMUVCKZPZYMUUM
+      UUFSZYMUVCUUGSZVJZJTHTHUAVKZJUDVKZUWBVJZJTHTUVSHJYMUUQUUFUUGVIUWEUWHHJUWE
+      UWCUWDUWBVJUWHUWBUWCUWDWGUWCUWFUWDUWGUWBUWBUWCYLUUMRSUAHVKUWFYBYLUUMRUVNU
+      VRWHYIYKUUMUVOUVQVPUAHVQVSUWDYLUVCUUFSZUDJVKZUWGYBYLUVCUUFUVNUVRWHUWIYKUV
+      CRSUWJYIYKUVCRUVOUVQWHYJDUVCUVPFVPOUDJVQVSUWBWIWJOWLUWBUUQYIUVCKZPUVSHJYI
+      YJUVOUVPUWFUWAUWKUUQUUMYIUVCQWBUWGUWKYOUUQUVCYJYIUSWBWKVSVROVTUUSUUOIYOYI
+      YJUVOUVPVOUVSUURYPUUMUUQYOYBUSWBWEOVSWMHYMUUJEWNHYPEWOWPOWQWRWSWT $.
+      $( [13-Feb-2015] $)
   $}
 
   $( ` Ins2 ` preserves sethood. $)
@@ -50034,14 +50053,14 @@ $)
     $d R x y z $.
     $( Subset law for tail cross product. $)
     txpssvvv $p |- ( R (x) S ) C_ ( _V X. ( _V X. _V ) ) $=
-       ( vx vy vz ctxp c1st ccnv ccom c2nd cvv cxp wbr wex wcel cop vex exlimiv
-       cv opelxp cin df-txp inss1 relco brcnv br1st bitri mpbir2an eleq1 mpbiri
-       wa wceq sylbi adantl opelco mpbiran 3imtr4i relssi sstri eqsstri ) ABFGH
-       ZAIZJHBIZUAZKKKLZLZABUBVDVBVFVBVCUCCDVBVFVAAUDCSZESZAMZVHDSZVAMZUKZENVJV
-       EOZVGVJPZVBOVNVFOZVLVMEVKVMVIVKVJVHVGPZULZCNZVMVKVJVHGMVRVHVJGUECVJVHEQZ
-       UFUGVQVMCVQVMVPVEOZVTVHKOVGKOZVSCQZVHVGKKTUHVJVPVEUIUJRUMUNREVGVJVAAUOVO
-       WAVMWBVGVJKVETUPUQURUSUT $.
-       $( [18-Feb-2015] $)
+      ( vx vy vz ctxp c1st ccnv ccom c2nd cvv cxp cv wbr wex cop opelxp exlimiv
+      wcel vex cin df-txp inss1 relco wa wceq brcnv br1st bitri mpbir2an mpbiri
+      eleq1 sylbi adantl opelco mpbiran 3imtr4i relssi sstri eqsstri ) ABFGHZAI
+      ZJHBIZUAZKKKLZLZABUBVDVBVFVBVCUCCDVBVFVAAUDCMZEMZANZVHDMZVANZUEZEOVJVESZV
+      GVJPZVBSVNVFSZVLVMEVKVMVIVKVJVHVGPZUFZCOZVMVKVJVHGNVRVHVJGUGCVJVHETZUHUIV
+      QVMCVQVMVPVESZVTVHKSVGKSZVSCTZVHVGKKQUJVJVPVEULUKRUMUNREVGVJVAAUOVOWAVMWB
+      VGVJKVEQUPUQURUSUT $.
+      $( [18-Feb-2015] $)
   $}
 
   ${
@@ -50050,14 +50069,14 @@ $)
     $( The domain of a tail cross product is the intersection of the domains of
        its arguments. $)
     dmtxp $p |- dom ( R (x) S ) = ( dom R i^i dom S ) $=
-       ( vx vp vy vz ctxp cdm cin cv wbr wex wa wcel cop exbii bitri vex bicomi
-       eldm wceq brtxp exrot3 3anass 19.41v opex isseti biantrur 2exbii anbi12i
-       w3a elin eeanv 3bitr4i eqriv ) CABGZHZAHZBHZIZCJZDJZUPKZDLZVAEJZAKZVAFJZ
-       BKZMZFLELZVAUQNVAUTNZVDVBVEVGOZUAZVFVHUKZDLZFLELZVJVDVNFLELZDLVPVCVQDEFV
-       AVBABUBPVNDEFUCQVOVIEFVOVMDLZVIMZVIVOVMVIMZDLVSVNVTDVMVFVHUDPVMVIDUEQVIV
-       SVRVIDVLVEVGERFRUFUGUHSQUIQDVAUPTVKVAURNZVAUSNZMZVJVAURUSULWCVFELZVHFLZM
-       ZVJWAWDWBWEEVAATFVABTUJVJWFVFVHEFUMSQQUNUO $.
-       $( [18-Feb-2015] $)
+      ( vx vp vy vz ctxp cdm cin cv wbr wex wa wcel cop exbii bitri bicomi eldm
+      vex wceq w3a brtxp exrot3 3anass 19.41v opex isseti biantrur elin anbi12i
+      2exbii eeanv 3bitr4i eqriv ) CABGZHZAHZBHZIZCJZDJZUPKZDLZVAEJZAKZVAFJZBKZ
+      MZFLELZVAUQNVAUTNZVDVBVEVGOZUAZVFVHUBZDLZFLELZVJVDVNFLELZDLVPVCVQDEFVAVBA
+      BUCPVNDEFUDQVOVIEFVOVMDLZVIMZVIVOVMVIMZDLVSVNVTDVMVFVHUEPVMVIDUFQVIVSVRVI
+      DVLVEVGETFTUGUHUIRQULQDVAUPSVKVAURNZVAUSNZMZVJVAURUSUJWCVFELZVHFLZMZVJWAW
+      DWBWEEVAASFVABSUKVJWFVFVHEFUMRQQUNUO $.
+      $( [18-Feb-2015] $)
   $}
 
   ${
@@ -50070,30 +50089,30 @@ $)
     $( Composition distributes over tail cross product in the case of a
        function. $)
     txpcofun $p |- ( ( R (x) S ) o. F ) = ( ( R o. F ) (x) ( S o. F ) ) $=
-       ( vx vy vz vv vu wceq cv wcel wb cvv wss cdm cop wex wbr wa vt ctxp ccom
-       cxp wral crn wrel relco relssdmrn ax-mp ssv rncoss txpssvvv rnxpss sstri
-       rnss xpss12 mp2an ssofeq wrex elxp2 rexv opeq2 eqeq2d rexxp exbii 3bitri
-       vs dmcoss opeldm sseldi df-br cin dmtxp inss1 breldm sylbir trtxp anbi2i
-       eqsstri anass bitr4i wfun funbrfv fvex breq1 ceqsexv eqcom funbrfvb mpan
-       cfv wi syl5bb anbi1d exbidv syl5bbr bibi1d syl5ibcom syl5 adantrd opelco
-       pm5.32d anbi12i oteltxp 19.41v 3bitr4i 3bitr4g pm5.21nii bibi12d exlimiv
-       eleq1 mpbiri exlimivv sylbi mprgbir ) ABUBZCUCZACUCZBCUCZUBZJZUAKZXQLZYB
-       XTLZMZUANNNUDZUDZXQYGOXTYGOYAYEUAYGUEMXQXQPZXQUFZUDZYGXQUGXQYJOXPCUHXQUI
-       UJYHNOYIYFOYJYGOYHUKYIXPUFZYFXPCULYKYGUFZYFXPYGOYKYLOABUMXPYGUPUJNYFUNUO
-       UOYHNYIYFUQURUOXRXSUMUAXQXTYGUSURYBYGLZYBEKZFKZGKZQZQZJZGRZFRZERZYEYMYBY
-       NVHKZQZJZVHYFUTZENUTUUFERUUBEVHYBNYFVAUUFEVBUUFUUAEUUFYSGNUTZFNUTUUGFRUU
-       AUUEYSVHFGNNUUCYQJUUDYRYBUUCYQYNVCVDVEUUGFVBUUGYTFYSGVBVFVGVFVGYTYEEFYSY
-       EGYSYEYRXQLZYRXTLZMUUHYNCPZLZUUIUUHYHUUJYNXPCVIYNYQXQVJVKUUIYNYQXTSZUUKY
-       NYQXTVLUULXTPZUUJYNUUMXRPZXSPZVMZUUJXRXSVNUUPUUNUUJUUNUUOVOACVIUOVTYNYQX
-       TVPVKVQUUKYNHKZCSZUUQYQXPSZTZHRUURUUQYOASZTZYNIKZCSZUVCYPBSZTZIRZTZHRZUU
-       HUUIUUKUUTUVHHUUTUVBUUQYPBSZTZUUKUVHUUTUURUVAUVJTZTUVKUUSUVLUURUUQYOYPAB
-       VRVSUURUVAUVJWAWBUUKUVBUVJUVGUUKUURUVJUVGMZUVAUURYNCWKZUUQJZUUKUVMCWCZUU
-       RUVOWLDYNUUQCWDUJUUKUVNYPBSZUVGMUVOUVMUVQUVCUVNJZUVETZIRUUKUVGUVEUVQIUVN
-       YNCWEUVCUVNYPBWFWGUUKUVSUVFIUUKUVRUVDUVEUVRUVNUVCJZUUKUVDUVCUVNWHUVPUUKU
-       VTUVDMDYNUVCCWIWJWMWNWOWPUVOUVQUVJUVGUVNUUQYPBWFWQWRWSWTXBWMWOHYNYQXPCXA
-       YNYOQXRLZYNYPQXSLZTUVBHRZUVGTUUIUVIUWAUWCUWBUVGHYNYOACXAIYNYPBCXAXCYNYOY
-       PXRXSXDUVBUVGHXEXFXGXHYSYCUUHYDUUIYBYRXQXKYBYRXTXKXIXLXJXMXNXO $.
-       $( [18-Feb-2015] $)
+      ( vx vy vz vv vu wceq cv wcel wb cvv wss cdm cop wex wbr wa ctxp ccom cxp
+      vt vs wral crn wrel relco relssdmrn ax-mp ssv rncoss txpssvvv rnss rnxpss
+      sstri xpss12 mp2an ssofeq wrex elxp2 rexv opeq2 eqeq2d rexxp exbii 3bitri
+      dmcoss opeldm sseldi df-br dmtxp inss1 eqsstri breldm sylbir trtxp anbi2i
+      cin anass bitr4i wfun wi funbrfv fvex breq1 ceqsexv eqcom funbrfvb syl5bb
+      cfv anbi1d exbidv syl5bbr bibi1d syl5ibcom adantrd pm5.32d opelco anbi12i
+      mpan syl5 oteltxp 19.41v 3bitr4i 3bitr4g pm5.21nii bibi12d mpbiri exlimiv
+      eleq1 exlimivv sylbi mprgbir ) ABUAZCUBZACUBZBCUBZUAZJZUDKZXQLZYBXTLZMZUD
+      NNNUCZUCZXQYGOXTYGOYAYEUDYGUFMXQXQPZXQUGZUCZYGXQUHXQYJOXPCUIXQUJUKYHNOYIY
+      FOYJYGOYHULYIXPUGZYFXPCUMYKYGUGZYFXPYGOYKYLOABUNXPYGUOUKNYFUPUQUQYHNYIYFU
+      RUSUQXRXSUNUDXQXTYGUTUSYBYGLZYBEKZFKZGKZQZQZJZGRZFRZERZYEYMYBYNUEKZQZJZUE
+      YFVAZENVAUUFERUUBEUEYBNYFVBUUFEVCUUFUUAEUUFYSGNVAZFNVAUUGFRUUAUUEYSUEFGNN
+      UUCYQJUUDYRYBUUCYQYNVDVEVFUUGFVCUUGYTFYSGVCVGVHVGVHYTYEEFYSYEGYSYEYRXQLZY
+      RXTLZMUUHYNCPZLZUUIUUHYHUUJYNXPCVIYNYQXQVJVKUUIYNYQXTSZUUKYNYQXTVLUULXTPZ
+      UUJYNUUMXRPZXSPZVTZUUJXRXSVMUUPUUNUUJUUNUUOVNACVIUQVOYNYQXTVPVKVQUUKYNHKZ
+      CSZUUQYQXPSZTZHRUURUUQYOASZTZYNIKZCSZUVCYPBSZTZIRZTZHRZUUHUUIUUKUUTUVHHUU
+      TUVBUUQYPBSZTZUUKUVHUUTUURUVAUVJTZTUVKUUSUVLUURUUQYOYPABVRVSUURUVAUVJWAWB
+      UUKUVBUVJUVGUUKUURUVJUVGMZUVAUURYNCWLZUUQJZUUKUVMCWCZUURUVOWDDYNUUQCWEUKU
+      UKUVNYPBSZUVGMUVOUVMUVQUVCUVNJZUVETZIRUUKUVGUVEUVQIUVNYNCWFUVCUVNYPBWGWHU
+      UKUVSUVFIUUKUVRUVDUVEUVRUVNUVCJZUUKUVDUVCUVNWIUVPUUKUVTUVDMDYNUVCCWJXBWKW
+      MWNWOUVOUVQUVJUVGUVNUUQYPBWGWPWQXCWRWSWKWNHYNYQXPCWTYNYOQXRLZYNYPQXSLZTUV
+      BHRZUVGTUUIUVIUWAUWCUWBUVGHYNYOACWTIYNYPBCWTXAYNYOYPXRXSXDUVBUVGHXEXFXGXH
+      YSYCUUHYDUUIYBYRXQXLYBYRXTXLXIXJXKXMXNXO $.
+      $( [18-Feb-2015] $)
   $}
 
   ${
@@ -50105,20 +50124,20 @@ $)
     $( If ` F ` and ` G ` are functions, then their tail cross product is a
        function over the intersection of their domains. $)
     fntxp $p |- ( ( F Fn A /\ G Fn B ) -> ( F (x) G ) Fn ( A i^i B ) ) $=
-       ( vx vy vz va vb vc vd wfun cdm wceq wa wfn cv wbr wi wex ctxp cin brtxp
-       weq wal cop w3a anbi12i ee4anv bitr4i 3an6 bicomi 3expib im2anan9 eqeq12
-       fununiq opth syl6bb imbi2d biimprcd exp4a 3impd syl5bi exlimdvv alrimivv
-       syl alrimiv wrel reltxp dffun2 mpbiran sylibr ineq12 syl5eq anim12i an4s
-       dmtxp df-fn 3imtr4i ) CLZCMZANZOZDLZDMZBNZOZOCDUAZLZWHMZABUBZNZOZCAPZDBP
-       ZOWHWKPVTWDWBWFWMVTWDOZWIWBWFOZWLWPEQZFQZWHRZWRGQZWHRZOZFGUDZSZGUEZFUEEU
-       EZWIWPXFEFWPXEGXCWSHQZIQZUFZNZWRXHCRZWRXIDRZUGZXAJQZKQZUFZNZWRXOCRZWRXPD
-       RZUGZOZKTJTZITHTZWPXDXCXNITHTZYAKTJTZOYDWTYEXBYFHIWRWSCDUCJKWRXACDUCUHXN
-       YAHIJKUIUJWPYCXDHIWPYBXDJKYBXKXROZXLXSOZXMXTOZUGZWPXDYJYBXKXRXLXSXMXTUKU
-       LWPYGYHYIXDWPYGYHYIXDWPYHYIOZHJUDZIKUDZOZSZYGYKXDSZSVTYHYLWDYIYMVTXLXSYL
-       WRXHXOCUPUMWDXMXTYMWRXIXPDUPUMUNYGYPYOYGXDYNYKYGXDXJXQNYNWSXJXAXQUOXHXIX
-       OXPUQURUSUTVFVAVBVCVDVDVCVGVEWIWHVHXGCDVIEFGWHVJVKVLWQWJWAWEUBWKCDVQWAAW
-       EBVMVNVOVPWNWCWOWGCAVRDBVRUHWHWKVRVS $.
-       $( [24-Feb-2015] $)
+      ( vx vy vz va vb vc vd wfun cdm wceq wa wfn cv wbr wi wex cin weq wal cop
+      ctxp w3a anbi12i ee4anv bitr4i 3an6 bicomi fununiq 3expib im2anan9 eqeq12
+      brtxp opth syl6bb imbi2d biimprcd syl exp4a 3impd syl5bi exlimdvv alrimiv
+      alrimivv wrel reltxp dffun2 mpbiran sylibr dmtxp ineq12 syl5eq an4s df-fn
+      anim12i 3imtr4i ) CLZCMZANZOZDLZDMZBNZOZOCDUEZLZWHMZABUAZNZOZCAPZDBPZOWHW
+      KPVTWDWBWFWMVTWDOZWIWBWFOZWLWPEQZFQZWHRZWRGQZWHRZOZFGUBZSZGUCZFUCEUCZWIWP
+      XFEFWPXEGXCWSHQZIQZUDZNZWRXHCRZWRXIDRZUFZXAJQZKQZUDZNZWRXOCRZWRXPDRZUFZOZ
+      KTJTZITHTZWPXDXCXNITHTZYAKTJTZOYDWTYEXBYFHIWRWSCDUPJKWRXACDUPUGXNYAHIJKUH
+      UIWPYCXDHIWPYBXDJKYBXKXROZXLXSOZXMXTOZUFZWPXDYJYBXKXRXLXSXMXTUJUKWPYGYHYI
+      XDWPYGYHYIXDWPYHYIOZHJUBZIKUBZOZSZYGYKXDSZSVTYHYLWDYIYMVTXLXSYLWRXHXOCULU
+      MWDXMXTYMWRXIXPDULUMUNYGYPYOYGXDYNYKYGXDXJXQNYNWSXJXAXQUOXHXIXOXPUQURUSUT
+      VAVBVCVDVEVEVDVFVGWIWHVHXGCDVIEFGWHVJVKVLWQWJWAWEUAWKCDVMWAAWEBVNVOVRVPWN
+      WCWOWGCAVQDBVQUGWHWKVQVS $.
+      $( [24-Feb-2015] $)
   $}
 
   ${
@@ -50159,15 +50178,15 @@ $)
     releqel.1 $e |- T e. _V $.
     releqel.2 $e |- ( <. { y } , T >. e. R <-> y e. A ) $.
     $( Lemma to turn a membership condition into an equality condition. $)
-    releqel $p |- ( <. x , T >. e. ~ ( ( Ins3 SSet (+) Ins2 R ) " 1c ) <-> 
+    releqel $p |- ( <. x , T >. e. ~ ( ( Ins3 SSet (+) Ins2 R ) " 1c ) <->
      x = A ) $=
-       ( cv cop csset cins3 cins2 csymdif c1c wcel wn wb wex vex bitri cima wel
-       wal ccompl wceq csn elima1c elsymdif otelins3 opelssetsn bibi12i xchbinx
-       otelins2 exbii exnal 3bitrri con1bii opex elcompl dfcleq 3bitr4i ) AHZEI
-       ZJKZDLZMZNUAZOZPBAUBZBHZCOZQZBUCZVCVGUDOVBCUEVMVHVHVJUFZVCIZVFOZBRVLPZBR
-       VMPBVCVFUGVPVQBVPVOVDOZVOVEOZQVLVOVDVEUHVRVIVSVKVRVNVBIJOVIVNVBEJFUIVJVB
-       BSASZUJTVSVNEIDOVKVNVBEDVTUMGTUKULUNVLBUOUPUQVCVGVBEVTFURUSBVBCUTVA $.
-       $( [9-Mar-2015] $)
+      ( cv cop csset cins3 cins2 csymdif c1c wcel wn wb wex vex bitri cima wceq
+      wel wal csn elima1c elsymdif otelins3 opelssetsn otelins2 bibi12i xchbinx
+      ccompl exbii exnal 3bitrri con1bii opex elcompl dfcleq 3bitr4i ) AHZEIZJK
+      ZDLZMZNUAZOZPBAUCZBHZCOZQZBUDZVCVGUMOVBCUBVMVHVHVJUEZVCIZVFOZBRVLPZBRVMPB
+      VCVFUFVPVQBVPVOVDOZVOVEOZQVLVOVDVEUGVRVIVSVKVRVNVBIJOVIVNVBEJFUHVJVBBSASZ
+      UITVSVNEIDOVKVNVBEDVTUJGTUKULUNVLBUOUPUQVCVGVBEVTFURUSBVBCUTVA $.
+      $( [9-Mar-2015] $)
   $}
 
   ${
@@ -50204,14 +50223,14 @@ $)
     $d w y $.  $d w z $.  $d x y $.  $d x z $.  $d y z $.
     releqoprab.1 $e |- ( <. <. x , y >. , z >. e. A <-> ph ) $.
     $( Equality condition for an operator abstraction. $)
-    releqoprab $p |- ( ( ( _V X. _V ) X. _V ) i^i A ) = 
+    releqoprab $p |- ( ( ( _V X. _V ) X. _V ) i^i A ) =
                 { <. <. x , y >. , z >. | ph } $=
-       ( vw cvv cxp cin cv cop wceq wa wex cab copab2 wcel elvvv anbi1i 3bitr4i
-       elin 19.41vvv eleq1 syl6bb pm5.32i 3exbii bitri abbi2i df-oprab eqtr4i )
-       HHIHIZEJZGKZBKCKLDKLZMZANZDOCOBOZGPABCDQURGUMUNUMRZUPUNERZNZDOCOBOZURUNU
-       LRZUTNUPDOCOBOZUTNUSVBVCVDUTBCDUNSTUNULEUBUPUTBCDUCUAVAUQBCDUPUTAUPUTUOE
-       RAUNUOEUDFUEUFUGUHUIABCDGUJUK $.
-       $( [13-Feb-2015] $)
+      ( vw cvv cxp cin cv cop wceq wa wex cab copab2 wcel elvvv anbi1i 19.41vvv
+      elin 3bitr4i eleq1 syl6bb pm5.32i 3exbii bitri abbi2i df-oprab eqtr4i ) H
+      HIHIZEJZGKZBKCKLDKLZMZANZDOCOBOZGPABCDQURGUMUNUMRZUPUNERZNZDOCOBOZURUNULR
+      ZUTNUPDOCOBOZUTNUSVBVCVDUTBCDUNSTUNULEUBUPUTBCDUAUCVAUQBCDUPUTAUPUTUOERAU
+      NUOEUDFUEUFUGUHUIABCDGUJUK $.
+      $( [13-Feb-2015] $)
   $}
 
   ${
@@ -50220,21 +50239,21 @@ $)
     $d w z $.  $d x y $.  $d x z $.  $d y z $.
     releqmpt2.1 $e |- ( <. { z } , <. x , y >. >. e. R <-> z e. V ) $.
     $( Equality condition for a mapping operation. $)
-    releqmpt2 $p |- ( ( ( A X. B ) X. _V ) \ 
+    releqmpt2 $p |- ( ( ( A X. B ) X. _V ) \
      ( ( Ins2 SSet (+) Ins3 R ) " 1c ) ) = ( x e. A , y e. B |-> V ) $=
-       ( vw cxp cvv csset cin cv wcel wa cop vex bitri wn cins2 c1c cima ccompl
-       cins3 csymdif wceq copab2 cdif cmpt2 inass xpss xpss1 ax-mp sseqin2 mpbi
-       wss ineq1i elin opelxp mpbiran2 wel wb wal csn wex elima1c elsymdif opex
-       otelins2 opelssetsn otelins3 bibi12i xchbinx exbii 3bitri con2bii dfcleq
-       exnal elcompl 3bitr4ri anbi12i releqoprab 3eqtr3i df-dif df-mpt2 3eqtr4i
-       ) DEJZKJZLUAZFUEZUFZUBUCZUDZMZANZDOBNZEOPZINZGUGZPZABIUHZWIWMUIABDEGUJKK
-       JZKJZWIMZWNMXDWOMWOXBXDWIWNUKXEWIWNWIXDUQZXEWIUGWHXCUQXFDEULWHXCKUMUNWIX
-       DUOUPURXAABIWOWPWQQZWSQZWOOXHWIOZXHWNOZPXAXHWIWNUSXIWRXJWTXIXGWHOZWRXIXK
-       WSKOIRZXGWSWHKUTVAWPWQDEUTSCIVBZCNZGOZVCZCVDZXHWMOZTWTXJXRXQXRXNVEZXHQZW
-       LOZCVFXPTZCVFXQTCXHWLVGYAYBCYAXTWJOZXTWKOZVCXPXTWJWKVHYCXMYDXOYCXSWSQLOX
-       MXSXGWSLWPWQARBRVIZVJXNWSCRXLVKSYDXSXGQFOXOXSXGWSFXLVLHSVMVNVOXPCVSVPVQC
-       WSGVRXHWMXGWSYEXLVIVTWAWBSWCWDWIWMWEABIDEGWFWG $.
-       $( [13-Feb-2015] $)
+      ( vw cxp cvv csset cin cv wcel wa cop vex bitri wn cins2 csymdif c1c cima
+      cins3 ccompl wceq copab2 cdif cmpt2 inass xpss xpss1 ax-mp sseqin2 ineq1i
+      wss mpbi elin opelxp mpbiran2 wel wal csn wex elima1c elsymdif opelssetsn
+      opex otelins2 otelins3 bibi12i xchbinx exbii exnal 3bitri con2bii elcompl
+      wb dfcleq 3bitr4ri anbi12i releqoprab 3eqtr3i df-dif df-mpt2 3eqtr4i ) DE
+      JZKJZLUAZFUEZUBZUCUDZUFZMZANZDOBNZEOPZINZGUGZPZABIUHZWIWMUIABDEGUJKKJZKJZ
+      WIMZWNMXDWOMWOXBXDWIWNUKXEWIWNWIXDUQZXEWIUGWHXCUQXFDEULWHXCKUMUNWIXDUOURU
+      PXAABIWOWPWQQZWSQZWOOXHWIOZXHWNOZPXAXHWIWNUSXIWRXJWTXIXGWHOZWRXIXKWSKOIRZ
+      XGWSWHKUTVAWPWQDEUTSCIVBZCNZGOZVSZCVCZXHWMOZTWTXJXRXQXRXNVDZXHQZWLOZCVEXP
+      TZCVEXQTCXHWLVFYAYBCYAXTWJOZXTWKOZVSXPXTWJWKVGYCXMYDXOYCXSWSQLOXMXSXGWSLW
+      PWQARBRVIZVJXNWSCRXLVHSYDXSXGQFOXOXSXGWSFXLVKHSVLVMVNXPCVOVPVQCWSGVTXHWMX
+      GWSYEXLVIVRWAWBSWCWDWIWMWEABIDEGWFWG $.
+      $( [13-Feb-2015] $)
   $}
 
   ${
@@ -50254,12 +50273,12 @@ $)
     mpt2exlem.2 $e |- B e. _V $.
     mpt2exlem.3 $e |- R e. _V $.
     $( Lemma for the existence of a double mapping. $)
-    mpt2exlem $p |- ( ( ( A X. B ) X. _V ) \ 
+    mpt2exlem $p |- ( ( ( A X. B ) X. _V ) \
      ( ( Ins2 SSet (+) Ins3 R ) " 1c ) ) e. _V $=
-       ( cxp cvv csset cins2 cins3 csymdif c1c cima xpex ssetex ins2ex symdifex
-       vvex ins3ex 1cex imaex difex ) ABGZHGIJZCKZLZMNUDHABDEOSOUGMUEUFIPQCFTRU
-       AUBUC $.
-       $( [13-Feb-2015] $)
+      ( cxp cvv csset cins2 cins3 csymdif cima xpex vvex ssetex ins2ex symdifex
+      c1c ins3ex 1cex imaex difex ) ABGZHGIJZCKZLZSMUDHABDENONUGSUEUFIPQCFTRUAU
+      BUC $.
+      $( [13-Feb-2015] $)
   $}
 
   ${
@@ -50301,9 +50320,9 @@ $)
     brcup.2 $e |- B e. _V $.
     $( Binary relationship form of the cup function. $)
     brcup $p |- ( <. A , B >. Cup C <-> C = ( A u. B ) ) $=
-       ( cvv wcel cop ccup wbr cun wceq wb brcupg mp2an ) AFGBFGABHCIJCABKLMDEA
-       BCFFNO $.
-       $( [11-Feb-2015] $)
+      ( cvv wcel cop ccup wbr cun wceq wb brcupg mp2an ) AFGBFGABHCIJCABKLMDEAB
+      CFFNO $.
+      $( [11-Feb-2015] $)
   $}
 
   ${
@@ -50323,7 +50342,7 @@ $)
   ${
     $d A x y $.  $d B x y $.
     $( The binary relationship form of the ` Disj ` relationship. $)
-    brdisjg $p |- ( ( A e. V /\ B e. W ) -> 
+    brdisjg $p |- ( ( A e. V /\ B e. W ) ->
              ( A Disj B <-> ( A i^i B ) = (/) ) ) $=
       ( vx vy cv cin c0 wceq cdisj ineq1 eqeq1d ineq2 df-disj brabg ) EGZFGZHZI
       JARHZIJABHZIJEFABCDKQAJSTIQARLMRBJTUAIRBANMEFOP $.
@@ -50403,13 +50422,13 @@ $)
     $d x y z $.
     $( ` AddC ` is a function over all ordered pairs. $)
     addcfn $p |- AddC Fn ( _V X. _V ) $=
-       ( vz vx vy caddcfn cvv cxp wfn wfun cdm wceq cv cplc moeq funoprab cmpt2
-       copab2 eqtri copab wcel vex df-addcfn funeqi wex wa addcex isseti pm3.2i
-       mpt2v mpbir 2th opabbii dmeqi dmoprab df-xp 3eqtr4i df-fn mpbir2an ) DEE
-       FZGDHZDIZURJUSAKBKZCKZLZJZBCAPZHVDBCAAVCMNDVEDBCEEVCOVEBCUABCAVCUHQZUBUI
-       VDAUCZBCRZVAESZVBESZUDZBCRUTURVGVKBCVGVKAVCVAVBBTZCTZUEUFVIVJVLVMUGUJUKU
-       TVEIVHDVEVFULVDBCAUMQBCEEUNUODURUPUQ $.
-       $( [2-Mar-2015] $)
+      ( vz vx vy caddcfn cvv cxp wfn wfun cdm wceq cv cplc copab2 moeq funoprab
+      cmpt2 eqtri copab wcel vex df-addcfn mpt2v funeqi mpbir wex addcex isseti
+      wa pm3.2i 2th opabbii dmeqi dmoprab df-xp 3eqtr4i df-fn mpbir2an ) DEEFZG
+      DHZDIZURJUSAKBKZCKZLZJZBCAMZHVDBCAAVCNODVEDBCEEVCPVEBCUABCAVCUBQZUCUDVDAU
+      EZBCRZVAESZVBESZUHZBCRUTURVGVKBCVGVKAVCVAVBBTZCTZUFUGVIVJVLVMUIUJUKUTVEIV
+      HDVEVFULVDBCAUMQBCEEUNUODURUPUQ $.
+      $( [2-Mar-2015] $)
   $}
 
   ${
@@ -50418,12 +50437,12 @@ $)
     braddcfn.2 $e |- B e. _V $.
     $( Binary relationship form of the ` AddC ` function. $)
     braddcfn $p |- ( <. A , B >. AddC C <-> ( A +c B ) = C ) $=
-       ( vx vy cop caddcfn wbr cfv wceq cplc cvv cxp wfn wcel wb mp2an cv df-ov
-       addcfn opelxp mpbir2an fnbrfvb co addceq1 df-addcfn addcex ovmpt2 eqtr3i
-       addceq2 eqeq1i bitr3i ) ABHZCIJZUOIKZCLZABMZCLINNOZPUOUTQZURUPRUBVAANQZB
-       NQZDEABNNUCUDUTUOCIUESUQUSCABIUFZUQUSABIUAVBVCVDUSLDEFGABNNFTZGTZMUSIAVF
-       MVEAVFUGVFBAULFGUHABDEUIUJSUKUMUN $.
-       $( [2-Mar-2015] $)
+      ( vx vy cop caddcfn wbr cfv wceq cplc cvv cxp wfn wcel wb mp2an cv addcfn
+      opelxp mpbir2an fnbrfvb co addceq1 addceq2 df-addcfn addcex ovmpt2 eqtr3i
+      df-ov eqeq1i bitr3i ) ABHZCIJZUOIKZCLZABMZCLINNOZPUOUTQZURUPRUAVAANQZBNQZ
+      DEABNNUBUCUTUOCIUDSUQUSCABIUEZUQUSABIULVBVCVDUSLDEFGABNNFTZGTZMUSIAVFMVEA
+      VFUFVFBAUGFGUHABDEUIUJSUKUMUN $.
+      $( [2-Mar-2015] $)
   $}
 
   ${
@@ -50433,11 +50452,11 @@ $)
        realization as a set of ordered pairs, but since ` x = x ` is
        stratified, then it does have a realization as a set. $)
     epprc $p |- -. _E e. _V $=
-       ( vx cep cvv wcel cv wnel cab wn ru df-nel mpbi cfix ccompl wel wbr epel
-       elfix bitri notbii vex elcompl 3bitr4i abbi2i complexg syl syl5eqelr mto
-       fixexg ) BCDZAEZUJFZAGZCDZULCFUMHAIULCJKUIULBLZMZCUKAUOUJUNDZHAANZHUJUOD
-       UKUPUQUPUJUJBOUQUJBQAAPRSUJUNATUAUJUJJUBUCUIUNCDUOCDBCUHUNCUDUEUFUG $.
-       $( [20-Feb-2015] $)
+      ( vx cep cvv wcel cv wnel cab wn ru df-nel mpbi cfix ccompl wel wbr elfix
+      epel bitri notbii vex elcompl 3bitr4i abbi2i complexg syl syl5eqelr mto
+      fixexg ) BCDZAEZUJFZAGZCDZULCFUMHAIULCJKUIULBLZMZCUKAUOUJUNDZHAANZHUJUODU
+      KUPUQUPUJUJBOUQUJBPAAQRSUJUNATUAUJUJJUBUCUIUNCDUOCDBCUHUNCUDUEUFUG $.
+      $( [20-Feb-2015] $)
   $}
 
   ${
@@ -50482,23 +50501,23 @@ $)
     elfuns.1 $e |- F e. _V $.
     $( Membership in the set of all functions. $)
     elfuns $p |- ( F e. Funs <-> Fun F ) $=
-       ( vf cv wfun cfuns funeq df-funs elab2 ) CDZEAECAFBJAGCHI $.
-       $( [23-Feb-2015] $)
+      ( vf cv wfun cfuns funeq df-funs elab2 ) CDZEAECAFBJAGCHI $.
+      $( [23-Feb-2015] $)
   $}
 
   ${
     $d f a $.
     $( The function with domain relationship exists. $)
     fnsex $p |- Fns e. _V $=
-       ( vf va cfns cvv cxp cfuns c1st cimage cin cv wfn copab df-fns wcel wceq
-       wa vex vvex xpex inex cop wfun cdm opelxp mpbiran2 elfuns bitri wbr cima
-       brimage dfdm4 eqeq2i bitr4i df-br 3bitr3i anbi12i elin 3bitr4i releqopab
-       eqcom df-fn eqtr4i funsex 1stex imageex eqeltri ) CDDEZFDEZGHZIZIZDCAJZB
-       JZKZABLVKABMVNABVJVLVMUAZVHNZVOVINZPVLUBZVLUCZVMOZPVOVJNVNVPVRVQVTVPVLFN
-       ZVRVPWAVMDNBQZVLVMFDUDUEVLAQZUFUGVLVMVIUHZVMVSOZVQVTWDVMGVLUIZOWEVLVMGWC
-       WBUJVSWFVMVLUKULUMVLVMVIUNVMVSUTUOUPVOVHVIUQVLVMVAURUSVBVGVJDDRRSVHVIFDV
-       CRSGVDVETTVF $.
-       $( [23-Feb-2015] $)
+      ( vf va cfns cvv cxp cfuns c1st cimage cin wfn copab df-fns wcel wceq vex
+      cv wa vvex xpex inex cop wfun cdm opelxp mpbiran2 elfuns wbr cima brimage
+      bitri dfdm4 eqeq2i bitr4i df-br eqcom 3bitr3i anbi12i elin 3bitr4i eqtr4i
+      df-fn releqopab funsex 1stex imageex eqeltri ) CDDEZFDEZGHZIZIZDCAPZBPZJZ
+      ABKVKABLVNABVJVLVMUAZVHMZVOVIMZQVLUBZVLUCZVMNZQVOVJMVNVPVRVQVTVPVLFMZVRVP
+      WAVMDMBOZVLVMFDUDUEVLAOZUFUJVLVMVIUGZVMVSNZVQVTWDVMGVLUHZNWEVLVMGWCWBUIVS
+      WFVMVLUKULUMVLVMVIUNVMVSUOUPUQVOVHVIURVLVMVAUSVBUTVGVJDDRRSVHVIFDVCRSGVDV
+      ETTVF $.
+      $( [23-Feb-2015] $)
   $}
 
   ${
@@ -50506,11 +50525,11 @@ $)
     brfns.1 $e |- F e. _V $.
     $( Binary relationship form of ` Fns ` relationship. $)
     brfns $p |- ( F Fns A <-> F Fn A ) $=
-       ( va vf vb cfns wbr cvv wcel wfn brex simprd cdm fndm eqcomd dmexg ax-mp
-       cv fneq2 syl6eqel breq2 vex fneq1 df-fns brab vtoclbg pm5.21nii ) BAGHZA
-       IJZBAKZUIBIJZUJBAGLMUKABNZIUKUMAABOPULUMIJCBIQRUABDSZGHBUNKZUIUKDAIUNABG
-       UBUNABTESZFSZKBUQKUOEFBUNGCDUCUQUPBUDUQUNBTEFUEUFUGUH $.
-       $( [23-Feb-2015] $)
+      ( va vf vb cfns wbr cvv wcel wfn brex simprd cdm eqcomd dmexg ax-mp fneq2
+      fndm cv syl6eqel breq2 vex fneq1 df-fns brab vtoclbg pm5.21nii ) BAGHZAIJ
+      ZBAKZUIBIJZUJBAGLMUKABNZIUKUMAABSOULUMIJCBIPQUABDTZGHBUNKZUIUKDAIUNABGUBU
+      NABRETZFTZKBUQKUOEFBUNGCDUCUQUPBUDUQUNBREFUEUFUGUH $.
+      $( [23-Feb-2015] $)
   $}
 
   ${
@@ -50522,23 +50541,23 @@ $)
     $( A quadratic relationship over a parallel product. $)
     qrpprod $p |- ( <. A , B >. PProd ( R , S ) <. C , D >. <->
        ( A R C /\ B S D ) ) $=
-       ( vx vy va cop wbr cvv wcel wa wb cv wceq breq1 bibi12d bitri vz vw brex
-       cpprod opexb anbi12i sylib anim12i an4 sylibr opeq1 breq1d anbi1d imbi2d
-       wi opeq2 anbi2d breq2d breq2 c1st ccom c2nd df-pprod breqi trtxp weq wex
-       ctxp brco vex opbr1st eqcom anbi1i ceqsexv opbr2nd vtocl2g imp pm5.21nii
-       exbii ) ABJZCDJZEFUDZKZALMZBLMZNZCLMZDLMZNZNZACEKZBDFKZNZWCVTLMZWALMZNWJ
-       VTWAWBUCWNWFWOWIABUECDUEUFUGWMWDWGNZWEWHNZNWJWKWPWLWQACEUCBDFUCUHWDWEWGW
-       HUIUJWFWIWCWMOZWIGPZHPZJZWAWBKZWSCEKZWTDFKZNZOZUOWIAWTJZWAWBKZWKXDNZOZUO
-       WIWRUOGHABLLWSAQZXFXJWIXKXBXHXEXIXKXAXGWAWBWSAWTUKULXKXCWKXDWSACERUMSUNW
-       TBQZXJWRWIXLXHWCXIWMXLXGVTWAWBWTBAUPULXLXDWLWKWTBDFRUQSUNXAUAPZUBPZJZWBK
-       ZWSXMEKZWTXNFKZNZOXACXNJZWBKZXCXRNZOXFUAUBCDLLXMCQZXPYAXSYBYCXOXTXAWBXMC
-       XNUKURYCXQXCXRXMCWSEUSUMSXNDQZYAXBYBXEYDXTWAXAWBXNDCUPURYDXRXDXCXNDWTFUS
-       UQSXPXAXMEUTVAZKZXAXNFVBVAZKZNZXSXPXAXOYEYGVHZKYIXAXOWBYJEFVCVDXAXMXNYEY
-       GVETYFXQYHXRYFIGVFZIPZXMEKZNZIVGZXQYFXAYLUTKZYMNZIVGYOIXAXMEUTVIYQYNIYPY
-       KYMYPGIVFYKWSWTYLGVJZHVJZVKWSYLVLTVMVSTYMXQIWSYRYLWSXMERVNTYHIHVFZYLXNFK
-       ZNZIVGZXRYHXAYLVBKZUUANZIVGUUCIXAXNFVBVIUUEUUBIUUDYTUUAUUDHIVFYTWSWTYLYR
-       YSVOWTYLVLTVMVSTUUAXRIWTYSYLWTXNFRVNTUFTVPVPVQVR $.
-       $( [24-Feb-2015] $)
+      ( vx vy va cop wbr cvv wcel wa wb cv wceq breq1 bibi12d bitri cpprod brex
+      vz vw opexb anbi12i sylib anim12i an4 sylibr wi opeq1 breq1d anbi1d opeq2
+      imbi2d anbi2d breq2 c1st ccom c2nd ctxp df-pprod breqi trtxp weq wex brco
+      breq2d vex opbr1st eqcom anbi1i exbii ceqsexv opbr2nd vtocl2g pm5.21nii
+      imp ) ABJZCDJZEFUAZKZALMZBLMZNZCLMZDLMZNZNZACEKZBDFKZNZWCVTLMZWALMZNWJVTW
+      AWBUBWNWFWOWIABUECDUEUFUGWMWDWGNZWEWHNZNWJWKWPWLWQACEUBBDFUBUHWDWEWGWHUIU
+      JWFWIWCWMOZWIGPZHPZJZWAWBKZWSCEKZWTDFKZNZOZUKWIAWTJZWAWBKZWKXDNZOZUKWIWRU
+      KGHABLLWSAQZXFXJWIXKXBXHXEXIXKXAXGWAWBWSAWTULUMXKXCWKXDWSACERUNSUPWTBQZXJ
+      WRWIXLXHWCXIWMXLXGVTWAWBWTBAUOUMXLXDWLWKWTBDFRUQSUPXAUCPZUDPZJZWBKZWSXMEK
+      ZWTXNFKZNZOXACXNJZWBKZXCXRNZOXFUCUDCDLLXMCQZXPYAXSYBYCXOXTXAWBXMCXNULVIYC
+      XQXCXRXMCWSEURUNSXNDQZYAXBYBXEYDXTWAXAWBXNDCUOVIYDXRXDXCXNDWTFURUQSXPXAXM
+      EUSUTZKZXAXNFVAUTZKZNZXSXPXAXOYEYGVBZKYIXAXOWBYJEFVCVDXAXMXNYEYGVETYFXQYH
+      XRYFIGVFZIPZXMEKZNZIVGZXQYFXAYLUSKZYMNZIVGYOIXAXMEUSVHYQYNIYPYKYMYPGIVFYK
+      WSWTYLGVJZHVJZVKWSYLVLTVMVNTYMXQIWSYRYLWSXMERVOTYHIHVFZYLXNFKZNZIVGZXRYHX
+      AYLVAKZUUANZIVGUUCIXAXNFVAVHUUEUUBIUUDYTUUAUUDHIVFYTWSWTYLYRYSVPWTYLVLTVM
+      VNTUUAXRIWTYSYLWTXNFRVOTUFTVQVQVSVR $.
+      $( [24-Feb-2015] $)
   $}
 
   $( The parallel product of two sets is a set. $)
@@ -50553,16 +50572,16 @@ $)
     pprodex.2 $e |- B e. _V $.
     $( The parallel product of two sets is a set. $)
     pprodex $p |- PProd ( A , B ) e. _V $=
-       ( cvv wcel cpprod pprodexg mp2an ) AEFBEFABGEFCDABEEHI $.
-       $( [24-Feb-2015] $)
+      ( cvv wcel cpprod pprodexg mp2an ) AEFBEFABGEFCDABEEHI $.
+      $( [24-Feb-2015] $)
   $}
 
   ${
     $( Parallel product is a relationship. $)
     relpprod $p |- Rel PProd ( A , B ) $=
-       ( cpprod wrel c1st ccom c2nd ctxp reltxp df-pprod releqi mpbir ) ABCZDAE
-       FZBGFZHZDNOIMPABJKL $.
-       $( [24-Feb-2015] $)
+      ( cpprod wrel c1st ccom c2nd ctxp reltxp df-pprod releqi mpbir ) ABCZDAEF
+      ZBGFZHZDNOIMPABJKL $.
+      $( [24-Feb-2015] $)
   $}
 
   ${
@@ -50574,18 +50593,18 @@ $)
     brpprod $p |- ( A PProd ( R , S ) B <->
        E. x E. y E. z E. w ( A = <. x , y >. /\ B = <. z , w >. /\
          ( x R z /\ y S w ) ) ) $=
-       ( wbr c1st ccom cv cop w3a wex wa anbi1i 19.41v exbii bitri cpprod breqi
-       c2nd ctxp wceq df-pprod brtxp brco an32 vex br1st brco2nd syl6bb pm5.32i
-       breq1 3bitr2i bitr3i bitr2i 3bitri anbi2i 3anass 3ancoma 19.42vv 3bitr4i
-       anass 2exbii exrot4 ) EFGHUAZIEFGJKZHUCKZUDZIFCLZDLZMUEZEVLVIIZEVMVJIZNZ
-       DOCOZEALZBLZMZUEZVNVSVLGIZVTVMHIZPZNZDOCOBOAOZEFVHVKGHUFUBCDEFVIVJUGVRWF
-       BOAOZDOCOWGVQWHCDVNVOVPPZPVNWBWEPZBOZAOZPZVQWHWIWLVNWIEVSJIZWCPZAOZVPPWO
-       VPPZAOWLVOWPVPAEVLGJUHQWOVPARWQWKAWQWNVPPZWCPWBWDPZBOZWCPZWKWNWCVPUIWRWT
-       WCWRWBBOZVPPWBVPPZBOWTWNXBVPBEVSAUJZUKQWBVPBRXCWSBWBVPWDWBVPWAVMVJIWDEWA
-       VMVJUOVSVTVMHXDBUJULUMUNSUPQWKWSWCPZBOXAWJXEBWJWBWCPWDPXEWBWCWDVEWBWCWDU
-       IUQSWSWCBRURUSSUPUTVNVOVPVAWHVNWJPZBOAOWMWFXFABWFVNWBWENXFWBVNWEVBVNWBWE
-       VATVFVNWJABVCTVDVFWFCDABVGTUS $.
-       $( [24-Feb-2015] $)
+      ( wbr c1st ccom cv cop w3a wex wa anbi1i 19.41v exbii bitri c2nd df-pprod
+      cpprod ctxp wceq breqi brtxp brco an32 br1st breq1 brco2nd syl6bb pm5.32i
+      3bitr2i bitr3i bitr2i 3bitri anbi2i 3anass 3ancoma 2exbii 19.42vv 3bitr4i
+      vex anass exrot4 ) EFGHUCZIEFGJKZHUAKZUDZIFCLZDLZMUEZEVLVIIZEVMVJIZNZDOCO
+      ZEALZBLZMZUEZVNVSVLGIZVTVMHIZPZNZDOCOBOAOZEFVHVKGHUBUFCDEFVIVJUGVRWFBOAOZ
+      DOCOWGVQWHCDVNVOVPPZPVNWBWEPZBOZAOZPZVQWHWIWLVNWIEVSJIZWCPZAOZVPPWOVPPZAO
+      WLVOWPVPAEVLGJUHQWOVPARWQWKAWQWNVPPZWCPWBWDPZBOZWCPZWKWNWCVPUIWRWTWCWRWBB
+      OZVPPWBVPPZBOWTWNXBVPBEVSAVEZUJQWBVPBRXCWSBWBVPWDWBVPWAVMVJIWDEWAVMVJUKVS
+      VTVMHXDBVEULUMUNSUOQWKWSWCPZBOXAWJXEBWJWBWCPWDPXEWBWCWDVFWBWCWDUIUPSWSWCB
+      RUQURSUOUSVNVOVPUTWHVNWJPZBOAOWMWFXFABWFVNWBWENXFWBVNWEVAVNWBWEUTTVBVNWJA
+      BVCTVDVBWFCDABVGTUR $.
+      $( [24-Feb-2015] $)
   $}
 
   ${
@@ -50595,14 +50614,14 @@ $)
     $d c d $.  $d c x $.  $d c y $.  $d d x $.  $d d y $.  $d x y $.
     $( A subset law for parallel product. $)
     pprodss4v $p |- PProd ( A , B ) C_ ( ( _V X. _V ) X. ( _V X. _V ) ) $=
-       ( vx vy va vb vc vd cvv cxp cv cop wcel wal wceq wbr wex opelxp mpbir2an
-       vex cpprod wss wi wrel wb relpprod ssrel ax-mp w3a brpprod bitr3i opeq12
-       wa df-br syl6eqel 3adant3 exlimivv sylbir ax-gen mpgbir ) ABUAZIIJZVBJZU
-       BZCKZDKZLZVAMZVGVCMZUCZDNZCVAUDVDVKCNUEABUFCDVAVCUGUHVJDVHVEEKZFKZLZOZVF
-       GKZHKZLZOZVLVPAPVMVQBPUMZUIZHQGQZFQEQZVIWCVEVFVAPVHEFGHVEVFABUJVEVFVAUNU
-       KWBVIEFWAVIGHVOVSVIVTVOVSUMVGVNVRLZVCVEVNVFVRULWDVCMVNVBMZVRVBMZWEVLIMVM
-       IMETFTVLVMIIRSWFVPIMVQIMGTHTVPVQIIRSVNVRVBVBRSUOUPUQUQURUSUT $.
-       $( [24-Feb-2015] $)
+      ( vx vy va vb vc vd cvv cxp cop wcel wal wceq wbr wex vex opelxp mpbir2an
+      cv cpprod wss wi wrel wb relpprod ssrel ax-mp wa w3a brpprod df-br bitr3i
+      opeq12 syl6eqel 3adant3 exlimivv sylbir ax-gen mpgbir ) ABUAZIIJZVBJZUBZC
+      TZDTZKZVALZVGVCLZUCZDMZCVAUDVDVKCMUEABUFCDVAVCUGUHVJDVHVEETZFTZKZNZVFGTZH
+      TZKZNZVLVPAOVMVQBOUIZUJZHPGPZFPEPZVIWCVEVFVAOVHEFGHVEVFABUKVEVFVAULUMWBVI
+      EFWAVIGHVOVSVIVTVOVSUIVGVNVRKZVCVEVNVFVRUNWDVCLVNVBLZVRVBLZWEVLILVMILEQFQ
+      VLVMIIRSWFVPILVQILGQHQVPVQIIRSVNVRVBVBRSUOUPUQUQURUSUT $.
+      $( [24-Feb-2015] $)
   $}
 
   ${
@@ -50613,22 +50632,21 @@ $)
     $d c t $.  $d c u $.  $d d t $.  $d d u $.  $d t u $.  $d t x $.  $d u x $.
     $( The domain of a parallel product. $)
     dmpprod $p |- dom PProd ( A , B ) = ( dom A X. dom B ) $=
-       ( va vb vx vc vd vt vu cdm cxp cvv wss cv cop wbr wa wex vex bitri ax-mp
-       cpprod wrel pprodss4v dmss dmxpss sstri relxp relss mp2 wceq opex isseti
-       19.41v mpbiran 2exbii wcel df-br eldm w3a brpprod weq 3anass opth anbi1i
-       eqcom 19.42vv df-3an bicomi breq1 anbi1d anbi2d 2exbidv exbii brxp eeanv
-       ceqsex2v exrot3 anbi12i bitr4i 3bitr4i eqbrriv ) CDABUBZJZAJZBJZKZWDLLKZ
-       MWHUCWDUCWDWHWHKZJZWHWCWIMWDWJMABUDWCWIUEUAWHWHUFUGLLUHWDWHUIUJWEWFUHENZ
-       FNZGNZOZUKZCNZWLAPZDNZWMBPZQZQZERZGRFRZWTGRFRZWPWRWDPZWPWRWGPZXBWTFGXBWO
-       ERWTEWNWLWMFSGSULUMWOWTEUNUOUPXEWPWROZWDUQZXCWPWRWDURXHXGWKWCPZERZXCEXGW
-       CUSXJXAGRFRZERXCXIXKEXIXGHNZINZOZUKZWOXLWLAPZXMWMBPZQZUTZGRFRZIRHRZXKHIF
-       GXGWKABVAYAHCVBZIDVBZWOXRQZGRFRZUTZIRHRXKXTYFHIXTYBYCQZYDQZGRFRZYFXSYHFG
-       XSXOYDQYHXOWOXRVCXOYGYDXOXNXGUKYGXGXNVFXLXMWPWRVDTVETUPYIYGYEQZYFYGYDFGV
-       GYFYJYBYCYEVHVITTUPYEWOWQXQQZQZGRFRXKHIWPWRCSDSYBYDYLFGYBXRYKWOYBXPWQXQX
-       LWPWLAVJVKVLVMYCYLXAFGYCYKWTWOYCXQWSWQXMWRWMBVJVLVLVMVQTTVNXAEFGVRTTTXFW
-       PWEUQZWRWFUQZQZXDWPWRWEWFVOXDWQFRZWSGRZQYOWQWSFGVPYMYPYNYQFWPAUSGWRBUSVS
-       VTVTWAWB $.
-       $( [24-Feb-2015] $)
+      ( va vb vx vc vd vt vu cdm cxp cvv wss cv cop wbr wa wex vex bitri cpprod
+      wrel pprodss4v dmss ax-mp dmxpss sstri relxp relss mp2 wceq isseti 19.41v
+      opex mpbiran 2exbii wcel df-br eldm w3a brpprod 3anass eqcom opth 19.42vv
+      weq anbi1i df-3an bicomi breq1 anbi1d anbi2d 2exbidv ceqsex2v exrot3 brxp
+      exbii eeanv anbi12i bitr4i 3bitr4i eqbrriv ) CDABUAZJZAJZBJZKZWDLLKZMWHUB
+      WDUBWDWHWHKZJZWHWCWIMWDWJMABUCWCWIUDUEWHWHUFUGLLUHWDWHUIUJWEWFUHENZFNZGNZ
+      OZUKZCNZWLAPZDNZWMBPZQZQZERZGRFRZWTGRFRZWPWRWDPZWPWRWGPZXBWTFGXBWOERWTEWN
+      WLWMFSGSUNULWOWTEUMUOUPXEWPWROZWDUQZXCWPWRWDURXHXGWKWCPZERZXCEXGWCUSXJXAG
+      RFRZERXCXIXKEXIXGHNZINZOZUKZWOXLWLAPZXMWMBPZQZUTZGRFRZIRHRZXKHIFGXGWKABVA
+      YAHCVFZIDVFZWOXRQZGRFRZUTZIRHRXKXTYFHIXTYBYCQZYDQZGRFRZYFXSYHFGXSXOYDQYHX
+      OWOXRVBXOYGYDXOXNXGUKYGXGXNVCXLXMWPWRVDTVGTUPYIYGYEQZYFYGYDFGVEYFYJYBYCYE
+      VHVITTUPYEWOWQXQQZQZGRFRXKHIWPWRCSDSYBYDYLFGYBXRYKWOYBXPWQXQXLWPWLAVJVKVL
+      VMYCYLXAFGYCYKWTWOYCXQWSWQXMWRWMBVJVLVLVMVNTTVQXAEFGVOTTTXFWPWEUQZWRWFUQZ
+      QZXDWPWRWEWFVPXDWQFRZWSGRZQYOWQWSFGVRYMYPYNYQFWPAUSGWRBUSVSVTVTWAWB $.
+      $( [24-Feb-2015] $)
   $}
 
   $( The converse of a parallel product. $)
@@ -50693,51 +50711,50 @@ $)
   $( The parallel product of two bijections is a bijection. $)
   f1opprod $p |- ( ( F : A -1-1-onto-> C /\ G : B -1-1-onto-> D ) ->
      PProd ( F , G ) : ( A X. B ) -1-1-onto-> ( C X. D ) ) $=
-    ( wfn ccnv wa cpprod cxp wf1o fnpprod cnvpprod fneq1i sylibr anim12i an4s
-    dff1o4 anbi12i 3imtr4i ) EAGZEHZCGZIZFBGZFHZDGZIZIEFJZABKZGZUJHZCDKZGZIZA
-    CELZBDFLZIUKUNUJLUBUFUDUHUPUBUFIULUDUHIZUOABEFMUSUCUGJZUNGUOCDUCUGMUNUMUT
-    EFNOPQRUQUEURUIACESBDFSTUKUNUJSUA $.
+    ( wfn ccnv wa cpprod cxp wf1o fnpprod cnvpprod fneq1i sylibr anim12i dff1o4
+    an4s anbi12i 3imtr4i ) EAGZEHZCGZIZFBGZFHZDGZIZIEFJZABKZGZUJHZCDKZGZIZACELZ
+    BDFLZIUKUNUJLUBUFUDUHUPUBUFIULUDUHIZUOABEFMUSUCUGJZUNGUOCDUCUGMUNUMUTEFNOPQ
+    SUQUEURUIACERBDFRTUKUNUJRUA $.
     $( [24-Feb-2015] $)
 
   ${
     $d A x y $.  $d B y $.
     $( The value of the cross product function. $)
     ovcross $p |- ( ( A e. V /\ B e. W ) -> ( A Cross B ) = ( A X. B ) ) $=
-       ( vx vy wcel cvv ccross co cxp wceq elex xpexg cv xpeq1 df-cross ovmpt2g
-       xpeq2 mpd3an3 syl2an ) ACGAHGZBHGZABIJABKZLZBDGACMBDMUBUCUDHGUEABHHNEFAB
-       HHEOZFOZKUDIAUGKHUFAUGPUGBASEFQRTUA $.
-       $( [24-Feb-2015] $)
+      ( vx vy wcel cvv ccross co cxp wceq xpexg cv xpeq1 xpeq2 df-cross ovmpt2g
+      elex mpd3an3 syl2an ) ACGAHGZBHGZABIJABKZLZBDGACSBDSUBUCUDHGUEABHHMEFABHH
+      ENZFNZKUDIAUGKHUFAUGOUGBAPEFQRTUA $.
+      $( [24-Feb-2015] $)
   $}
 
   ${
     $d x y z $.
     $( The domain of the cross product function. $)
     dmcross $p |- dom Cross = ( _V X. _V ) $=
-       ( vz vx vy cxp wceq wex copab cvv wcel ccross cdm vex xpex isseti pm3.2i
-       cv wa 2th opabbii eqtri cmpt2 df-cross mpt2v dmeqi dmoprab df-xp 3eqtr4i
-       copab2 ) APBPZCPZDZEZAFZBCGZUIHIZUJHIZQZBCGJKZHHDUMUQBCUMUQAUKUIUJBLZCLZ
-       MNUOUPUSUTORSURULBCAUHZKUNJVAJBCHHUKUAVABCUBBCAUKUCTUDULBCAUETBCHHUFUG
-       $.
-       $( [24-Feb-2015] $)
+      ( vz vx vy cv cxp wceq wex copab cvv wcel wa ccross cdm vex isseti pm3.2i
+      xpex 2th opabbii eqtri copab2 cmpt2 df-cross mpt2v dmeqi dmoprab 3eqtr4i
+      df-xp ) ADBDZCDZEZFZAGZBCHZUIIJZUJIJZKZBCHLMZIIEUMUQBCUMUQAUKUIUJBNZCNZQO
+      UOUPUSUTPRSURULBCAUAZMUNLVALBCIIUKUBVABCUCBCAUKUDTUEULBCAUFTBCIIUHUG $.
+      $( [24-Feb-2015] $)
 
     $( The cross product function is a function over ` ( _V X. _V ) ` $)
     fncross $p |- Cross Fn ( _V X. _V ) $=
-       ( vz vx vy ccross cvv cxp wfn wfun wceq cv copab2 moeq funoprab df-cross
-       cdm cmpt2 mpt2v eqtri funeqi mpbir dmcross df-fn mpbir2an ) DEEFZGDHZDOU
-       DIUEAJBJCJFZIZBCAKZHUGBCAAUFLMDUHDBCEEUFPUHBCNBCAUFQRSTUADUDUBUC $.
-       $( [24-Feb-2015] $)
+      ( vz vx vy ccross cvv cxp wfn wfun cdm wceq cv copab2 moeq funoprab cmpt2
+      df-cross mpt2v eqtri funeqi mpbir dmcross df-fn mpbir2an ) DEEFZGDHZDIUDJ
+      UEAKBKCKFZJZBCALZHUGBCAAUFMNDUHDBCEEUFOUHBCPBCAUFQRSTUADUDUBUC $.
+      $( [24-Feb-2015] $)
   $}
 
   ${
     $( Binary relationship over the cross product function. $)
-    brcrossg $p |- ( ( A e. V /\ B e. W ) -> 
+    brcrossg $p |- ( ( A e. V /\ B e. W ) ->
        ( <. A , B >. Cross C <-> C = ( A X. B ) ) ) $=
-       ( wcel wa ccross wceq cop wbr cxp cfv eqcom df-ov eqeq1i bitri cvv elex
-       co wb opelxp wfn fncross fnbrfvb mpan sylbir syl2an syl5bb eqeq2d bitr3d
-       ovcross ) ADFZBEFZGZCABHTZIZABJZCHKZCABLZIUQURHMZCIZUOUSUQUPCIVBCUPNUPVA
-       CABHOPQUMARFZBRFZVBUSUAZUNADSBESVCVDGURRRLZFZVEABRRUBHVFUCVGVEUDVFURCHUE
-       UFUGUHUIUOUPUTCABDEULUJUK $.
-       $( [24-Feb-2015] $)
+      ( wcel wa ccross wceq cop wbr cxp cfv eqcom df-ov eqeq1i bitri cvv elex
+      co wb opelxp wfn fncross fnbrfvb mpan sylbir syl2an syl5bb ovcross eqeq2d
+      bitr3d ) ADFZBEFZGZCABHTZIZABJZCHKZCABLZIUQURHMZCIZUOUSUQUPCIVBCUPNUPVACA
+      BHOPQUMARFZBRFZVBUSUAZUNADSBESVCVDGURRRLZFZVEABRRUBHVFUCVGVEUDVFURCHUEUFU
+      GUHUIUOUPUTCABDEUJUKUL $.
+      $( [24-Feb-2015] $)
   $}
 
   ${
@@ -50745,9 +50762,9 @@ $)
     brcross.2 $e |- B e. _V $.
     $( Binary relationship over the cross product function. $)
     brcross $p |- ( <. A , B >. Cross C <-> C = ( A X. B ) ) $=
-       ( cvv wcel cop ccross wbr cxp wceq wb brcrossg mp2an ) AFGBFGABHCIJCABKL
-       MDEABCFFNO $.
-       $( [24-Feb-2015] $)
+      ( cvv wcel cop ccross wbr cxp wceq wb brcrossg mp2an ) AFGBFGABHCIJCABKLM
+      DEABCFFNO $.
+      $( [24-Feb-2015] $)
   $}
 
   ${
@@ -50780,10 +50797,10 @@ $)
     pw1fnval.1 $e |- A e. _V $.
     $( The value of the unit power class function. $)
     pw1fnval $p |- ( Pw1Fn ` { A } ) = ~P1 A $=
-       ( vx csn c1c wcel cpw1fn cfv cpw1 wceq snel1c cv cuni unieq unisn syl6eq
-       pw1eq syl df-pw1fn pw1ex fvmpt ax-mp ) ADZEFUCGHAIZJABKCUCCLZMZIZUDEGUEU
-       CJZUFAJUGUDJUHUFUCMAUEUCNABOPUFAQRCSABTUAUB $.
-       $( [25-Feb-2015] $)
+      ( vx csn c1c wcel cpw1fn cfv cpw1 wceq snel1c cv unieq unisn syl6eq pw1eq
+      cuni syl df-pw1fn pw1ex fvmpt ax-mp ) ADZEFUCGHAIZJABKCUCCLZQZIZUDEGUEUCJ
+      ZUFAJUGUDJUHUFUCQAUEUCMABNOUFAPRCSABTUAUB $.
+      $( [25-Feb-2015] $)
   $}
 
   ${
@@ -50809,19 +50826,19 @@ $)
   ${
     $( Functionhood statement for ` Pw1Fn ` $)
     fnpw1fn $p |- Pw1Fn Fn 1c $=
-       ( vx cv cuni cpw1 cvv wcel cpw1fn c1c wfn df-pw1fn fnmpt vex uniex pw1ex
-       a1i mprg ) ABZCZDZEFZGHIAHAHSGEAJKTQHFRQALMNOP $.
-       $( [25-Feb-2015] $)
+      ( vx cuni cpw1 cvv wcel cpw1fn c1c wfn df-pw1fn fnmpt vex uniex pw1ex a1i
+      cv mprg ) AOZBZCZDEZFGHAGAGSFDAIJTQGERQAKLMNP $.
+      $( [25-Feb-2015] $)
   $}
 
   ${
     brpw1fn.1 $e |- A e. _V $.
     $( Binary relationship form of ` Pw1Fn ` $)
     brpw1fn $p |- ( { A } Pw1Fn B <-> B = ~P1 A ) $=
-       ( csn cpw1fn cfv wceq cpw1 wbr pw1fnval eqeq1i c1c wfn wb fnpw1fn snel1c
-       wcel fnbrfvb mp2an eqcom 3bitr3i ) ADZEFZBGZAHZBGUBBEIZBUEGUCUEBACJKELMU
-       BLQUDUFNOACPLUBBERSUEBTUA $.
-       $( [25-Feb-2015] $)
+      ( csn cpw1fn cfv wceq cpw1 wbr pw1fnval eqeq1i c1c wcel wb fnpw1fn snel1c
+      wfn fnbrfvb mp2an eqcom 3bitr3i ) ADZEFZBGZAHZBGUBBEIZBUEGUCUEBACJKELQUBL
+      MUDUFNOACPLUBBERSUEBTUA $.
+      $( [25-Feb-2015] $)
   $}
 
   ${
@@ -50830,22 +50847,22 @@ $)
     $( ` Pw1Fn ` is a one-to-one function with domain ` 1c ` and range
        ` ~P 1c ` . $)
     pw1fnf1o $p |- Pw1Fn : 1c -1-1-onto-> ~P 1c $=
-       ( vx vy vz va vb c1c cpw1fn wceq cv cfv cpw1 wss wex wcel cvv wa vex csn
-       exbii el1c cpw wf1o wfn crn weq wi wral fnpw1fn cuni wrex df-pw1fn rnmpt
-       cab sspw1 df1c2 sseq2i biantrur 3bitr4i elpw df-rex anbi1i 19.41v bitr4i
-       ssv excom snex unieq unisn syl6eq pw1eq syl eqeq2d ceqsexv 3bitri abbi2i
-       bitri eqtr4i anbi12i eeanv pw111 biimpi a1i fveq2 eqeqan12d eqeq12 sneqb
-       pw1fnval syl6bb 3imtr4d exlimivv sylbi rgen2a dff1o6 mpbir3an ) FFUAZGUB
-       GFUCGUDZWOHAIZGJZBIZGJZHZABUEZUFZBFUGAFUGUHWPWSWQUIZKZHZAFUJZBUMWOABFXEG
-       AUKULXGBWOWSFLZWSCIZKZHZCMZWSWONXGWSOKZLXIOLZXKPZCMXHXLCWSOBQZUNFXMWSUOU
-       PXKXOCXNXKXIVDUQSURWSFXPUSXGWQFNZXFPZAMWQXIRZHZXFPZCMZAMZXLXFAFUTXRYBAXR
-       XTCMZXFPYBXQYDXFCWQTVAXTXFCVBVCSYCYAAMZCMXLYAACVEYEXKCXFXKAXSXIVFXTXEXJW
-       SXTXDXIHXEXJHXTXDXSUIXIWQXSVGXICQVHVIXDXIVJVKVLVMSVPVNURVOVQXCABFXQWSFNZ
-       PZWQDIZRZHZWSEIZRZHZPZEMDMZXCYGYJDMZYMEMZPYOXQYPYFYQDWQTEWSTVRYJYMDEVSVC
-       YNXCDEYNYHKZYKKZHZDEUEZXAXBYTUUAUFYNYTUUAYHYKVTWAWBYJYMWRYRWTYSYJWRYIGJY
-       RWQYIGWCYHDQZWGVIYMWTYLGJYSWSYLGWCYKEQWGVIWDYNXBYIYLHUUAWQYIWSYLWEYHYKUU
-       BWFWHWIWJWKWLABFWOGWMWN $.
-       $( [26-Feb-2015] $)
+      ( vx vy vz va vb c1c cpw1fn wceq cv cfv cpw1 wss wex cvv wa vex exbii csn
+      wcel el1c cpw wf1o wfn crn wi wral fnpw1fn cuni wrex df-pw1fn rnmpt sspw1
+      weq cab df1c2 sseq2i ssv biantrur 3bitr4i elpw df-rex anbi1i 19.41v excom
+      bitr4i unieq unisn syl6eq pw1eq eqeq2d ceqsexv bitri 3bitri abbi2i eqtr4i
+      snex syl anbi12i eeanv pw111 biimpi fveq2 pw1fnval eqeqan12d eqeq12 sneqb
+      a1i syl6bb 3imtr4d exlimivv sylbi rgen2a dff1o6 mpbir3an ) FFUAZGUBGFUCGU
+      DZWOHAIZGJZBIZGJZHZABUMZUEZBFUFAFUFUGWPWSWQUHZKZHZAFUIZBUNWOABFXEGAUJUKXG
+      BWOWSFLZWSCIZKZHZCMZWSWOSXGWSNKZLXINLZXKOZCMXHXLCWSNBPZULFXMWSUOUPXKXOCXN
+      XKXIUQURQUSWSFXPUTXGWQFSZXFOZAMWQXIRZHZXFOZCMZAMZXLXFAFVAXRYBAXRXTCMZXFOY
+      BXQYDXFCWQTVBXTXFCVCVEQYCYAAMZCMXLYAACVDYEXKCXFXKAXSXIVPXTXEXJWSXTXDXIHXE
+      XJHXTXDXSUHXIWQXSVFXICPVGVHXDXIVIVQVJVKQVLVMUSVNVOXCABFXQWSFSZOZWQDIZRZHZ
+      WSEIZRZHZOZEMDMZXCYGYJDMZYMEMZOYOXQYPYFYQDWQTEWSTVRYJYMDEVSVEYNXCDEYNYHKZ
+      YKKZHZDEUMZXAXBYTUUAUEYNYTUUAYHYKVTWAWGYJYMWRYRWTYSYJWRYIGJYRWQYIGWBYHDPZ
+      WCVHYMWTYLGJYSWSYLGWBYKEPWCVHWDYNXBYIYLHUUAWQYIWSYLWEYHYKUUBWFWHWIWJWKWLA
+      BFWOGWMWN $.
+      $( [26-Feb-2015] $)
   $}
 
   ${
@@ -50854,17 +50871,16 @@ $)
        function definition. $)
     fnfullfunlem1 $p |- ( A ( ( _I o. F ) \ ( ~ _I o. F ) ) B <->
         ( A F B /\ A. x ( A F x -> x = B ) ) ) $=
-        ( vy cid ccom wbr cvv wcel cv wceq wi wal wa brex simprd wb breq2 wn
-        ccompl cdif adantr weq eqeq2 imbi2d albidv anbi12d bibi12d brdif brcoi1
-        wex brco cop df-br vex opex elcompl bitr3i xchbinx bitri anbi2i exanali
-        ideq exbii 3bitrri con1bii anbi12i vtoclg pm5.21nii ) BCFDGZFUAZDGZUBZH
-        ZCIJZBCDHZBAKZDHZVRCLZMZANZOZVOBIJZVPBCVNPQVQVPWBVQWDVPBCDPQUCBEKZVNHZB
-        WEDHZVSAEUDZMZANZOZRVOWCRECIWECLZWFVOWKWCWECBVNSWLWGVQWJWBWECBDSWLWIWAA
-        WLWHVTVSWECVRUEUFUGUHUIWFBWEVKHZBWEVMHZTZOWKBWEVKVMUJWMWGWOWJBWEDUKWJWN
-        WNVSVRWEVLHZOZAULVSWHTZOZAULWJTABWEVLDUMWQWSAWPWRVSWPVRWEUNZVLJZWRVRWEV
-        LUOXAWTFJZWHWTFVRWEAUPEUPZUQURXBVRWEFHWHVRWEFUOVRWEXCVDUSUTVAVBVEVSWHAV
-        CVFVGVHVAVIVJ $.
-        $( [9-Mar-2015] $)
+      ( vy cid ccom wbr cvv wcel cv wceq wi wal wa brex simprd wb breq2 wn cdif
+      ccompl adantr weq eqeq2 imbi2d albidv anbi12d bibi12d brcoi1 wex brco cop
+      brdif df-br opex elcompl ideq bitr3i xchbinx bitri anbi2i exanali 3bitrri
+      vex exbii con1bii anbi12i vtoclg pm5.21nii ) BCFDGZFUBZDGZUAZHZCIJZBCDHZB
+      AKZDHZVRCLZMZANZOZVOBIJZVPBCVNPQVQVPWBVQWDVPBCDPQUCBEKZVNHZBWEDHZVSAEUDZM
+      ZANZOZRVOWCRECIWECLZWFVOWKWCWECBVNSWLWGVQWJWBWECBDSWLWIWAAWLWHVTVSWECVRUE
+      UFUGUHUIWFBWEVKHZBWEVMHZTZOWKBWEVKVMUNWMWGWOWJBWEDUJWJWNWNVSVRWEVLHZOZAUK
+      VSWHTZOZAUKWJTABWEVLDULWQWSAWPWRVSWPVRWEUMZVLJZWRVRWEVLUOXAWTFJZWHWTFVRWE
+      AVEEVEZUPUQXBVRWEFHWHVRWEFUOVRWEXCURUSUTVAVBVFVSWHAVCVDVGVHVAVIVJ $.
+      $( [9-Mar-2015] $)
   $}
 
   ${
@@ -50872,22 +50888,22 @@ $)
     $( Lemma for ~ fnfullfun .  Part one of the full function operator yields a
        function. $)
     fnfullfunlem2 $p |- Fun ( ( _I o. F ) \ ( ~ _I o. F ) ) $=
-       ( vx vy vz cid ccom ccompl cdif wfun wrel cv wbr wa weq wal relco reldif
-       wi ax-mp fnfullfunlem1 ax467to4 impcom ad2ant2rl syl2anb ax-gen mpbir2an
-       gen2 dffun2 ) EAFZEGAFZHZIUKJZBKZCKZUKLZUMDKZUKLZMCDNZRZDOZCOBOUIJULEAPU
-       IUJQSUTBCUSDUOUMUNALZUMUPALZDCNRDOZMVBVAURRZCOZMURUQDUMUNATCUMUPATVAVEUR
-       VCVBVEVAURVDCUAUBUCUDUEUGBCDUKUHUF $.
-       $( [9-Mar-2015] $)
+      ( vx vy vz cid ccom ccompl cdif wfun wrel cv wbr wa wi relco reldif ax-mp
+      weq wal fnfullfunlem1 ax467to4 impcom syl2anb ax-gen gen2 dffun2 mpbir2an
+      ad2ant2rl ) EAFZEGAFZHZIUKJZBKZCKZUKLZUMDKZUKLZMCDRZNZDSZCSBSUIJULEAOUIUJ
+      PQUTBCUSDUOUMUNALZUMUPALZDCRNDSZMVBVAURNZCSZMURUQDUMUNATCUMUPATVAVEURVCVB
+      VEVAURVDCUAUBUHUCUDUEBCDUKUFUG $.
+      $( [9-Mar-2015] $)
   $}
 
   $( The full function operator yields a function over ` _V ` . $)
   fnfullfun $p |- FullFun F Fn _V $=
-    ( cfullfun cvv wfn cid ccom ccompl cdif cdm c0 csn cxp cun cin wceq wfun
-      wa fnfullfunlem2 funfn mp2an mpbi wcel 0ex fnconstg pm3.2i incompl fnun wb
-      ax-mp df-fullfun uncompl eqcomi fneq1 fneq2 sylan9bb mpbir ) ABZCDZEAFEG
-    AFHZUSIZGZJKLZMZUTVAMZDZUSUTDZVBVADZQUTVANJOVEVFVGUSPVFARUSSUAJCUBVGUCVA
-    JCUDUIUEUTUFUTVAUSVBUGTUQVCOZCVDOZURVEUHAUJVDCUTUKULVHURVCCDVIVECUQVCUMC
-    VDVCUNUOTUP $.
+    ( cfullfun cvv wfn cid ccom ccompl cdif cdm c0 csn cxp cun wa cin wceq wfun
+    fnfullfunlem2 funfn mp2an mpbi 0ex fnconstg ax-mp pm3.2i incompl df-fullfun
+    wcel fnun wb uncompl eqcomi fneq1 fneq2 sylan9bb mpbir ) ABZCDZEAFEGAFHZUSI
+    ZGZJKLZMZUTVAMZDZUSUTDZVBVADZNUTVAOJPVEVFVGUSQVFARUSSUAJCUHVGUBVAJCUCUDUEUT
+    UFUTVAUSVBUITUQVCPZCVDPZURVEUJAUGVDCUTUKULVHURVCCDVIVECUQVCUMCVDVCUNUOTUP
+    $.
     $( [9-Mar-2015] $)
 
   $( The full function of a set is a set. $)
@@ -50914,16 +50930,16 @@ $)
        function definition. $)
     fvfullfunlem1 $p |- dom ( ( _I o. F ) \ ( ~ _I o. F ) ) =
        { x | E! y x F y } $=
-       ( vz cv wbr cid ccom wcel wex weq wi wal wa wn df-br notbii 3bitri exbii
-       vex weu ccompl cdif cdm eldm brdif brcoi1 brco cop elcompl bitr3i anbi2i
-       opex ideq bitri exanali con2bii bitr4i anbi12i wsb ax-17 eu1 sbie equcom
-       breq2 imbi12i albii bitr2i abbi2i ) AEZBEZCFZBUAZAGCHZGUBZCHZUCZUDZVJVRI
-       VJVKVQFZBJVLVJDEZCFZDBKZLZDMZNZBJZVMBVJVQUEVSWEBVSVJVKVNFZVJVKVPFZOZNWEV
-       JVKVNVPUFWGVLWIWDVJVKCUGWIWAWBOZNZDJZOWDWHWLWHWAVTVKVOFZNZDJWLDVJVKVOCUH
-       WNWKDWMWJWAWMVTVKUIZVOIWOGIZOWJVTVKVOPWOGVTVKDTBTZUMUJWPWBWPVTVKGFWBVTVK
-       GPVTVKWQUNUKQRULSUOQWLWDWAWBDUPUQURUSUOSVMVLVLBDUTZBDKZLZDMZNZBJWFVLBDVL
-       DVAVBXBWEBXAWDVLWTWCDWRWAWSWBVLWABDWABVAVKVTVJCVEVCBDVDVFVGULSVHRVI $.
-       $( [9-Mar-2015] $)
+      ( vz cv wbr cid ccom wcel wex weq wi wal wa df-br vex notbii 3bitri exbii
+      wn weu ccompl cdif cdm eldm brdif brcoi1 brco cop opex ideq bitr3i anbi2i
+      elcompl bitri exanali con2bii bitr4i anbi12i wsb ax-17 breq2 sbie imbi12i
+      eu1 equcom albii bitr2i abbi2i ) AEZBEZCFZBUAZAGCHZGUBZCHZUCZUDZVJVRIVJVK
+      VQFZBJVLVJDEZCFZDBKZLZDMZNZBJZVMBVJVQUEVSWEBVSVJVKVNFZVJVKVPFZTZNWEVJVKVN
+      VPUFWGVLWIWDVJVKCUGWIWAWBTZNZDJZTWDWHWLWHWAVTVKVOFZNZDJWLDVJVKVOCUHWNWKDW
+      MWJWAWMVTVKUIZVOIWOGIZTWJVTVKVOOWOGVTVKDPBPZUJUNWPWBWPVTVKGFWBVTVKGOVTVKW
+      QUKULQRUMSUOQWLWDWAWBDUPUQURUSUOSVMVLVLBDUTZBDKZLZDMZNZBJWFVLBDVLDVAVEXBW
+      EBXAWDVLWTWCDWRWAWSWBVLWABDWABVAVKVTVJCVBVCBDVFVDVGUMSVHRVI $.
+      $( [9-Mar-2015] $)
   $}
 
   ${
@@ -50931,12 +50947,12 @@ $)
     $( Lemma for ~ fvfullfun .  Part one of the full function definition is a
        subset of the function. $)
     fvfullfunlem2 $p |- ( ( _I o. F ) \ ( ~ _I o. F ) ) C_ F $=
-       ( vx vy vz cid ccom ccompl cdif wss cv cop wi wal wbr weq wa simpl df-br
-       wcel wrel fnfullfunlem1 bitr3i 3imtr3i gen2 wb relco reldif ssrel mpbir
-       mp2b ) EAFZEGAFZHZAIZBJZCJZKZUMSZUQASZLZCMBMZUTBCUOUPANZUODJANDCOLDMZPZV
-       BURUSVBVCQVDUOUPUMNURDUOUPAUAUOUPUMRUBUOUPARUCUDUKTUMTUNVAUEEAUFUKULUGBC
-       UMAUHUJUI $.
-       $( [9-Mar-2015] $)
+      ( vx vy vz cid ccom ccompl cdif wss cv cop wcel wi wal wbr wa simpl df-br
+      weq wrel fnfullfunlem1 bitr3i 3imtr3i gen2 relco reldif ssrel mp2b mpbir
+      wb ) EAFZEGAFZHZAIZBJZCJZKZUMLZUQALZMZCNBNZUTBCUOUPAOZUODJAODCSMDNZPZVBUR
+      USVBVCQVDUOUPUMOURDUOUPAUAUOUPUMRUBUOUPARUCUDUKTUMTUNVAUJEAUEUKULUFBCUMAU
+      GUHUI $.
+      $( [9-Mar-2015] $)
   $}
 
   ${
@@ -50946,20 +50962,20 @@ $)
        with the set itself over its domain. $)
     fvfullfunlem3 $p |- ( A e. dom ( ( _I o. F ) \ ( ~ _I o. F ) ) ->
        ( ( ( _I o. F ) \ ( ~ _I o. F ) ) ` A ) = ( F ` A ) ) $=
-       ( vx vy vz cid ccom wcel cfv wss wrel cv wbr wa wal weu anbi2i cvv ax-mp
-       wi ccompl cdif cdm cres wfun weq relres brres fvfullfunlem1 abeq2i bitri
-       wceq wsb ax-17 breq2 sbie biimpri wmo eumo mo3 ax-4 a4s sylbi syl anasss
-       mpan9 adantlr syl2anb ax-gen dffun2 mpbir2an cxp cin fvfullfunlem2 relco
-       gen2 crn reldif relssdmrn ssv xpss2 sstri pm3.2i df-res sseqtr4i funssfv
-       ssin mpbi mp3an12 fvres eqtr3d ) AFBGZFUABGZUBZUCZHZABWOUDZIZAWNIZABIWQU
-       EZWNWQJWPWRWSULWTWQKCLZDLZWQMZXAELZWQMZNDEUFZTZEOZDOCOBWOUGXHCDXGEXCXAXB
-       BMZXAXDBMZEPZNZXJXIDPZNZXFXEXCXIXAWOHZNXLXAXBBWOUHXOXKXIXKCWOCEBUIUJQUKX
-       EXJXONXNXAXDBWOUHXOXMXJXMCWOCDBUIUJQUKXIXNXFXKXIXJXMXFXIXJNZXIXIDEUMZNZX
-       MXFXRXPXQXJXIXIXJDEXJDUNXBXDXABUOUPQUQXMXIDURZXRXFTZXIDUSXSXTEOZDOXTXIDE
-       XIEUNUTYAXTDXTEVAVBVCVDVFVEVGVHVIVPCDEWQVJVKWNBWORVLZVMZWQWNBJZWNYBJZNWN
-       YCJYDYEBVNWNWOWNVQZVLZYBWNKZWNYGJWLKYHFBVOWLWMVRSWNVSSYFRJYGYBJYFVTYFRWO
-       WASWBWCWNBYBWGWHBWOWDWEAWQWNWFWIAWOBWJWK $.
-       $( [9-Mar-2015] $)
+      ( vx vy vz cid ccom wcel cfv wss wrel cv wbr wa wal weu anbi2i cvv ax-mp
+      wi ccompl cdif cdm cres wfun wceq relres brres fvfullfunlem1 abeq2i bitri
+      weq wsb ax-17 breq2 sbie biimpri wmo eumo mo3 ax-4 a4s sylbi mpan9 anasss
+      syl adantlr syl2anb ax-gen gen2 dffun2 mpbir2an cxp cin fvfullfunlem2 crn
+      relco reldif relssdmrn ssv xpss2 pm3.2i ssin mpbi df-res sseqtr4i funssfv
+      sstri mp3an12 fvres eqtr3d ) AFBGZFUABGZUBZUCZHZABWOUDZIZAWNIZABIWQUEZWNW
+      QJWPWRWSUFWTWQKCLZDLZWQMZXAELZWQMZNDEULZTZEOZDOCOBWOUGXHCDXGEXCXAXBBMZXAX
+      DBMZEPZNZXJXIDPZNZXFXEXCXIXAWOHZNXLXAXBBWOUHXOXKXIXKCWOCEBUIUJQUKXEXJXONX
+      NXAXDBWOUHXOXMXJXMCWOCDBUIUJQUKXIXNXFXKXIXJXMXFXIXJNZXIXIDEUMZNZXMXFXRXPX
+      QXJXIXIXJDEXJDUNXBXDXABUOUPQUQXMXIDURZXRXFTZXIDUSXSXTEOZDOXTXIDEXIEUNUTYA
+      XTDXTEVAVBVCVFVDVEVGVHVIVJCDEWQVKVLWNBWORVMZVNZWQWNBJZWNYBJZNWNYCJYDYEBVO
+      WNWOWNVPZVMZYBWNKZWNYGJWLKYHFBVQWLWMVRSWNVSSYFRJYGYBJYFVTYFRWOWASWHWBWNBY
+      BWCWDBWOWEWFAWQWNWGWIAWOBWJWK $.
+      $( [9-Mar-2015] $)
   $}
 
   ${
@@ -50967,34 +50983,33 @@ $)
     $( The value of the full function definition agrees with the function value
        everywhere. $)
     fvfullfun $p |- ( FullFun F ` A ) = ( F ` A ) $=
-       ( vx vy cvv wcel cfv wceq cv fveq2 cid ccom ccompl c0 wfn wa 0ex mp3an12
-       mpan eqtr4d cfullfun eqeq12d cdif cdm csn cxp cun df-fullfun cin incompl
-       fveq1i wfun fnfullfunlem2 funfn fnconstg ax-mp fvun1 fvfullfunlem3 eqtrd
-       wn vex elcompl fvun2 sylbir wbr weu fvfullfunlem1 abeq2i tz6.12-2 sylnbi
-       mpbi fvconst2 pm2.61i eqtri vtoclg fvprc ) AEFZABUAZGZABGZHZCIZVRGZWBBGZ
-       HWACAEWBAHWCVSWDVTWBAVRJWBABJUBWCWBKBLKMBLUCZWEUDZMZNUEUFZUGZGZWDWBVRWIB
-       UHUKWBWFFZWJWDHWKWJWBWEGZWDWFWGUINHZWKWJWLHZWFUJZWEWFOZWHWGOZWMWKPWNWEUL
-       WPBUMWEUNVKZNEFWQQWGNEUOUPZWFWGWEWHWBUQRSWBBURUSWKUTZWJWBWHGZWDWTWBWGFZW
-       JXAHZWBWFCVAVBZWMXBXCWOWPWQWMXBPXCWRWSWFWGWEWHWBVCRSVDWTWDNXAWKWBDIBVEDV
-       FZWDNHXECWFCDBVGVHDWBBVIVJWTXBXANHXDWGNWBQVLVDTTVMVNVOVQUTVSNVTAVRVPABVP
-       TVM $.
-       $( [9-Mar-2015] $)
+      ( vx vy cvv wcel cfv wceq cv fveq2 cid ccom ccompl c0 wfn wa mp3an12 mpan
+      0ex eqtr4d cfullfun eqeq12d cdm csn cxp cun df-fullfun fveq1i cin incompl
+      cdif wfun fnfullfunlem2 funfn fnconstg ax-mp fvun1 fvfullfunlem3 eqtrd wn
+      mpbi vex elcompl sylbir wbr fvfullfunlem1 abeq2i tz6.12-2 sylnbi fvconst2
+      fvun2 weu pm2.61i eqtri vtoclg fvprc ) AEFZABUAZGZABGZHZCIZVRGZWBBGZHWACA
+      EWBAHWCVSWDVTWBAVRJWBABJUBWCWBKBLKMBLUKZWEUCZMZNUDUEZUFZGZWDWBVRWIBUGUHWB
+      WFFZWJWDHWKWJWBWEGZWDWFWGUINHZWKWJWLHZWFUJZWEWFOZWHWGOZWMWKPWNWEULWPBUMWE
+      UNVAZNEFWQSWGNEUOUPZWFWGWEWHWBUQQRWBBURUSWKUTZWJWBWHGZWDWTWBWGFZWJXAHZWBW
+      FCVBVCZWMXBXCWOWPWQWMXBPXCWRWSWFWGWEWHWBVKQRVDWTWDNXAWKWBDIBVEDVLZWDNHXEC
+      WFCDBVFVGDWBBVHVIWTXBXANHXDWGNWBSVJVDTTVMVNVOVQUTVSNVTAVRVPABVPTVM $.
+      $( [9-Mar-2015] $)
   $}
 
   $( Binary relationship of the full function operation. $)
   brfullfung $p |- ( A e. V -> ( A FullFun F B <-> ( F ` A ) = B ) ) $=
-    ( wcel cvv cfullfun wbr cfv wceq elex fvfullfun eqeq1i fnfullfun fnbrfvb
-      wb wfn mpan syl5rbbr syl ) ADEAFEZABCGZHZACIZBJZPADKUEAUBIZBJZUAUCUFUDBA
-    CLMUBFQUAUGUCPCNFABUBORST $.
+    ( wcel cvv cfullfun wbr cfv wceq wb elex fvfullfun eqeq1i fnfullfun fnbrfvb
+    wfn mpan syl5rbbr syl ) ADEAFEZABCGZHZACIZBJZKADLUEAUBIZBJZUAUCUFUDBACMNUBF
+    QUAUGUCKCOFABUBPRST $.
     $( [9-Mar-2015] $)
 
   ${
     brfullfun.1 $e |- A e. _V $.
     $( Binary relationship of the full function operation. $)
     brfullfun $p |- ( A FullFun F B <-> ( F ` A ) = B ) $=
-       ( cvv wcel cfullfun wbr cfv wceq wb brfullfung ax-mp ) AEFABCGHACIBJKDAB
-       CELM $.
-       $( [9-Mar-2015] $)
+      ( cvv wcel cfullfun wbr cfv wceq wb brfullfung ax-mp ) AEFABCGHACIBJKDABC
+      ELM $.
+      $( [9-Mar-2015] $)
   $}
 
   ${
@@ -51022,8 +51037,8 @@ $)
   ${
     $d S a $.  $d R a $.
     $( Define the closure operation.  A modified version of the definition from
-       [Rosser], p. 245. $)
-    df-clos1 $a |- Clos1 ( S , R ) = 
+       {{Rosser}}, p. 245. $)
+    df-clos1 $a |- Clos1 ( S , R ) =
        |^| { a | ( S C_ a /\ ( R " a ) C_ a ) } $.
   $}
 
@@ -51075,7 +51090,7 @@ $)
     $d R a $.  $d S a $.
     clos1base.1 $e |- C = Clos1 ( S , R ) $.
     $( The initial set of a closure is a subset of the closure.  Theorem
-       IX.5.13 of [Rosser], p. 246. $)
+       IX.5.13 of {{Rosser}}, p. 246. $)
     clos1base $p |- S C_ C $=
       ( va cv wss cima wa cab cint ssmin cclos1 df-clos1 eqtr2i sseqtri ) CCEFZ
       GBQHQGZIEJKZARECLACBMSDBCENOP $.
@@ -51087,7 +51102,7 @@ $)
       $d R z $.  $d x z $.  $d y z $.
 
       $( If a class is connected to an element of a closure via ` R ` , then it
-         is a member of the closure.  Theorem IX.5.14 of [Rosser], p. 246. $)
+         is a member of the closure.  Theorem IX.5.14 of {{Rosser}}, p. 246. $)
       clos1conn $p |- ( ( A e. C /\ A R B ) -> B e. C ) $=
         ( vx vy va vz cvv wcel wa wbr cv wi wceq eleq1 breq1 wss adantl anbi12d
         brex imbi1d breq2 anbi2d imbi12d cima wel wal wrex rcla4ev elima sylibr
@@ -51113,25 +51128,25 @@ $)
       $d C a x z $.  $d R x z $.  $d X a x z $.
       $( Inductive law for closure.  If the base set is a subset of ` X ` , and
          ` X ` is closed under ` R ` , then the closure is a subset of ` X ` .
-         Theorem IX.5.15 of [Rosser], p. 247. $)
-      clos1induct $p |- ( ( X e. V /\ S C_ X /\ 
+         Theorem IX.5.15 of {{Rosser}}, p. 247. $)
+      clos1induct $p |- ( ( X e. V /\ S C_ X /\
           A. x e. C A. z ( ( x e. X /\ x R z ) -> z e. X ) ) ->
           C C_ X ) $=
         ( va wcel cvv wss cv wa wi wal albii bitri cin wral cima cclos1 clos1ex
         wbr eqeltri inexg mpan2 clos1base ssin biimpi wex elima2 imbi12i df-ral
-        elin impexp wb clos1conn biantrud adantrl pm5.74i bitr3i ancom anass
-        anbi1i imbi1i 19.23v 3bitr2i dfss2 ralcom4 3bitr4i biimpri w3a cab cint
-        bitr4i df-clos1 eqtri wceq sseq2 imaeq2 id sseq12d anbi12d elabg 3impib
-        biimprd intss1 syl syl5eqss inss1 syl6ss syl3an ) GFLZGCUAZMLZEGNZEWQNZ
-        AOZGLZXABOZDUFZPZXCGLZQZBRACUBZDWQUCZWQNZCGNWPCMLWRCEDUDZMJDEHIUEUGGCFM
-        UHUIWSECNZWTCDEJUJWSXLPWTEGCUKULUIXJXHXCXILZXCWQLZQZBRXGACUBZBRXJXHXOXP
-        BXOXAWQLZXDPZAUMZXFXCCLZPZQZXPXMXSXNYAAXCDWQUNXCGCUQUOXPXACLZXEPZYAQZAR
-        ZXRYAQZARYBXPYCXGQZARYFXGACUPYHYEAYHYDXFQYEYCXEXFURYDXFYAYCXDXFYAUSXBYC
-        XDPXTXFXAXCCDEJUTVAVBVCVDSTYGYEAXRYDYAXRYCXBPZXDPYDXQYIXDXQXBYCPYIXAGCU
-        QXBYCVETVGYCXBXDVFTVHSXRYAAVIVJVRSBXIWQVKXGABCVLVMVNWRWTXJVOZCWQGYJCEKO
-        ZNZDYKUCZYKNZPZKVPZVQZWQCXKYQJDEKVSVTYJWQYPLZYQWQNWRWTXJYRWRYRWTXJPZYOY
-        SKWQMYKWQWAZYLWTYNXJYKWQEWBYTYMXIYKWQYKWQDWCYTWDWEWFWGWIWHWQYPWJWKWLGCW
-        MWNWO $.
+        impexp wb clos1conn biantrud adantrl pm5.74i bitr3i ancom anbi1i imbi1i
+        elin anass 19.23v 3bitr2i bitr4i dfss2 ralcom4 3bitr4i biimpri w3a cint
+        cab df-clos1 eqtri sseq2 imaeq2 id sseq12d anbi12d elabg biimprd 3impib
+        wceq intss1 syl syl5eqss inss1 syl6ss syl3an ) GFLZGCUAZMLZEGNZEWQNZAOZ
+        GLZXABOZDUFZPZXCGLZQZBRACUBZDWQUCZWQNZCGNWPCMLWRCEDUDZMJDEHIUEUGGCFMUHU
+        IWSECNZWTCDEJUJWSXLPWTEGCUKULUIXJXHXCXILZXCWQLZQZBRXGACUBZBRXJXHXOXPBXO
+        XAWQLZXDPZAUMZXFXCCLZPZQZXPXMXSXNYAAXCDWQUNXCGCVGUOXPXACLZXEPZYAQZARZXR
+        YAQZARYBXPYCXGQZARYFXGACUPYHYEAYHYDXFQYEYCXEXFUQYDXFYAYCXDXFYAURXBYCXDP
+        XTXFXAXCCDEJUSUTVAVBVCSTYGYEAXRYDYAXRYCXBPZXDPYDXQYIXDXQXBYCPYIXAGCVGXB
+        YCVDTVEYCXBXDVHTVFSXRYAAVIVJVKSBXIWQVLXGABCVMVNVOWRWTXJVPZCWQGYJCEKOZNZ
+        DYKUCZYKNZPZKVRZVQZWQCXKYQJDEKVSVTYJWQYPLZYQWQNWRWTXJYRWRYRWTXJPZYOYSKW
+        QMYKWQWIZYLWTYNXJYKWQEWAYTYMXIYKWQYKWQDWBYTWCWDWEWFWGWHWQYPWJWKWLGCWMWN
+        WO $.
         $( [11-Feb-2015] $)
     $}
   $}
@@ -51151,7 +51166,7 @@ $)
     clos1is.9 $e |- ( ( y e. C /\ y R z /\ ps ) -> ch ) $.
     $( Induction scheme for closures.  Hypotheses one through three set up
        existence properties, hypothesis four sets up stratification, hypotheses
-       five, through seven set up implicit substitution, and hypotheses eight
+       five through seven set up implicit substitution, and hypotheses eight
        and nine set up the base and induction steps. $)
     clos1is $p |- ( A e. C -> th ) $=
       ( wcel cab cvv wss cv wbr wa wal wral ssab mpgbir 3expib vex anbi1i ancom
@@ -51170,7 +51185,7 @@ $)
     clos1basesuc.2 $e |- R e. _V $.
     clos1basesuc.3 $e |- C = Clos1 ( S , R ) $.
     $( A member of a closure is either in the base set or connected to another
-       member by ` R ` .  Theorem IX.5.16 of [Rosser], p. 248. $)
+       member by ` R ` .  Theorem IX.5.16 of {{Rosser}}, p. 248. $)
     clos1basesuc $p |- ( A e. C <-> ( A e. S \/ E. x e. C x R A ) ) $=
       ( vy vz vw wcel cv wbr wrex wo cab eleq1 breq2 rexbidv cima cun cvv abid2
       eqcomi df-ima uneq12i unab eqtri cclos1 clos1ex eqeltri unex eqeltrri weq
@@ -51187,18 +51202,18 @@ $)
 
     $d S x $.
     $( A closure is equal to the base set together with the image of the
-       closure under ` R ` .  Theorem X.4.37 of [Rosser], p. 303. $)
+       closure under ` R ` .  Theorem X.4.37 of {{Rosser}}, p. 303. $)
     clos1baseima $p |- C = ( S u. ( R " C ) ) $=
-     ( vx vy cima cun cv wcel wbr wrex elima orbi2i elun clos1basesuc 3bitr4ri
-     wo eqriv ) GACBAIZJZGKZCLZUDUBLZTUEHKUDBMHANZTUDUCLUDALUFUGUEHUDBAOPUDCUBQ
-     HUDABCDEFRSUA $.
-     $( [10-Mar-2015] $)
+      ( vx vy cima cun cv wcel wbr wrex elima orbi2i elun clos1basesuc 3bitr4ri
+      wo eqriv ) GACBAIZJZGKZCLZUDUBLZTUEHKUDBMHANZTUDUCLUDALUFUGUEHUDBAOPUDCUB
+      QHUDABCDEFRSUA $.
+      $( [10-Mar-2015] $)
   $}
 
   ${
     $d a x y z $.
     $( The finite cardinals as expressed via the closure operation.  Theorem
-       X.1.3 of [Rosser], p. 276. $)
+       X.1.3 of {{Rosser}}, p. 276. $)
     dfnnc3 $p |- Nn = Clos1 ( { 0c } , ( x e. _V |-> ( x +c 1c ) ) ) $=
       ( va vy vz c0c cv wcel c1c cplc wral wa cab cint wss cvv wi wal wceq 1cex
       vex csn cmpt cima cnnc cclos1 0cex snss wel cfv dfss2 ralcom4 wrex wfn wb
@@ -51222,12 +51237,12 @@ $)
     $( The value of a closure when the base set is not related to anything in
        ` R ` . $)
     clos1nrel $p |- ( ( R " S ) = (/) -> C = S ) $=
-       ( vx vy cima c0 wceq cv wcel wbr wa wi wal wral wss cvv wn eq0 wrex ra4e
-       elima sylibr con3i pm2.21d alimi sylbi ralrimivw clos1induct mp3an12 syl
-       ssid clos1base a1i eqssd ) BCIZJKZACUTGLZCMVAHLZBNZOZVBCMZPZHQZGARZACSZU
-       TVGGAUTVBUSMZUAZHQVGHUSUBVKVFHVKVDVEVDVJVDVCGCUCVJVCGCUDGVBBCUEUFUGUHUIU
-       JUKCTMCCSVHVIDCUOGHABCTCDEFULUMUNCASUTABCFUPUQUR $.
-       $( [13-Mar-2015] $)
+      ( vx vy cima c0 wceq cv wcel wbr wa wi wal wral wss cvv wn eq0 wrex elima
+      ra4e sylibr con3i pm2.21d alimi sylbi ralrimivw clos1induct syl clos1base
+      ssid mp3an12 a1i eqssd ) BCIZJKZACUTGLZCMVAHLZBNZOZVBCMZPZHQZGARZACSZUTVG
+      GAUTVBUSMZUAZHQVGHUSUBVKVFHVKVDVEVDVJVDVCGCUCVJVCGCUEGVBBCUDUFUGUHUIUJUKC
+      TMCCSVHVIDCUOGHABCTCDEFULUPUMCASUTABCFUNUQUR $.
+      $( [13-Mar-2015] $)
   $}
 
 $(
@@ -51302,21 +51317,21 @@ $)
   ${
     $d r a x y z $.
     $( Define the set of all transitive relationships over a base set. $)
-    df-trans $a |- Trans = { <. r , a >. | 
+    df-trans $a |- Trans = { <. r , a >. |
        A. x e. a A. y e. a A. z e. a ( ( x r y /\ y r z ) -> x r z ) } $.
 
     $( Define the set of all reflexive relationships over a base set. $)
     df-ref $a |- Ref = { <. r , a >. | A. x e. a x r x } $.
 
     $( Define the set of all antisymmetric relationships over a base set. $)
-    df-antisym $a |- Antisym = { <. r , a >. | 
+    df-antisym $a |- Antisym = { <. r , a >. |
       A. x e. a A. y e. a ( ( x r y /\ y r x ) -> x = y ) } $.
 
     $( Define the set of all partial orderings over a base set. $)
     df-partial $a |- Po = ( ( Ref i^i Trans ) i^i Antisym ) $.
 
     $( Define the set of all connected relationships over a base set. $)
-    df-connex $a |- Connex = { <. r , a >. | 
+    df-connex $a |- Connex = { <. r , a >. |
        A. x e. a A. y e. a ( x r y \/ y r x ) } $.
 
     $( Define the set of all strict orderings over a base set. $)
@@ -51350,64 +51365,63 @@ $)
 
     $( The class of all transitive relationships is a set. $)
     transex $p |- Trans e. _V $=
-       ( vx vy vz vp vq csset cins2 c1st c2nd wbr wa wcel otelins2 bitri 3bitri
-       cop wex df-br anbi12i 3bitr4i vr ctrans cvv cxp ccnv ctxp csi3 c1c cins4
-       va cima cin cins3 cdif ccompl cv wi wral copab df-trans wn wrex csn elin
-       wel opelssetsn snex oqelins4 opex elima1c oteltxp brcnv bitr3i otsnelsi3
-       wceq trtxp ancom op1st2nd 3bitr3i exbii sneq breq2d ceqsexv rexbii elima
-       vex risset otelins3 notbii df-rex rexanali elcompl impexp ralbii r19.21v
-       eldif 2ralbii dfral2 releqopab eqtr4i vvex xpex ssetex 1stex cnvex 2ndex
-       ins2ex txpex si3ex 1cex imaex ins4ex inex ins3ex difex complex eqeltri )
-       UBUCUCUDZFGZXSGZHUEZIHUFZUGZUFZUHUKZUIZIGZGZULZFUKZUIZXTGZYFIUMZGZGZGZUL
-       ZFUKZYKGZUNZULZUHUKZULZULZUHUKZULZUHUKZUOZULZUCUBAUPZBUPZUAUPZJZUUKCUPZU
-       ULJZKUUJUUNUULJZUQZCUJUPZURZBUURURAUURURZUAUJUSUUIABCUAUJUTUUTUAUJUUHUUL
-       UURPZUUGLZVAUUMUUOUUPUQZCUURURZUQZBUURURZVAZAUURVBZVAZUVAUUHLUUTUVBUVHUU
-       JVCZUVAPZUUFLZAQAUJVEZUVGKZAQUVBUVHUVLUVNAUVLUVKXSLZUVKUUELZKUVNUVKXSUUE
-       VDUVOUVMUVPUVGUVOUVJUURPFLUVMUVJUULUURFUAWFZMUUJUURAWFZUJWFZVFNUVPUUMUVD
-       VAZKZBUURVBZUVGUUKVCZUVKPZUUDLZBQBUJVEZUWAKZBQUVPUWBUWEUWGBUWEUWDXTLZUWD
-       UUCLZKUWGUWDXTUUCVDUWHUWFUWIUWAUWHUWCUVAPXSLUWCUURPFLUWFUWCUVJUVAXSUUJVG
-       ZMUWCUULUURFUVQMUUKUURBWFZUVSVFOUWIUWDYKLZUWDUUBLZKUWAUWDYKUUBVDUWLUUMUW
-       MUVTUWLUWCUVJUULPZPZYJLZUUMUWCUVJUULUURYJUVSVHUUJUUKPZVCZUULPZFLZUWQUULL
-       UWPUUMUWQUULUUJUUKUVRUWKVIZUVQVFDUPZUWOYIJZDFVBUXBUWSVOZDFVBUWPUWTUXCUXD
-       DFUXCUXBUWOPZYILZUXBUWRHJZUXBUULIJZKZUXDUXBUWOYIRUXFUXEYFLZUXEYHLZKUXIUX
-       EYFYHVDUXJUXGUXKUXHUXJUXBUWCUVJPZPZYELZUXGUXBUWCUVJUULYEUVQVHUXNEUPZVCZU
-       XMPYDLZEQUXOUWQVOZUXBUXPHJZKZEQUXGEUXMYDVJUXQUXTEUXQUXPUXBPYALZUXPUXLPYC
-       LZKUXSUXRKUXTUXPUXBUXLYAYCVKUYAUXSUYBUXRUYAUXPUXBYAJUXSUXPUXBYARUXPUXBHV
-       LVMZUYBUXOUUKUUJPZPYBLZUXRUXOUUKUUJYBEWFZUWKUVRVNUXOUYDYBJZUXOUUJHJZUXOU
-       UKIJZKZUYEUXRUYGUYIUYHKUYJUXOUUKUUJIHVPUYIUYHVQNUXOUYDYBRUUJUUKUXOUVRUWK
-       VRVSNSUXSUXRVQOVTUXSUXGEUWQUXAUXRUXPUWRUXBHUXOUWQWAWBWCONUXBUWNPYGLZUXBU
-       ULPILZUXKUXHUXBUVJUULIUWJMZUXBUWCUWNYGUUKVGZMUXBUULIRZTSNUWRUULUXBUWQVGU
-       VQVROWDDUWOYIFWEDUWSFWGTUUJUUKUULRTNUWMUUOUUPVAZKZCUURVBZUVTUUNVCZUWDPZU
-       UALZCQCUJVEZUYQKZCQUWMUYRVUAVUCCVUAUYTYLLZUYTYTLZKVUCUYTYLYTVDVUDVUBVUEU
-       YQVUDUYSUVKPZXTLUYSUVAPXSLZVUBUYSUWCUVKXTUYNMUYSUVJUVAXSUWJMVUGUYSUURPFL
-       VUBUYSUULUURFUVQMUUNUURCWFZUVSVFNOVUEUYTYRLZUYTYSLZVAZKUYQUYTYRYSWPVUIUU
-       OVUKUYPUUKUUNPZVCZUULPZFLZVULUULLVUIUUOVULUULUUKUUNUWKVUHVIZUVQVFUXBUYTY
-       QJZDFVBUXBVUNVOZDFVBVUIVUOVUQVURDFVUQUXBUYTPZYQLZUXBVUMHJZUXHKZVURUXBUYT
-       YQRVUTVUSYFLZVUSYPLZKVVBVUSYFYPVDVVCVVAVVDUXHVVCUXBUYSUWCPZPZYELZVVAUXBU
-       YSUWCUVKYEUVJUVAUWJUULUURUVQUVSVIZVIVHVVGUXPVVFPYDLZEQUXOVULVOZUXSKZEQVV
-       AEVVFYDVJVVIVVKEVVIUYAUXPVVEPYCLZKUXSVVJKVVKUXPUXBVVEYAYCVKUYAUXSVVLVVJU
-       YCVVLUXOUUNUUKPZPYBLZVVJUXOUUNUUKYBUYFVUHUWKVNUXOVVMYBJUXOUUNIJZUXOUUKHJ
-       ZKZVVNVVJUXOUUNUUKIHVPUXOVVMYBRVVQVVPVVOKVVJVVOVVPVQUUKUUNUXOUWKVUHVRNVS
-       NSUXSVVJVQOVTUXSVVAEVULVUPVVJUXPVUMUXBHUXOVULWAWBWCONVVDUXBUWDPYOLUXBUVK
-       PYNLZUXHUXBUYSUWDYOUUNVGZMUXBUWCUVKYNUYNMUXBUVAPYMLUYLVVRUXHUXBUULUURIUV
-       SWHUXBUVJUVAYMUWJMUYOTOSNVUMUULUXBVULVGUVQVROWDDUYTYQFWEDVUNFWGTUUKUUNUU
-       LRTVUJUUPVUJVUFYKLUYSUWNPZYJLZUUPUYSUWCUVKYKUYNMUYSUVJUULUURYJUVSVHUUJUU
-       NPZVCZUULPZFLZVWBUULLVWAUUPVWBUULUUJUUNUVRVUHVIZUVQVFUXBVVTYIJZDFVBUXBVW
-       DVOZDFVBVWAVWEVWGVWHDFVWGUXBVVTPZYILZUXBVWCHJZUXHKZVWHUXBVVTYIRVWJVWIYFL
-       ZVWIYHLZKVWLVWIYFYHVDVWMVWKVWNUXHVWMUXBUYSUVJPZPZYELZVWKUXBUYSUVJUULYEUV
-       QVHVWQUXPVWPPYDLZEQUXOVWBVOZUXSKZEQVWKEVWPYDVJVWRVWTEVWRUYAUXPVWOPYCLZKU
-       XSVWSKVWTUXPUXBVWOYAYCVKUYAUXSVXAVWSUYCVXAUXOUUNUUJPZPYBLZVWSUXOUUNUUJYB
-       UYFVUHUVRVNUXOVXBYBJVVOUYHKZVXCVWSUXOUUNUUJIHVPUXOVXBYBRVXDUYHVVOKVWSVVO
-       UYHVQUUJUUNUXOUVRVUHVRNVSNSUXSVWSVQOVTUXSVWKEVWBVWFVWSUXPVWCUXBHUXOVWBWA
-       WBWCONUYKUYLVWNUXHUYMUXBUYSUWNYGVVSMUYOTSNVWCUULUXBVWBVGUVQVROWDDVVTYIFW
-       EDVWDFWGTUUJUUNUULRTOWISNSNVTCUWDUUAVJUYQCUURWJTUUOUUPCUURWKNSNSNVTBUVKU
-       UDVJUWABUURWJTUUMUVDBUURWKNSNVTAUVAUUFVJUVGAUURWJTWIUVAUUGVVHWLUUTUVFAUU
-       RURUVIUUSUVEABUURUURUUSUUMUVCUQZCUURURUVEUUQVXECUURUUMUUOUUPWMWNUUMUVCCU
-       URWONWQUVFAUURWRNTWSWTXRUUHUCUCXAXAXBUUGUUFUHXSUUEFXCXGZUUDUHXTUUCXSVXFX
-       GZYKUUBYJYIFYFYHYEYDUHYAYCHXDXEYBIHXFXDXHXIXHXJXKXLZYGIXFXGXGXMXCXKXLZUU
-       AUHYLYTXTVXGXGYRYSYQFYFYPVXHYOYNYMIXFXNXGXGXGXMXCXKYKVXIXGXOXMXJXKXMXMXJ
-       XKXMXJXKXPXMXQ $.
-       $( [19-Feb-2015] $)
+      ( vx vy vz vp vq csset cins2 c1st c2nd wbr wa cop wcel wex otelins2 bitri
+      3bitri df-br anbi12i 3bitr4i vr va ctrans cvv cxp ccnv ctxp csi3 c1c cima
+      cins4 cin cins3 cdif ccompl cv wi wral copab df-trans wn wrex csn wel vex
+      elin opelssetsn snex oqelins4 opex elima1c oteltxp brcnv bitr3i otsnelsi3
+      wceq trtxp ancom op1st2nd 3bitr3i exbii sneq breq2d ceqsexv rexbii risset
+      elima eldif otelins3 notbii df-rex rexanali elcompl impexp ralbii r19.21v
+      2ralbii dfral2 releqopab eqtr4i vvex xpex ssetex ins2ex 1stex cnvex 2ndex
+      txpex si3ex 1cex imaex ins4ex inex ins3ex difex complex eqeltri ) UCUDUDU
+      EZFGZXSGZHUFZIHUGZUHZUGZUIUJZUKZIGZGZULZFUJZUKZXTGZYFIUMZGZGZGZULZFUJZYKG
+      ZUNZULZUIUJZULZULZUIUJZULZUIUJZUOZULZUDUCAUPZBUPZUAUPZJZUUKCUPZUULJZKUUJU
+      UNUULJZUQZCUBUPZURZBUURURAUURURZUAUBUSUUIABCUAUBUTUUTUAUBUUHUULUURLZUUGMZ
+      VAUUMUUOUUPUQZCUURURZUQZBUURURZVAZAUURVBZVAZUVAUUHMUUTUVBUVHUUJVCZUVALZUU
+      FMZANAUBVDZUVGKZANUVBUVHUVLUVNAUVLUVKXSMZUVKUUEMZKUVNUVKXSUUEVFUVOUVMUVPU
+      VGUVOUVJUURLFMUVMUVJUULUURFUAVEZOUUJUURAVEZUBVEZVGPUVPUUMUVDVAZKZBUURVBZU
+      VGUUKVCZUVKLZUUDMZBNBUBVDZUWAKZBNUVPUWBUWEUWGBUWEUWDXTMZUWDUUCMZKUWGUWDXT
+      UUCVFUWHUWFUWIUWAUWHUWCUVALXSMUWCUURLFMUWFUWCUVJUVAXSUUJVHZOUWCUULUURFUVQ
+      OUUKUURBVEZUVSVGQUWIUWDYKMZUWDUUBMZKUWAUWDYKUUBVFUWLUUMUWMUVTUWLUWCUVJUUL
+      LZLZYJMZUUMUWCUVJUULUURYJUVSVIUUJUUKLZVCZUULLZFMZUWQUULMUWPUUMUWQUULUUJUU
+      KUVRUWKVJZUVQVGDUPZUWOYIJZDFVBUXBUWSVPZDFVBUWPUWTUXCUXDDFUXCUXBUWOLZYIMZU
+      XBUWRHJZUXBUULIJZKZUXDUXBUWOYIRUXFUXEYFMZUXEYHMZKUXIUXEYFYHVFUXJUXGUXKUXH
+      UXJUXBUWCUVJLZLZYEMZUXGUXBUWCUVJUULYEUVQVIUXNEUPZVCZUXMLYDMZENUXOUWQVPZUX
+      BUXPHJZKZENUXGEUXMYDVKUXQUXTEUXQUXPUXBLYAMZUXPUXLLYCMZKUXSUXRKUXTUXPUXBUX
+      LYAYCVLUYAUXSUYBUXRUYAUXPUXBYAJUXSUXPUXBYARUXPUXBHVMVNZUYBUXOUUKUUJLZLYBM
+      ZUXRUXOUUKUUJYBEVEZUWKUVRVOUXOUYDYBJZUXOUUJHJZUXOUUKIJZKZUYEUXRUYGUYIUYHK
+      UYJUXOUUKUUJIHVQUYIUYHVRPUXOUYDYBRUUJUUKUXOUVRUWKVSVTPSUXSUXRVRQWAUXSUXGE
+      UWQUXAUXRUXPUWRUXBHUXOUWQWBWCWDQPUXBUWNLYGMZUXBUULLIMZUXKUXHUXBUVJUULIUWJ
+      OZUXBUWCUWNYGUUKVHZOUXBUULIRZTSPUWRUULUXBUWQVHUVQVSQWEDUWOYIFWGDUWSFWFTUU
+      JUUKUULRTPUWMUUOUUPVAZKZCUURVBZUVTUUNVCZUWDLZUUAMZCNCUBVDZUYQKZCNUWMUYRVU
+      AVUCCVUAUYTYLMZUYTYTMZKVUCUYTYLYTVFVUDVUBVUEUYQVUDUYSUVKLZXTMUYSUVALXSMZV
+      UBUYSUWCUVKXTUYNOUYSUVJUVAXSUWJOVUGUYSUURLFMVUBUYSUULUURFUVQOUUNUURCVEZUV
+      SVGPQVUEUYTYRMZUYTYSMZVAZKUYQUYTYRYSWHVUIUUOVUKUYPUUKUUNLZVCZUULLZFMZVULU
+      ULMVUIUUOVULUULUUKUUNUWKVUHVJZUVQVGUXBUYTYQJZDFVBUXBVUNVPZDFVBVUIVUOVUQVU
+      RDFVUQUXBUYTLZYQMZUXBVUMHJZUXHKZVURUXBUYTYQRVUTVUSYFMZVUSYPMZKVVBVUSYFYPV
+      FVVCVVAVVDUXHVVCUXBUYSUWCLZLZYEMZVVAUXBUYSUWCUVKYEUVJUVAUWJUULUURUVQUVSVJ
+      ZVJVIVVGUXPVVFLYDMZENUXOVULVPZUXSKZENVVAEVVFYDVKVVIVVKEVVIUYAUXPVVELYCMZK
+      UXSVVJKVVKUXPUXBVVEYAYCVLUYAUXSVVLVVJUYCVVLUXOUUNUUKLZLYBMZVVJUXOUUNUUKYB
+      UYFVUHUWKVOUXOVVMYBJUXOUUNIJZUXOUUKHJZKZVVNVVJUXOUUNUUKIHVQUXOVVMYBRVVQVV
+      PVVOKVVJVVOVVPVRUUKUUNUXOUWKVUHVSPVTPSUXSVVJVRQWAUXSVVAEVULVUPVVJUXPVUMUX
+      BHUXOVULWBWCWDQPVVDUXBUWDLYOMUXBUVKLYNMZUXHUXBUYSUWDYOUUNVHZOUXBUWCUVKYNU
+      YNOUXBUVALYMMUYLVVRUXHUXBUULUURIUVSWIUXBUVJUVAYMUWJOUYOTQSPVUMUULUXBVULVH
+      UVQVSQWEDUYTYQFWGDVUNFWFTUUKUUNUULRTVUJUUPVUJVUFYKMUYSUWNLZYJMZUUPUYSUWCU
+      VKYKUYNOUYSUVJUULUURYJUVSVIUUJUUNLZVCZUULLZFMZVWBUULMVWAUUPVWBUULUUJUUNUV
+      RVUHVJZUVQVGUXBVVTYIJZDFVBUXBVWDVPZDFVBVWAVWEVWGVWHDFVWGUXBVVTLZYIMZUXBVW
+      CHJZUXHKZVWHUXBVVTYIRVWJVWIYFMZVWIYHMZKVWLVWIYFYHVFVWMVWKVWNUXHVWMUXBUYSU
+      VJLZLZYEMZVWKUXBUYSUVJUULYEUVQVIVWQUXPVWPLYDMZENUXOVWBVPZUXSKZENVWKEVWPYD
+      VKVWRVWTEVWRUYAUXPVWOLYCMZKUXSVWSKVWTUXPUXBVWOYAYCVLUYAUXSVXAVWSUYCVXAUXO
+      UUNUUJLZLYBMZVWSUXOUUNUUJYBUYFVUHUVRVOUXOVXBYBJVVOUYHKZVXCVWSUXOUUNUUJIHV
+      QUXOVXBYBRVXDUYHVVOKVWSVVOUYHVRUUJUUNUXOUVRVUHVSPVTPSUXSVWSVRQWAUXSVWKEVW
+      BVWFVWSUXPVWCUXBHUXOVWBWBWCWDQPUYKUYLVWNUXHUYMUXBUYSUWNYGVVSOUYOTSPVWCUUL
+      UXBVWBVHUVQVSQWEDVVTYIFWGDVWDFWFTUUJUUNUULRTQWJSPSPWACUWDUUAVKUYQCUURWKTU
+      UOUUPCUURWLPSPSPWABUVKUUDVKUWABUURWKTUUMUVDBUURWLPSPWAAUVAUUFVKUVGAUURWKT
+      WJUVAUUGVVHWMUUTUVFAUURURUVIUUSUVEABUURUURUUSUUMUVCUQZCUURURUVEUUQVXECUUR
+      UUMUUOUUPWNWOUUMUVCCUURWPPWQUVFAUURWRPTWSWTXRUUHUDUDXAXAXBUUGUUFUIXSUUEFX
+      CXDZUUDUIXTUUCXSVXFXDZYKUUBYJYIFYFYHYEYDUIYAYCHXEXFYBIHXGXEXHXIXHXJXKXLZY
+      GIXGXDXDXMXCXKXLZUUAUIYLYTXTVXGXDYRYSYQFYFYPVXHYOYNYMIXGXNXDXDXDXMXCXKYKV
+      XIXDXOXMXJXKXMXMXJXKXMXJXKXPXMXQ $.
+      $( [19-Feb-2015] $)
 
     $( The class of all reflexive relationships is a set. $)
     refex $p |- Ref e. _V $=
@@ -51557,55 +51571,54 @@ $)
 
     $( The class of all extensional relationships is a set. $)
     extex $p |- Ext e. _V $=
-       ( vz vx vy vp vq csset cins2 cid c2nd wbr cop wcel wn wex otelins2 bitri
-       wa 3bitri df-br 3bitr4i vr va cext cvv cxp c1st ccnv csi3 ctxp c1c cins4
-       cima cin cins3 csymdif cun ccompl cv wb wral weq wi copab df-ext csn wel
-       wrex elin opelssetsn snex wo elun elsymdif oqelins4 opex elima1c oteltxp
-       wceq brcnv bitr3i otsnelsi3 ideq 3bitr2i anbi12i ancom exbii sneq breq2d
-       vex ceqsexv op1st2nd rexbii risset otelins3 bibi12i notbii df-rex equcom
-       elima sneqb orbi12i elcompl pm4.65 dfral2 imbi1i rexnal releqopab eqtr4i
-       ioran vvex xpex ssetex ins2ex 1stex cnvex si3ex txpex imaex ins4ex 2ndex
-       idex 1cex inex ins3ex symdifex unex complex eqeltri ) UCUDUDUEZFGZYJGZYK
-       GZUFUGZHUHZUIZUJULZUKZIGZGZUMZFULZUKZGZYQIUNZGZGZGZUMZFULZUOZUMZUJULZHUN
-       ZUPZUQZUMZUJULZUMZUJULZUQZUMZUDUCAURZBURZUAURZJZUVBCURZUVDJZUSZAUBURZUTZ
-       BCVAZVBZCUVIUTZBUVIUTZUAUBVCUVABCAUAUBVDUVNUAUBUUTUVDUVIKZUUSLZMUVMMZBUV
-       IVGZMUVOUUTLUVNUVPUVRUVCVEZUVOKZUURLZBNBUBVFZUVQQZBNUVPUVRUWAUWCBUWAUVTY
-       JLZUVTUUQLZQUWCUVTYJUUQVHUWDUWBUWEUVQUWDUVSUVIKFLUWBUVSUVDUVIFUAWIZOUVCU
-       VIBWIZUBWIZVIPUWEUVLMZCUVIVGZUVQUVFVEZUVTKZUUPLZCNCUBVFZUWIQZCNUWEUWJUWM
-       UWOCUWMUWLYKLZUWLUUOLZQUWOUWLYKUUOVHUWPUWNUWQUWIUWPUWKUVOKYJLUWKUVIKFLUW
-       NUWKUVSUVOYJUVCVJZOUWKUVDUVIFUWFOUVFUVICWIZUWHVIRUWLUUNLZMUVHMZAUVIVGZUV
-       KVKZMZUWQUWIUWTUXCUWTUWLUULLZUWLUUMLZVKUXCUWLUULUUMVLUXEUXBUXFUVKUVBVEZU
-       WLKZUUKLZANAUBVFZUXAQZANUXEUXBUXIUXKAUXIUXHYLLZUXHUUJLZQUXKUXHYLUUJVHUXL
-       UXJUXMUXAUXLUXGUVTKZYKLUXGUVOKYJLZUXJUXGUWKUVTYKUVFVJZOUXGUVSUVOYJUWROUX
-       OUXGUVIKFLUXJUXGUVDUVIFUWFOUVBUVIAWIZUWHVIPRUXMUXHUUCLZUXHUUILZUSZMUXAUX
-       HUUCUUIVMUXTUVHUXRUVEUXSUVGUXRUXNUUBLUXGUVSUVDKZKZUUALZUVEUXGUWKUVTUUBUX
-       POUXGUVSUVDUVIUUAUWHVNUVBUVCKZVEZUVDKZFLZUYDUVDLUYCUVEUYDUVDUVBUVCUXQUWG
-       VOZUWFVIDURZUYBYTJZDFVGUYIUYFVRZDFVGUYCUYGUYJUYKDFUYJUYIUYBKZYTLZUYIUYEU
-       FJZUYIUVDIJZQZUYKUYIUYBYTSUYMUYLYQLZUYLYSLZQUYPUYLYQYSVHUYQUYNUYRUYOUYQU
-       YIUXGUVSKZKZYPLZUYNUYIUXGUVSUVDYPUWFVNVUAEURZVEZUYTKYOLZENVUBUYDVRZUYIVU
-       CUFJZQZENUYNEUYTYOVPVUDVUGEVUDVUCUYIKYMLZVUCUYSKYNLZQVUFVUEQVUGVUCUYIUYS
-       YMYNVQVUHVUFVUIVUEVUHVUCUYIYMJVUFVUCUYIYMSVUCUYIUFVSVTZVUIVUBUYDKHLVUBUY
-       DHJVUEVUBUVBUVCHEWIZUXQUWGWAVUBUYDHSVUBUYDUYHWBWCWDVUFVUEWERWFVUFUYNEUYD
-       UYHVUEVUCUYEUYIUFVUBUYDWGWHWJRPUYIUYAKYRLUYIUVDKILZUYRUYOUYIUVSUVDIUWROU
-       YIUXGUYAYRUVBVJZOUYIUVDISZTWDPUYEUVDUYIUYDVJUWFWKRWLDUYBYTFWSDUYFFWMTUVB
-       UVCUVDSTRUVBUVFKZVEZUVDKZFLZVUOUVDLUXSUVGVUOUVDUVBUVFUXQUWSVOZUWFVIUYIUX
-       HUUHJZDFVGUYIVUQVRZDFVGUXSVURVUTVVADFVUTUYIUXHKZUUHLZUYIVUPUFJZUYOQZVVAU
-       YIUXHUUHSVVCVVBYQLZVVBUUGLZQVVEVVBYQUUGVHVVFVVDVVGUYOVVFUYIUXGUWKKZKZYPL
-       ZVVDUYIUXGUWKUVTYPUVSUVOUWRUVDUVIUWFUWHVOZVOZVNVVJVUCVVIKYOLZENVUBVUOVRZ
-       VUFQZENVVDEVVIYOVPVVMVVOEVVMVUHVUCVVHKYNLZQVUFVVNQVVOVUCUYIVVHYMYNVQVUHV
-       UFVVPVVNVUJVVPVUBVUOKHLVUBVUOHJVVNVUBUVBUVFHVUKUXQUWSWAVUBVUOHSVUBVUOVUS
-       WBWCWDVUFVVNWERWFVUFVVDEVUOVUSVVNVUCVUPUYIUFVUBVUOWGWHWJRPVVGUYIUWLKUUFL
-       UYIUVTKUUELZUYOUYIUXGUWLUUFVUMOUYIUWKUVTUUEUXPOUYIUVOKUUDLVULVVQUYOUYIUV
-       DUVIIUWHWNUYIUVSUVOUUDUWROVUNTRWDPVUPUVDUYIVUOVJUWFWKRWLDUXHUUHFWSDVUQFW
-       MTUVBUVFUVDSTWOWPPWDPWFAUWLUUKVPUXAAUVIWQTUXFUWKUVSKHLZUWKUVSVRZUVKUWKUV
-       SUVOHVVKWNVVSUWKUVSHJVVRUWKUVSUWRWBUWKUVSHSVTVVSCBVAUVKUVFUVCUWSWTCBWRPW
-       CXAPWPUWLUUNUWKUVTUXPVVLVOXBUXBMZUVKVBZMVVTUVKMQUWIUXDUXBUVKXCUVLVWAUVJV
-       VTUVKUVHAUVIXDXEWPUXBUVKXITTWDPWFCUVTUUPVPUWICUVIWQTUVLCUVIXFPWDPWFBUVOU
-       URVPUVQBUVIWQTWPUVOUUSVVKXBUVMBUVIXDTXGXHYIUUTUDUDXJXJXKUUSUURUJYJUUQFXL
-       XMZUUPUJYKUUOYJVWBXMZUUNUULUUMUUKUJYLUUJYKVWCXMUUCUUIUUBUUAYTFYQYSYPYOUJ
-       YMYNUFXNXOHYAXPXQYBXRXSZYRIXTXMXMYCXLXRXSXMUUHFYQUUGVWDUUFUUEUUDIXTYDXMX
-       MXMYCXLXRYEYCYBXRHYAYDYFYGYCYBXRYCYBXRYGYCYH $.
-       $( [19-Feb-2015] $)
+      ( vz vx vy vp vq csset cins2 cid c2nd wbr cop wcel wn wex otelins2 3bitri
+      wa bitri df-br 3bitr4i vr cext cvv cxp c1st ccnv csi3 ctxp c1c cima cins4
+      va cin cins3 csymdif cun ccompl cv wb wral weq copab df-ext wrex csn elin
+      wi wel vex opelssetsn snex wo elun elsymdif oqelins4 opex elima1c oteltxp
+      wceq brcnv bitr3i otsnelsi3 ideq 3bitr2i anbi12i ancom exbii sneq ceqsexv
+      breq2d op1st2nd rexbii elima risset otelins3 bibi12i notbii df-rex equcom
+      sneqb orbi12i elcompl pm4.65 dfral2 imbi1i rexnal releqopab eqtr4i ssetex
+      ioran vvex xpex ins2ex 1stex cnvex idex si3ex txpex 1cex imaex 2ndex inex
+      ins4ex ins3ex symdifex unex complex eqeltri ) UBUCUCUDZFGZYJGZYKGZUEUFZHU
+      GZUHZUIUJZUKZIGZGZUMZFUJZUKZGZYQIUNZGZGZGZUMZFUJZUOZUMZUIUJZHUNZUPZUQZUMZ
+      UIUJZUMZUIUJZUQZUMZUCUBAURZBURZUAURZJZUVBCURZUVDJZUSZAULURZUTZBCVAZVGZCUV
+      IUTZBUVIUTZUAULVBUVABCAUAULVCUVNUAULUUTUVDUVIKZUUSLZMUVMMZBUVIVDZMUVOUUTL
+      UVNUVPUVRUVCVEZUVOKZUURLZBNBULVHZUVQQZBNUVPUVRUWAUWCBUWAUVTYJLZUVTUUQLZQU
+      WCUVTYJUUQVFUWDUWBUWEUVQUWDUVSUVIKFLUWBUVSUVDUVIFUAVIZOUVCUVIBVIZULVIZVJR
+      UWEUVLMZCUVIVDZUVQUVFVEZUVTKZUUPLZCNCULVHZUWIQZCNUWEUWJUWMUWOCUWMUWLYKLZU
+      WLUUOLZQUWOUWLYKUUOVFUWPUWNUWQUWIUWPUWKUVOKYJLUWKUVIKFLUWNUWKUVSUVOYJUVCV
+      KZOUWKUVDUVIFUWFOUVFUVICVIZUWHVJPUWLUUNLZMUVHMZAUVIVDZUVKVLZMZUWQUWIUWTUX
+      CUWTUWLUULLZUWLUUMLZVLUXCUWLUULUUMVMUXEUXBUXFUVKUVBVEZUWLKZUUKLZANAULVHZU
+      XAQZANUXEUXBUXIUXKAUXIUXHYLLZUXHUUJLZQUXKUXHYLUUJVFUXLUXJUXMUXAUXLUXGUVTK
+      ZYKLUXGUVOKYJLZUXJUXGUWKUVTYKUVFVKZOUXGUVSUVOYJUWROUXOUXGUVIKFLUXJUXGUVDU
+      VIFUWFOUVBUVIAVIZUWHVJRPUXMUXHUUCLZUXHUUILZUSZMUXAUXHUUCUUIVNUXTUVHUXRUVE
+      UXSUVGUXRUXNUUBLUXGUVSUVDKZKZUUALZUVEUXGUWKUVTUUBUXPOUXGUVSUVDUVIUUAUWHVO
+      UVBUVCKZVEZUVDKZFLZUYDUVDLUYCUVEUYDUVDUVBUVCUXQUWGVPZUWFVJDURZUYBYTJZDFVD
+      UYIUYFVSZDFVDUYCUYGUYJUYKDFUYJUYIUYBKZYTLZUYIUYEUEJZUYIUVDIJZQZUYKUYIUYBY
+      TSUYMUYLYQLZUYLYSLZQUYPUYLYQYSVFUYQUYNUYRUYOUYQUYIUXGUVSKZKZYPLZUYNUYIUXG
+      UVSUVDYPUWFVOVUAEURZVEZUYTKYOLZENVUBUYDVSZUYIVUCUEJZQZENUYNEUYTYOVQVUDVUG
+      EVUDVUCUYIKYMLZVUCUYSKYNLZQVUFVUEQVUGVUCUYIUYSYMYNVRVUHVUFVUIVUEVUHVUCUYI
+      YMJVUFVUCUYIYMSVUCUYIUEVTWAZVUIVUBUYDKHLVUBUYDHJVUEVUBUVBUVCHEVIZUXQUWGWB
+      VUBUYDHSVUBUYDUYHWCWDWEVUFVUEWFPWGVUFUYNEUYDUYHVUEVUCUYEUYIUEVUBUYDWHWJWI
+      PRUYIUYAKYRLUYIUVDKILZUYRUYOUYIUVSUVDIUWROUYIUXGUYAYRUVBVKZOUYIUVDISZTWER
+      UYEUVDUYIUYDVKUWFWKPWLDUYBYTFWMDUYFFWNTUVBUVCUVDSTPUVBUVFKZVEZUVDKZFLZVUO
+      UVDLUXSUVGVUOUVDUVBUVFUXQUWSVPZUWFVJUYIUXHUUHJZDFVDUYIVUQVSZDFVDUXSVURVUT
+      VVADFVUTUYIUXHKZUUHLZUYIVUPUEJZUYOQZVVAUYIUXHUUHSVVCVVBYQLZVVBUUGLZQVVEVV
+      BYQUUGVFVVFVVDVVGUYOVVFUYIUXGUWKKZKZYPLZVVDUYIUXGUWKUVTYPUVSUVOUWRUVDUVIU
+      WFUWHVPZVPZVOVVJVUCVVIKYOLZENVUBVUOVSZVUFQZENVVDEVVIYOVQVVMVVOEVVMVUHVUCV
+      VHKYNLZQVUFVVNQVVOVUCUYIVVHYMYNVRVUHVUFVVPVVNVUJVVPVUBVUOKHLVUBVUOHJVVNVU
+      BUVBUVFHVUKUXQUWSWBVUBVUOHSVUBVUOVUSWCWDWEVUFVVNWFPWGVUFVVDEVUOVUSVVNVUCV
+      UPUYIUEVUBVUOWHWJWIPRVVGUYIUWLKUUFLUYIUVTKUUELZUYOUYIUXGUWLUUFVUMOUYIUWKU
+      VTUUEUXPOUYIUVOKUUDLVULVVQUYOUYIUVDUVIIUWHWOUYIUVSUVOUUDUWROVUNTPWERVUPUV
+      DUYIVUOVKUWFWKPWLDUXHUUHFWMDVUQFWNTUVBUVFUVDSTWPWQRWERWGAUWLUUKVQUXAAUVIW
+      RTUXFUWKUVSKHLZUWKUVSVSZUVKUWKUVSUVOHVVKWOVVSUWKUVSHJVVRUWKUVSUWRWCUWKUVS
+      HSWAVVSCBVAUVKUVFUVCUWSWTCBWSRWDXARWQUWLUUNUWKUVTUXPVVLVPXBUXBMZUVKVGZMVV
+      TUVKMQUWIUXDUXBUVKXCUVLVWAUVJVVTUVKUVHAUVIXDXEWQUXBUVKXJTTWERWGCUVTUUPVQU
+      WICUVIWRTUVLCUVIXFRWERWGBUVOUURVQUVQBUVIWRTWQUVOUUSVVKXBUVMBUVIXDTXGXHYIU
+      UTUCUCXKXKXLUUSUURUIYJUUQFXIXMZUUPUIYKUUOYJVWBXMZUUNUULUUMUUKUIYLUUJYKVWC
+      XMUUCUUIUUBUUAYTFYQYSYPYOUIYMYNUEXNXOHXPXQXRXSXTYCZYRIYAXMXMYBXIXTYCXMUUH
+      FYQUUGVWDUUFUUEUUDIYAYDXMXMXMYBXIXTYEYBXSXTHXPYDYFYGYBXSXTYBXSXTYGYBYH $.
+      $( [19-Feb-2015] $)
 
     $( The class of all symmetric relationships is a set. $)
     symex $p |- Sym e. _V $=
@@ -51751,14 +51764,14 @@ $)
     symd.4 $e |- ( ph -> X R Y ) $.
     $( Symmetric relationship in natural deduction form. $)
     symd $p |- ( ph -> Y R X ) $=
-       ( vx vy vr va wcel cv wbr wi wral csym cvv wa jca brex wceq breq imbi12d
-       2ralbidv raleq raleqbi1dv df-sym brabg syl ibi breq1 breq2 rcla42v syl3c
-       wb ) ADBNZEBNZUAJOZKOZCPZVBVACPZQZKBRZJBRZDECPZEDCPZAUSUTGHUBACBSPZVGFVJ
-       VGVJCTNBTNUAVJVGURCBSUCVAVBLOZPZVBVAVKPZQZKMOZRJVORVEKVORZJVORVGLMCBTTSV
-       KCUDZVNVEJKVOVOVQVLVCVMVDVAVBVKCUEVBVAVKCUEUFUGVPVFJVOBVEKVOBUHUIJKLMUJU
-       KULUMULIVEVHVIQDVBCPZVBDCPZQJKDEBBVADUDVCVRVDVSVADVBCUNVADVBCUOUFVBEUDVR
-       VHVSVIVBEDCUOVBEDCUNUFUPUQ $.
-       $( [20-Feb-2015] $)
+      ( vx vy vr va wcel cv wbr wi wral csym cvv wa jca brex wceq breq 2ralbidv
+      imbi12d raleq raleqbi1dv df-sym brabg syl ibi breq1 breq2 rcla42v syl3c
+      wb ) ADBNZEBNZUAJOZKOZCPZVBVACPZQZKBRZJBRZDECPZEDCPZAUSUTGHUBACBSPZVGFVJV
+      GVJCTNBTNUAVJVGURCBSUCVAVBLOZPZVBVAVKPZQZKMOZRJVORVEKVORZJVORVGLMCBTTSVKC
+      UDZVNVEJKVOVOVQVLVCVMVDVAVBVKCUEVBVAVKCUEUGUFVPVFJVOBVEKVOBUHUIJKLMUJUKUL
+      UMULIVEVHVIQDVBCPZVBDCPZQJKDEBBVADUDVCVRVDVSVADVBCUNVADVBCUOUGVBEUDVRVHVS
+      VIVBEDCUOVBEDCUNUGUPUQ $.
+      $( [20-Feb-2015] $)
   $}
 
   ${
@@ -51768,7 +51781,7 @@ $)
     $d x y $.  $d x z $.  $d y z $.
     trrd.1 $e |- ( ph -> R e. V ) $.
     trrd.2 $e |- ( ph -> A e. W ) $.
-    trrd.3 $e |- ( ( ph /\ ( x e. A /\ y e. A /\ z e. A ) /\ 
+    trrd.3 $e |- ( ( ph /\ ( x e. A /\ y e. A /\ z e. A ) /\
            ( x R y /\ y R z ) ) -> x R z ) $.
     $( Deduce transitivity from its properties. $)
     trrd $p |- ( ph -> R Trans A ) $=
@@ -51803,11 +51816,11 @@ $)
     refd.2 $e |- ( ph -> X e. A ) $.
     $( Natural deduction form of reflexitivity. $)
     refd $p |- ( ph -> X R X ) $=
-       ( vx vr va cv wbr wral wcel cref cvv wa wb brex wceq syl breq df-ref ibi
-       ralbidv raleq brabg id breq12d rcla4cv sylc ) AGJZUKCKZGBLZDBMDDCKZACBNK
-       ZUMEUOUMUOCOMBOMPUOUMQCBNRUKUKHJZKZGIJZLULGURLUMHICBOONUPCSUQULGURUKUKUP
-       CUAUDULGURBUEGHIUBUFTUCTFULUNGDBUKDSZUKDUKDCUSUGZUTUHUIUJ $.
-       $( [20-Mar-2015] $)
+      ( vx vr va cv wbr wral wcel cref cvv wa wb brex wceq syl breq raleq brabg
+      ralbidv df-ref ibi id breq12d rcla4cv sylc ) AGJZUKCKZGBLZDBMDDCKZACBNKZU
+      MEUOUMUOCOMBOMPUOUMQCBNRUKUKHJZKZGIJZLULGURLUMHICBOONUPCSUQULGURUKUKUPCUA
+      UDULGURBUBGHIUEUCTUFTFULUNGDBUKDSZUKDUKDCUSUGZUTUHUIUJ $.
+      $( [20-Mar-2015] $)
   $}
 
   ${
@@ -51840,16 +51853,16 @@ $)
     antid.5 $e |- ( ph -> Y R X ) $.
     $( The antisymmetry property. $)
     antid $p |- ( ph -> X = Y ) $=
-       ( vx vy wbr wceq cv wa wi wral cvv wcel vr va cantisym brex breq anbi12d
-       weq wb imbi1d 2ralbidv raleq raleqbi1dv df-antisym brabg syl breq1 breq2
-       ibi eqeq1 imbi12d eqeq2 rcla42v syl2anc mpd mp2and ) ADECMZEDCMZDENZIJAK
-       OZLOZCMZVJVICMZPZKLUGZQZLBRZKBRZVFVGPZVHQZACBUCMZVQFVTVQVTCSTBSTPVTVQUHC
-       BUCUDVIVJUAOZMZVJVIWAMZPZVNQZLUBOZRKWFRVOLWFRZKWFRVQUAUBCBSSUCWACNZWEVOK
-       LWFWFWHWDVMVNWHWBVKWCVLVIVJWACUEVJVIWACUEUFUIUJWGVPKWFBVOLWFBUKULKLUAUBU
-       MUNUOURUOADBTEBTVQVSQGHVOVSDVJCMZVJDCMZPZDVJNZQKLDEBBVIDNZVMWKVNWLWMVKWI
-       VLWJVIDVJCUPVIDVJCUQUFVIDVJUSUTVJENZWKVRWLVHWNWIVFWJVGVJEDCUQVJEDCUPUFVJ
-       EDVAUTVBVCVDVE $.
-       $( [18-Mar-2015] $)
+      ( vx vy wbr wceq cv wa wi wral cvv wcel vr weq cantisym brex breq anbi12d
+      va wb imbi1d 2ralbidv raleq raleqbi1dv df-antisym brabg breq1 breq2 eqeq1
+      syl ibi imbi12d eqeq2 rcla42v syl2anc mpd mp2and ) ADECMZEDCMZDENZIJAKOZL
+      OZCMZVJVICMZPZKLUBZQZLBRZKBRZVFVGPZVHQZACBUCMZVQFVTVQVTCSTBSTPVTVQUHCBUCU
+      DVIVJUAOZMZVJVIWAMZPZVNQZLUGOZRKWFRVOLWFRZKWFRVQUAUGCBSSUCWACNZWEVOKLWFWF
+      WHWDVMVNWHWBVKWCVLVIVJWACUEVJVIWACUEUFUIUJWGVPKWFBVOLWFBUKULKLUAUGUMUNURU
+      SURADBTEBTVQVSQGHVOVSDVJCMZVJDCMZPZDVJNZQKLDEBBVIDNZVMWKVNWLWMVKWIVLWJVID
+      VJCUOVIDVJCUPUFVIDVJUQUTVJENZWKVRWLVHWNWIVFWJVGVJEDCUPVJEDCUOUFVJEDVAUTVB
+      VCVDVE $.
+      $( [18-Mar-2015] $)
   $}
 
   ${
@@ -51861,12 +51874,12 @@ $)
     connexrd.3 $e |- ( ( ph /\ x e. A /\ y e. A ) -> ( x R y \/ y R x ) ) $.
     $( Deduce connectivity from its properties. $)
     connexrd $p |- ( ph -> R Connex A ) $=
-       ( vr va cconnex wbr cv wo wral wcel 3expib breq wb wceq orbi12d 2ralbidv
-       ralrimivv raleq raleqbi1dv df-connex brabg syl2anc mpbird ) AEDMNZBOZCOZ
-       ENZUNUMENZPZCDQZBDQZAUQBCDDAUMDRUNDRUQJSUEAEFRDGRULUSUAHIUMUNKOZNZUNUMUT
-       NZPZCLOZQBVDQUQCVDQZBVDQUSKLEDFGMUTEUBZVCUQBCVDVDVFVAUOVBUPUMUNUTETUNUMU
-       TETUCUDVEURBVDDUQCVDDUFUGBCKLUHUIUJUK $.
-       $( [12-Mar-2015] $)
+      ( vr va cconnex wbr cv wo wral wcel 3expib breq ralrimivv wb wceq orbi12d
+      2ralbidv raleq raleqbi1dv df-connex brabg syl2anc mpbird ) AEDMNZBOZCOZEN
+      ZUNUMENZPZCDQZBDQZAUQBCDDAUMDRUNDRUQJSUAAEFRDGRULUSUBHIUMUNKOZNZUNUMUTNZP
+      ZCLOZQBVDQUQCVDQZBVDQUSKLEDFGMUTEUCZVCUQBCVDVDVFVAUOVBUPUMUNUTETUNUMUTETU
+      DUEVEURBVDDUQCVDDUFUGBCKLUHUIUJUK $.
+      $( [12-Mar-2015] $)
   $}
 
   ${
@@ -51878,14 +51891,14 @@ $)
     connexd.3 $e |- ( ph -> Y e. A ) $.
     $( The connectivity property. $)
     connexd $p |- ( ph -> ( X R Y \/ Y R X ) ) $=
-       ( vx vy vr va cconnex wbr wo cv wral cvv wcel wceq wa brex breq 2ralbidv
-       wb orbi12d raleq raleqbi1dv df-connex brabg syl wi breq1 rcla42v syl2anc
-       ibi breq2 syl5 mpd ) ACBMNZDECNZEDCNZOZFUTIPZJPZCNZVEVDCNZOZJBQZIBQZAVCU
-       TVJUTCRSBRSUAUTVJUECBMUBVDVEKPZNZVEVDVKNZOZJLPZQIVOQVHJVOQZIVOQVJKLCBRRM
-       VKCTZVNVHIJVOVOVQVLVFVMVGVDVEVKCUCVEVDVKCUCUFUDVPVIIVOBVHJVOBUGUHIJKLUIU
-       JUKUPADBSEBSVJVCULGHVHVCDVECNZVEDCNZOIJDEBBVDDTVFVRVGVSVDDVECUMVDDVECUQU
-       FVEETVRVAVSVBVEEDCUQVEEDCUMUFUNUOURUS $.
-       $( [18-Mar-2015] $)
+      ( vx vy vr va cconnex wbr wo cv wral cvv wcel wceq wa wb orbi12d 2ralbidv
+      brex breq raleq raleqbi1dv df-connex brabg syl ibi wi breq1 breq2 rcla42v
+      syl2anc syl5 mpd ) ACBMNZDECNZEDCNZOZFUTIPZJPZCNZVEVDCNZOZJBQZIBQZAVCUTVJ
+      UTCRSBRSUAUTVJUBCBMUEVDVEKPZNZVEVDVKNZOZJLPZQIVOQVHJVOQZIVOQVJKLCBRRMVKCT
+      ZVNVHIJVOVOVQVLVFVMVGVDVEVKCUFVEVDVKCUFUCUDVPVIIVOBVHJVOBUGUHIJKLUIUJUKUL
+      ADBSEBSVJVCUMGHVHVCDVECNZVEDCNZOIJDEBBVDDTVFVRVGVSVDDVECUNVDDVECUOUCVEETV
+      RVAVSVBVEEDCUOVEEDCUNUCUPUQURUS $.
+      $( [18-Mar-2015] $)
   $}
 
   $( Equivalence relationship as symmetric, transitive relationship. $)
@@ -51939,7 +51952,7 @@ $)
     pod.1 $e |- ( ph -> R e. V ) $.
     pod.2 $e |- ( ph -> A e. W ) $.
     pod.3 $e |- ( ( ph /\ x e. A ) -> x R x ) $.
-    pod.4 $e |- ( ( ph /\ ( x e. A /\ y e. A /\ z e. A ) /\ 
+    pod.4 $e |- ( ( ph /\ ( x e. A /\ y e. A /\ z e. A ) /\
        ( x R y /\ y R z ) ) -> x R z ) $.
     pod.5 $e |- ( ( ph /\ ( x e. A /\ y e. A ) /\ ( x R y /\ y R x ) ) ->
       x = y ) $.
@@ -51959,7 +51972,7 @@ $)
     sod.1 $e |- ( ph -> R e. V ) $.
     sod.2 $e |- ( ph -> A e. W ) $.
     sod.3 $e |- ( ( ph /\ x e. A ) -> x R x ) $.
-    sod.4 $e |- ( ( ph /\ ( x e. A /\ y e. A /\ z e. A ) /\ 
+    sod.4 $e |- ( ( ph /\ ( x e. A /\ y e. A /\ z e. A ) /\
        ( x R y /\ y R z ) ) -> x R z ) $.
     sod.5 $e |- ( ( ph /\ ( x e. A /\ y e. A ) /\ ( x R y /\ y R x ) ) ->
       x = y ) $.
@@ -52033,17 +52046,17 @@ $)
     iserd.1 $e |- ( ph -> R e. V ) $.
     iserd.2 $e |- ( ph -> A e. W ) $.
     iserd.3 $e |- ( ( ph /\ ( x e. A /\ y e. A ) /\ x R y ) -> y R x ) $.
-    iserd.4 $e |- ( ( ph /\ ( x e. A /\ y e. A /\ z e. A ) /\ 
+    iserd.4 $e |- ( ( ph /\ ( x e. A /\ y e. A /\ z e. A ) /\
        ( x R y /\ y R z ) ) -> x R z ) $.
     $( A symmetric, transitive relationship is an equivalence relationship. $)
     iserd $p |- ( ph -> R Er A ) $=
-       ( vr va csym wbr cv wi wral wcel ctrans cer wa 3expia ralrimivva wb wceq
-       breq imbi12d 2ralbidv raleq raleqbi1dv df-sym brabg syl2anc trrd ersymtr
-       mpbird sylanbrc ) AFEOPZFEUAPFEUBPAUTBQZCQZFPZVBVAFPZRZCESZBESZAVEBCEEAV
-       AETVBETUCVCVDKUDUEAFGTEHTUTVGUFIJVAVBMQZPZVBVAVHPZRZCNQZSBVLSVECVLSZBVLS
-       VGMNFEGHOVHFUGZVKVEBCVLVLVNVIVCVJVDVAVBVHFUHVBVAVHFUHUIUJVMVFBVLEVECVLEU
-       KULBCMNUMUNUOURABCDEFGHIJLUPEFUQUS $.
-       $( [22-Feb-2015] $)
+      ( vr va csym wbr cv wi wral wcel ctrans wa 3expia ralrimivva wb wceq breq
+      cer imbi12d 2ralbidv raleq raleqbi1dv df-sym brabg syl2anc mpbird ersymtr
+      trrd sylanbrc ) AFEOPZFEUAPFEUHPAUTBQZCQZFPZVBVAFPZRZCESZBESZAVEBCEEAVAET
+      VBETUBVCVDKUCUDAFGTEHTUTVGUEIJVAVBMQZPZVBVAVHPZRZCNQZSBVLSVECVLSZBVLSVGMN
+      FEGHOVHFUFZVKVEBCVLVLVNVIVCVJVDVAVBVHFUGVBVAVHFUGUIUJVMVFBVLEVECVLEUKULBC
+      MNUMUNUOUPABCDEFGHIJLUREFUQUS $.
+      $( [22-Feb-2015] $)
   $}
 
   ${
@@ -52051,25 +52064,25 @@ $)
     $( The identity relationship is an equivalence relationship over the
        universe. $)
     ider $p |- _I Er _V $=
-       ( vx vy vz cid cvv cer wbr wtru wcel idex a1i vvex cv wa weq equcomi vex
-       ideq 3imtr4i 3ad2ant3 w3a eqtr anbi12i iserd trud ) DEFGHABCEDEEDEIHJKEE
-       IHLKAMZBMZDGZHUGUFDGZUFEIZUGEIZNABOZBAOUHUIABPUFUGBQRZUGUFAQRSTUHUGCMZDG
-       ZNZHUFUNDGZUJUKUNEIUAULBCOZNACOUPUQUFUGUNUBUHULUOURUMUGUNCQZRUCUFUNUSRST
-       UDUE $.
-       $( [22-Feb-2015] $)
+      ( vx vy vz cid cvv cer wbr wtru wcel idex a1i vvex cv wa weq equcomi ideq
+      vex 3imtr4i 3ad2ant3 w3a eqtr anbi12i iserd trud ) DEFGHABCEDEEDEIHJKEEIH
+      LKAMZBMZDGZHUGUFDGZUFEIZUGEIZNABOZBAOUHUIABPUFUGBRQZUGUFARQSTUHUGCMZDGZNZ
+      HUFUNDGZUJUKUNEIUAULBCOZNACOUPUQUFUGUNUBUHULUOURUMUGUNCRZQUCUFUNUSQSTUDUE
+      $.
+      $( [22-Feb-2015] $)
   $}
 
   ${
     $d x y z $.
     $( The subset relationship partially orders the universe. $)
     ssetpov $p |- SSet Po _V $=
-       ( vx vy vz csset cvv cpartial wbr wtru wcel ssetex a1i vvex wss ssid vex
-       cv wa brsset anbi12i 3ad2ant3 mpbir w3a sstr 3imtr4i eqss bitr4i biimpri
-       weq pod trud ) DEFGHABCEDEEDEIHJKEEIHLKAPZUKDGZHUKEIZQULUKUKMUKNUKUKAOZU
-       NRUAKUKBPZDGZUOCPZDGZQZHUKUQDGZUMUOEIZUQEIUBUKUOMZUOUQMZQUKUQMUSUTUKUOUQ
-       UCUPVBURVCUKUOUNBOZRZUOUQVDCOZRSUKUQUNVFRUDTUPUOUKDGZQZHABUHZUMVAQVIVHVI
-       VBUOUKMZQVHUKUOUEUPVBVGVJVEUOUKVDUNRSUFUGTUIUJ $.
-       $( [12-Mar-2015] $)
+      ( vx vy vz csset cvv cpartial wbr wtru wcel ssetex a1i vvex cv wa wss vex
+      ssid brsset anbi12i 3ad2ant3 w3a sstr 3imtr4i weq eqss bitr4i biimpri pod
+      mpbir trud ) DEFGHABCEDEEDEIHJKEEIHLKAMZUKDGZHUKEIZNULUKUKOUKQUKUKAPZUNRU
+      IKUKBMZDGZUOCMZDGZNZHUKUQDGZUMUOEIZUQEIUAUKUOOZUOUQOZNUKUQOUSUTUKUOUQUBUP
+      VBURVCUKUOUNBPZRZUOUQVDCPZRSUKUQUNVFRUCTUPUOUKDGZNZHABUDZUMVANVIVHVIVBUOU
+      KOZNVHUKUOUEUPVBVGVJVEUOUKVDUNRSUFUGTUHUJ $.
+      $( [12-Mar-2015] $)
   $}
 
 
@@ -52250,8 +52263,8 @@ $)
 
   $( Membership in an equivalence class.  Theorem 72 of [Suppes] p. 82. $)
   elec $p |- ( A e. [ B ] R <-> B R A ) $=
-    ( csn cima wcel cop cec wbr elimasn df-ec eleq2i df-br 3bitr4i ) ACBDEZFB
-    AGCFABCHZFBACICBAJPOABCKLBACMN $.
+    ( csn cima wcel cop cec wbr elimasn df-ec eleq2i df-br 3bitr4i ) ACBDEZFBAG
+    CFABCHZFBACICBAJPOABCKLBACMN $.
     $( [9-Jul-2014] $)
 
 
@@ -53062,18 +53075,17 @@ $)
     $d f g x y $.
     $( The equinumerosity relationship is a set. $)
     enex $p |- ~~ e. _V $=
-       ( vx vy vf vg cen cvv cfns cswap ccnv ctxp crn wex cop wcel wbr elrn wfn
-       cv wa bitri cxp cimage cin wf1o copab df-en vex brfns wceq df-br brimage
-       trtxp cima brcnv dfcnv2 eqeq2i 3bitr4i anbi12i exbii cnvex fneq1 ceqsexv
-       dff1o4 releqopab eqtr4i vvex xpex fnsex swapex imageex rnex inex eqeltri
-       txpex ) EFFUAZGHUBZIZGJZKZJZKZUCZFEARZBRZCRZUDZCLZABUEWBABCUFWGABWAWCWDM
-       ZWANWEWHVTOZCLWGCWHVTPWIWFCWEWCGOZWEWDVSOZSWEWCQZWEIZWDQZSWIWFWJWLWKWNWC
-       WECUGZUHWKDRZWMUIZWPWDQZSZDLZWNWKWEWDMZVSNZWTWEWDVSUJXBWPXAVROZDLWTDXAVR
-       PXCWSDXCWPWEVQOZWPWDGOZSWSWPWEWDVQGULXDWQXEWRWEWPVPOWPHWEUMZUIXDWQWEWPHW
-       ODUGZUKWPWEVPUNWMXFWPWEUOUPUQWDWPXGUHURTUSTTWRWNDWMWEWOUTWDWPWMVAVBTURWE
-       WCWDGVSULWCWDWEVCUQUSTVDVEVOWAFFVFVFVGVTGVSVHVRVQGVPHVIVJUTVHVNVKVNVKVLV
-       M $.
-       $( [23-Feb-2015] $)
+      ( vx vy vf vg cen cvv cfns cswap ccnv ctxp crn cv wex cop wcel wbr wa wfn
+      elrn bitri cxp cimage cin wf1o copab df-en brfns wceq df-br trtxp brimage
+      cima brcnv dfcnv2 eqeq2i 3bitr4i anbi12i exbii cnvex fneq1 ceqsexv dff1o4
+      releqopab eqtr4i vvex xpex fnsex swapex imageex txpex rnex inex eqeltri
+      vex ) EFFUAZGHUBZIZGJZKZJZKZUCZFEALZBLZCLZUDZCMZABUEWBABCUFWGABWAWCWDNZWA
+      OWEWHVTPZCMWGCWHVTSWIWFCWEWCGPZWEWDVSPZQWEWCRZWEIZWDRZQWIWFWJWLWKWNWCWECV
+      NZUGWKDLZWMUHZWPWDRZQZDMZWNWKWEWDNZVSOZWTWEWDVSUIXBWPXAVRPZDMWTDXAVRSXCWS
+      DXCWPWEVQPZWPWDGPZQWSWPWEWDVQGUJXDWQXEWRWEWPVPPWPHWEULZUHXDWQWEWPHWODVNZU
+      KWPWEVPUMWMXFWPWEUNUOUPWDWPXGUGUQTURTTWRWNDWMWEWOUSWDWPWMUTVATUQWEWCWDGVS
+      UJWCWDWEVBUPURTVCVDVOWAFFVEVEVFVTGVSVGVRVQGVPHVHVIUSVGVJVKVJVKVLVM $.
+      $( [23-Feb-2015] $)
   $}
 
   ${
@@ -53104,8 +53116,8 @@ $)
     enrflx.1 $e |- A e. _V $.
     $( Equinumerosity is reflexive. $)
     enrflx $p |- A ~~ A $=
-       ( cvv wcel cen wbr enrflxg ax-mp ) ACDAAEFBACGH $.
-       $( [23-Feb-2015] $)
+      ( cvv wcel cen wbr enrflxg ax-mp ) ACDAAEFBACGH $.
+      $( [23-Feb-2015] $)
   $}
 
 
@@ -53120,8 +53132,8 @@ $)
 
     $( Equinumerosity is symmetric. $)
     ensym $p |- ( A ~~ B <-> B ~~ A ) $=
-       ( cen wbr ensymi impbii ) ABCDBACDABEBAEF $.
-       $( [23-Feb-2015] $)
+      ( cen wbr ensymi impbii ) ABCDBACDABEBAEF $.
+      $( [23-Feb-2015] $)
 
     $( Equinumerosity is transitive. $)
     entr $p |- ( ( A ~~ B /\ B ~~ C ) -> A ~~ C ) $=
@@ -53136,10 +53148,10 @@ $)
     $d x y z $.
     $( Equinumerosity is an equivalence relationship over the universe. $)
     ener $p |- ~~ Er _V $=
-       ( vx vy vz cen cvv cer wbr wtru wcel enex a1i vvex cv wa ensymi 3ad2ant3
-       w3a entr iserd trud ) DEFGHABCEDEEDEIHJKEEIHLKAMZBMZDGZHUBUADGUAEIZUBEIZ
-       NUAUBOPUCUBCMZDGNHUAUFDGUDUEUFEIQUAUBUFRPST $.
-       $( [23-Feb-2015] $)
+      ( vx vy vz cen cvv cer wbr wtru wcel enex a1i vvex cv ensymi 3ad2ant3 w3a
+      wa entr iserd trud ) DEFGHABCEDEEDEIHJKEEIHLKAMZBMZDGZHUBUADGUAEIZUBEIZQU
+      AUBNOUCUBCMZDGQHUAUFDGUDUEUFEIPUAUBUFROST $.
+      $( [23-Feb-2015] $)
   $}
 
 
@@ -53427,10 +53439,10 @@ $)
   ${
     ensn.1 $e |- A e. _V $.
     ensn.2 $e |- B e. _V $.
-    $( Two singletons are equinumerous.  Theorem XI.1.10 of [Rosser]. $)
+    $( Two singletons are equinumerous.  Theorem XI.1.10 of {{Rosser}}. $)
     ensn $p |- { A } ~~ { B } $=
-       ( cvv wcel csn cen wbr en2sn mp2an ) AEFBEFAGBGHICDABEEJK $.
-       $( [25-Feb-2015] $)
+      ( cvv wcel csn cen wbr en2sn mp2an ) AEFBEFAGBGHICDABEEJK $.
+      $( [25-Feb-2015] $)
   $}
 
   ${
@@ -53439,17 +53451,18 @@ $)
     enadjlem1 $p |- ( ( ( A u. { X } ) = ( B u. { Y } ) /\
     ( -. X e. A /\ -. Y e. B ) /\ ( Y e. A /\ X e. B ) ) ->
     ( A \ { Y } ) = ( B \ { X } ) ) $=
-    ( vx csn cun wceq wcel wn wa cdif wo elsni necon3ai ad2antll ssun1 ad2antrl
-    wne sseli w3a cv simpl1 eleqtrd elun sylib orel2 ex simp2l eleq1 syl5ibrcom
-    sylc notbid necon2ad adantrd eldifsn 3imtr4g ssrdv eleqtrrd simp2r eqssd
-    jcad ) ACFZGZBDFZGZHZCAIZJZDBIZJZKZDAICBIKZUAZAVELZBVCLZVNEVOVPVNEUBZAIZVQD
-    SZKZVQBIZVQCSZKZVQVOIZVQVPIZVNVTWAWBVNVTWAVNVTKZVQVEIZJZWAWGMZWAVSWHVNVRWGV
-    QDVQDNOPWFVQVFIZWIWFVQVDVFVRVQVDIZVNVSAVDVQAVCQTRVGVLVMVTUCUDVQBVEUEUFWGWAU
-    GULUHVNVRWBVSVNVRVQCVNVRJVQCHZVIVGVIVKVMUIWLVRVHVQCAUJUMUKUNUOVBVQADUPZVQBC
-    UPZUQURVNEVPVOVNWCVTWEWDVNWCVRVSVNWCVRVNWCKZVQVCIZJZVRWPMZVRWBWQVNWAWPVQCVQ
-    CNOPWOWKWRWOVQVFVDWAWJVNWBBVFVQBVEQTRVGVLVMWCUCUSVQAVCUEUFWPVRUGULUHVNWAVSW
-    BVNWAVQDVNWAJVQDHZVKVGVIVKVMUTWSWAVJVQDBUJUMUKUNUOVBWNWMUQURVA $.
-    $( [25-Feb-2015] $)
+      ( vx csn cun wceq wcel wn wa cdif wne elsni necon3ai ad2antll ssun1 sseli
+      wo ad2antrl w3a cv simpl1 eleqtrd elun sylib orel2 ex simp2l eleq1 notbid
+      sylc syl5ibrcom necon2ad adantrd jcad eldifsn ssrdv eleqtrrd simp2r eqssd
+      3imtr4g ) ACFZGZBDFZGZHZCAIZJZDBIZJZKZDAICBIKZUAZAVELZBVCLZVNEVOVPVNEUBZA
+      IZVQDMZKZVQBIZVQCMZKZVQVOIZVQVPIZVNVTWAWBVNVTWAVNVTKZVQVEIZJZWAWGSZWAVSWH
+      VNVRWGVQDVQDNOPWFVQVFIZWIWFVQVDVFVRVQVDIZVNVSAVDVQAVCQRTVGVLVMVTUCUDVQBVE
+      UEUFWGWAUGULUHVNVRWBVSVNVRVQCVNVRJVQCHZVIVGVIVKVMUIWLVRVHVQCAUJUKUMUNUOUP
+      VQADUQZVQBCUQZVBURVNEVPVOVNWCVTWEWDVNWCVRVSVNWCVRVNWCKZVQVCIZJZVRWPSZVRWB
+      WQVNWAWPVQCVQCNOPWOWKWRWOVQVFVDWAWJVNWBBVFVQBVEQRTVGVLVMWCUCUSVQAVCUEUFWP
+      VRUGULUHVNWAVSWBVNWAVQDVNWAJVQDHZVKVGVIVKVMUTWSWAVJVQDBUJUKUMUNUOUPWNWMVB
+      URVA $.
+      $( [25-Feb-2015] $)
   $}
 
   ${
@@ -53457,28 +53470,28 @@ $)
     enadj.2 $e |- B e. _V $.
     enadj.3 $e |- X e. _V $.
     enadj.4 $e |- Y e. _V $.
-    $( Equivalence law for adjunction.  Theorem XI.1.13 of [Rosser]. $)
+    $( Equivalence law for adjunction.  Theorem XI.1.13 of {{Rosser}}. $)
     enadj $p |- ( ( ( A u. { X } ) = ( B u. { Y } ) /\
         -. X e. A /\ -. Y e. B ) -> A ~~ B ) $=
-       ( cun wceq wcel wn w3a cen wbr cdif wa cin c0 a1i csn sneq uneq2d eqeq1d
-       eleq1 notbid 3anbi12d simp1 difeq1d nnsucelrlem2 3ad2ant2 3eqtr3d enrflx
-       wi 3ad2ant3 syl6eqbr syl6bi wo elsni eqcomd necon3ai adantr ssun2 sselii
-       wne snid simpr1 syl5eleqr elun sylib orel2 syl5eleq simpl1 simpl2 simpl3
-       sylc jca simprl simprr enadjlem1 syl122anc snex difex breq2 mpbii adantl
-       3adant1 ensn incom disjdif syl22anc simpl3l nnsucelrlem4 simpl3r 3brtr3d
-       eqtri unen syl mpdan mpd3an3 ex pm2.61ine ) ACUAZIZBDUAZIZJZCAKZLZDBKLZM
-       ZABNOZUNCDCDJZXKAXEIZXFJZDAKZLZXJMZXLXMXGXOXIXQXJXMXDXNXFXMXCXEACDUBUCUD
-       XMXHXPCDAUEUFUGXRABBNXRXNXEPZXFXEPZABXRXNXFXEXOXQXJUHUIXQXOXSAJXJADUJUKX
-       JXOXTBJXQBDUJUOULBFUMUPUQCDVEZXKXLYAXKXPCBKZQZXLYAXKQZXPYBYDDXCKZLZXPYEU
-       RZXPYAYFXKYECDYEDCDCUSUTVAVBYDDXDKYGYDDXFXDXEXFDXEBVCDHVFVDYAXGXIXJVGZVH
-       DAXCVIVJYEXPVKVPYDCXEKZLZYBYIURZYBYAYJXKYICDCDUSVAVBYDCXFKYKYDCXDXFXCXDC
-       XCAVCCGVFVDYHVLCBXEVIVJYIYBVKVPVQYAXKYCMZAXEPZBXCPZJZXLXKYCYOYAXKYCQXGXI
-       XJXPYBYOXGXIXJYCVMXGXIXJYCVNXGXIXJYCVOXKXPYBVRXKXPYBVSABCDVTWAWGYLYOQZYM
-       XEIZYNXCIZABNYPYMYNNOZXEXCNOZYMXERZSJZYNXCRZSJZYQYRNOYOYSYLYOYMYMNOYSYMA
-       XEEDWBWCUMYMYNYMNWDWEWFYTYPDCHGWHTUUBYPUUAXEYMRSYMXEWIXEAWJWPTUUDYPUUCXC
-       YNRSYNXCWIXCBWJWPTYMYNXEXCWQWKYPXPYQAJXPYBYAXKYOWLDAWMWRYPYBYRBJXPYBYAXK
-       YOWNCBWMWRWOWSWTXAXB $.
-       $( [25-Feb-2015] $)
+      ( cun wceq wcel wn w3a cen wbr cdif wa cin c0 a1i csn uneq2d eqeq1d eleq1
+      sneq notbid 3anbi12d simp1 difeq1d nnsucelrlem2 3ad2ant2 3ad2ant3 3eqtr3d
+      wi enrflx syl6eqbr syl6bi wne wo elsni eqcomd necon3ai adantr snid sselii
+      ssun2 simpr1 syl5eleqr elun sylib orel2 syl5eleq jca simpl1 simpl2 simpl3
+      sylc simprl simprr enadjlem1 syl122anc snex difex breq2 mpbii adantl ensn
+      3adant1 incom disjdif eqtri syl22anc simpl3l nnsucelrlem4 simpl3r 3brtr3d
+      unen syl mpdan mpd3an3 ex pm2.61ine ) ACUAZIZBDUAZIZJZCAKZLZDBKLZMZABNOZU
+      NCDCDJZXKAXEIZXFJZDAKZLZXJMZXLXMXGXOXIXQXJXMXDXNXFXMXCXEACDUEUBUCXMXHXPCD
+      AUDUFUGXRABBNXRXNXEPZXFXEPZABXRXNXFXEXOXQXJUHUIXQXOXSAJXJADUJUKXJXOXTBJXQ
+      BDUJULUMBFUOUPUQCDURZXKXLYAXKXPCBKZQZXLYAXKQZXPYBYDDXCKZLZXPYEUSZXPYAYFXK
+      YECDYEDCDCUTVAVBVCYDDXDKYGYDDXFXDXEXFDXEBVFDHVDVEYAXGXIXJVGZVHDAXCVIVJYEX
+      PVKVQYDCXEKZLZYBYIUSZYBYAYJXKYICDCDUTVBVCYDCXFKYKYDCXDXFXCXDCXCAVFCGVDVEY
+      HVLCBXEVIVJYIYBVKVQVMYAXKYCMZAXEPZBXCPZJZXLXKYCYOYAXKYCQXGXIXJXPYBYOXGXIX
+      JYCVNXGXIXJYCVOXGXIXJYCVPXKXPYBVRXKXPYBVSABCDVTWAWHYLYOQZYMXEIZYNXCIZABNY
+      PYMYNNOZXEXCNOZYMXERZSJZYNXCRZSJZYQYRNOYOYSYLYOYMYMNOYSYMAXEEDWBWCUOYMYNY
+      MNWDWEWFYTYPDCHGWGTUUBYPUUAXEYMRSYMXEWIXEAWJWKTUUDYPUUCXCYNRSYNXCWIXCBWJW
+      KTYMYNXEXCWQWLYPXPYQAJXPYBYAXKYOWMDAWNWRYPYBYRBJXPYBYAXKYOWOCBWNWRWPWSWTX
+      AXB $.
+      $( [25-Feb-2015] $)
   $}
 
   ${
@@ -53488,21 +53501,21 @@ $)
     $( Lemma for ~ enpw1 .  Set up stratification for the reverse direction. $)
     enpw1lem1 $p |- { <. x , y >. | { x } g { y } } e. _V $=
       ( vp va vb cvv c1st c2nd cv csn wbr wceq wa wex ancom 3bitri anbi1i bitri
-      weq cxp ccnv csi ccom cin cima cuni1 copab cop wcel wrex vex eluni1
-      opex elima brin brco brsnsi2 brcnv opbr1st equcom exbii sneq ceqsexv snex
-      eqeq2d breq2 opbr2nd anbi12i op1st2nd rexbii risset bitr2i releqopab vvex
-      df-br xpex 1stex cnvex siex coex 2ndex inex imaex uni1ex eqeltrri ) GG
-      UAZHUBZUCZHUDZIUBZUCZIUDZUEZCJZUFZUGZUEAJZKZBJZKZWOLZABUHGXBABWQWRWTUIZWQ
-      UJXCKZWPUJZDJZWSXAUIZMZDWOUKZXBXCWPWRWTAULZBULZUNZUMXEXFXDWNLZDWOUKXIDXDW
-      NWOUOXMXHDWOXMXFXDWJLZXFXDWMLZNXFWSHLZXFXAILZNXHXFXDWJWMUPXNXPXOXQXNXFEJZ
-      HLZXRXDWILZNZEOXRWSMZXSNZEOXPEXFXDWIHUQYAYCEYAXTXSNYCXSXTPXTYBXSXTXRFJZKZ
-      MZYDXCWHLZNZFOFATZYFNZFOYBFXCXRWHXLURYHYJFYHYGYFNYJYFYGPYGYIYFYGXCYDHLAFT
-      YIYDXCHUSWRWTYDXJXKUTAFVAQRSVBYFYBFWRXJYIYEWSXRYDWRVCVFVDQRSVBXSXPEWSWRVE
-      ZXRWSXFHVGVDQXOXFXRILZXRXDWLLZNZEOXRXAMZYLNZEOXQEXFXDWLIUQYNYPEYNYMYLNYPY
-      LYMPYMYOYLYMYFYDXCWKLZNZFOFBTZYFNZFOYOFXCXRWKXLURYRYTFYRYQYFNYTYFYQPYQYSY
-      FYQXCYDILBFTYSYDXCIUSWRWTYDXJXKVHBFVAQRSVBYFYOFWTXKYSYEXAXRYDWTVCVFVDQRSV
-      BYLXQEXAWTVEZXRXAXFIVGVDQVIWSXAXFYKUUAVJQVKSXBXGWOUJXIWSXAWOVPDXGWOVLVMQV
-      NWGWQGGVOVOVQWPWNWOWJWMWIHWHHVRVSVTVRWAWLIWKIWBVSVTWBWAWCCULWDWEWCWF $.
+      weq cxp ccnv csi ccom cin cima cuni1 copab cop wcel wrex vex eluni1 elima
+      opex brin brco brsnsi2 brcnv opbr1st equcom exbii sneq ceqsexv snex breq2
+      eqeq2d opbr2nd anbi12i op1st2nd rexbii df-br risset bitr2i releqopab vvex
+      xpex 1stex cnvex siex coex 2ndex inex imaex uni1ex eqeltrri ) GGUAZHUBZUC
+      ZHUDZIUBZUCZIUDZUEZCJZUFZUGZUEAJZKZBJZKZWOLZABUHGXBABWQWRWTUIZWQUJXCKZWPU
+      JZDJZWSXAUIZMZDWOUKZXBXCWPWRWTAULZBULZUOZUMXEXFXDWNLZDWOUKXIDXDWNWOUNXMXH
+      DWOXMXFXDWJLZXFXDWMLZNXFWSHLZXFXAILZNXHXFXDWJWMUPXNXPXOXQXNXFEJZHLZXRXDWI
+      LZNZEOXRWSMZXSNZEOXPEXFXDWIHUQYAYCEYAXTXSNYCXSXTPXTYBXSXTXRFJZKZMZYDXCWHL
+      ZNZFOFATZYFNZFOYBFXCXRWHXLURYHYJFYHYGYFNYJYFYGPYGYIYFYGXCYDHLAFTYIYDXCHUS
+      WRWTYDXJXKUTAFVAQRSVBYFYBFWRXJYIYEWSXRYDWRVCVGVDQRSVBXSXPEWSWRVEZXRWSXFHV
+      FVDQXOXFXRILZXRXDWLLZNZEOXRXAMZYLNZEOXQEXFXDWLIUQYNYPEYNYMYLNYPYLYMPYMYOY
+      LYMYFYDXCWKLZNZFOFBTZYFNZFOYOFXCXRWKXLURYRYTFYRYQYFNYTYFYQPYQYSYFYQXCYDIL
+      BFTYSYDXCIUSWRWTYDXJXKVHBFVAQRSVBYFYOFWTXKYSYEXAXRYDWTVCVGVDQRSVBYLXQEXAW
+      TVEZXRXAXFIVFVDQVIWSXAXFYKUUAVJQVKSXBXGWOUJXIWSXAWOVLDXGWOVMVNQVOWGWQGGVP
+      VPVQWPWNWOWJWMWIHWHHVRVSVTVRWAWLIWKIWBVSVTWBWAWCCULWDWEWCWF $.
       $( [26-Feb-2015] $)
   $}
 
@@ -53512,7 +53525,7 @@ $)
     $d g x $.  $d g y $.  $d g z $.  $d w x $.  $d w y $.  $d w z $.  $d x y $.
     $d x z $.  $d y z $.
     $( Two classes are equinumerous iff their unit power classes are
-       equinumerous.  Theorem XI.1.33 of [Rosser], p. 368. $)
+       equinumerous.  Theorem XI.1.33 of {{Rosser}}, p. 368. $)
     enpw1 $p |- ( A ~~ B <-> ~P1 A ~~ ~P1 B ) $=
       ( vx vy vz vw cen wbr cvv wcel cpw1 wceq wex wfun cdm syl sylanbrc sylibr
       cv wal va vb vf vg wa brex pw1exb anbi12i sylib breq1 pw1eq bibi12d breq2
@@ -53611,18 +53624,18 @@ $)
     $d a s $.  $d G s $.  $d r s $.  $d S s $.
     enmap2lem3.1 $e |- W = ( s e. ( G ^m a ) |-> ( s o. `' r ) ) $.
     $( Lemma for ~ enmap2 .  Binary relationship condition over ` W ` . $)
-    enmap2lem3 $p |- ( r : a -1-1-onto-> b -> 
+    enmap2lem3 $p |- ( r : a -1-1-onto-> b ->
        ( S W T -> S = ( T o. r ) ) ) $=
-      ( wbr cv cmap co wcel ccnv ccom wceq wa cvv coeq1 wf1o cdm enmap2lem2 fndm
-      breldm wfn ax-mp syl6eleq cfv wb fnbrfvb mpan vex cnvex coexg mpan2 mpdan
-      fvmptg eqeq1d eqcom syl6bb biimpd sylbird mpcom jca cres f1ococnv1 coeq2d
-      cid adantr elmapi fcoi1 syl adantl eqtr2d coass syl6eq syl5ibrcom expimpd
-      wf eqeq2d syl5 ) ABDJZACGKZLMZNZBAFKZOZPZQZRWDHKZWGUAZABWGPZQZWCWFWJWCADU
-      BZWEABDUEDWEUFZWOWEQCDEFGIUCZWEDUDUGUHZWFWCWJWRWFWCADUIZBQZWJWPWFWTWCUJWQ
-      WEABDUKULWFWTWJWFWTWIBQWJWFWSWIBWFWISNZWSWIQWFWHSNXAWGFUMUNAWHWESUOUPEAEK
-      ZWHPWIWESDXBAWHTIURUQUSWIBUTVAVBVCVDVEWLWFWJWNWLWFRZWNWJAAWHWGPZPZQXCXEAV
-      IWDVFZPZAWLXEXGQWFWLXDXFAWDWKWGVGVHVJWFXGAQZWLWFWDCAVTXHACWDVKWDCAVLVMVNV
-      OWJWMXEAWJWMWIWGPXEBWIWGTAWHWGVPVQWAVRVSWB $.
+      ( wbr cv cmap co wcel ccnv ccom wceq wa cvv coeq1 wf1o cdm wfn enmap2lem2
+      breldm fndm ax-mp syl6eleq wb fnbrfvb mpan cnvex coexg mpan2 fvmptg mpdan
+      cfv vex eqeq1d eqcom syl6bb biimpd sylbird mpcom jca cid f1ococnv1 coeq2d
+      cres adantr elmapi fcoi1 syl adantl eqtr2d coass syl6eq eqeq2d syl5ibrcom
+      wf expimpd syl5 ) ABDJZACGKZLMZNZBAFKZOZPZQZRWDHKZWGUAZABWGPZQZWCWFWJWCAD
+      UBZWEABDUEDWEUCZWOWEQCDEFGIUDZWEDUFUGUHZWFWCWJWRWFWCADUQZBQZWJWPWFWTWCUIW
+      QWEABDUJUKWFWTWJWFWTWIBQWJWFWSWIBWFWISNZWSWIQWFWHSNXAWGFURULAWHWESUMUNEAE
+      KZWHPWIWESDXBAWHTIUOUPUSWIBUTVAVBVCVDVEWLWFWJWNWLWFRZWNWJAAWHWGPZPZQXCXEA
+      VFWDVIZPZAWLXEXGQWFWLXDXFAWDWKWGVGVHVJWFXGAQZWLWFWDCAVTXHACWDVKWDCAVLVMVN
+      VOWJWMXEAWJWMWIWGPXEBWIWGTAWHWGVPVQVRVSWAWB $.
       $( [26-Feb-2015] $)
   $}
 
@@ -53633,12 +53646,12 @@ $)
     enmap2lem4.1 $e |- W = ( s e. ( G ^m a ) |-> ( s o. `' r ) ) $.
     $( Lemma for ~ enmap2 .  The converse of ` W ` is a function. $)
     enmap2lem4 $p |- ( r : a -1-1-onto-> b -> Fun `' W ) $=
-      ( vy vx vz cv wf1o wbr wa weq wi wal wceq enmap2lem3 brcnv ccnv wfun eqtr3
-      ccom anim12d syl6 alrimiv wrel relcnv dffun2 mpbiran anbi12i imbi1i albii
-      alrimivv 2albii bitri sylibr ) EKFKDKZLZHKZIKZBMZJKZVBBMZNZHJOZPZJQZHQIQZ
-      BUAZUBZUTVIIHUTVHJUTVFVAVBUSUDZRZVDVMRZNVGUTVCVNVEVOVAVBABCDEFGSVDVBABCDE
-      FGSUEVAVDVMUCUFUGUOVLVBVAVKMZVBVDVKMZNZVGPZJQZHQIQZVJVLVKUHWABUIIHJVKUJUK
-      VTVIIHVSVHJVRVFVGVPVCVQVEVBVABTVBVDBTULUMUNUPUQUR $.
+      ( vy vx vz cv wf1o wbr wa weq wi wal wceq enmap2lem3 brcnv ccnv wfun ccom
+      anim12d eqtr3 alrimiv alrimivv relcnv dffun2 mpbiran anbi12i imbi1i albii
+      syl6 wrel 2albii bitri sylibr ) EKFKDKZLZHKZIKZBMZJKZVBBMZNZHJOZPZJQZHQIQ
+      ZBUAZUBZUTVIIHUTVHJUTVFVAVBUSUCZRZVDVMRZNVGUTVCVNVEVOVAVBABCDEFGSVDVBABCD
+      EFGSUDVAVDVMUEUNUFUGVLVBVAVKMZVBVDVKMZNZVGPZJQZHQIQZVJVLVKUOWABUHIHJVKUIU
+      JVTVIIHVSVHJVRVFVGVPVCVQVEVBVABTVBVDBTUKULUMUPUQUR $.
       $( [26-Feb-2015] $)
   $}
 
@@ -53649,19 +53662,19 @@ $)
     $( Lemma for ~ enmap2 .  Calculate the range of ` W ` . $)
     enmap2lem5 $p |- ( r : a -1-1-onto-> b -> ran W = ( G ^m b ) ) $=
       ( vp cv cmap wcel ccom wceq vex coex adantl wf syl wb cvv wf1o crn co wfn
-      cfv wral wss enmap2lem2 wa ccnv coeq1 cnvex elmapi f1ocnv f1of fco syl2anr
-      fvmpt elovex1 elmapg mp3an23 eqeltrd ralrimiva fnfvrnss sylancr wbr coass
-      mpbird syl6eq cid cres f1ococnv2 coeq2d fcoi1 sylan9eq eqtrd mpbid brelrn
-      fnbrfvb ex ssrdv eqssd ) EIZFIZDIZUAZBUBZAWDJUCZWFBAWCJUCZUDZHIZBUEZWHKZH
-      WIUFWGWHUGABCDEGUHZWFWMHWIWFWKWIKZUIZWLWKWEUJZLZWHWOWLWRMWFCWKCIZWQLZWRWI
-      BWSWKWQUKGWKWQHNZWEDNZULZOZURPWPWRWHKZWDAWRQZWOWCAWKQWDWCWQQZXFWFWKAWCUMW
-      FWDWCWQUAXGWCWDWEUNWDWCWQUORWDWCAWKWQUPUQWOXEXFSZWFWOATKZXHWKAWCJUSXIWDTK
-      WRTKXHFNXDAWDWRTTTUTVARPVHVBVCHWIWHBVDVEWFHWHWGWFWKWHKZWKWGKZWFXJUIZWKWEL
-      ZWKBVFZXKXLXMBUEZWKMZXNXLXOWKWEWQLZLZWKXLXMWIKZXOXRMXLXSWCAXMQZXJWDAWKQZW
-      CWDWEQXTWFWKAWDUMZWCWDWEUOWCWDAWKWEUPUQXJXSXTSZWFXJXIYCWKAWDJUSXIWCTKXMTK
-      YCENWKWEXAXBOAWCXMTTTUTVARPVHZCXMWTXRWIBWSXMMWTXMWQLXRWSXMWQUKWKWEWQVGVIG
-      WKXQXAWEWQXBXCOOURRWFXJXRWKVJWDVKZLZWKWFXQYEWKWCWDWEVLVMXJYAYFWKMYBWDAWKV
-      NRVOVPXLWJXSXPXNSWNYDWIXMWKBVSVEVQXMWKBVRRVTWAWB $.
+      cfv wral wss enmap2lem2 ccnv coeq1 cnvex fvmpt elmapi f1ocnv f1of syl2anr
+      wa elovex1 elmapg mp3an23 mpbird eqeltrd ralrimiva fnfvrnss sylancr coass
+      fco wbr syl6eq cid cres f1ococnv2 coeq2d fcoi1 eqtrd fnbrfvb mpbid brelrn
+      sylan9eq ex ssrdv eqssd ) EIZFIZDIZUAZBUBZAWDJUCZWFBAWCJUCZUDZHIZBUEZWHKZ
+      HWIUFWGWHUGABCDEGUHZWFWMHWIWFWKWIKZUQZWLWKWEUIZLZWHWOWLWRMWFCWKCIZWQLZWRW
+      IBWSWKWQUJGWKWQHNZWEDNZUKZOZULPWPWRWHKZWDAWRQZWOWCAWKQWDWCWQQZXFWFWKAWCUM
+      WFWDWCWQUAXGWCWDWEUNWDWCWQUORWDWCAWKWQVGUPWOXEXFSZWFWOATKZXHWKAWCJURXIWDT
+      KWRTKXHFNXDAWDWRTTTUSUTRPVAVBVCHWIWHBVDVEWFHWHWGWFWKWHKZWKWGKZWFXJUQZWKWE
+      LZWKBVHZXKXLXMBUEZWKMZXNXLXOWKWEWQLZLZWKXLXMWIKZXOXRMXLXSWCAXMQZXJWDAWKQZ
+      WCWDWEQXTWFWKAWDUMZWCWDWEUOWCWDAWKWEVGUPXJXSXTSZWFXJXIYCWKAWDJURXIWCTKXMT
+      KYCENWKWEXAXBOAWCXMTTTUSUTRPVAZCXMWTXRWIBWSXMMWTXMWQLXRWSXMWQUJWKWEWQVFVI
+      GWKXQXAWEWQXBXCOOULRWFXJXRWKVJWDVKZLZWKWFXQYEWKWCWDWEVLVMXJYAYFWKMYBWDAWK
+      VNRVSVOXLWJXSXPXNSWNYDWIXMWKBVPVEVQXMWKBVRRVTWAWB $.
       $( [26-Feb-2015] $)
   $}
 
@@ -53669,18 +53682,18 @@ $)
     $d A a $.  $d a b $.  $d A b $.  $d a r $.  $d a s $.  $d B b $.  $d b r $.
     $d C a $.  $d C b $.  $d C r $.  $d C s $.  $d r s $.
     $( Set exponentiation preserves equinumerosity in the second argument.
-       Theorem XI.1.22 of [Rosser], p. 357. $)
+       Theorem XI.1.22 of {{Rosser}}, p. 357. $)
     enmap2 $p |- ( A ~~ B -> ( C ^m A ) ~~ ( C ^m B ) ) $=
-       ( va vb vr vs cvv wcel wa cen wbr cmap co cv wi wceq oveq2 imbi12d wf1o
-       brex breq1 breq1d breq2 breq2d wex bren ccnv ccom cmpt wfn wfun cdm eqid
-       enmap2lem4 crn dfrn4 enmap2lem5 syl5eqr jca df-fn sylibr enmap2lem2 mpbiran
-       dff1o4 enmap2lem1 f1oen syl exlimiv sylbi vtocl2g mpcom ) AHIBHIJABKLZCAM
-       NZCBMNZKLZABKUADOZEOZKLZCVQMNZCVRMNZKLZPAVRKLZVNWAKLZPVMVPPDEABHHVQAQZVS
-       WCWBWDVQAVRKUBWEVTVNWAKVQACMRUCSVRBQZWCVMWDVPVRBAKUDWFWAVOVNKVRBCMRUESVS
-       VQVRFOZTZFUFWBVQVRFUGWHWBFWHVTWAGVTGOWGUHUIUJZTZWBWHWIUHZWAUKZWJWHWKULZW
-       KUMZWAQZJWLWHWMWOCWIGFDEWIUNZUOWHWNWIUPWAWIUQCWIGFDEWPURUSUTWKWAVAVBWJWI
-       VTUKWLCWIGFDWPVCVTWAWIVEVDVBVTWAWIVQCWIGFWPVFVGVHVIVJVKVL $.
-       $( [26-Feb-2015] $)
+      ( va vb vr vs cvv wcel wa cen wbr cmap co cv wi wceq oveq2 imbi12d wf1o
+      brex breq1 breq1d breq2 breq2d wex bren ccnv ccom cmpt wfn cdm enmap2lem4
+      wfun eqid crn dfrn4 enmap2lem5 syl5eqr jca df-fn sylibr enmap2lem2 dff1o4
+      mpbiran enmap2lem1 f1oen syl exlimiv sylbi vtocl2g mpcom ) AHIBHIJABKLZCA
+      MNZCBMNZKLZABKUADOZEOZKLZCVQMNZCVRMNZKLZPAVRKLZVNWAKLZPVMVPPDEABHHVQAQZVS
+      WCWBWDVQAVRKUBWEVTVNWAKVQACMRUCSVRBQZWCVMWDVPVRBAKUDWFWAVOVNKVRBCMRUESVSV
+      QVRFOZTZFUFWBVQVRFUGWHWBFWHVTWAGVTGOWGUHUIUJZTZWBWHWIUHZWAUKZWJWHWKUNZWKU
+      LZWAQZJWLWHWMWOCWIGFDEWIUOZUMWHWNWIUPWAWIUQCWIGFDEWPURUSUTWKWAVAVBWJWIVTU
+      KWLCWIGFDWPVCVTWAWIVDVEVBVTWAWIVQCWIGFWPVFVGVHVIVJVKVL $.
+      $( [26-Feb-2015] $)
   $}
 
   ${
@@ -53743,7 +53756,7 @@ $)
     $d a s $.  $d G s $.  $d r s $.  $d S s $.  $d A s $.
     enmap1lem3.1 $e |- W = ( s e. ( A ^m G ) |-> ( r o. s ) ) $.
     $( Lemma for ~ enmap2 .  Binary relationship condition over ` W ` . $)
-    enmap1lem3 $p |- ( r : A -1-1-onto-> B -> 
+    enmap1lem3 $p |- ( r : A -1-1-onto-> B ->
        ( S W T -> S = ( `' r o. T ) ) ) $=
       ( wbr cmap co wcel cv ccom wceq wa mpan cvv coeq2 wf1o cdm wfn enmap1lem2
       ccnv breldm fndm ax-mp syl6eleq cfv fnbrfvb vex coexg fvmptg mpdan eqeq1d
@@ -53804,7 +53817,7 @@ $)
     $d C a $.  $d C b $.  $d C r $.  $d C s $.  $d r s $.  $d A r $.  $d A s $.
     $d B r $.
     $( Set exponentiation preserves equinumerosity in the first argument.
-       Theorem XI.1.23 of [Rosser], p. 357. $)
+       Theorem XI.1.23 of {{Rosser}}, p. 357. $)
     enmap1 $p |- ( A ~~ B -> ( A ^m C ) ~~ ( B ^m C ) ) $=
       ( vr vs cen wbr cv wf1o wex cmap co bren ccom cmpt wfn ccnv wfun crn wceq
       eqid enmap1lem2 a1i enmap1lem4 enmap1lem5 dff1o2 syl3anbrc enmap1lem1 syl
@@ -53818,21 +53831,20 @@ $)
     $d A x y z $.
     enpw1pw.1 $e |- A e. _V $.
     $( Unit power class and power class commute within equivalence.  Theorem
-       XI.1.35 of [Rosser], p. 368. $)
+       XI.1.35 of {{Rosser}}, p. 368. $)
     enpw1pw $p |- ~P1 ~P A ~~ ~P ~P1 A $=
-       ( vy vx vz cpw cpw1 cpw1fn wf1o wbr c1c wss ax-mp wceq wrex wcel wex vex
-       cv wa cres cen cima wf1 pw1fnf1o f1of1 pw1ss1c f1ores wb cab df-ima elpw
-       mp2an sspw1 df-rex df-pw abeq2i anbi1i exbii bitr2i 3bitri elpw1 r19.41v
-       csn bitr4i rexcom4 snex breq1 ceqsexv brpw1fn bitri rexbii bitr3i abbi2i
-       eqtr4i f1oeq3 mpbi pw1fnex pwex pw1ex resex f1oen ) AFZGZAGZFZHWDUAZIZWD
-       WFUBJWDHWDUCZWGIZWHKKFZHUDZWDKLWJKWKHIWLUEKWKHUFMWCUGKWKWDHUHUMWIWFNWJWH
-       UIWICSZDSZHJZCWDOZDUJWFDCHWDUKWPDWFWNWFPZWNESZGNZEWCOZWPWQWNWELWRALZWSTZ
-       EQZWTWNWEDRZULEWNAXDUNWTWRWCPZWSTZEQXCWSEWCUOXFXBEXEXAWSXAEWCEAUPUQURUSU
-       TVAWPWMWDPZWOTZCQWMWRVDZNZWOTZEWCOZCQZWTWOCWDUOXHXLCXHXJEWCOZWOTXLXGXNWO
-       EWMWCVBURXJWOEWCVCVEUSXMXKCQZEWCOWTXKECWCVFXOWSEWCXOXIWNHJZWSWOXPCXIWRVG
-       WMXIWNHVHVIWRWNERVJVKVLVMVAVEVNVOWIWFWDWGVPMVQWDWFWGHWDVRWCABVSVTWAWBM
-       $.
-       $( [26-Feb-2015] $)
+      ( vy vx vz cpw cpw1 cpw1fn wf1o wbr c1c wss ax-mp wceq cv wrex wa wex vex
+      wcel cres cen cima wf1 pw1fnf1o f1of1 pw1ss1c f1ores mp2an wb df-ima elpw
+      cab sspw1 df-rex df-pw abeq2i anbi1i exbii bitr2i 3bitri csn elpw1 bitr4i
+      r19.41v rexcom4 snex breq1 ceqsexv bitri rexbii bitr3i abbi2i eqtr4i mpbi
+      brpw1fn f1oeq3 pw1fnex pwex pw1ex resex f1oen ) AFZGZAGZFZHWDUAZIZWDWFUBJ
+      WDHWDUCZWGIZWHKKFZHUDZWDKLWJKWKHIWLUEKWKHUFMWCUGKWKWDHUHUIWIWFNWJWHUJWICO
+      ZDOZHJZCWDPZDUMWFDCHWDUKWPDWFWNWFTZWNEOZGNZEWCPZWPWQWNWELWRALZWSQZERZWTWN
+      WEDSZULEWNAXDUNWTWRWCTZWSQZERXCWSEWCUOXFXBEXEXAWSXAEWCEAUPUQURUSUTVAWPWMW
+      DTZWOQZCRWMWRVBZNZWOQZEWCPZCRZWTWOCWDUOXHXLCXHXJEWCPZWOQXLXGXNWOEWMWCVCUR
+      XJWOEWCVEVDUSXMXKCRZEWCPWTXKECWCVFXOWSEWCXOXIWNHJZWSWOXPCXIWRVGWMXIWNHVHV
+      IWRWNESVPVJVKVLVAVDVMVNWIWFWDWGVQMVOWDWFWGHWDVRWCABVSVTWAWBM $.
+      $( [26-Feb-2015] $)
   $}
 
   ${
@@ -53862,9 +53874,9 @@ $)
     enprmaplem2.1 $e |- W = ( r e. ( A ^m B ) |-> ( `' r " { x } ) ) $.
     $( Lemma for ~ enprmap .  Establish functionhood. $)
     enprmaplem2 $p |- W Fn ( A ^m B ) $=
-       ( cv ccnv csn cima cvv wcel cmap co wfn fnmpt vex cnvex snex imaex mprg
-       a1i ) EGZHZAGZIZJZKLZDBCMNZOEUIEUIUGDKFPUHUCUILUDUFUCEQRUESTUBUA $.
-       $( [3-Mar-2015] $)
+      ( cv ccnv csn cima cvv wcel cmap co wfn fnmpt vex cnvex snex imaex mprg
+      a1i ) EGZHZAGZIZJZKLZDBCMNZOEUIEUIUGDKFPUHUCUILUDUFUCEQRUESTUBUA $.
+      $( [3-Mar-2015] $)
   $}
 
   ${
@@ -53875,47 +53887,47 @@ $)
     enprmaplem3.1 $e |- W = ( r e. ( A ^m B ) |-> ( `' r " { x } ) ) $.
     $( Lemma for ~ enprmap .  The converse of ` W ` is a function. $)
     enprmaplem3 $p |- ( ( x =/= y /\ A = { x , y } ) -> Fun `' W ) $=
-       ( vz vp vq vw cv wceq wa wbr weq wcel wb fnbrfvb syl wne cpr ccnv wi wal
-       wfun cmap co csn cima brcnv cdm breldm wfn enprmaplem2 fndm syl6eleq cfv
-       ax-mp sylancr ibir cnveq imaeq1d vex cnvex snex imaex eqtr3d jca anim12i
-       fvmpt syl2anb wf elmapi eqtr2 simprll ffn simprlr ffvelrn simpllr eleq2d
-       sylan wo fvex elpr simprr simplrr eliniseg 3bitr3g biimpd 3imtr4d eqtr4d
-       impr expr wn simplll df-ne sylib adantr ffun fununiq 3expib ancomsd 3syl
-       exp3a mtod biimprd nsyld simprl fdm adantrr eleqtrrd wex eldm crn brelrn
-       wss frn sseld syl5 breq2 biimpcd orim12d com12 sylbi syl6bi mpdd exlimdv
-       com23 syl5bi orel1 sylc jaod sylbid eqfnfvd expcom syl2an an4s alrimiv
-       mpd alrimivv wrel relcnv dffun2 mpbiran sylibr ) ALZBLZUAZCUUGUUHUBZMZNZ
-       HLZILZEUCZOZUUMJLZUUOOZNZIJPZUDZJUEZIUEHUEZUUOUFZUULUVBHIUULUVAJUUSUUNCD
-       UGUHZQZUUMUUNUCZUUGUIZUJZMZNZUUQUVEQZUUMUUQUCZUVHUJZMZNZNZUULUUTUUPUUNUU
-       MEOZUUQUUMEOZUVQUURUUMUUNEUKUUMUUQEUKUVRUVKUVSUVPUVRUVFUVJUVRUUNEULZUVEU
-       UNUUMEUMEUVEUNZUVTUVEMACDEFGUOZUVEEUPUSZUQZUVRUUNEURZUUMUVIUVRUWEUUMMZUV
-       RUWAUVFUWFUVRRUWBUWDUVEUUNUUMESUTVAUVRUVFUWEUVIMUWDFUUNFLZUCZUVHUJZUVIUV
-       EEFIPUWHUVGUVHUWGUUNVBVCGUVGUVHUUNIVDVEUUGVFZVGVKTVHVIUVSUVLUVOUVSUUQUVT
-       UVEUUQUUMEUMUWCUQZUVSUUQEURZUUMUVNUVSUWLUUMMZUVSUWAUVLUWMUVSRUWBUWKUVEUU
-       QUUMESUTVAUVSUVLUWLUVNMUWKFUUQUWIUVNUVEEFJPUWHUVMUVHUWGUUQVBVCGUVMUVHUUQ
-       JVDVEUWJVGVKTVHVIVJVLUVQUULUUTUVFUVLUVJUVOUULUUTUDZUVFUVLNDCUUNVMZDCUUQV
-       MZNZUVIUVNMZUWNUVJUVONUVFUWOUVLUWPUUNCDVNUUQCDVNVJUUMUVIUVNVOUULUWQUWRNZ
-       UUTUULUWSNZHDUUNUUQUWTUWOUUNDUNZUULUWOUWPUWRVPZDCUUNVQTZUWTUWPUUQDUNZUUL
-       UWOUWPUWRVRZDCUUQVQTZUWTUUMDQZNZUUMUUNURZCQZUXIUUMUUQURZMZUWTUWOUXGUXJUX
-       BDCUUMUUNVSWBUXHUXJUXIUUJQZUXLUXHCUUJUXIUUIUUKUWSUXGVTWAUXMUXIUUGMZUXIUU
-       HMZWCUXHUXLUXIUUGUUHUUMUUNWDWEUXHUXNUXLUXOUWTUXGUXNUXLUWTUXGUXNNNUXIUUGU
-       XKUWTUXGUXNWFUWTUXGUXNUXKUUGMZUXHUUMUUGUUNOZUUMUUGUUQOZUXNUXPUXHUXQUXRUX
-       HUUMUVIQUUMUVNQUXQUXRUXHUVIUVNUUMUULUWQUWRUXGWGWAUUNUUGUUMWHUUQUUGUUMWHW
-       IZWJUWTUXAUXGUXNUXQRUXCDUUMUUGUUNSWBUWTUXDUXGUXPUXRRUXFDUUMUUGUUQSWBWKWM
-       WLWNUWTUXGUXOUXLUWTUXGUXONNUXIUUHUXKUWTUXGUXOWFUWTUXGUXOUXKUUHMZUXHUUMUU
-       HUUNOZUUMUUHUUQOZUXOUXTUWTUXGUYAUYBUWTUXGUYANZNZUXRWOZUXRUYBWCZUYBUWTUXG
-       UYAUYEUXHUYAUXQUXRUWTUXGUYAUXQWOUYDUXQABPZUYDUUIUYGWOUUIUUKUWSUYCWPUUGUU
-       HWQWRUWTUXGUYAUXQUYGUDUXHUYAUXQUYGUXHUWOUUNUFZUYAUXQNUYGUDUWTUWOUXGUXBWS
-       DCUUNWTUYHUXQUYAUYGUYHUXQUYAUYGUUMUUGUUHUUNXAXBXCXDXEWMXFWNUXHUXQUXRUXSX
-       GXHWMUYDUUMUUQULZQZUYFUYDUUMDUYIUWTUXGUYAXIUWTUXGUYIDMZUYAUXHUWPUYKUWTUW
-       PUXGUXEWSDCUUQXJTXKXLUYJUUMKLZUUQOZKXMUYDUYFKUUMUUQXNUYDUYMUYFKUYDUYMUYL
-       CQZUYFUYMUYLUUQXOZQUYDUYNUUMUYLUUQXPUYDUYOCUYLUYDUWPUYOCXQUWTUWPUYCUXEWS
-       DCUUQXRTXSXTUYDUYNUYMUYFUYDUYNUYLUUJQZUYMUYFUDZUYDCUUJUYLUUIUUKUWSUYCVTW
-       AUYPKAPZKBPZWCZUYQUYLUUGUUHKVDWEUYMUYTUYFUYMUYRUXRUYSUYBUYRUYMUXRUYLUUGU
-       UMUUQYAYBUYSUYMUYBUYLUUHUUMUUQYAYBYCYDYEYFYIYGYHYJYTUXRUYBYKYLWNUWTUXAUX
-       GUXOUYARUXCDUUMUUHUUNSWBUWTUXDUXGUXTUYBRUXFDUUMUUHUUQSWBWKWMWLWNYMYJYNYT
-       YOYPYQYRYDXTYSUUAUVDUUOUUBUVCEUUCHIJUUOUUDUUEUUF $.
-       $( [3-Mar-2015] $)
+      ( vz vp vq vw cv wceq wa wbr weq wcel wb fnbrfvb syl wne cpr ccnv wi wfun
+      wal cmap co csn cima brcnv cdm breldm wfn enprmaplem2 fndm ax-mp syl6eleq
+      cfv sylancr ibir cnveq imaeq1d vex cnvex snex imaex fvmpt anim12i syl2anb
+      eqtr3d jca wf elmapi eqtr2 simprll ffn simprlr ffvelrn sylan simpllr fvex
+      eleq2d wo elpr simprr simplrr eliniseg 3bitr3g biimpd 3imtr4d impr eqtr4d
+      expr wn simplll df-ne sylib adantr ffun fununiq 3expib ancomsd 3syl exp3a
+      mtod biimprd nsyld simprl fdm adantrr eleqtrrd wex eldm crn wss frn sseld
+      brelrn syl5 breq2 biimpcd orim12d com12 sylbi syl6bi com23 exlimdv syl5bi
+      mpdd mpd orel1 sylc jaod sylbid eqfnfvd expcom syl2an an4s alrimiv relcnv
+      alrimivv wrel dffun2 mpbiran sylibr ) ALZBLZUAZCUUGUUHUBZMZNZHLZILZEUCZOZ
+      UUMJLZUUOOZNZIJPZUDZJUFZIUFHUFZUUOUEZUULUVBHIUULUVAJUUSUUNCDUGUHZQZUUMUUN
+      UCZUUGUIZUJZMZNZUUQUVEQZUUMUUQUCZUVHUJZMZNZNZUULUUTUUPUUNUUMEOZUUQUUMEOZU
+      VQUURUUMUUNEUKUUMUUQEUKUVRUVKUVSUVPUVRUVFUVJUVRUUNEULZUVEUUNUUMEUMEUVEUNZ
+      UVTUVEMACDEFGUOZUVEEUPUQZURZUVRUUNEUSZUUMUVIUVRUWEUUMMZUVRUWAUVFUWFUVRRUW
+      BUWDUVEUUNUUMESUTVAUVRUVFUWEUVIMUWDFUUNFLZUCZUVHUJZUVIUVEEFIPUWHUVGUVHUWG
+      UUNVBVCGUVGUVHUUNIVDVEUUGVFZVGVHTVKVLUVSUVLUVOUVSUUQUVTUVEUUQUUMEUMUWCURZ
+      UVSUUQEUSZUUMUVNUVSUWLUUMMZUVSUWAUVLUWMUVSRUWBUWKUVEUUQUUMESUTVAUVSUVLUWL
+      UVNMUWKFUUQUWIUVNUVEEFJPUWHUVMUVHUWGUUQVBVCGUVMUVHUUQJVDVEUWJVGVHTVKVLVIV
+      JUVQUULUUTUVFUVLUVJUVOUULUUTUDZUVFUVLNDCUUNVMZDCUUQVMZNZUVIUVNMZUWNUVJUVO
+      NUVFUWOUVLUWPUUNCDVNUUQCDVNVIUUMUVIUVNVOUULUWQUWRNZUUTUULUWSNZHDUUNUUQUWT
+      UWOUUNDUNZUULUWOUWPUWRVPZDCUUNVQTZUWTUWPUUQDUNZUULUWOUWPUWRVRZDCUUQVQTZUW
+      TUUMDQZNZUUMUUNUSZCQZUXIUUMUUQUSZMZUWTUWOUXGUXJUXBDCUUMUUNVSVTUXHUXJUXIUU
+      JQZUXLUXHCUUJUXIUUIUUKUWSUXGWAWCUXMUXIUUGMZUXIUUHMZWDUXHUXLUXIUUGUUHUUMUU
+      NWBWEUXHUXNUXLUXOUWTUXGUXNUXLUWTUXGUXNNNUXIUUGUXKUWTUXGUXNWFUWTUXGUXNUXKU
+      UGMZUXHUUMUUGUUNOZUUMUUGUUQOZUXNUXPUXHUXQUXRUXHUUMUVIQUUMUVNQUXQUXRUXHUVI
+      UVNUUMUULUWQUWRUXGWGWCUUNUUGUUMWHUUQUUGUUMWHWIZWJUWTUXAUXGUXNUXQRUXCDUUMU
+      UGUUNSVTUWTUXDUXGUXPUXRRUXFDUUMUUGUUQSVTWKWLWMWNUWTUXGUXOUXLUWTUXGUXONNUX
+      IUUHUXKUWTUXGUXOWFUWTUXGUXOUXKUUHMZUXHUUMUUHUUNOZUUMUUHUUQOZUXOUXTUWTUXGU
+      YAUYBUWTUXGUYANZNZUXRWOZUXRUYBWDZUYBUWTUXGUYAUYEUXHUYAUXQUXRUWTUXGUYAUXQW
+      OUYDUXQABPZUYDUUIUYGWOUUIUUKUWSUYCWPUUGUUHWQWRUWTUXGUYAUXQUYGUDUXHUYAUXQU
+      YGUXHUWOUUNUEZUYAUXQNUYGUDUWTUWOUXGUXBWSDCUUNWTUYHUXQUYAUYGUYHUXQUYAUYGUU
+      MUUGUUHUUNXAXBXCXDXEWLXFWNUXHUXQUXRUXSXGXHWLUYDUUMUUQULZQZUYFUYDUUMDUYIUW
+      TUXGUYAXIUWTUXGUYIDMZUYAUXHUWPUYKUWTUWPUXGUXEWSDCUUQXJTXKXLUYJUUMKLZUUQOZ
+      KXMUYDUYFKUUMUUQXNUYDUYMUYFKUYDUYMUYLCQZUYFUYMUYLUUQXOZQUYDUYNUUMUYLUUQXS
+      UYDUYOCUYLUYDUWPUYOCXPUWTUWPUYCUXEWSDCUUQXQTXRXTUYDUYNUYMUYFUYDUYNUYLUUJQ
+      ZUYMUYFUDZUYDCUUJUYLUUIUUKUWSUYCWAWCUYPKAPZKBPZWDZUYQUYLUUGUUHKVDWEUYMUYT
+      UYFUYMUYRUXRUYSUYBUYRUYMUXRUYLUUGUUMUUQYAYBUYSUYMUYBUYLUUHUUMUUQYAYBYCYDY
+      EYFYGYJYHYIYKUXRUYBYLYMWNUWTUXAUXGUXOUYARUXCDUUMUUHUUNSVTUWTUXDUXGUXTUYBR
+      UXFDUUMUUHUUQSVTWKWLWMWNYNYIYOYKYPYQYRYSYDXTYTUUBUVDUUOUUCUVCEUUAHIJUUOUU
+      DUUEUUF $.
+      $( [3-Mar-2015] $)
   $}
 
   ${
@@ -53947,30 +53959,30 @@ $)
     $( Lemma for ~ enprmap .  Establish that ` ~P B ` is a subset of the range
        of ` W ` . $)
     enprmaplem5 $p |- ( ( x =/= y /\ A = { x , y } ) -> ~P B C_ ran W ) $=
-       ( vz cv wceq wa wcel vex cvv syl wne cpr cpw crn wss elpw ccnv cima cmap
-       wbr w3a cfv csn co wf wel cif wral ifeqor ifex mpbir syl5eleqr ralrimivw
-       wo elpr id fmpt sylib wb prex mpbiri enprmaplem4 elmapg mp3an23 3ad2ant2
-       eleq1 mpbird cnveq imaeq1d cnvex snex imaex fvmpt eliniseg cdm wfn fnmpt
-       breldm a1i mprg fndm ax-mp syl6eleq fnbrfvb mpan biimprd com12 weq ifbid
-       jcai eqeq1d biimpd imp wn simpl1 df-ne iffalse eqeq2d eqcoms adantl mt3d
-       wi ex ssel2 3ad2antl3 iftrue eqtrd mpbid impbid syl5bb eqrdv enprmaplem2
-       syl5 3expia brelrn syl6 syl5bi ssrdv ) ANZBNZUAZDYIYJUBZOZPZIEUCZGUDZINZ
-       YOQYQEUEZYNYQYPQZYQEIRUFYNYRFYQGUJZYSYKYMYRYTYKYMYRUKZFGULZYQOZYTUUAUUBF
-       UGZYIUMZUHZYQUUAFDEUIUNZQZUUBUUFOYMYKUUHYRYMUUHEDFUOZYMCIUPZYIYJUQZDQZCE
-       URUUIYMUULCEYMUUKYLDUUKYLQUUKYIOUUKYJOVDUUJYIYJUSUUKYIYJUUJYIYJARZBRZUTZ
-       VEVAYMVFVBVCCEDUUKFKVGVHYMDSQZUUHUUIVIZYMUUPYLSQYIYJVJDYLSVPVKUUPESQFSQU
-       UQLABCEFIKLVLZDEFSSSVMVNTVQVOZHFHNZUGZUUEUHUUFUUGGUUTFOUVAUUDUUEUUTFVRVS
-       JUUDUUEFUURVTYIWAWBWCTUUAMUUFYQMNZUUFQUVBYIFUJZUUAMIUPZFYIUVBWDUUAUVCUVD
-       UVCUVBEQZUVBFULZYIOZPZUUAUVDUVCUVEUVGUVCUVBFWEZEUVBYIFWHFEWFZUVIEOUUKSQZ
-       UVJCECEUUKFSKWGUVKCNZEQUUOWIWJZEFWKWLWMUVEUVCUVGUVEUVGUVCUVJUVEUVGUVCVIZ
-       UVMEUVBYIFWNWOZWPWQWTUVHUVDYIYJUQZYIOZUUAUVDUVEUVGUVQUVEUVGUVQUVEUVFUVPY
-       ICUVBUUKUVPEFCMWRUUJUVDYIYJUVLUVBYQVPWSKUVDYIYJUUMUUNUTWCZXAXBXCUUAUVQUV
-       DUUAUVQPZUVDABWRZUVSYKUVTXDYKYMYRUVQXEYIYJXFVHUVQUVDXDZUVTXLZUUAUWBYIUVP
-       UWAYIUVPOZUVTUWAUWCUVTUWAUVPYJYIUVDYIYJXGXHXBWQXIXJXKXMYCYCUUAUVDUVCUUAU
-       VDPZUVGUVCUWDUVFUVPYIUWDUVEUVFUVPOYRYKUVDUVEYMYQEUVBXNXOZUVRTUVDUVQUUAUV
-       DYIYJXPXJXQUWDUVEUVNUWEUVOTXRXMXSXTYAXQUUAUUHUUCYTVIZUUSGUUGWFUUHUWFADEG
-       HJYBUUGFYQGWNWOTXRYDFYQGYEYFYGYH $.
-       $( [3-Mar-2015] $)
+      ( vz cv wceq wa wcel vex cvv syl wne cpr cpw crn wss elpw wbr w3a cfv csn
+      ccnv cima cmap co wf wel cif wral wo ifeqor ifex elpr syl5eleqr ralrimivw
+      mpbir id fmpt sylib prex eleq1 mpbiri enprmaplem4 elmapg mp3an23 3ad2ant2
+      mpbird cnveq imaeq1d cnvex snex imaex fvmpt eliniseg cdm breldm wfn fnmpt
+      wb a1i mprg fndm ax-mp syl6eleq fnbrfvb mpan biimprd com12 jcai weq ifbid
+      eqeq1d biimpd imp wn simpl1 df-ne wi iffalse eqeq2d eqcoms adantl mt3d ex
+      ssel2 3ad2antl3 iftrue eqtrd mpbid impbid syl5bb eqrdv enprmaplem2 3expia
+      syl5 brelrn syl6 syl5bi ssrdv ) ANZBNZUAZDYIYJUBZOZPZIEUCZGUDZINZYOQYQEUE
+      ZYNYQYPQZYQEIRUFYNYRFYQGUGZYSYKYMYRYTYKYMYRUHZFGUIZYQOZYTUUAUUBFUKZYIUJZU
+      LZYQUUAFDEUMUNZQZUUBUUFOYMYKUUHYRYMUUHEDFUOZYMCIUPZYIYJUQZDQZCEURUUIYMUUL
+      CEYMUUKYLDUUKYLQUUKYIOUUKYJOUSUUJYIYJUTUUKYIYJUUJYIYJARZBRZVAZVBVEYMVFVCV
+      DCEDUUKFKVGVHYMDSQZUUHUUIWHZYMUUPYLSQYIYJVIDYLSVJVKUUPESQFSQUUQLABCEFIKLV
+      LZDEFSSSVMVNTVPVOZHFHNZUKZUUEULUUFUUGGUUTFOUVAUUDUUEUUTFVQVRJUUDUUEFUURVS
+      YIVTWAWBTUUAMUUFYQMNZUUFQUVBYIFUGZUUAMIUPZFYIUVBWCUUAUVCUVDUVCUVBEQZUVBFU
+      IZYIOZPZUUAUVDUVCUVEUVGUVCUVBFWDZEUVBYIFWEFEWFZUVIEOUUKSQZUVJCECEUUKFSKWG
+      UVKCNZEQUUOWIWJZEFWKWLWMUVEUVCUVGUVEUVGUVCUVJUVEUVGUVCWHZUVMEUVBYIFWNWOZW
+      PWQWRUVHUVDYIYJUQZYIOZUUAUVDUVEUVGUVQUVEUVGUVQUVEUVFUVPYICUVBUUKUVPEFCMWS
+      UUJUVDYIYJUVLUVBYQVJWTKUVDYIYJUUMUUNVAWBZXAXBXCUUAUVQUVDUUAUVQPZUVDABWSZU
+      VSYKUVTXDYKYMYRUVQXEYIYJXFVHUVQUVDXDZUVTXGZUUAUWBYIUVPUWAYIUVPOZUVTUWAUWC
+      UVTUWAUVPYJYIUVDYIYJXHXIXBWQXJXKXLXMYDYDUUAUVDUVCUUAUVDPZUVGUVCUWDUVFUVPY
+      IUWDUVEUVFUVPOYRYKUVDUVEYMYQEUVBXNXOZUVRTUVDUVQUUAUVDYIYJXPXKXQUWDUVEUVNU
+      WEUVOTXRXMXSXTYAXQUUAUUHUUCYTWHZUUSGUUGWFUUHUWFADEGHJYBUUGFYQGWNWOTXRYCFY
+      QGYEYFYGYH $.
+      $( [3-Mar-2015] $)
   $}
 
   ${
@@ -53982,33 +53994,33 @@ $)
     enprmaplem6.2 $e |- B e. _V $.
     $( Lemma for ~ enprmap .  The range of ` W ` is ` ~P B ` . $)
     enprmaplem6 $p |- ( ( x =/= y /\ A = { x , y } ) -> ran W = ~P B ) $=
-       ( vp vs vu cv wceq wa crn wss wcel cdm wb ccnv wne cpr cpw wbr co breldm
-       wex cmap cfv wfn enprmaplem2 fndm ax-mp syl6eleq fnbrfvb sylancr ibir wi
-       jca w3a csn cima weq cnveq imaeq1d vex cnvex imaex fvmpt eqeq1d 3ad2ant3
-       snex imassrn df-dm wf elmapi fdm eqimss syl5eqssr syl5ss sseq1 syl5ibcom
-       3syl sylbid imp3a syl5 exlimdv elrn elpw 3imtr4g ssrdv wel cif cmpt eqid
-       3expia enprmaplem5 eqssd ) ALZBLZUAZCWSWTUBMZNZEOZDUCZXCIXDXEXCJLZILZEUD
-       ZJUGXGDPZXGXDQXGXEQXCXHXIJXHXFCDUHUEZQZXFEUIZXGMZNXCXIXHXKXMXHXFERZXJXFX
-       GEUFEXJUJZXNXJMACDEFGUKZXJEULUMUNZXHXMXHXOXKXMXHSXPXQXJXFXGEUOUPUQUSXCXK
-       XMXIXAXBXKXMXIURXAXBXKUTZXMXFTZWSVAZVBZXGMZXIXKXAXMYBSXBXKXLYAXGFXFFLZTZ
-       XTVBYAXJEFJVCYDXSXTYCXFVDVEGXSXTXFJVFVGWSVLVHVIVJVKXRYADPZYBXIXKXAYEXBXK
-       YAXSOZDXSXTVMXKYFXFRZDXFVNXKDCXFVOYGDMYGDPXFCDVPDCXFVQYGDVRWCVSVTVKYAXGD
-       WAWBWDWPWEWFWGJXGEWHXGDIVFWIWJWKABKCDKDKIWLWSWTWMWNZEFIGYHWOHWQWR $.
-       $( [3-Mar-2015] $)
+      ( vp vs vu cv wceq wa crn wss wcel cdm wb ccnv wne cpr cpw wbr wex co cfv
+      cmap breldm wfn enprmaplem2 fndm syl6eleq fnbrfvb sylancr ibir jca wi w3a
+      ax-mp csn cima weq cnveq imaeq1d cnvex snex imaex eqeq1d 3ad2ant3 imassrn
+      vex fvmpt df-dm elmapi fdm eqimss syl5eqssr syl5ss sseq1 syl5ibcom sylbid
+      wf 3syl 3expia imp3a syl5 exlimdv elrn elpw 3imtr4g ssrdv wel enprmaplem5
+      cif cmpt eqid eqssd ) ALZBLZUAZCWSWTUBMZNZEOZDUCZXCIXDXEXCJLZILZEUDZJUEXG
+      DPZXGXDQXGXEQXCXHXIJXHXFCDUHUFZQZXFEUGZXGMZNXCXIXHXKXMXHXFERZXJXFXGEUIEXJ
+      UJZXNXJMACDEFGUKZXJEULUTUMZXHXMXHXOXKXMXHSXPXQXJXFXGEUNUOUPUQXCXKXMXIXAXB
+      XKXMXIURXAXBXKUSZXMXFTZWSVAZVBZXGMZXIXKXAXMYBSXBXKXLYAXGFXFFLZTZXTVBYAXJE
+      FJVCYDXSXTYCXFVDVEGXSXTXFJVLVFWSVGVHVMVIVJXRYADPZYBXIXKXAYEXBXKYAXSOZDXSX
+      TVKXKYFXFRZDXFVNXKDCXFWCYGDMYGDPXFCDVODCXFVPYGDVQWDVRVSVJYAXGDVTWAWBWEWFW
+      GWHJXGEWIXGDIVLWJWKWLABKCDKDKIWMWSWTWOWPZEFIGYHWQHWNWR $.
+      $( [3-Mar-2015] $)
   $}
 
   ${
     $d A r $.  $d B r $.  $d r x $.  $d r y $.
     enprmap.1 $e |- B e. _V $.
     $( A mapping from a two element pair onto a set is equinumerous with the
-       power class of the set.  Theorem XI.1.28 of [Rosser]. $)
+       power class of the set.  Theorem XI.1.28 of {{Rosser}}. $)
     enprmap $p |- ( ( x =/= y /\ A = { x , y } ) -> ( A ^m B ) ~~ ~P B ) $=
-       ( vr cv wne cpr wceq wa cmap co cpw ccnv csn cima cmpt wf1o cen wbr wfun
-       wfn crn enprmaplem2 enprmaplem3 enprmaplem6 dff1o2 syl3anbrc enprmaplem1
-       eqid a1i f1oen syl ) AGZBGZHCUOUPIJKZCDLMZDNZFURFGOUOPQRZSZURUSTUAUQUTUR
-       UCZUTOUBUTUDUSJVAVBUQACDUTFUTUKZUEULABCDUTFVCUFABCDUTFVCEUGURUSUTUHUIURU
-       SUTACDUTFVCUJUMUN $.
-       $( [3-Mar-2015] $)
+      ( vr cv wne cpr wceq wa cmap co cpw ccnv csn cima cmpt wf1o cen wfun eqid
+      wbr wfn crn enprmaplem2 a1i enprmaplem3 enprmaplem6 syl3anbrc enprmaplem1
+      dff1o2 f1oen syl ) AGZBGZHCUOUPIJKZCDLMZDNZFURFGOUOPQRZSZURUSTUCUQUTURUDZ
+      UTOUAUTUEUSJVAVBUQACDUTFUTUBZUFUGABCDUTFVCUHABCDUTFVCEUIURUSUTULUJURUSUTA
+      CDUTFVCUKUMUN $.
+      $( [3-Mar-2015] $)
   $}
 
   ${
@@ -54018,13 +54030,13 @@ $)
     enprmapc.2 $e |- B e. _V $.
     enprmapc.3 $e |- C e. _V $.
     $( A mapping from a two element pair onto a set is equinumerous with the
-       power class of the set.  Theorem XI.1.28 of [Rosser]. $)
+       power class of the set.  Theorem XI.1.28 of {{Rosser}}. $)
     enprmapc $p |- ( ( A =/= B /\ P = { A , B } ) -> ( P ^m C ) ~~ ~P C ) $=
-       ( vx vy cv wne cpr wceq wa cmap wi eqeq2d anbi12d imbi1d vtocl cpw neeq1
-       co cen wbr preq1 neeq2 preq2 enprmap ) HJZBKZDUJBLZMZNZDCOUCCUAUDUEZPZAB
-       KZDABLZMZNZUOPHAEUJAMZUNUTUOVAUKUQUMUSUJABUBVAULURDUJABUFQRSUJIJZKZDUJVB
-       LZMZNZUOPUPIBFVBBMZVFUNUOVGVCUKVEUMVBBUJUGVGVDULDVBBUJUHQRSHIDCGUITT $.
-       $( [3-Mar-2015] $)
+      ( vx vy cv wne cpr wceq wa cmap wi eqeq2d anbi12d imbi1d vtocl co cpw cen
+      wbr neeq1 preq1 neeq2 preq2 enprmap ) HJZBKZDUJBLZMZNZDCOUACUBUCUDZPZABKZ
+      DABLZMZNZUOPHAEUJAMZUNUTUOVAUKUQUMUSUJABUEVAULURDUJABUFQRSUJIJZKZDUJVBLZM
+      ZNZUOPUPIBFVBBMZVFUNUOVGVCUKVEUMVBBUJUGVGVDULDVBBUJUHQRSHIDCGUITT $.
+      $( [3-Mar-2015] $)
   $}
 
   ${
@@ -54032,16 +54044,16 @@ $)
     nenpw1pwlem1.1 $e |- S = { x e. A | -. x e. ( r ` { x } ) } $.
     $( Lemma for ~ nenpw1pw .  Set up stratification. $)
     nenpw1pwlem1 $p |- ( A e. V -> S e. _V ) $=
-       ( vy wcel cv csn cfv wn cin cvv csset vex wceq wa wex bitri dfrab2 eqtri
-       cab crab cfullfun cdm cuni1 ccompl elcompl wel cop elin wbr brfullfun
-       eldm2 snex df-br eqcom 3bitr3i opelssetsn anbi12i eluni1 fvex 3bitr4i
-       exbii clel3 xchbinx abbi2i fullfunex ssetex inex dmex uni1ex eqeltrri
-       complex inexg mpan syl5eqel ) BDHZCAIZVTJZEIZKZHZLZAUCZBMZNCWEABUDWGFWEA
-       BUAUBWFNHVSWGNHWBUEZOMZUFZUGZUHZWFNWEAWLVTWLHVTWKHZWDVTWKAPZUIWAWJHZGIZW
-       CQZAGUJZRZGSZWMWDWOWAWPUKZWIHZGSWTGWAWIUOXBWSGXBXAWHHZXAOHZRWSXAWHOULXCW
-       QXDWRWAWPWHUMWCWPQXCWQWAWPWBVTUPUNWAWPWHUQWCWPURUSVTWPWNGPUTVATVETVTWJWN
-       VBGVTWCWAWBVCVFVDVGVHWKWJWIWHOWBEPVIVJVKVLVMVOVNWFBNDVPVQVR $.
-       $( [10-Mar-2015] $)
+      ( vy wcel cv csn cfv wn cin cvv csset vex wceq wa wex bitri crab cfullfun
+      cab dfrab2 eqtri cdm cuni1 ccompl elcompl wel cop elin wbr snex brfullfun
+      eldm2 df-br eqcom 3bitr3i opelssetsn anbi12i exbii eluni1 3bitr4i xchbinx
+      fvex clel3 abbi2i fullfunex ssetex inex dmex uni1ex complex eqeltrri mpan
+      inexg syl5eqel ) BDHZCAIZVTJZEIZKZHZLZAUCZBMZNCWEABUAWGFWEABUDUEWFNHVSWGN
+      HWBUBZOMZUFZUGZUHZWFNWEAWLVTWLHVTWKHZWDVTWKAPZUIWAWJHZGIZWCQZAGUJZRZGSZWM
+      WDWOWAWPUKZWIHZGSWTGWAWIUPXBWSGXBXAWHHZXAOHZRWSXAWHOULXCWQXDWRWAWPWHUMWCW
+      PQXCWQWAWPWBVTUNUOWAWPWHUQWCWPURUSVTWPWNGPUTVATVBTVTWJWNVCGVTWCWAWBVFVGVD
+      VEVHWKWJWIWHOWBEPVIVJVKVLVMVNVOWFBNDVQVPVR $.
+      $( [10-Mar-2015] $)
   $}
 
   ${
@@ -54051,50 +54063,49 @@ $)
     $( Lemma for ~ nenpw1pw .  Establish the main theorem with an extra
        hypothesis. $)
     nenpw1pwlem2 $p |- -. ~P1 A ~~ ~P A $=
-       ( vy vu wbr cv wcel wn wb wrex wex cvv syl csn cfv wceq eleq2d cpw1 nrex
-       cpw cen pm5.19 a1i nex wf1o bren cdm f1odm syl6eqelr pw1exb nenpw1pwlem1
-       vex dmex sylib wss crab ssrab2 eqsstri elpwg mpbiri crn wfo forn elrn wa
-       f1ofo breldm adantl adantr eleqtrd elpw1 wi w3a breq1 3anbi2d weq fveq2d
-       id sneq eleq12d notbid elrab2 simp3 biantrurd simp2 wfn 3ad2ant1 snelpw1
-       f1ofn biimpri 3ad2ant3 fnbrfvb syl2anc mpbird bitr3d syl5bb syl6bi com12
-       3expa reximdva syl5bi mpd ex exlimdv sylbird eximi sylbi mto ) BUAZBUCZU
-       DHZFIZCJZXPKZLZFBMZDNZXSDXRFBXRKXOBJZXPUEUFUBUGXNXLXMDIZUHZDNXTXLXMDUIYC
-       XSDYCCXMJZXSYCCOJZYDYCBOJZYEYCXLOJYFYCXLYBUJZOXLXMYBUKZYBDUOUPULBUMUQABC
-       ODEUNPYEYDCBURCAIZYIQZYBRZJZKZABUSBEYMABUTVACBOVBVCPYCYDCYBVDZJZXSYCYNXM
-       CYCXLXMYBVEYNXMSXLXMYBVIXLXMYBVFPTYOGIZCYBHZGNYCXSGCYBVGYCYQXSGYCYQXSYCY
-       QVHZYPXLJZXSYRYPYGXLYQYPYGJYCYPCYBVJVKYCYGXLSYQYHVLVMYSYPXOQZSZFBMYRXSFY
-       PBVNYRUUAXRFBYCYQYAUUAXRVOUUAYCYQYAVPZXRUUAUUBYCYTCYBHZYAVPZXRUUAYQUUCYC
-       YAYPYTCYBVQVRXPYAXOYTYBRZJZKZVHZUUDXQYMUUGAXOBCAFVSZYLUUFUUIYIXOYKUUEUUI
-       WAUUIYJYTYBYIXOWBVTWCWDEWEUUDUUGUUHXQUUDYAUUGYCUUCYAWFWGUUDUUFXPUUDUUECX
-       OUUDUUECSZUUCYCUUCYAWHUUDYBXLWIZYTXLJZUUJUUCLYCUUCUUKYAXLXMYBWLWJYAYCUUL
-       UUCUULYAXOBWKWMWNXLYTCYBWOWPWQTWDWRWSWTXAXBXCXDXEXFXGXDXHXEXIXJXK $.
-       $( [10-Mar-2015] $)
+      ( vy vu wbr cv wcel wn wb wrex wex cvv syl csn cfv wceq eleq2d cpw pm5.19
+      cpw1 cen a1i nrex nex wf1o bren cdm f1odm vex dmex syl6eqelr pw1exb sylib
+      nenpw1pwlem1 wss crab ssrab2 eqsstri elpwg mpbiri crn wfo f1ofo forn elrn
+      wa breldm adantl adantr eleqtrd elpw1 wi w3a breq1 3anbi2d id sneq fveq2d
+      weq eleq12d notbid elrab2 simp3 biantrurd simp2 wfn f1ofn snelpw1 biimpri
+      3ad2ant1 3ad2ant3 fnbrfvb syl2anc mpbird bitr3d syl5bb syl6bi com12 3expa
+      reximdva syl5bi mpd ex exlimdv sylbird eximi sylbi mto ) BUCZBUAZUDHZFIZC
+      JZXPKZLZFBMZDNZXSDXRFBXRKXOBJZXPUBUEUFUGXNXLXMDIZUHZDNXTXLXMDUIYCXSDYCCXM
+      JZXSYCCOJZYDYCBOJZYEYCXLOJYFYCXLYBUJZOXLXMYBUKZYBDULUMUNBUOUPABCODEUQPYEY
+      DCBURCAIZYIQZYBRZJZKZABUSBEYMABUTVACBOVBVCPYCYDCYBVDZJZXSYCYNXMCYCXLXMYBV
+      EYNXMSXLXMYBVFXLXMYBVGPTYOGIZCYBHZGNYCXSGCYBVHYCYQXSGYCYQXSYCYQVIZYPXLJZX
+      SYRYPYGXLYQYPYGJYCYPCYBVJVKYCYGXLSYQYHVLVMYSYPXOQZSZFBMYRXSFYPBVNYRUUAXRF
+      BYCYQYAUUAXRVOUUAYCYQYAVPZXRUUAUUBYCYTCYBHZYAVPZXRUUAYQUUCYCYAYPYTCYBVQVR
+      XPYAXOYTYBRZJZKZVIZUUDXQYMUUGAXOBCAFWBZYLUUFUUIYIXOYKUUEUUIVSUUIYJYTYBYIX
+      OVTWAWCWDEWEUUDUUGUUHXQUUDYAUUGYCUUCYAWFWGUUDUUFXPUUDUUECXOUUDUUECSZUUCYC
+      UUCYAWHUUDYBXLWIZYTXLJZUUJUUCLYCUUCUUKYAXLXMYBWJWMYAYCUULUUCUULYAXOBWKWLW
+      NXLYTCYBWOWPWQTWDWRWSWTXAXBXCXDXEXFXGXDXHXEXIXJXK $.
+      $( [10-Mar-2015] $)
   $}
 
   ${
     $d A r $.  $d A x $.  $d r x $.
     $( No unit power class is equinumerous with the corresponding power class.
-       Theorem XI.1.6 of [Rosser], p. 347. $)
+       Theorem XI.1.6 of {{Rosser}}, p. 347. $)
     nenpw1pw $p |- -. ~P1 A ~~ ~P A $=
-       ( vx vr cv csn cfv wcel wn crab eqid nenpw1pwlem2 ) BABDZLECDFGHBAIZCMJK
-       $.
-       $( [10-Mar-2015] $)
+      ( vx vr cv csn cfv wcel wn crab eqid nenpw1pwlem2 ) BABDZLECDFGHBAIZCMJK
+      $.
+      $( [10-Mar-2015] $)
   $}
 
   ${
     $d A a $.  $d a b $.  $d A b $.  $d B b $.
     $( If ` A ` and ` B ` are equinumerous, then so are their power sets.
-       Theorem XI.1.36 of [Rosser], p. 369. $)
+       Theorem XI.1.36 of {{Rosser}}, p. 369. $)
     enpw $p |- ( A ~~ B -> ~P A ~~ ~P B ) $=
-       ( va vb cvv wcel cen wbr cpw cv wi wceq pweq imbi12d c0 cmap co vn0 vvex
-       0ex wa brex breq1 breq1d breq2 breq2d cpr enmap2 wne eqid enprmapc mp2an
-       vex ensym mpbir entr mpan2 sylancr syl vtocl2g mpcom ) AEFBEFUAABGHZAIZB
-       IZGHZABGUBCJZDJZGHZVFIZVGIZGHZKAVGGHZVCVJGHZKVBVEKCDABEEVFALZVHVLVKVMVFA
-       VGGUCVNVIVCVJGVFAMUDNVGBLZVLVBVMVEVGBAGUEVOVJVDVCGVGBMUFNVHEOUGZVFPQZVPV
-       GPQZGHZVKVFVGVPUHVSVIVQGHZVQVJGHZVKVTVQVIGHZEOUIZVPVPLZWBRVPUJZEOVFVPSTC
-       UMUKULVIVQUNUOVSVRVJGHZWAWCWDWFRWEEOVGVPSTDUMUKULVQVRVJUPUQVIVQVJUPURUSU
-       TVA $.
-       $( [17-Mar-2015] $)
+      ( va vb cvv wcel cen wbr cpw cv wi wceq pweq imbi12d c0 cmap vn0 vvex 0ex
+      co wa brex breq1 breq1d breq2 breq2d cpr enmap2 eqid enprmapc mp2an ensym
+      wne vex mpbir entr mpan2 sylancr syl vtocl2g mpcom ) AEFBEFUAABGHZAIZBIZG
+      HZABGUBCJZDJZGHZVFIZVGIZGHZKAVGGHZVCVJGHZKVBVEKCDABEEVFALZVHVLVKVMVFAVGGU
+      CVNVIVCVJGVFAMUDNVGBLZVLVBVMVEVGBAGUEVOVJVDVCGVGBMUFNVHEOUGZVFPTZVPVGPTZG
+      HZVKVFVGVPUHVSVIVQGHZVQVJGHZVKVTVQVIGHZEOUMZVPVPLZWBQVPUIZEOVFVPRSCUNUJUK
+      VIVQULUOVSVRVJGHZWAWCWDWFQWEEOVGVPRSDUNUJUKVQVRVJUPUQVIVQVJUPURUSUTVA $.
+      $( [17-Mar-2015] $)
   $}
 
 $(
@@ -54147,27 +54158,27 @@ $)
      function. $)
   ctcfn $a class TcFn $.
 
-  $( Define the set of all cardinal numbers.  We define them as equivelance
-     classes of sets of the same size.  Definition from [Rosser], p. 372. $)
+  $( Define the set of all cardinal numbers.  We define them as equivalence
+     classes of sets of the same size.  Definition from {{Rosser}}, p. 372. $)
   df-ncs $a |- NC = ( _V /. ~~ ) $.
 
   ${
     $d x y a b $.
-    $( Define cardinal less than or equal.  Definition from [Rosser],
+    $( Define cardinal less than or equal.  Definition from {{Rosser}},
        p. 375. $)
     df-lec $a |- <_c = { <. a , b >. | E. x e. a E. y e. b x C_ y } $.
   $}
 
-  $( Define cardinal less than.  Definition from [Rosser], p. 375. $)
+  $( Define cardinal less than.  Definition from {{Rosser}}, p. 375. $)
   df-ltc $a |- <c = ( <_c \ _I ) $.
 
   $( Define the cardinality operation.  This is the unique cardinal number
-     containing a given set.  Defintion from [Rosser], p. 371. $)
+     containing a given set.  Defintion from {{Rosser}}, p. 371. $)
   df-nc $a |- Nc A = [ A ] ~~ $.
 
   ${
     $d m n a b g $.
-    $( Define cardinal multiplication.  Definition from [Rosser], p. 378. $)
+    $( Define cardinal multiplication.  Definition from {{Rosser}}, p. 378. $)
     df-muc $a |- .c = ( m e. NC , n e. NC |->
       { a | E. b e. m E. g e. n a ~~ ( b X. g ) } ) $.
   $}
@@ -54176,7 +54187,7 @@ $)
     $d A b x $.
     $( Define the type-raising operation on a cardinal number.  This is the
        unique cardinal containing the unit power classes of the elements of the
-       given cardinal.  Definition from [Rosser], p.  XXX. $)
+       given cardinal.  Definition from {{Rosser}}, p.  XXX. $)
     df-tc $a |- T_c A = ( iota b ( b e. NC /\ E. x e. A b = Nc ~P1 x ) ) $.
   $}
 
@@ -54190,8 +54201,8 @@ $)
 
   ${
     $d n m g a b $.
-    $( Define cardinal exponentiation.  Definition from [Rosser], p. 381. $)
-    df-ce $a |- ^c = ( n e. NC , m e. NC |-> 
+    $( Define cardinal exponentiation.  Definition from {{Rosser}}, p. 381. $)
+    df-ce $a |- ^c = ( n e. NC , m e. NC |->
        { g | E. a E. b ( ~P1 a e. n /\ ~P1 b e. m /\
           g ~~ ( a ^m b ) ) } ) $.
   $}
@@ -54208,16 +54219,16 @@ $)
     nceqi.1 $e |- A = B $.
     $( Equality inference for cardinality. $)
     nceqi $p |- Nc A = Nc B $=
-       ( wceq cnc nceq ax-mp ) ABDAEBEDCABFG $.
-       $( [24-Feb-2015] $)
+      ( wceq cnc nceq ax-mp ) ABDAEBEDCABFG $.
+      $( [24-Feb-2015] $)
   $}
 
   ${
     nceqd.1 $e |- ( ph -> A = B ) $.
     $( Equality deduction for cardinality. $)
     nceqd $p |- ( ph -> Nc A = Nc B ) $=
-       ( wceq cnc nceq syl ) ABCEBFCFEDBCGH $.
-       $( [24-Feb-2015] $)
+      ( wceq cnc nceq syl ) ABCEBFCFEDBCGH $.
+      $( [24-Feb-2015] $)
   $}
 
   $( The class of all cardinal numbers is a set. $)
@@ -54230,34 +54241,34 @@ $)
     $( Binary relationship form of cardinal less than or equal. $)
     brlecg $p |- ( ( A e. V /\ B e. W ) ->
        ( A <_c B <-> E. x e. A E. y e. B x C_ y ) ) $=
-       ( vb va cv wss wrex clec rexeq wceq rexbidv df-lec brabg ) AIBIJZBGIZKZA
-       HIZKTACKRBDKZACKHGCDEFLTAUACMSDNTUBACRBSDMOABHGPQ $.
-       $( [24-Feb-2015] $)
+      ( vb va cv wss wrex clec rexeq wceq rexbidv df-lec brabg ) AIBIJZBGIZKZAH
+      IZKTACKRBDKZACKHGCDEFLTAUACMSDNTUBACRBSDMOABHGPQ $.
+      $( [24-Feb-2015] $)
 
     brlec.1 $e |- A e. _V $.
     brlec.2 $e |- B e. _V $.
     $( Binary relationship form of cardinal less than or equal. $)
     brlec $p |- ( A <_c B <-> E. x e. A E. y e. B x C_ y ) $=
-       ( cvv wcel clec wbr cv wss wrex wb brlecg mp2an ) CGHDGHCDIJAKBKLBDMACMN
-       EFABCDGGOP $.
-       $( [24-Feb-2015] $)
+      ( cvv wcel clec wbr cv wss wrex wb brlecg mp2an ) CGHDGHCDIJAKBKLBDMACMNE
+      FABCDGGOP $.
+      $( [24-Feb-2015] $)
   $}
 
   $( Binary relationship form of cardinal less than. $)
   brltc $p |- ( A <c B <-> ( A <_c B /\ A =/= B ) ) $=
-    ( cltc wbr cvv wcel clec wne wa brex simprd adantr cid df-ltc breqi brdif
-      wn cdif bitri ideqg necon3bbid anbi2d syl5bb pm5.21nii ) ABCDZBEFZABGDZAB
-    HZIZUEAEFZUFABCJKUGUFUHUGUJUFABGJKLUEUGABMDZQZIZUFUIUEABGMRZDUMABCUNNOABG
-    MPSUFULUHUGUFUKABABETUAUBUCUD $.
+    ( cltc wbr cvv wcel clec wne wa brex simprd adantr cid wn cdif df-ltc breqi
+    brdif bitri ideqg necon3bbid anbi2d syl5bb pm5.21nii ) ABCDZBEFZABGDZABHZIZ
+    UEAEFZUFABCJKUGUFUHUGUJUFABGJKLUEUGABMDZNZIZUFUIUEABGMOZDUMABCUNPQABGMRSUFU
+    LUHUGUFUKABABETUAUBUCUD $.
     $( [4-Mar-2015] $)
 
   ${
     $d a b x y $.
     $( Cardinal less than or equal is a relationship. $)
     rellec $p |- Rel <_c $=
-       ( vx vy vb va cv wss wrex clec df-lec relopabi ) AEBEFBCEGADEGDCHABDCIJ
-       $.
-       $( [24-Feb-2015] $)
+      ( vx vy vb va cv wss wrex clec df-lec relopabi ) AEBEFBCEGADEGDCHABDCIJ
+      $.
+      $( [24-Feb-2015] $)
   $}
 
   ${
@@ -54266,22 +54277,22 @@ $)
     $d x y $.
     $( Cardinal less than or equal is a set. $)
     lecex $p |- <_c e. _V $=
-       ( va vb vx vy vt vu clec csset ccom cv wrex wbr csn wex 2exbii vex bitri
-       wa exbii ssetex csi ccnv cvv rellec relco wss wceq wel 19.41vv anass w3a
-       ancom df-3an bitr4i breq1 anbi1d anbi2d ceqsex2v brssetsn anbi12i 3bitri
-       r2ex snex anbi1i 3bitr3i brlec brcnv brsset anbi2i 19.42v 19.42vv bitr2i
-       brco brsi 3bitr2i exrot4 3bitr4i eqbrriv siex coex cnvex eqeltri ) GHHUA
-       ZIZHUBZIZUCABGWFUDWDWEUECJZDJZUFZDBJZKCAJZKZEJZWKHLZFJZWJHLZRZWMWGMZUGZW
-       OWHMZUGZRZWIRZRZFNENZDNCNZWKWJGLWKWJWFLZWLCAUHZDBUHZRZWIRZDNCNXFWICDWKWJ
-       VBXEXKCDWQXBRZWIRZFNENXLFNENZWIRXEXKXLWIEFUIXMXDEFWQXBWIUJOXNXJWIXNWSXAW
-       QUKZFNENWRWKHLZWTWJHLZRZXJXLXOEFXLXBWQRXOWQXBULWSXAWQUMUNOWQXPWPRXREFWRW
-       TWGVCWHVCWSWNXPWPWMWRWKHUOUPXAWPXQXPWOWTWJHUOUQURXPXHXQXIWGWKCPZAPZUSWHW
-       JDPZBPZUSUTVAVDVEOUNCDWKWJXTYBVFXGWKWMWELZWMWJWDLZRZENXDDNCNZFNZENXFEWKW
-       JWDWEVMYEYGEYEWNWPXCDNCNZRZFNZRWNYIRZFNYGYCWNYDYJWKWMHVGYDWMWOWCLZWPRZFN
-       YJFWMWJHWCVMYMYIFYMWPYLRYIYLWPULYLYHWPYLWSXAWGWHHLZUKZDNCNYHCDWMWOHVNYOX
-       CCDYOXBYNRXCWSXAYNUMYNWIXBWGWHXSYAVHVIQOQVIQSQUTWNYIFVJYKYFFYFWQYHRYKWQX
-       CCDVKWNWPYHUJVLSVOSXDEFCDVPVAVQVRWDWEHWCTHTVSVTHTWAVTWB $.
-       $( [24-Feb-2015] $)
+      ( va vb vx vy vt vu clec csset ccom cv wrex wbr wa csn 2exbii bitri exbii
+      wex vex ssetex csi ccnv cvv rellec relco wss wceq wel 19.41vv anass ancom
+      r2ex w3a df-3an bitr4i snex breq1 anbi1d anbi2d ceqsex2v brssetsn anbi12i
+      3bitri anbi1i 3bitr3i brlec brco brsi brsset anbi2i 19.42v 19.42vv bitr2i
+      brcnv 3bitr2i exrot4 3bitr4i eqbrriv siex coex cnvex eqeltri ) GHHUAZIZHU
+      BZIZUCABGWFUDWDWEUECJZDJZUFZDBJZKCAJZKZEJZWKHLZFJZWJHLZMZWMWGNZUGZWOWHNZU
+      GZMZWIMZMZFRERZDRCRZWKWJGLWKWJWFLZWLCAUHZDBUHZMZWIMZDRCRXFWICDWKWJULXEXKC
+      DWQXBMZWIMZFRERXLFRERZWIMXEXKXLWIEFUIXMXDEFWQXBWIUJOXNXJWIXNWSXAWQUMZFRER
+      WRWKHLZWTWJHLZMZXJXLXOEFXLXBWQMXOWQXBUKWSXAWQUNUOOWQXPWPMXREFWRWTWGUPWHUP
+      WSWNXPWPWMWRWKHUQURXAWPXQXPWOWTWJHUQUSUTXPXHXQXIWGWKCSZASZVAWHWJDSZBSZVAV
+      BVCVDVEOUOCDWKWJXTYBVFXGWKWMWELZWMWJWDLZMZERXDDRCRZFRZERXFEWKWJWDWEVGYEYG
+      EYEWNWPXCDRCRZMZFRZMWNYIMZFRYGYCWNYDYJWKWMHVNYDWMWOWCLZWPMZFRYJFWMWJHWCVG
+      YMYIFYMWPYLMYIYLWPUKYLYHWPYLWSXAWGWHHLZUMZDRCRYHCDWMWOHVHYOXCCDYOXBYNMXCW
+      SXAYNUNYNWIXBWGWHXSYAVIVJPOPVJPQPVBWNYIFVKYKYFFYFWQYHMYKWQXCCDVLWNWPYHUJV
+      MQVOQXDEFCDVPVCVQVRWDWEHWCTHTVSVTHTWAVTWB $.
+      $( [24-Feb-2015] $)
   $}
 
   $( Cardinal strict less than is a set. $)
@@ -54297,19 +54308,19 @@ $)
 
   $( The empty class is not a cardinal number. $)
   nulnnc $p |- -. (/) e. NC $=
-    ( wceq cncs wcel eqid wne cvv cen cqs cdm dmen elqsn0 mpan df-ncs eleq2s
-      c0 wn necon2bi ax-mp ) OOAOBCZPODSOOOOEZOFGHZBGIFAOUACTJFOGKLMNQR $.
+    ( c0 wceq cncs wcel eqid wne cvv cen cqs cdm dmen elqsn0 mpan df-ncs eleq2s
+    wn necon2bi ax-mp ) AABACDZPAESAAAAFZAGHIZCHJGBAUADTKGAHLMNOQR $.
     $( [24-Feb-2015] $)
 
   ${
     $d A x $.
     $( Membership in the cardinals. $)
     elncs $p |- ( A e. NC <-> E. x A = Nc x ) $=
-       ( cncs wcel cvv cen cqs cv cnc wceq df-ncs eleq2i elex ncex eleq1 mpbiri
-       wex exlimiv cec wrex elqsg df-nc eqeq2i exbii rexv bitr4i syl6bbr bitri
-       pm5.21nii ) BCDBEFGZDZBAHZIZJZAQZCUJBKLUKBEDZUOBUJMUNUPAUNUPUMEDULNBUMEO
-       PRUPUKBULFSZJZAETZUOAEBFEUAUOURAQUSUNURAUMUQBULUBUCUDURAUEUFUGUIUH $.
-       $( [24-Feb-2015] $)
+      ( cncs wcel cvv cen cqs cnc wceq wex df-ncs eleq2i elex ncex eleq1 mpbiri
+      cv exlimiv cec wrex elqsg df-nc eqeq2i exbii rexv syl6bbr pm5.21nii bitri
+      bitr4i ) BCDBEFGZDZBAQZHZIZAJZCUJBKLUKBEDZUOBUJMUNUPAUNUPUMEDULNBUMEOPRUP
+      UKBULFSZIZAETZUOAEBFEUAUOURAJUSUNURAUMUQBULUBUCUDURAUEUIUFUGUH $.
+      $( [24-Feb-2015] $)
   $}
 
   ${
@@ -54325,8 +54336,8 @@ $)
     ncelncsi.1 $e |- A e. _V $.
     $( The cardinality of a set is a cardinal number. $)
     ncelncsi $p |- Nc A e. NC $=
-       ( cvv wcel cnc cncs ncelncs ax-mp ) ACDAEFDBACGH $.
-       $( [10-Mar-2015] $)
+      ( cvv wcel cnc cncs ncelncs ax-mp ) ACDAEFDBACGH $.
+      $( [10-Mar-2015] $)
   $}
 
   $( A set is a member of its own cardinal. $)
@@ -54363,21 +54374,21 @@ $)
   ${
     $( Equality of cardinalities. $)
     eqncg $p |- ( A e. V -> ( Nc A = Nc B <-> A ~~ B ) ) $=
-       ( wcel cvv cnc wceq cen wbr wa cec ncidg adantr eleq2 adantl mpbid df-nc
-       wb ex a1i syl6eleq ecexr syl wi brex simprd cer ener cdm dmen elex simpr
-       erth eqeq12i syl6rbbr pm5.21ndd ) ACDZBEDZAFZBFZGZABHIZUQVAURUQVAJZABHKZ
-       DURVCAUTVDVCAUSDZAUTDZUQVEVAACLMVAVEVFRUQUSUTANOPBQZUAABHUBUCSVBURUDUQVB
-       AEDZURABHUEUFTUQURVAVBRUQURJZVBAHKZVDGVAVIABHEEHEUGIVIUHTHUIEGVIUJTUQVHU
-       RACUKMUQURULUMUSVJUTVDAQVGUNUOSUP $.
-       $( [24-Feb-2015] $)
+      ( wcel cvv cnc cen wbr wa cec ncidg adantr wb eleq2 adantl mpbid df-nc ex
+      wceq a1i syl6eleq ecexr syl brex simprd cer ener cdm dmen elex simpr erth
+      wi eqeq12i syl6rbbr pm5.21ndd ) ACDZBEDZAFZBFZSZABGHZUQVAURUQVAIZABGJZDUR
+      VCAUTVDVCAUSDZAUTDZUQVEVAACKLVAVEVFMUQUSUTANOPBQZUAABGUBUCRVBURUMUQVBAEDZ
+      URABGUDUETUQURVAVBMUQURIZVBAGJZVDSVAVIABGEEGEUFHVIUGTGUHESVIUITUQVHURACUJ
+      LUQURUKULUSVJUTVDAQVGUNUORUP $.
+      $( [24-Feb-2015] $)
   $}
 
   ${
     eqnc.1 $e |- A e. _V $.
     $( Equality of cardinalities. $)
     eqnc $p |- ( Nc A = Nc B <-> A ~~ B ) $=
-       ( cvv wcel cnc wceq cen wbr wb eqncg ax-mp ) ADEAFBFGABHIJCABDKL $.
-       $( [24-Feb-2015] $)
+      ( cvv wcel cnc wceq cen wbr wb eqncg ax-mp ) ADEAFBFGABHIJCABDKL $.
+      $( [24-Feb-2015] $)
   $}
 
   ${
@@ -54385,23 +54396,23 @@ $)
     $( A cardinal is equal to the cardinality of a set iff it contains the
        set. $)
     ncseqnc $p |- ( A e. NC -> ( A = Nc X <-> X e. A ) ) $=
-        ( vy cncs wcel cv cnc wceq wex wb elncs cen wbr cvv cec vex eleq2 df-nc
-        ncid a1i mpbiri syl6eleq ecexr syl brex simpld cer ener dmen id eqeq12i
-        erth syl6rbbr pm5.21nii eqcom elnc 3bitr4i eqeq1 3bitr4d exlimiv sylbi
-        cdm ) ADEACFZGZHZCIABGZHZBAEZJZCAKVEVICVEVDVFHZBVDEZVGVHVJVKJVEVFVDHZBV
-        CLMZVJVKVLBNEZVMVLVCBLOZEVNVLVCVFVOVLVCVFEVCVDEVCCPZSVFVDVCQUABRZUBVCBL
-        UCUDVMVNVCNEZBVCLUEUFVNVMVOVCLOZHVLVNBVCLNNLNUGMVNUHTLVBNHVNUITVNUJVRVN
-        VPTULVFVOVDVSVQVCRUKUMUNVDVFUOBVCUPUQTAVDVFURAVDBQUSUTVA $.
-        $( [24-Feb-2015] $)
+      ( vy cncs wcel cv cnc wceq wex elncs cen wbr cvv cec vex ncid eleq2 df-nc
+      wb a1i mpbiri syl6eleq ecexr syl brex simpld cer ener cdm dmen id eqeq12i
+      erth syl6rbbr pm5.21nii eqcom elnc 3bitr4i eqeq1 3bitr4d exlimiv sylbi )
+      ADEACFZGZHZCIABGZHZBAEZSZCAJVEVICVEVDVFHZBVDEZVGVHVJVKSVEVFVDHZBVCKLZVJVK
+      VLBMEZVMVLVCBKNZEVNVLVCVFVOVLVCVFEVCVDEVCCOZPVFVDVCQUABRZUBVCBKUCUDVMVNVC
+      MEZBVCKUEUFVNVMVOVCKNZHVLVNBVCKMMKMUGLVNUHTKUIMHVNUJTVNUKVRVNVPTUMVFVOVDV
+      SVQVCRULUNUOVDVFUPBVCUQURTAVDVFUSAVDBQUTVAVB $.
+      $( [24-Feb-2015] $)
   $}
 
   ${
     eqnc2.1 $e |- X e. _V $.
     $( Alternate condition for equality to a cardinality. $)
     eqnc2 $p |- ( A = Nc X <-> ( A e. NC /\ X e. A ) ) $=
-       ( cnc wceq cncs wcel ncelncsi eleq1 mpbiri ncseqnc biadan2 ) ABDZEZAFGZB
-       AGNOMFGBCHAMFIJABKL $.
-       $( [18-Mar-2015] $)
+      ( cnc wceq cncs wcel ncelncsi eleq1 mpbiri ncseqnc biadan2 ) ABDZEZAFGZBA
+      GNOMFGBCHAMFIJABKL $.
+      $( [18-Mar-2015] $)
   $}
 
   ${
@@ -54438,19 +54449,19 @@ $)
     mucnc.1 $e |- A e. _V $.
     mucnc.2 $e |- B e. _V $.
     $( Cardinal multiplication in terms of cardinality.  Theorem XI.2.27 of
-       [Rosser], p. 378. $)
+       {{Rosser}}, p. 378. $)
     mucnc $p |- ( Nc A .c Nc B ) = Nc ( A X. B ) $=
-       ( vx vy vz cnc cv cxp cen wbr wrex cab cncs wcel wceq ncelncsi wa wex co
-       cmuc ovmuc mp2an df-nc dfec2 elnc anbi12i ensym 2exbii r2ex enrflx breq1
-       cec bi2anan9 xpeq12 breq1d anbi12d cla42ev mpanl12 xpen sylib entr sylan
-       exlimivv impbii 3bitr4ri abbii 3eqtrri eqtri ) AHZBHZUBUAZEIZFIZGIZJZKLZ
-       GVLMFVKMZENZABJZHZVKOPVLOPVMVTQACRBDRGVKVLEFUCUDWBWAKUNWAVNKLZENVTWAUEEW
-       AKUFWCVSEVOVKPZVPVLPZSZVRSZGTFTVOAKLZVPBKLZSZVQVNKLZSZGTFTZVSWCWGWLFGWFW
-       JVRWKWDWHWEWIVOAUGVPBUGUHVNVQUIUHUJVRFGVKVLUKWCWMAAKLZBBKLZWCWMACULBDULW
-       LWNWOSZWCSFGABCDVOAQZVPBQZSZWJWPWKWCWQWHWNWRWIWOVOAAKUMVPBBKUMUOWSVQWAVN
-       KVOAVPBUPUQURUSUTWLWCFGWJWAVQKLZWKWCWJVQWAKLWTVOAVPBVAVQWAUIVBWAVQVNVCVD
-       VEVFVGVHVIVJ $.
-       $( [10-Mar-2015] $)
+      ( vx vy vz cnc cv cxp cen wbr wrex cab cncs wcel wceq ncelncsi wa wex cec
+      cmuc co ovmuc mp2an df-nc dfec2 elnc anbi12i ensym 2exbii enrflx bi2anan9
+      r2ex breq1 xpeq12 breq1d anbi12d cla42ev mpanl12 xpen sylib entr exlimivv
+      sylan impbii 3bitr4ri abbii 3eqtrri eqtri ) AHZBHZUBUCZEIZFIZGIZJZKLZGVLM
+      FVKMZENZABJZHZVKOPVLOPVMVTQACRBDRGVKVLEFUDUEWBWAKUAWAVNKLZENVTWAUFEWAKUGW
+      CVSEVOVKPZVPVLPZSZVRSZGTFTVOAKLZVPBKLZSZVQVNKLZSZGTFTZVSWCWGWLFGWFWJVRWKW
+      DWHWEWIVOAUHVPBUHUIVNVQUJUIUKVRFGVKVLUNWCWMAAKLZBBKLZWCWMACULBDULWLWNWOSZ
+      WCSFGABCDVOAQZVPBQZSZWJWPWKWCWQWHWNWRWIWOVOAAKUOVPBBKUOUMWSVQWAVNKVOAVPBU
+      PUQURUSUTWLWCFGWJWAVQKLZWKWCWJVQWAKLWTVOAVPBVAVQWAUJVBWAVQVNVCVEVDVFVGVHV
+      IVJ $.
+      $( [10-Mar-2015] $)
   $}
 
   ${
@@ -54495,36 +54506,35 @@ $)
 
   ${
     $d A x $.  $d A y $.  $d B x $.  $d B y $.  $d x y $.
-    $( Cardinal multiplication commutes.  Theorem XI.2.28 of [Rosser],
+    $( Cardinal multiplication commutes.  Theorem XI.2.28 of {{Rosser}},
        p. 378. $)
     muccom $p |- ( ( A e. NC /\ B e. NC ) -> ( A .c B ) = ( B .c A ) ) $=
-       ( vx vy cncs wcel wa cv cnc wceq wex cmuc co elncs anbi12i eeanv cxp vex
-       mucnc oveq12 bitr4i cen xpcomen xpex eqnc mpbir 3eqtr4i 3eqtr4a exlimivv
-       wbr ancoms sylbi ) AEFZBEFZGZACHZIZJZBDHZIZJZGZDKCKZABLMZBALMZJZUOURCKZV
-       ADKZGVCUMVGUNVHCANDBNOURVACDPUAVBVFCDVBUQUTLMZUTUQLMZVDVEUPUSQZIZUSUPQZI
-       ZVIVJVLVNJVKVMUBUJUPUSCRZDRZUCVKVMUPUSVOVPUDUEUFUPUSVOVPSUSUPVPVOSUGAUQB
-       UTLTVAURVEVJJBUTAUQLTUKUHUIUL $.
-       $( [10-Mar-2015] $)
+      ( vx vy cncs wcel wa cv cnc wceq wex co elncs anbi12i eeanv cxp vex mucnc
+      cmuc oveq12 bitr4i cen wbr xpcomen xpex eqnc mpbir 3eqtr4i ancoms 3eqtr4a
+      exlimivv sylbi ) AEFZBEFZGZACHZIZJZBDHZIZJZGZDKCKZABSLZBASLZJZUOURCKZVADK
+      ZGVCUMVGUNVHCAMDBMNURVACDOUAVBVFCDVBUQUTSLZUTUQSLZVDVEUPUSPZIZUSUPPZIZVIV
+      JVLVNJVKVMUBUCUPUSCQZDQZUDVKVMUPUSVOVPUEUFUGUPUSVOVPRUSUPVPVORUHAUQBUTSTV
+      AURVEVJJBUTAUQSTUIUJUKUL $.
+      $( [10-Mar-2015] $)
   $}
 
   ${
     $d A x $.  $d A y $.  $d A z $.  $d B x $.  $d B y $.  $d B z $.  $d C x $.
     $d C y $.  $d C z $.  $d x y $.  $d x z $.  $d y z $.
-    $( Cardinal multiplication associates.  Theorem XI.2.29 of [Rosser],
+    $( Cardinal multiplication associates.  Theorem XI.2.29 of {{Rosser}},
        p. 378. $)
     mucass $p |- ( ( A e. NC /\ B e. NC /\ C e. NC ) ->
        ( ( A .c B ) .c C ) = ( A .c ( B .c C ) ) ) $=
-       ( vx vy vz cncs wcel w3a cv cnc wceq wex cmuc elncs cxp vex xpex mucnc
-       co 3anbi123i eeeanv bitr4i cen xpassen mpbir oveq1i eqtri oveq2i 3eqtr4i
-       wbr eqnc wa oveq12 oveqan12d 3impa 3impb 3eqtr4a exlimiv exlimivv sylbi
-       id ) AGHZBGHZCGHZIZADJZKZLZBEJZKZLZCFJZKZLZIZFMZEMDMZABNTZCNTZABCNTZNTZL
-       ZVFVIDMZVLEMZVOFMZIVRVCWDVDWEVEWFDAOEBOFCOUAVIVLVODEFUBUCVQWCDEVPWCFVPVH
-       VKNTZVNNTZVHVKVNNTZNTZVTWBVGVJPZVMPZKZVGVJVMPZPZKZWHWJWMWPLWLWOUDUKVGVJV
-       MDQZEQZFQZUEWLWOWKVMVGVJWQWRRZWSRULUFWHWKKZVNNTWMWGXAVNNVGVJWQWRSUGWKVMW
-       TWSSUHWJVHWNKZNTWPWIXBVHNVJVMWRWSSUIVGWNWQVJVMWRWSRSUHUJVIVLVOVTWHLVIVLU
-       MVOVSWGCVNNAVHBVKNUNVOVBUOUPVIVLVOWBWJLVIVLVOUMAVHWAWINVIVBBVKCVNNUNUOUQ
-       URUSUTVA $.
-       $( [10-Mar-2015] $)
+      ( vx vy vz cncs wcel w3a cv cnc wceq wex cmuc co elncs cxp vex xpex mucnc
+      3anbi123i eeeanv bitr4i cen wbr xpassen mpbir oveq1i eqtri oveq2i 3eqtr4i
+      eqnc wa oveq12 id oveqan12d 3impa 3impb 3eqtr4a exlimiv exlimivv sylbi )
+      AGHZBGHZCGHZIZADJZKZLZBEJZKZLZCFJZKZLZIZFMZEMDMZABNOZCNOZABCNOZNOZLZVFVID
+      MZVLEMZVOFMZIVRVCWDVDWEVEWFDAPEBPFCPUAVIVLVODEFUBUCVQWCDEVPWCFVPVHVKNOZVN
+      NOZVHVKVNNOZNOZVTWBVGVJQZVMQZKZVGVJVMQZQZKZWHWJWMWPLWLWOUDUEVGVJVMDRZERZF
+      RZUFWLWOWKVMVGVJWQWRSZWSSULUGWHWKKZVNNOWMWGXAVNNVGVJWQWRTUHWKVMWTWSTUIWJV
+      HWNKZNOWPWIXBVHNVJVMWRWSTUJVGWNWQVJVMWRWSSTUIUKVIVLVOVTWHLVIVLUMVOVSWGCVN
+      NAVHBVKNUNVOUOUPUQVIVLVOWBWJLVIVLVOUMAVHWAWINVIUOBVKCVNNUNUPURUSUTVAVB $.
+      $( [10-Mar-2015] $)
   $}
 
   ${
@@ -54534,27 +54544,26 @@ $)
     ncdisjun.2 $e |- B e. _V $.
     $( Cardinality of disjoint union of two sets. $)
     ncdisjun $p |- ( ( A i^i B ) = (/) -> Nc ( A u. B ) = ( Nc A +c Nc B ) ) $=
-       ( vr vp vq cin c0 wceq cv wcel cen wbr elnc wf1o ccnv wa cima adantl cun
-       cnc cplc wex bren f1ocnv imaundi cdm crn imadmrn a1i f1odm imaeq2d f1ofo
-       wfo forn syl 3eqtr3d syl5eqr cres wf1 wss f1of1 ssun1 f1ores sylancl vex
-       vx cnvex resex f1oen 3syl sylibr ssun2 wfun wf df-f1 simprbi imaeq2 ima0
-       imain syl6eq adantr eqtr3d eladdci syl3anc eqeltrrd ex syl5 exlimdv wrex
-       syl5bi eladdc simplrl sylib simplrr simpr unen syl22anc breq1 syl5ibrcom
-       simpll expimpd rexlimdvva impbid syl5bb eqrdv ) ABHZIJZVHABUAZUBZAUBZBUB
-       ZUCZVHKZXKLXOXJMNZXIXOXNLZXOXJOXIXPXQXPXOXJEKZPZEUDXIXQXOXJEUEXIXSXQEXSX
-       JXOXRQZPZXIXQXOXJXRUFXIYAXQXIYARZXTASZXTBSZUAZXOXNYAYEXOJXIYAYEXTXJSZXOX
-       TABUGYAXTXTUHZSZXTUIZYFXOYHYIJYAXTUJUKYAYGXJXTXJXOXTULUMYAXJXOXTUOYIXOJX
-       JXOXTUNXJXOXTUPUQURUSTYBYCXLLZYDXMLZYCYDHZIJYEXNLYAYJXIYAYCAMNZYJYAAYCXT
-       AUTZPZYCAYNQZPYMYAXJXOXTVAZAXJVBYOXJXOXTVCZABVDXJXOAXTVEVFAYCYNUFYCAYPYN
-       XTAXREVGVIZCVJVIVKVLYCAOVMTYBYDBMNZYKYAYTXIYABYDXTBUTZPZYDBUUAQZPYTYAYQB
-       XJVBUUBYRBAVNXJXOBXTVEVFBYDUUAUFYDBUUCUUAXTBYSDVJVIVKVLTYDBOVMYBXTXHSZYL
-       IYAUUDYLJZXIYAYQXTQVOZUUEYRYQXJXOXTVPUUFXJXOXTVQVRABXTWAVLTXIUUDIJYAXIUU
-       DXTISIXHIXTVSXTVTWBWCWDYCYDXLXMWEWFWGWHWIWJWLXQFKZGKZHIJZXOUUGUUHUAZJZRZ
-       GXMWKFXLWKXIXPXOXLXMFGWMXIUULXPFGXLXMXIUUGXLLZUUHXMLZRZRZUUIUUKXPUUPUUIR
-       ZXPUUKUUJXJMNZUUQUUGAMNZUUHBMNZUUIXIUURUUQUUMUUSXIUUMUUNUUIWNUUGAOWOUUQU
-       UNUUTXIUUMUUNUUIWPUUHBOWOUUPUUIWQXIUUOUUIXBUUGAUUHBWRWSXOUUJXJMWTXAXCXDW
-       LXEXFXG $.
-       $( [24-Feb-2015] $)
+      ( vr vp vq cin c0 wceq cv wcel cen wbr elnc wf1o ccnv wa cima adantl cplc
+      vx cun cnc wex f1ocnv imaundi cdm crn imadmrn a1i f1odm imaeq2d wfo f1ofo
+      bren forn syl 3eqtr3d syl5eqr cres wf1 wss f1of1 ssun1 f1ores sylancl vex
+      cnvex resex f1oen 3syl sylibr ssun2 wfun df-f1 simprbi imaeq2 ima0 syl6eq
+      wf adantr eqtr3d eladdci syl3anc eqeltrrd syl5 exlimdv syl5bi wrex eladdc
+      imain simplrl sylib simplrr simpr simpll unen syl22anc syl5ibrcom expimpd
+      ex breq1 rexlimdvva impbid syl5bb eqrdv ) ABHZIJZUBABUCZUDZAUDZBUDZUAZUBK
+      ZXKLXOXJMNZXIXOXNLZXOXJOXIXPXQXPXOXJEKZPZEUEXIXQXOXJEUPXIXSXQEXSXJXOXRQZP
+      ZXIXQXOXJXRUFXIYAXQXIYARZXTASZXTBSZUCZXOXNYAYEXOJXIYAYEXTXJSZXOXTABUGYAXT
+      XTUHZSZXTUIZYFXOYHYIJYAXTUJUKYAYGXJXTXJXOXTULUMYAXJXOXTUNYIXOJXJXOXTUOXJX
+      OXTUQURUSUTTYBYCXLLZYDXMLZYCYDHZIJYEXNLYAYJXIYAYCAMNZYJYAAYCXTAVAZPZYCAYN
+      QZPYMYAXJXOXTVBZAXJVCYOXJXOXTVDZABVEXJXOAXTVFVGAYCYNUFYCAYPYNXTAXREVHVIZC
+      VJVIVKVLYCAOVMTYBYDBMNZYKYAYTXIYABYDXTBVAZPZYDBUUAQZPYTYAYQBXJVCUUBYRBAVN
+      XJXOBXTVFVGBYDUUAUFYDBUUCUUAXTBYSDVJVIVKVLTYDBOVMYBXTXHSZYLIYAUUDYLJZXIYA
+      YQXTQVOZUUEYRYQXJXOXTWAUUFXJXOXTVPVQABXTWLVLTXIUUDIJYAXIUUDXTISIXHIXTVRXT
+      VSVTWBWCYCYDXLXMWDWEWFXBWGWHWIXQFKZGKZHIJZXOUUGUUHUCZJZRZGXMWJFXLWJXIXPXO
+      XLXMFGWKXIUULXPFGXLXMXIUUGXLLZUUHXMLZRZRZUUIUUKXPUUPUUIRZXPUUKUUJXJMNZUUQ
+      UUGAMNZUUHBMNZUUIXIUURUUQUUMUUSXIUUMUUNUUIWMUUGAOWNUUQUUNUUTXIUUMUUNUUIWO
+      UUHBOWNUUPUUIWPXIUUOUUIWQUUGAUUHBWRWSXOUUJXJMXCWTXAXDWIXEXFXG $.
+      $( [24-Feb-2015] $)
   $}
 
   $( Cardinal zero is the cardinality of the empty set. $)
@@ -54592,9 +54601,9 @@ $)
     df1c3.1 $e |- A e. _V $.
     $( Cardinal one is the cardinality of a singleton. $)
     df1c3 $p |- 1c = Nc { A } $=
-       ( c1c csn cnc wceq wcel snel1c cncs wb 1cnc ncseqnc ax-mp mpbir ) CADZEF
-       ZOCGZABHCIGPQJKCOLMN $.
-       $( [2-Mar-2015] $)
+      ( c1c csn cnc wceq wcel snel1c cncs wb 1cnc ncseqnc ax-mp mpbir ) CADZEFZ
+      OCGZABHCIGPQJKCOLMN $.
+      $( [2-Mar-2015] $)
   $}
 
   ${
@@ -54608,43 +54617,42 @@ $)
 
   ${
     $d A x $.
-    $( Cardinal multiplication by zero.  Theorem XI.2.32 of [Rosser],
+    $( Cardinal multiplication by zero.  Theorem XI.2.32 of {{Rosser}},
        p. 379. $)
     muc0 $p |- ( A e. NC -> ( A .c 0c ) = 0c ) $=
-       ( vx cncs wcel cv cnc wceq wex c0c co elncs oveq1 c0 cxp xp0 nceqi df0c2
-       cmuc oveq2i vex 0ex mucnc eqtri 3eqtr4i syl6eq exlimiv sylbi ) ACDABEZFZ
-       GZBHAIRJZIGZBAKUJULBUJUKUIIRJZIAUIIRLUHMNZFZMFZUMIUNMUHOPUMUIUPRJUOIUPUI
-       RQSUHMBTUAUBUCQUDUEUFUG $.
-       $( [10-Mar-2015] $)
+      ( vx cncs wcel cv cnc wceq wex c0c cmuc co elncs oveq1 c0 cxp nceqi df0c2
+      xp0 oveq2i vex 0ex mucnc eqtri 3eqtr4i syl6eq exlimiv sylbi ) ACDABEZFZGZ
+      BHAIJKZIGZBALUJULBUJUKUIIJKZIAUIIJMUHNOZFZNFZUMIUNNUHRPUMUIUPJKUOIUPUIJQS
+      UHNBTUAUBUCQUDUEUFUG $.
+      $( [10-Mar-2015] $)
   $}
 
   ${
     $d A x $.
     $( Cardinal multiplication by one. $)
     mucid1 $p |- ( A e. NC -> ( A .c 1c ) = A ) $=
-       ( vx cncs wcel cv cnc wceq wex c1c cmuc co elncs csn cxp vex oveq2i snex
-       df1c3 mucnc cen wbr xpsnen xpex eqnc mpbir 3eqtri oveq1 id 3eqtr4a sylbi
-       exlimiv ) ACDABEZFZGZBHAIJKZAGZBALUNUPBUNUMIJKZUMUOAUQUMULMZFZJKULURNZFZ
-       UMIUSUMJULBOZRPULURVBULQZSVAUMGUTULTUAULULVBVBUBUTULULURVBVCUCUDUEUFAUMI
-       JUGUNUHUIUKUJ $.
-       $( [11-Mar-2015] $)
+      ( vx cncs wcel cv cnc wceq wex c1c cmuc co elncs csn cxp vex df1c3 oveq2i
+      snex mucnc cen wbr xpsnen xpex eqnc mpbir 3eqtri oveq1 id 3eqtr4a exlimiv
+      sylbi ) ACDABEZFZGZBHAIJKZAGZBALUNUPBUNUMIJKZUMUOAUQUMULMZFZJKULURNZFZUMI
+      USUMJULBOZPQULURVBULRZSVAUMGUTULTUAULULVBVBUBUTULULURVBVCUCUDUEUFAUMIJUGU
+      NUHUIUJUK $.
+      $( [11-Mar-2015] $)
   $}
 
   ${
     $d A x $.  $d A y $.  $d B x $.  $d B y $.  $d x y $.  $d x z $.  $d y z $.
     $( The cardinals are closed under cardinal addition. $)
     ncaddccl $p |- ( ( A e. NC /\ B e. NC ) -> ( A +c B ) e. NC ) $=
-       ( vx vy vz cncs wcel cv cnc wceq wex cplc elncs wa c0 csn cxp cen eqcomi
-       mpbir eeanv ccompl wbr vex 0ex xpsnen snex xpex eqnc eqtr mpan2 addceq12
-       complex cun cin xpnedisj ncdisjun ax-mp unex nceq eqeq2d cla4ev syl6eqel
-       necompl syl2an exlimivv sylbir syl2anb ) AFGACHZIZJZCKZBDHZIZJZDKZABLZFG
-       ZBFGCAMDBMVLVPNVKVONZDKCKVRVKVOCDUAVSVRCDVKAVIOUBZPZQZIZJZBVMOPZQZIZJZVR
-       VOVKVJWCJWDWCVJWCVJJWBVIRUCVIVTCUDZOUEUMZUFWBVIVIWAWIVTUGUHZUITSAVJWCUJU
-       KVOVNWGJWHWGVNWGVNJWFVMRUCVMODUDZUEUFWFVMVMWEWLOUGUHZUITSBVNWGUJUKWDWHNV
-       QWCWGLZFABWCWGULWNFGWNEHZIZJZEKZWNWBWFUNZIZJZWRWTWNWBWFUOOJWTWNJVIVMVTOW
-       JOVDUPWBWFWKWMUQURSWQXAEWSWBWFWKWMUSWOWSJWPWTWNWOWSUTVAVBUREWNMTVCVEVFVG
-       VH $.
-       $( [24-Feb-2015] $)
+      ( vx vy vz cncs wcel cv cnc wceq wex elncs wa c0 csn cxp cen mpbir eqcomi
+      cplc eeanv ccompl wbr vex 0ex complex xpsnen snex xpex eqnc eqtr addceq12
+      mpan2 cun cin necompl xpnedisj ncdisjun ax-mp unex eqeq2d cla4ev syl6eqel
+      nceq syl2an exlimivv sylbir syl2anb ) AFGACHZIZJZCKZBDHZIZJZDKZABTZFGZBFG
+      CALDBLVLVPMVKVOMZDKCKVRVKVOCDUAVSVRCDVKAVINUBZOZPZIZJZBVMNOZPZIZJZVRVOVKV
+      JWCJWDWCVJWCVJJWBVIQUCVIVTCUDZNUEUFZUGWBVIVIWAWIVTUHUIZUJRSAVJWCUKUMVOVNW
+      GJWHWGVNWGVNJWFVMQUCVMNDUDZUEUGWFVMVMWEWLNUHUIZUJRSBVNWGUKUMWDWHMVQWCWGTZ
+      FABWCWGULWNFGWNEHZIZJZEKZWNWBWFUNZIZJZWRWTWNWBWFUONJWTWNJVIVMVTNWJNUPUQWB
+      WFWKWMURUSSWQXAEWSWBWFWKWMUTWOWSJWPWTWNWOWSVDVAVBUSEWNLRVCVEVFVGVH $.
+      $( [24-Feb-2015] $)
   $}
 
   $( The successor of a cardinal is a cardinal. $)
@@ -54656,10 +54664,10 @@ $)
     $d A x n $.
     $( A finite cardinal number is a cardinal number. $)
     nnnc $p |- ( A e. Nn -> A e. NC ) $=
-       ( vx vn cv cncs wcel c0c c1c cplc cab cvv abid2 ncsex eqeltri eleq1 0cnc
-       wi cnnc peano2nc a1i finds ) BDZEFZGEFCDZEFZUDHIZEFZAEFBCAUCBJEKBELMNUBG
-       EOUBUDEOUBUFEOUBAEOPUEUGQUDRFUDSTUA $.
-       $( [24-Feb-2015] $)
+      ( vx vn cv cncs wcel c0c c1c cplc cab abid2 ncsex eqeltri eleq1 0cnc cnnc
+      cvv wi peano2nc a1i finds ) BDZEFZGEFCDZEFZUDHIZEFZAEFBCAUCBJEQBEKLMUBGEN
+      UBUDENUBUFENUBAENOUEUGRUDPFUDSTUA $.
+      $( [24-Feb-2015] $)
   $}
 
   $( The finite cardinals are a subset of the cardinals. $)
@@ -54672,14 +54680,14 @@ $)
     $( Two cardinals are either disjoint or equal. $)
     ncdisjeq $p |- ( ( A e. NC /\ B e. NC ) ->
        ( ( A i^i B ) = (/) \/ A = B ) ) $=
-       ( vx vy cncs wcel wa cv cnc wceq wex cin c0 wo elncs cen cec df-nc mpan2
-       eqtr anbi12i eeanv bitr4i cvv cer wbr ener erdisj ax-mp wb eqeq12 ineq12
-       eqeq1d orbi12d syl2an mpbiri orcomd exlimivv sylbi ) AEFZBEFZGZACHZIZJZB
-       DHZIZJZGZDKCKZABLZMJZABJZNZVBVECKZVHDKZGVJUTVOVAVPCAODBOUAVEVHCDUBUCVIVN
-       CDVIVMVLVIVMVLNZVCPQZVFPQZJZVRVSLZMJZNZPUDUEUFWCUGVCVFPUHUIVEAVRJZBVSJZV
-       QWCUJVHVEVDVRJWDVCRAVDVRTSVHVGVSJWEVFRBVGVSTSWDWEGZVMVTVLWBAVRBVSUKWFVKW
-       AMAVRBVSULUMUNUOUPUQURUS $.
-       $( [25-Feb-2015] $)
+      ( vx vy cncs wcel wa cv cnc wceq wex cin c0 wo elncs cen df-nc eqtr mpan2
+      cec anbi12i eeanv bitr4i cvv cer wbr erdisj ax-mp wb eqeq12 ineq12 eqeq1d
+      ener orbi12d syl2an mpbiri orcomd exlimivv sylbi ) AEFZBEFZGZACHZIZJZBDHZ
+      IZJZGZDKCKZABLZMJZABJZNZVBVECKZVHDKZGVJUTVOVAVPCAODBOUAVEVHCDUBUCVIVNCDVI
+      VMVLVIVMVLNZVCPTZVFPTZJZVRVSLZMJZNZPUDUEUFWCUMVCVFPUGUHVEAVRJZBVSJZVQWCUI
+      VHVEVDVRJWDVCQAVDVRRSVHVGVSJWEVFQBVGVSRSWDWEGZVMVTVLWBAVRBVSUJWFVKWAMAVRB
+      VSUKULUNUOUPUQURUS $.
+      $( [25-Feb-2015] $)
   $}
 
   $( If two cardinals have an element in common, then they are equal. $)
@@ -54694,8 +54702,8 @@ $)
     $d f t $.  $d f x $.  $d f y $.  $d g t $.  $d g x $.  $d g y $.  $d t x $.
     $d t y $.  $d x y $.
     $( Successor is one-to-one over the cardinals.  Theorem XI.2.12 of
-       [Rosser], p. 375. $)
-    peano4nc $p |- ( ( A e. NC /\ B e. NC ) -> 
+       {{Rosser}}, p. 375. $)
+    peano4nc $p |- ( ( A e. NC /\ B e. NC ) ->
              ( ( A +c 1c ) = ( B +c 1c ) <-> A = B ) ) $=
       ( vg vt vx vf vy cncs wcel wa c1c cplc wceq adantr cnc eqtr2 csn wrex vex
       cv peano2nc wex elncs simpr jca cun ccompl ncid eleq2 mpbiri elsuc biimpi
@@ -54719,17 +54727,17 @@ $)
     $d A x y $.
     $( A cardinal is finite iff it is a subset of ` Fin ` . $)
     ncssfin $p |- ( A e. NC -> ( A e. Nn <-> A C_ Fin ) ) $=
-       ( vx vy cncs wcel cnnc cfin wss cuni elssuni cv wi wrex wal c0c wne wceq
-       c0 wex wa df-fin syl6sseqr wel dfss2 imbi2i wb peano1 ne0i r19.37zv mp2b
-       elfin bitr4i albii bitri nulnnc eleq1 mtbiri necon2ai 19.29r pm2.27 nnnc
-       n0 sylib adantl nceleq sylanl2 eqeltrd expr syld an32s rexlimdva expimpd
-       simplr exlimdv syl5 mpand syl5bi impbid2 ) ADEZAFEZAGHZVTAFIGAFJUAUBWABK
-       ZAEZBCUCZLZCFMZBNZVSVTWAWCWBGEZLZBNWGBAGUDWIWFBWIWCWDCFMZLZWFWHWJWCCWBUK
-       UEOFEFRPWFWKUFUGFOUHWCWDCFUIUJULUMUNVSWCBSZWGVTVSARPWLVSARARQVSRDEUOARDU
-       PUQURBAVBVCWLWGTWCWFTZBSVSVTWCWFBUSVSWMVTBVSWCWFVTVSWCTWEVTCFVSCKZFEZWCW
-       EVTLVSWOTZWCTWEWDVTWCWEWDLWPWCWDUTVDWPWCWDVTWPWCWDTZTAWNFWOVSWNDEWQAWNQW
-       NVAAWNWBVEVFVSWOWQVMVGVHVIVJVKVLVNVOVPVQVR $.
-       $( [25-Feb-2015] $)
+      ( vx vy cncs wcel cnnc cfin wss cuni elssuni cv wrex wal c0c wne wex wceq
+      wi c0 wa df-fin syl6sseqr dfss2 elfin imbi2i wb peano1 ne0i r19.37zv mp2b
+      wel bitr4i albii bitri nulnnc eleq1 mtbiri necon2ai n0 19.29r pm2.27 nnnc
+      sylib adantl nceleq sylanl2 simplr eqeltrd expr rexlimdva expimpd exlimdv
+      syld an32s syl5 mpand syl5bi impbid2 ) ADEZAFEZAGHZVTAFIGAFJUAUBWABKZAEZB
+      CUKZRZCFLZBMZVSVTWAWCWBGEZRZBMWGBAGUCWIWFBWIWCWDCFLZRZWFWHWJWCCWBUDUENFEF
+      SOWFWKUFUGFNUHWCWDCFUIUJULUMUNVSWCBPZWGVTVSASOWLVSASASQVSSDEUOASDUPUQURBA
+      USVCWLWGTWCWFTZBPVSVTWCWFBUTVSWMVTBVSWCWFVTVSWCTWEVTCFVSCKZFEZWCWEVTRVSWO
+      TZWCTWEWDVTWCWEWDRWPWCWDVAVDWPWCWDVTWPWCWDTZTAWNFWOVSWNDEWQAWNQWNVBAWNWBV
+      EVFVSWOWQVGVHVIVMVNVJVKVLVOVPVQVR $.
+      $( [25-Feb-2015] $)
   $}
 
   ${
@@ -54738,18 +54746,18 @@ $)
     $( The cardinality of two sets are equal iff their unit power classes have
        the same cardinality. $)
     ncpw1 $p |- ( Nc A = Nc B <-> Nc ~P1 A = Nc ~P1 B ) $=
-       ( cen wbr cpw1 cnc wceq enpw1 eqnc pw1ex 3bitr4i ) ABDEAFZBFZDEAGBGHMGNG
-       HABIABCJMNACKJL $.
-       $( [25-Feb-2015] $)
+      ( cen wbr cpw1 cnc wceq enpw1 eqnc pw1ex 3bitr4i ) ABDEAFZBFZDEAGBGHMGNGH
+      ABIABCJMNACKJL $.
+      $( [25-Feb-2015] $)
   $}
 
   ${
     ncpwpw1.1 $e |- A e. _V $.
     $( Power class and unit power class commute within cardinality. $)
     ncpwpw1 $p |- Nc ~P ~P1 A = Nc ~P1 ~P A $=
-       ( cpw1 cpw cnc wceq cen wbr enpw1pw ensym mpbi pw1ex pwex eqnc mpbir ) A
-       CZDZEADCZEFQRGHZRQGHSABIRQJKQRPABLMNO $.
-       $( [26-Feb-2015] $)
+      ( cpw1 cpw cnc wceq cen wbr enpw1pw ensym mpbi pw1ex pwex eqnc mpbir ) AC
+      ZDZEADCZEFQRGHZRQGHSABIRQJKQRPABLMNO $.
+      $( [26-Feb-2015] $)
   $}
 
   $( The cardinality of ` 1c ` is equal to that of its power class. $)
@@ -54759,45 +54767,44 @@ $)
     $( [26-Feb-2015] $)
 
   ${
-    $( One plus one equals two.  Theorem *110.64 of [WhiteheadRussell].  This
+    $( One plus one equals two.  Theorem *110.64 of {{WhiteheadRussell}}.  This
        theorem is occasionally useful. $)
     1p1e2c $p |- ( 1c +c 1c ) = 2c $=
-       ( c0 csn cvv cun cnc cplc c2c c1c cin wceq wcel 0ex n0i ax-mp vvex mtbir
-       wn elsn snex df1c3 disjsn mpbir ncdisjun cpr df-2c df-pr nceqi addceq12i
-       eqtri 3eqtr4ri ) ABZCBZDZEZUKEZULEZFZGHHFUKULIAJZUNUQJURCUKKZQUSCAJZACKU
-       TQLCAMNCAORPUKCUAUBUKULASCSUCNGACUDZEUNUEVAUMACUFUGUIHUOHUPALTCOTUHUJ $.
-       $( [2-Mar-2015] $)
+      ( c0 csn cvv cun cnc cplc c2c c1c cin wceq wcel 0ex ax-mp vvex elsn mtbir
+      wn n0i snex df1c3 disjsn mpbir ncdisjun df-2c df-pr nceqi eqtri addceq12i
+      cpr 3eqtr4ri ) ABZCBZDZEZUKEZULEZFZGHHFUKULIAJZUNUQJURCUKKZQUSCAJZACKUTQL
+      CARMCANOPUKCUAUBUKULASCSUCMGACUIZEUNUDVAUMACUEUFUGHUOHUPALTCNTUHUJ $.
+      $( [2-Mar-2015] $)
   $}
 
   $( Two plus one equals three. $)
   2p1e3c $p |- ( 2c +c 1c ) = 3c $=
-     ( c0 cvv cpr csn cdif cun cnc cplc c3c c2c c1c cin wceq wcel wn vvex 0ex
-     ax-mp mtbir snex wo wne vn0 eldifsn mpbir2an n0i wa notnoti intnan eldif
-     snid eleq2 mpbiri mto pm3.2ni difex elpr disjsn mpbir ncdisjun ctp df-3c
-     prex df-tp nceqi eqtri df-2c df1c3 addceq12i 3eqtr4ri ) ABCZBADZEZDZFZGZ
-     VKGZVNGZHZIJKHVKVNLAMZVPVSMVTVMVKNZOWAVMAMZVMBMZUAWBWCBVMNZWBOWDBBNBAUBP
-     UCBBAUDUEVMBUFRWCAVMNZWEABNZAVLNZOZUGWHWFWGAQUKUHUIABVLUJSWCWEWFQVMBAULU
-     MUNUOVMABBVLPATUPZUQSVKVMURUSVKVNABVCVMTUTRIABVMVAZGVPVBWJVOABVMVDVEVFJV
-     QKVRVGVMWIVHVIVJ $.
-     $( [2-Mar-2015] $)
+    ( c0 cvv cpr csn cdif cun cnc cplc c3c c2c c1c cin wceq wcel vvex ax-mp 0ex
+    wn mtbir snex wo wne vn0 eldifsn mpbir2an n0i wa notnoti intnan eldif eleq2
+    snid mpbiri pm3.2ni difex elpr disjsn mpbir prex ncdisjun df-3c df-tp nceqi
+    mto ctp eqtri df-2c df1c3 addceq12i 3eqtr4ri ) ABCZBADZEZDZFZGZVKGZVNGZHZIJ
+    KHVKVNLAMZVPVSMVTVMVKNZRWAVMAMZVMBMZUAWBWCBVMNZWBRWDBBNBAUBOUCBBAUDUEVMBUFP
+    WCAVMNZWEABNZAVLNZRZUGWHWFWGAQULUHUIABVLUJSWCWEWFQVMBAUKUMVDUNVMABBVLOATUOZ
+    UPSVKVMUQURVKVNABUSVMTUTPIABVMVEZGVPVAWJVOABVMVBVCVFJVQKVRVGVMWIVHVIVJ $.
+    $( [2-Mar-2015] $)
 
   ${
     $d A x $.  $d A y $.  $d x y $.
     $( The cardinal T operation always yields a set. $)
     tcex $p |- T_c A e. _V $=
-       ( vx vy ctc cv cncs wcel cpw1 cnc wceq wrex cio cvv df-tc iotaex eqeltri
-       wa ) ADBEZFGRCEHIJCAKQZBLMCABNSBOP $.
-       $( [2-Mar-2015] $)
+      ( vx vy ctc cv cncs wcel cpw1 cnc wceq wrex cio cvv df-tc iotaex eqeltri
+      wa ) ADBEZFGRCEHIJCAKQZBLMCABNSBOP $.
+      $( [2-Mar-2015] $)
   $}
 
   ${
     $d A x $.  $d A y $.  $d B x $.  $d B y $.  $d x y $.
     $( Equality theorem for cardinal T operator. $)
     tceq $p |- ( A = B -> T_c A = T_c B ) $=
-       ( vx vy wceq cv cncs wcel cpw1 cnc wrex wa cio ctc rexeq anbi2d iotabidv
-       df-tc 3eqtr4g ) ABEZCFZGHZUADFIJEZDAKZLZCMUBUCDBKZLZCMANBNTUEUGCTUDUFUBU
-       CDABOPQDACRDBCRS $.
-       $( [2-Mar-2015] $)
+      ( vx vy wceq cv cncs wcel cpw1 cnc wa cio ctc rexeq anbi2d iotabidv df-tc
+      wrex 3eqtr4g ) ABEZCFZGHZUADFIJEZDARZKZCLUBUCDBRZKZCLAMBMTUEUGCTUDUFUBUCD
+      ABNOPDACQDBCQS $.
+      $( [2-Mar-2015] $)
   $}
 
   ${
@@ -54826,10 +54833,10 @@ $)
     $d A x y $.
     $( The cardinal T operation over a cardinal yields a cardinal. $)
     tccl $p |- ( A e. NC -> T_c A e. NC ) $=
-       ( vx vy cncs wcel ctc cv cpw1 cnc wceq wrex df-tc wreu ncspw1eu reiotacl
-       wa cio syl syl5eqel ) ADEZAFBGZDEUACGHIJCAKZPBQZDCABLTUBBDMUCDEBCANUBBDO
-       RS $.
-       $( [2-Mar-2015] $)
+      ( vx vy cncs wcel ctc cv cpw1 cnc wceq wrex wa cio wreu ncspw1eu reiotacl
+      df-tc syl syl5eqel ) ADEZAFBGZDEUACGHIJCAKZLBMZDCABQTUBBDNUCDEBCAOUBBDPRS
+      $.
+      $( [2-Mar-2015] $)
   $}
 
   ${
@@ -54850,25 +54857,24 @@ $)
     $( The unit power class of an element of a cardinal is in the cardinal's T
        raising. $)
     pw1eltc $p |- ( ( A e. NC /\ B e. A ) -> ~P1 B e. T_c A ) $=
-       ( vy cncs wcel wa cpw1 cnc ctc cvv pw1exg ncidg adantl wceq cv wrex eqid
-       syl pw1eq nceqd eqeq2d rcla4ev mpan2 wb eqtc adantr mpbird eleqtrrd ) AD
-       EZBAEZFZBGZULHZAIZUJULUMEZUIUJULJEUOBAKULJLRMUKUNUMNZUMCOZGZHZNZCAPZUJVA
-       UIUJUMUMNZVAUMQUTVBCBAUQBNZUSUMUMVCURULUQBSTUAUBUCMUIUPVAUDUJCAUMUEUFUGU
-       H $.
-       $( [2-Mar-2015] $)
+      ( vy cncs wcel wa cpw1 cnc ctc cvv pw1exg ncidg syl adantl wceq wrex eqid
+      cv pw1eq nceqd eqeq2d rcla4ev mpan2 wb eqtc adantr mpbird eleqtrrd ) ADEZ
+      BAEZFZBGZULHZAIZUJULUMEZUIUJULJEUOBAKULJLMNUKUNUMOZUMCRZGZHZOZCAPZUJVAUIU
+      JUMUMOZVAUMQUTVBCBAUQBOZUSUMUMVCURULUQBSTUAUBUCNUIUPVAUDUJCAUMUEUFUGUH $.
+      $( [2-Mar-2015] $)
   $}
 
   $( The T raising of cardinal zero is still cardinal zero. $)
   tc0c $p |- T_c 0c = 0c $=
-    ( c0c ctc cncs wcel wceq 0cnc tccl ax-mp cpw1 pw10 nulel0c pw1eltc mp2an
-    c0 eqeltrri nceleq mp4an ) ABZCDZACDZNRDNADZRAETSFAGHFNIZNRJTUAUBRDFKANL
-    MOKRANPQ $.
+    ( c0c ctc cncs wcel c0 wceq 0cnc tccl ax-mp cpw1 pw10 nulel0c pw1eltc mp2an
+    eqeltrri nceleq mp4an ) ABZCDZACDZERDEADZRAFTSGAHIGEJZERKTUAUBRDGLAEMNOLRAE
+    PQ $.
     $( [2-Mar-2015] $)
 
   ${
     $d A x $.  $d A y $.  $d B x $.  $d B y $.  $d x y $.
     $( T raising distributes over addition. $)
-    tcdi $p |- ( ( A e. NC /\ B e. NC ) -> 
+    tcdi $p |- ( ( A e. NC /\ B e. NC ) ->
        T_c ( A +c B ) = ( T_c A +c T_c B ) ) $=
       ( vx vy cncs wcel wa cv c0 cnc wceq wex cplc ctc cpw1 mp2an ax-mp pw1eltc
       tccl tceq ccompl csn cxp eeanv cen wbr vex complex xpsnen snex xpex mpbir
@@ -54890,9 +54896,9 @@ $)
 
   $( T raising does not change cardinal one. $)
   tc1c $p |- T_c 1c = 1c $=
-    ( c1c ctc cncs wcel c0 csn wceq 1cnc tccl ax-mp 0ex pw1sn snel1c pw1eltc
-      cpw1 mp2an eqeltrri snex nceleq mp4an ) ABZCDZACDZEFZFZUADUEADUAAGUCUBHA
-    IJHUDOZUEUAEKLUCUDADUFUADHEKMAUDNPQUDERMUAAUEST $.
+    ( c1c ctc cncs wcel c0 csn wceq 1cnc tccl ax-mp cpw1 0ex pw1sn snel1c mp2an
+    pw1eltc eqeltrri snex nceleq mp4an ) ABZCDZACDZEFZFZUADUEADUAAGUCUBHAIJHUDK
+    ZUEUAELMUCUDADUFUADHELNAUDPOQUDERNUAAUEST $.
     $( [2-Mar-2015] $)
 
   $( T raising does not change cardinal two. $)
@@ -54917,10 +54923,10 @@ $)
     $d A m n $.
     $( The unit power class of a finite set is finite. $)
     pw1fin $p |- ( A e. Fin -> ~P1 A e. Fin ) $=
-       ( vn vm cv wcel cnnc wrex cpw1 cfin ncfinraise 3anidm23 rexlimiva reximi
-       wa simpl syl elfin 3imtr4i ) ABDZEZBFGZAHZCDEZCFGZAIEUBIEUAUCUCNZCFGZUDT
-       UFBFSFETUFAACSJKLUEUCCFUCUCOMPBAQCUBQR $.
-       $( [3-Mar-2015] $)
+      ( vn vm cv wcel cnnc wrex cpw1 ncfinraise 3anidm23 rexlimiva simpl reximi
+      cfin wa syl elfin 3imtr4i ) ABDZEZBFGZAHZCDEZCFGZANEUBNEUAUCUCOZCFGZUDTUF
+      BFSFETUFAACSIJKUEUCCFUCUCLMPBAQCUBQR $.
+      $( [3-Mar-2015] $)
   $}
 
   ${
@@ -54946,45 +54952,44 @@ $)
     $( Lemma for ~ ovce .  Set up stratification for the result. $)
     ovcelem1 $p |- ( ( N e. V /\ M e. W ) -> { g | E. a E. b ( ~P1
        a e. N /\ ~P1 b e. M /\ g ~~ ( a ^m b ) ) } e. _V ) $=
-       ( vt vf wcel wa cen wbr wex cpw1fn csset c1c cvv cop bitri cpw1 cmap w3a
-       cv cab ccnv cima cxp cins3 cfns c2nd cimage ccom ctxp csi3 cins2 csymdif
-       co ccompl cins4 cin crn csn elima1c vex otelins3 opelcnv wrex wceq brcnv
-       opelxp brpw1fn rexbii elima risset 3bitr4i anbi12i 3bitri elrn2 elin wel
-       wf wb wal wn snex elcompl elsymdif opelssetsn otelins2 otsnelsi3 wfn wss
-       df-br brfns bitr3i opelco brimage dfrn5 eqeq2i bitr4i brsset exbii sseq1
-       opex rnex ceqsexv oteltxp bibi12i xchbinx exnal 3bitrri con1bii oqelins4
-       df-f mapval abeq2 breq2 df-3an abbi2i pw1fnex cnvex imaexg syl2an cnvexg
-       ovex mpan xpexg ins3exg syl ssetex ins3ex fnsex imageex coex ins2ex 1cex
-       2ndex mpan2 3syl txpex si3ex symdifex complex ins4ex enex inex syl5eqelr
-       imaex inexg ) CDJZBEJZKZFUDZUAZCJZGUDZUAZBJZAUDZUUNUUQUBURZLMZUCZGNZFNZA
-       UEOUFZCUGZUVFBUGZUHZUFZUIZPUIZUJPUKULZUMZUNZUOZUPZUQZQUGZUSZUTZLUFZUPZUP
-       ZVAZVBZVAZQUGZQUGZRUVEAUWIUUTUWIJUUNVCZUUTSZUWHJZFNUVEFUUTUWHVDUWLUVDFUW
-       LUUQVCZUWKSZUWGJZGNUVDGUWKUWGVDUWOUVCGUWNUVKJZUWNUWFJZKUUPUUSKZUVBKUWOUV
-       CUWPUWRUWQUVBUWPUWMUWJSZUVJJUWJUWMSUVIJZUWRUWMUWJUUTUVJAVEZVFUWMUWJUVIVG
-       UWTUWJUVGJZUWMUVHJZKUWRUWJUWMUVGUVHVKUXBUUPUXCUUSHUDZUWJUVFMZHCVHUXDUUOV
-       IZHCVHUXBUUPUXEUXFHCUXEUWJUXDOMUXFUXDUWJOVJUUNUXDFVEZVLTVMHUWJUVFCVNHUUO
-       CVOVPUXDUWMUVFMZHBVHUXDUURVIZHBVHUXCUUSUXHUXIHBUXHUWMUXDOMUXIUXDUWMOVJUU
-       QUXDGVEZVLTVMHUWMUVFBVNHUURBVOVPVQTVRUWQUXDUWNSZUWEJZHNUXDUVAVIZUUTUXDLM
-       ZKZHNUVBHUWNUWEVSUXLUXOHUXLUXKUWAJZUXKUWDJZKUXOUXKUWAUWDVTUXPUXMUXQUXNUX
-       DUWSSZUVTJZIHWAZUUQUUNIUDZWBZWCZIWDZUXPUXMUXSUXRUVSJZWEUYDUXRUVSUXDUWSHV
-       EZUWMUWJUUQWFZUUNWFZXEZXEWGUYDUYEUYEUYAVCZUXRSZUVRJZINUYCWEZINUYDWEIUXRU
-       VRVDUYLUYMIUYLUYKUVLJZUYKUVQJZWCUYCUYKUVLUVQWHUYNUXTUYOUYBUYNUYJUXDSPJUX
-       TUYJUXDUWSPUYIVFUYAUXDIVEZUYFWITUYOUYJUWSSUVPJUYAUUQUUNSSUVOJZUYBUYJUXDU
-       WSUVPUYFWJUYAUUQUUNUVOUYPUXJUXGWKUYAUUQSUJJZUYAUUNSUVNJZKUYAUUQWLZUYAVBZ
-       UUNWMZKUYQUYBUYRUYTUYSVUBUYRUYAUUQUJMUYTUYAUUQUJWNUUQUYAUYPWOWPUYSUYAUXD
-       UVMMZUXDUUNPMZKZHNUXDVUAVIZUXDUUNWMZKZHNVUBHUYAUUNPUVMWQVUEVUHHVUCVUFVUD
-       VUGVUCUXDUKUYAUGZVIVUFUYAUXDUKUYPUYFWRVUAVUIUXDUYAWSWTXAUXDUUNUYFUXGXBVQ
-       XCVUGVUBHVUAUYAUYPXFUXDVUAUUNXDXGVRVQUYAUUQUUNUJUVNXHUUQUUNUYAXOVPVRXIXJ
-       XCUYCIXKXLXMTUXDUWMUWJUUTUVTUXAXNUXMUXDUYBIUEZVIUYDUVAVUJUXDUUNUUQIUXGUX
-       JXPWTUYBIUXDXQTVPUXQUXDUWKSUWCJUXDUUTSUWBJZUXNUXDUWMUWKUWCUYGWJUXDUWJUUT
-       UWBUYHWJVUKUXDUUTUWBMUXNUXDUUTUWBWNUXDUUTLVJWPVRVQTXCUXNUVBHUVAUUNUUQUBY
-       FUXDUVAUUTLXRXGVRVQUWNUVKUWFVTUUPUUSUVBXSVPXCTXCTXTUUMUVIRJZUVKRJZUWIRJZ
-       UUKUVGRJZUVHRJZVULUULUVFRJZUUKVUOOYAYBZUVFCRDYCYGVUQUULVUPVURUVFBREYCYGU
-       VGUVHRRYHYDVULUVJRJVUMUVIRYEUVJRYIYJVUMUWGRJZUWHRJZVUNVUMUWFRJVUSUWEUWAU
-       WDUVTUVSUVRQUVLUVQPYKYLUVPUVOUJUVNYMPUVMYKUKYRYNYOUUAUUBYPUUCYQUUIUUDUUE
-       UWCUWBLUUFYBYPYPUUGXFUVKUWFRRUUJYSVUSQRJZVUTYQUWGQRRYCYSVUTVVAVUNYQUWHQR
-       RYCYSYTYTUUH $.
-       $( [6-Mar-2015] $)
+      ( vt vf wcel wa cen wbr wex cpw1fn csset c1c cvv cop bitri cv cpw1 co w3a
+      cmap cab ccnv cima cxp cins3 cfns c2nd cimage ccom ctxp csi3 cins2 ccompl
+      csymdif cins4 cin crn csn elima1c otelins3 opelcnv opelxp wrex wceq brcnv
+      vex brpw1fn rexbii elima risset 3bitr4i anbi12i 3bitri elrn2 elin wel wal
+      wf wb wn snex opex elcompl elsymdif opelssetsn otelins2 otsnelsi3 wfn wss
+      df-br brfns bitr3i opelco brimage dfrn5 eqeq2i bitr4i brsset rnex ceqsexv
+      exbii sseq1 oteltxp bibi12i xchbinx exnal 3bitrri con1bii oqelins4 mapval
+      df-f abeq2 ovex breq2 df-3an abbi2i cnvex imaexg mpan xpexg syl2an cnvexg
+      pw1fnex ins3exg syl ssetex ins3ex fnsex 2ndex coex ins2ex 1cex mpan2 3syl
+      imageex txpex si3ex symdifex imaex complex ins4ex enex inexg syl5eqelr
+      inex ) CDJZBEJZKZFUAZUBZCJZGUAZUBZBJZAUAZUUNUUQUEUCZLMZUDZGNZFNZAUFOUGZCU
+      HZUVFBUHZUIZUGZUJZPUJZUKPULUMZUNZUOZUPZUQZUSZQUHZURZUTZLUGZUQZUQZVAZVBZVA
+      ZQUHZQUHZRUVEAUWIUUTUWIJUUNVCZUUTSZUWHJZFNUVEFUUTUWHVDUWLUVDFUWLUUQVCZUWK
+      SZUWGJZGNUVDGUWKUWGVDUWOUVCGUWNUVKJZUWNUWFJZKUUPUUSKZUVBKUWOUVCUWPUWRUWQU
+      VBUWPUWMUWJSZUVJJUWJUWMSUVIJZUWRUWMUWJUUTUVJAVKZVEUWMUWJUVIVFUWTUWJUVGJZU
+      WMUVHJZKUWRUWJUWMUVGUVHVGUXBUUPUXCUUSHUAZUWJUVFMZHCVHUXDUUOVIZHCVHUXBUUPU
+      XEUXFHCUXEUWJUXDOMUXFUXDUWJOVJUUNUXDFVKZVLTVMHUWJUVFCVNHUUOCVOVPUXDUWMUVF
+      MZHBVHUXDUURVIZHBVHUXCUUSUXHUXIHBUXHUWMUXDOMUXIUXDUWMOVJUUQUXDGVKZVLTVMHU
+      WMUVFBVNHUURBVOVPVQTVRUWQUXDUWNSZUWEJZHNUXDUVAVIZUUTUXDLMZKZHNUVBHUWNUWEV
+      SUXLUXOHUXLUXKUWAJZUXKUWDJZKUXOUXKUWAUWDVTUXPUXMUXQUXNUXDUWSSZUVTJZIHWAZU
+      UQUUNIUAZWCZWDZIWBZUXPUXMUXSUXRUVSJZWEUYDUXRUVSUXDUWSHVKZUWMUWJUUQWFZUUNW
+      FZWGZWGWHUYDUYEUYEUYAVCZUXRSZUVRJZINUYCWEZINUYDWEIUXRUVRVDUYLUYMIUYLUYKUV
+      LJZUYKUVQJZWDUYCUYKUVLUVQWIUYNUXTUYOUYBUYNUYJUXDSPJUXTUYJUXDUWSPUYIVEUYAU
+      XDIVKZUYFWJTUYOUYJUWSSUVPJUYAUUQUUNSSUVOJZUYBUYJUXDUWSUVPUYFWKUYAUUQUUNUV
+      OUYPUXJUXGWLUYAUUQSUKJZUYAUUNSUVNJZKUYAUUQWMZUYAVBZUUNWNZKUYQUYBUYRUYTUYS
+      VUBUYRUYAUUQUKMUYTUYAUUQUKWOUUQUYAUYPWPWQUYSUYAUXDUVMMZUXDUUNPMZKZHNUXDVU
+      AVIZUXDUUNWNZKZHNVUBHUYAUUNPUVMWRVUEVUHHVUCVUFVUDVUGVUCUXDULUYAUHZVIVUFUY
+      AUXDULUYPUYFWSVUAVUIUXDUYAWTXAXBUXDUUNUYFUXGXCVQXFVUGVUBHVUAUYAUYPXDUXDVU
+      AUUNXGXEVRVQUYAUUQUUNUKUVNXHUUQUUNUYAXPVPVRXIXJXFUYCIXKXLXMTUXDUWMUWJUUTU
+      VTUXAXNUXMUXDUYBIUFZVIUYDUVAVUJUXDUUNUUQIUXGUXJXOXAUYBIUXDXQTVPUXQUXDUWKS
+      UWCJUXDUUTSUWBJZUXNUXDUWMUWKUWCUYGWKUXDUWJUUTUWBUYHWKVUKUXDUUTUWBMUXNUXDU
+      UTUWBWOUXDUUTLVJWQVRVQTXFUXNUVBHUVAUUNUUQUEXRUXDUVAUUTLXSXEVRVQUWNUVKUWFV
+      TUUPUUSUVBXTVPXFTXFTYAUUMUVIRJZUVKRJZUWIRJZUUKUVGRJZUVHRJZVULUULUVFRJZUUK
+      VUOOYHYBZUVFCRDYCYDVUQUULVUPVURUVFBREYCYDUVGUVHRRYEYFVULUVJRJVUMUVIRYGUVJ
+      RYIYJVUMUWGRJZUWHRJZVUNVUMUWFRJVUSUWEUWAUWDUVTUVSUVRQUVLUVQPYKYLUVPUVOUKU
+      VNYMPUVMYKULYNYTYOUUAUUBYPUUCYQUUDUUEUUFUWCUWBLUUGYBYPYPUUJXDUVKUWFRRUUHY
+      RVUSQRJZVUTYQUWGQRRYCYRVUTVVAVUNYQUWHQRRYCYRYSYSUUI $.
+      $( [6-Mar-2015] $)
   $}
 
   ${
@@ -54994,7 +54999,7 @@ $)
     $d g m $.  $d g n $.  $d M g $.  $d N g $.
     $( The value of cardinal exponentiation. $)
     ovce $p |- ( ( N e. NC /\ M e. NC ) ->
-       ( N ^c M ) = { g | E. a E. b 
+       ( N ^c M ) = { g | E. a E. b
          ( ~P1 a e. N /\ ~P1 b e. M /\ g ~~ ( a ^m b ) ) } ) $=
       ( vn vm cncs wcel cv cpw1 co w3a wex cab cvv cce wceq eleq2 2exbidv df-ce
       cmap cen wbr ovcelem1 3anbi1d abbidv 3anbi2d ovmpt2g mpd3an3 ) CHIBHIDJZK
@@ -55066,18 +55071,18 @@ $)
   ${
     $d A g $.  $d A x $.  $d A y $.  $d g x $.  $d g y $.  $d M g $.  $d M x $.
     $d M y $.  $d N g $.  $d N x $.  $d N y $.  $d x y $.
-    $( Membership in cardinal exponentiation.  Theorem XI.2.38 of [Rosser],
+    $( Membership in cardinal exponentiation.  Theorem XI.2.38 of {{Rosser}},
        p. 382. $)
     elce $p |- ( ( N e. NC /\ M e. NC ) ->
         ( A e. ( N ^c M ) <-> E. x E. y ( ~P1 x e. N /\ ~P1 y e. M /\
           A ~~ ( x ^m y ) ) ) ) $=
-        ( vg cncs wcel wa cvv cce co cv cpw1 cen wbr w3a wex wi a1i cmap simpld
-        elex brex 3ad2ant3 exlimivv wb cab ovce eleq2d wceq breq1 3anbi3d elabg
-        2exbidv sylan9bb ex pm5.21ndd ) EGHDGHIZCJHZCEDKLZHZAMZNEHZBMZNDHZCVCVE
-        UALZOPZQZBRARZVBUTSUSCVAUCTVJUTSUSVIUTABVHVDUTVFVHUTVGJHCVGOUDUBUEUFTUS
-        UTVBVJUGUSVBCVDVFFMZVGOPZQZBRARZFUHZHUTVJUSVAVOCFDEABUIUJVNVJFCJVKCUKZV
-        MVIABVPVLVHVDVFVKCVGOULUMUOUNUPUQUR $.
-        $( [6-Mar-2015] $)
+      ( vg cncs wcel wa cvv cce co cv cpw1 cen wbr w3a wex wi a1i cmap 3ad2ant3
+      elex brex simpld exlimivv wb ovce eleq2d wceq breq1 3anbi3d 2exbidv elabg
+      cab sylan9bb ex pm5.21ndd ) EGHDGHIZCJHZCEDKLZHZAMZNEHZBMZNDHZCVCVEUALZOP
+      ZQZBRARZVBUTSUSCVAUCTVJUTSUSVIUTABVHVDUTVFVHUTVGJHCVGOUDUEUBUFTUSUTVBVJUG
+      USVBCVDVFFMZVGOPZQZBRARZFUOZHUTVJUSVAVOCFDEABUHUIVNVJFCJVKCUJZVMVIABVPVLV
+      HVDVFVKCVGOUKULUMUNUPUQUR $.
+      $( [6-Mar-2015] $)
   $}
 
   ${
@@ -55086,43 +55091,42 @@ $)
     $d n p $.
     $( Functionhood statement for cardinal exponentiation. $)
     fnce $p |- ^c Fn ( NC X. NC ) $=
-       ( vn vm vp va vb vg cce cncs cxp wfn cv wcel wa cpw1 cmap co cen wbr w3a
-       wex cab wceq copab2 copab weu cvv ovcelem1 isset sylib wmo moeq mpbiran2
-       sylibr fnoprab cmpt2 df-ce df-mpt2 eqtri fneq1i df-xp fneq2i bitri mpbir
-       eu5 ) GHHIZJZAKZHLBKZHLMZCKDKZNVGLEKZNVHLFKVJVKOPQRSETDTFUAZUBZMABCUCZVI
-       ABUDZJZVIVMABCVIVMCTZVMCUEZVIVLUFLVQFVHVGHHDEUGCVLUHUIVRVQVMCUJCVLUKVMCV
-       DULUMUNVFVNVEJVPVEGVNGABHHVLUOVNFBADEUPABCHHVLUQURUSVEVOVNABHHUTVAVBVC
-       $.
-       $( [6-Mar-2015] $)
+      ( vn vm vp va vb vg cce cncs cxp wfn cv wcel wa cpw1 cmap cen wbr w3a wex
+      co cab wceq copab2 copab weu cvv ovcelem1 isset sylib wmo moeq eu5 sylibr
+      mpbiran2 fnoprab cmpt2 df-ce df-mpt2 eqtri fneq1i df-xp fneq2i bitri
+      mpbir ) GHHIZJZAKZHLBKZHLMZCKDKZNVGLEKZNVHLFKVJVKOTPQRESDSFUAZUBZMABCUCZV
+      IABUDZJZVIVMABCVIVMCSZVMCUEZVIVLUFLVQFVHVGHHDEUGCVLUHUIVRVQVMCUJCVLUKVMCU
+      LUNUMUOVFVNVEJVPVEGVNGABHHVLUPVNFBADEUQABCHHVLURUSUTVEVOVNABHHVAVBVCVD $.
+      $( [6-Mar-2015] $)
   $}
 
   ${
     $d a b $.  $d a g $.  $d b g $.  $d M a $.  $d M b $.  $d M g $.  $d m t $.
     $( A condition for cardinal exponentiation being non-empty.  Theorem
-       XI.2.42 of [Rosser], p. 382. $)
+       XI.2.42 of {{Rosser}}, p. 382. $)
     ce0nnul $p |- ( M e. NC -> ( ( M ^c 0c ) =/= (/) <->
        E. a ~P1 a e. M ) ) $=
-       ( vg vb cncs wcel cv c0c cce co wex cpw1 cmap cen wbr w3a c0 wb wa wceq
-       wne 0cnc elce mpan2 exbidv 19.42vv 3anass 2exbii nulel0c ovex enrflx 0ex
-       n0 pw1eq pw10 syl6eq eleq1d adantl oveq2 breqan12d anbi12d cla42ev mp2an
-       id biantru 3bitr4ri exbii excom bitri 3bitr4g ) AEFZCGZAHIJZFZCKBGZLAFZD
-       GZLZHFZVLVOVQMJZNOZPZDKZBKZCKZVMQUAVPBKZVKVNWDCVKHEFVNWDRUBBDVLHAUCUDUEC
-       VMUMWFWCCKZBKWEVPWGBVPVSWASZSZDKCKVPWHDKCKZSWGVPVPWHCDUFWBWICDVPVSWAUGUH
-       WJVPQHFZVOQMJZWLNOZWJUIWLVOQMUJZUKWHWKWMSCDWLQWNULVLWLTZVQQTZSVSWKWAWMWP
-       VSWKRWOWPVRQHWPVRQLQVQQUNUOUPUQURWOWPVLWLVTWLNWOVDVQQVOMUSUTVAVBVCVEVFVG
-       WCBCVHVIVJ $.
-       $( [6-Mar-2015] $)
+      ( vg vb cncs wcel cv c0c cce co wex cpw1 cmap cen wbr w3a c0 wb wa wceq
+      0cnc elce mpan2 exbidv n0 19.42vv 3anass 2exbii nulel0c ovex enrflx pw1eq
+      wne 0ex pw10 syl6eq eleq1d adantl oveq2 breqan12d anbi12d cla42ev biantru
+      id mp2an 3bitr4ri exbii excom bitri 3bitr4g ) AEFZCGZAHIJZFZCKBGZLAFZDGZL
+      ZHFZVLVOVQMJZNOZPZDKZBKZCKZVMQUMVPBKZVKVNWDCVKHEFVNWDRUABDVLHAUBUCUDCVMUE
+      WFWCCKZBKWEVPWGBVPVSWASZSZDKCKVPWHDKCKZSWGVPVPWHCDUFWBWICDVPVSWAUGUHWJVPQ
+      HFZVOQMJZWLNOZWJUIWLVOQMUJZUKWHWKWMSCDWLQWNUNVLWLTZVQQTZSVSWKWAWMWPVSWKRW
+      OWPVRQHWPVRQLQVQQULUOUPUQURWOWPVLWLVTWLNWOVDVQQVOMUSUTVAVBVEVCVFVGWCBCVHV
+      IVJ $.
+      $( [6-Mar-2015] $)
   $}
 
   ${
     $d A a $.  $d M a $.
     $( Inference form of ~ ce0nnul . $)
     ce0nnuli $p |- ( ( M e. NC /\ ~P1 A e. M ) -> ( M ^c 0c ) =/= (/) ) $=
-       ( va cncs wcel cpw1 wa c0c cce co c0 wne wex cvv elex pw1exb sylib pw1eq
-       cv wceq eleq1d cla4egv mpcom adantl wb ce0nnul adantr mpbird ) BDEZAFZBE
-       ZGBHIJKLZCSZFZBEZCMZUKUPUIANEZUKUPUKUJNEUQUJBOAPQUOUKCANUMATUNUJBUMARUAU
-       BUCUDUIULUPUEUKBCUFUGUH $.
-       $( [9-Mar-2015] $)
+      ( va cncs wcel cpw1 wa c0c cce co c0 wne cv wex cvv elex sylib wceq pw1eq
+      pw1exb eleq1d cla4egv mpcom adantl wb ce0nnul adantr mpbird ) BDEZAFZBEZG
+      BHIJKLZCMZFZBEZCNZUKUPUIAOEZUKUPUKUJOEUQUJBPATQUOUKCAOUMARUNUJBUMASUAUBUC
+      UDUIULUPUEUKBCUFUGUH $.
+      $( [9-Mar-2015] $)
   $}
 
   ${
@@ -55130,9 +55134,10 @@ $)
     $d g p $.  $d g q $.  $d M a $.  $d M b $.  $d M g $.  $d N a $.  $d N b $.
     $d N g $.  $d p q $.
     $( The sum of two cardinals raised to ` 0c ` is non-empty iff each addend
-       raised to ` 0c ` is non-empty.  Theorem XI.2.43 of [Rosser], p. 383. $)
+       raised to ` 0c ` is non-empty.  Theorem XI.2.43 of {{Rosser}},
+       p. 383. $)
     ce0addcnnul $p |- ( ( M e. NC /\ N e. NC ) ->
-       ( ( ( M +c N ) ^c 0c ) =/= (/) <-> 
+       ( ( ( M +c N ) ^c 0c ) =/= (/) <->
          ( ( M ^c 0c ) =/= (/) /\ ( N ^c 0c ) =/= (/) ) ) ) $=
       ( vb vg va vp vq cncs wcel wa c0c cce co c0 wne wceq cpw1 wex cnc cvv cin
       cplc cv cun wrex wb ncaddccl ce0nnul eladdc exbii syl6bb ncseqnc bi2anan9
@@ -55172,7 +55177,7 @@ $)
   ${
     $d m t $.  $d m n $.  $d N m $.
     $( A natural raised to cardinal zero is non-empty.  Theorem XI.2.44 of
-       [Rosser], p. 383. $)
+       {{Rosser}}, p. 383. $)
     ce0nn $p |- ( N e. Nn -> ( N ^c 0c ) =/= (/) ) $=
       ( vm vn vt cv c0c cce co wne c1c c1st c2nd csn cima wcel wbr oveq1 neeq1d
       c0 wceq cplc ccnv cres cfullfun ccompl cab cvv wn vex elcompl cop wrex wa
@@ -55198,7 +55203,7 @@ $)
     cenc.1 $e |- A e. _V $.
     cenc.2 $e |- B e. _V $.
     $( Cardinal exponentiation in terms of cardinality.  Theorem XI.2.39 of
-       [Rosser], p. 382. $)
+       {{Rosser}}, p. 382. $)
     cenc $p |- ( Nc ~P1 A ^c Nc ~P1 B ) = Nc ( A ^m B ) $=
       ( vg vp vt va vb cpw1 cnc co cmap cv wcel cen wbr w3a wex wb cce wa enpw1
       elnc bitr4i enmap1 enmap2 entr syl2an syl2anb ancoms sylan 3impa exlimivv
@@ -55219,25 +55224,25 @@ $)
     $d a b $.  $d a g $.  $d b g $.  $d M a $.  $d M b $.  $d M g $.  $d N a $.
     $d N b $.  $d N g $.
     $( Cardinal exponentiation is non-empty iff the two sets raised to zero are
-       non-empty.  Theorem XI.2.47 of [Rosser], p. 384. $)
+       non-empty.  Theorem XI.2.47 of {{Rosser}}, p. 384. $)
     ce0nnulb $p |- ( ( N e. NC /\ M e. NC ) -> ( ( ( N ^c 0c ) =/= (/) /\ ( M
         ^c 0c ) =/= (/) ) <-> ( N ^c M ) =/= (/) ) ) $=
-       ( va vb vg cncs wcel wa c0c cce co c0 wne cpw1 wex ce0nnul bi2anan9 wceq
-       cv cnc eeanv syl6bbr ncseqnc cmap vex cenc ovex ncid ne0i eqnetri oveq12
-       ax-mp neeq1d mpbiri syl6bir exlimdvv n0 cen wbr w3a 3simpa 2eximi syl6bi
-       elce exlimdv syl5bi impbid bitrd ) BFGZAFGZHZBIJKLMZAIJKLMZHZCSZNZBGZDSZ
-       NZAGZHZDOCOZBAJKZLMZVKVNVQCOZVTDOZHWBVIVLWEVJVMWFBCPADPQVQVTCDUAUBVKWBWD
-       VKWAWDCDVKWABVPTZRZAVSTZRZHZWDVIWHVQVJWJVTBVPUCAVSUCQWKWDWGWIJKZLMWLVOVR
-       UDKZTZLVOVRCUEDUEUFWMWNGWNLMWMVOVRUDUGUHWNWMUIULUJWKWCWLLBWGAWIJUKUMUNUO
-       UPWDESZWCGZEOVKWBEWCUQVKWPWBEVKWPVQVTWOWMURUSZUTZDOCOWBCDWOABVDWRWACDVQV
-       TWQVAVBVCVEVFVGVH $.
-       $( [9-Mar-2015] $)
+      ( va vb vg cncs wcel wa c0c cce co wne cpw1 wex ce0nnul bi2anan9 cnc wceq
+      c0 cv eeanv syl6bbr ncseqnc cmap cenc ovex ncid ne0i ax-mp eqnetri oveq12
+      vex neeq1d mpbiri syl6bir exlimdvv cen wbr w3a elce 3simpa 2eximi exlimdv
+      n0 syl6bi syl5bi impbid bitrd ) BFGZAFGZHZBIJKSLZAIJKSLZHZCTZMZBGZDTZMZAG
+      ZHZDNCNZBAJKZSLZVKVNVQCNZVTDNZHWBVIVLWEVJVMWFBCOADOPVQVTCDUAUBVKWBWDVKWAW
+      DCDVKWABVPQZRZAVSQZRZHZWDVIWHVQVJWJVTBVPUCAVSUCPWKWDWGWIJKZSLWLVOVRUDKZQZ
+      SVOVRCULDULUEWMWNGWNSLWMVOVRUDUFUGWNWMUHUIUJWKWCWLSBWGAWIJUKUMUNUOUPWDETZ
+      WCGZENVKWBEWCVDVKWPWBEVKWPVQVTWOWMUQURZUSZDNCNWBCDWOABUTWRWACDVQVTWQVAVBV
+      EVCVFVGVH $.
+      $( [9-Mar-2015] $)
   $}
 
   ${
     $d a b $.  $d M a $.  $d M b $.  $d N a $.  $d N b $.
     $( Biconditional closure law for cardinal exponentiation.  Theorem XI.2.48
-       of [Rosser], p. 384. $)
+       of {{Rosser}}, p. 384. $)
     ceclb $p |- ( ( M e. NC /\ N e. NC ) ->
        ( ( ( M ^c 0c ) =/= (/) /\ ( N ^c 0c ) =/= (/) ) <-> ( M ^c N ) e. NC )
         ) $=
@@ -55253,47 +55258,47 @@ $)
 
   ${
     $( Cardinal exponentiation to zero is a cardinal iff it is non-empty.
-       Corollary 1 of theorem XI.2.38 of [Rosser], p. 384. $)
+       Corollary 1 of theorem XI.2.38 of {{Rosser}}, p. 384. $)
     ce0nulnc $p |- ( M e. NC -> ( ( M ^c 0c ) =/= (/) <-> ( M ^c 0c ) e. NC ) )
         $=
-       ( vm c0c cce co c0 wne wa cncs wcel cv cpw1 wex nulel0c wceq pw1eq ax-mp
-       0ex wb 0cnc pw10 syl6eq eleq1d cla4ev ce0nnul mpbir biantru ceclb syl5bb
-       mpan2 ) ACDEZFGZULCCDEFGZHZAIJZUKIJZUMULUMBKZLZCJZBMZFCJZUTNUSVABFRUQFOZ
-       URFCVBURFLFUQFPUAUBUCUDQCIJZUMUTSTCBUEQUFUGUOVCUNUPSTACUHUJUI $.
-       $( [13-Mar-2015] $)
+      ( vm c0c cce co c0 wne wa cncs wcel cpw1 wex nulel0c 0ex wceq pw1eq ax-mp
+      cv wb 0cnc syl6eq eleq1d cla4ev ce0nnul mpbir biantru ceclb mpan2 syl5bb
+      pw10 ) ACDEZFGZULCCDEFGZHZAIJZUKIJZUMULUMBRZKZCJZBLZFCJZUTMUSVABFNUQFOZUR
+      FCVBURFKFUQFPUJUAUBUCQCIJZUMUTSTCBUDQUEUFUOVCUNUPSTACUGUHUI $.
+      $( [13-Mar-2015] $)
   $}
 
   ${
     $d M a $.
     $( If cardinal exponentiation to zero is a cardinal, then the base is the
        cardinality of some unit power class.  Corollary 2 of theorem XI.2.48 of
-       [Rosser], p. 384. $)
+       {{Rosser}}, p. 384. $)
     ce0ncpw1 $p |- ( ( M e. NC /\ ( M ^c 0c ) e. NC ) -> E. a M = Nc ~P1 a ) $=
-       ( cncs wcel c0c cce co cv cpw1 cnc wceq wex c0 wne nulnnc eleq1 necon2ai
-       mtbiri ce0nnul ncseqnc exbidv bitr4d syl5ib imp ) ACDZAEFGZCDZABHIZJKZBL
-       ZUGUFMNZUEUJUGUFMUFMKUGMCDOUFMCPRQUEUKUHADZBLUJABSUEUIULBAUHTUAUBUCUD $.
-       $( [9-Mar-2015] $)
+      ( cncs wcel c0c cce co cv cpw1 cnc wceq wex c0 wne nulnnc mtbiri necon2ai
+      eleq1 ce0nnul ncseqnc exbidv bitr4d syl5ib imp ) ACDZAEFGZCDZABHIZJKZBLZU
+      GUFMNZUEUJUGUFMUFMKUGMCDOUFMCRPQUEUKUHADZBLUJABSUEUIULBAUHTUAUBUCUD $.
+      $( [9-Mar-2015] $)
   $}
 
   ${
     $( Closure law for cardinal exponentiation.  Corollary 3 of theorem XI.2.48
-       of [Rosser], p. 384. $)
-    cecl $p |- ( ( ( M e. NC /\ N e. NC ) /\ 
+       of {{Rosser}}, p. 384. $)
+    cecl $p |- ( ( ( M e. NC /\ N e. NC ) /\
           ( ( M ^c 0c ) e. NC /\ ( N ^c 0c ) e. NC ) ) -> ( M ^c N ) e. NC ) $=
-       ( cncs wcel wa c0c cce co c0 wne wceq nulnnc eleq1 mtbiri necon2ai ceclb
-       anim12i syl5ib imp ) ACDBCDEZAFGHZCDZBFGHZCDZEZABGHCDZUEUAIJZUCIJZETUFUB
-       UGUDUHUBUAIUAIKUBICDZLUAICMNOUDUCIUCIKUDUILUCICMNOQABPRS $.
-       $( [9-Mar-2015] $)
+      ( cncs wcel wa c0c cce co c0 wne wceq nulnnc eleq1 necon2ai anim12i ceclb
+      mtbiri syl5ib imp ) ACDBCDEZAFGHZCDZBFGHZCDZEZABGHCDZUEUAIJZUCIJZETUFUBUG
+      UDUHUBUAIUAIKUBICDZLUAICMQNUDUCIUCIKUDUILUCICMQNOABPRS $.
+      $( [9-Mar-2015] $)
   $}
 
   ${
     $( Reverse closure law for cardinal exponentiation. $)
     ceclr $p |- ( ( M e. NC /\ N e. NC /\ ( M ^c N ) e. NC ) ->
        ( ( M ^c 0c ) e. NC /\ ( N ^c 0c ) e. NC ) ) $=
-       ( cncs wcel cce co w3a c0c c0 wne wa ceclb biimp3ar wb ce0nulnc bi2anan9
-       3adant3 mpbid ) ACDZBCDZABEFCDZGAHEFZIJZBHEFZIJZKZUBCDZUDCDZKZSTUFUAABLM
-       STUFUINUASUCUGTUEUHAOBOPQR $.
-       $( [13-Mar-2015] $)
+      ( cncs wcel cce co w3a c0c c0 wa ceclb biimp3ar ce0nulnc bi2anan9 3adant3
+      wne wb mpbid ) ACDZBCDZABEFCDZGAHEFZIPZBHEFZIPZJZUBCDZUDCDZJZSTUFUAABKLST
+      UFUIQUASUCUGTUEUHAMBMNOR $.
+      $( [13-Mar-2015] $)
   $}
 
   ${
@@ -55301,19 +55306,19 @@ $)
     $d p x $.  $d p y $.  $d x y $.
     $( Full functionhood statement for cardinal exponentiation. $)
     fce $p |- ^c : ( NC X. NC ) --> ( NC u. { (/) } ) $=
-       ( vp vn vm vx vy cncs c0 cce fnce cv cfv wcel wral co wa wceq wne wex wo
-       bitri cxp csn cun wf wfn crn wss wn df-ne c0c cpw1 cmap cen wbr w3a elce
-       wi n0 3simpa ce0nnuli im2anan9 syl5 exlimdvv sylbid exlimdv syl5bi ceclb
-       sylibd syl5bir elun ovex elsn orbi2i orcom df-or sylibr rgen2a cop fveq2
-       ex df-ov syl6eqr eleq1d ralxp mpbir fnfvrnss mp2an df-f mpbir2an ) FFUAZ
-       FGUBZUCZHUDHWJUEZHUFWLUGZIWMAJZHKZWLLZAWJMZWNIWRBJZCJZHNZWLLZCFMBFMXBBCF
-       WSFLZWTFLZOZXAGPZUHZXAFLZUQZXBXGXAGQZXEXHXAGUIXEXJWSUJHNGQZWTUJHNGQZOZXH
-       XJWOXALZARXEXMAXAURXEXNXMAXEXNDJZUKWSLZEJZUKWTLZWOXOXQULNUMUNZUOZERDRXMD
-       EWOWTWSUPXEXTXMDEXTXPXROXEXMXPXRXSUSXCXPXKXDXRXLXCXPXKXOWSUTVTXDXRXLXQWT
-       UTVTVAVBVCVDVEVFWSWTVGVHVIXBXHXAWKLZSZXIXAFWKVJYBXHXFSZXIYAXFXHXAGWSWTHV
-       KVLVMYCXFXHSXIXHXFVNXFXHVOTTTVPVQWQXBABCFFWOWSWTVRZPZWPXAWLYEWPYDHKXAWOY
-       DHVSWSWTHWAWBWCWDWEAWJWLHWFWGWJWLHWHWI $.
-       $( [13-Mar-2015] $)
+      ( vp vn vm vx vy cncs c0 cce fnce cv cfv wcel wral co wa wne wex wo bitri
+      wceq cxp csn cun wf wfn crn wss wn wi df-ne c0c n0 cpw1 cmap cen wbr elce
+      w3a 3simpa ce0nnuli ex im2anan9 syl5 exlimdvv sylbid exlimdv syl5bi ceclb
+      sylibd syl5bir elun ovex orbi2i orcom df-or sylibr rgen2a cop fveq2 df-ov
+      elsn syl6eqr eleq1d ralxp mpbir fnfvrnss mp2an df-f mpbir2an ) FFUAZFGUBZ
+      UCZHUDHWJUEZHUFWLUGZIWMAJZHKZWLLZAWJMZWNIWRBJZCJZHNZWLLZCFMBFMXBBCFWSFLZW
+      TFLZOZXAGTZUHZXAFLZUIZXBXGXAGPZXEXHXAGUJXEXJWSUKHNGPZWTUKHNGPZOZXHXJWOXAL
+      ZAQXEXMAXAULXEXNXMAXEXNDJZUMWSLZEJZUMWTLZWOXOXQUNNUOUPZURZEQDQXMDEWOWTWSU
+      QXEXTXMDEXTXPXROXEXMXPXRXSUSXCXPXKXDXRXLXCXPXKXOWSUTVAXDXRXLXQWTUTVAVBVCV
+      DVEVFVGWSWTVHVIVJXBXHXAWKLZRZXIXAFWKVKYBXHXFRZXIYAXFXHXAGWSWTHVLWAVMYCXFX
+      HRXIXHXFVNXFXHVOSSSVPVQWQXBABCFFWOWSWTVRZTZWPXAWLYEWPYDHKXAWOYDHVSWSWTHVT
+      WBWCWDWEAWJWLHWFWGWJWLHWHWI $.
+      $( [13-Mar-2015] $)
   $}
 
   $( Closure law for cardinal exponentiation when the base is a natural. $)
@@ -55327,32 +55332,32 @@ $)
   ${
     $d M a $.
     $( The value of non-empty cardinal exponentiation.  Theorem XI.2.49 of
-       [Rosser], p. 385. $)
+       {{Rosser}}, p. 385. $)
     ce0 $p |- ( ( M e. NC /\ ( M ^c 0c ) e. NC ) -> ( M ^c 0c ) = 1c ) $=
-       ( va cncs wcel c0c cce co wa csn cnc c1c wceq cpw1 wex ce0ncpw1 cmap vex
-       c0 cv 0ex map0e ovex ncid eqeltrri cenc df0c2 pw10 nceqi eqtr4i oveq12
-       eleqtrri mpan2 syl5eleqr exlimiv syl ncseqnc adantl mpbird df1c3 syl6eqr
-       wb ) ACDZAEFGZCDZHZVCRIZJZKVEVCVGLZVFVCDZVEABSZMJZLZBNVIABOVLVIBVLVFVKRM
-       ZJZFGZVCVFVJRPGZJZVOVPVFVQVJBQZUAVPVJRPUBUCUDVJRVRTUEUKVLEVNLVCVOLERJVNU
-       FVMRUGUHUIAVKEVNFUJULUMUNUOVDVHVIVAVBVCVFUPUQURRTUSUT $.
-       $( [9-Mar-2015] $)
+      ( va cncs wcel c0c cce co wa c0 csn cnc c1c wceq cv cpw1 wex ce0ncpw1 vex
+      cmap 0ex map0e ovex ncid eqeltrri cenc eleqtrri df0c2 nceqi eqtr4i oveq12
+      pw10 mpan2 syl5eleqr exlimiv syl wb ncseqnc adantl mpbird df1c3 syl6eqr )
+      ACDZAEFGZCDZHZVCIJZKZLVEVCVGMZVFVCDZVEABNZOKZMZBPVIABQVLVIBVLVFVKIOZKZFGZ
+      VCVFVJISGZKZVOVPVFVQVJBRZUAVPVJISUBUCUDVJIVRTUEUFVLEVNMVCVOMEIKVNUGVMIUKU
+      HUIAVKEVNFUJULUMUNUOVDVHVIUPVBVCVFUQURUSITUTVA $.
+      $( [9-Mar-2015] $)
   $}
 
   ${
     $d A t $.  $d A x $.  $d A y $.  $d t x $.  $d t y $.  $d x y $.
     $( Membership in cardinal two. $)
     el2c $p |- ( A e. 2c <-> E. x E. y ( x =/= y /\ A = { x , y } ) ) $=
-       ( vt c1c wcel cv csn wceq cun ccompl wrex wa wex c2c df-rex bicomi bitri
-       exbii weq cplc wne cpr elsuc el1c anbi1i 19.41v excom 1p1e2c eleq2i snex
-       compleq eleq2d uneq1 eqeq2d anbi12d exbidv syl5bb ceqsexv wn vex elcompl
-       elsn equcom necon3bbii df-pr eqeq2i anbi12i 3bitr3i ) CEEUAZFZDGZAGZHZIZ
-       CVLBGZHZJZIZBVLKZLZMZDNZANZCOFVMVPUBZCVMVPUCZIZMZBNZANVKWADELZWDBCEDUDWJ
-       VLEFZWAMZDNZWDWADEPWMWBANZDNWDWLWNDWLVOANZWAMZWNWKWOWAAVLUEUFWNWPVOWAAUG
-       QRSWBDAUHRRRVJOCUIUJWCWIAWCVPVNKZFZCVNVQJZIZMZBNZWIWAXBDVNVMUKWAVPVTFZVS
-       MZBNVOXBVSBVTPVOXDXABVOXCWRVSWTVOVTWQVPVLVNULUMVOVRWSCVLVNVQUNUOUPUQURUS
-       XAWHBWRWEWTWGWRVPVNFZUTWEVPVNBVAZVBXEVMVPXEBATABTVPVMXFVCBAVDRVERWGWTWFW
-       SCVMVPVFVGQVHSRSVI $.
-       $( [3-Mar-2015] $)
+      ( vt c1c wcel cv csn wceq cun ccompl wa wex c2c df-rex bicomi bitri exbii
+      wrex weq cplc wne cpr elsuc el1c anbi1i 19.41v 1p1e2c eleq2i snex compleq
+      excom eleq2d uneq1 eqeq2d anbi12d exbidv syl5bb ceqsexv wn elcompl equcom
+      vex elsn necon3bbii df-pr eqeq2i anbi12i 3bitr3i ) CEEUAZFZDGZAGZHZIZCVLB
+      GZHZJZIZBVLKZSZLZDMZAMZCNFVMVPUBZCVMVPUCZIZLZBMZAMVKWADESZWDBCEDUDWJVLEFZ
+      WALZDMZWDWADEOWMWBAMZDMWDWLWNDWLVOAMZWALZWNWKWOWAAVLUEUFWNWPVOWAAUGPQRWBD
+      AULQQQVJNCUHUIWCWIAWCVPVNKZFZCVNVQJZIZLZBMZWIWAXBDVNVMUJWAVPVTFZVSLZBMVOX
+      BVSBVTOVOXDXABVOXCWRVSWTVOVTWQVPVLVNUKUMVOVRWSCVLVNVQUNUOUPUQURUSXAWHBWRW
+      EWTWGWRVPVNFZUTWEVPVNBVCZVAXEVMVPXEBATABTVPVMXFVDBAVBQVEQWGWTWFWSCVMVPVFV
+      GPVHRQRVI $.
+      $( [3-Mar-2015] $)
   $}
 
 
@@ -55360,7 +55365,7 @@ $)
     $d A p $.  $d A x $.  $d A y $.  $d p x $.  $d p y $.  $d x y $.
     ce2.1 $e |- A e. _V $.
     $( The value of base two cardinal exponentiation.  Theorem XI.2.70 of
-       [Rosser]. $)
+       {{Rosser}}. $)
     ce2 $p |- ( M = Nc ~P1 A -> ( 2c ^c M ) = Nc ~P A ) $=
       ( vx vy cpw1 cnc wceq c2c cce co cvv c0 cpr wcel csn cun eqtri wne mpbir
       cpw oveq2 cmap df-pr pw1eq ax-mp pw1un pw1sn 0ex uneq12i eqtr4i cv wa wex
@@ -55377,14 +55382,14 @@ $)
   $}
 
   $( Compute an exponent of the cardinality of one.  Theorem 4.3 of
-     [Specker]. $)
+     {{Specker}}. $)
   ce2nc1 $p |- ( 2c ^c Nc 1c ) = Nc _V $=
     ( c2c c1c cnc cce co cvv cpw cpw1 wceq df1c2 nceqi vvex ce2 ax-mp pwv eqtri
     ) ABCZDEZFGZCZFCQFHZCIRTIBUAJKFQLMNSFOKP $.
     $( [4-Mar-2015] $)
 
   $( Compute an exponent of the cardinality of the unit power class of one.
-     Theorem 4.4 of [Specker]. $)
+     Theorem 4.4 of {{Specker}}. $)
   ce2ncpw11c $p |- ( 2c ^c Nc ~P1 1c ) = Nc 1c $=
     ( c2c c1c cpw1 cnc cce co cpw wceq eqid 1cex ce2 ax-mp ncpw1c eqtri ) ABCDZ
     EFZBGDZBDOOHPQHOIBOJKLMN $.
@@ -55397,26 +55402,26 @@ $)
     nclec.2 $e |- B e. _V $.
     $( A relationship between cardinality, subset, and cardinal less than. $)
     nclec $p |- ( A C_ B -> Nc A <_c Nc B ) $=
-       ( vx vy wss cv cnc wrex clec wcel ncid sseq1 sseq2 rcla42ev mp3an12 ncex
-       wbr brlec sylibr ) ABGZEHZFHZGZFBIZJEAIZJZUGUFKSAUGLBUFLUBUHACMBDMUEUBAU
-       DGEFABUGUFUCAUDNUDBAOPQEFUGUFARBRTUA $.
-       $( [17-Mar-2015] $)
+      ( vx vy wss cnc wrex clec wbr wcel ncid sseq1 sseq2 rcla42ev mp3an12 ncex
+      cv brlec sylibr ) ABGZESZFSZGZFBHZIEAHZIZUGUFJKAUGLBUFLUBUHACMBDMUEUBAUDG
+      EFABUGUFUCAUDNUDBAOPQEFUGUFARBRTUA $.
+      $( [17-Mar-2015] $)
   $}
 
   ${
     $d A x y $.
     $( A non-empty set is less than or equal to itself.  Theorem XI.2.14 of
-       [Rosser], p. 375. $)
+       {{Rosser}}, p. 375. $)
     lecidg $p |- ( ( A e. V /\ A =/= (/) ) -> A <_c A ) $=
-       ( vx vy wcel c0 wne wa clec wbr cv wss wrex wex ssid sseq2 rcla4ev mpan2
-       ancli eximi n0 df-rex 3imtr4i adantl wb brlecg anidms adantr mpbird ) AB
-       EZAFGZHAAIJZCKZDKZLZDAMZCAMZUKUQUJUMAEZCNURUPHZCNUKUQURUSCURUPURUMUMLZUP
-       UMOUOUTDUMAUNUMUMPQRSTCAUAUPCAUBUCUDUJULUQUEZUKUJVACDAABBUFUGUHUI $.
-       $( [4-Mar-2015] $)
+      ( vx vy wcel c0 wne wa clec wbr cv wss wrex wex sseq2 rcla4ev mpan2 ancli
+      ssid eximi n0 df-rex 3imtr4i adantl wb brlecg anidms adantr mpbird ) ABEZ
+      AFGZHAAIJZCKZDKZLZDAMZCAMZUKUQUJUMAEZCNURUPHZCNUKUQURUSCURUPURUMUMLZUPUMS
+      UOUTDUMAUNUMUMOPQRTCAUAUPCAUBUCUDUJULUQUEZUKUJVACDAABBUFUGUHUI $.
+      $( [4-Mar-2015] $)
   $}
 
   $( A cardinal is less than or equal to itself.  Corollary 1 of theorem
-     XI.2.14 of [Rosser], p. 376. $)
+     XI.2.14 of {{Rosser}}, p. 376. $)
   nclecid $p |- ( A e. NC -> A <_c A ) $=
     ( cncs wcel c0 wne clec wbr wceq nulnnc eleq1 mtbiri necon2ai lecidg mpdan
     ) ABCZADEAAFGOADADHODBCIADBJKLABMN $.
@@ -55425,48 +55430,49 @@ $)
   ${
     $d A x $.  $d A y $.  $d x y $.
     $( Cardinal zero is a minimal element of cardinal less than or equal.
-       Theorem XI.2.15 of [Rosser], p. 376. $)
+       Theorem XI.2.15 of {{Rosser}}, p. 376. $)
     lec0cg $p |- ( ( A e. V /\ A =/= (/) ) -> 0c <_c A ) $=
-       ( vx vy wcel c0 wne wa c0c clec wbr cv wss wrex wex 0ss jctr wceq wb cvv
-       eximi df-rex 3imtr4i csn df-0c rexeq ax-mp 0ex sseq1 rexbidv rexsn bitri
-       n0 sylibr adantl 0cex brlecg mpan adantr mpbird ) ABEZAFGZHIAJKZCLZDLZMZ
-       DANZCINZVBVHVAVBFVEMZDANZVHVEAEZDOVKVIHZDOVBVJVKVLDVKVIVEPQUADAUMVIDAUBU
-       CVHVGCFUDZNZVJIVMRVHVNSUEVGCIVMUFUGVGVJCFUHVDFRVFVIDAVDFVEUIUJUKULUNUOVA
-       VCVHSZVBITEVAVOUPCDIATBUQURUSUT $.
-       $( [4-Mar-2015] $)
+      ( vx vy wcel c0 wne wa c0c clec wbr cv wss wrex wex 0ss jctr wceq wb cvv
+      eximi df-rex 3imtr4i csn df-0c rexeq ax-mp 0ex sseq1 rexbidv rexsn sylibr
+      n0 bitri adantl 0cex brlecg mpan adantr mpbird ) ABEZAFGZHIAJKZCLZDLZMZDA
+      NZCINZVBVHVAVBFVEMZDANZVHVEAEZDOVKVIHZDOVBVJVKVLDVKVIVEPQUADAUMVIDAUBUCVH
+      VGCFUDZNZVJIVMRVHVNSUEVGCIVMUFUGVGVJCFUHVDFRVFVIDAVDFVEUIUJUKUNULUOVAVCVH
+      SZVBITEVAVOUPCDIATBUQURUSUT $.
+      $( [4-Mar-2015] $)
 
     $( The cardinality of ` _V ` is a maximal element of cardinal less than or
-       equal.  Theorem XI.2.16 of [Rosser], p. 376. $)
+       equal.  Theorem XI.2.16 of {{Rosser}}, p. 376. $)
     lecncvg $p |- ( ( A e. V /\ A =/= (/) ) -> A <_c Nc _V ) $=
-       ( vx vy wcel c0 wne wa cvv cnc clec wbr wss wrex wex vvex ncid ssv sseq2
-       cv rcla4ev mp2an jctr eximi n0 df-rex 3imtr4i adantl brlecg mpan2 adantr
-       wb ncex mpbird ) ABEZAFGZHAIJZKLZCTZDTZMZDUQNZCANZUPVCUOUSAEZCOVDVBHZCOU
-       PVCVDVECVDVBIUQEUSIMZVBIPQUSRVAVFDIUQUTIUSSUAUBUCUDCAUEVBCAUFUGUHUOURVCU
-       LZUPUOUQIEVGIUMCDAUQBIUIUJUKUN $.
-       $( [4-Mar-2015] $)
+      ( vx vy wcel c0 wne wa cvv cnc clec wbr wss wrex wex vvex ncid ssv sseq2
+      cv rcla4ev mp2an jctr eximi n0 df-rex 3imtr4i adantl wb ncex brlecg mpan2
+      adantr mpbird ) ABEZAFGZHAIJZKLZCTZDTZMZDUQNZCANZUPVCUOUSAEZCOVDVBHZCOUPV
+      CVDVECVDVBIUQEUSIMZVBIPQUSRVAVFDIUQUTIUSSUAUBUCUDCAUEVBCAUFUGUHUOURVCUIZU
+      PUOUQIEVGIUJCDAUQBIUKULUMUN $.
+      $( [4-Mar-2015] $)
   $}
 
   $( Cardinal zero is a minimal element of cardinal less than or equal.  Lemma
-     1 of theorem XI.2.15 of [Rosser], p. 376. $)
+     1 of theorem XI.2.15 of {{Rosser}}, p. 376. $)
   le0nc $p |- ( A e. NC -> 0c <_c A ) $=
-      ( cncs wcel c0 wne c0c clec wbr nulnnc eleq1 mtbiri necon2ai lec0cg mpdan
-      wceq ) ABCZADEFAGHPADADOPDBCIADBJKLABMN $.
-      $( [12-Mar-2015] $)
+    ( cncs wcel wne c0c clec wbr wceq nulnnc eleq1 mtbiri necon2ai lec0cg mpdan
+    c0 ) ABCZAODEAFGPAOAOHPOBCIAOBJKLABMN $.
+    $( [12-Mar-2015] $)
 
   ${
     $( The cardinality of a unit power class is not equal to the cardinality of
-       the power class.  Theorem XI.2.4 of [Rosser], p. 372. $)
+       the power class.  Theorem XI.2.4 of {{Rosser}}, p. 372. $)
     ncpw1pwneg $p |- ( A e. V -> Nc ~P1 A =/= Nc ~P A ) $=
-       ( wcel cpw1 cnc cpw wne cen wbr wn nenpw1pw cvv wceq wb pw1exg eqncg syl
-       necon3abid mpbiri ) ABCZADZEZAFZEZGUAUCHIZJAKTUEUBUDTUALCUBUDMUENABOUAUC
-       LPQRS $.
-       $( [10-Mar-2015] $)
+      ( wcel cpw1 cnc cpw wne cen wbr wn nenpw1pw cvv wceq wb pw1exg necon3abid
+      eqncg syl mpbiri ) ABCZADZEZAFZEZGUAUCHIZJAKTUEUBUDTUALCUBUDMUENABOUAUCLQ
+      RPS $.
+      $( [10-Mar-2015] $)
   $}
 
   ${
     $d A x $.  $d A y $.  $d x y $.
     $( The cardinality of a unit power class is strictly less than the
-       cardinality of the power class.  Theorem XI.2.17 of [Rosser], p. 376. $)
+       cardinality of the power class.  Theorem XI.2.17 of {{Rosser}},
+       p. 376. $)
     ltcpw1pwg $p |- ( A e. V -> Nc ~P1 A <c Nc ~P A ) $=
       ( vx vy wcel cpw1 cnc cpw clec wbr wne cltc wss wrex cvv pw1exg ncidg syl
       cv ncex pwexg pw1sspw sseq1 sseq2 rcla42ev mp3an3 brlec sylibr ncpw1pwneg
@@ -55485,55 +55491,55 @@ $)
     sbthlem1.6 $e |- C = ( ran R i^i G ) $.
     sbthlem1.7 $e |- D = ( ran R \ G ) $.
     $( Lemma for ~ sbth .  Set up similarity with a range.  Theorem XI.1.14 of
-       [Rosser], p. 350. $)
-    sbthlem1 $p |- ( ( ( Fun R /\ Fun `' R ) /\ 
+       {{Rosser}}, p. 350. $)
+    sbthlem1 $p |- ( ( ( Fun R /\ Fun `' R ) /\
        ( X C_ dom R /\ ran R C_ X ) ) -> ran R ~~ X ) $=
-       ( wa wss cun cen cin c0 wfun ccnv cdm crn wbr cima cres wf1 wf df-f1 wfn
-       wf1o ssid df-f mpbiran2 funfn bitr4i anbi1i bitri biimpri inss1 syl5eqss
-       sstr mpan adantr f1ores syl2an cvv cdif cclos1 rnex clos1ex eqeltri inex
-       difex resex f1oen syl clos1baseima ineq2i disjdif uneq1i uncom un0 eqtri
-       indi 3eqtri inss2 a1i wceq imassrn simprr difss jctil unss sylib sseqin2
-       syl5ss syl5eq sseqtr4d ssun2 sseqtr4i sseq1d mpbiri ssin syl6sseqr eqssd
-       imaeq2d breqtrrd enrflx ccompl difsscompl df-dif clos1base mpbi compleqi
-       sscon34 iinun dblcompl sseqtri sslin ax-mp eqsstri incompl sstri 3sstr4g
-       uneq2i ssdif syl5breq ineq12i inindif unen mpanr12 syl2anc ensym uneq12i
-       inundif 3brtr3g ) EUAZEUBUAZOZGEUCZPZEUDZGPZOZOZCDQZABQZUUDGRUUGUUIUUHRU
-       EZUUHUUIRUEUUGACRUEZBDRUEZUUJUUGAEAUFZCRUUGAUUMEAUGZULZAUUMRUEUUAUUBUUDE
-       UHZAUUBPZUUOUUFUUPUUAUUPUUBUUDEUIZYTOUUAUUBUUDEUJUURYSYTUUREUUBUKZYSUURU
-       USUUDUUDPUUDUMUUBUUDEUNUOEUPUQURUSUTUUCUUQUUEUUCAGFSZUUBKUUTGPUUCUUTUUBP
-       GFVAUUTGUUBVCVDVBVEUUBUUDAEVFVGAUUMUUNEAHAUUTVHKGFIFGUUDVIZEVJVHJEUVAGUU
-       DIEHVKVOZHVLVMZVNVMVPVQVRUUGCUUMUUGCEFUFZUUMUUGCUUDUVDSZUVDCUUDFSZUUDUVA
-       UVDQZSZUVEMFUVGUUDFEUVAUVBHJVSZVTUVHUUDUVASZUVEQTUVEQZUVEUUDUVAUVDWFUVJT
-       UVEUUDGWAWBUVKUVETQUVETUVEWCUVEWDWEWGWGUVEUVDPUUGUUDUVDWHWIVBUUGAFEUUGAU
-       UTFKUUGFGPUUTFWJUUGFUVGGUVIUUGUVAGPZUVDGPZOUVGGPUUGUVMUVLUUGUVDUUDGEFWKU
-       UAUUCUUEWLZWRGUUDWMWNUVAUVDGWOWPVBFGWQWPWSXHZWTUUGUUMUVFCUUGUUMUUDPZUUMF
-       PZOUUMUVFPUUGUVQUVPUUGUVQUVDFPUVDUVGFUVDUVAXAUVIXBUUGUUMUVDFUVOXCXDEAWKW
-       NUUMUUDFXEWPMXFXGXIUUGBBDRBBGFVIZVHLGFIUVCVOVMXJUUGBDUUGUVRUUDFXKZSZBDUU
-       GUVRUUDPZUVRUVSPZOUVRUVTPUUGUWBUWAUWBUUGGFXLWIUVRGGXKZUUDQZSZUUDUVRGUVSS
-       ZUWEGFXMUVSUWDPUWFUWEPUVSUVAXKZUWDUVAFPUVSUWGPFEUVAJXNUVAFXQXOUWGGUUDXKZ
-       SZXKUWCUWHXKZQUWDUVAUWIGUUDXMXPGUWHXRUWJUUDUWCUUDXSYGWGXTUVSUWDGYAYBYCUW
-       EGUUDSZUUDUWEGUWCSZUWKQTUWKQZUWKGUWCUUDWFUWLTUWKGYDWBUWMUWKTQUWKTUWKWCUW
-       KWDWEWGGUUDWHYCYEWNUVRUUDUVSXEWPLDUUDFVIZUVTNUUDFXMWEYFUUGUWNUVRDBUUGUUE
-       UWNUVRPUVNUUDGFYHVRNLYFXGYIUUKUULOABSZTWJCDSZTWJUUJUWOUUTUVRSTAUUTBUVRKL
-       YJGFYKWEUWPUVFUWNSTCUVFDUWNMNYJUUDFYKWEACBDYLYMYNUUIUUHYOWPUUHUVFUWNQUUD
-       CUVFDUWNMNYPUUDFYQWEUUIUUTUVRQGAUUTBUVRKLYPGFYQWEYR $.
-       $( [11-Mar-2015] $)
+      ( wa wss cun cen cin c0 wfun ccnv cdm crn wbr cima cres wf1o wf1 wf df-f1
+      wfn ssid df-f mpbiran2 funfn bitr4i anbi1i bitri inss1 sstr mpan syl5eqss
+      biimpri adantr f1ores syl2an cdif cclos1 rnex difex clos1ex eqeltri resex
+      cvv inex f1oen clos1baseima ineq2i indi disjdif uneq1i uncom eqtri 3eqtri
+      syl un0 inss2 wceq imassrn simprr syl5ss difss jctil sylib sseqin2 syl5eq
+      a1i unss imaeq2d sseqtr4d ssun2 sseqtr4i sseq1d mpbiri syl6sseqr breqtrrd
+      ssin eqssd enrflx ccompl difsscompl clos1base sscon34 mpbi compleqi iinun
+      df-dif dblcompl uneq2i sseqtri sslin ax-mp eqsstri incompl sstri syl5breq
+      3sstr4g ssdif ineq12i inindif unen mpanr12 syl2anc ensym uneq12i inundif
+      3brtr3g ) EUAZEUBUAZOZGEUCZPZEUDZGPZOZOZCDQZABQZUUDGRUUGUUIUUHRUEZUUHUUIR
+      UEUUGACRUEZBDRUEZUUJUUGAEAUFZCRUUGAUUMEAUGZUHZAUUMRUEUUAUUBUUDEUIZAUUBPZU
+      UOUUFUUPUUAUUPUUBUUDEUJZYTOUUAUUBUUDEUKUURYSYTUUREUUBULZYSUURUUSUUDUUDPUU
+      DUMUUBUUDEUNUOEUPUQURUSVDUUCUUQUUEUUCAGFSZUUBKUUTGPUUCUUTUUBPGFUTUUTGUUBV
+      AVBVCVEUUBUUDAEVFVGAUUMUUNEAHAUUTVOKGFIFGUUDVHZEVIVOJEUVAGUUDIEHVJVKZHVLV
+      MZVPVMVNVQWFUUGCUUMUUGCEFUFZUUMUUGCUUDUVDSZUVDCUUDFSZUUDUVAUVDQZSZUVEMFUV
+      GUUDFEUVAUVBHJVRZVSUVHUUDUVASZUVEQTUVEQZUVEUUDUVAUVDVTUVJTUVEUUDGWAWBUVKU
+      VETQUVETUVEWCUVEWGWDWEWEUVEUVDPUUGUUDUVDWHWRVCUUGAFEUUGAUUTFKUUGFGPUUTFWI
+      UUGFUVGGUVIUUGUVAGPZUVDGPZOUVGGPUUGUVMUVLUUGUVDUUDGEFWJUUAUUCUUEWKZWLGUUD
+      WMWNUVAUVDGWSWOVCFGWPWOWQWTZXAUUGUUMUVFCUUGUUMUUDPZUUMFPZOUUMUVFPUUGUVQUV
+      PUUGUVQUVDFPUVDUVGFUVDUVAXBUVIXCUUGUUMUVDFUVOXDXEEAWJWNUUMUUDFXHWOMXFXIXG
+      UUGBBDRBBGFVHZVOLGFIUVCVKVMXJUUGBDUUGUVRUUDFXKZSZBDUUGUVRUUDPZUVRUVSPZOUV
+      RUVTPUUGUWBUWAUWBUUGGFXLWRUVRGGXKZUUDQZSZUUDUVRGUVSSZUWEGFXRUVSUWDPUWFUWE
+      PUVSUVAXKZUWDUVAFPUVSUWGPFEUVAJXMUVAFXNXOUWGGUUDXKZSZXKUWCUWHXKZQUWDUVAUW
+      IGUUDXRXPGUWHXQUWJUUDUWCUUDXSXTWEYAUVSUWDGYBYCYDUWEGUUDSZUUDUWEGUWCSZUWKQ
+      TUWKQZUWKGUWCUUDVTUWLTUWKGYEWBUWMUWKTQUWKTUWKWCUWKWGWDWEGUUDWHYDYFWNUVRUU
+      DUVSXHWOLDUUDFVHZUVTNUUDFXRWDYHUUGUWNUVRDBUUGUUEUWNUVRPUVNUUDGFYIWFNLYHXI
+      YGUUKUULOABSZTWICDSZTWIUUJUWOUUTUVRSTAUUTBUVRKLYJGFYKWDUWPUVFUWNSTCUVFDUW
+      NMNYJUUDFYKWDACBDYLYMYNUUIUUHYOWOUUHUVFUWNQUUDCUVFDUWNMNYPUUDFYQWDUUIUUTU
+      VRQGAUUTBUVRKLYPGFYQWDYR $.
+      $( [11-Mar-2015] $)
   $}
 
   ${
     $d B b $.  $d R b $.
     sbthlem2.1 $e |- R e. _V $.
     $( Lemma for ~ sbth .  Eliminate hypotheses from ~ sbthlem1 .  Theorem
-       XI.1.14 of [Rosser], p. 350. $)
-    sbthlem2 $p |- ( ( ( Fun R /\ Fun `' R ) /\ 
+       XI.1.14 of {{Rosser}}, p. 350. $)
+    sbthlem2 $p |- ( ( ( Fun R /\ Fun `' R ) /\
        ( B e. V /\ B C_ dom R /\ ran R C_ B ) ) -> ran R ~~ B ) $=
-       ( vb wcel cdm wss crn w3a wfun ccnv wa cen wbr wi cv cdif cin eqid sseq1
-       wceq sseq2 anbi12d breq2 imbi2d cclos1 vex sbthlem1 expcom vtoclg 3impib
-       imbi12d impcom ) ACFZABGZHZBIZAHZJBKBLKMZURANOZUOUQUSUTVAPZEQZUPHZURVCHZ
-       MZUTURVCNOZPZPUQUSMZVBPEACVCAUBZVFVIVHVBVJVDUQVEUSVCAUPUAVCAURUCUDVJVGVA
-       UTVCAURNUEUFUMUTVFVGVCVCURRBUGZSZVCVKRZURVKSZURVKRZBVKVCDEUHVKTVLTVMTVNT
-       VOTUIUJUKULUN $.
-       $( [10-Mar-2015] $)
+      ( vb wcel cdm wss crn w3a wfun ccnv wa cen wbr wi cv cdif cin eqid imbi2d
+      wceq sseq1 sseq2 anbi12d imbi12d cclos1 vex sbthlem1 expcom vtoclg 3impib
+      breq2 impcom ) ACFZABGZHZBIZAHZJBKBLKMZURANOZUOUQUSUTVAPZEQZUPHZURVCHZMZU
+      TURVCNOZPZPUQUSMZVBPEACVCAUBZVFVIVHVBVJVDUQVEUSVCAUPUCVCAURUDUEVJVGVAUTVC
+      AURNUMUAUFUTVFVGVCVCURRBUGZSZVCVKRZURVKSZURVKRZBVKVCDEUHVKTVLTVMTVNTVOTUI
+      UJUKULUN $.
+      $( [10-Mar-2015] $)
   $}
 
   ${
@@ -55541,27 +55547,27 @@ $)
     $d D s $.  $d r s $.
     $( Lemma for ~ sbth .  If ` A ` is equinumerous with a subset of ` B ` and
        vice-versa, then ` A ` is equinumerous with ` B ` .  Theorem XI.1.15 of
-       [Rosser], p. 353. $)
+       {{Rosser}}, p. 353. $)
     sbthlem3 $p |- ( ( ( A ~~ C /\ C C_ B ) /\ ( B ~~ D /\ D C_ A ) ) ->
        A ~~ B ) $=
-       ( vr vs cen wbr wss wf1o wex bitr4i crn cdm wceq syl ad2antlr wfun ccnv
-       wa cv wi bren anbi12i eeanv ccom simprl wfo f1ofo ad2antrr f1odm 3sstr4d
-       forn dmcosseq eqtrd f1ofun funco syl2anr wfn dff1o2 simp2bi syl2an cnvco
-       funeqi sylibr jca adantr w3a funfn anbi1i eqid df-3an mpbiran2 vex f1oen
-       coex eqbrtrrd cvv wcel simprr sseqtr4d rncoss syl5sseq sbthlem2 syl13anc
-       rnex syl6eqelr entr syl2anc ex exlimivv sylbi imp an4s ensymi ad2antrl )
-       ACGHZCBIZTZBDGHZDAIZTTADGHZDBGHZABGHWQWTWRXAXBWQWTTZWRXATZXBXDACEUAZJZBD
-       FUAZJZTZFKEKZXEXBUBZXDXGEKZXIFKZTXKWQXMWTXNACEUCBDFUCUDXGXIEFUELXJXLEFXJ
-       XEXBXJXETZAXHXFUFZMZGHXQDGHZXBXOXPNZAXQGXOXSXFNZAXOXFMZXHNZIXSXTOXOCBYAY
-       BXJWRXAUGXGYACOZXIXEXGACXFUHYCACXFUIACXFUMPUJXIYBBOXGXEBDXHUKQULXHXFUNPX
-       GXTAOXIXEACXFUKUJUOZXOXSXQXPJZXSXQGHXOXPRZXPSZRZTZYEXJYIXEXJYFYHXIXHRXFR
-       YFXGBDXHUPACXFUPXHXFUQURXJXFSZXHSZUFZRZYHXGYJRZYKRZYMXIXGXFAUSYNYCACXFUT
-       VAXIXHBUSYOXHMZDOZBDXHUTVAYJYKUQVBYGYLXHXFVCVDVEVFVGZYEXPXSUSZYHXQXQOZVH
-       ZYIXSXQXPUTYIYSYHTZUUAYFYSYHXPVIVJUUAUUBYTXQVKYSYHYTVLVMLLVEXSXQXPXHXFFV
-       NZEVNVPZVOPVQXOYIDVRVSZDXSIXQDIXRYRXIUUEXGXEXIDYPVRXIBDXHUHYQBDXHUIBDXHU
-       MPZXHUUCWFWGQXODAXSXJWRXAVTYDWAXOYPXQDXHXFWBXIYQXGXEUUFQWCDXPVRUUDWDWEAX
-       QDWHWIWJWKWLWMWNWTXCWSXABDWOWPADBWHWI $.
-       $( [10-Mar-2015] $)
+      ( vr vs cen wbr wss wf1o wex bitr4i crn cdm wceq syl ad2antlr wfun ccnv
+      wa cv wi bren anbi12i eeanv ccom simprl f1ofo forn ad2antrr f1odm 3sstr4d
+      wfo dmcosseq eqtrd f1ofun syl2anr wfn dff1o2 simp2bi syl2an funeqi sylibr
+      funco cnvco jca adantr w3a funfn anbi1i eqid df-3an mpbiran2 vex eqbrtrrd
+      coex f1oen wcel rnex syl6eqelr simprr sseqtr4d syl5sseq sbthlem2 syl13anc
+      cvv rncoss entr syl2anc ex exlimivv sylbi imp an4s ensymi ad2antrl ) ACGH
+      ZCBIZTZBDGHZDAIZTTADGHZDBGHZABGHWQWTWRXAXBWQWTTZWRXATZXBXDACEUAZJZBDFUAZJ
+      ZTZFKEKZXEXBUBZXDXGEKZXIFKZTXKWQXMWTXNACEUCBDFUCUDXGXIEFUELXJXLEFXJXEXBXJ
+      XETZAXHXFUFZMZGHXQDGHZXBXOXPNZAXQGXOXSXFNZAXOXFMZXHNZIXSXTOXOCBYAYBXJWRXA
+      UGXGYACOZXIXEXGACXFUMYCACXFUHACXFUIPUJXIYBBOXGXEBDXHUKQULXHXFUNPXGXTAOXIX
+      EACXFUKUJUOZXOXSXQXPJZXSXQGHXOXPRZXPSZRZTZYEXJYIXEXJYFYHXIXHRXFRYFXGBDXHU
+      PACXFUPXHXFVDUQXJXFSZXHSZUFZRZYHXGYJRZYKRZYMXIXGXFAURYNYCACXFUSUTXIXHBURY
+      OXHMZDOZBDXHUSUTYJYKVDVAYGYLXHXFVEVBVCVFVGZYEXPXSURZYHXQXQOZVHZYIXSXQXPUS
+      YIYSYHTZUUAYFYSYHXPVIVJUUAUUBYTXQVKYSYHYTVLVMLLVCXSXQXPXHXFFVNZEVNVPZVQPV
+      OXOYIDWFVRZDXSIXQDIXRYRXIUUEXGXEXIDYPWFXIBDXHUMYQBDXHUHBDXHUIPZXHUUCVSVTQ
+      XODAXSXJWRXAWAYDWBXOYPXQDXHXFWGXIYQXGXEUUFQWCDXPWFUUDWDWEAXQDWHWIWJWKWLWM
+      WNWTXCWSXABDWOWPADBWHWI $.
+      $( [10-Mar-2015] $)
   $}
 
   ${
@@ -55570,137 +55576,137 @@ $)
     $( The Schroder-Bernstein Theorem.  This theorem gives the antisymmetry law
        for cardinal less than or equal.  Translated out, it means that, if
        ` A ` is no larger than ` B ` and ` B ` is no larger than ` A ` , then
-       ` Nc A = Nc B ` .  Theorem XI.2.20 of [Rosser], p. 376. $)
-    sbth $p |- ( ( A e. NC /\ B e. NC ) -> 
+       ` Nc A = Nc B ` .  Theorem XI.2.20 of {{Rosser}}, p. 376. $)
+    sbth $p |- ( ( A e. NC /\ B e. NC ) ->
           ( ( A <_c B /\ B <_c A ) -> A = B ) ) $=
-       ( vg vb vd va cncs wcel wa clec wbr cv wss wrex brlecg reeanv cnc wi cen
-       wceq ancoms anbi12d 2rexbii bitri syl6bbr ncseqnc bi2anan9 biimpar ensym
-       wb simplr sylib simprl simpll simprr sbthlem3 syl22anc entr syl2anc elnc
-       anbi12i vex eqnc imbi2i 3imtr4i rexlimivv rexeq rexbidv sylan9bbr eqeq12
-       ex imbi12d mpbiri syl rexlimdvva sylbid ) AGHZBGHZIZABJKZBAJKZIZCLZDLZMZ
-       ELZFLZMZIZFANZDBNZEBNCANZABTZVSWBWEDBNZCANZWHFANZEBNZIZWLVSVTWOWAWQCDABG
-       GOVRVQWAWQUJEFBAGGOUAUBWLWNWPIZEBNCANWRWKWSCEABWEWHDFBAPUCWNWPCEABPUDUEV
-       SWKWMCEABVSWCAHZWFBHZIZIAWCQZTZBWFQZTZIZWKWMRZVSXGXBVQXDWTVRXFXAAWCUFBWF
-       UFUGUHXGXHWIFXCNZDXENZXCXETZRWIXKDFXEXCWDWFSKZWGWCSKZIZWIWCWFSKZRWDXEHZW
-       GXCHZIWIXKRXNWIXOXNWIIZWCWDSKZXLXOXRWCWGSKZWGWDSKZXSXRXMXTXLXMWIUKZWGWCU
-       IULXRXMWEXLWHYAYBXNWEWHUMXLXMWIUNZXNWEWHUOWGWDWCWFUPUQWCWGWDURUSYCWCWDWF
-       URUSVKXPXLXQXMWDWFUTWGWCUTVAXKXOWIWCWFCVBVCVDVEVFXGWKXJWMXKXFWKWJDXENXDX
-       JWJDBXEVGXDWJXIDXEWIFAXCVGVHVIAXCBXEVJVLVMVNVOVP $.
-       $( [11-Mar-2015] $)
+      ( vg vb vd va cncs wcel wa clec wbr cv wss wrex wceq brlecg reeanv cnc wi
+      cen wb ancoms anbi12d 2rexbii bitri syl6bbr ncseqnc bi2anan9 simplr ensym
+      biimpar sylib simprl simpll simprr sbthlem3 syl22anc entr syl2anc ex elnc
+      anbi12i vex eqnc imbi2i 3imtr4i rexlimivv rexeq rexbidv sylan9bbr imbi12d
+      eqeq12 mpbiri syl rexlimdvva sylbid ) AGHZBGHZIZABJKZBAJKZIZCLZDLZMZELZFL
+      ZMZIZFANZDBNZEBNCANZABOZVSWBWEDBNZCANZWHFANZEBNZIZWLVSVTWOWAWQCDABGGPVRVQ
+      WAWQUAEFBAGGPUBUCWLWNWPIZEBNCANWRWKWSCEABWEWHDFBAQUDWNWPCEABQUEUFVSWKWMCE
+      ABVSWCAHZWFBHZIZIAWCRZOZBWFRZOZIZWKWMSZVSXGXBVQXDWTVRXFXAAWCUGBWFUGUHUKXG
+      XHWIFXCNZDXENZXCXEOZSWIXKDFXEXCWDWFTKZWGWCTKZIZWIWCWFTKZSWDXEHZWGXCHZIWIX
+      KSXNWIXOXNWIIZWCWDTKZXLXOXRWCWGTKZWGWDTKZXSXRXMXTXLXMWIUIZWGWCUJULXRXMWEX
+      LWHYAYBXNWEWHUMXLXMWIUNZXNWEWHUOWGWDWCWFUPUQWCWGWDURUSYCWCWDWFURUSUTXPXLX
+      QXMWDWFVAWGWCVAVBXKXOWIWCWFCVCVDVEVFVGXGWKXJWMXKXFWKWJDXENXDXJWJDBXEVHXDW
+      JXIDXEWIFAXCVHVIVJAXCBXEVLVKVMVNVOVP $.
+      $( [11-Mar-2015] $)
   $}
 
   $( Cardinal less than is equivalent to one-way cardinal less than or equal.
-     Theorem XI.2.21 of [Rosser], p. 377. $)
-  ltlenlec $p |- ( ( M e. NC /\ N e. NC ) -> 
+     Theorem XI.2.21 of {{Rosser}}, p. 377. $)
+  ltlenlec $p |- ( ( M e. NC /\ N e. NC ) ->
     ( M <c N <-> ( M <_c N /\ -. N <_c M ) ) ) $=
-    ( cltc wbr clec wne wa cncs wcel wn brltc wceq wi nclecid breq1 syl5ibcom
-    ad2antrr sbth expdimp impbid necon3abid pm5.32da syl5bb ) ABCDABEDZABFZGA
-    HIZBHIZGZUDBAEDZJZGABKUHUDUEUJUHUDGZUIABUKABLZUIUFULUIMUGUDUFAAEDULUIANAB
-    AEOPQUHUDUIULABRSTUAUBUC $.
+    ( cltc wbr clec wa cncs wcel wn brltc wceq nclecid breq1 syl5ibcom ad2antrr
+    wne wi sbth expdimp impbid necon3abid pm5.32da syl5bb ) ABCDABEDZABPZFAGHZB
+    GHZFZUDBAEDZIZFABJUHUDUEUJUHUDFZUIABUKABKZUIUFULUIQUGUDUFAAEDULUIALABAEMNOU
+    HUDUIULABRSTUAUBUC $.
     $( [11-Mar-2015] $)
 
   ${
     $d M x $.  $d M y $.  $d M z $.  $d N x $.  $d N y $.  $d N z $.  $d x y $.
     $d x z $.  $d y z $.
     $( For non-empty sets, cardinal sum always increases cardinal less than or
-       equal.  Theorem XI.2.19 of [Rosser], p. 376. $)
+       equal.  Theorem XI.2.19 of {{Rosser}}, p. 376. $)
     addlec $p |- ( ( M e. V /\ N e. W /\ ( M +c N ) =/= (/) ) ->
        M <_c ( M +c N ) ) $=
-       ( vx vz vy wcel cplc c0 wne w3a clec cv wss wrex wex wa wceq cvv wbr cin
-       cun eladdc ssun1 sseq2 mpbiri adantl rexlimivw reximi sylbi ancli rexcom
-       eximi df-rex bitri 3imtr4i 3ad2ant3 addcexg brlecg syldan 3adant3 mpbird
-       n0 wb ) ACHZBDHZABIZJKZLAVHMUAZENZFNZOZFVHPEAPZVIVFVNVGVLVHHZFQVOVMEAPZR
-       ZFQZVIVNVOVQFVOVPVOVKGNZUBJSZVLVKVSUCZSZRZGBPZEAPVPVLABEGUDWDVMEAWCVMGBW
-       BVMVTWBVMVKWAOVKVSUEVLWAVKUFUGUHUIUJUKULUNFVHVDVNVPFVHPVRVMEFAVHUMVPFVHU
-       OUPUQURVFVGVJVNVEZVIVFVGVHTHWEABCDUSEFAVHCTUTVAVBVC $.
-       $( [11-Mar-2015] $)
+      ( vx vz vy wcel cplc c0 wne w3a clec cv wss wrex wex wa wceq cvv ssun1 n0
+      wbr cin cun eladdc sseq2 mpbiri adantl rexlimivw reximi sylbi ancli eximi
+      rexcom df-rex bitri 3imtr4i 3ad2ant3 addcexg brlecg syldan 3adant3 mpbird
+      wb ) ACHZBDHZABIZJKZLAVHMUCZENZFNZOZFVHPEAPZVIVFVNVGVLVHHZFQVOVMEAPZRZFQZ
+      VIVNVOVQFVOVPVOVKGNZUDJSZVLVKVSUEZSZRZGBPZEAPVPVLABEGUFWDVMEAWCVMGBWBVMVT
+      WBVMVKWAOVKVSUAVLWAVKUGUHUIUJUKULUMUNFVHUBVNVPFVHPVRVMEFAVHUOVPFVHUPUQURU
+      SVFVGVJVNVEZVIVFVGVHTHWEABCDUTEFAVHCTVAVBVCVD $.
+      $( [11-Mar-2015] $)
   $}
 
   ${
     $( For cardinals, cardinal sum always increases cardinal less than or
-       equal.  Corollary of theorem XI.2.19 of [Rosser], p. 376. $)
+       equal.  Corollary of theorem XI.2.19 of {{Rosser}}, p. 376. $)
     addlecncs $p |- ( ( M e. NC /\ N e. NC ) -> M <_c ( M +c N ) ) $=
-       ( cncs wcel cplc c0 wne clec wbr wa ncaddccl wceq nulnnc mtbiri necon2ai
-       eleq1 syl addlec mpd3an3 ) ACDZBCDZABEZFGZAUBHITUAJUBCDZUCABKUDUBFUBFLUD
-       FCDMUBFCPNOQABCCRS $.
-       $( [11-Mar-2015] $)
+      ( cncs wcel cplc c0 wne clec wbr wa ncaddccl nulnnc eleq1 mtbiri necon2ai
+      wceq syl addlec mpd3an3 ) ACDZBCDZABEZFGZAUBHITUAJUBCDZUCABKUDUBFUBFPUDFC
+      DLUBFCMNOQABCCRS $.
+      $( [11-Mar-2015] $)
   $}
 
   ${
     $d a b $.  $d a p $.  $d b p $.  $d M a $.  $d M b $.  $d M p $.  $d N a $.
     $d N b $.  $d N p $.
     $( Cardinal less than or equal in terms of cardinal addition.  Theorem
-       XI.2.22 of [Rosser], p. 377. $)
-    dflec2 $p |- ( ( M e. NC /\ N e. NC ) -> 
+       XI.2.22 of {{Rosser}}, p. 377. $)
+    dflec2 $p |- ( ( M e. NC /\ N e. NC ) ->
        ( M <_c N <-> E. p e. NC N = ( M +c p ) ) ) $=
-       ( va vb cncs wcel wa clec wbr cv cplc wceq wrex wss cnc ncseqnc vex cun
-       wi brlecg bi2anan9 biimpar cdif difex ncelncsi c0 disjdif ncdisjun ax-mp
-       cin undif2 ssequn1 biimpi syl5eq syl5reqr addceq2 eqeq2d rcla4ev sylancr
-       nceqd wb id addceq1 eqeqan12d rexbidv ancoms rexlimdvva sylbid addlecncs
-       syl5ibr syl breq2 syl5ibrcom adantlr rexlimdva impbid ) AFGZBFGZHZABIJZB
-       ACKZLZMZCFNZVTWADKZEKZOZEBNDANWEDEABFFUAVTWHWEDEABVTWFAGZWGBGZHZHAWFPZMZ
-       BWGPZMZHZWHWETVTWPWKVRWMWIVSWOWJAWFQBWGQUBUCWHWEWPWNWLWBLZMZCFNZWHWGWFUD
-       ZPZFGWNWLXALZMZWSWTWGWFERDRZUEZUFWHXBWFWTSZPZWNWFWTUKUGMXGXBMWFWGUHWFWTX
-       DXEUIUJWHXFWGWHXFWFWGSZWGWFWGULWHXHWGMWFWGUMUNUOVAUPWRXCCXAFWBXAMWQXBWNW
-       BXAWLUQURUSUTWOWMWEWSVBWOWMHWDWRCFWOWMBWNWCWQWOVCAWLWBVDVEVFVGVKVLVHVIVT
-       WDWACFVRWBFGZWDWATVSVRXIHWAWDAWCIJAWBVJBWCAIVMVNVOVPVQ $.
-       $( [11-Mar-2015] $)
+      ( va vb cncs wcel wa clec wbr cv cplc wceq wrex wss cnc ncseqnc vex cun
+      wi brlecg bi2anan9 biimpar cdif difex ncelncsi cin disjdif ncdisjun ax-mp
+      c0 undif2 ssequn1 biimpi syl5eq nceqd syl5reqr addceq2 rcla4ev sylancr wb
+      eqeq2d id addceq1 eqeqan12d rexbidv ancoms syl rexlimdvva addlecncs breq2
+      syl5ibr sylbid syl5ibrcom adantlr rexlimdva impbid ) AFGZBFGZHZABIJZBACKZ
+      LZMZCFNZVTWADKZEKZOZEBNDANWEDEABFFUAVTWHWEDEABVTWFAGZWGBGZHZHAWFPZMZBWGPZ
+      MZHZWHWETVTWPWKVRWMWIVSWOWJAWFQBWGQUBUCWHWEWPWNWLWBLZMZCFNZWHWGWFUDZPZFGW
+      NWLXALZMZWSWTWGWFERDRZUEZUFWHXBWFWTSZPZWNWFWTUGUKMXGXBMWFWGUHWFWTXDXEUIUJ
+      WHXFWGWHXFWFWGSZWGWFWGULWHXHWGMWFWGUMUNUOUPUQWRXCCXAFWBXAMWQXBWNWBXAWLURV
+      BUSUTWOWMWEWSVAWOWMHWDWRCFWOWMBWNWCWQWOVCAWLWBVDVEVFVGVLVHVIVMVTWDWACFVRW
+      BFGZWDWATVSVRXIHWAWDAWCIJAWBVJBWCAIVKVNVOVPVQ $.
+      $( [11-Mar-2015] $)
   $}
 
   ${
     $d A x $.  $d A y $.  $d B x $.  $d B y $.  $d C x $.  $d C y $.  $d x y $.
     $( Cardinal less than or equal is transitive. $)
-    lectr $p |- ( ( A e. NC /\ B e. NC /\ C e. NC ) -> 
+    lectr $p |- ( ( A e. NC /\ B e. NC /\ C e. NC ) ->
        ( ( A <_c B /\ B <_c C ) -> A <_c C ) ) $=
-       ( vx vy cncs wcel w3a clec wbr wa cv cplc wceq wb dflec2 3adant3 3adant1
-       wrex anbi12d reeanv syl6bbr addceq1 addcass syl6eq eqeq2d simp1 ncaddccl
-       biimpa addlecncs syl2an breq2 syl5ibrcom syl5 rexlimdvva sylbid ) AFGZBF
-       GZCFGZHZABIJZBCIJZKZBADLZMZNZCBELZMZNZKZEFSDFSZACIJZUTVCVFDFSZVIEFSZKVKU
-       TVAVMVBVNUQURVAVMOUSABDPQURUSVBVNOUQBCEPRTVFVIDEFFUAUBUTVJVLDEFFVJCAVDVG
-       MZMZNZUTVDFGVGFGKZKZVLVFVIVQVFVHVPCVFVHVEVGMVPBVEVGUCAVDVGUDUEUFUIVSVLVQ
-       AVPIJZUTUQVOFGVTVRUQURUSUGVDVGUHAVOUJUKCVPAIULUMUNUOUP $.
-       $( [12-Mar-2015] $)
+      ( vx vy cncs wcel w3a clec wa cv cplc wceq wrex wb dflec2 3adant3 3adant1
+      wbr anbi12d reeanv syl6bbr addceq1 addcass syl6eq eqeq2d biimpa addlecncs
+      simp1 ncaddccl syl2an breq2 syl5ibrcom syl5 rexlimdvva sylbid ) AFGZBFGZC
+      FGZHZABISZBCISZJZBADKZLZMZCBEKZLZMZJZEFNDFNZACISZUTVCVFDFNZVIEFNZJVKUTVAV
+      MVBVNUQURVAVMOUSABDPQURUSVBVNOUQBCEPRTVFVIDEFFUAUBUTVJVLDEFFVJCAVDVGLZLZM
+      ZUTVDFGVGFGJZJZVLVFVIVQVFVHVPCVFVHVEVGLVPBVEVGUCAVDVGUDUEUFUGVSVLVQAVPISZ
+      UTUQVOFGVTVRUQURUSUIVDVGUJAVOUHUKCVPAIULUMUNUOUP $.
+      $( [12-Mar-2015] $)
   $}
 
   ${
     $( Transitivity law for cardinal less than or equal and less than. $)
     leltctr $p |- ( ( A e. NC /\ B e. NC /\ C e. NC ) ->
        ( ( A <_c B /\ B <c C ) -> A <c C ) ) $=
-       ( cncs wcel w3a clec wbr cltc wa wne lectr expdimp adantrd wi wceq breq1
-       anbi1d biimpac brltc sbth ancoms 3adant1 eqcom syl6ibr syl5 necon3d expr
-       imp3a jcad 3imtr4g expimpd ) ADEZBDEZCDEZFZABGHZBCIHZACIHZUPUQJZBCGHZBCK
-       ZJZACGHZACKZJURUSUTVCVDVEUTVAVDVBUPUQVAVDABCLMNUTVAVBVEUPUQVAVBVEOUPUQVA
-       JZJACBCUPVFACPZBCPZVFVGJCBGHZVAJZUPVHVGVFVJVGUQVIVAACBGQRSUPVJCBPZVHUNUO
-       VJVKOZUMUOUNVLCBUAUBUCBCUDUEUFMUGUHUIUJBCTACTUKUL $.
-       $( [16-Mar-2015] $)
+      ( cncs wcel w3a clec wbr cltc wa wne lectr expdimp adantrd wi wceq anbi1d
+      breq1 biimpac brltc sbth ancoms 3adant1 syl6ibr syl5 necon3d expr 3imtr4g
+      eqcom imp3a jcad expimpd ) ADEZBDEZCDEZFZABGHZBCIHZACIHZUPUQJZBCGHZBCKZJZ
+      ACGHZACKZJURUSUTVCVDVEUTVAVDVBUPUQVAVDABCLMNUTVAVBVEUPUQVAVBVEOUPUQVAJZJA
+      CBCUPVFACPZBCPZVFVGJCBGHZVAJZUPVHVGVFVJVGUQVIVAACBGRQSUPVJCBPZVHUNUOVJVKO
+      ZUMUOUNVLCBUAUBUCBCUIUDUEMUFUGUJUKBCTACTUHUL $.
+      $( [16-Mar-2015] $)
   $}
 
   ${
     $d x y z $.
     $( Cardinal less than or equal partially orders the cardinals. $)
     lecponc $p |- <_c Po NC $=
-       ( vx vy vz clec cncs cpartial wbr wtru cvv wcel lecex a1i nclecid adantl
-       ncsex cv w3a wa imp 3adant1 lectr weq sbth pod trud ) DEFGHABCEDIIDIJHKL
-       EIJHOLAPZEJZUFUFDGHUFMNUGBPZEJZCPZEJQZUFUHDGZUHUJDGRZUFUJDGZHUKUMUNUFUHU
-       JUASTUGUIRZULUHUFDGRZABUBZHUOUPUQUFUHUCSTUDUE $.
-       $( [12-Mar-2015] $)
+      ( vx vy vz clec cncs cpartial wbr wtru cvv wcel lecex a1i ncsex cv adantl
+      nclecid w3a wa imp 3adant1 lectr weq sbth pod trud ) DEFGHABCEDIIDIJHKLEI
+      JHMLANZEJZUFUFDGHUFPOUGBNZEJZCNZEJQZUFUHDGZUHUJDGRZUFUJDGZHUKUMUNUFUHUJUA
+      STUGUIRZULUHUFDGRZABUBZHUOUPUQUFUHUCSTUDUE $.
+      $( [12-Mar-2015] $)
   $}
 
   ${
     $d M x $.  $d N x $.  $d P x $.
-    $( Addition law for cardinal less than.  Theorem XI.2.23 of [Rosser],
+    $( Addition law for cardinal less than.  Theorem XI.2.23 of {{Rosser}},
        p. 377. $)
     leaddc1 $p |- ( ( ( M e. NC /\ N e. NC /\ P e. NC ) /\ M <_c N ) ->
                ( M +c P ) <_c ( N +c P ) ) $=
-       ( vx cncs wcel w3a clec wbr cplc cv wceq wrex wb dflec2 3adant3 ncaddccl
-       wi wa addlecncs sylan addceq1 addc32 syl6eq syl5ibrcom rexlimdva 3adant2
-       breq2d sylbid imp ) BEFZCEFZAEFZGZBCHIZBAJZCAJZHIZUNUOCBDKZJZLZDEMZURUKU
-       LUOVBNUMBCDOPUKUMVBURRULUKUMSZVAURDEVCUSEFZSURVAUPUPUSJZHIZVCUPEFVDVFBAQ
-       UPUSTUAVAUQVEUPHVAUQUTAJVECUTAUBBUSAUCUDUHUEUFUGUIUJ $.
-       $( [12-Mar-2015] $)
+      ( vx cncs wcel w3a clec wbr cplc cv wceq wb dflec2 3adant3 wi wa ncaddccl
+      wrex addlecncs sylan addc32 syl6eq breq2d syl5ibrcom rexlimdva sylbid imp
+      addceq1 3adant2 ) BEFZCEFZAEFZGZBCHIZBAJZCAJZHIZUNUOCBDKZJZLZDESZURUKULUO
+      VBMUMBCDNOUKUMVBURPULUKUMQZVAURDEVCUSEFZQURVAUPUPUSJZHIZVCUPEFVDVFBARUPUS
+      TUAVAUQVEUPHVAUQUTAJVECUTAUIBUSAUBUCUDUEUFUJUGUH $.
+      $( [12-Mar-2015] $)
   $}
 
-  $( Addition law for cardinal less than.  Theorem XI.2.23 of [Rosser],
+  $( Addition law for cardinal less than.  Theorem XI.2.23 of {{Rosser}},
      p. 377. $)
   leaddc2 $p |- ( ( ( M e. NC /\ N e. NC /\ P e. NC ) /\ N <_c P ) ->
                ( M +c N ) <_c ( M +c P ) ) $=
@@ -55712,23 +55718,23 @@ $)
   ${
     $d a p $.  $d a q $.  $d a x $.  $d N a $.  $d p q $.  $d p x $.  $d q x $.
     $( Any cardinal is either zero or no greater than one.  Theorem XI.2.24 of
-       [Rosser], p. 377. $)
+       {{Rosser}}, p. 377. $)
     nc0le1 $p |- ( N e. NC -> ( N = 0c \/ 1c <_c N ) ) $=
-       ( va vx vq vp wcel cv cnc wceq wex c0c c1c clec wbr wo c0 wss wrex sylbi
-       vex cncs elncs nceq df0c2 syl6eqr orcd wne wel csn snss ncid sseq2 sseq1
-       snel1c rcla42ev mp3an12 exlimiv 1cex ncex brlec rexcom 3imtr4i pm2.61ine
-       n0 bitri olcd eqeq1 breq2 orbi12d mpbiri ) AUAFABGZHZIZBJAKIZLAMNZOZBAUB
-       VMVPBVMVPVLKIZLVLMNZOZVSVKPVKPIZVQVRVTVLPHKVKPUCUDUEUFVKPUGZVRVQCBUHZCJD
-       GZEGZQZDLREVLRZWAVRWBWFCWBCGZUIZVKQZWFWGVKCTZUJVKVLFWHLFWIWFVKBTUKWGWJUN
-       WEWIWCVKQEDVKWHVLLWDVKWCULWCWHVKUMUOUPSUQCVKVDVRWEEVLRDLRWFDELVLURVKUSUT
-       WEDELVLVAVEVBVFVCVMVNVQVOVRAVLKVGAVLLMVHVIVJUQS $.
-       $( [12-Mar-2015] $)
+      ( va vx vq vp wcel cv cnc wceq wex c0c c1c clec wbr wo wss wrex vex sylbi
+      c0 cncs elncs nceq df0c2 syl6eqr orcd wne wel csn snss snel1c sseq2 sseq1
+      ncid rcla42ev mp3an12 exlimiv n0 1cex ncex brlec rexcom 3imtr4i pm2.61ine
+      bitri olcd eqeq1 breq2 orbi12d mpbiri ) AUAFABGZHZIZBJAKIZLAMNZOZBAUBVMVP
+      BVMVPVLKIZLVLMNZOZVSVKTVKTIZVQVRVTVLTHKVKTUCUDUEUFVKTUGZVRVQCBUHZCJDGZEGZ
+      PZDLQEVLQZWAVRWBWFCWBCGZUIZVKPZWFWGVKCRZUJVKVLFWHLFWIWFVKBRUNWGWJUKWEWIWC
+      VKPEDVKWHVLLWDVKWCULWCWHVKUMUOUPSUQCVKURVRWEEVLQDLQWFDELVLUSVKUTVAWEDELVL
+      VBVEVCVFVDVMVNVQVOVRAVLKVGAVLLMVHVIVJUQS $.
+      $( [12-Mar-2015] $)
   $}
 
   ${
     $d N m $.
     $( Any cardinal is either zero or the successor of a cardinal.  Corollary
-       of theorem XI.2.24 of [Rosser], p. 377. $)
+       of theorem XI.2.24 of {{Rosser}}, p. 377. $)
     nc0suc $p |- ( N e. NC -> ( N = 0c \/ E. m e. NC N = ( m +c 1c ) ) ) $=
       ( cncs wcel c0c wceq c1c clec wbr wo cplc wrex nc0le1 1cnc dflec2 addccom
       cv wb wa eqeq2i rexbii syl6bb mpan orbi2d mpbid ) BCDZBEFZGBHIZJUGBAQZGKZ
@@ -55742,33 +55748,33 @@ $)
     $d n p $.
     $( Cardinal less than or equal is total over the naturals. $)
     leconnnc $p |- ( ( A e. Nn /\ B e. Nn ) -> ( A <_c B \/ B <_c A ) ) $=
-       ( va vp cnnc wcel clec wbr wo cv wceq breq2 breq1 orbi12d imbi2d c0c c1c
-       wi cncs wa vn vm cplc wn cab ccnv csn cima cun cvv elun eliniseg elimasn
-       cop df-br bitr4i orbi12i bitri abbi2i uneq2i unab eqtri imor abbii abexv
-       eqtr4i lecex cnvex snex imaex unex eqeltrri weq nnnc syl orc wrex dflec2
-       le0nc nc0le1 1cnc ax-mp mpbiri orim1i a1i mpd orcomd adantl simpll simpr
-       simplr leaddc2 syl31anc ex orim12d biimprd com12 rexlimdva adantr sylbid
-       addlecncs mpan2 peano2nc lectr mpd3an3 mpan2d ancoms olc syl6 syl2an a2d
-       jaod finds vtoclga imp ) AEFZBEFZABGHZBAGHZIZXQXPXTXPAUAJZGHZYAAGHZIZRXP
-       XTRUABEYABKZYDXTXPYEYBXRYCXSYABAGLYABAGMNOXPYAEFZYDYFCJZYAGHZYAYGGHZIZRZ
-       YFPYAGHZYAPGHZIZRYFUBJZYAGHZYAYOGHZIZRYFYOQUCZYAGHZYAYSGHZIZRYFYDRCUBAYF
-       UDZCUEZGUFZYAUGZUHZGUUFUHZUIZUIZYKCUEZUJUUJUUCYJIZCUEZUUKUUJUUDYJCUEZUIU
-       UMUUIUUNUUDYJCUUIYGUUIFYGUUGFZYGUUHFZIYJYGUUGUUHUKUUOYHUUPYIGYAYGULUUPYA
-       YGUNGFYIGYAYGUMYAYGGUOUPUQURUSUTUUCYJCVAVBYKUULCYFYJVCVDVFUUDUUIUUCCVEUU
-       GUUHUUEUUFGVGVHYAVIZVJGUUFVGUUQVJVKVKVLYGPKZYJYNYFUURYHYLYIYMYGPYAGMYGPY
-       AGLNOCUBVMZYJYRYFUUSYHYPYIYQYGYOYAGMYGYOYAGLNOYGYSKZYJUUBYFUUTYHYTYIUUAY
-       GYSYAGMYGYSYAGLNOYGAKZYJYDYFUVAYHYBYIYCYGAYAGMYGAYAGLNOYFYLYNYFYASFZYLYA
-       VNZYAVSVOYLYMVPVOYOEFZYFYRUUBUVDYFYRUUBRZUVDYOSFZUVBUVEYFYOVNUVCUVFUVBTZ
-       YPUUBYQUVGYPYAYODJZUCZKZDSVQZUUBYOYADVRUVFUVKUUBRUVBUVFUVJUUBDSUVFUVHSFZ
-       TZYSUVIGHZUVIYSGHZIZUVJUUBRUVMQUVHGHZUVHQGHZIZUVPUVLUVSUVFUVLUVRUVQUVLUV
-       HPKZUVQIZUVRUVQIZUVHVTUWAUWBRUVLUVTUVRUVQUVTUVRPQGHZQSFZUWCWAQVSWBUVHPQG
-       MWCWDWEWFWGWHUVMUVQUVNUVRUVOUVMUVQUVNUVMUVQTZUVFUWDUVLUVQUVNUVFUVLUVQWIU
-       WDUWEWAWEUVFUVLUVQWKUVMUVQWJUVHYOQWLWMWNUVMUVRUVOUVMUVRTZUVFUVLUWDUVRUVO
-       UVFUVLUVRWIUVFUVLUVRWKUWDUWFWAWEUVMUVRWJQYOUVHWLWMWNWOWFUVJUVPUUBUVJUUBU
-       VPUVJYTUVNUUAUVOYAUVIYSGLYAUVIYSGMNWPWQVOWRWSWTUVGYQUUAUUBUVBUVFYQUUARUV
-       BUVFTYQYOYSGHZUUAUVFUWGUVBUVFUWDUWGWAYOQXAXBWHUVBUVFYSSFZYQUWGTUUARUVFUW
-       HUVBYOXCWHYAYOYSXDXEXFXGUUAYTXHXIXLXJWNXKXMWQXNWQXO $.
-       $( [12-Mar-2015] $)
+      ( va vp cnnc wcel clec wbr wo cv wceq breq2 breq1 orbi12d imbi2d c0c cncs
+      wi c1c wa vn vm cplc wn cab ccnv csn cima cun cvv elun eliniseg cop df-br
+      elimasn bitr4i orbi12i bitri abbi2i uneq2i eqtri abbii eqtr4i abexv lecex
+      unab imor cnvex snex imaex unex eqeltrri weq nnnc le0nc syl dflec2 nc0le1
+      orc wrex 1cnc ax-mp mpbiri orim1i a1i orcomd adantl simpll simplr leaddc2
+      simpr syl31anc ex orim12d biimprd com12 rexlimdva adantr sylbid addlecncs
+      mpd mpan2 peano2nc lectr mpd3an3 mpan2d ancoms olc syl6 jaod syl2an finds
+      a2d vtoclga imp ) AEFZBEFZABGHZBAGHZIZXQXPXTXPAUAJZGHZYAAGHZIZRXPXTRUABEY
+      ABKZYDXTXPYEYBXRYCXSYABAGLYABAGMNOXPYAEFZYDYFCJZYAGHZYAYGGHZIZRZYFPYAGHZY
+      APGHZIZRYFUBJZYAGHZYAYOGHZIZRYFYOSUCZYAGHZYAYSGHZIZRYFYDRCUBAYFUDZCUEZGUF
+      ZYAUGZUHZGUUFUHZUIZUIZYKCUEZUJUUJUUCYJIZCUEZUUKUUJUUDYJCUEZUIUUMUUIUUNUUD
+      YJCUUIYGUUIFYGUUGFZYGUUHFZIYJYGUUGUUHUKUUOYHUUPYIGYAYGULUUPYAYGUMGFYIGYAY
+      GUOYAYGGUNUPUQURUSUTUUCYJCVFVAYKUULCYFYJVGVBVCUUDUUIUUCCVDUUGUUHUUEUUFGVE
+      VHYAVIZVJGUUFVEUUQVJVKVKVLYGPKZYJYNYFUURYHYLYIYMYGPYAGMYGPYAGLNOCUBVMZYJY
+      RYFUUSYHYPYIYQYGYOYAGMYGYOYAGLNOYGYSKZYJUUBYFUUTYHYTYIUUAYGYSYAGMYGYSYAGL
+      NOYGAKZYJYDYFUVAYHYBYIYCYGAYAGMYGAYAGLNOYFYLYNYFYAQFZYLYAVNZYAVOVPYLYMVSV
+      PYOEFZYFYRUUBUVDYFYRUUBRZUVDYOQFZUVBUVEYFYOVNUVCUVFUVBTZYPUUBYQUVGYPYAYOD
+      JZUCZKZDQVTZUUBYOYADVQUVFUVKUUBRUVBUVFUVJUUBDQUVFUVHQFZTZYSUVIGHZUVIYSGHZ
+      IZUVJUUBRUVMSUVHGHZUVHSGHZIZUVPUVLUVSUVFUVLUVRUVQUVLUVHPKZUVQIZUVRUVQIZUV
+      HVRUWAUWBRUVLUVTUVRUVQUVTUVRPSGHZSQFZUWCWASVOWBUVHPSGMWCWDWEXAWFWGUVMUVQU
+      VNUVRUVOUVMUVQUVNUVMUVQTZUVFUWDUVLUVQUVNUVFUVLUVQWHUWDUWEWAWEUVFUVLUVQWIU
+      VMUVQWKUVHYOSWJWLWMUVMUVRUVOUVMUVRTZUVFUVLUWDUVRUVOUVFUVLUVRWHUVFUVLUVRWI
+      UWDUWFWAWEUVMUVRWKSYOUVHWJWLWMWNXAUVJUVPUUBUVJUUBUVPUVJYTUVNUUAUVOYAUVIYS
+      GLYAUVIYSGMNWOWPVPWQWRWSUVGYQUUAUUBUVBUVFYQUUARUVBUVFTYQYOYSGHZUUAUVFUWGU
+      VBUVFUWDUWGWAYOSWTXBWGUVBUVFYSQFZYQUWGTUUARUVFUWHUVBYOXCWGYAYOYSXDXEXFXGU
+      UAYTXHXIXJXKWMXMXLWPXNWPXO $.
+      $( [12-Mar-2015] $)
   $}
 
   ${
@@ -55776,27 +55782,27 @@ $)
     $( The sum of two cardinals is zero iff both addends are zero. $)
     addceq0 $p |- ( ( A e. NC /\ B e. NC ) -> ( ( A +c B ) = 0c <->
        ( A = 0c /\ B = 0c ) ) ) $=
-       ( vp cncs wcel wa cplc c0c wceq wn c1c wrex nc0suc ord wne 0cnsuc eqeq1d
-       wi necon3bbid mpbiri wo ianor cv adantr addc32 eqnetri addceq1 rexlimivw
-       syl6 adantl addcass eqnetrri addceq2 jaod syl5bi addceq12 addcid2 syl6eq
-       con4d impbid1 ) ADEZBDEZFZABGZHIZAHIZBHIZFZVCVHVEVHJVFJZVGJZUAVCVEJZVFVG
-       UBVCVIVKVJVCVIACUCZKGZIZCDLZVKVAVIVORVBVAVFVOCAMNUDVNVKCDVNVKVMBGZHOVPVL
-       BGZKGHVLKBUEVQPUFVNVEVPHVNVDVPHAVMBUGQSTUHUIVCVJBVMIZCDLZVKVBVJVSRVAVBVG
-       VSCBMNUJVRVKCDVRVKAVMGZHOAVLGZKGVTHAVLKUKWAPULVRVEVTHVRVDVTHBVMAUMQSTUHU
-       IUNUOUSVHVDHHGHABHHUPHUQURUT $.
-       $( [12-Mar-2015] $)
+      ( vp cncs wcel wa cplc c0c wceq c1c wrex nc0suc ord wne 0cnsuc necon3bbid
+      wn wi eqeq1d mpbiri wo ianor adantr addc32 eqnetri addceq1 rexlimivw syl6
+      adantl addcass eqnetrri addceq2 jaod syl5bi con4d addceq12 addcid2 syl6eq
+      cv impbid1 ) ADEZBDEZFZABGZHIZAHIZBHIZFZVCVHVEVHQVFQZVGQZUAVCVEQZVFVGUBVC
+      VIVKVJVCVIACUSZJGZIZCDKZVKVAVIVORVBVAVFVOCALMUCVNVKCDVNVKVMBGZHNVPVLBGZJG
+      HVLJBUDVQOUEVNVEVPHVNVDVPHAVMBUFSPTUGUHVCVJBVMIZCDKZVKVBVJVSRVAVBVGVSCBLM
+      UIVRVKCDVRVKAVMGZHNAVLGZJGVTHAVLJUJWAOUKVRVEVTHVRVDVTHBVMAULSPTUGUHUMUNUO
+      VHVDHHGHABHHUPHUQURUT $.
+      $( [12-Mar-2015] $)
   $}
 
   ${
     $d M x $.
     $( Ordering law for cardinal exponentiation to two.  Theorem XI.2.71 of
-       [Rosser], p. 390. $)
+       {{Rosser}}, p. 390. $)
     ce2lt $p |- ( ( M e. NC /\ ( M ^c 0c ) e. NC ) -> M <c ( 2c ^c M ) ) $=
-       ( vx cncs wcel c0c cce co wa cpw1 cnc wceq wex c2c cltc wbr ce0ncpw1 cpw
-       cv id cvv vex ltcpw1pwg ax-mp syl6eqbr ce2 breqtrrd exlimiv syl ) ACDAEF
-       GCDHABRZIJZKZBLAMAFGZNOZABPUKUMBUKAUIQJZULNUKAUJUNNUKSUITDUJUNNOBUAZUITU
-       BUCUDUIAUOUEUFUGUH $.
-       $( [13-Mar-2015] $)
+      ( vx cncs wcel c0c cce co wa cv cpw1 cnc wceq wex c2c wbr ce0ncpw1 cpw id
+      cltc cvv vex ltcpw1pwg ax-mp syl6eqbr ce2 breqtrrd exlimiv syl ) ACDAEFGC
+      DHABIZJKZLZBMANAFGZSOZABPUKUMBUKAUIQKZULSUKAUJUNSUKRUITDUJUNSOBUAZUITUBUC
+      UDUIAUOUEUFUGUH $.
+      $( [13-Mar-2015] $)
   $}
 
   ${
@@ -55807,24 +55813,24 @@ $)
     $( Another potential definition of cardinal inequality. $)
     dflec3 $p |- ( ( M e. NC /\ N e. NC ) -> ( M <_c N <->
         E. a e. M E. b e. N E. f f : a -1-1-> b ) ) $=
-       ( vx vy vc wcel wa cv cnc wceq wex clec wbr wf1 wrex wb vex cncs anbi12i
-       elncs eeanv bitr4i wss ncex brlec rexcom cres wf1o f1oi f1of1 ax-mp f1ss
-       cid mpan idex resex f1eq1 cla4ev syl weq exbidv rcla4ev sylan2 rexlimiva
-       f1eq2 crn wi cen eqnc elnc f1f1orn f1oen ensym sylib sylibr eleq2 syl5ib
-       sylbir imp wf f1f adantl sseq1 syl2anc ex exlimdv rexlimiv impbii rexbii
-       bitri 3bitri breq12 simpl rexeq rexeqbidv bibi12d mpbiri exlimivv sylbi
-       frn ) BUAIZCUAIZJZBFKZLZMZCGKZLZMZJZGNFNZBCOPZDKZEKZAKZQZANZECRZDBRZSZXF
-       XIFNZXLGNZJXNXDYDXEYEFBUCGCUCUBXIXLFGUDUEXMYCFGXMYCXHXKOPZXTEXKRZDXHRZSY
-       FHKZXQUFZEXKRHXHRZXTDXHRZEXKRZYHHEXHXKXGUGXJUGUHYKYJHXHRZEXKRYMYJHEXHXKU
-       IYNYLEXKYNYLYJYLHXHYJYIXHIYIXQXRQZANZYLYJYIXQUPYIUJZQZYPYIYIYQQZYJYRYIYI
-       YQUKYSYIULYIYIYQUMUNYIYIXQYQUOUQYOYRAYQUPYIURHTUSYIXQXRYQUTVAVBXTYPDYIXH
-       DHVCXSYOAXPYIXQXRVHVDVEVFVGXTYNDXHXPXHIZXSYNAYTXSYNYTXSJXRVIZXHIZUUAXQUF
-       ZYNYTXSUUBYTXPLZXHMZXSUUBVJUUEXPXGVKPYTXPXGDTVLXPXGVMUEXSUUAUUDIZUUEUUBX
-       SUUAXPVKPZUUFXSXPUUAVKPZUUGXSXPUUAXRUKUUHXPXQXRVNXPUUAXRATVOVBXPUUAVPVQU
-       UAXPVMVRUUDXHUUAVSVTWAWBXSUUCYTXSXPXQXRWCUUCXPXQXRWDXPXQXRXCVBWEYJUUCHUU
-       AXHYIUUAXQWFVEWGWHWIWJWKWLWMXTEDXKXHUIWNXMXOYFYBYHBXHCXKOWOXMYAYGDBXHXIX
-       LWPXLYAYGSXIXTECXKWQWEWRWSWTXAXB $.
-       $( [23-Mar-2015] $)
+      ( vx vy vc wcel wa cv cnc wceq wex clec wbr wf1 wrex wb vex elncs anbi12i
+      cncs eeanv bitr4i wss ncex brlec cid cres wf1o f1oi f1of1 ax-mp f1ss mpan
+      rexcom idex resex f1eq1 cla4ev syl weq f1eq2 exbidv rcla4ev rexlimiva crn
+      sylan2 cen eqnc elnc f1f1orn f1oen ensym sylib sylibr eleq2 syl5ib sylbir
+      wi imp f1f frn adantl sseq1 syl2anc exlimdv rexlimiv impbii rexbii 3bitri
+      wf ex bitri breq12 simpl rexeq rexeqbidv bibi12d mpbiri exlimivv sylbi )
+      BUCIZCUCIZJZBFKZLZMZCGKZLZMZJZGNFNZBCOPZDKZEKZAKZQZANZECRZDBRZSZXFXIFNZXL
+      GNZJXNXDYDXEYEFBUAGCUAUBXIXLFGUDUEXMYCFGXMYCXHXKOPZXTEXKRZDXHRZSYFHKZXQUF
+      ZEXKRHXHRZXTDXHRZEXKRZYHHEXHXKXGUGXJUGUHYKYJHXHRZEXKRYMYJHEXHXKUQYNYLEXKY
+      NYLYJYLHXHYJYIXHIYIXQXRQZANZYLYJYIXQUIYIUJZQZYPYIYIYQQZYJYRYIYIYQUKYSYIUL
+      YIYIYQUMUNYIYIXQYQUOUPYOYRAYQUIYIURHTUSYIXQXRYQUTVAVBXTYPDYIXHDHVCXSYOAXP
+      YIXQXRVDVEVFVIVGXTYNDXHXPXHIZXSYNAYTXSYNYTXSJXRVHZXHIZUUAXQUFZYNYTXSUUBYT
+      XPLZXHMZXSUUBWAUUEXPXGVJPYTXPXGDTVKXPXGVLUEXSUUAUUDIZUUEUUBXSUUAXPVJPZUUF
+      XSXPUUAVJPZUUGXSXPUUAXRUKUUHXPXQXRVMXPUUAXRATVNVBXPUUAVOVPUUAXPVLVQUUDXHU
+      UAVRVSVTWBXSUUCYTXSXPXQXRWMUUCXPXQXRWCXPXQXRWDVBWEYJUUCHUUAXHYIUUAXQWFVFW
+      GWNWHWIWJWKWOXTEDXKXHUQWLXMXOYFYBYHBXHCXKOWPXMYAYGDBXHXIXLWQXLYAYGSXIXTEC
+      XKWRWEWSWTXAXBXC $.
+      $( [23-Mar-2015] $)
   $}
 
   ${
@@ -55837,20 +55843,20 @@ $)
     nclenc.2 $e |- B e. _V $.
     $( Comparison rule for cardinalities. $)
     nclenc $p |- ( Nc A <_c Nc B <-> E. f f : A -1-1-> B ) $=
-       ( vp vq vg vh vi va vb wbr cv wf1 wex wrex wcel wa wf1o cnc clec cncs wb
-       ncelncsi dflec3 mp2an cen elnc bren bitri anbi12i eeanv bitr4i ccom ccnv
-       w3a f1of1 3ad2ant2 simp3 f1co syl2anc f1ocnv syl 3ad2ant1 vex coex cnvex
-       wi f1eq1 cla4ev 3expia exlimivv sylbi exlimdv rexlimivv ncid wceq exbidv
-       f1eq2 f1eq3 rcla42ev mp3an12 sylibr impbii ) AUAZBUAZUBMZABCNZOZCPZWHFNZ
-       GNZHNZOZHPZGWGQFWFQZWKWFUCRZWGUCRZWHWQUDADUEZBEUEZHWFWGFGUFUGWPWKFGWFWGW
-       LWFRZWMWGRZSZWOWKHXDWLAINZTZWMBJNZTZSZJPIPZWOWKVIZXDXFIPZXHJPZSXJXBXLXCX
-       MXBWLAUHMXLWLAUIWLAIUJUKXCWMBUHMXMWMBUIWMBJUJUKULXFXHIJUMUNXIXKIJXFXHWOW
-       KXFXHWOUQZABXGWNUOZXEUPZUOZOZWKXNWLBXOOZAWLXPOZXRXNWMBXGOZWOXSXHXFYAWOWM
-       BXGURUSXFXHWOUTWLWMBXGWNVAVBXFXHXTWOXFAWLXPTXTWLAXEVCAWLXPURVDVEAWLBXOXP
-       VAVBWJXRCXQXOXPXGWNJVFHVFVGXEIVFVHVGABWIXQVJVKVDVLVMVNVOVPVNWKKNZLNZWIOZ
-       CPZLWGQKWFQZWHAWFRBWGRWKYFADVQBEVQYEWKAYCWIOZCPKLABWFWGYBAVRYDYGCYBAYCWI
-       VTVSYCBVRYGWJCYCBAWIWAVSWBWCWRWSWHYFUDWTXACWFWGKLUFUGWDWE $.
-       $( [24-Mar-2015] $)
+      ( vp vq vg vh vi va vb wbr cv wf1 wex wrex wcel wa wf1o cnc clec ncelncsi
+      cncs wb dflec3 mp2an wi cen elnc bren bitri anbi12i eeanv bitr4i w3a ccom
+      ccnv f1of1 3ad2ant2 simp3 f1co syl2anc f1ocnv syl 3ad2ant1 vex coex cnvex
+      f1eq1 cla4ev 3expia exlimivv sylbi rexlimivv ncid wceq f1eq2 exbidv f1eq3
+      exlimdv rcla42ev mp3an12 sylibr impbii ) AUAZBUAZUBMZABCNZOZCPZWHFNZGNZHN
+      ZOZHPZGWGQFWFQZWKWFUDRZWGUDRZWHWQUEADUCZBEUCZHWFWGFGUFUGWPWKFGWFWGWLWFRZW
+      MWGRZSZWOWKHXDWLAINZTZWMBJNZTZSZJPIPZWOWKUHZXDXFIPZXHJPZSXJXBXLXCXMXBWLAU
+      IMXLWLAUJWLAIUKULXCWMBUIMXMWMBUJWMBJUKULUMXFXHIJUNUOXIXKIJXFXHWOWKXFXHWOU
+      PZABXGWNUQZXEURZUQZOZWKXNWLBXOOZAWLXPOZXRXNWMBXGOZWOXSXHXFYAWOWMBXGUSUTXF
+      XHWOVAWLWMBXGWNVBVCXFXHXTWOXFAWLXPTXTWLAXEVDAWLXPUSVEVFAWLBXOXPVBVCWJXRCX
+      QXOXPXGWNJVGHVGVHXEIVGVIVHABWIXQVJVKVEVLVMVNWAVOVNWKKNZLNZWIOZCPZLWGQKWFQ
+      ZWHAWFRBWGRWKYFADVPBEVPYEWKAYCWIOZCPKLABWFWGYBAVQYDYGCYBAYCWIVRVSYCBVQYGW
+      JCYCBAWIVTVSWBWCWRWSWHYFUEWTXACWFWGKLUFUGWDWE $.
+      $( [24-Mar-2015] $)
   $}
 
   ${
@@ -55861,23 +55867,23 @@ $)
     lenc.1 $e |- A e. _V $.
     $( Less than or equal condition for the cardinality of a number. $)
     lenc $p |- ( M e. NC -> ( M <_c Nc A <-> E. x e. M x C_ A ) ) $=
-       ( vy vp vq vf vg wcel cv wex clec wbr wss wrex wf1o cen elnc vex cncs wb
-       cnc wceq elncs ncex brlec wa wi bren bitri anbi12i eeanv bitr4i w3a cima
-       cres ccnv ccom f1of1 3ad2ant2 simp3 f1ores syl2anc f1ocnv 3ad2ant1 f1oco
-       wf1 resex cnvex coex f1oen 3syl sylibr imass2 3ad2ant3 wfo f1ofo sseqtrd
-       foima syl sseq1 rcla4ev 3expia exlimivv sylbi rexlimivv nclec eqnc breq1
-       sylbir syl5ib rexlimiv impbii rexeq bibi12d mpbiri exlimiv ) CUAJCEKZUCZ
-       UDZELCBUCZMNZAKZBOZACPZUBZECUEXAXGEXAXGWTXBMNZXEAWTPZUBXHXIXHFKZGKZOZGXB
-       PFWTPXIFGWTXBWSUFBUFUGXLXIFGWTXBXJWTJZXKXBJZUHZXJWSHKZQZXKBIKZQZUHZILHLZ
-       XLXIUIZXOXQHLZXSILZUHYAXMYCXNYDXMXJWSRNYCXJWSSXJWSHUJUKXNXKBRNYDXKBSXKBI
-       UJUKULXQXSHIUMUNXTYBHIXQXSXLXIXQXSXLUOZXRXJUPZWTJZYFBOZXIYEYFWSRNZYGYEWS
-       YFXRXJUQZXPURZUSZQZYFWSYLURZQYIYEXJYFYJQZWSXJYKQZYMYEXKBXRVHZXLYOXSXQYQX
-       LXKBXRUTVAXQXSXLVBXKBXJXRVCVDXQXSYPXLXJWSXPVEVFWSXJYFYJYKVGVDWSYFYLVEYFW
-       SYNYLYJYKXRXJITFTVIXPHTVJVKVJVLVMYFWSSVNYEYFXRXKUPZBXLXQYFYROXSXJXKXRVOV
-       PXSXQYRBUDZXLXSXKBXRVQYSXKBXRVRXKBXRVTWAVAVSXEYHAYFWTXDYFBWBWCVDWDWEWFWG
-       WFXEXHAWTXEXDUCZXBMNZXDWTJZXHXDBATZDWHUUBYTWTUDZUUAXHUBUUDXDWSRNUUBXDWSU
-       UCWIXDWSSUNYTWTXBMWJWKWLWMWNXAXCXHXFXICWTXBMWJXEACWTWOWPWQWRWF $.
-       $( [18-Mar-2015] $)
+      ( vy vp vq vf vg wcel cv wex clec wbr wss wrex wf1o cen elnc vex cncs cnc
+      wceq wb elncs ncex brlec wa bren bitri anbi12i eeanv bitr4i w3a cima cres
+      wi ccnv ccom wf1 f1of1 3ad2ant2 simp3 f1ores syl2anc 3ad2ant1 f1oco resex
+      f1ocnv cnvex coex f1oen 3syl sylibr imass2 3ad2ant3 wfo f1ofo syl sseqtrd
+      foima sseq1 rcla4ev 3expia sylbi rexlimivv nclec eqnc breq1 sylbir syl5ib
+      exlimivv rexlimiv impbii rexeq bibi12d mpbiri exlimiv ) CUAJCEKZUBZUCZELC
+      BUBZMNZAKZBOZACPZUDZECUEXAXGEXAXGWTXBMNZXEAWTPZUDXHXIXHFKZGKZOZGXBPFWTPXI
+      FGWTXBWSUFBUFUGXLXIFGWTXBXJWTJZXKXBJZUHZXJWSHKZQZXKBIKZQZUHZILHLZXLXIUQZX
+      OXQHLZXSILZUHYAXMYCXNYDXMXJWSRNYCXJWSSXJWSHUIUJXNXKBRNYDXKBSXKBIUIUJUKXQX
+      SHIULUMXTYBHIXQXSXLXIXQXSXLUNZXRXJUOZWTJZYFBOZXIYEYFWSRNZYGYEWSYFXRXJUPZX
+      PURZUSZQZYFWSYLURZQYIYEXJYFYJQZWSXJYKQZYMYEXKBXRUTZXLYOXSXQYQXLXKBXRVAVBX
+      QXSXLVCXKBXJXRVDVEXQXSYPXLXJWSXPVIVFWSXJYFYJYKVGVEWSYFYLVIYFWSYNYLYJYKXRX
+      JITFTVHXPHTVJVKVJVLVMYFWSSVNYEYFXRXKUOZBXLXQYFYROXSXJXKXRVOVPXSXQYRBUCZXL
+      XSXKBXRVQYSXKBXRVRXKBXRWAVSVBVTXEYHAYFWTXDYFBWBWCVEWDWLWEWFWEXEXHAWTXEXDU
+      BZXBMNZXDWTJZXHXDBATZDWGUUBYTWTUCZUUAXHUDUUDXDWSRNUUBXDWSUUCWHXDWSSUMYTWT
+      XBMWIWJWKWMWNXAXCXHXFXICWTXBMWIXEACWTWOWPWQWRWE $.
+      $( [18-Mar-2015] $)
   $}
 
   ${
@@ -55891,29 +55897,28 @@ $)
   $}
 
   $( Compute the T-raising of the cardinality of the universe.  Part of Theorem
-     5.2 of [Specker]. $)
+     5.2 of {{Specker}}. $)
   tcncv $p |- T_c Nc _V = Nc 1c $=
     ( cvv cnc ctc cpw1 c1c vvex tcnc df1c2 nceqi eqtr4i ) ABCADZBEBAFGEKHIJ $.
     $( [4-Mar-2015] $)
 
   $( Compute the T-raising of the cardinality of one.  Part of Theorem 5.2 of
-     [Specker]. $)
+     {{Specker}}. $)
   tcnc1c $p |- T_c Nc 1c = Nc ~P1 1c $=
     ( c1c 1cex tcnc ) ABC $.
     $( [4-Mar-2015] $)
 
   ${
     $d M x $.  $d M y $.  $d N x $.  $d N y $.  $d x y $.
-    $( Cardinal T is one-to-one.  Based on theorem 2.4 of [Specker]. $)
+    $( Cardinal T is one-to-one.  Based on theorem 2.4 of {{Specker}}. $)
     tc11 $p |- ( ( M e. NC /\ N e. NC ) -> ( T_c M = T_c N <-> M = N ) ) $=
-       ( vx vy cncs wcel wa cv cnc wceq wex ctc wb elncs cpw1 vex tcnc cen eqnc
-       wbr anbi12i eeanv bitr4i eqeq12i enpw1 pw1ex bitri tceq eqeqan12d eqeq12
-       3bitr4ri bibi12d mpbiri exlimivv sylbi ) AEFZBEFZGZACHZIZJZBDHZIZJZGZDKC
-       KZALZBLZJZABJZMZURVACKZVDDKZGVFUPVLUQVMCANDBNUAVAVDCDUBUCVEVKCDVEVKUTLZV
-       CLZJZUTVCJZMVPUSOZIZVBOZIZJZVQVNVSVOWAUSCPZQVBDPQUDUSVBRTVRVTRTVQWBUSVBU
-       EUSVBWCSVRVTUSWCUFSUKUGVEVIVPVJVQVAVDVGVNVHVOAUTUHBVCUHUIAUTBVCUJULUMUNU
-       O $.
-       $( [10-Mar-2015] $)
+      ( vx vy cncs wcel wa cv cnc wceq wex ctc elncs cpw1 vex tcnc cen wbr eqnc
+      wb anbi12i eeanv bitr4i eqeq12i enpw1 pw1ex 3bitr4ri bitri tceq eqeqan12d
+      eqeq12 bibi12d mpbiri exlimivv sylbi ) AEFZBEFZGZACHZIZJZBDHZIZJZGZDKCKZA
+      LZBLZJZABJZTZURVACKZVDDKZGVFUPVLUQVMCAMDBMUAVAVDCDUBUCVEVKCDVEVKUTLZVCLZJ
+      ZUTVCJZTVPUSNZIZVBNZIZJZVQVNVSVOWAUSCOZPVBDOPUDUSVBQRVRVTQRVQWBUSVBUEUSVB
+      WCSVRVTUSWCUFSUGUHVEVIVPVJVQVAVDVGVNVHVOAUTUIBVCUIUJAUTBVCUKULUMUNUO $.
+      $( [10-Mar-2015] $)
   $}
 
   ${
@@ -55923,35 +55928,35 @@ $)
     $d w y $.  $d w z $.  $d X c $.  $d X w $.  $d X x $.  $d x y $.  $d X y $.
     $d x z $.  $d X z $.  $d y z $.
     $( T raising rule for cardinal sum. $)
-    taddc $p |- ( ( ( A e. NC /\ B e. NC /\ X e. NC ) /\ 
+    taddc $p |- ( ( ( A e. NC /\ B e. NC /\ X e. NC ) /\
        T_c A = ( T_c B +c X ) ) -> E. c e. NC X = T_c c ) $=
-       ( vw vx vy vz va vb cncs wcel ctc wceq wa cv cnc wex vex sylbi cplc cpw1
-       w3a wrex wi elncs 3anbi123i eeeanv bitr4i cen wbr addceq1i eqeq12i eqcom
-       tcnc wb pw1ex ncelncsi ncaddccl mp2an ncseqnc ax-mp 3bitri cin c0 eladdc
-       cun pw1equn simp3 elnc ensym breq2 biimpcd eximdv exlimdv syl5bi adantld
-       syl5 rexlimiv rexlimivw tceq 3ad2ant1 adantr simpr 3adant1 eqeq12d eqeq1
-       addceq12d eqnc syl6bb exbidv 3ad2ant3 imbi12d mpbiri exlimivv imp df-rex
-       exlimiv anbi1i 19.41v exbii excom syl6eq eqeq2d ceqsexv bitri sylibr
-       ncex ) AKLZBKLZCKLZUCZAMZBMZCUAZNZOCEPZUBZQZNZERZCDPZMZNZDKUDZXLXPYAXLAF
-       PZQZNZBGPZQZNZCHPZQZNZUCZHRZGRFRZXPYAUEZXLYHFRZYKGRZYNHRZUCYQXIYSXJYTXKU
-       UAFAUFGBUFHCUFUGYHYKYNFGHUHUIYPYRFGYOYRHYOYRYGMZYJMZYMUAZNZYLXRUJUKZERZU
-       EUUEYFUBZYIUBZQZYMUAZLZUUGUUEUUHQZUUKNUUKUUMNZUULUUBUUMUUDUUKYFFSUOUUCUU
-       JYMYIGSZUOULUMUUMUUKUNUUKKLZUUNUULUPUUJKLYMKLUUPUUIYIUUOUQURYLHSZURUUJYM
-       USUTUUKUUHVAVBVCUULIPZJPZVDVENZUUHUURUUSVGNZOZJYMUDZIUUJUDUUGUUHUUJYMIJV
-       FUVCUUGIUUJUVBUUGJYMUUSYMLZUVAUUGUUTUVAYFYBXQVGNZUURYBUBNZUUSXRNZUCZERZD
-       RUVDUUGDEUURUUSYFISJSVHUVDUVIUUGDUVDUVHUUFEUVHUVGUVDUUFUVEUVFUVGVIUVDUUS
-       YLUJUKZUVGUUFUEZUUSYLVJUVJYLUUSUJUKZUVKUUSYLVKUVGUVLUUFUUSXRYLUJVLVMTTVR
-       VNVOVPVQVSVTTTYOXPUUEYAUUGYOXMUUBXOUUDYHYKXMUUBNYNAYGWAWBYKYNXOUUDNYHYKY
-       NOXNUUCCYMYKXNUUCNYNBYJWAWCYKYNWDWHWEWFYNYHYAUUGUPYKYNXTUUFEYNXTYMXSNUUF
-       CYMXSWGYLXRUUQWIWJWKWLWMWNWRWOTWPYEYBKLZYDOZDRYBXQQZNZYDOZERZDRZYAYDDKWQ
-       UVNUVRDUVNUVPERZYDOUVRUVMUVTYDEYBUFWSUVPYDEWTUIXAUVSUVQDRZERYAUVQDEXBUWA
-       XTEYDXTDUVOXQXHUVPYCXSCUVPYCUVOMXSYBUVOWAXQESUOXCXDXEXAXFVCXG $.
-       $( [11-Mar-2015] $)
+      ( vw vx vy vz va vb cncs wcel ctc wceq wa cv cnc wex vex sylbi cplc elncs
+      w3a cpw1 wrex 3anbi123i eeeanv bitr4i cen wbr tcnc addceq1i eqeq12i eqcom
+      wi wb pw1ex ncelncsi ncaddccl mp2an ncseqnc 3bitri cin cun eladdc pw1equn
+      ax-mp simp3 elnc ensym breq2 biimpcd syl5 eximdv exlimdv adantld rexlimiv
+      c0 syl5bi rexlimivw 3ad2ant1 adantr simpr addceq12d 3adant1 eqeq12d eqeq1
+      tceq syl6bb exbidv 3ad2ant3 imbi12d mpbiri exlimiv exlimivv df-rex anbi1i
+      eqnc imp 19.41v exbii excom ncex syl6eq eqeq2d ceqsexv bitri sylibr ) AKL
+      ZBKLZCKLZUCZAMZBMZCUAZNZOCEPZUDZQZNZERZCDPZMZNZDKUEZXLXPYAXLAFPZQZNZBGPZQ
+      ZNZCHPZQZNZUCZHRZGRFRZXPYAUOZXLYHFRZYKGRZYNHRZUCYQXIYSXJYTXKUUAFAUBGBUBHC
+      UBUFYHYKYNFGHUGUHYPYRFGYOYRHYOYRYGMZYJMZYMUAZNZYLXRUIUJZERZUOUUEYFUDZYIUD
+      ZQZYMUAZLZUUGUUEUUHQZUUKNUUKUUMNZUULUUBUUMUUDUUKYFFSUKUUCUUJYMYIGSZUKULUM
+      UUMUUKUNUUKKLZUUNUULUPUUJKLYMKLUUPUUIYIUUOUQURYLHSZURUUJYMUSUTUUKUUHVAVGV
+      BUULIPZJPZVCVRNZUUHUURUUSVDNZOZJYMUEZIUUJUEUUGUUHUUJYMIJVEUVCUUGIUUJUVBUU
+      GJYMUUSYMLZUVAUUGUUTUVAYFYBXQVDNZUURYBUDNZUUSXRNZUCZERZDRUVDUUGDEUURUUSYF
+      ISJSVFUVDUVIUUGDUVDUVHUUFEUVHUVGUVDUUFUVEUVFUVGVHUVDUUSYLUIUJZUVGUUFUOZUU
+      SYLVIUVJYLUUSUIUJZUVKUUSYLVJUVGUVLUUFUUSXRYLUIVKVLTTVMVNVOVSVPVQVTTTYOXPU
+      UEYAUUGYOXMUUBXOUUDYHYKXMUUBNYNAYGWHWAYKYNXOUUDNYHYKYNOXNUUCCYMYKXNUUCNYN
+      BYJWHWBYKYNWCWDWEWFYNYHYAUUGUPYKYNXTUUFEYNXTYMXSNUUFCYMXSWGYLXRUUQWRWIWJW
+      KWLWMWNWOTWSYEYBKLZYDOZDRYBXQQZNZYDOZERZDRZYAYDDKWPUVNUVRDUVNUVPERZYDOUVR
+      UVMUVTYDEYBUBWQUVPYDEWTUHXAUVSUVQDRZERYAUVQDEXBUWAXTEYDXTDUVOXQXCUVPYCXSC
+      UVPYCUVOMXSYBUVOWHXQESUKXDXEXFXAXGVBXH $.
+      $( [11-Mar-2015] $)
   $}
 
   ${
     $d M p q $.  $d N p q $.
-    $( T-raising perserves order for cardinals.  Theorem 5.5 of [Specker]. $)
+    $( T-raising perserves order for cardinals.  Theorem 5.5 of {{Specker}}. $)
     tlecg $p |- ( ( M e. NC /\ N e. NC ) -> ( M <_c N <-> T_c M <_c T_c N ) )
         $=
       ( vp vq cncs wcel wa clec wbr ctc cv cplc wceq wrex dflec2 tccl rexlimdva
@@ -55977,30 +55982,30 @@ $)
     $d m x $.  $d m y $.  $d N a $.  $d N b $.  $d N c $.  $d n p $.  $d N q $.
     $d n x $.  $d n y $.  $d p q $.  $d p x $.  $d p y $.  $d x y $.
     $( If a cardinal is less than or equal to a T-raising, then it is also a
-       T-raising.  Theorem 5.6 of [Specker]. $)
-    letc $p |- ( ( M e. NC /\ N e. NC /\ M <_c T_c N ) -> 
+       T-raising.  Theorem 5.6 of {{Specker}}. $)
+    letc $p |- ( ( M e. NC /\ N e. NC /\ M <_c T_c N ) ->
        E. p e. NC M = T_c p ) $=
-       ( vq va vb vc vx vy vn vm cncs wcel cv wceq wrex wa cnc wex vex ctc clec
-       wbr cplc wb tccl dflec2 sylan2 wi w3a elncs 3anbi123i eeeanv bitr4i cpw1
-       eqcom ncelncsi ncaddccl mp2an ncseqnc ax-mp bitri cin cun eladdc pw1equn
-       c0 bi2anan9 ineq12 eqeq1d anbi12d tceq tcnc syl6eq eqeq2d rcla4ev sylbir
-       eleq1 mpan ad2antrr syl6bi 3adant1 exlimivv com12 syl5bi rexlimivv sylbi
-       expimpd 3ad2ant2 addceq12 3adant2 eqeq12d eqeq1 rexbidv 3ad2ant1 imbi12d
-       mpbiri exlimiv 3expa rexlimdva sylbid 3impia ) ALMZBLMZABUAZUBUCZACNZUAZ
-       OZCLPZXCXDQZXFXEADNZUDZOZDLPZXJXDXCXELMXFXOUEBUFAXEDUGUHXKXNXJDLXCXDXLLM
-       ZXNXJUIZXCXDXPUJZAENZRZOZBFNZRZOZXLGNZRZOZUJZGSZFSESZXQXRYAESZYDFSZYGGSZ
-       UJYJXCYKXDYLXPYMEAUKFBUKGXLUKULYAYDYGEFGUMUNYIXQEFYHXQGYHXQYBUOZRZXTYFUD
-       ZOZXTXHOZCLPZUIYQYNYPMZYSYQYPYOOZYTYOYPUPYPLMZUUAYTUEXTLMZYFLMUUBXSETUQZ
-       YEGTUQXTYFURUSYPYNUTVAVBYTHNZINZVCZVGOZYNUUEUUFVDOZQZIYFPHXTPYSYNXTYFHIV
-       EUUJYSHIXTYFUUEXTMZUUFYFMZQZUUHUUIYSUUIYBJNZKNZVDOZUUEUUNUOZOZUUFUUOUOZO
-       ZUJZKSJSZUUMUUHQZYSJKUUEUUFYBHTITVFUVBUVCYSUVAUVCYSUIZJKUURUUTUVDUUPUURU
-       UTQZUVCUUQXTMZUUSYFMZQZUUQUUSVCZVGOZQYSUVEUUMUVHUUHUVJUURUUKUVFUUTUULUVG
-       UUEUUQXTVRUUFUUSYFVRVHUVEUUGUVIVGUUEUUQUUFUUSVIVJVKUVFYSUVGUVJUVFXTUUQRZ
-       OZYSUUCUVLUVFUEUUDXTUUQUTVAUUNRZLMUVLYSUUNJTZUQYRUVLCUVMLXGUVMOZXHUVKXTU
-       VOXHUVMUAUVKXGUVMVLUUNUVNVMVNVOVPVSVQVTWAWBWCWDWEWHWFWGWGYHXNYQXJYSYHXEY
-       OXMYPYDYAXEYOOYGYDXEYCUAYOBYCVLYBFTVMVNWIYAYGXMYPOYDAXLXTYFWJWKWLYAYDXJY
-       SUEYGYAXIYRCLAXTXHWMWNWOWPWQWRWCWGWSWTXAXB $.
-       $( [11-Mar-2015] $)
+      ( vq va vb vc vx vy vn vm cncs wcel cv wceq wrex wa cnc wex vex clec cplc
+      ctc wbr wb tccl dflec2 sylan2 wi elncs 3anbi123i eeeanv bitr4i cpw1 eqcom
+      w3a ncelncsi ncaddccl mp2an ncseqnc ax-mp bitri cin c0 cun eladdc pw1equn
+      eleq1 bi2anan9 ineq12 eqeq1d anbi12d tceq tcnc syl6eq eqeq2d rcla4ev mpan
+      sylbir ad2antrr syl6bi 3adant1 exlimivv syl5bi expimpd rexlimivv 3ad2ant2
+      com12 sylbi addceq12 3adant2 eqeq12d eqeq1 rexbidv imbi12d mpbiri exlimiv
+      3ad2ant1 3expa rexlimdva sylbid 3impia ) ALMZBLMZABUCZUAUDZACNZUCZOZCLPZX
+      CXDQZXFXEADNZUBZOZDLPZXJXDXCXELMXFXOUEBUFAXEDUGUHXKXNXJDLXCXDXLLMZXNXJUIZ
+      XCXDXPUPZAENZRZOZBFNZRZOZXLGNZRZOZUPZGSZFSESZXQXRYAESZYDFSZYGGSZUPYJXCYKX
+      DYLXPYMEAUJFBUJGXLUJUKYAYDYGEFGULUMYIXQEFYHXQGYHXQYBUNZRZXTYFUBZOZXTXHOZC
+      LPZUIYQYNYPMZYSYQYPYOOZYTYOYPUOYPLMZUUAYTUEXTLMZYFLMUUBXSETUQZYEGTUQXTYFU
+      RUSYPYNUTVAVBYTHNZINZVCZVDOZYNUUEUUFVEOZQZIYFPHXTPYSYNXTYFHIVFUUJYSHIXTYF
+      UUEXTMZUUFYFMZQZUUHUUIYSUUIYBJNZKNZVEOZUUEUUNUNZOZUUFUUOUNZOZUPZKSJSZUUMU
+      UHQZYSJKUUEUUFYBHTITVGUVBUVCYSUVAUVCYSUIZJKUURUUTUVDUUPUURUUTQZUVCUUQXTMZ
+      UUSYFMZQZUUQUUSVCZVDOZQYSUVEUUMUVHUUHUVJUURUUKUVFUUTUULUVGUUEUUQXTVHUUFUU
+      SYFVHVIUVEUUGUVIVDUUEUUQUUFUUSVJVKVLUVFYSUVGUVJUVFXTUUQRZOZYSUUCUVLUVFUEU
+      UDXTUUQUTVAUUNRZLMUVLYSUUNJTZUQYRUVLCUVMLXGUVMOZXHUVKXTUVOXHUVMUCUVKXGUVM
+      VMUUNUVNVNVOVPVQVRVSVTWAWBWCWHWDWEWFWIWIYHXNYQXJYSYHXEYOXMYPYDYAXEYOOYGYD
+      XEYCUCYOBYCVMYBFTVNVOWGYAYGXMYPOYDAXLXTYFWJWKWLYAYDXJYSUEYGYAXIYRCLAXTXHW
+      MWNWRWOWPWQWCWIWSWTXAXB $.
+      $( [11-Mar-2015] $)
   $}
 
   ${
@@ -56008,12 +56013,12 @@ $)
     $( If ` ( M ^c 0c ) ` is a cardinal, then ` M ` is a T-raising of some
        cardinal. $)
     ce0t $p |- ( ( M e. NC /\ ( M ^c 0c ) e. NC ) -> E. n e. NC M = T_c n ) $=
-       ( vx cncs wcel c0c cce co wa cv cpw1 cnc wceq wex wrex ce0ncpw1 ncelncsi
-       ctc vex tcnc eqcomi tceq eqeq2d rcla4ev mp2an rexbidv mpbiri exlimiv syl
-       eqeq1 ) BDEBFGHDEIBCJZKLZMZCNBAJZRZMZADOZBCPUMUQCUMUQULUOMZADOZUKLZDEULU
-       TRZMZUSUKCSZQVAULUKVCTUAURVBAUTDUNUTMUOVAULUNUTUBUCUDUEUMUPURADBULUOUJUF
-       UGUHUI $.
-       $( [17-Mar-2015] $)
+      ( vx cncs wcel c0c cce co wa cpw1 cnc wceq wex ctc wrex ce0ncpw1 ncelncsi
+      cv vex tcnc eqcomi tceq eqeq2d rcla4ev mp2an eqeq1 rexbidv mpbiri exlimiv
+      syl ) BDEBFGHDEIBCRZJKZLZCMBARZNZLZADOZBCPUMUQCUMUQULUOLZADOZUKKZDEULUTNZ
+      LZUSUKCSZQVAULUKVCTUAURVBAUTDUNUTLUOVAULUNUTUBUCUDUEUMUPURADBULUOUFUGUHUI
+      UJ $.
+      $( [17-Mar-2015] $)
   $}
 
   ${
@@ -56021,51 +56026,51 @@ $)
     $d p s $.  $d p x $.  $d p y $.  $d q r $.  $d q s $.  $d q x $.  $d q y $.
     $d r s $.  $d r x $.  $d r y $.  $d s y $.  $d x y $.
     $( Partial ordering law for base two cardinal exponentiation.  Theorem 4.8
-       of [Specker]. $)
+       of {{Specker}}. $)
     ce2le $p |- ( ( ( M e. NC /\ N e. NC /\ ( N ^c 0c ) e. NC ) /\ M <_c N ) ->
        ( 2c ^c M ) <_c ( 2c ^c N ) ) $=
-       ( vp vq vx vy vr cncs wcel cce co clec wbr wa cv wceq wrex c2c wi cnc vs
-       c0c w3a ctc ce0t 3adant1 adantr letc wb tlecg ancoms elncs anbi12i eeanv
-       wex bitr4i cpw wss cen enpw elnc 3imtr4i adantl sspwb biimpi sseq1 sseq2
-       rcla42ev syl3anc ex rexlimivv ncex brlec cpw1 vex tcnc ce2 ax-mp 3brtr4g
-       breq12 tceq oveq2d breqan12d imbi12d mpbiri exlimivv sylbi sylbird an32s
-       imp breq1 anbi2d anbi1d oveq2 breq1d com12 rexlimdva mpd 3expa 3ad2antl1
-       breq2 breq2d ) AHIZBHIZBUBJKHIZUCZABLMZNBCOZUDZPZCHQZRAJKZRBJKZLMZXFXKXG
-       XDXEXKXCCBUEUFUGXCXDXGXKXNSXEXCXGNZXJXNCHXJXOXHHIZNZXNXJXQXNSXCAXILMZNZX
-       PNZXLRXIJKZLMZSXCXPXRYBXCXPXRYBXCXPXRUCADOZUDZPZDHQZYBAXHDUHXPXRYFYBSXCX
-       PXRNZYEYBDHYEYGYCHIZNZYBYEYIYBSXPYDXILMZNZYHNZRYDJKZYALMZSXPYHYJYNXPYHNZ
-       YJYNYOYJYCXHLMZYNYHXPYPYJUIYCXHUJUKYHXPYPYNSZYHXPNZYCEOZTZPZXHFOZTZPZNZF
-       UOEUOZYQYRUUAEUOZUUDFUOZNUUFYHUUGXPUUHEYCULFXHULUMUUAUUDEFUNUPUUEYQEFUUE
-       YQYTUUCLMZRYTUDZJKZRUUCUDZJKZLMZSUUIYSUQZTZUUBUQZTZUUKUUMLXHYCURZDUUCQCY
-       TQGOZUAOZURZUAUURQGUUPQZUUIUUPUURLMUUSUVCCDYTUUCXHYTIZYCUUCIZNZUUSUVCUVF
-       UUSNXHUQZUUPIZYCUQZUURIZUVGUVIURZUVCUVFUVHUUSUVDUVHUVEXHYSUSMUVGUUOUSMUV
-       DUVHXHYSUTXHYSVAUVGUUOVAVBUGUGUVFUVJUUSUVEUVJUVDYCUUBUSMUVIUUQUSMUVEUVJY
-       CUUBUTYCUUBVAUVIUUQVAVBVCUGUUSUVKUVFUUSUVKXHYCVDVEVCUVBUVKUVGUVAURGUAUVG
-       UVIUUPUURUUTUVGUVAVFUVAUVIUVGVGVHVIVJVKCDYTUUCYSVLUUBVLVMGUAUUPUURUUOVLU
-       UQVLVMVBUUJYSVNTPUUKUUPPYSEVOZVPYSUUJUVLVQVRUULUUBVNTPUUMUURPUUBFVOZVPUU
-       BUULUVMVQVRVSUUEYPUUIYNUUNYCYTXHUUCLVTUUAUUDYMUUKYAUUMLUUAYDUUJRJYCYTWAW
-       BUUDXIUULRJXHUUCWAWBWCWDWEWFWGUKWHWJWIYEYIYLYBYNYEYGYKYHYEXRYJXPAYDXILWK
-       WLWMYEXLYMYALAYDRJWNWOWDWEWPWQUFWRWSWIXJXQXTXNYBXJXOXSXPXJXGXRXCBXIALXAW
-       LWMXJXMYAXLLBXIRJWNXBWDWEWPWQWTWR $.
-       $( [16-Mar-2015] $)
+      ( vp vq vx vy vr cncs wcel cce co clec wbr wa cv wceq wrex c2c wi cnc c0c
+      vs w3a ctc ce0t 3adant1 adantr letc tlecg ancoms wex elncs anbi12i bitr4i
+      wb eeanv cpw wss cen enpw elnc 3imtr4i adantl sspwb biimpi sseq1 rcla42ev
+      sseq2 syl3anc rexlimivv ncex brlec cpw1 vex tcnc ce2 ax-mp 3brtr4g breq12
+      ex oveq2d breqan12d imbi12d mpbiri exlimivv sylbi sylbird imp an32s breq1
+      tceq anbi2d anbi1d oveq2 breq1d com12 rexlimdva mpd 3expa breq2 3ad2antl1
+      breq2d ) AHIZBHIZBUAJKHIZUCZABLMZNBCOZUDZPZCHQZRAJKZRBJKZLMZXFXKXGXDXEXKX
+      CCBUEUFUGXCXDXGXKXNSXEXCXGNZXJXNCHXJXOXHHIZNZXNXJXQXNSXCAXILMZNZXPNZXLRXI
+      JKZLMZSXCXPXRYBXCXPXRYBXCXPXRUCADOZUDZPZDHQZYBAXHDUHXPXRYFYBSXCXPXRNZYEYB
+      DHYEYGYCHIZNZYBYEYIYBSXPYDXILMZNZYHNZRYDJKZYALMZSXPYHYJYNXPYHNZYJYNYOYJYC
+      XHLMZYNYHXPYPYJUOYCXHUIUJYHXPYPYNSZYHXPNZYCEOZTZPZXHFOZTZPZNZFUKEUKZYQYRU
+      UAEUKZUUDFUKZNUUFYHUUGXPUUHEYCULFXHULUMUUAUUDEFUPUNUUEYQEFUUEYQYTUUCLMZRY
+      TUDZJKZRUUCUDZJKZLMZSUUIYSUQZTZUUBUQZTZUUKUUMLXHYCURZDUUCQCYTQGOZUBOZURZU
+      BUURQGUUPQZUUIUUPUURLMUUSUVCCDYTUUCXHYTIZYCUUCIZNZUUSUVCUVFUUSNXHUQZUUPIZ
+      YCUQZUURIZUVGUVIURZUVCUVFUVHUUSUVDUVHUVEXHYSUSMUVGUUOUSMUVDUVHXHYSUTXHYSV
+      AUVGUUOVAVBUGUGUVFUVJUUSUVEUVJUVDYCUUBUSMUVIUUQUSMUVEUVJYCUUBUTYCUUBVAUVI
+      UUQVAVBVCUGUUSUVKUVFUUSUVKXHYCVDVEVCUVBUVKUVGUVAURGUBUVGUVIUUPUURUUTUVGUV
+      AVFUVAUVIUVGVHVGVIVTVJCDYTUUCYSVKUUBVKVLGUBUUPUURUUOVKUUQVKVLVBUUJYSVMTPU
+      UKUUPPYSEVNZVOYSUUJUVLVPVQUULUUBVMTPUUMUURPUUBFVNZVOUUBUULUVMVPVQVRUUEYPU
+      UIYNUUNYCYTXHUUCLVSUUAUUDYMUUKYAUUMLUUAYDUUJRJYCYTWKWAUUDXIUULRJXHUUCWKWA
+      WBWCWDWEWFUJWGWHWIYEYIYLYBYNYEYGYKYHYEXRYJXPAYDXILWJWLWMYEXLYMYALAYDRJWNW
+      OWCWDWPWQUFWRWSWIXJXQXTXNYBXJXOXSXPXJXGXRXCBXIALWTWLWMXJXMYAXLLBXIRJWNXBW
+      CWDWPWQXAWR $.
+      $( [16-Mar-2015] $)
   $}
 
   ${
     $d M x $.  $d N x $.
     $( The exponent of a T-raising to a T-raising is always a cardinal. $)
     cet $p |- ( ( M e. NC /\ N e. NC ) -> ( T_c M ^c T_c N ) e. NC ) $=
-       ( vx cncs wcel ctc c0c cce co tccl adantr adantl cnc wceq wex elncs tceq
-       oveq1d ax-mp syl6eqel wa cv c0 wne cpw1 vex ncelncsi pw1ex ncid eleqtrri
-       tcnc ce0nnuli mp2an wb ce0nulnc mpbi exlimiv sylbi cecl syl22anc ) ADEZB
-       DEZUAAFZDEZBFZDEZVCGHIZDEZVEGHIZDEZVCVEHIDEVAVDVBAJKVBVFVABJLVAVHVBVAACU
-       BZMZNZCOVHCAPVMVHCVMVGVLFZGHIZDVMVCVNGHAVLQRVOUCUDZVODEZVNDEZVKUEZVNEVPV
-       LDEVRVKCUFZUGVLJSZVSVSMVNVSVKVTUHUIVKVTUKUJVKVNULUMVRVPVQUNWAVNUOSUPZTUQ
-       URKVBVJVAVBBVLNZCOVJCBPWCVJCWCVIVODWCVEVNGHBVLQRWBTUQURLVCVEUSUT $.
-       $( [13-Mar-2015] $)
+      ( vx cncs wcel ctc c0c cce co tccl adantr adantl cnc wceq wex tceq oveq1d
+      elncs ax-mp syl6eqel wa cv wne cpw1 vex ncelncsi pw1ex ncid tcnc eleqtrri
+      c0 ce0nnuli mp2an wb ce0nulnc mpbi exlimiv sylbi cecl syl22anc ) ADEZBDEZ
+      UAAFZDEZBFZDEZVCGHIZDEZVEGHIZDEZVCVEHIDEVAVDVBAJKVBVFVABJLVAVHVBVAACUBZMZ
+      NZCOVHCARVMVHCVMVGVLFZGHIZDVMVCVNGHAVLPQVOUKUCZVODEZVNDEZVKUDZVNEVPVLDEVR
+      VKCUEZUFVLJSZVSVSMVNVSVKVTUGUHVKVTUIUJVKVNULUMVRVPVQUNWAVNUOSUPZTUQURKVBV
+      JVAVBBVLNZCOVJCBRWCVJCWCVIVODWCVEVNGHBVLPQWBTUQURLVCVEUSUT $.
+      $( [13-Mar-2015] $)
   $}
 
   $( The exponent of two to a T-raising is always a cardinal.  Theorem 5.8 of
-     [Specker]. $)
+     {{Specker}}. $)
   ce2t $p |- ( M e. NC -> ( 2c ^c T_c M ) e. NC ) $=
     ( cncs wcel c2c ctc cce co tc2c oveq1i 2nc cet mpan syl5eqelr ) ABCZDAEZFGD
     EZOFGZBPDOFHIDBCNQBCJDAKLM $.
@@ -56076,25 +56081,25 @@ $)
     $( Distributive law for T-raising and cardinal exponentiation to two. $)
     tce2 $p |- ( ( M e. NC /\ ( M ^c 0c ) e. NC ) ->
       T_c ( 2c ^c M ) = ( 2c ^c T_c M ) ) $=
-       ( vx cncs wcel c0c cce co cpw1 cnc wceq c2c ctc cpw tcnc eqid ax-mp tceq
-       wa ce2 syl cv wex ce0ncpw1 vex ncpwpw1 3eqtr4i pw1ex eqtr4i oveq2 syl6eq
-       pwex oveq2d 3eqtr4a exlimiv ) ACDAEFGCDRABUAZHZIZJZBUBKAFGZLZKALZFGZJZAB
-       UCURVCBURKUQFGZLZKUPHIZFGZUTVBVEUPMIZVGUOMZIZLZVIHIVEVHVIUOBUDZUKNVDVJJZ
-       VEVKJUQUQJVMUQOUOUQVLSPVDVJQPUOVLUEUFVFVFJVGVHJVFOUPVFUOVLUGZSPUHURUSVDJ
-       UTVEJAUQKFUIUSVDQTURVAVFKFURVAUQLVFAUQQUPVNNUJULUMUNT $.
-       $( [13-Mar-2015] $)
+      ( vx cncs wcel c0c cce co wa cpw1 cnc wceq c2c ctc cpw tcnc eqid ce2 tceq
+      ax-mp syl wex ce0ncpw1 vex pwex ncpwpw1 3eqtr4i pw1ex eqtr4i oveq2 syl6eq
+      cv oveq2d 3eqtr4a exlimiv ) ACDAEFGCDHABUKZIZJZKZBUALAFGZMZLAMZFGZKZABUBU
+      RVCBURLUQFGZMZLUPIJZFGZUTVBVEUPNJZVGUONZJZMZVIIJVEVHVIUOBUCZUDOVDVJKZVEVK
+      KUQUQKVMUQPUOUQVLQSVDVJRSUOVLUEUFVFVFKVGVHKVFPUPVFUOVLUGZQSUHURUSVDKUTVEK
+      AUQLFUIUSVDRTURVAVFLFURVAUQMVFAUQRUPVNOUJULUMUNT $.
+      $( [13-Mar-2015] $)
   $}
 
   ${
     $d M x $.
     $( A T-raising raised to zero is always a cardinal. $)
     te0c $p |- ( M e. NC -> ( T_c M ^c 0c ) e. NC ) $=
-       ( vx cncs wcel cv cpw1 ctc wex c0c cce co cnc wceq elncs pw1ex ncid tceq
-       vex wb syl tcnc syl6eq syl5eleqr eximi sylbi c0 wne tccl ce0nulnc bitr3d
-       ce0nnul mpbid ) ACDZBEZFZAGZDZBHZUPIJKZCDZUMAUNLZMZBHURBANVBUQBVBUOUOLZU
-       PUOUNBRZOPVBUPVAGVCAVAQUNVDUAUBUCUDUEUMUSUFUGZURUTUMUPCDZVEURSAUHZUPBUKT
-       UMVFVEUTSVGUPUITUJUL $.
-       $( [16-Mar-2015] $)
+      ( vx cncs wcel cv cpw1 ctc wex c0c cce cnc wceq elncs vex pw1ex ncid tceq
+      co wb syl tcnc syl6eq syl5eleqr eximi c0 wne tccl ce0nnul ce0nulnc bitr3d
+      sylbi mpbid ) ACDZBEZFZAGZDZBHZUPIJRZCDZUMAUNKZLZBHURBAMVBUQBVBUOUOKZUPUO
+      UNBNZOPVBUPVAGVCAVAQUNVDUAUBUCUDUKUMUSUEUFZURUTUMUPCDZVEURSAUGZUPBUHTUMVF
+      VEUTSVGUPUITUJUL $.
+      $( [16-Mar-2015] $)
   $}
 
 
@@ -56104,10 +56109,10 @@ $)
        cardinal. $)
     ce0tb $p |- ( M e. NC -> ( ( M ^c 0c ) e. NC <-> E. n e. NC M = T_c n ) )
         $=
-       ( cncs wcel c0c cce co cv wceq wrex ce0t ex te0c oveq1 eleq1d syl5ibrcom
-       ctc rexlimiv impbid1 ) BCDZBEFGZCDZBAHZQZIZACJZTUBUFABKLUEUBACUCCDUBUEUD
-       EFGZCDUCMUEUAUGCBUDEFNOPRS $.
-       $( [17-Mar-2015] $)
+      ( cncs wcel c0c cce co cv ctc wceq wrex ce0t te0c oveq1 eleq1d syl5ibrcom
+      ex rexlimiv impbid1 ) BCDZBEFGZCDZBAHZIZJZACKZTUBUFABLQUEUBACUCCDUBUEUDEF
+      GZCDUCMUEUAUGCBUDEFNOPRS $.
+      $( [17-Mar-2015] $)
   $}
 
   ${
@@ -56115,31 +56120,31 @@ $)
     $( Cardinal exponentiation to zero is a cardinal iff the number is less
        than the size of cardinal one. $)
     ce0lenc1 $p |- ( M e. NC -> ( ( M ^c 0c ) e. NC <-> M <_c Nc 1c ) ) $=
-       ( vn vx vy cncs wcel cv ctc wceq wrex c1c cnc clec wbr wex cpw1 tceq vex
-       tcnc wss c0c cce co ce0tb elncs syl6eq pw1ss1c pw1ex 1cex nclec syl6eqbr
-       ax-mp exlimiv sylbi breq1 syl5ibrcom rexlimiv lenc wa wi ncseqnc biimpar
-       sspw12 ncelncsi eqeq1d rcla4ev mp2an eqcom syl6bb rexbidv mpbiri syl5ibr
-       nceq eqeq1 syl rexlimdva sylbid impbid2 bitrd ) AEFZAUAUBUCEFABGZHZIZBEJ
-       ZAKLZMNZBAUDVTWDWFWCWFBEWAEFZWFWCWBWEMNZWGWACGZLZIZCOWHCWAUEWKWHCWKWBWIP
-       ZLZWEMWKWBWJHWMWAWJQWICRZSUFWLKTWMWEMNWIUGWLKWIWNUHUIUJULUKUMUNAWBWEMUOU
-       PUQVTWFWIKTZCAJWDCKAUIURVTWOWDCAVTWIAFZUSAWJIZWOWDUTVTWQWPAWIVAVBWOWDWQW
-       JWBIZBEJZWOWIDGZPZIZDOWSDWIWNVCXBWSDXBWSWBXALZIZBEJZWTLZEFXFHZXCIZXEWTDR
-       ZVDWTXISXDXHBXFEWAXFIWBXGXCWAXFQVEVFVGXBWRXDBEXBWRXCWBIXDXBWJXCWBWIXAVMV
-       EXCWBVHVIVJVKUMUNWQWCWRBEAWJWBVNVJVLVOVPVQVRVS $.
-       $( [18-Mar-2015] $)
+      ( vn vx vy cncs wcel cv ctc wceq wrex c1c cnc clec wbr wex cpw1 tceq tcnc
+      vex wss c0c co ce0tb elncs syl6eq pw1ss1c pw1ex 1cex nclec ax-mp syl6eqbr
+      exlimiv sylbi breq1 syl5ibrcom rexlimiv lenc wa wi ncseqnc biimpar sspw12
+      cce ncelncsi eqeq1d rcla4ev mp2an nceq eqcom syl6bb rexbidv eqeq1 syl5ibr
+      mpbiri syl rexlimdva sylbid impbid2 bitrd ) AEFZAUAVCUBEFABGZHZIZBEJZAKLZ
+      MNZBAUCVTWDWFWCWFBEWAEFZWFWCWBWEMNZWGWACGZLZIZCOWHCWAUDWKWHCWKWBWIPZLZWEM
+      WKWBWJHWMWAWJQWICSZRUEWLKTWMWEMNWIUFWLKWIWNUGUHUIUJUKULUMAWBWEMUNUOUPVTWF
+      WIKTZCAJWDCKAUHUQVTWOWDCAVTWIAFZURAWJIZWOWDUSVTWQWPAWIUTVAWOWDWQWJWBIZBEJ
+      ZWOWIDGZPZIZDOWSDWIWNVBXBWSDXBWSWBXALZIZBEJZWTLZEFXFHZXCIZXEWTDSZVDWTXIRX
+      DXHBXFEWAXFIWBXGXCWAXFQVEVFVGXBWRXDBEXBWRXCWBIXDXBWJXCWBWIXAVHVEXCWBVIVJV
+      KVNULUMWQWCWRBEAWJWBVLVKVMVOVPVQVRVS $.
+      $( [18-Mar-2015] $)
   $}
 
   ${
     $d M x y z $.
     $( A T-raising is less than or equal to the cardinality of cardinal one. $)
     tlenc1c $p |- ( M e. NC -> T_c M <_c Nc 1c ) $=
-       ( vx vy vz cncs wcel cv cnc wceq wex ctc c1c clec wbr cpw1 wss wrex ncid
-       elncs ncex tceq vex tcnc syl6eq pw1ex pw1ss1c sseq1 sseq2 rcla42ev mp3an
-       1cex brlec mpbir syl6eqbr exlimiv sylbi ) AEFABGZHZIZBJAKZLHZMNZBASUSVBB
-       USUTUQOZHZVAMUSUTURKVDAURUAUQBUBZUCUDVDVAMNCGZDGZPZDVAQCVDQZVCVDFLVAFVCL
-       PZVIVCUQVEUERLUKRUQUFVHVJVCVGPCDVCLVDVAVFVCVGUGVGLVCUHUIUJCDVDVAVCTLTULU
-       MUNUOUP $.
-       $( [16-Mar-2015] $)
+      ( vx vy vz cncs wcel cv cnc wceq wex ctc c1c clec wbr elncs cpw1 wss wrex
+      ncid ncex tceq vex tcnc syl6eq pw1ex 1cex pw1ss1c sseq1 sseq2 mp3an brlec
+      rcla42ev mpbir syl6eqbr exlimiv sylbi ) AEFABGZHZIZBJAKZLHZMNZBAOUSVBBUSU
+      TUQPZHZVAMUSUTURKVDAURUAUQBUBZUCUDVDVAMNCGZDGZQZDVARCVDRZVCVDFLVAFVCLQZVI
+      VCUQVEUESLUFSUQUGVHVJVCVGQCDVCLVDVAVFVCVGUHVGLVCUIULUJCDVDVAVCTLTUKUMUNUO
+      UP $.
+      $( [16-Mar-2015] $)
   $}
 
   $( Cardinal one is not zero. $)
@@ -56156,10 +56161,10 @@ $)
     $d A x $.
     $( A set is finite iff its cardinality is a natural. $)
     finnc $p |- ( A e. Fin <-> Nc A e. Nn ) $=
-       ( vx cv cnc wceq cnnc wrex wcel cfin cncs wb nnnc ncseqnc rexbiia risset
-       syl elfin 3bitr4ri ) BCZADZEZBFGASHZBFGTFHAIHUAUBBFSFHSJHUAUBKSLSAMPNBTF
-       OBAQR $.
-       $( [18-Mar-2015] $)
+      ( vx cv cnc wceq cnnc wrex wcel cfin cncs nnnc ncseqnc syl rexbiia risset
+      wb elfin 3bitr4ri ) BCZADZEZBFGASHZBFGTFHAIHUAUBBFSFHSJHUAUBPSKSALMNBTFOB
+      AQR $.
+      $( [18-Mar-2015] $)
   $}
 
   ${
@@ -56167,50 +56172,49 @@ $)
     $d p t $.  $d p u $.  $d q t $.  $d q u $.  $d t u $.  $d t x $.  $d x y $.
     $( The stratified T raising function is a set. $)
     tcfnex $p |- TcFn e. _V $=
-       ( vx vz vp vq vu vt c1c cvv csset cid cv cop wcel wex wa wbr bitri exbii
-       vex 3bitri vy ctcfn cxp cins3 ccnv cncs cpw1fn ccom ctxp cima cpw1 cins2
-       csi cin csymdif crn ccompl cuni ctc cmpt df-tcfn csn wel cnc wceq weq wb
-       wrex wal oteltxp df-br brcnv brssetsn bitr3i opex elcompl elrn2 elsymdif
-       otelins2 elin opelxp mpbiran2 anbi1i ncseqnc rexbidv snex brsnsi1 19.41v
-       bitr4i excom anass anbi2d ceqsexv brpw1fn anbi12i opelco df-clel 3bitr4i
-       wn breq1 brsnsi opelssetsn elima1c eluni ancom elimapw11c df-rex pm5.32i
-       syl6rbbr otelins3 ideq bibi12i xchbinx exnal 3bitrri con1bii cab dfiota2
-       cio df-tc eqtri eleq2i releqmpt eqtr4i 1cex ssetex cnvex ncsex vvex xpex
-       eluniab pw1fnex siex coex txpex imaex pw1ex inex ins2ex rnex idex ins3ex
-       symdifex complex mptexlem eqeltri ) UBGHUCIUDIUEZUFHUCZIUGUMZUHZUUGUMZIU
-       IZGUJZUIZGUKZUJZUNZULZJUDZUOZUPZUQZUIZUPZULUOGUJUQUEUNZHUBAGAKZURZUSZUTU
-       VEAVAAUAGUVDUVHBKZUAKZVBZUVFLZLUVCMZBNUABVCZCKZUFMZUVODKZUKZVDVEZDUVGVHZ
-       OZCBVFZVGZCVIZOZBNZUVLUVDMUVJUVHMZUVMUWEBUVMUVIUVKLUUGMZUVIUVFLZUVBMZOUW
-       EUVIUVKUVFUUGUVBVJUWHUVNUWJUWDUWHUVIUVKUUGPZUVNUVIUVKUUGVKUWKUVKUVIIPUVN
-       UVIUVKIVLUVJUVIUASBSZVMQVNUWJUWIUVAMZWSUWDUWIUVAUVIUVFUWLASZVOVPUWDUWMUW
-       MUVOUWILZUUTMZCNUWCWSZCNUWDWSCUWIUUTVQUWPUWQCUWPUWOUURMZUWOUUSMZVGUWCUWO
-       UURUUSVRUWRUWAUWSUWBUWRUVOUVFLZUUQMUWTUUHMZUWTUUPMZOZUWAUVOUVIUVFUUQUWLV
-       SUWTUUHUUPVTUXCUVPUXBOUWAUXAUVPUXBUXAUVPUVFHMUWNUVOUVFUFHWAWBWCUVPUXBUVT
-       UVPUVTUVRUVOMZDUVGVHZUXBUVPUVSUXDDUVGUVOUVRWDWEUVQVBZVBZUWTLUUNMZDNUVQUV
-       GMZUXDOZDNUXBUXEUXHUXJDUXHUXGUVOLUUJMZUXGUVFLZUUMMZOUXDUXIOUXJUXGUVOUVFU
-       UJUUMVJUXKUXDUXMUXIUXGEKZUUIPZUXNUVOIPZOZENZFKZUVRVEZFCVCZOZFNZUXKUXDUXR
-       UXNUXSVBZVEZUXFUXSUGPZOZUXPOZFNZENUYHENZFNUYCUXQUYIEUXQUYGFNZUXPOUYIUXOU
-       YKUXPFUXFUXNUGUVQWFZWGWCUYGUXPFWHWIRUYHEFWJUYJUYBFUYJUYEUYFUXPOZOZENUYFU
-       YDUVOIPZOZUYBUYHUYNEUYEUYFUXPWKRUYMUYPEUYDUXSWFUYEUXPUYOUYFUXNUYDUVOIWTW
-       LWMUYFUXTUYOUYAUVQUXSDSZWNUXSUVOFSZCSVMWOTRTEUXGUVOIUUIWPFUVRUVOWQWRUYDU
-       XLLUULMZFNDFVCZFAVCZOZFNUXMUXIUYSVUBFUYSUYDUXGLUUKMZUYDUVFLIMZOVUBUYDUXG
-       UVFUUKIVJVUCUYTVUDVUAVUCUYDUXGUUKPZUYTUYDUXGUUKVKVUEUXSUXFUUGPUXFUXSIPUY
-       TUXSUXFUUGUYRUYLXAUXSUXFIVLUVQUXSUYQUYRVMTVNUXSUVFUYRUWNXBWOQRFUXLUULXCF
-       UVQUVFXDWRWOUXDUXIXETRDUWTUUNXFUXDDUVGXGWRXIXHQTUWSUVOUVILJMZUWBUVOUVIUV
-       FJUWNXJVUFUVOUVIJPUWBUVOUVIJVKUVOUVIUWLXKVNQXLXMRUWCCXNXOXPQWOQRBUVLUVCV
-       QUWGUVJUWDBXQURZMUWFUVHVUGUVJUVHUWACXSVUGDUVGCXTUWACBXRYAYBUWDBUVJYKQWRY
-       CYDGUVDYEUVCUUGUVBIYFYGZUVAUUTUURUUSUUQUUHUUPUFHYHYIYJUUNUUOUUJUUMIUUIYF
-       UGYLYMYNUULGUUKIUUGVUHYMYFYOYEYPYOGYEYQYPYRYSJUUAUUBUUCYTUUDYOYTUUEUUF
-       $.
-       $( [18-Mar-2015] $)
+      ( vx vz vp vq vu vt c1c cvv csset cid cv cop wcel wex wbr vex bitri exbii
+      wa 3bitri vy ctcfn cxp cins3 ccnv cncs cpw1fn csi ccom ctxp cima cpw1 cin
+      csymdif crn ccompl cuni ctc cmpt df-tcfn csn wel cnc wceq wrex weq wb wal
+      cins2 oteltxp df-br brcnv brssetsn bitr3i wn opex elrn2 elsymdif otelins2
+      elcompl elin opelxp mpbiran2 anbi1i ncseqnc rexbidv brsnsi1 19.41v bitr4i
+      snex excom anass anbi2d ceqsexv brpw1fn anbi12i opelco df-clel opelssetsn
+      breq1 3bitr4i brsnsi elima1c eluni ancom df-rex syl6rbbr pm5.32i otelins3
+      elimapw11c ideq bibi12i xchbinx exnal 3bitrri con1bii cab cio df-tc eqtri
+      dfiota2 eleq2i eluniab releqmpt eqtr4i 1cex cnvex ncsex vvex xpex pw1fnex
+      ssetex siex coex txpex imaex pw1ex inex ins2ex rnex idex symdifex complex
+      ins3ex mptexlem eqeltri ) UBGHUCIUDIUEZUFHUCZIUGUHZUIZUUGUHZIUJZGUKZUJZGU
+      LZUKZUMZVIZJUDZUNZUOZUPZUJZUOZVIUNGUKUPUEUMZHUBAGAKZUQZURZUSUVEAUTAUAGUVD
+      UVHBKZUAKZVAZUVFLZLUVCMZBNUABVBZCKZUFMZUVODKZULZVCVDZDUVGVEZSZCBVFZVGZCVH
+      ZSZBNZUVLUVDMUVJUVHMZUVMUWEBUVMUVIUVKLUUGMZUVIUVFLZUVBMZSUWEUVIUVKUVFUUGU
+      VBVJUWHUVNUWJUWDUWHUVIUVKUUGOZUVNUVIUVKUUGVKUWKUVKUVIIOUVNUVIUVKIVLUVJUVI
+      UAPBPZVMQVNUWJUWIUVAMZVOUWDUWIUVAUVIUVFUWLAPZVPVTUWDUWMUWMUVOUWILZUUTMZCN
+      UWCVOZCNUWDVOCUWIUUTVQUWPUWQCUWPUWOUURMZUWOUUSMZVGUWCUWOUURUUSVRUWRUWAUWS
+      UWBUWRUVOUVFLZUUQMUWTUUHMZUWTUUPMZSZUWAUVOUVIUVFUUQUWLVSUWTUUHUUPWAUXCUVP
+      UXBSUWAUXAUVPUXBUXAUVPUVFHMUWNUVOUVFUFHWBWCWDUVPUXBUVTUVPUVTUVRUVOMZDUVGV
+      EZUXBUVPUVSUXDDUVGUVOUVRWEWFUVQVAZVAZUWTLUUNMZDNUVQUVGMZUXDSZDNUXBUXEUXHU
+      XJDUXHUXGUVOLUUJMZUXGUVFLZUUMMZSUXDUXISUXJUXGUVOUVFUUJUUMVJUXKUXDUXMUXIUX
+      GEKZUUIOZUXNUVOIOZSZENZFKZUVRVDZFCVBZSZFNZUXKUXDUXRUXNUXSVAZVDZUXFUXSUGOZ
+      SZUXPSZFNZENUYHENZFNUYCUXQUYIEUXQUYGFNZUXPSUYIUXOUYKUXPFUXFUXNUGUVQWJZWGW
+      DUYGUXPFWHWIRUYHEFWKUYJUYBFUYJUYEUYFUXPSZSZENUYFUYDUVOIOZSZUYBUYHUYNEUYEU
+      YFUXPWLRUYMUYPEUYDUXSWJUYEUXPUYOUYFUXNUYDUVOIWTWMWNUYFUXTUYOUYAUVQUXSDPZW
+      OUXSUVOFPZCPVMWPTRTEUXGUVOIUUIWQFUVRUVOWRXAUYDUXLLUULMZFNDFVBZFAVBZSZFNUX
+      MUXIUYSVUBFUYSUYDUXGLUUKMZUYDUVFLIMZSVUBUYDUXGUVFUUKIVJVUCUYTVUDVUAVUCUYD
+      UXGUUKOZUYTUYDUXGUUKVKVUEUXSUXFUUGOUXFUXSIOUYTUXSUXFUUGUYRUYLXBUXSUXFIVLU
+      VQUXSUYQUYRVMTVNUXSUVFUYRUWNWSWPQRFUXLUULXCFUVQUVFXDXAWPUXDUXIXETRDUWTUUN
+      XJUXDDUVGXFXAXGXHQTUWSUVOUVILJMZUWBUVOUVIUVFJUWNXIVUFUVOUVIJOUWBUVOUVIJVK
+      UVOUVIUWLXKVNQXLXMRUWCCXNXOXPQWPQRBUVLUVCVQUWGUVJUWDBXQUQZMUWFUVHVUGUVJUV
+      HUWACXRVUGDUVGCXSUWACBYAXTYBUWDBUVJYCQXAYDYEGUVDYFUVCUUGUVBIYLYGZUVAUUTUU
+      RUUSUUQUUHUUPUFHYHYIYJUUNUUOUUJUUMIUUIYLUGYKYMYNUULGUUKIUUGVUHYMYLYOYFYPY
+      OGYFYQYPYRYSJUUAUUDUUBYTUUCYOYTUUEUUF $.
+      $( [18-Mar-2015] $)
   $}
 
   ${
     $( Functionhood statement for the stratified T-raising function. $)
     fntcfn $p |- TcFn Fn 1c $=
-       ( vx cv cuni ctc cvv wcel ctcfn c1c wfn df-tcfn fnmpt tcex a1i mprg ) AB
-       ZCZDZEFZGHIAHAHQGEAJKROHFPLMN $.
-       $( [18-Mar-2015] $)
+      ( vx cv cuni ctc cvv wcel ctcfn c1c wfn df-tcfn fnmpt tcex a1i mprg ) ABZ
+      CZDZEFZGHIAHAHQGEAJKROHFPLMN $.
+      $( [18-Mar-2015] $)
   $}
 
   ${
@@ -56218,12 +56222,12 @@ $)
     brtcfn.1 $e |- A e. _V $.
     $( Binary relationship form of the stratified T-raising function. $)
     brtcfn $p |- ( { A } TcFn B <-> B = T_c A ) $=
-       ( vx csn ctcfn cfv wceq ctc wbr c1c wcel snel1c cv cuni unieq unisn tceq
-       syl6eq syl df-tcfn tcex fvmpt ax-mp eqeq1i wb fntcfn fnbrfvb mp2an eqcom
-       wfn 3bitr3i ) AEZFGZBHZAIZBHUMBFJZBUPHUNUPBUMKLZUNUPHACMZDUMDNZOZIZUPKFU
-       TUMHZVAAHVBUPHVCVAUMOAUTUMPACQSVAARTDUAAUBUCUDUEFKUKURUOUQUFUGUSKUMBFUHU
-       IUPBUJUL $.
-       $( [18-Mar-2015] $)
+      ( vx csn ctcfn cfv wceq ctc wbr c1c wcel snel1c cv cuni unieq syl6eq tceq
+      unisn syl df-tcfn tcex fvmpt ax-mp eqeq1i wb fntcfn fnbrfvb mp2an 3bitr3i
+      wfn eqcom ) AEZFGZBHZAIZBHUMBFJZBUPHUNUPBUMKLZUNUPHACMZDUMDNZOZIZUPKFUTUM
+      HZVAAHVBUPHVCVAUMOAUTUMPACSQVAARTDUAAUBUCUDUEFKUKURUOUQUFUGUSKUMBFUHUIUPB
+      ULUJ $.
+      $( [18-Mar-2015] $)
   $}
 
   ${
@@ -56231,32 +56235,32 @@ $)
     ncfin.1 $e |- A e. _V $.
     $( The cardinality of a set is a natural iff the set is finite. $)
     ncfin $p |- ( Nc A e. Nn <-> A e. Fin ) $=
-       ( vn cnc cnnc wcel cv wrex cfin ncid eleq2 rcla4ev mpan2 wceq eqcom cncs
-       wa wb nnnc ncseqnc syl syl5bb biimpar eleq1d exbiri pm2.43a impbii elfin
-       rexlimiv bitr4i ) ADZEFZACGZFZCEHZAIFULUOULAUKFZUOABJUNUPCUKEUMUKAKLMUNU
-       LCEUNUMEFZULUQUNULUQUQUNQUKUMEUQUKUMNZUNURUMUKNZUQUNUKUMOUQUMPFUSUNRUMSU
-       MATUAUBUCUDUEUFUIUGCAUHUJ $.
-       $( [19-Mar-2015] $)
+      ( vn cnc cnnc wcel cv wrex cfin ncid eleq2 rcla4ev mpan2 wa wceq eqcom wb
+      cncs nnnc ncseqnc syl syl5bb biimpar eleq1d exbiri pm2.43a rexlimiv elfin
+      impbii bitr4i ) ADZEFZACGZFZCEHZAIFULUOULAUKFZUOABJUNUPCUKEUMUKAKLMUNULCE
+      UNUMEFZULUQUNULUQUQUNNUKUMEUQUKUMOZUNURUMUKOZUQUNUKUMPUQUMRFUSUNQUMSUMATU
+      AUBUCUDUEUFUGUICAUHUJ $.
+      $( [19-Mar-2015] $)
   $}
 
   ${
     $d n x $.
     $( Lemma for ~ nclenn .  Set up stratification for induction. $)
     nclennlem1 $p |- { x | A. n e. NC ( n <_c x -> n e. Nn ) } e. _V $=
-       ( clec cnnc ccompl cres cncs cima cv wbr wcel wi wral wn elcompl wrex wa
-       vex bitri complex cab elima brres anbi2i rexbii rexanali 3bitrri con1bii
-       cvv abbi2i lecex nncex resex ncsex imaex eqeltrri ) CDEZFZGHZEZBIZAIZCJZ
-       VADKZLBGMZAUAUIVEAUTVBUTKVBUSKZNVEVBUSAROVEVFVFVAVBURJZBGPVCVDNZQZBGPVEN
-       BVBURGUBVGVIBGVGVCVAUQKZQVIVAVBCUQUCVJVHVCVADBROUDSUEVCVDBGUFUGUHSUJUSUR
-       GCUQUKDULTUMUNUOTUP $.
-       $( [19-Mar-2015] $)
+      ( clec cnnc ccompl cres cncs cima cv wbr wcel wi wral wn vex elcompl wrex
+      wa bitri complex cab cvv elima brres anbi2i rexbii 3bitrri con1bii abbi2i
+      rexanali lecex nncex resex ncsex imaex eqeltrri ) CDEZFZGHZEZBIZAIZCJZVAD
+      KZLBGMZAUAUBVEAUTVBUTKVBUSKZNVEVBUSAOPVEVFVFVAVBURJZBGQVCVDNZRZBGQVENBVBU
+      RGUCVGVIBGVGVCVAUQKZRVIVAVBCUQUDVJVHVCVADBOPUESUFVCVDBGUJUGUHSUIUSURGCUQU
+      KDULTUMUNUOTUP $.
+      $( [19-Mar-2015] $)
   $}
 
   ${
     $d m n $.  $d M n $.  $d m p $.  $d m q $.  $d m x $.  $d N n $.  $d n p $.
-    $d n q $.  $d n x $.  $d N x $.  $d p q $.  
+    $d n q $.  $d n x $.  $d N x $.  $d p q $.
     $( A cardinal that is less than or equal to a natural is a natural.
-       Theorem XI.3.3 of [Rosser], p. 391. $)
+       Theorem XI.3.3 of {{Rosser}}, p. 391. $)
     nclenn $p |- ( ( M e. NC /\ N e. Nn /\ M <_c N ) -> M e. Nn ) $=
       ( vn vx vp vq cncs wcel cnnc clec wbr wi cv wral c0c c1c cplc wceq breq2
       wa vm nclennlem1 imbi1d ralbidv weq le0nc 0cnc sbth mpan2 peano1 syl6eqel
@@ -56283,85 +56287,94 @@ $)
       $( [19-Mar-2015] $)
   $}
 
-  ${ $d t u $. $d t x $. $d u x $. 
-     $( Lemma for ~ nnltp1c .  Set up stratification. $)
-     nnltp1clem1 $p |- { x | x <c ( x +c 1c ) } e. _V $=
-       ( vt vu caddcfn c1st c2nd ccnv c1c ccom cltc wbr wcel wex brco wceq 1cex
-       cv wa 3bitri cnvex csn cima cres cfix cplc cab elfix exancom brcnv brres
-       cvv cop eliniseg anbi2i bitri vex op1st2nd anbi1i exbii ceqsexv braddcfn
-       opex breq1 eqcom addcex breq2 addcfnex 1stex 2ndex snex imaex resex coex
-       abbi2i ltcex fixex eqeltrri ) DEFGZHUAZUBZUCZGZIZGZJIZUDZAQZWGHUEZJKZAUF
-       UKWIAWFWGWFLWGWGWEKWGBQZJKZWJWGWDKZRBMZWIWGWEUGBWGWGWDJNWMWLWKRZBMWJWHOZ
-       WKRZBMWIWKWLBUHWNWPBWLWOWKWLWGWJWCKZWGHULZWJDKZWOWJWGWCUIWQWGCQZWBKZWTWJ
-       DKZRZCMWTWROZXBRZCMWSCWGWJDWBNXCXECXAXDXBXAWTWGWAKZWTWGEKZWTHFKZRZXDWGWT
-       WAUIXFXGWTVTLZRXIWTWGEVTUJXJXHXGFHWTUMUNUOWGHWTAUPZPUQSURUSXBWSCWRWGHXKP
-       VBWTWRWJDVCUTSWSWHWJOWOWGHWJXKPVAWHWJVDUOSURUSWKWIBWHWGHXKPVEWJWHWGJVFUT
-       SSVNWEWDJWCDWBVGWAEVTVHVRVSFVITHVJVKVLTVMTVOVMVPVQ $.
-       $( [25-Mar-2015] $)
+  ${
+    $d t u $.  $d t x $.  $d u x $.
+    $( Lemma for ~ nnltp1c .  Set up stratification. $)
+    nnltp1clem1 $p |- { x | x <c ( x +c 1c ) } e. _V $=
+      ( vt vu caddcfn c1st c2nd ccnv c1c ccom cltc cv wbr wcel wa wex brco wceq
+      1cex 3bitri cnvex csn cima cres cfix cplc cab cvv elfix exancom cop brcnv
+      brres eliniseg anbi2i bitri vex op1st2nd anbi1i exbii opex breq1 braddcfn
+      ceqsexv eqcom addcex breq2 abbi2i 1stex 2ndex snex imaex resex coex ltcex
+      addcfnex fixex eqeltrri ) DEFGZHUAZUBZUCZGZIZGZJIZUDZAKZWGHUEZJLZAUFUGWIA
+      WFWGWFMWGWGWELWGBKZJLZWJWGWDLZNBOZWIWGWEUHBWGWGWDJPWMWLWKNZBOWJWHQZWKNZBO
+      WIWKWLBUIWNWPBWLWOWKWLWGWJWCLZWGHUJZWJDLZWOWJWGWCUKWQWGCKZWBLZWTWJDLZNZCO
+      WTWRQZXBNZCOWSCWGWJDWBPXCXECXAXDXBXAWTWGWALZWTWGELZWTHFLZNZXDWGWTWAUKXFXG
+      WTVTMZNXIWTWGEVTULXJXHXGFHWTUMUNUOWGHWTAUPZRUQSURUSXBWSCWRWGHXKRUTWTWRWJD
+      VAVCSWSWHWJQWOWGHWJXKRVBWHWJVDUOSURUSWKWIBWHWGHXKRVEWJWHWGJVFVCSSVGWEWDJW
+      CDWBVOWAEVTVHVRVSFVITHVJVKVLTVMTVNVMVPVQ $.
+      $( [25-Mar-2015] $)
   $}
 
-  ${ $d n x $. $d N x $. 
-     $( Any natural is less than one plus itself. $)
-     nnltp1c $p |- ( N e. Nn -> N <c ( N +c 1c ) ) $=
-       ( vx vn cv c1c cplc cltc wbr c0c wceq addceq1 breq12d clec wne cncs wcel
-       id 1cnc brltc cnnc nnltp1clem1 weq 0cnc addlecncs 0cnsuc necomi mpbir2an
-       id1 mp2an wa wi nnnc peano2nc syl w3a leaddc1 ex mp3an3 syl2anc suc11nnc
-       wb peano2 mpdan biimpd necon3d anim12d 3imtr4g finds ) BDZVIEFZGHIIEFZGH
-       ZCDZVMEFZGHZVNVNEFZGHZAAEFZGHBCABUAVIIJZVIIVJVKGVSQVIIEKLBCUBZVIVMVJVNGV
-       TQVIVMEKLVIVNJZVIVNVJVPGWAQVIVNEKLVIAJZVIAVJVRGWBUHVIAEKLVLIVKMHZIVKNIOP
-       EOPZWCUCRIEUDUIVKIIUEUFIVKSUGVMTPZVMVNMHZVMVNNZUJVNVPMHZVNVPNZUJVOVQWEWF
-       WHWGWIWEVMOPZVNOPZWFWHUKZVMULZWEWJWKWMVMUMUNWJWKWDWLRWJWKWDUOWFWHEVMVNUP
-       UQURUSWEVNVPVMVNWEVNVPJZVMVNJZWEVNTPWNWOVAVMVBVMVNUTVCVDVEVFVMVNSVNVPSVG
-       VH $.
-       $( [25-Mar-2015] $)
+  ${
+    $d n x $.  $d N x $.
+    $( Any natural is less than one plus itself. $)
+    nnltp1c $p |- ( N e. Nn -> N <c ( N +c 1c ) ) $=
+      ( vx vn cv c1c cplc cltc wbr c0c wceq addceq1 breq12d clec cncs wcel 1cnc
+      id wne brltc cnnc nnltp1clem1 0cnc addlecncs mp2an 0cnsuc necomi mpbir2an
+      weq id1 wa wi nnnc peano2nc syl w3a leaddc1 ex mp3an3 syl2anc wb suc11nnc
+      peano2 mpdan biimpd necon3d anim12d 3imtr4g finds ) BDZVIEFZGHIIEFZGHZCDZ
+      VMEFZGHZVNVNEFZGHZAAEFZGHBCABUAVIIJZVIIVJVKGVSQVIIEKLBCUHZVIVMVJVNGVTQVIV
+      MEKLVIVNJZVIVNVJVPGWAQVIVNEKLVIAJZVIAVJVRGWBUIVIAEKLVLIVKMHZIVKRINOENOZWC
+      UBPIEUCUDVKIIUEUFIVKSUGVMTOZVMVNMHZVMVNRZUJVNVPMHZVNVPRZUJVOVQWEWFWHWGWIW
+      EVMNOZVNNOZWFWHUKZVMULZWEWJWKWMVMUMUNWJWKWDWLPWJWKWDUOWFWHEVMVNUPUQURUSWE
+      VNVPVMVNWEVNVPJZVMVNJZWEVNTOWNWOUTVMVBVMVNVAVCVDVEVFVMVNSVNVPSVGVH $.
+      $( [25-Mar-2015] $)
   $}
 
-  ${ $d m p $. $d m q $. $d m x $. $d m y $. $d p q $. $d p t $. $d p x $. $d p y $. $d q t $. $d q x $. $d t x $. $d x y $. 
-     $( Lemma for ~ nmembers1 .  Set up stratification. $)
-     nmembers1lem1 $p |- { x | { m e. Nn | ( 1c <_c m /\ m <_c x ) } e. T_c
+  ${
+    $d m p $.  $d m q $.  $d m x $.  $d m y $.  $d p q $.  $d p t $.  $d p x $.
+    $d p y $.  $d q t $.  $d q x $.  $d t x $.  $d x y $.
+    $( 16-Apr-2015 NM I changed "~" to "~~?" to prevent erroneous
+       link to commented out theorem nmembers1.  Change it back when
+       nmembers1 is completed. $)
+    $( Lemma for ~~? nmembers1 .  Set up stratification. $)
+    nmembers1lem1 $p |- { x | { m e. Nn | ( 1c <_c m /\ m <_c x ) } e. T_c
                                                   T_c x } e. _V $=
-       ( vp vq vt clec c1c cnnc cvv ctcfn cin cv wbr wa wcel 3bitri exbii bitri
-       wex cop csset cins3 csn cima cres csi cins2 csymdif ccompl ccnv ccom cxp
-       vy crn cuni1 crab ctc cab vex eluni1 snex wel w3a elrn2 elima1c otelins2
-       wceq elin opsnelsi opelres ancom df-br brres bitr4i anbi1i bitr3i anbi2i
-       elimasn breq2 breq1 anbi12d elrab 3bitr4i releqel opelxp mpbiran brsnsi2
-       opelco 19.42v excom an12 anbi1d ceqsexv brcnv brtcfn anbi12i tcex eqeq2d
-       tceq otelins3 opelssetsn df-3an imasn iniseg ineq12i eqtri ineq1i dfrab2
-       weq inab eqtr4i lecex imaex cnvex inex nncex eqeltrri eleq1 eleq2 abbi2i
-       ceqsex2v ssetex ins3ex resex siex ins2ex symdifex 1cex complex vvex coex
-       tcfnex xpex rnex uni1ex ) UAUBZFFGUCZUDZUEZHUEZUFZUGZUHZGUDZUIZUFZUGZIJU
-       JZUFZUUHUKZULZKZYPKZGUDZUNZUOZUOZGBLZFMZUURALZFMZNZBHUPZUUTUQZUQZOZAURIU
-       VFAUUQUUTUUQOUUTUCZUUPOUVGUCZUUOOZUVFUUTUUPAUSZUTUVGUUOUUTVAZUTUVICLZUVC
-       VGZDLZUVEVGZCDVBZVCZCSZDSZUVQDSCSUVFUVIUVNUVHTZUUNOZDSUVSDUVHUUNVDUWAUVR
-       DUWAUVLUCZUVTTZUUMOZCSUVRCUVTUUMVEUWDUVQCUWCUULOZUWCYPOZNUVMUVONZUVPNUWD
-       UVQUWEUWGUWFUVPUWEUWCUUGOZUWCUUKOZNUWGUWCUUGUUKVHUWHUVMUWIUVOUWHUWBUVHTU
-       UFOUVLUVGTUUEOUVMUWBUVNUVHUUFDUSZVFUVLUVGUUECUSZUVKVICUMUVCUUAUVGUVKUMLZ
-       UUTTZYTOZUWLHOZGUWLFMZUWLUUTFMZNZNZUWLUCUVGTUUAOUWLUVCOUWNUWMYSOZUWONUWO
-       UWTNUWSUWLUUTYSHVJUWTUWOVKUWTUWRUWOUWTUWLUUTYSMZUWRUWLUUTYSVLUXAUWQUWLYR
-       OZNUXBUWQNUWRUWLUUTFYRVMUWQUXBVKUXBUWPUWQUXBGUWLTFOUWPFGUWLVRGUWLFVLVNVO
-       PVPVQPUWLUUTYTUMUSUVJVIUVBUWRBUWLHBUMXIUUSUWPUVAUWQUURUWLGFVSUURUWLUUTFV
-       TWAWBWCWDPUWIUVTUUJOZUVNELZUUHMZUXDUVHUUIMZNZESZUVOUWIUWBIOUXCUVLVAZUWBU
-       VTIUUJWEWFEUVNUVHUUIUUHWHUXHUXEUXDUWBVGZUVLUVGUUHMZNZNZCSZESUXMESZCSZUVO
-       UXGUXNEUXGUXEUXLCSZNUXNUXFUXQUXECUVGUXDUUHUVKWGVQUXEUXLCWIVNQUXMECWJUXPU
-       VNUWBUUHMZUXKNZCSUVLUVDVGZUVNUVLUQZVGZNZCSUVOUXOUXSCUXOUXJUXEUXKNZNZESUX
-       SUXMUYEEUXEUXJUXKWKQUYDUXSEUWBUXIUXJUXEUXRUXKUXDUWBUVNUUHVSWLWMRQUXSUYCC
-       UXSUYBUXTNUYCUXRUYBUXKUXTUXRUWBUVNJMUYBUVNUWBJWNUVLUVNUWKWORUXKUVGUVLJMU
-       XTUVLUVGJWNUUTUVLUVJWORWPUYBUXTVKRQUYBUVOCUVDUUTWQUXTUYAUVEUVNUVLUVDWSWR
-       WMPPPWPRUWFUWBUVNTUAOUVPUWBUVNUVHUAUVGVAWTUVLUVNUWKUWJXARWPUWCUULYPVHUVM
-       UVOUVPXBWCQRQRUVQDCWJUVPUVCUVNOUVFCDUVCUVEYRFUJZUVGUDZKZHKZUVCIUYIUVBBUR
-       ZHKUVCUYHUYJHUYHUUSBURZUVABURZKUYJYRUYKUYGUYLBGFXCBFUUTXDXEUUSUVABXJXFXG
-       UVBBHXHXKUYHHYRUYGFYQXLGVAXMZUYFUVGFXLXNUVKXMXOXPXOXQUVDWQUVLUVCUVNXRUVN
-       UVEUVCXSYAPPXTUUPUUOUUNUUMGUULYPUUGUUKUUFUUEUUDUUCGYPUUBUAYBYCZUUAYTYSHF
-       YRXLUYMYDXPYDYEYFYGYHXMYIYEYFIUUJYJUUIUUHUUHJYLXNZYEUYOYKYMXOUYNXOYHXMYN
-       YOYOXQ $.
-       $( [25-Mar-2015] $)
+      ( vp vq vt clec c1c cnnc cvv ctcfn cin cv wbr wa wcel wex cop exbii bitri
+      3bitri vy csset cins3 csn cima cres csi cins2 csymdif ccompl ccnv cxp crn
+      ccom cuni1 crab ctc cab vex snex wceq wel w3a elrn2 elima1c elin otelins2
+      eluni1 opsnelsi opelres ancom df-br brres bitr4i anbi1i bitr3i anbi2i weq
+      elimasn breq2 breq1 anbi12d 3bitr4i releqel opelxp mpbiran opelco brsnsi2
+      elrab 19.42v excom an12 anbi1d ceqsexv brcnv brtcfn anbi12i tcex otelins3
+      tceq eqeq2d opelssetsn df-3an imasn iniseg inab eqtri ineq1i dfrab2 lecex
+      eqtr4i imaex cnvex inex nncex eqeltrri eleq1 eleq2 ceqsex2v abbi2i ssetex
+      ineq12i ins3ex resex siex ins2ex symdifex 1cex vvex tcfnex coex xpex rnex
+      complex uni1ex ) UBUCZFFGUDZUEZUFZHUFZUGZUHZUIZGUEZUJZUGZUHZIJUKZUGZUUHUN
+      ZULZKZYPKZGUEZUMZUOZUOZGBLZFMZUURALZFMZNZBHUPZUUTUQZUQZOZAURIUVFAUUQUUTUU
+      QOUUTUDZUUPOUVGUDZUUOOZUVFUUTUUPAUSZVHUVGUUOUUTUTZVHUVICLZUVCVAZDLZUVEVAZ
+      CDVBZVCZCPZDPZUVQDPCPUVFUVIUVNUVHQZUUNOZDPUVSDUVHUUNVDUWAUVRDUWAUVLUDZUVT
+      QZUUMOZCPUVRCUVTUUMVEUWDUVQCUWCUULOZUWCYPOZNUVMUVONZUVPNUWDUVQUWEUWGUWFUV
+      PUWEUWCUUGOZUWCUUKOZNUWGUWCUUGUUKVFUWHUVMUWIUVOUWHUWBUVHQUUFOUVLUVGQUUEOU
+      VMUWBUVNUVHUUFDUSZVGUVLUVGUUECUSZUVKVICUAUVCUUAUVGUVKUALZUUTQZYTOZUWLHOZG
+      UWLFMZUWLUUTFMZNZNZUWLUDUVGQUUAOUWLUVCOUWNUWMYSOZUWONUWOUWTNUWSUWLUUTYSHV
+      JUWTUWOVKUWTUWRUWOUWTUWLUUTYSMZUWRUWLUUTYSVLUXAUWQUWLYROZNUXBUWQNUWRUWLUU
+      TFYRVMUWQUXBVKUXBUWPUWQUXBGUWLQFOUWPFGUWLVSGUWLFVLVNVOTVPVQTUWLUUTYTUAUSU
+      VJVIUVBUWRBUWLHBUAVRUUSUWPUVAUWQUURUWLGFVTUURUWLUUTFWAWBWIWCWDTUWIUVTUUJO
+      ZUVNELZUUHMZUXDUVHUUIMZNZEPZUVOUWIUWBIOUXCUVLUTZUWBUVTIUUJWEWFEUVNUVHUUIU
+      UHWGUXHUXEUXDUWBVAZUVLUVGUUHMZNZNZCPZEPUXMEPZCPZUVOUXGUXNEUXGUXEUXLCPZNUX
+      NUXFUXQUXECUVGUXDUUHUVKWHVQUXEUXLCWJVNRUXMECWKUXPUVNUWBUUHMZUXKNZCPUVLUVD
+      VAZUVNUVLUQZVAZNZCPUVOUXOUXSCUXOUXJUXEUXKNZNZEPUXSUXMUYEEUXEUXJUXKWLRUYDU
+      XSEUWBUXIUXJUXEUXRUXKUXDUWBUVNUUHVTWMWNSRUXSUYCCUXSUYBUXTNUYCUXRUYBUXKUXT
+      UXRUWBUVNJMUYBUVNUWBJWOUVLUVNUWKWPSUXKUVGUVLJMUXTUVLUVGJWOUUTUVLUVJWPSWQU
+      YBUXTVKSRUYBUVOCUVDUUTWRUXTUYAUVEUVNUVLUVDWTXAWNTTTWQSUWFUWBUVNQUBOUVPUWB
+      UVNUVHUBUVGUTWSUVLUVNUWKUWJXBSWQUWCUULYPVFUVMUVOUVPXCWCRSRSUVQDCWKUVPUVCU
+      VNOUVFCDUVCUVEYRFUKZUVGUEZKZHKZUVCIUYIUVBBURZHKUVCUYHUYJHUYHUUSBURZUVABUR
+      ZKUYJYRUYKUYGUYLBGFXDBFUUTXEYBUUSUVABXFXGXHUVBBHXIXKUYHHYRUYGFYQXJGUTXLZU
+      YFUVGFXJXMUVKXLXNXOXNXPUVDWRUVLUVCUVNXQUVNUVEUVCXRXSTTXTUUPUUOUUNUUMGUULY
+      PUUGUUKUUFUUEUUDUUCGYPUUBUBYAYCZUUAYTYSHFYRXJUYMYDXOYDYEYFYGYHXLYNYEYFIUU
+      JYIUUIUUHUUHJYJXMZYEUYOYKYLXNUYNXNYHXLYMYOYOXP $.
+      $( [25-Mar-2015] $)
   $}
 
-  ${ $d m x $. $d N m $. $d m n $. $d n x $. $d N x $. $d k m $. $d k n $. 
+  ${
+    $d m x $.  $d N m $.  $d m n $.  $d n x $.  $d N x $.  $d k m $.  $d k n $.
      $( Count the number of elements in a natural interval.  This
-     	theorem will take on a different form after we introduce the
-	Axiom of Counting. $)
-     nmembers1 $p |- ( N e. Nn -> 
+        theorem will take on a different form after we introduce the
+        Axiom of Counting. $)
+$( 16-Apr-2015 NM Commented out since incomplete proofs can't be used
+   for web pages. $)
+$(
+     nmembers1 $p |- ( N e. Nn ->
       { m e. Nn | ( 1c <_c m /\ m <_c N ) } e. T_c T_c N ) $=
        ( vx c1c clec wbr wa cnnc crab ctc wcel c0c cplc wceq breq2 tceq wn cncs
        syl wi vn vk cv nmembers1lem1 anbi2d rabbidv tc0c ax-mp eqtri syl6eq weq
@@ -56404,6 +56417,7 @@ $)
        BVLUUMDYMUTSUVDUYTPSUWMVUAUUQDMZJZUWOUYTVUCNVUAVUDNUYSDUUQYNYOUYTVUCPUHU
        WMVUDUURUYSMZUWOUWMUUQRKZVUDVUENZUWMUXQVUFUXSUUMYPSVUFUWLVUGVLUUQDYMUTSU
        YSDUURYNYOUJYQYRWPYSYBYT $.
+$)
        $( [25-Mar-2015] $)
   $}
 
@@ -56421,9 +56435,9 @@ $)
   ${
     $d m x y $.
     $( Define the special class generator for the disproof of the axiom of
-       choice.  Definition 6.1 of [Specker]. $)
+       choice.  Definition 6.1 of {{Specker}}. $)
     df-spac $a |- Sp[ac] = ( m e. NC |->
-        Clos1 ( { m } , 
+        Clos1 ( { m } ,
         { <. x , y >. | ( x e. NC /\ y e. NC /\ y = ( 2c ^c x ) ) } ) ) $.
   $}
 
@@ -56434,28 +56448,28 @@ $)
     nncdiv3lem1 $p |- ( <. n , b >. e. ran ( Ins3 `' ( ( ran ( `' 1st (x) ( 1st
         i^i 2nd ) ) (x) 2nd ) " AddC ) i^i ( ( ( 1st o. 1st ) (x) ( ( 2nd o.
         1st ) (x) 2nd ) ) " AddC ) ) <-> b = ( ( n +c n ) +c n ) ) $=
-       ( vm vs vt cv cop c1st c2nd ctxp caddcfn wcel wex wceq wa wbr wrex trtxp
-       bitri 3bitri ccnv cin crn cima cins3 ccom cplc elin vex otelins3 opelcnv
-       elrn2 risset df-br elima elrn brcnv brin op1st2nd ancom exbii opex breq2
-       anbi12i ceqsexv anbi1i rexbii 3bitr4ri braddcfn eqcom anbi2i cvv cxp wfo
-       anass wfun 1stfo fofun ax-mp txpcofun breqi brco 3bitr3ri 3bitr2i addcex
-       addceq1 eqeq2d ) AFZBFZGZHUAZHIUBZJZUCZIJZKUDZUAZUEZHHUFZIHUFZIJZJZKUDZU
-       BZUCLCFZWJGZXDLZCMXEWHWHUGZNZWIXEWHUGZNZOZCMWIXHWHUGZNZCWJXDULXGXLCXGXFW
-       RLZXFXCLZOXLXFWRXCUHXOXIXPXKXOXEWHGZWQLWHXEGZWPLZXIXEWHWIWQBUIZUJXEWHWPU
-       KXSWHWHGZXEKPZXHXENXIYAXEGZKLDFZYCNZDKQZYBXSDYCKUMYAXEKUNXSYDXRWOPZDKQYF
-       DXRWOKUOYGYEDKYGYDWHWNPZYDXEIPZOYDYAHPZYIOYEYDWHXEWNIRYHYJYIYHYDWHGZWNLZ
-       EFZYANZYDYMHPZOZEMZYJYDWHWNUNYLYMYKWMPZEMYQEYKWMUPYRYPEYRYMYDWKPZYMWHWLP
-       ZOYOYNOYPYMYDWHWKWLRYSYOYTYNYMYDHUQYTYMWHHPYMWHIPZOYNYMWHHIURWHWHYMAUIZU
-       UBUSSVDYOYNUTTVASYOYJEYAWHWHUUBUUBVBZYMYAYDHVCVETVFYAXEYDUUCCUIZUSTVGSVH
-       WHWHXEUUBUUBVIXHXEVJTTXPXQWIKPZXJWINXKXQWIGZKLYDUUFNZDKQZUUEXPDUUFKUMXQW
-       IKUNXPYDXFXBPZDKQUUHDXFXBKUOUUIUUGDKUUIYDXEWSPZYDWJXAPZOZYDXQHPZYDWIIPZO
-       ZUUGYDXEWJWSXARUULUUJYDWHWTPZUUNOZOUUJUUPOZUUNOUUOUUKUUQUUJYDWHWIWTIRVKU
-       UJUUPUUNVOUURUUMUUNYDXQHIJZHUFZPZYDXQWSWTJZPUUMUURYDXQUUTUVBHIHVLVLVMZVL
-       HVNHVPVQUVCVLHVRVSVTWAUVAYOYMXQUUSPZOZEMYMXQNZYOOZEMUUMEYDXQUUSHWBUVEUVG
-       EUVEYOUVFOUVGUVDUVFYOUVDYMXEHPUUAOUVFYMXEWHHIRXEWHYMUUDUUBUSSVKYOUVFUTSV
-       AYOUUMEXQXEWHUUDUUBVBZYMXQYDHVCVETYDXEWHWSWTRWCVFWDXQWIYDUVHXTUSTVGSVHXE
-       WHWIUUDUUBVIXJWIVJTVDSVAXKXNCXHWHWHUUBUUBWEXIXJXMWIXEXHWHWFWGVET $.
-       $( [3-Mar-2015] $)
+      ( vm vs vt cv cop c1st c2nd ctxp caddcfn wcel wex wceq wa wbr trtxp bitri
+      wrex 3bitri ccnv cin crn cima cins3 ccom cplc elrn2 elin otelins3 opelcnv
+      vex risset df-br elima elrn brcnv brin op1st2nd anbi12i ancom exbii breq2
+      opex ceqsexv anbi1i rexbii 3bitr4ri braddcfn eqcom anass cvv cxp wfo wfun
+      anbi2i 1stfo fofun ax-mp txpcofun 3bitr3ri 3bitr2i addcex addceq1 eqeq2d
+      breqi brco ) AFZBFZGZHUAZHIUBZJZUCZIJZKUDZUAZUEZHHUFZIHUFZIJZJZKUDZUBZUCL
+      CFZWJGZXDLZCMXEWHWHUGZNZWIXEWHUGZNZOZCMWIXHWHUGZNZCWJXDUHXGXLCXGXFWRLZXFX
+      CLZOXLXFWRXCUIXOXIXPXKXOXEWHGZWQLWHXEGZWPLZXIXEWHWIWQBULZUJXEWHWPUKXSWHWH
+      GZXEKPZXHXENXIYAXEGZKLDFZYCNZDKSZYBXSDYCKUMYAXEKUNXSYDXRWOPZDKSYFDXRWOKUO
+      YGYEDKYGYDWHWNPZYDXEIPZOYDYAHPZYIOYEYDWHXEWNIQYHYJYIYHYDWHGZWNLZEFZYANZYD
+      YMHPZOZEMZYJYDWHWNUNYLYMYKWMPZEMYQEYKWMUPYRYPEYRYMYDWKPZYMWHWLPZOYOYNOYPY
+      MYDWHWKWLQYSYOYTYNYMYDHUQYTYMWHHPYMWHIPZOYNYMWHHIURWHWHYMAULZUUBUSRUTYOYN
+      VATVBRYOYJEYAWHWHUUBUUBVDZYMYAYDHVCVETVFYAXEYDUUCCULZUSTVGRVHWHWHXEUUBUUB
+      VIXHXEVJTTXPXQWIKPZXJWINXKXQWIGZKLYDUUFNZDKSZUUEXPDUUFKUMXQWIKUNXPYDXFXBP
+      ZDKSUUHDXFXBKUOUUIUUGDKUUIYDXEWSPZYDWJXAPZOZYDXQHPZYDWIIPZOZUUGYDXEWJWSXA
+      QUULUUJYDWHWTPZUUNOZOUUJUUPOZUUNOUUOUUKUUQUUJYDWHWIWTIQVPUUJUUPUUNVKUURUU
+      MUUNYDXQHIJZHUFZPZYDXQWSWTJZPUUMUURYDXQUUTUVBHIHVLVLVMZVLHVNHVOVQUVCVLHVR
+      VSVTWFUVAYOYMXQUUSPZOZEMYMXQNZYOOZEMUUMEYDXQUUSHWGUVEUVGEUVEYOUVFOUVGUVDU
+      VFYOUVDYMXEHPUUAOUVFYMXEWHHIQXEWHYMUUDUUBUSRVPYOUVFVARVBYOUUMEXQXEWHUUDUU
+      BVDZYMXQYDHVCVETYDXEWHWSWTQWAVFWBXQWIYDUVHXTUSTVGRVHXEWHWIUUDUUBVIXJWIVJT
+      UTRVBXKXNCXHWHWHUUBUUBWCXIXJXMWIXEXHWHWDWEVET $.
+      $( [3-Mar-2015] $)
   $}
 
   ${
@@ -56501,9 +56515,9 @@ $)
   ${
     $d A n m a $.
     $( Divisibility by three rule for finite cardinals.  Part of Theorem 3.4 of
-       [Specker]. $)
+       {{Specker}}. $)
     nncdiv3 $p |- ( A e. Nn ->
-      E. n e. Nn ( A = ( ( n +c n ) +c n ) \/ 
+      E. n e. Nn ( A = ( ( n +c n ) +c n ) \/
                    A = ( ( ( n +c n ) +c n ) +c 1c ) \/
                    A = ( ( ( n +c n ) +c n ) +c 2c ) ) ) $=
       ( va vm cplc wceq c1c c2c w3o cnnc wrex c0c 3orbi123d rexbidv wcel eqeq2d
@@ -56536,99 +56550,98 @@ $)
     $d A a $.  $d a m $.  $d a n $.  $d A n $.  $d a p $.  $d B n $.  $d m n $.
     $d m p $.  $d n p $.  $d n q $.  $d p q $.  $d p x $.  $d q x $.  $d m q $.
     $( Three times a natural is not one more than three times a natural.
-       Another part of Theorem 3.4 of [Specker]. $)
-    nnc3n3p1 $p |- ( ( A e. Nn /\ B e. Nn ) -> 
+       Another part of Theorem 3.4 of {{Specker}}. $)
+    nnc3n3p1 $p |- ( ( A e. Nn /\ B e. Nn ) ->
         -. ( ( A +c A ) +c A ) = ( ( ( B +c B ) +c B ) +c 1c ) ) $=
-       ( vn vp vq cnnc wcel cplc c1c wceq wn c0c caddcfn c1st c2nd cop addceq12
-       wa anidms nncaddccl va vm vx cv wral wi ccnv csn cima cres ccom cin ctxp
-       crn cins3 ccompl cab cvv vex elcompl wbr wrex elima df-br wex elrn bitri
-       oteltxp elrn2 opelco brcnv brres eliniseg anbi2i 1cex 3bitri anbi1i opex
-       op1st2nd exbii breq1 ceqsexv braddcfn opelcnv nncdiv3lem1 anbi12i addcex
-       eqcom ancom addceq1 eqeq2d rexbii dfrex2 3bitrri con1bii abbi2i addcfnex
-       eqeq1 1stex 2ndex cnvex snex imaex resex coex txpex ins3ex nncex complex
-       inex rnex eqeltrri addceq12d eqtri syl6eq eqeq1d notbid ralbidv addceq1d
-       id weq wne df-ne mpbi cncs wb mpancom syl sylancl syl5bb addceq1i addc32
-       addcass eqeq1i peano2 syl5ibrcom addc6 1cnnc mp2an imp syl6bb 1ne0c nnnc
-       addcid1 addcid2 cbvralv intnan 1cnc addceq0 mtbiri wo nnc0suc 0cnsuc a1i
-       rgen eqtr3i sylnibr peano1 suc11nnc mtbird sylnib adantr rcla4v addccan1
-       adantl eqeq12i mp3an3 syl2an biimpd nsyld rexlimdva jaod syl5bi ralrimiv
-       an32s ex finds rcla4cv ) AFGZBFGZAAHZAHZBBHZBHZIHZJZKZUVSUWBCUDZUWHHZUWH
-       HZIHZJZKZCFUEZUVTUWGUFUAUDZUWOHZUWOHZUWKJZKZCFUEZLUWKJZKZCFUEUBUDZUXCHZU
-       XCHZUWKJZKZCFUEZUXCIHZUXIHZUXIHZDUDZUXLHZUXLHZIHZJZKZDFUEZUWNUAUBAMNOUGZ
-       IUHZUIZUJZUGZUKZNUGZNOULZUMZUNZOUMZMUIZUGZUOZNNUKZONUKZOUMZUMZMUIZULZUNZ
-       UGZUMZUNZUYTUMZUNZFUIZUPZUWTUAUQURUWTUAVUFUWOVUFGUWOVUEGZKUWTUWOVUEUAUSZ
-       UTUWTVUGVUGUWHUWOVUDVAZCFVBUWRCFVBUWTKCUWOVUDFVCVUIUWRCFVUIUWHUWOPZVUDGZ
-       UWRUWHUWOVUDVDVUKUXLVUJVUCVAZDVEUXLUWQJZUXLUWKJZRZDVEUWRDVUJVUCVFVULVUOD
-       VULUXLUWHPZVUBGZUXLUWOPUYTGZRZVUNVUMRVUOVULUXLVUJPVUCGVUSUXLVUJVUCVDUXLU
-       WHUWOVUBUYTVHVGVUQVUNVURVUMVUQEUDZVUPPVUAGZEVEVUTUWJJZUXLVUTIHZJZRZEVEVU
-       NEVUPVUAVIVVAVVEEVVAVUTUXLPUYDGZVUTUWHPUYTGZRVVDVVBRVVEVUTUXLUWHUYDUYTVH
-       VVFVVDVVGVVBVVFVUTUCUDZUYCVAZVVHUXLMVAZRZUCVEZVUTIPZUXLMVAZVVDUCVUTUXLMU
-       YCVJVVLVVHVVMJZVVJRZUCVEVVNVVKVVPUCVVIVVOVVJVVIVVHVUTNVAZVVHUYAGZRZVVQVV
-       HIOVAZRVVOVVIVVHVUTUYBVAVVSVUTVVHUYBVKVVHVUTNUYAVLVGVVRVVTVVQOIVVHVMVNVU
-       TIVVHEUSZVOVSVPVQVTVVJVVNUCVVMVUTIVWAVOVRVVHVVMUXLMWAWBVGVVNVVCUXLJVVDVU
-       TIUXLVWAVOWCVVCUXLWHVGVPVVGUWHVUTPUYSGVVBVUTUWHUYSWDCEWEVGWFVVDVVBWIVPVT
-       VVDVUNEUWJUWIUWHUWHUWHCUSZVWBWGVWBWGVVBVVCUWKUXLVUTUWJIWJWKWBVPVURUWOUXL
-       PUYSGVUMUXLUWOUYSWDUADWEVGWFVUNVUMWIVPVTVUNUWRDUWQUWPUWOUWOUWOVUHVUHWGVU
-       HWGUXLUWQUWKWRWBVPVGWLUWRCFWMWNWOVGWPVUEVUDFVUCVUBUYTVUAUYDUYTMUYCWQUYBN
-       UYAWSUXSUXTOWTXAIXBXCXDXAXEUYSUYRUYLUYQUYKUYJUYIMUYHOUYGUYEUYFNWSXANOWSW
-       TXJXFXKWTXFWQXCXAXGUYPMUYMUYONNWSWSXEUYNOONWTWSXEWTXFXFWQXCXJXKXAZXFXKVW
-       CXFXKXHXCXIXLUWOLJZUWSUXBCFVWDUWRUXAVWDUWQLUWKVWDUWQLLHZLHZLVWDUWPVWEUWO
-       LVWDUWPVWEJUWOUWOLLQSVWDXTXMVWFVWELVWEUUDLUUEXNZXOXPXQXRUAUBYAZUWSUXGCFV
-       WHUWRUXFVWHUWQUXEUWKVWHUWPUXDUWOUXCVWHUWPUXDJUWOUWOUXCUXCQSVWHXTXMXPXQXR
-       UWOUXIJZUWTUXKUWKJZKZCFUEUXRVWIUWSVWKCFVWIUWRVWJVWIUWQUXKUWKVWIUWPUXJUWO
-       UXIVWIUWPUXJJUWOUWOUXIUXIQSVWIXTXMXPXQXRVWKUXQCDFCDYAZVWJUXPVWLUWKUXOUXK
-       VWLUWJUXNIVWLUWIUXMUWHUXLVWLUWIUXMJUWHUWHUXLUXLQSVWLXTXMXSWKXQUUFUUAUWOA
-       JZUWSUWMCFVWMUWRUWLVWMUWQUWBUWKVWMUWPUWAUWOAVWMUWPUWAJUWOUWOAAQSVWMXTXMX
-       PXQXRUXBCFUWHFGZUXAUWJLJZILJZRZVWPVWOILYBVWPKUUBILYCYDUUGUXAUWKLJZVWNVWQ
-       LUWKWHVWNUWJYEGZIYEGVWRVWQYFVWNUWJFGZVWSUWIFGZVWNVWTVWNVXAUWHUWHTSUWIUWH
-       TYGUWJUUCYHUUHUWJIUUIYIYJUUJUUOUXCFGZUXHUXRVXBUXHRZUXQDFUXLFGUXLLJZVVDEF
-       VBZUUKVXCUXQEUXLUULVXCVXDUXQVXEVXBVXDUXQUFUXHVXBUXQVXDUXKLIHZJZKVXBUXJUX
-       CHZIHZVXFJZVXGVXBVXJVXHLJZVXBUXIUXCHZUXCHZIHZLJZVXKVXOKZVXBVXNLYBVXPVXMU
-       UMVXNLYCYDUUNVXHVXNLVXLIHZUXCHVXHVXNVXQUXJUXCUXIUXCIYMYKVXLIUXCYLUUPYNUU
-       QVXBVXHFGZLFGVXJVXKYFUXJFGZVXBVXRVXBUXIFGZVXSUXCYOVXTVXSUXIUXITSYHUXJUXC
-       TYGUURVXHLUUSYIUUTVXIUXKVXFUXJUXCIYMYNUVAVXDUXPVXGVXDUXOVXFUXKVXDUXNLIVX
-       DUXNVWFLVXDUXMVWEUXLLVXDUXMVWEJUXLUXLLLQSVXDXTXMVWGXOXSWKXQYPUVBVXCVVDUX
-       QEFVXCVUTFGZRUXQVVDUXKVVCVVCHZVVCHZIHZJZKZVXBVYAUXHVYFVXBVYARZUXHVYFVYGU
-       XHUXEVUTVUTHZVUTHZIHZJZVYEVYAUXHVYKKZUFVXBUXGVYLCVUTFCEYAZUXFVYKVYMUWKVY
-       JUXEVYMUWJVYIIVYMUWIVYHUWHVUTVYMUWIVYHJUWHUWHVUTVUTQSVYMXTXMXSWKXQUVCUVE
-       VYGVYEVYKVYEUXEIIHZIHZHZVYJVYOHZJZVYGVYKUXKVYPVYDVYQUXCIUXCIUXCIYQVYDVYI
-       VYOHZIHVYQVYCVYSIVUTIVUTIVUTIYQYKVYIVYOIYLXNUVFVXBUXEFGZVYJFGZVYRVYKYFZV
-       YAUXDFGZVXBVYTVXBWUCUXCUXCTSUXDUXCTYGVYAVYIFGZWUAVYHFGZVYAWUDVYAWUEVUTVU
-       TTSVYHVUTTYGVYIYOYHVYTWUAVYOFGZWUBVYNFGZIFGZWUFWUHWUHWUGYRYRIITYSYRVYNIT
-       YSVYOUXEVYJUVDUVGUVHYJUVIUVJYTUVOVVDUXPVYEVVDUXOVYDUXKVVDUXNVYCIVVDUXMVY
-       BUXLVVCVVDUXMVYBJUXLUXLVVCVVCQSVVDXTXMXSWKXQYPUVKUVLUVMUVNUVPUVQUWMUWGCB
-       FUWHBJZUWLUWFWUIUWKUWEUWBWUIUWJUWDIWUIUWIUWCUWHBWUIUWIUWCJUWHUWHBBQSWUIX
-       TXMXSWKXQUVRYHYT $.
-       $( [13-Mar-2015] $)
+      ( vn vp vq cnnc wcel cplc c1c wceq wn c0c caddcfn c1st c2nd cop wa anidms
+      addceq12 nncaddccl va vm vx cv wral wi ccnv csn cima cres ccom ctxp cins3
+      cin crn ccompl cab cvv vex elcompl wbr wrex elima df-br wex oteltxp bitri
+      elrn elrn2 opelco brcnv brres eliniseg anbi2i 1cex op1st2nd 3bitri anbi1i
+      exbii opex breq1 ceqsexv braddcfn eqcom opelcnv nncdiv3lem1 anbi12i ancom
+      addcex addceq1 eqeq2d eqeq1 rexbii dfrex2 3bitrri con1bii abbi2i addcfnex
+      1stex 2ndex cnvex snex imaex resex coex inex rnex ins3ex complex eqeltrri
+      txpex nncex addceq12d eqtri syl6eq eqeq1d notbid ralbidv weq addceq1d wne
+      df-ne mpbi cncs mpancom syl sylancl syl5bb addcass addceq1i addc32 eqeq1i
+      id wb peano2 syl5ibrcom addc6 1cnnc mp2an imp addcid1 syl6bb 1ne0c intnan
+      addcid2 cbvralv nnnc 1cnc addceq0 mtbiri wo nnc0suc 0cnsuc eqtr3i sylnibr
+      rgen a1i peano1 suc11nnc mtbird sylnib adantr rcla4v adantl mp3an3 syl2an
+      eqeq12i addccan1 biimpd nsyld an32s rexlimdva jaod ralrimiv finds rcla4cv
+      syl5bi ex ) AFGZBFGZAAHZAHZBBHZBHZIHZJZKZUVSUWBCUDZUWHHZUWHHZIHZJZKZCFUEZ
+      UVTUWGUFUAUDZUWOHZUWOHZUWKJZKZCFUEZLUWKJZKZCFUEUBUDZUXCHZUXCHZUWKJZKZCFUE
+      ZUXCIHZUXIHZUXIHZDUDZUXLHZUXLHZIHZJZKZDFUEZUWNUAUBAMNOUGZIUHZUIZUJZUGZUKZ
+      NUGZNOUNZULZUOZOULZMUIZUGZUMZNNUKZONUKZOULZULZMUIZUNZUOZUGZULZUOZUYTULZUO
+      ZFUIZUPZUWTUAUQURUWTUAVUFUWOVUFGUWOVUEGZKUWTUWOVUEUAUSZUTUWTVUGVUGUWHUWOV
+      UDVAZCFVBUWRCFVBUWTKCUWOVUDFVCVUIUWRCFVUIUWHUWOPZVUDGZUWRUWHUWOVUDVDVUKUX
+      LVUJVUCVAZDVEUXLUWQJZUXLUWKJZQZDVEUWRDVUJVUCVHVULVUODVULUXLUWHPZVUBGZUXLU
+      WOPUYTGZQZVUNVUMQVUOVULUXLVUJPVUCGVUSUXLVUJVUCVDUXLUWHUWOVUBUYTVFVGVUQVUN
+      VURVUMVUQEUDZVUPPVUAGZEVEVUTUWJJZUXLVUTIHZJZQZEVEVUNEVUPVUAVIVVAVVEEVVAVU
+      TUXLPUYDGZVUTUWHPUYTGZQVVDVVBQVVEVUTUXLUWHUYDUYTVFVVFVVDVVGVVBVVFVUTUCUDZ
+      UYCVAZVVHUXLMVAZQZUCVEZVUTIPZUXLMVAZVVDUCVUTUXLMUYCVJVVLVVHVVMJZVVJQZUCVE
+      VVNVVKVVPUCVVIVVOVVJVVIVVHVUTNVAZVVHUYAGZQZVVQVVHIOVAZQVVOVVIVVHVUTUYBVAV
+      VSVUTVVHUYBVKVVHVUTNUYAVLVGVVRVVTVVQOIVVHVMVNVUTIVVHEUSZVOVPVQVRVSVVJVVNU
+      CVVMVUTIVWAVOVTVVHVVMUXLMWAWBVGVVNVVCUXLJVVDVUTIUXLVWAVOWCVVCUXLWDVGVQVVG
+      UWHVUTPUYSGVVBVUTUWHUYSWECEWFVGWGVVDVVBWHVQVSVVDVUNEUWJUWIUWHUWHUWHCUSZVW
+      BWIVWBWIVVBVVCUWKUXLVUTUWJIWJWKWBVQVURUWOUXLPUYSGVUMUXLUWOUYSWEUADWFVGWGV
+      UNVUMWHVQVSVUNUWRDUWQUWPUWOUWOUWOVUHVUHWIVUHWIUXLUWQUWKWLWBVQVGWMUWRCFWNW
+      OWPVGWQVUEVUDFVUCVUBUYTVUAUYDUYTMUYCWRUYBNUYAWSUXSUXTOWTXAIXBXCXDXAXEUYSU
+      YRUYLUYQUYKUYJUYIMUYHOUYGUYEUYFNWSXANOWSWTXFXKXGWTXKWRXCXAXHUYPMUYMUYONNW
+      SWSXEUYNOONWTWSXEWTXKXKWRXCXFXGXAZXKXGVWCXKXGXLXCXIXJUWOLJZUWSUXBCFVWDUWR
+      UXAVWDUWQLUWKVWDUWQLLHZLHZLVWDUWPVWEUWOLVWDUWPVWEJUWOUWOLLSRVWDYMXMVWFVWE
+      LVWEUUALUUEXNZXOXPXQXRUAUBXSZUWSUXGCFVWHUWRUXFVWHUWQUXEUWKVWHUWPUXDUWOUXC
+      VWHUWPUXDJUWOUWOUXCUXCSRVWHYMXMXPXQXRUWOUXIJZUWTUXKUWKJZKZCFUEUXRVWIUWSVW
+      KCFVWIUWRVWJVWIUWQUXKUWKVWIUWPUXJUWOUXIVWIUWPUXJJUWOUWOUXIUXISRVWIYMXMXPX
+      QXRVWKUXQCDFCDXSZVWJUXPVWLUWKUXOUXKVWLUWJUXNIVWLUWIUXMUWHUXLVWLUWIUXMJUWH
+      UWHUXLUXLSRVWLYMXMXTWKXQUUFUUBUWOAJZUWSUWMCFVWMUWRUWLVWMUWQUWBUWKVWMUWPUW
+      AUWOAVWMUWPUWAJUWOUWOAASRVWMYMXMXPXQXRUXBCFUWHFGZUXAUWJLJZILJZQZVWPVWOILY
+      AVWPKUUCILYBYCUUDUXAUWKLJZVWNVWQLUWKWDVWNUWJYDGZIYDGVWRVWQYNVWNUWJFGZVWSU
+      WIFGZVWNVWTVWNVXAUWHUWHTRUWIUWHTYEUWJUUGYFUUHUWJIUUIYGYHUUJUUPUXCFGZUXHUX
+      RVXBUXHQZUXQDFUXLFGUXLLJZVVDEFVBZUUKVXCUXQEUXLUULVXCVXDUXQVXEVXBVXDUXQUFU
+      XHVXBUXQVXDUXKLIHZJZKVXBUXJUXCHZIHZVXFJZVXGVXBVXJVXHLJZVXBUXIUXCHZUXCHZIH
+      ZLJZVXKVXOKZVXBVXNLYAVXPVXMUUMVXNLYBYCUUQVXHVXNLVXLIHZUXCHVXHVXNVXQUXJUXC
+      UXIUXCIYIYJVXLIUXCYKUUNYLUUOVXBVXHFGZLFGVXJVXKYNUXJFGZVXBVXRVXBUXIFGZVXSU
+      XCYOVXTVXSUXIUXITRYFUXJUXCTYEUURVXHLUUSYGUUTVXIUXKVXFUXJUXCIYIYLUVAVXDUXP
+      VXGVXDUXOVXFUXKVXDUXNLIVXDUXNVWFLVXDUXMVWEUXLLVXDUXMVWEJUXLUXLLLSRVXDYMXM
+      VWGXOXTWKXQYPUVBVXCVVDUXQEFVXCVUTFGZQUXQVVDUXKVVCVVCHZVVCHZIHZJZKZVXBVYAU
+      XHVYFVXBVYAQZUXHVYFVYGUXHUXEVUTVUTHZVUTHZIHZJZVYEVYAUXHVYKKZUFVXBUXGVYLCV
+      UTFCEXSZUXFVYKVYMUWKVYJUXEVYMUWJVYIIVYMUWIVYHUWHVUTVYMUWIVYHJUWHUWHVUTVUT
+      SRVYMYMXMXTWKXQUVCUVDVYGVYEVYKVYEUXEIIHZIHZHZVYJVYOHZJZVYGVYKUXKVYPVYDVYQ
+      UXCIUXCIUXCIYQVYDVYIVYOHZIHVYQVYCVYSIVUTIVUTIVUTIYQYJVYIVYOIYKXNUVGVXBUXE
+      FGZVYJFGZVYRVYKYNZVYAUXDFGZVXBVYTVXBWUCUXCUXCTRUXDUXCTYEVYAVYIFGZWUAVYHFG
+      ZVYAWUDVYAWUEVUTVUTTRVYHVUTTYEVYIYOYFVYTWUAVYOFGZWUBVYNFGZIFGZWUFWUHWUHWU
+      GYRYRIITYSYRVYNITYSVYOUXEVYJUVHUVEUVFYHUVIUVJYTUVKVVDUXPVYEVVDUXOVYDUXKVV
+      DUXNVYCIVVDUXMVYBUXLVVCVVDUXMVYBJUXLUXLVVCVVCSRVVDYMXMXTWKXQYPUVLUVMUVQUV
+      NUVRUVOUWMUWGCBFUWHBJZUWLUWFWUIUWKUWEUWBWUIUWJUWDIWUIUWIUWCUWHBWUIUWIUWCJ
+      UWHUWHBBSRWUIYMXMXTWKXQUVPYFYT $.
+      $( [13-Mar-2015] $)
   $}
 
   ${
     $( Three times a natural is not two more than three times a natural.
-       Another part of Theorem 3.4 of [Specker]. $)
-    nnc3n3p2 $p |- ( ( A e. Nn /\ B e. Nn ) -> 
+       Another part of Theorem 3.4 of {{Specker}}. $)
+    nnc3n3p2 $p |- ( ( A e. Nn /\ B e. Nn ) ->
         -. ( ( A +c A ) +c A ) = ( ( ( B +c B ) +c B ) +c 2c ) ) $=
-       ( cnnc wcel wa cplc c1c wceq wn peano2 nnc3n3p1 sylan ancoms eqcom addc4
-       c2c addceq1i nncaddccl anidms mpancom addc32 1p1e2c 3eqtrri eqtri eqeq1i
-       addceq2i addcass bitri sylnibr wb 2nnc sylancl suc11nnc syl2an mtbid ) A
-       CDZBCDZEZAAFZAFZGFZBBFZBFZPFZGFZHZUTVDHZURBGFZVHFZVHFZVAHZVFUQUPVKIZUQVH
-       CDUPVLBJVHAKLMVFVEVAHVKVAVENVEVJVAVEVIBFZGFVJVDVMGVMVBGGFZFZBFVCVNFVDVIV
-       OBBGBGOQVBVNBUAVNPVCUBUFUCQVIBGUGUDUEUHUIUPUTCDZVDCDZVFVGUJUQUSCDZUPVPUP
-       VRAARSUSARTUQVCCDZPCDVQVBCDZUQVSUQVTBBRSVBBRTUKVCPRULUTVDUMUNUO $.
-       $( [12-Mar-2015] $)
+      ( cnnc wcel wa cplc c1c c2c wceq peano2 nnc3n3p1 sylan ancoms eqcom addc4
+      wn addceq1i nncaddccl anidms mpancom addc32 1p1e2c addceq2i 3eqtrri eqtri
+      addcass eqeq1i bitri sylnibr wb 2nnc sylancl suc11nnc syl2an mtbid ) ACDZ
+      BCDZEZAAFZAFZGFZBBFZBFZHFZGFZIZUTVDIZURBGFZVHFZVHFZVAIZVFUQUPVKPZUQVHCDUP
+      VLBJVHAKLMVFVEVAIVKVAVENVEVJVAVEVIBFZGFVJVDVMGVMVBGGFZFZBFVCVNFVDVIVOBBGB
+      GOQVBVNBUAVNHVCUBUCUDQVIBGUFUEUGUHUIUPUTCDZVDCDZVFVGUJUQUSCDZUPVPUPVRAARS
+      USARTUQVCCDZHCDVQVBCDZUQVSUQVTBBRSVBBRTUKVCHRULUTVDUMUNUO $.
+      $( [12-Mar-2015] $)
   $}
 
   ${
     $( One more than three times a natural is not two more than three times a
-       natural.  Final part of Theorem 3.4 of [Specker]. $)
-    nnc3p1n3p2 $p |- ( ( A e. Nn /\ B e. Nn ) -> 
-        -. ( ( ( A +c A ) +c A ) +c 1c ) = 
+       natural.  Final part of Theorem 3.4 of {{Specker}}. $)
+    nnc3p1n3p2 $p |- ( ( A e. Nn /\ B e. Nn ) ->
+        -. ( ( ( A +c A ) +c A ) +c 1c ) =
            ( ( ( B +c B ) +c B ) +c 2c ) ) $=
-       ( cnnc wcel wa cplc c1c wceq nnc3n3p1 wb nncaddccl anidms mpancom peano2
-       c2c syl suc11nnc syl2an mtbird addcass 1p1e2c addceq2i eqtr2i sylnibr
-       eqeq2i ) ACDZBCDZEZAAFZAFZGFZBBFZBFZGFZGFZHZUKUMOFZHUHUPUJUNHZABIUFUJCDZ
-       UNCDZUPURJUGUICDZUFUSUFVAAAKLUIAKMUGUMCDZUTULCDZUGVBUGVCBBKLULBKMUMNPUJU
-       NQRSUQUOUKUOUMGGFZFUQUMGGTVDOUMUAUBUCUEUD $.
-       $( [12-Mar-2015] $)
+      ( cnnc wcel wa cplc c1c wceq c2c nnc3n3p1 nncaddccl anidms mpancom peano2
+      wb syl suc11nnc syl2an mtbird addcass 1p1e2c addceq2i eqtr2i sylnibr
+      eqeq2i ) ACDZBCDZEZAAFZAFZGFZBBFZBFZGFZGFZHZUKUMIFZHUHUPUJUNHZABJUFUJCDZU
+      NCDZUPUROUGUICDZUFUSUFVAAAKLUIAKMUGUMCDZUTULCDZUGVBUGVCBBKLULBKMUMNPUJUNQ
+      RSUQUOUKUOUMGGFZFUQUMGGTVDIUMUAUBUCUEUD $.
+      $( [12-Mar-2015] $)
   $}
 
   ${
@@ -56655,7 +56668,7 @@ $)
   ${
     $d N n $.  $d n x $.  $d n y $.  $d x y $.
     $( The value of the special set generator. $)
-    spacval $p |- ( N e. NC -> ( Sp[ac] ` N ) = 
+    spacval $p |- ( N e. NC -> ( Sp[ac] ` N ) =
          Clos1 ( { N } , { <. x , y >. | ( x e. NC /\ y e. NC /\ y = ( 2c ^c x
         ) ) } ) ) $=
       ( vn cv csn cncs wcel c2c cce co wceq w3a copab cclos1 cspac clos1eq1 syl
@@ -56668,33 +56681,33 @@ $)
     $d n x y $.
     $( The special set generator is a function over the cardinals. $)
     fnspac $p |- Sp[ac] Fn NC $=
-       ( vn vx vy cv csn cncs wcel c2c cce co wceq w3a copab cclos1 cvv df-spac
-       cspac wfn fnmpt snex spacvallem1 clos1ex a1i mprg ) ADZEZBDZFGCDZFGUHHUG
-       IJKLBCMZNZOGZQFRAFAFUJQOBCAPSUKUEFGUIUFUETBCUAUBUCUD $.
-       $( [18-Mar-2015] $)
+      ( vn vx vy cv csn cncs wcel c2c cce co w3a copab cclos1 cvv cspac df-spac
+      wceq wfn fnmpt snex spacvallem1 clos1ex a1i mprg ) ADZEZBDZFGCDZFGUHHUGIJ
+      QKBCLZMZNGZOFRAFAFUJONBCAPSUKUEFGUIUFUETBCUAUBUCUD $.
+      $( [18-Mar-2015] $)
   $}
 
   ${
     $d x y $.
     $( The special set generator generates a set of cardinals. $)
     spacssnc $p |- ( N e. NC -> ( Sp[ac] ` N ) C_ NC ) $=
-       ( vx vy cncs wcel cspac cfv csn cv c2c cce wceq w3a copab cclos1 spacval
-       co cima cun wss snex spacvallem1 eqid clos1baseima snssi crn imassrn wex
-       wa cab rnopab simp2 exlimiv abssi eqsstri sstri jctir unss sylib eqsstrd
-       syl5eqss ) ADEZAFGAHZBIZDEZCIZDEZVFJVDKQLZMZBCNZOZDBCAPVBVKVCVJVKRZSZDVK
-       VJVCAUABCUBVKUCUDVBVCDTZVLDTZUIVMDTVBVNVOADUEVLVJUFZDVJVKUGVPVIBUHZCUJDV
-       IBCUKVQCDVIVGBVEVGVHULUMUNUOUPUQVCVLDURUSVAUT $.
-       $( [13-Mar-2015] $)
+      ( vx vy cncs wcel cspac cfv csn cv c2c cce co wceq w3a copab spacval cima
+      cclos1 cun wss snex spacvallem1 clos1baseima wa snssi crn imassrn wex cab
+      eqid rnopab simp2 exlimiv abssi eqsstri sstri jctir unss syl5eqss eqsstrd
+      sylib ) ADEZAFGAHZBIZDEZCIZDEZVFJVDKLMZNZBCOZRZDBCAPVBVKVCVJVKQZSZDVKVJVC
+      AUABCUBVKUJUCVBVCDTZVLDTZUDVMDTVBVNVOADUEVLVJUFZDVJVKUGVPVIBUHZCUIDVIBCUK
+      VQCDVIVGBVEVGVHULUMUNUOUPUQVCVLDURVAUSUT $.
+      $( [13-Mar-2015] $)
   $}
 
   ${
     $d M x y $.
     $( The initial value of the special set generator is an element. $)
     spacid $p |- ( M e. NC -> M e. ( Sp[ac] ` M ) ) $=
-       ( vx vy cncs wcel csn cv c2c cce co wceq w3a copab cclos1 cspac cfv eqid
-       wss clos1base snssg mpbiri spacval eleqtrrd ) ADEZAAFZBGZDECGZDEUGHUFIJK
-       LBCMZNZAOPUDAUIEUEUIRUIUHUEUIQSAUIDTUABCAUBUC $.
-       $( [13-Mar-2015] $)
+      ( vx vy cncs wcel csn cv c2c cce wceq w3a copab cclos1 cspac cfv wss eqid
+      co clos1base snssg mpbiri spacval eleqtrrd ) ADEZAAFZBGZDECGZDEUGHUFIRJKB
+      CLZMZANOUDAUIEUEUIPUIUHUEUIQSAUIDTUABCAUBUC $.
+      $( [13-Mar-2015] $)
   $}
 
   ${
@@ -56702,24 +56715,24 @@ $)
     $( Closure law for the special set generator. $)
     spaccl $p |- ( ( M e. NC /\ N e. ( Sp[ac] ` M ) /\ ( N ^c 0c ) e. NC ) ->
         ( 2c ^c N ) e. ( Sp[ac] ` M ) ) $=
-       ( vx vy cncs wcel cspac cfv c0c cce co w3a c2c csn cv wceq syl2anc eleq1
-       cvv eqid copab cclos1 wbr simp2 spacval 3ad2ant1 eleqtrd spacssnc sselda
-       3adant3 simp3 cnnc 2nnc ceclnn1 mp3an1 eqidd oveq2 eqeq2d 3anbi13d eqeq1
-       wb ovex 3anbi23d brabg mpan2 3ad2ant2 mpbir3and clos1conn eleqtrrd ) AEF
-       ZBAGHZFZBIJKEFZLZMBJKZANZCOZEFZDOZEFZVSMVQJKZPZLZCDUAZUBZVKVNBWEFBVOWDUC
-       ZVOWEFVNBVKWEVJVLVMUDVJVLVKWEPVMCDAUEUFZUGVNWFBEFZVOEFZVOVOPZVJVLWHVMVJV
-       KEBAUHUIUJZVNWHVMWIWKVJVLVMUKMULFWHVMWIUMMBUNUOQVNVOUPVLVJWFWHWIWJLZVAZV
-       MVLVOSFWMMBJVBWCWHVTVSVOPZLWLCDBVOVKSWDVQBPZVRWHWBWNVTVQBERWOWAVOVSVQBMJ
-       UQURUSWNVTWIWNWJWHVSVOERVSVOVOUTVCWDTVDVEVFVGBVOWEWDVPWETVHQWGVI $.
-       $( [13-Mar-2015] $)
+      ( vx vy cncs wcel cspac cfv c0c cce co w3a c2c csn wceq syl2anc cvv eleq1
+      cv eqid copab cclos1 wbr spacval 3ad2ant1 eleqtrd spacssnc sselda 3adant3
+      simp2 simp3 cnnc 2nnc ceclnn1 mp3an1 eqidd wb oveq2 eqeq2d 3anbi13d eqeq1
+      ovex 3anbi23d brabg mpan2 3ad2ant2 mpbir3and clos1conn eleqtrrd ) AEFZBAG
+      HZFZBIJKEFZLZMBJKZANZCSZEFZDSZEFZVSMVQJKZOZLZCDUAZUBZVKVNBWEFBVOWDUCZVOWE
+      FVNBVKWEVJVLVMUJVJVLVKWEOVMCDAUDUEZUFVNWFBEFZVOEFZVOVOOZVJVLWHVMVJVKEBAUG
+      UHUIZVNWHVMWIWKVJVLVMUKMULFWHVMWIUMMBUNUOPVNVOUPVLVJWFWHWIWJLZUQZVMVLVOQF
+      WMMBJVBWCWHVTVSVOOZLWLCDBVOVKQWDVQBOZVRWHWBWNVTVQBERWOWAVOVSVQBMJURUSUTWN
+      VTWIWNWJWHVSVOERVSVOVOVAVCWDTVDVEVFVGBVOWEWDVPWETVHPWGVI $.
+      $( [13-Mar-2015] $)
   $}
 
   ${
     $d M x $.  $d M z $.  $d p q $.  $d p x $.  $d p z $.  $d q x $.  $d q z $.
     $d S x $.  $d S z $.  $d x z $.
     $( Inductive law for the special set generator. $)
-    spacind $p |- ( ( ( M e. NC /\ S e. V ) /\ 
-      ( M e. S /\ A. x e. ( Sp[ac] ` M ) ( ( x e. S /\ ( x ^c 0c ) e. NC ) -> 
+    spacind $p |- ( ( ( M e. NC /\ S e. V ) /\
+      ( M e. S /\ A. x e. ( Sp[ac] ` M ) ( ( x e. S /\ ( x ^c 0c ) e. NC ) ->
       ( 2c ^c x ) e. S ) ) ) -> ( Sp[ac] ` M ) C_ S ) $=
       ( vp vq vz wcel cncs cv cce co wa c2c wi wceq w3a wal impexp bitri cclos1
       cvv c0c cspac cfv wral wss elex csn copab spacval adantr wbr simplr snssi
@@ -56753,19 +56766,18 @@ $)
     spacis.4 $e |- ( x = ( 2c ^c y ) -> ( ph <-> th ) ) $.
     spacis.5 $e |- ( x = N -> ( ph <-> ta ) ) $.
     spacis.6 $e |- ( M e. NC -> ps ) $.
-    spacis.7 $e |- 
-       ( ( ( M e. NC /\ y e. ( Sp[ac] ` M ) ) /\ ( ( y ^c 0c ) e. NC /\ ch ) ) 
+    spacis.7 $e |-
+       ( ( ( M e. NC /\ y e. ( Sp[ac] ` M ) ) /\ ( ( y ^c 0c ) e. NC /\ ch ) )
           -> th ) $.
     $( Induction scheme for the special set generator. $)
     spacis $p |- ( ( M e. NC /\ N e. ( Sp[ac] ` M ) ) -> ta ) $=
-       ( cncs wcel wa cce cspac cfv cab cvv cv c0c co c2c wi wral wss id1 elabg
-       a1i mpbird ancom vex elab anbi2i ovex sylibr ex syl5bi ralrimiva spacind
-       bitri syl22anc sselda wb adantl mpbid ) HQRZIHUAUBZRZSIAFUCZRZEVLVMVOIVL
-       VLVOUDRZHVORZGUEZVORZVSUFTUGQRZSZUHVSTUGZVORZUIZGVMUJVMVOUKVLULVQVLJUNVL
-       VRBOABFHQKUMUOVLWEGVMWBWACSZVLVSVMRSZWDWBWAVTSWFVTWAUPVTCWAACFVSGUQLURUS
-       VFWGWFWDWGWFSDWDPADFWCUHVSTUTMURVAVBVCVDGVOHUDVEVGVHVNVPEVIVLAEFIVMNUMVJ
-       VK $.
-       $( [13-Mar-2015] $)
+      ( cncs wcel wa cce cspac cfv cab cvv cv c0c co c2c wral wss id1 a1i elabg
+      wi mpbird ancom elab anbi2i bitri ovex sylibr ex syl5bi ralrimiva spacind
+      vex syl22anc sselda wb adantl mpbid ) HQRZIHUAUBZRZSIAFUCZRZEVLVMVOIVLVLV
+      OUDRZHVORZGUEZVORZVSUFTUGQRZSZUHVSTUGZVORZUNZGVMUIVMVOUJVLUKVQVLJULVLVRBO
+      ABFHQKUMUOVLWEGVMWBWACSZVLVSVMRSZWDWBWAVTSWFVTWAUPVTCWAACFVSGVFLUQURUSWGW
+      FWDWGWFSDWDPADFWCUHVSTUTMUQVAVBVCVDGVOHUDVEVGVHVNVPEVIVLAEFIVMNUMVJVK $.
+      $( [13-Mar-2015] $)
   $}
 
   ${
@@ -56828,7 +56840,7 @@ $)
   ${
     $d M p $.  $d M x $.  $d M y $.  $d p x $.  $d p y $.  $d x y $.
     $( Lemma for ~ nchoice .  Compute the value of ` Sp[ac] ` when the argument
-       is not exponentiable.  Theorem 6.2 of [Specker]. $)
+       is not exponentiable.  Theorem 6.2 of {{Specker}}. $)
     nchoicelem3 $p |- ( ( M e. NC /\ -. ( M ^c 0c ) e. NC ) ->
         ( Sp[ac] ` M ) = { M } ) $=
       ( vx vy vp cncs wcel c0c cce co wn wa cspac cfv cv c2c wceq w3a cvv eleq1
@@ -56847,60 +56859,58 @@ $)
   ${
     $d M n $.  $d M p $.  $d n p $.  $d N p $.
     $( Lemma for ~ nchoice .  The initial value of ` Sp[ac] ` is a minimum
-       value.  Theorem 6.4 of [Specker]. $)
+       value.  Theorem 6.4 of {{Specker}}. $)
     nchoicelem4 $p |- ( ( M e. NC /\ N e. ( Sp[ac] ` M ) ) ->
        M <_c N ) $=
-       ( vp vn cv clec wbr c2c cce co csn cima cab cvv imasn breq2 cncs wcel wa
-       sylan lecex snex imaex eqeltrri nclecid cspac cltc spacssnc sselda ce2lt
-       cfv c0c wne brltc simplbi syl wi simpll adantr cnnc ceclnn1 mp3an1 lectr
-       2nnc syl3anc mpan2d impr spacis ) ACEZFGZAAFGADEZFGZAHVKIJZFGZABFGCDABFA
-       KZLVJCMNCAFOFVOUAAUBUCUDVIAAFPVIVKAFPVIVMAFPVIBAFPAUEAQRZVKAUFUKZRZSZVKU
-       LIJQRZVLVNVSVTSZVLVKVMFGZVNWAVKVMUGGZWBVSVKQRZVTWCVPVQQVKAUHUIZVKUJTWCWB
-       VKVMUMVKVMUNUOUPWAVPWDVMQRZVLWBSVNUQVPVRVTURVSWDVTWEUSVSWDVTWFWEHUTRWDVT
-       WFVDHVKVAVBTAVKVMVCVEVFVGVH $.
-       $( [13-Mar-2015] $)
+      ( vp vn cv clec wbr c2c cce co csn cima cab cvv imasn breq2 cncs wa sylan
+      wcel lecex snex imaex eqeltrri nclecid cspac cfv c0c cltc spacssnc sselda
+      ce2lt wne brltc simplbi wi simpll adantr cnnc 2nnc ceclnn1 mp3an1 syl3anc
+      syl lectr mpan2d impr spacis ) ACEZFGZAAFGADEZFGZAHVKIJZFGZABFGCDABFAKZLV
+      JCMNCAFOFVOUAAUBUCUDVIAAFPVIVKAFPVIVMAFPVIBAFPAUEAQTZVKAUFUGZTZRZVKUHIJQT
+      ZVLVNVSVTRZVLVKVMFGZVNWAVKVMUIGZWBVSVKQTZVTWCVPVQQVKAUJUKZVKULSWCWBVKVMUM
+      VKVMUNUOVDWAVPWDVMQTZVLWBRVNUPVPVRVTUQVSWDVTWEURVSWDVTWFWEHUSTWDVTWFUTHVK
+      VAVBSAVKVMVEVCVFVGVH $.
+      $( [13-Mar-2015] $)
   $}
 
   ${
     $( Lemma for ~ nchoice .  A cardinal is not a member of the special set of
-       itself raised to two.  Theorem 6.5 of [Specker]. $)
+       itself raised to two.  Theorem 6.5 of {{Specker}}. $)
     nchoicelem5 $p |- ( ( M e. NC /\ ( M ^c 0c ) e. NC ) ->
        -. M e. ( Sp[ac] ` ( 2c ^c M ) ) ) $=
-       ( cncs wcel c0c cce co wa c2c cspac cfv clec wbr wn cltc ce2lt wb 2nc c0
-       jctl ax-mp wne cnnc 2nnc ce0nn ce0nulnc mpbi cecl syl2an ltlenlec syldan
-       mpbid simprd nchoicelem4 sylan mtand ) ABCZADEFBCZGZAHAEFZIJCZUSAKLZURAU
-       SKLZVAMZURAUSNLZVBVCGZAOUPUQUSBCZVDVEPUPHBCZUPGHDEFZBCZUQGVFUQUPVGQSUQVI
-       VHRUAZVIHUBCVJUCHUDTVGVJVIPQHUETUFSHAUGUHZAUSUIUJUKULURVFUTVAVKUSAUMUNUO
-       $.
-       $( [13-Mar-2015] $)
+      ( cncs wcel c0c cce co wa c2c cspac cfv clec wbr wn cltc ce2lt wb jctl c0
+      2nc ax-mp cnnc 2nnc ce0nn ce0nulnc mpbi cecl syl2an ltlenlec syldan mpbid
+      wne simprd nchoicelem4 sylan mtand ) ABCZADEFBCZGZAHAEFZIJCZUSAKLZURAUSKL
+      ZVAMZURAUSNLZVBVCGZAOUPUQUSBCZVDVEPUPHBCZUPGHDEFZBCZUQGVFUQUPVGSQUQVIVHRU
+      KZVIHUACVJUBHUCTVGVJVIPSHUDTUEQHAUFUGZAUSUHUIUJULURVFUTVAVKUSAUMUNUO $.
+      $( [13-Mar-2015] $)
   $}
 
   ${
     $d M x $.
     $( Lemma for ~ nchoice .  Split the special set generator into base and
-       inductive values.  Theorem 6.6 of [Specker]. $)
+       inductive values.  Theorem 6.6 of {{Specker}}. $)
     nchoicelem6 $p |- ( ( M e. NC /\ ( M ^c 0c ) e. NC ) ->
        ( Sp[ac] ` M ) = ( { M } u. ( Sp[ac] ` ( 2c ^c M ) ) ) ) $=
-       ( vx cncs wcel c0c cce co wa cspac cfv c2c cvv wi wral wss a1i adantr wo
-       fvex spaccl csn cun cv simpl snex unex ssun1 snidg sseldi wceq elun elsn
-       vex orbi1i bitri spacid simpr syl3anc sseldd syl oveq2 eleq1d syl5ibrcom
-       spacssnc cnnc 2nnc ceclnn1 mp3an1 simprr simprl expr jaod ex com23 imp3a
-       syl5bi ssun2 sseli syl6 ralrimivw spacind syl22anc snssg 3expib jca unss
-       mpbid sylib eqssd ) ACDZAEFGCDZHZAIJZAUAZKAFGZIJZUBZWLWJWQLDZAWQDZBUCZWQ
-       DZWTEFGCDZHZKWTFGZWQDZMZBWMNWMWQOWJWKUDZWRWLWNWPAUEWOISUFPWJWSWKWJWNWQAW
-       NWPUGACUHUIQWLXFBWMWLXCXDWPDZXEWLXAXBXHWLXBXAXHWLXBXAXHMXAWTAUJZWTWPDZRZ
-       WLXBHZXHXAWTWNDZXJRXKWTWNWPUKXMXIXJWTABUMULUNUOXLXIXHXJWLXIXHMXBWLXHXIWO
-       WPDZWLWOCDZXNWLWMCWOWJWMCOWKAVDQWLWJAWMDZWKWOWMDZXGWJXPWKAUPZQWJWKUQAATU
-       RZUSZWOUPUTXIXDWOWPWTAKFVAVBVCQWLXBXJXHWLXBXJHZHXOXJXBXHWLXOYAKVEDWJWKXO
-       VFKAVGVHQWLXBXJVIWLXBXJVJWOWTTURVKVLVPVMVNVOWPWQXDWPWNVQVRVSVTBWQALWAWBW
-       LWNWMOZWPWMOZHWQWMOWLYBYCWJYBWKWJXPYBXRAWMCWCWGQWLXOWMLDZXQWTWMDZXBHXDWM
-       DZMZBWPNYCXTYDWLAISPXSWLYGBWPWJYGWKWJYEXBYFAWTTWDQVTBWMWOLWAWBWEWNWPWMWF
-       WHWI $.
-       $( [13-Mar-2015] $)
+      ( vx cncs wcel c0c cce co wa cspac cfv c2c cvv wi wral wss fvex adantr wo
+      a1i spaccl csn cun cv simpl snex unex ssun1 snidg sseldi wceq elun orbi1i
+      vex elsn bitri spacssnc spacid simpr syl3anc sseldd syl eleq1d syl5ibrcom
+      oveq2 cnnc 2nnc ceclnn1 mp3an1 simprr simprl expr jaod syl5bi com23 imp3a
+      ssun2 sseli syl6 ralrimivw spacind syl22anc snssg mpbid 3expib unss sylib
+      ex jca eqssd ) ACDZAEFGCDZHZAIJZAUAZKAFGZIJZUBZWLWJWQLDZAWQDZBUCZWQDZWTEF
+      GCDZHZKWTFGZWQDZMZBWMNWMWQOWJWKUDZWRWLWNWPAUEWOIPUFSWJWSWKWJWNWQAWNWPUGAC
+      UHUIQWLXFBWMWLXCXDWPDZXEWLXAXBXHWLXBXAXHWLXBXAXHMXAWTAUJZWTWPDZRZWLXBHZXH
+      XAWTWNDZXJRXKWTWNWPUKXMXIXJWTABUMUNULUOXLXIXHXJWLXIXHMXBWLXHXIWOWPDZWLWOC
+      DZXNWLWMCWOWJWMCOWKAUPQWLWJAWMDZWKWOWMDZXGWJXPWKAUQZQWJWKURAATUSZUTZWOUQV
+      AXIXDWOWPWTAKFVDVBVCQWLXBXJXHWLXBXJHZHXOXJXBXHWLXOYAKVEDWJWKXOVFKAVGVHQWL
+      XBXJVIWLXBXJVJWOWTTUSVKVLVMWGVNVOWPWQXDWPWNVPVQVRVSBWQALVTWAWLWNWMOZWPWMO
+      ZHWQWMOWLYBYCWJYBWKWJXPYBXRAWMCWBWCQWLXOWMLDZXQWTWMDZXBHXDWMDZMZBWPNYCXTY
+      DWLAIPSXSWLYGBWPWJYGWKWJYEXBYFAWTTWDQVSBWMWOLVTWAWHWNWPWMWEWFWI $.
+      $( [13-Mar-2015] $)
   $}
 
   $( Lemma for ~ nchoice .  Calculate the cardinality of a special set
-     generator.  Theorem 6.7 of [Specker]. $)
+     generator.  Theorem 6.7 of {{Specker}}. $)
   nchoicelem7 $p |- ( ( M e. NC /\ ( M ^c 0c ) e. NC ) ->
      Nc ( Sp[ac] ` M ) = ( Nc ( Sp[ac] ` ( 2c ^c M ) ) +c 1c ) ) $=
     ( cncs wcel c0c cce co cspac cfv cnc csn c2c cun c1c cplc nchoicelem6 nceqd
@@ -56918,8 +56928,8 @@ $)
     $d g p $.  $d g q $.  $d g x $.  $d g y $.  $d M y $.  $d p y $.  $d q y $.
     $d a x $.  $d a y $.
     $( Lemma for ~ nchoice .  An anti-closure condition for cardinal
-       exponentiation to zero.  Theorem 4.5 of [Specker]. $)
-    nchoicelem8 $p |- ( ( <_c We NC /\ M e. NC ) -> 
+       exponentiation to zero.  Theorem 4.5 of {{Specker}}. $)
+    nchoicelem8 $p |- ( ( <_c We NC /\ M e. NC ) ->
            ( -. ( M ^c 0c ) e. NC <-> Nc 1c <c M ) ) $=
       ( clec cncs cwe wbr wcel wa wn c1c cstrict cfound cin breqi brin cpartial
       bitri simprbi adantr a1i cantisym c0c cce cnc cltc ce0lenc1 notbid adantl
@@ -56939,7 +56949,7 @@ $)
   ${
     $( Lemma for ~ nchoice .  Calculate the cardinality of the special set
        generator when near the end of raisability.  Theorem 6.8 of
-       [Specker]. $)
+       {{Specker}}. $)
     nchoicelem9 $p |- ( ( <_c We NC /\ M e. NC /\ -. ( M ^c 0c ) e. NC ) ->
        ( Nc ( Sp[ac] ` T_c M ) = 2c \/ Nc ( Sp[ac] ` T_c M ) = 3c ) ) $=
       ( clec cncs wbr wcel c0c cce co wn cspac cfv cnc c2c wceq c3c wo c1c cplc
@@ -56978,20 +56988,20 @@ $)
     nchoicelem10 $p |- ( <. c , X >. e. ~ ( ( Ins3 SSet (+) Ins2 ~ ran ( `' ~
                      SSet (x) ( `' SSet |` Fix ( SSet o. Image S ) ) ) ) " 1c )
         <-> c = Clos1 ( X , S ) ) $=
-       ( vy vz vt csset cv wcel wn wss wa wbr wex vex 3bitri bitri anbi12i ccnv
-       cclos1 ccompl cimage ccom cfix cres ctxp crn csn cop cima wel elrn trtxp
-       wi wal brcnv df-br snex opex elcompl opelssetsn xchbinx brres elfix wceq
-       brco brimage exbii imaex sseq1 ceqsexv ancom annim exnal 3bitrri con1bii
-       brsset cab cint df-clos1 eleq2i elintab 3bitr4i releqel ) CFBAUBZIUCZUAZ
-       IUAZIAUDZUEZUFZUGZUHZUIZUCZBEFJZUJZBUKZWPKZLBGJZMZAXBULZXBMZNZFGUMZUPZGU
-       QZWTWQKWRWGKZXIXAXAXBWTWOOZGPXHLZGPXILGWTWOUNXKXLGXKXBWSWIOZXBBWNOZNZXFX
-       GLZNZXLXBWSBWIWNUOXOXPXFNXQXMXPXNXFXMWSXBWHOWSXBUKZWHKZXPXBWSWHURWSXBWHU
-       SXSXRIKXGXRIWSXBWRUTZGQZVAVBWRXBFQZYAVCVDRXNXBBWJOZXBWMKZNXFXBBWJWMVEYCX
-       CYDXEYCBXBIOXCXBBIURBXBEYAVSSYDXBXBWLOZXEXBWLVFYEXBHJZWKOZYFXBIOZNZHPYFX
-       DVGZYFXBMZNZHPXEHXBXBIWKVHYIYLHYGYJYHYKXBYFAYAHQZVIYFXBYMYAVSTVJYKXEHXDA
-       XBDYAVKYFXDXBVLVMRSTSTXPXFVNSXFXGVORVJXHGVPVQVRWTWPWSBXTEVAVBXJWRXFGVTWA
-       ZKXIWGYNWRABGWBWCXFGWRYBWDSWEWF $.
-       $( [18-Mar-2015] $)
+      ( vy vz vt csset cv wcel wn wss wa wbr wex vex 3bitri bitri anbi12i trtxp
+      cclos1 ccompl ccnv cimage ccom cfix cres ctxp crn csn cop cima wel wi wal
+      elrn brcnv df-br snex opex elcompl opelssetsn xchbinx brres elfix brimage
+      wceq brco exbii imaex sseq1 ceqsexv ancom annim exnal 3bitrri con1bii cab
+      brsset cint df-clos1 eleq2i elintab 3bitr4i releqel ) CFBAUBZIUCZUDZIUDZI
+      AUEZUFZUGZUHZUIZUJZUCZBEFJZUKZBULZWPKZLBGJZMZAXBUMZXBMZNZFGUNZUOZGUPZWTWQ
+      KWRWGKZXIXAXAXBWTWOOZGPXHLZGPXILGWTWOUQXKXLGXKXBWSWIOZXBBWNOZNZXFXGLZNZXL
+      XBWSBWIWNUAXOXPXFNXQXMXPXNXFXMWSXBWHOWSXBULZWHKZXPXBWSWHURWSXBWHUSXSXRIKX
+      GXRIWSXBWRUTZGQZVAVBWRXBFQZYAVCVDRXNXBBWJOZXBWMKZNXFXBBWJWMVEYCXCYDXEYCBX
+      BIOXCXBBIURBXBEYAVTSYDXBXBWLOZXEXBWLVFYEXBHJZWKOZYFXBIOZNZHPYFXDVHZYFXBMZ
+      NZHPXEHXBXBIWKVIYIYLHYGYJYHYKXBYFAYAHQZVGYFXBYMYAVTTVJYKXEHXDAXBDYAVKYFXD
+      XBVLVMRSTSTXPXFVNSXFXGVORVJXHGVPVQVRWTWPWSBXTEVAVBXJWRXFGVSWAZKXIWGYNWRAB
+      GWBWCXFGWRYBWDSWEWF $.
+      $( [18-Mar-2015] $)
   $}
 
   ${
@@ -57001,93 +57011,93 @@ $)
     $( Lemma for ~ nchoice .  Set up stratification for ~ nchoicelem12 . $)
     nchoicelem11 $p |- { t | A. m e. NC ( t = Nc ( Sp[ac] `
              T_c m ) -> Nc ( Sp[ac] ` m ) e. Nn ) } e. _V $=
-       ( vu va vb cncs cvv csset cv wcel wceq cfin wn csn wa wex wbr snex bitri
-       exbii vx vy cxp cins3 ccompl ccnv c2c cce co copab cimage ccom cfix cres
-       w3a ctxp crn cins2 csymdif c1c cima csi cin ctcfn cpw1 ctc cspac cfv cnc
-       cdif cnnc wi wral cab vex elcompl wrex cop elimapw13 cclos1 tccl spacval
-       syl nceqd eqeq2d finnc eleq1d syl5bbr imbi12d notbid eldif opelco anbi1i
-       brsnsi1 19.41v bicomi excom anass breq1 anbi2d bitr4i sneq breq1d brtcfn
-       ceqsexv df-br opelcnv elin opelxp mpbiran2 wel ancom brsnsi2 spacvallem1
-       breq2 nchoicelem10 brcnv brssetsn anbi12i df-clel 3bitr4i eqnc2 clos1eq1
-       clos1ex tcex rexbii snelpw1 elima risset notbii vvex xpex ssetex complex
-       ncsex cnvex coex imaex siex pw1ex 3bitri syl6rbbr rexbiia rexnal con1bii
-       annim bitr2i abbi2i ins3ex imageex fixex resex rnex ins2ex symdifex 1cex
-       txpex inex tcfnex finex difex eqeltrri ) FGUCZHUDZHUEZUFZHUFZHUAIZFJUBIZ
-       FJUVIUGUVHUHUIKUOUAUBUJZUKZULZUMZUNZUPZUQZUEZURZUSZUTVAZUEZVBZUVGULZVCZU
-       FZVDVBZVBZULZUWALVAZVEZVEZGUCZVJZFVEZVEZVEZVAZUEZAIZBIZVFZVGVHZVIZKZUWTV
-       GVHZVIVKJZVLZBFVMZAVNGUXHAUWRUWSUWRJUWSUWQJZMUXHUWSUWQAVOZVPUXHUXIUXIUXG
-       MZBFVQZUXHMUXIUWTNZNZNZUWSVRZUWMJZBFVQUXLBUWSUWMFVSUXQUXKBFUWTFJZUXKUWSU
-       XANZUVJVTZVIZKZUXMUVJVTZLJZVLZMZUXQUXRUXGUYEUXRUXDUYBUXFUYDUXRUXCUYAUWSU
-       XRUXBUXTUXRUXAFJUXBUXTKUWTWAUAUBUXAWBWCWDWEUXFUXELJUXRUYDUXEWFUXRUXEUYCL
-       UAUBUWTWBWGWHWIWJUXQUXPUWHJZUXPUWLJZMZOUYBUYDMZOUYFUXPUWHUWLWKUYGUYBUYIU
-       YJUYGCIZUXAKZUWSUYKNZUVJVTZVIZKZOZCPZUYBUYGUXMUYKVDQZUYMNZUWSUWEQZOZCPZU
-       YRUYGUXODIZUWGQZVUDUWSUWEQZOZDPZVUCDUXOUWSUWEUWGWLVUHVUDEIZNZKZUXNVUIUWF
-       QZOZVUFOZEPZDPZVUCVUGVUODVUGVUMEPZVUFOZVUOVUEVUQVUFEUXNVUDUWFUXMRWNWMVUO
-       VURVUMVUFEWOWPSTVUPVUNDPZEPZVUCVUNDEWQVUTVULVUJUWSUWEQZOZEPZVUCVUSVVBEVU
-       SVUKVULVUFOZOZDPVVBVUNVVEDVUKVULVUFWRTVVDVVBDVUJVUIRVUKVUFVVAVULVUDVUJUW
-       SUWEWSWTXESTVVCVUIUYMKZUYSOZVVAOZCPZEPZVUCVVBVVIEVVBVVGCPZVVAOVVIVULVVKV
-       VACUXMVUIVDUWTRZWNWMVVGVVACWOXATVVJVVHEPZCPVUCVVHECWQVVMVUBCVVMVVFUYSVVA
-       OZOZEPVUBVVHVVOEVVFUYSVVAWRTVVNVUBEUYMUYKRZVVFVVAVUAUYSVVFVUJUYTUWSUWEVU
-       IUYMXBXCWTXESTSSSSSSVUBUYQCUYSUYLVUAUYPUWTUYKBVOXDVUAUWSFJZUYNUWSJZOZUYP
-       VUAUYTUWSVRUWEJZVVSUYTUWSUWEXFVVTUWSUYTVRZUWDJZVVSUYTUWSUWDXGVWBVWAUVCJZ
-       VWAUWCJZOVVSVWAUVCUWCXHVWCVVQVWDVVRVWCVVQUYTGJUYMRUWSUYTFGXIXJUWSVUIUVGQ
-       ZVUIUYTUWBQZOZEPZVUDUYNKZDAXKZOZDPZVWDVVRVWHVUIVUDNZKZVUDUYMUWAQZOZVWEOZ
-       EPZDPZVWLVWHVWQDPZEPVWSVWGVWTEVWGVWPDPZVWEOZVWTVWGVWFVWEOVXBVWEVWFXLVWFV
-       XAVWEDUYMVUIUWAVVPXMWMSVWPVWEDWOXATVWQEDWQSVWRVWKDVWRVWOUWSVWMUVGQZOZVWK
-       VWRVWNVWOVWEOZOZEPVXDVWQVXFEVWNVWOVWEWRTVXEVXDEVWMVUDRVWNVWEVXCVWOVUIVWM
-       UWSUVGXOWTXESVWOVWIVXCVWJVWOVUDUYMVRUWAJVWIVUDUYMUWAXFUVJUYMDUAUBXNZVVPX
-       PSVXCVWMUWSHQVWJUWSVWMHXQVUDUWSDVOUXJXRSXSSTSEUWSUYTUWBUVGWLDUYNUWSXTYAX
-       SSSSUWSUYNUVJUYMVVPVXGYDYBXAXSTSUYPUYBCUXAUWTYEUYLUYOUYAUWSUYLUYNUXTUYLU
-       YMUXSKUYNUXTKUYKUXAXBUVJUYMUXSYCWCWDWEXESUYHUYDVUDUXMUWAQZDLVQZVUDUYCKZD
-       LVQUYHUYDVXHVXJDLVXHVUDUXMVRUWAJVXJVUDUXMUWAXFUVJUXMDVXGVVLXPSYFUYHUXOUW
-       KJZVXIUYHVXKUWSGJUXJUXOUWSUWKGXIXJVXKUXNUWJJZVXIUXNUWJYGVXLUXMUWIJVXIUXM
-       UWIYGDUXMUWALYHSSSDUYCLYIYAYJXSUYBUYDUUFUUAUUBUUCSUXGBFUUDUUGUUESUUHUWQU
-       WMUWPUWHUWLUWEUWGUWDUVCUWCFGYOYKYLUWBUVGUWAUVTUVSUTUVDUVRHYMUUIUVQUVPUVO
-       UVFUVNUVEHYMYNYPUVGUVMHYMYPZUVLHUVKYMUVJVXGUUJYQUUKUULUUQUUMYNUUNUUOUUPY
-       RYNZYSVXMYQUURYPUWFVDUUSYSYSYQUWKGUWJUWIUWALVXNUUTYRYTYTYKYLUVAUWOUWNFYO
-       YTYTYTYRYNUVB $.
-       $( [18-Mar-2015] $)
+      ( vu va vb cncs cvv csset cv wcel wceq cfin wn csn wa wex wbr bitri exbii
+      snex vx vy cxp cins3 ccompl ccnv c2c cce co w3a copab ccom cfix cres ctxp
+      crn cins2 csymdif c1c cima csi cin ctcfn cpw1 cdif ctc cspac cfv cnc cnnc
+      cimage wi wral cab vex elcompl wrex cop elimapw13 cclos1 tccl spacval syl
+      nceqd eqeq2d finnc eleq1d syl5bbr notbid eldif opelco anbi1i 19.41v excom
+      imbi12d brsnsi1 bicomi anass breq1 anbi2d bitr4i sneq breq1d brtcfn df-br
+      ceqsexv opelcnv elin opelxp mpbiran2 wel ancom brsnsi2 breq2 nchoicelem10
+      spacvallem1 brcnv brssetsn anbi12i df-clel 3bitr4i clos1ex eqnc2 clos1eq1
+      tcex rexbii snelpw1 elima risset notbii ncsex vvex xpex ssetex cnvex coex
+      complex imaex siex pw1ex annim 3bitri rexbiia rexnal bitr2i abbi2i ins3ex
+      syl6rbbr con1bii imageex fixex resex txpex rnex ins2ex symdifex 1cex inex
+      tcfnex finex difex eqeltrri ) FGUCZHUDZHUEZUFZHUFZHUAIZFJUBIZFJUVIUGUVHUH
+      UIKUJUAUBUKZVKZULZUMZUNZUOZUPZUEZUQZURZUSUTZUEZVAZUVGULZVBZUFZVCVAZVAZULZ
+      UWALUTZVDZVDZGUCZVEZFVDZVDZVDZUTZUEZAIZBIZVFZVGVHZVIZKZUWTVGVHZVIVJJZVLZB
+      FVMZAVNGUXHAUWRUWSUWRJUWSUWQJZMUXHUWSUWQAVOZVPUXHUXIUXIUXGMZBFVQZUXHMUXIU
+      WTNZNZNZUWSVRZUWMJZBFVQUXLBUWSUWMFVSUXQUXKBFUWTFJZUXKUWSUXANZUVJVTZVIZKZU
+      XMUVJVTZLJZVLZMZUXQUXRUXGUYEUXRUXDUYBUXFUYDUXRUXCUYAUWSUXRUXBUXTUXRUXAFJU
+      XBUXTKUWTWAUAUBUXAWBWCWDWEUXFUXELJUXRUYDUXEWFUXRUXEUYCLUAUBUWTWBWGWHWOWIU
+      XQUXPUWHJZUXPUWLJZMZOUYBUYDMZOUYFUXPUWHUWLWJUYGUYBUYIUYJUYGCIZUXAKZUWSUYK
+      NZUVJVTZVIZKZOZCPZUYBUYGUXMUYKVCQZUYMNZUWSUWEQZOZCPZUYRUYGUXODIZUWGQZVUDU
+      WSUWEQZOZDPZVUCDUXOUWSUWEUWGWKVUHVUDEIZNZKZUXNVUIUWFQZOZVUFOZEPZDPZVUCVUG
+      VUODVUGVUMEPZVUFOZVUOVUEVUQVUFEUXNVUDUWFUXMTWPWLVUOVURVUMVUFEWMWQRSVUPVUN
+      DPZEPZVUCVUNDEWNVUTVULVUJUWSUWEQZOZEPZVUCVUSVVBEVUSVUKVULVUFOZOZDPVVBVUNV
+      VEDVUKVULVUFWRSVVDVVBDVUJVUITVUKVUFVVAVULVUDVUJUWSUWEWSWTXFRSVVCVUIUYMKZU
+      YSOZVVAOZCPZEPZVUCVVBVVIEVVBVVGCPZVVAOVVIVULVVKVVACUXMVUIVCUWTTZWPWLVVGVV
+      ACWMXASVVJVVHEPZCPVUCVVHECWNVVMVUBCVVMVVFUYSVVAOZOZEPVUBVVHVVOEVVFUYSVVAW
+      RSVVNVUBEUYMUYKTZVVFVVAVUAUYSVVFVUJUYTUWSUWEVUIUYMXBXCWTXFRSRRRRRRVUBUYQC
+      UYSUYLVUAUYPUWTUYKBVOXDVUAUWSFJZUYNUWSJZOZUYPVUAUYTUWSVRUWEJZVVSUYTUWSUWE
+      XEVVTUWSUYTVRZUWDJZVVSUYTUWSUWDXGVWBVWAUVCJZVWAUWCJZOVVSVWAUVCUWCXHVWCVVQ
+      VWDVVRVWCVVQUYTGJUYMTUWSUYTFGXIXJUWSVUIUVGQZVUIUYTUWBQZOZEPZVUDUYNKZDAXKZ
+      OZDPZVWDVVRVWHVUIVUDNZKZVUDUYMUWAQZOZVWEOZEPZDPZVWLVWHVWQDPZEPVWSVWGVWTEV
+      WGVWPDPZVWEOZVWTVWGVWFVWEOVXBVWEVWFXLVWFVXAVWEDUYMVUIUWAVVPXMWLRVWPVWEDWM
+      XASVWQEDWNRVWRVWKDVWRVWOUWSVWMUVGQZOZVWKVWRVWNVWOVWEOZOZEPVXDVWQVXFEVWNVW
+      OVWEWRSVXEVXDEVWMVUDTVWNVWEVXCVWOVUIVWMUWSUVGXNWTXFRVWOVWIVXCVWJVWOVUDUYM
+      VRUWAJVWIVUDUYMUWAXEUVJUYMDUAUBXPZVVPXORVXCVWMUWSHQVWJUWSVWMHXQVUDUWSDVOU
+      XJXRRXSRSREUWSUYTUWBUVGWKDUYNUWSXTYAXSRRRUWSUYNUVJUYMVVPVXGYBYCXAXSSRUYPU
+      YBCUXAUWTYEUYLUYOUYAUWSUYLUYNUXTUYLUYMUXSKUYNUXTKUYKUXAXBUVJUYMUXSYDWCWDW
+      EXFRUYHUYDVUDUXMUWAQZDLVQZVUDUYCKZDLVQUYHUYDVXHVXJDLVXHVUDUXMVRUWAJVXJVUD
+      UXMUWAXEUVJUXMDVXGVVLXORYFUYHUXOUWKJZVXIUYHVXKUWSGJUXJUXOUWSUWKGXIXJVXKUX
+      NUWJJZVXIUXNUWJYGVXLUXMUWIJVXIUXMUWIYGDUXMUWALYHRRRDUYCLYIYAYJXSUYBUYDUUA
+      UUBUUHUUCRUXGBFUUDUUEUUIRUUFUWQUWMUWPUWHUWLUWEUWGUWDUVCUWCFGYKYLYMUWBUVGU
+      WAUVTUVSUSUVDUVRHYNUUGUVQUVPUVOUVFUVNUVEHYNYQYOUVGUVMHYNYOZUVLHUVKYNUVJVX
+      GUUJYPUUKUULUUMUUNYQUUOUUPUUQYRYQZYSVXMYPUURYOUWFVCUUSYSYSYPUWKGUWJUWIUWA
+      LVXNUUTYRYTYTYLYMUVAUWOUWNFYKYTYTYTYRYQUVB $.
+      $( [18-Mar-2015] $)
   $}
 
   ${
     $d M m $.  $d m t $.  $d m x $.  $d M x $.  $d k m $.  $d k n $.  $d k t $.
     $d m n $.  $d n t $.  $d t x $.
     $( Lemma for ~ nchoice .  If the T-raising of a cardinal yields a finite
-       special set, then so does the initial set.  Theorem 7.1 of [Specker]. $)
+       special set, then so does the initial set.  Theorem 7.1 of
+       {{Specker}}. $)
     nchoicelem12 $p |- ( ( M e. NC /\ ( Sp[ac] ` T_c M ) e. Fin ) ->
         ( Sp[ac] ` M ) e. Fin ) $=
-       ( vx vm vt vk cspac cfv wcel cncs cv cnc wceq cnnc wi wral c0c nceqd cce
-       co wa vn ctc cfin wrex finnc risset bitri cplc nchoicelem11 eqeq1 imbi1d
-       c1c ralbidv weq fveq2d eqeq2d fveq2 eleq1d imbi12d cbvralv syl6bb wne wn
-       tceq c2c tccl te0c nchoicelem7 syl2anc 0cnsuc eqnetrd necomd df-ne sylib
-       a1i pm2.21d rgen 2nnc ceclnn1 mp3an1 rcla4v syl ancoms adantrl adantl wb
-       nnnc adantr fvex ncelncsi peano4nc sylancl tce2 sylbid imim1d imp peano2
-       biimprd syl6 sylibrd ex expimpd csn nchoicelem3 vex df1c3 1cnnc eqeltrri
-       syld syl6eqel a1d expcom adantld adantrd pm2.61i an32s ralrimiva syl6bbr
-       finds rcla4cv com23 rexlimiv sylbi impcom ) AUBZFGZUCHZAIHZAFGZUCHZYGBJZ
-       YFKZLZBMUDZYHYJNZYGYLMHYNYFUEBYLMUFUGYMYOBMYKMHZYHYMYJYPYKCJZUBZFGZKZLZY
-       QFGZKZMHZNZCIOZYHYMYJNZNDJZYTLZUUDNZCIOZPYTLZUUDNZCIOUAJZYTLZUUDNZCIOZUU
-       NULUHZEJZUBZFGZKZLZUUSFGZKZMHZNZEIOZUUFDUAYKDCUIUUHPLZUUJUUMCIUVIUUIUULU
-       UDUUHPYTUJUKUMDUAUNZUUJUUPCIUVJUUIUUOUUDUUHUUNYTUJUKUMUUHUURLZUUKUURYTLZ
-       UUDNZCIOUVHUVKUUJUVMCIUVKUUIUVLUUDUUHUURYTUJUKUMUVMUVGCEICEUNZUVLUVCUUDU
-       VFUVNYTUVBUURUVNYSUVAUVNYRUUTFYQUUSVDUOQUPUVNUUCUVEMUVNUUBUVDYQUUSFUQQUR
-       USUTVADBUNZUUJUUECIUVOUUIUUAUUDUUHYKYTUJUKUMUUMCIYQIHZUULUUDUVPPYTVBUULV
-       CUVPYTPUVPYTVEYRRSFGKZULUHZPUVPYRIHYRPRSIHYTUVRLYQVFYQVGYRVHVIUVRPVBUVPU
-       VQVJVOVKVLPYTVMVNVPVQUUNMHZUUQUVHUVSUUQTUVGEIUVSUUSIHZUUQUVGUUSPRSIHZUVS
-       UVTTZUUQTUVGNUWAUWBUUQUVGUWAUWBTZUUQUUNVEUUSRSZUBZFGZKZLZUWDFGZKZMHZNZUV
-       GUWAUVTUUQUWLNZUVSUVTUWAUWMUVTUWATUWDIHZUWMVEMHUVTUWAUWNVRVEUUSVSVTUUPUW
-       LCUWDIYQUWDLZUUOUWHUUDUWKUWOYTUWGUUNUWOYSUWFUWOYRUWEFYQUWDVDUOQUPUWOUUCU
-       WJMUWOUUBUWIYQUWDFUQQURUSWAWBWCWDUWCUWLUVGUWCUWLTZUVCUWJULUHZMHZUVFUWPUV
-       CUWKUWRUWCUWLUVCUWKNUWCUVCUWHUWKUWCUVCUURVEUUTRSZFGZKZULUHZLZUWHUWCUVBUX
-       BUURUWBUVBUXBLZUWAUVTUXDUVSUVTUUTIHUUTPRSIHUXDUUSVFUUSVGUUTVHVIWEWEUPUWC
-       UXCUUNUXALZUWHUWCUUNIHZUXAIHUXCUXEWFUWBUXFUWAUVSUXFUVTUUNWGWHWEUWTUWSFWI
-       WJUUNUXAWKWLUWCUWHUXEUWCUWGUXAUUNUWCUWFUWTUWCUWEUWSFUWAUVTUWEUWSLZUVSUVT
-       UWAUXGUUSWMWCWDUOQUPWRWNWNWOWPUWJWQWSUWPUVEUWQMUWCUVEUWQLZUWLUWAUVTUXHUV
-       SUVTUWAUXHUUSVHWCWDWHURWTXAXIXBUWAVCZUWBUVGUUQUXIUVTUVGUVSUVTUXIUVGUVTUX
-       ITZUVFUVCUXJUVEUUSXCZKZMUXJUVDUXKUUSXDQULUXLMUUSEXEXFXGXHXJXKXLXMXNXOXPX
-       QXAXSUUEUUGCAIYQALZUUAYMUUDYJUXMYTYLYKUXMYSYFUXMYRYEFYQAVDUOQUPUXMUUDYIK
-       ZMHYJUXMUUCUXNMUXMUUBYIYQAFUQQURYIUEXRUSXTWBYAYBYCYD $.
-       $( [18-Mar-2015] $)
+      ( vx vm vt vk cspac cfv wcel cncs cv cnc wceq cnnc wi c0c nceqd cce co wa
+      wral ctc cfin wrex finnc risset bitri c1c cplc nchoicelem11 eqeq1 ralbidv
+      imbi1d weq tceq fveq2d eqeq2d fveq2 eleq1d imbi12d cbvralv syl6bb wne c2c
+      vn wn tccl te0c nchoicelem7 syl2anc 0cnsuc a1i eqnetrd necomd df-ne sylib
+      pm2.21d rgen 2nnc ceclnn1 mp3an1 rcla4v syl ancoms adantrl adantl wb nnnc
+      adantr fvex ncelncsi peano4nc sylancl tce2 biimprd sylbid imim1d imp syl6
+      peano2 sylibrd syld expimpd csn nchoicelem3 df1c3 1cnnc eqeltrri syl6eqel
+      ex vex a1d expcom adantld adantrd pm2.61i an32s ralrimiva syl6bbr rcla4cv
+      finds com23 rexlimiv sylbi impcom ) AUAZFGZUBHZAIHZAFGZUBHZYGBJZYFKZLZBMU
+      CZYHYJNZYGYLMHYNYFUDBYLMUEUFYMYOBMYKMHZYHYMYJYPYKCJZUAZFGZKZLZYQFGZKZMHZN
+      ZCITZYHYMYJNZNDJZYTLZUUDNZCITZOYTLZUUDNZCITVDJZYTLZUUDNZCITZUUNUGUHZEJZUA
+      ZFGZKZLZUUSFGZKZMHZNZEITZUUFDVDYKDCUIUUHOLZUUJUUMCIUVIUUIUULUUDUUHOYTUJUL
+      UKDVDUMZUUJUUPCIUVJUUIUUOUUDUUHUUNYTUJULUKUUHUURLZUUKUURYTLZUUDNZCITUVHUV
+      KUUJUVMCIUVKUUIUVLUUDUUHUURYTUJULUKUVMUVGCEICEUMZUVLUVCUUDUVFUVNYTUVBUURU
+      VNYSUVAUVNYRUUTFYQUUSUNUOPUPUVNUUCUVEMUVNUUBUVDYQUUSFUQPURUSUTVADBUMZUUJU
+      UECIUVOUUIUUAUUDUUHYKYTUJULUKUUMCIYQIHZUULUUDUVPOYTVBUULVEUVPYTOUVPYTVCYR
+      QRFGKZUGUHZOUVPYRIHYROQRIHYTUVRLYQVFYQVGYRVHVIUVROVBUVPUVQVJVKVLVMOYTVNVO
+      VPVQUUNMHZUUQUVHUVSUUQSUVGEIUVSUUSIHZUUQUVGUUSOQRIHZUVSUVTSZUUQSUVGNUWAUW
+      BUUQUVGUWAUWBSZUUQUUNVCUUSQRZUAZFGZKZLZUWDFGZKZMHZNZUVGUWAUVTUUQUWLNZUVSU
+      VTUWAUWMUVTUWASUWDIHZUWMVCMHUVTUWAUWNVRVCUUSVSVTUUPUWLCUWDIYQUWDLZUUOUWHU
+      UDUWKUWOYTUWGUUNUWOYSUWFUWOYRUWEFYQUWDUNUOPUPUWOUUCUWJMUWOUUBUWIYQUWDFUQP
+      URUSWAWBWCWDUWCUWLUVGUWCUWLSZUVCUWJUGUHZMHZUVFUWPUVCUWKUWRUWCUWLUVCUWKNUW
+      CUVCUWHUWKUWCUVCUURVCUUTQRZFGZKZUGUHZLZUWHUWCUVBUXBUURUWBUVBUXBLZUWAUVTUX
+      DUVSUVTUUTIHUUTOQRIHUXDUUSVFUUSVGUUTVHVIWEWEUPUWCUXCUUNUXALZUWHUWCUUNIHZU
+      XAIHUXCUXEWFUWBUXFUWAUVSUXFUVTUUNWGWHWEUWTUWSFWIWJUUNUXAWKWLUWCUWHUXEUWCU
+      WGUXAUUNUWCUWFUWTUWCUWEUWSFUWAUVTUWEUWSLZUVSUVTUWAUXGUUSWMWCWDUOPUPWNWOWO
+      WPWQUWJWSWRUWPUVEUWQMUWCUVEUWQLZUWLUWAUVTUXHUVSUVTUWAUXHUUSVHWCWDWHURWTXI
+      XAXBUWAVEZUWBUVGUUQUXIUVTUVGUVSUVTUXIUVGUVTUXISZUVFUVCUXJUVEUUSXCZKZMUXJU
+      VDUXKUUSXDPUGUXLMUUSEXJXEXFXGXHXKXLXMXNXOXPXQXIXTUUEUUGCAIYQALZUUAYMUUDYJ
+      UXMYTYLYKUXMYSYFUXMYRYEFYQAUNUOPUPUXMUUDYIKZMHYJUXMUUCUXNMUXMUUBYIYQAFUQP
+      URYIUDXRUSXSWBYAYBYCYD $.
+      $( [18-Mar-2015] $)
   $}
 
   ${
@@ -57095,11 +57105,11 @@ $)
     $( Lemma for ~ nchoice .  The cardinality of a special set is at least
        one. $)
     nchoicelem13 $p |- ( M e. NC -> 1c <_c Nc ( Sp[ac] ` M ) ) $=
-       ( vx cncs wcel cv cspac cfv wss c1c wrex cnc clec wbr csn snel1cg spacid
-       snssi syl sseq1 rcla4ev syl2anc wb 1cnc fvex lenc ax-mp sylibr ) ACDZBEZ
-       AFGZHZBIJZIUJKLMZUHANZIDUNUJHZULACOUHAUJDUOAPAUJQRUKUOBUNIUIUNUJSTUAICDU
-       MULUBUCBUJIAFUDUEUFUG $.
-       $( [18-Mar-2015] $)
+      ( vx cncs wcel cv cspac cfv wss c1c wrex cnc wbr csn snel1cg spacid snssi
+      clec syl sseq1 rcla4ev syl2anc wb 1cnc fvex lenc ax-mp sylibr ) ACDZBEZAF
+      GZHZBIJZIUJKQLZUHAMZIDUNUJHZULACNUHAUJDUOAOAUJPRUKUOBUNIUIUNUJSTUAICDUMUL
+      UBUCBUJIAFUDUEUFUG $.
+      $( [18-Mar-2015] $)
   $}
 
   ${
@@ -57108,20 +57118,20 @@ $)
        singleton, then the cardinal is not raisable. $)
     nchoicelem14 $p |- ( ( M e. NC /\ Nc ( Sp[ac] ` M ) = 1c ) ->
        -. ( M ^c 0c ) e. NC ) $=
-       ( vk cncs wcel cspac cfv cnc c1c wceq c0c cce co wn c2c wne cin c0 bitri
-       cplc sylibr wa csn cun nchoicelem5 incom eqeq1i disjsn snex ncdisjun syl
-       fvex df1c3g adantr addceq2d addccom syl6reqr clec cnnc 2nnc nchoicelem13
-       wbr ceclnn1 mp3an1 cv wrex wb ncelncsi dflec2 mp2an 0cnsuc eqnetri neeq1
-       1cnc mpbiri rexlimivw sylbi 3syl 0cnc peano4nc necon3bii eqnetrd addcid2
-       neeq2i df-ne sylib nchoicelem6 nceqd eqeq1d mtbird ex con2d imp ) ACDZAE
-       FZGZHIZAJKLCDZMWMWQWPWMWQWPMWMWQUAZWPAUBZNAKLZEFZUCZGZHIZWRXCJHSZOZXDMZW
-       RXCWSGZXAGZSZXEWRWSXAPZQIZXCXJIWRAXADMZXLAUDXLXAWSPZQIXMXKXNQWSXAUEUFXAA
-       UGRTWSXAAUHWTEUKZUIUJWRXJXIHSZXEWRXPXIXHSXJWRHXHXIWMHXHIWQACULUMUNXHXIUO
-       UPWRXIJOZXPXEOWRWTCDZHXIUQVAZXQNURDWMWQXRUSNAVBVCWTUTXSXIHBVDZSZIZBCVEZX
-       QHCDXICDZXSYCVFVMXAXOVGZHXIBVHVIYBXQBCYBXQYAJOYAXTHSJHXTUOXTVJVKXIYAJVLV
-       NVOVPVQXPXEXIJYDJCDXPXEIXIJIVFYEVRXIJVSVIVTTWAWAXFXCHOXGXEHXCHWBWCXCHWDR
-       WEWRWOXCHWRWNXBAWFWGWHWIWJWKWL $.
-       $( [19-Mar-2015] $)
+      ( vk cncs wcel cspac cfv cnc c1c wceq c0c cce co wn c2c cplc wne c0 bitri
+      cin sylibr csn cun nchoicelem5 incom eqeq1i disjsn snex fvex ncdisjun syl
+      df1c3g adantr addceq2d addccom syl6reqr clec wbr cnnc 2nnc ceclnn1 mp3an1
+      wa nchoicelem13 cv wrex wb 1cnc ncelncsi dflec2 mp2an 0cnsuc neeq1 mpbiri
+      eqnetri rexlimivw sylbi 3syl 0cnc peano4nc necon3bii eqnetrd neeq2i df-ne
+      addcid2 sylib nchoicelem6 nceqd eqeq1d mtbird ex con2d imp ) ACDZAEFZGZHI
+      ZAJKLCDZMWMWQWPWMWQWPMWMWQVBZWPAUAZNAKLZEFZUBZGZHIZWRXCJHOZPZXDMZWRXCWSGZ
+      XAGZOZXEWRWSXASZQIZXCXJIWRAXADMZXLAUCXLXAWSSZQIXMXKXNQWSXAUDUEXAAUFRTWSXA
+      AUGWTEUHZUIUJWRXJXIHOZXEWRXPXIXHOXJWRHXHXIWMHXHIWQACUKULUMXHXIUNUOWRXIJPZ
+      XPXEPWRWTCDZHXIUPUQZXQNURDWMWQXRUSNAUTVAWTVCXSXIHBVDZOZIZBCVEZXQHCDXICDZX
+      SYCVFVGXAXOVHZHXIBVIVJYBXQBCYBXQYAJPYAXTHOJHXTUNXTVKVNXIYAJVLVMVOVPVQXPXE
+      XIJYDJCDXPXEIXIJIVFYEVRXIJVSVJVTTWAWAXFXCHPXGXEHXCHWDWBXCHWCRWEWRWOXCHWRW
+      NXBAWFWGWHWIWJWKWL $.
+      $( [19-Mar-2015] $)
   $}
 
   ${
@@ -57129,11 +57139,11 @@ $)
        singleton, then the cardinal is raisable. $)
     nchoicelem15 $p |- ( ( M e. NC /\ 1c <c Nc ( Sp[ac] ` M ) ) ->
        ( M ^c 0c ) e. NC ) $=
-       ( cncs wcel c1c cspac cfv cnc cltc wbr c0c cce co wne clec brltc simprbi
-       wn wceq wa csn df1c3g adantr nchoicelem3 nceqd eqtr4d necon1ad syl5 imp
-       ex ) ABCZDAEFZGZHIZAJKLBCZUMDULMZUJUNUMDULNIUODULOPUJUNDULUJUNQZDULRUJUP
-       SZDATZGZULUJDUSRUPABUAUBUQUKURAUCUDUEUIUFUGUH $.
-       $( [19-Mar-2015] $)
+      ( cncs wcel c1c cspac cfv cnc cltc wbr c0c cce co clec brltc simprbi wceq
+      wne wn wa csn df1c3g adantr nchoicelem3 nceqd eqtr4d ex necon1ad syl5 imp
+      ) ABCZDAEFZGZHIZAJKLBCZUMDULQZUJUNUMDULMIUODULNOUJUNDULUJUNRZDULPUJUPSZDA
+      TZGZULUJDUSPUPABUAUBUQUKURAUCUDUEUFUGUHUI $.
+      $( [19-Mar-2015] $)
   $}
 
   ${
@@ -57234,7 +57244,7 @@ m ) e. Fin /\ ( Nc ( Sp[ac] ` T_c m ) = ( T_c Nc ( Sp[ac] ` m ) +c 1c ) \/ Nc (
     $d k t $.  $d k x $.  $d M t $.  $d M x $.  $d t x $.
     $( Lemma for ~ nchoice .  If the special set of a cardinal is finite, then
        so is the special set of its T-raising, and there is a calculable
-       relationship between their sizes.  Theorem 7.2 of [Specker]. $)
+       relationship between their sizes.  Theorem 7.2 of {{Specker}}. $)
     nchoicelem17 $p |- ( ( <_c We NC /\ M e. NC /\ ( Sp[ac] ` M ) e. Fin ) ->
        ( ( Sp[ac] ` T_c M ) e. Fin /\
          ( Nc ( Sp[ac] ` T_c M ) = ( T_c Nc ( Sp[ac] ` M ) +c 1c ) \/
@@ -57319,82 +57329,82 @@ m ) e. Fin /\ ( Nc ( Sp[ac] ` T_c m ) = ( T_c Nc ( Sp[ac] ` m ) +c 1c ) \/ Nc (
     $d q x $.
     $( Lemma for ~ nchoice .  Set up stratification for ~ nchoicelem19 . $)
     nchoicelem18 $p |- { x | ( Sp[ac] ` x ) e. Fin } e. _V $=
-       ( vp vq vc cncs ccompl csset ccnv cv wcel wceq c1c cima cfin cspac wo wa
-       bitri complex ssetex cins3 c2c cce co w3a cimage ccom cfix cres ctxp crn
-       copab cins2 csymdif cuni1 cin cun cfv cab cvv wn pm2.1 c0 cdm wfn fnspac
-       fndm ax-mp eleq2i ndmfv sylnbir 0fin syl6eqel pm4.71i orbi1i vex elcompl
-       elun elin csn cclos1 spacval eleq1d eluni1 wbr wrex cop spacvallem1 snex
-       df-br nchoicelem10 rexbii elima 3bitr4i syl6rbbr pm5.32i orbi12i mpbiran
-       risset andir abbi2i ncsex ins3ex cnvex imageex coex fixex resex symdifex
-       txpex rnex ins2ex 1cex imaex finex uni1ex inex unex eqeltrri ) EFZEGUAZG
-       FZHZGHZGBIZEJCIZEJYFUBYEUCUDKUEBCULZUFZUGZUHZUIZUJZUKZFZUMZUNZLMZFZNMZUO
-       ZUPZUQZAIZOURZNJZAUSUTUUEAUUBUUCUUBJZUUCEJZVAZUUGPZUUEUUGVBUUHUUGUUEQZPZ
-       UUHUUEQZUUJPUUFUUIUUEQUUHUULUUJUUHUUEUUHUUDVCNUUGUUCOVDZJUUDVCKUUMEUUCOE
-       VEUUMEKVFEOVGVHVIUUCOVJVKVLVMVNVOUUFUUCXTJZUUCUUAJZPUUKUUCXTUUAVRUUNUUHU
-       UOUUJUUCEAVPZVQUUOUUGUUCYTJZQUUJUUCEYTVSUUGUUQUUEUUGUUEUUCVTZYGWAZNJZUUQ
-       UUGUUDUUSNBCUUCWBWCUUQUURYSJZUUTUUCYSUUPWDDIZUURYRWEZDNWFUVBUUSKZDNWFUVA
-       UUTUVCUVDDNUVCUVBUURWGYRJUVDUVBUURYRWJYGUURDBCWHZUUCWIWKRWLDUURYRNWMDUUS
-       NWSWNRWOWPRWQRUUHUUGUUEWTWNWRXAXTUUAEXBSEYTXBYSYRNYQYPLYAYOGTXCYNYMYLYCY
-       KYBGTSXDYDYJGTXDYIGYHTYGUVEXEXFXGXHXJXKSXLXIXMXNSXOXNXPXQXRXS $.
-       $( [20-Mar-2015] $)
+      ( vp vq vc cncs ccompl csset ccnv cv wcel wceq c1c cima cspac wo wa bitri
+      cfin complex ssetex cins3 c2c cce co w3a copab cimage ccom cfix cres ctxp
+      crn cins2 csymdif cuni1 cin cun cfv cab cvv wn pm2.1 cdm wfn fnspac ax-mp
+      c0 fndm eleq2i sylnbir 0fin syl6eqel pm4.71i orbi1i elun vex elcompl elin
+      ndmfv csn cclos1 spacval eleq1d eluni1 wbr df-br spacvallem1 nchoicelem10
+      wrex cop snex rexbii elima 3bitr4i syl6rbbr pm5.32i orbi12i andir mpbiran
+      risset abbi2i ncsex ins3ex cnvex imageex coex fixex resex ins2ex symdifex
+      txpex rnex 1cex imaex finex uni1ex inex unex eqeltrri ) EFZEGUAZGFZHZGHZG
+      BIZEJCIZEJYFUBYEUCUDKUEBCUFZUGZUHZUIZUJZUKZULZFZUMZUNZLMZFZRMZUOZUPZUQZAI
+      ZNURZRJZAUSUTUUEAUUBUUCUUBJZUUCEJZVAZUUGOZUUEUUGVBUUHUUGUUEPZOZUUHUUEPZUU
+      JOUUFUUIUUEPUUHUULUUJUUHUUEUUHUUDVGRUUGUUCNVCZJUUDVGKUUMEUUCNEVDUUMEKVEEN
+      VHVFVIUUCNVSVJVKVLVMVNUUFUUCXTJZUUCUUAJZOUUKUUCXTUUAVOUUNUUHUUOUUJUUCEAVP
+      ZVQUUOUUGUUCYTJZPUUJUUCEYTVRUUGUUQUUEUUGUUEUUCVTZYGWAZRJZUUQUUGUUDUUSRBCU
+      UCWBWCUUQUURYSJZUUTUUCYSUUPWDDIZUURYRWEZDRWIUVBUUSKZDRWIUVAUUTUVCUVDDRUVC
+      UVBUURWJYRJUVDUVBUURYRWFYGUURDBCWGZUUCWKWHQWLDUURYRRWMDUUSRWTWNQWOWPQWQQU
+      UHUUGUUEWRWNWSXAXTUUAEXBSEYTXBYSYRRYQYPLYAYOGTXCYNYMYLYCYKYBGTSXDYDYJGTXD
+      YIGYHTYGUVEXEXFXGXHXKXLSXIXJXMXNSXOXNXPXQXRXS $.
+      $( [20-Mar-2015] $)
   $}
 
   ${
     $d m n $.  $d m x $.  $d n x $.  $d m p $.  $d n p $.
     $( Lemma for ~ nchoice .  Assuming well-ordering, there is a cardinal with
        a finite special set that is its own T-raising.  Theorem 7.3 of
-       [Specker]. $)
-    nchoicelem19 $p |- ( <_c We NC -> 
+       {{Specker}}. $)
+    nchoicelem19 $p |- ( <_c We NC ->
         E. m e. NC ( ( Sp[ac] ` m ) e. Fin /\ T_c m = m ) ) $=
-       ( vn vx vp clec cncs wbr cv cspac cfv cfin wcel wi wceq fveq2 eleq1d cvv
-       wa cnc syl cwe wral wrex ctc nchoicelem18 weq id ncelncsi csn c0c cce co
-       vvex wn c1c cltc cpw1 cpw ltcpw1pwg ax-mp df1c2 nceqi pwv eqcomi 3brtr4i
-       wb nchoicelem8 mpbiri nchoicelem3 sylancr snfi syl6eqel rcla4ev cantisym
-       mpan2 weds simpll cstrict cfound df-we breqi brin bitri simplbi cpartial
-       cin cconnex sopc cref ctrans porta simp3bi simplr tccl simprr c2c simprl
-       cplc nchoicelem17 syl3anc simpld breq2 imbi12d rcla4v syl3c letc syl2anc
-       3expia nchoicelem12 ad2ant2lr imp ad2ant2l mpd tlecg mpbid breq1 ralbidv
-       wo imbi2d anbi12d anbi2d tceq breq12d com12 an32s rexlimdva adantlr syld
-       antid exp32 imdistand reximdva ) EFUAGZAHZIJZKLZBHZIJZKLZYNYQEGZMZBFUBZR
-       ZAFUCYPYNUDZYNNZRZAFUCYMCHZIJZKLZYPYSCABFECUECAUFUUHYOKUUGYNIOPCBUFUUHYR
-       KUUGYQIOPYMUGYMQSZFLZUUJIJZKLZUUICFUCQUMUHZYMUULUUJUIZKYMUUKUUJUJUKULFLU
-       NZUULUUONUUNYMUUPUOSZUUJUPGZQUQZSZQURZSZUUQUUJUPQQLUUTUVBUPGUMQQUSUTUOUU
-       SVAVBUVBUUJUVAQVCVBVDVEYMUUKUUPUURVFUUNUUJVGVOVHUUJVIVJUUJVKVLUUIUUMCUUJ
-       FUUGUUJNUUHUULKUUGUUJIOPVMVJVPYMUUCUUFAFYMYNFLZRZYPUUBUUEUVDYPUUBUUEUVDU
-       UCRZFEUUDYNUVEYMEFVNGZYMUVCUUCVQZYMEFVRGZUVFYMUVHEFVSGZYMEFVRVSWFZGUVHUV
-       IREFUAUVJVTWAEFVRVSWBWCWDUVHEFWEGZUVFUVHUVKEFWGGFEWHWDUVKEFWIGEFWJGUVFFE
-       WKWLTTTUVEUVCUUDFLZYMUVCUUCWMZYNWNTZUVMUVEYNUUDEGZUUDYNEGZUVEUVLUUBUUDIJ
-       ZKLZUVOUVNUVDYPUUBWOUVEUVRUVQSZYOSUDZUOWRNUVSUVTWPWRNXRZUVEYMUVCYPUVRUWA
-       RUVGUVMUVDYPUUBWQYNWSWTXAUUAUVRUVOMBUUDFYQUUDNZYSUVRYTUVOUWBYRUVQKYQUUDI
-       OPYQUUDYNEXBXCXDXEZUVEUVOYNDHZUDZNZDFUCZUVPUVEUVCUVCUVOUWGMUVMUVMUVCUVCU
-       VOUWGYNYNDXFXHXGYMUUCUWGUVPMUVCYMUUCRUWFUVPDFYMUWDFLZUUCUWFUVPMUWFYMUWHR
-       ZUUCRZUVPUWFUWJUVPMUWIUWEIJZKLZYSUWEYQEGZMZBFUBZRZRZUWEUDZUWEEGZMUWQUWEU
-       WDEGZUWSUWQUWDIJZKLZUWTUWHUWLUXBYMUWOUWDXIXJUWHUWOUXBUWTMZYMUWLUWHUWOUXC
-       UWNUXCBUWDFBDUFZYSUXBUWMUWTUXDYRUXAKYQUWDIOPYQUWDUWEEXBXCXDXKXLXMUWQUWEF
-       LZUWHUWTUWSVFUWQUWHUXEYMUWHUWPWMZUWDWNTUXFUWEUWDXNXGXOUWFUWJUWQUVPUWSUWF
-       UUCUWPUWIUWFYPUWLUUBUWOUWFYOUWKKYNUWEIOPUWFUUAUWNBFUWFYTUWMYSYNUWEYQEXPX
-       SXQXTYAUWFUUDUWRYNUWEEYNUWEYBUWFUGYCXCVHYDYEYFYGYHXMUWCYIYJYKYLXM $.
-       $( [20-Mar-2015] $)
+      ( vn vx vp clec cncs wbr cv cspac cfv cfin wcel wi wa wceq eleq1d cvv cnc
+      fveq2 syl cwe wral wrex ctc nchoicelem18 weq id vvex ncelncsi csn c0c cce
+      co wn c1c cltc cpw1 cpw ltcpw1pwg ax-mp df1c2 nceqi pwv eqcomi 3brtr4i wb
+      nchoicelem8 mpan2 nchoicelem3 sylancr snfi syl6eqel rcla4ev weds cantisym
+      mpbiri simpll cstrict cin df-we breqi brin bitri simplbi cpartial cconnex
+      cfound sopc cref ctrans porta simp3bi simplr tccl simprr c2c nchoicelem17
+      cplc simprl syl3anc simpld breq2 imbi12d rcla4v syl3c letc 3expia syl2anc
+      nchoicelem12 ad2ant2lr imp ad2ant2l mpd tlecg mpbid breq1 ralbidv anbi12d
+      imbi2d anbi2d tceq breq12d com12 an32s rexlimdva adantlr syld antid exp32
+      wo imdistand reximdva ) EFUAGZAHZIJZKLZBHZIJZKLZYNYQEGZMZBFUBZNZAFUCYPYNU
+      DZYNOZNZAFUCYMCHZIJZKLZYPYSCABFECUECAUFUUHYOKUUGYNISPCBUFUUHYRKUUGYQISPYM
+      UGYMQRZFLZUUJIJZKLZUUICFUCQUHUIZYMUULUUJUJZKYMUUKUUJUKULUMFLUNZUULUUOOUUN
+      YMUUPUORZUUJUPGZQUQZRZQURZRZUUQUUJUPQQLUUTUVBUPGUHQQUSUTUOUUSVAVBUVBUUJUV
+      AQVCVBVDVEYMUUKUUPUURVFUUNUUJVGVHVPUUJVIVJUUJVKVLUUIUUMCUUJFUUGUUJOUUHUUL
+      KUUGUUJISPVMVJVNYMUUCUUFAFYMYNFLZNZYPUUBUUEUVDYPUUBUUEUVDUUCNZFEUUDYNUVEY
+      MEFVOGZYMUVCUUCVQZYMEFVRGZUVFYMUVHEFWGGZYMEFVRWGVSZGUVHUVINEFUAUVJVTWAEFV
+      RWGWBWCWDUVHEFWEGZUVFUVHUVKEFWFGFEWHWDUVKEFWIGEFWJGUVFFEWKWLTTTUVEUVCUUDF
+      LZYMUVCUUCWMZYNWNTZUVMUVEYNUUDEGZUUDYNEGZUVEUVLUUBUUDIJZKLZUVOUVNUVDYPUUB
+      WOUVEUVRUVQRZYORUDZUOWROUVSUVTWPWROYJZUVEYMUVCYPUVRUWANUVGUVMUVDYPUUBWSYN
+      WQWTXAUUAUVRUVOMBUUDFYQUUDOZYSUVRYTUVOUWBYRUVQKYQUUDISPYQUUDYNEXBXCXDXEZU
+      VEUVOYNDHZUDZOZDFUCZUVPUVEUVCUVCUVOUWGMUVMUVMUVCUVCUVOUWGYNYNDXFXGXHYMUUC
+      UWGUVPMUVCYMUUCNUWFUVPDFYMUWDFLZUUCUWFUVPMUWFYMUWHNZUUCNZUVPUWFUWJUVPMUWI
+      UWEIJZKLZYSUWEYQEGZMZBFUBZNZNZUWEUDZUWEEGZMUWQUWEUWDEGZUWSUWQUWDIJZKLZUWT
+      UWHUWLUXBYMUWOUWDXIXJUWHUWOUXBUWTMZYMUWLUWHUWOUXCUWNUXCBUWDFBDUFZYSUXBUWM
+      UWTUXDYRUXAKYQUWDISPYQUWDUWEEXBXCXDXKXLXMUWQUWEFLZUWHUWTUWSVFUWQUWHUXEYMU
+      WHUWPWMZUWDWNTUXFUWEUWDXNXHXOUWFUWJUWQUVPUWSUWFUUCUWPUWIUWFYPUWLUUBUWOUWF
+      YOUWKKYNUWEISPUWFUUAUWNBFUWFYTUWMYSYNUWEYQEXPXSXQXRXTUWFUUDUWRYNUWEEYNUWE
+      YAUWFUGYBXCVPYCYDYEYFYGXMUWCYHYIYKYLXM $.
+      $( [20-Mar-2015] $)
   $}
 
   ${
     $d m n $.
     $( Cardinal less than or equal does not well-order the cardinals.  This is
        equivalent to saying that the axiom of choice from ZFC is false in NF.
-       Theorem 7.5 of [Specker]. $)
+       Theorem 7.5 of {{Specker}}. $)
     nchoice $p |- -. <_c We NC $=
-       ( vn vm cncs cv ctc c1c cplc wceq c2c wo cnnc wrex wcel wn cspac cfin wa
-       cfv cnc eqeq1d clec cwe wbr nchoicelem1 ioran sylanbrc nrex nchoicelem19
-       nchoicelem2 finnc biimpi simpll simplr simprl nchoicelem17 simprd simprr
-       ad2antrl syl3anc fveq2d nceqd orbi12d mpbid tceq eqeq12d rcla4ev syl2anc
-       id addceq1d ex rexlimdva mpd mto ) UACUBUCZADZVOEZFGZHZVOVPIGZHZJZAKLZWA
-       AKVOKMVRNVTNWANVOUDVOUIVRVTUEUFUGVNBDZORZPMZWCEZWCHZQZBCLWBBUHVNWHWBBCVN
-       WCCMZQZWHWBWJWHQZWDSZKMZWLWLEZFGZHZWLWNIGZHZJZWBWEWMWJWGWEWMWDUJUKURWKWF
-       ORZSZWOHZXAWQHZJZWSWKWTPMZXDWKVNWIWEXEXDQVNWIWHULVNWIWHUMWJWEWGUNWCUOUSU
-       PWKXBWPXCWRWKXAWLWOWKWTWDWKWFWCOWJWEWGUQUTVAZTWKXAWLWQXFTVBVCWAWSAWLKVOW
-       LHZVRWPVTWRXGVOWLVQWOXGVHZXGVPWNFVOWLVDZVIVEXGVOWLVSWQXHXGVPWNIXIVIVEVBV
-       FVGVJVKVLVM $.
-       $( [20-Mar-2015] $)
+      ( vn vm cncs cv ctc c1c cplc wceq c2c wo cnnc wrex wcel wn cspac cfv cfin
+      wa cnc eqeq1d cwe wbr nchoicelem1 nchoicelem2 ioran sylanbrc nchoicelem19
+      clec nrex finnc biimpi ad2antrl simpll simplr simprl nchoicelem17 syl3anc
+      simprd simprr fveq2d nceqd orbi12d mpbid id tceq addceq1d eqeq12d rcla4ev
+      syl2anc ex rexlimdva mpd mto ) UHCUAUBZADZVOEZFGZHZVOVPIGZHZJZAKLZWAAKVOK
+      MVRNVTNWANVOUCVOUDVRVTUEUFUIVNBDZOPZQMZWCEZWCHZRZBCLWBBUGVNWHWBBCVNWCCMZR
+      ZWHWBWJWHRZWDSZKMZWLWLEZFGZHZWLWNIGZHZJZWBWEWMWJWGWEWMWDUJUKULWKWFOPZSZWO
+      HZXAWQHZJZWSWKWTQMZXDWKVNWIWEXEXDRVNWIWHUMVNWIWHUNWJWEWGUOWCUPUQURWKXBWPX
+      CWRWKXAWLWOWKWTWDWKWFWCOWJWEWGUSUTVAZTWKXAWLWQXFTVBVCWAWSAWLKVOWLHZVRWPVT
+      WRXGVOWLVQWOXGVDZXGVPWNFVOWLVEZVFVGXGVOWLVSWQXHXGVPWNIXIVFVGVBVHVIVJVKVLV
+      M $.
+      $( [20-Mar-2015] $)
   $}
 
 $(
@@ -57421,18 +57431,20 @@ $( $t
 /******* Web page format settings *******/
 
 /* Page title, home page link */
-htmltitle "New Foundations Proof Explorer";
-htmlhome '<A HREF="nfset.html"><FONT SIZE=-2 FACE=sans-serif>' +
-    '<IMG SRC="mm.gif" BORDER=0 ALT=' +
-    '"Home" HEIGHT=32 WIDTH=32 ALIGN=MIDDLE>' +
+htmltitle "New Foundations Explorer";
+htmlhome '<A HREF="mmnf.html"><FONT SIZE=-2 FACE=sans-serif>' +
+    '<IMG SRC="nf.gif" BORDER=0 ALT=' +
+    '"Home" HEIGHT=32 WIDTH=32 ALIGN=MIDDLE STYLE="margin-bottom:0px">' +
     'Home</FONT></A>';
 /* Optional file where bibliographic references are kept */
-/* If specified, e.g. "nfset.html", Metamath will hyperlink all strings of the
-   form "[rrr]" (where "rrr" has no whitespace) to "nfset.html#rrr" */
-/* A warning will be given if the file "mmset.html" with the bibliographical
+/* If specified, e.g. "mmnf.html", Metamath will hyperlink all strings of the
+   form "[rrr]" (where "rrr" has no whitespace) to "mmnf.html#rrr" */
+/* A warning will be given if the file "mmnf.html" with the bibliographical
    references is not present.  It is read in order to check correctness of
    the references. */
-htmlbibliography "nfset.html";
+/* Note: this is also used to determine the home page (rather than
+   extracting it from htmlhome) */
+htmlbibliography "mmnf.html";
 
 /* Variable color key at the bottom of each proof table */
 htmlvarcolor '<FONT COLOR="#0000FF">wff</FONT> '
@@ -57441,8 +57453,8 @@ htmlvarcolor '<FONT COLOR="#0000FF">wff</FONT> '
 
 /* GIF and Unicode HTML directories - these are used for the GIF version to
    crosslink to the Unicode version and vice-versa */
-htmldir "../nfpegif/";
-althtmldir "../nfpeuni/";
+htmldir "../nfegif/";
+althtmldir "../nfeuni/";
 
 
 /******* Symbol definitions *******/
@@ -57982,10 +57994,16 @@ htmldef "(+)" as
   latexdef "(+)" as "\oplus";
 
 
+/* _0c.gif is missing  NM 16-Apr-2015
 htmldef "0c" as "<IMG SRC='_0c.gif' WIDTH=13 HEIGHT=19 TITLE='1o' ALIGN=TOP>";
+*/
+htmldef "0c" as '0<SUB><I>c</I></SUB>';
   althtmldef "0c" as '0<SUB><I>c</I></SUB>';
   latexdef "0c" as "0_c";
+/* _1c.gif is missing  NM 16-Apr-2015
 htmldef "1c" as "<IMG SRC='_1c.gif' WIDTH=13 HEIGHT=19 TITLE='1o' ALIGN=TOP>";
+*/
+htmldef "1c" as '1<SUB><I>c</I></SUB>';
   althtmldef "1c" as '1<SUB><I>c</I></SUB>';
   latexdef "1c" as "1_c";
 htmldef "+c" as
@@ -58068,9 +58086,12 @@ htmldef "SSet" as
     "<FONT FACE=sans-serif> SSet </FONT>";
   althtmldef "SSet" as '<FONT FACE=sans-serif> SSet </FONT>';
   latexdef "SSet" as "{\rm SSet}";
-htmldef "U." as
+/* bigcup1.gif is missing  NM 16-Apr-2015
+htmldef "U.1" as
     "<IMG SRC='bigcup1.gif' WIDTH=13 HEIGHT=19 TITLE='U.1' ALIGN=TOP>";
-  althtmldef "U." as '&xcup;<SUB>1</SUB>';
+*/
+htmldef "U.1" as '&xcup;<SUB>1</SUB>';
+  althtmldef "U.1" as '&xcup;<SUB>1</SUB>';
   latexdef "U.1" as "\bigcup_1";
 htmldef "_I_k" as
     " <IMG SRC='rmci.gif' WIDTH=4 HEIGHT=19 TITLE='_I_k' ALIGN=TOP><SUB><I>k</I></SUB> ";
@@ -58278,22 +58299,34 @@ htmldef "Nc" as
     " <FONT FACE=sans-serif>Nc</FONT> ";
   althtmldef "Nc" as ' <FONT FACE=sans-serif>Nc</FONT> ';
   latexdef "Nc" as "{\rm Nc}";
+/* _cdc.gif is missing  NM 16-Apr-2015
 htmldef ".c" as
     " <IMG SRC='_cdc.gif' WIDTH=10 HEIGHT=19 TITLE='.c' ALIGN=TOP> ";
+*/
+htmldef ".c" as ' &middot;<SUB><I>c</I></SUB> ';
   althtmldef ".c" as ' &middot;<SUB><I>c</I></SUB> ';
   latexdef ".c" as "\cdot_c";
 htmldef "T_c" as
     " <FONT FACE=sans-serif>T</FONT><SUB>c</SUB> ";
   althtmldef "T_c" as ' <FONT FACE=sans-serif>T</FONT><SUB>c</SUB> ';
   latexdef "T_c" as "{\rm T}_c ";
+/* _2c.gif is missing  NM 16-Apr-2015
 htmldef "2c" as "<IMG SRC='_2c.gif' WIDTH=13 HEIGHT=19 TITLE='2c' ALIGN=TOP>";
+*/
+htmldef "2c" as '2<SUB><I>c</I></SUB>';
   althtmldef "2c" as '2<SUB><I>c</I></SUB>';
   latexdef "2c" as "2_c";
+/* _3c.gif is missing  NM 16-Apr-2015
 htmldef "3c" as "<IMG SRC='_3c.gif' WIDTH=13 HEIGHT=19 TITLE='3c' ALIGN=TOP>";
+*/
+htmldef "3c" as '3<SUB><I>c</I></SUB>';
   althtmldef "3c" as '3<SUB><I>c</I></SUB>';
   latexdef "3c" as "3_c";
+/* _hatc.gif is missing  NM 16-Apr-2015
 htmldef "^c" as
     " <IMG SRC='_hatc.gif' WIDTH=15 HEIGHT=19 TITLE='^c' ALIGN=TOP> ";
+*/
+htmldef "^c" as ' &uarr;<SUB><I>c</I></SUB> ';
   althtmldef "^c" as ' &uarr;<SUB><I>c</I></SUB> ';
   latexdef "^c" as "\uparrow_c";
 
@@ -58301,6 +58334,245 @@ htmldef "Sp[ac]" as
     " <FONT FACE=sans-serif>Sp</FONT><SUB>ac</SUB> ";
   althtmldef "Sp[ac]" as ' <FONT FACE=sans-serif>Sp</FONT><SUB>ac</SUB> ';
   latexdef "Sp[ac]" as "{\rm Sp}_{\rm ac}";
+
+/* The following missing ones were added by NM 16-Apr-2015 */
+htmldef "TcFn" as "TcFn";
+  althtmldef "TcFn" as "TcFn";
+  latexdef "TcFn" as "{\rm TcFn}";
+htmldef "a1" as "<FONT COLOR='#FF0000'><I>a<SUB>1</SUB></I></FONT>";
+  althtmldef "a1" as "<FONT COLOR='#FF0000'><I>a<SUB>1</SUB></I></FONT>";
+  latexdef "a1" as "{\rm a_1}";
+htmldef "b1" as "<FONT COLOR='#FF0000'><I>b<SUB>1</SUB></I></FONT>";
+  althtmldef "b1" as "<FONT COLOR='#FF0000'><I>b<SUB>1</SUB></I></FONT>";
+  latexdef "b1" as "{\rm b_1}";
+htmldef "c1" as "<FONT COLOR='#FF0000'><I>c<SUB>1</SUB></I></FONT>";
+  althtmldef "c1" as "<FONT COLOR='#FF0000'><I>c<SUB>1</SUB></I></FONT>";
+  latexdef "c1" as "{\rm c_1}";
+htmldef "d1" as "<FONT COLOR='#FF0000'><I>d<SUB>1</SUB></I></FONT>";
+  althtmldef "d1" as "<FONT COLOR='#FF0000'><I>d<SUB>1</SUB></I></FONT>";
+  latexdef "d1" as "{\rm d_1}";
+htmldef "e1" as "<FONT COLOR='#FF0000'><I>e<SUB>1</SUB></I></FONT>";
+  althtmldef "e1" as "<FONT COLOR='#FF0000'><I>e<SUB>1</SUB></I></FONT>";
+  latexdef "e1" as "{\rm e_1}";
+htmldef "f1" as "<FONT COLOR='#FF0000'><I>f<SUB>1</SUB></I></FONT>";
+  althtmldef "f1" as "<FONT COLOR='#FF0000'><I>f<SUB>1</SUB></I></FONT>";
+  latexdef "f1" as "{\rm f_1}";
+htmldef "g1" as "<FONT COLOR='#FF0000'><I>g<SUB>1</SUB></I></FONT>";
+  althtmldef "g1" as "<FONT COLOR='#FF0000'><I>g<SUB>1</SUB></I></FONT>";
+  latexdef "g1" as "{\rm g_1}";
+htmldef "h1" as "<FONT COLOR='#FF0000'><I>h<SUB>1</SUB></I></FONT>";
+  althtmldef "h1" as "<FONT COLOR='#FF0000'><I>h<SUB>1</SUB></I></FONT>";
+  latexdef "h1" as "{\rm h_1}";
+htmldef "i1" as "<FONT COLOR='#FF0000'><I>i<SUB>1</SUB></I></FONT>";
+  althtmldef "i1" as "<FONT COLOR='#FF0000'><I>i<SUB>1</SUB></I></FONT>";
+  latexdef "i1" as "{\rm i_1}";
+htmldef "j1" as "<FONT COLOR='#FF0000'><I>j<SUB>1</SUB></I></FONT>";
+  althtmldef "j1" as "<FONT COLOR='#FF0000'><I>j<SUB>1</SUB></I></FONT>";
+  latexdef "j1" as "{\rm j_1}";
+htmldef "k1" as "<FONT COLOR='#FF0000'><I>k<SUB>1</SUB></I></FONT>";
+  althtmldef "k1" as "<FONT COLOR='#FF0000'><I>k<SUB>1</SUB></I></FONT>";
+  latexdef "k1" as "{\rm k_1}";
+htmldef "l1" as "<FONT COLOR='#FF0000'><I>l<SUB>1</SUB></I></FONT>";
+  althtmldef "l1" as "<FONT COLOR='#FF0000'><I>l<SUB>1</SUB></I></FONT>";
+  latexdef "l1" as "{\rm l_1}";
+htmldef "m1" as "<FONT COLOR='#FF0000'><I>m<SUB>1</SUB></I></FONT>";
+  althtmldef "m1" as "<FONT COLOR='#FF0000'><I>m<SUB>1</SUB></I></FONT>";
+  latexdef "m1" as "{\rm m_1}";
+htmldef "n1" as "<FONT COLOR='#FF0000'><I>n<SUB>1</SUB></I></FONT>";
+  althtmldef "n1" as "<FONT COLOR='#FF0000'><I>n<SUB>1</SUB></I></FONT>";
+  latexdef "n1" as "{\rm n_1}";
+htmldef "o1" as "<FONT COLOR='#FF0000'><I>o<SUB>1</SUB></I></FONT>";
+  althtmldef "o1" as "<FONT COLOR='#FF0000'><I>o<SUB>1</SUB></I></FONT>";
+  latexdef "o1" as "{\rm o_1}";
+htmldef "p1" as "<FONT COLOR='#FF0000'><I>p<SUB>1</SUB></I></FONT>";
+  althtmldef "p1" as "<FONT COLOR='#FF0000'><I>p<SUB>1</SUB></I></FONT>";
+  latexdef "p1" as "{\rm p_1}";
+htmldef "q1" as "<FONT COLOR='#FF0000'><I>q<SUB>1</SUB></I></FONT>";
+  althtmldef "q1" as "<FONT COLOR='#FF0000'><I>q<SUB>1</SUB></I></FONT>";
+  latexdef "q1" as "{\rm q_1}";
+htmldef "r1" as "<FONT COLOR='#FF0000'><I>r<SUB>1</SUB></I></FONT>";
+  althtmldef "r1" as "<FONT COLOR='#FF0000'><I>r<SUB>1</SUB></I></FONT>";
+  latexdef "r1" as "{\rm r_1}";
+htmldef "s1" as "<FONT COLOR='#FF0000'><I>s<SUB>1</SUB></I></FONT>";
+  althtmldef "s1" as "<FONT COLOR='#FF0000'><I>s<SUB>1</SUB></I></FONT>";
+  latexdef "s1" as "{\rm s_1}";
+htmldef "t1" as "<FONT COLOR='#FF0000'><I>t<SUB>1</SUB></I></FONT>";
+  althtmldef "t1" as "<FONT COLOR='#FF0000'><I>t<SUB>1</SUB></I></FONT>";
+  latexdef "t1" as "{\rm t_1}";
+htmldef "u1" as "<FONT COLOR='#FF0000'><I>u<SUB>1</SUB></I></FONT>";
+  althtmldef "u1" as "<FONT COLOR='#FF0000'><I>u<SUB>1</SUB></I></FONT>";
+  latexdef "u1" as "{\rm u_1}";
+htmldef "v1" as "<FONT COLOR='#FF0000'><I>v<SUB>1</SUB></I></FONT>";
+  althtmldef "v1" as "<FONT COLOR='#FF0000'><I>v<SUB>1</SUB></I></FONT>";
+  latexdef "v1" as "{\rm v_1}";
+htmldef "w1" as "<FONT COLOR='#FF0000'><I>w<SUB>1</SUB></I></FONT>";
+  althtmldef "w1" as "<FONT COLOR='#FF0000'><I>w<SUB>1</SUB></I></FONT>";
+  latexdef "w1" as "{\rm w_1}";
+htmldef "x1" as "<FONT COLOR='#FF0000'><I>x<SUB>1</SUB></I></FONT>";
+  althtmldef "x1" as "<FONT COLOR='#FF0000'><I>x<SUB>1</SUB></I></FONT>";
+  latexdef "x1" as "{\rm x_1}";
+htmldef "y1" as "<FONT COLOR='#FF0000'><I>y<SUB>1</SUB></I></FONT>";
+  althtmldef "y1" as "<FONT COLOR='#FF0000'><I>y<SUB>1</SUB></I></FONT>";
+  latexdef "y1" as "{\rm y_1}";
+htmldef "z1" as "<FONT COLOR='#FF0000'><I>z<SUB>1</SUB></I></FONT>";
+  althtmldef "z1" as "<FONT COLOR='#FF0000'><I>z<SUB>1</SUB></I></FONT>";
+  latexdef "z1" as "{\rm z_1}";
+htmldef "a2" as "<FONT COLOR='#FF0000'><I>a<SUB>2</SUB></I></FONT>";
+  althtmldef "a2" as "<FONT COLOR='#FF0000'><I>a<SUB>2</SUB></I></FONT>";
+  latexdef "a2" as "{\rm a_2}";
+htmldef "b2" as "<FONT COLOR='#FF0000'><I>b<SUB>2</SUB></I></FONT>";
+  althtmldef "b2" as "<FONT COLOR='#FF0000'><I>b<SUB>2</SUB></I></FONT>";
+  latexdef "b2" as "{\rm b_2}";
+htmldef "c2" as "<FONT COLOR='#FF0000'><I>c<SUB>2</SUB></I></FONT>";
+  althtmldef "c2" as "<FONT COLOR='#FF0000'><I>c<SUB>2</SUB></I></FONT>";
+  latexdef "c2" as "{\rm c_2}";
+htmldef "d2" as "<FONT COLOR='#FF0000'><I>d<SUB>2</SUB></I></FONT>";
+  althtmldef "d2" as "<FONT COLOR='#FF0000'><I>d<SUB>2</SUB></I></FONT>";
+  latexdef "d2" as "{\rm d_2}";
+htmldef "e2" as "<FONT COLOR='#FF0000'><I>e<SUB>2</SUB></I></FONT>";
+  althtmldef "e2" as "<FONT COLOR='#FF0000'><I>e<SUB>2</SUB></I></FONT>";
+  latexdef "e2" as "{\rm e_2}";
+htmldef "f2" as "<FONT COLOR='#FF0000'><I>f<SUB>2</SUB></I></FONT>";
+  althtmldef "f2" as "<FONT COLOR='#FF0000'><I>f<SUB>2</SUB></I></FONT>";
+  latexdef "f2" as "{\rm f_2}";
+htmldef "g2" as "<FONT COLOR='#FF0000'><I>g<SUB>2</SUB></I></FONT>";
+  althtmldef "g2" as "<FONT COLOR='#FF0000'><I>g<SUB>2</SUB></I></FONT>";
+  latexdef "g2" as "{\rm g_2}";
+htmldef "h2" as "<FONT COLOR='#FF0000'><I>h<SUB>2</SUB></I></FONT>";
+  althtmldef "h2" as "<FONT COLOR='#FF0000'><I>h<SUB>2</SUB></I></FONT>";
+  latexdef "h2" as "{\rm h_2}";
+htmldef "i2" as "<FONT COLOR='#FF0000'><I>i<SUB>2</SUB></I></FONT>";
+  althtmldef "i2" as "<FONT COLOR='#FF0000'><I>i<SUB>2</SUB></I></FONT>";
+  latexdef "i2" as "{\rm i_2}";
+htmldef "j2" as "<FONT COLOR='#FF0000'><I>j<SUB>2</SUB></I></FONT>";
+  althtmldef "j2" as "<FONT COLOR='#FF0000'><I>j<SUB>2</SUB></I></FONT>";
+  latexdef "j2" as "{\rm j_2}";
+htmldef "k2" as "<FONT COLOR='#FF0000'><I>k<SUB>2</SUB></I></FONT>";
+  althtmldef "k2" as "<FONT COLOR='#FF0000'><I>k<SUB>2</SUB></I></FONT>";
+  latexdef "k2" as "{\rm k_2}";
+htmldef "l2" as "<FONT COLOR='#FF0000'><I>l<SUB>2</SUB></I></FONT>";
+  althtmldef "l2" as "<FONT COLOR='#FF0000'><I>l<SUB>2</SUB></I></FONT>";
+  latexdef "l2" as "{\rm l_2}";
+htmldef "m2" as "<FONT COLOR='#FF0000'><I>m<SUB>2</SUB></I></FONT>";
+  althtmldef "m2" as "<FONT COLOR='#FF0000'><I>m<SUB>2</SUB></I></FONT>";
+  latexdef "m2" as "{\rm m_2}";
+htmldef "n2" as "<FONT COLOR='#FF0000'><I>n<SUB>2</SUB></I></FONT>";
+  althtmldef "n2" as "<FONT COLOR='#FF0000'><I>n<SUB>2</SUB></I></FONT>";
+  latexdef "n2" as "{\rm n_2}";
+htmldef "o2" as "<FONT COLOR='#FF0000'><I>o<SUB>2</SUB></I></FONT>";
+  althtmldef "o2" as "<FONT COLOR='#FF0000'><I>o<SUB>2</SUB></I></FONT>";
+  latexdef "o2" as "{\rm o_2}";
+htmldef "p2" as "<FONT COLOR='#FF0000'><I>p<SUB>2</SUB></I></FONT>";
+  althtmldef "p2" as "<FONT COLOR='#FF0000'><I>p<SUB>2</SUB></I></FONT>";
+  latexdef "p2" as "{\rm p_2}";
+htmldef "q2" as "<FONT COLOR='#FF0000'><I>q<SUB>2</SUB></I></FONT>";
+  althtmldef "q2" as "<FONT COLOR='#FF0000'><I>q<SUB>2</SUB></I></FONT>";
+  latexdef "q2" as "{\rm q_2}";
+htmldef "r2" as "<FONT COLOR='#FF0000'><I>r<SUB>2</SUB></I></FONT>";
+  althtmldef "r2" as "<FONT COLOR='#FF0000'><I>r<SUB>2</SUB></I></FONT>";
+  latexdef "r2" as "{\rm r_2}";
+htmldef "s2" as "<FONT COLOR='#FF0000'><I>s<SUB>2</SUB></I></FONT>";
+  althtmldef "s2" as "<FONT COLOR='#FF0000'><I>s<SUB>2</SUB></I></FONT>";
+  latexdef "s2" as "{\rm s_2}";
+htmldef "t2" as "<FONT COLOR='#FF0000'><I>t<SUB>2</SUB></I></FONT>";
+  althtmldef "t2" as "<FONT COLOR='#FF0000'><I>t<SUB>2</SUB></I></FONT>";
+  latexdef "t2" as "{\rm t_2}";
+htmldef "u2" as "<FONT COLOR='#FF0000'><I>u<SUB>2</SUB></I></FONT>";
+  althtmldef "u2" as "<FONT COLOR='#FF0000'><I>u<SUB>2</SUB></I></FONT>";
+  latexdef "u2" as "{\rm u_2}";
+htmldef "v2" as "<FONT COLOR='#FF0000'><I>v<SUB>2</SUB></I></FONT>";
+  althtmldef "v2" as "<FONT COLOR='#FF0000'><I>v<SUB>2</SUB></I></FONT>";
+  latexdef "v2" as "{\rm v_2}";
+htmldef "w2" as "<FONT COLOR='#FF0000'><I>w<SUB>2</SUB></I></FONT>";
+  althtmldef "w2" as "<FONT COLOR='#FF0000'><I>w<SUB>2</SUB></I></FONT>";
+  latexdef "w2" as "{\rm w_2}";
+htmldef "x2" as "<FONT COLOR='#FF0000'><I>x<SUB>2</SUB></I></FONT>";
+  althtmldef "x2" as "<FONT COLOR='#FF0000'><I>x<SUB>2</SUB></I></FONT>";
+  latexdef "x2" as "{\rm x_2}";
+htmldef "y2" as "<FONT COLOR='#FF0000'><I>y<SUB>2</SUB></I></FONT>";
+  althtmldef "y2" as "<FONT COLOR='#FF0000'><I>y<SUB>2</SUB></I></FONT>";
+  latexdef "y2" as "{\rm y_2}";
+htmldef "z2" as "<FONT COLOR='#FF0000'><I>z<SUB>2</SUB></I></FONT>";
+  althtmldef "z2" as "<FONT COLOR='#FF0000'><I>z<SUB>2</SUB></I></FONT>";
+  latexdef "z2" as "{\rm z_2}";
+htmldef "a3" as "<FONT COLOR='#FF0000'><I>a<SUB>3</SUB></I></FONT>";
+  althtmldef "a3" as "<FONT COLOR='#FF0000'><I>a<SUB>3</SUB></I></FONT>";
+  latexdef "a3" as "{\rm a_3}";
+htmldef "b3" as "<FONT COLOR='#FF0000'><I>b<SUB>3</SUB></I></FONT>";
+  althtmldef "b3" as "<FONT COLOR='#FF0000'><I>b<SUB>3</SUB></I></FONT>";
+  latexdef "b3" as "{\rm b_3}";
+htmldef "c3" as "<FONT COLOR='#FF0000'><I>c<SUB>3</SUB></I></FONT>";
+  althtmldef "c3" as "<FONT COLOR='#FF0000'><I>c<SUB>3</SUB></I></FONT>";
+  latexdef "c3" as "{\rm c_3}";
+htmldef "d3" as "<FONT COLOR='#FF0000'><I>d<SUB>3</SUB></I></FONT>";
+  althtmldef "d3" as "<FONT COLOR='#FF0000'><I>d<SUB>3</SUB></I></FONT>";
+  latexdef "d3" as "{\rm d_3}";
+htmldef "e3" as "<FONT COLOR='#FF0000'><I>e<SUB>3</SUB></I></FONT>";
+  althtmldef "e3" as "<FONT COLOR='#FF0000'><I>e<SUB>3</SUB></I></FONT>";
+  latexdef "e3" as "{\rm e_3}";
+htmldef "f3" as "<FONT COLOR='#FF0000'><I>f<SUB>3</SUB></I></FONT>";
+  althtmldef "f3" as "<FONT COLOR='#FF0000'><I>f<SUB>3</SUB></I></FONT>";
+  latexdef "f3" as "{\rm f_3}";
+htmldef "g3" as "<FONT COLOR='#FF0000'><I>g<SUB>3</SUB></I></FONT>";
+  althtmldef "g3" as "<FONT COLOR='#FF0000'><I>g<SUB>3</SUB></I></FONT>";
+  latexdef "g3" as "{\rm g_3}";
+htmldef "h3" as "<FONT COLOR='#FF0000'><I>h<SUB>3</SUB></I></FONT>";
+  althtmldef "h3" as "<FONT COLOR='#FF0000'><I>h<SUB>3</SUB></I></FONT>";
+  latexdef "h3" as "{\rm h_3}";
+htmldef "i3" as "<FONT COLOR='#FF0000'><I>i<SUB>3</SUB></I></FONT>";
+  althtmldef "i3" as "<FONT COLOR='#FF0000'><I>i<SUB>3</SUB></I></FONT>";
+  latexdef "i3" as "{\rm i_3}";
+htmldef "j3" as "<FONT COLOR='#FF0000'><I>j<SUB>3</SUB></I></FONT>";
+  althtmldef "j3" as "<FONT COLOR='#FF0000'><I>j<SUB>3</SUB></I></FONT>";
+  latexdef "j3" as "{\rm j_3}";
+htmldef "k3" as "<FONT COLOR='#FF0000'><I>k<SUB>3</SUB></I></FONT>";
+  althtmldef "k3" as "<FONT COLOR='#FF0000'><I>k<SUB>3</SUB></I></FONT>";
+  latexdef "k3" as "{\rm k_3}";
+htmldef "l3" as "<FONT COLOR='#FF0000'><I>l<SUB>3</SUB></I></FONT>";
+  althtmldef "l3" as "<FONT COLOR='#FF0000'><I>l<SUB>3</SUB></I></FONT>";
+  latexdef "l3" as "{\rm l_3}";
+htmldef "m3" as "<FONT COLOR='#FF0000'><I>m<SUB>3</SUB></I></FONT>";
+  althtmldef "m3" as "<FONT COLOR='#FF0000'><I>m<SUB>3</SUB></I></FONT>";
+  latexdef "m3" as "{\rm m_3}";
+htmldef "n3" as "<FONT COLOR='#FF0000'><I>n<SUB>3</SUB></I></FONT>";
+  althtmldef "n3" as "<FONT COLOR='#FF0000'><I>n<SUB>3</SUB></I></FONT>";
+  latexdef "n3" as "{\rm n_3}";
+htmldef "o3" as "<FONT COLOR='#FF0000'><I>o<SUB>3</SUB></I></FONT>";
+  althtmldef "o3" as "<FONT COLOR='#FF0000'><I>o<SUB>3</SUB></I></FONT>";
+  latexdef "o3" as "{\rm o_3}";
+htmldef "p3" as "<FONT COLOR='#FF0000'><I>p<SUB>3</SUB></I></FONT>";
+  althtmldef "p3" as "<FONT COLOR='#FF0000'><I>p<SUB>3</SUB></I></FONT>";
+  latexdef "p3" as "{\rm p_3}";
+htmldef "q3" as "<FONT COLOR='#FF0000'><I>q<SUB>3</SUB></I></FONT>";
+  althtmldef "q3" as "<FONT COLOR='#FF0000'><I>q<SUB>3</SUB></I></FONT>";
+  latexdef "q3" as "{\rm q_3}";
+htmldef "r3" as "<FONT COLOR='#FF0000'><I>r<SUB>3</SUB></I></FONT>";
+  althtmldef "r3" as "<FONT COLOR='#FF0000'><I>r<SUB>3</SUB></I></FONT>";
+  latexdef "r3" as "{\rm r_3}";
+htmldef "s3" as "<FONT COLOR='#FF0000'><I>s<SUB>3</SUB></I></FONT>";
+  althtmldef "s3" as "<FONT COLOR='#FF0000'><I>s<SUB>3</SUB></I></FONT>";
+  latexdef "s3" as "{\rm s_3}";
+htmldef "t3" as "<FONT COLOR='#FF0000'><I>t<SUB>3</SUB></I></FONT>";
+  althtmldef "t3" as "<FONT COLOR='#FF0000'><I>t<SUB>3</SUB></I></FONT>";
+  latexdef "t3" as "{\rm t_3}";
+htmldef "u3" as "<FONT COLOR='#FF0000'><I>u<SUB>3</SUB></I></FONT>";
+  althtmldef "u3" as "<FONT COLOR='#FF0000'><I>u<SUB>3</SUB></I></FONT>";
+  latexdef "u3" as "{\rm u_3}";
+htmldef "v3" as "<FONT COLOR='#FF0000'><I>v<SUB>3</SUB></I></FONT>";
+  althtmldef "v3" as "<FONT COLOR='#FF0000'><I>v<SUB>3</SUB></I></FONT>";
+  latexdef "v3" as "{\rm v_3}";
+htmldef "w3" as "<FONT COLOR='#FF0000'><I>w<SUB>3</SUB></I></FONT>";
+  althtmldef "w3" as "<FONT COLOR='#FF0000'><I>w<SUB>3</SUB></I></FONT>";
+  latexdef "w3" as "{\rm w_3}";
+htmldef "x3" as "<FONT COLOR='#FF0000'><I>x<SUB>3</SUB></I></FONT>";
+  althtmldef "x3" as "<FONT COLOR='#FF0000'><I>x<SUB>3</SUB></I></FONT>";
+  latexdef "x3" as "{\rm x_3}";
+htmldef "y3" as "<FONT COLOR='#FF0000'><I>y<SUB>3</SUB></I></FONT>";
+  althtmldef "y3" as "<FONT COLOR='#FF0000'><I>y<SUB>3</SUB></I></FONT>";
+  latexdef "y3" as "{\rm y_3}";
+htmldef "z3" as "<FONT COLOR='#FF0000'><I>z<SUB>3</SUB></I></FONT>";
+  althtmldef "z3" as "<FONT COLOR='#FF0000'><I>z<SUB>3</SUB></I></FONT>";
+  latexdef "z3" as "{\rm z_3}";
 
 
 $)
@@ -58465,15 +58737,15 @@ $)
   ${
     $d A a $.  $d a b $.
     $( PLEASE PUT DESCRIPTION HERE. $)
-    eq0cprim $p |- ( A = 0c <-> 
+    eq0cprim $p |- ( A = 0c <->
 A. a -. ( ( a e. A -> A. b -. ( ( b e. a -> -. b = b ) -> -. ( -. b = b -> b e.
         a ) ) ) -> -. ( A. b -. ( ( b e. a -> -. b = b ) -> -. ( -. b = b -> b
         e. a ) ) -> a e. A ) ) ) $=
-     ( c0c wceq cv wcel wb wal wel weq wn wi dfcleq c0 bibi2i dfbi1 bitri albii
-     el0c equid noel 2th con2bii ) ADEBFZAGZUEDGZHZBIUFCBJZCCKZLZMUKUIMLMLZCIZM
-     UMUFMLMLZBIBADNUHUNBUHUFUMHUNUGUMUFUGUEOEZUMUETUOUICFZOGZHZCIUMCUEONURULCU
-     RUIUKHULUQUKUIUJUQUJUQLCUAUPUBUCUDPUIUKQRSRRPUFUMQRSR $.
-     $( [23-Mar-2015] $)
+      ( c0c wceq cv wcel wb wal wel weq wn wi dfcleq c0 el0c bibi2i dfbi1 bitri
+      albii equid noel 2th con2bii ) ADEBFZAGZUEDGZHZBIUFCBJZCCKZLZMUKUIMLMLZCI
+      ZMUMUFMLMLZBIBADNUHUNBUHUFUMHUNUGUMUFUGUEOEZUMUEPUOUICFZOGZHZCIUMCUEONURU
+      LCURUIUKHULUQUKUIUJUQUJUQLCUAUPUBUCUDQUIUKRSTSSQUFUMRSTS $.
+      $( [23-Mar-2015] $)
   $}
 
   ${
@@ -58484,17 +58756,17 @@ A. a -. ( ( a e. A -> A. b -. ( ( b e. a -> -. b = b ) -> -. ( -. b = b -> b e.
         -. A. d -. ( ( d e. b -> d = c ) -> -. ( d = c -> d e. b ) ) -> ( A. e
         ( e e. a -> -. e e. b ) -> -. A. f -. ( ( f e. A -> ( -. f e. a -> f e.
         b ) ) -> -. ( ( -. f e. a -> f e. b ) -> f e. A ) ) ) ) ) ) $=
-    ( c1c wcel cv wceq wa wel wi wn wal wex wb bitri cplc cin c0 cun weq eladdc
-    wrex df-rex csn el1c dfcleq elsn bibi2i dfbi1 albii exbii df-ex 3bitri wral
-    vex disj df-ral wo elun df-or anbi12i df-an exanali rexbii ) ABIUAJEKZFKZUB
-    UCLZAVJVKUDZLZMZFIUGZEBUGZVJBJZHFNZHGUEZOVTVSOPOPZHQZPGQPZCENCFNPZOCQZDKZAJ
-    ZDENZPDFNZOZOWJWGOPOPZDQZPOZOFQZPZMERZVRWNOEQPABIEFUFVQWOEBUGWPVPWOEBVPVKIJ
-    ZVOMZFRWCWMPZMZFRWOVOFIUHWRWTFWQWCVOWSWQVKGKZUIZLZGRWBGRWCGVKUJXCWBGXCVSHKZ
-    XBJZSZHQWBHVKXBUKXFWAHXFVSVTSWAXEVTVSXDXAHUTULUMVSVTUNTUOTUPWBGUQURVOWEWLMW
-    SVLWEVNWLVLWDCVJUSWECVJVKVAWDCVJVBTVNWGWFVMJZSZDQWLDAVMUKXHWKDXHWGWJSWKXGWJ
-    WGXGWHWIVCWJWFVJVKVDWHWIVETUMWGWJUNTUOTVFWEWLVGTVFUPWCWMFVHURVIWOEBUHTVRWNE
-    VHUR $.
-    $( [24-Mar-2015] $)
+      ( c1c wcel cv wceq wa wel wi wn wal wex wb bitri cplc cin c0 cun wrex weq
+      eladdc df-rex el1c dfcleq elsn bibi2i dfbi1 albii exbii df-ex 3bitri wral
+      csn vex disj df-ral wo elun df-or anbi12i df-an exanali rexbii ) ABIUAJEK
+      ZFKZUBUCLZAVJVKUDZLZMZFIUEZEBUEZVJBJZHFNZHGUFZOVTVSOPOPZHQZPGQPZCENCFNPZO
+      CQZDKZAJZDENZPDFNZOZOWJWGOPOPZDQZPOZOFQZPZMERZVRWNOEQPABIEFUGVQWOEBUEWPVP
+      WOEBVPVKIJZVOMZFRWCWMPZMZFRWOVOFIUHWRWTFWQWCVOWSWQVKGKZUSZLZGRWBGRWCGVKUI
+      XCWBGXCVSHKZXBJZSZHQWBHVKXBUJXFWAHXFVSVTSWAXEVTVSXDXAHUTUKULVSVTUMTUNTUOW
+      BGUPUQVOWEWLMWSVLWEVNWLVLWDCVJURWECVJVKVAWDCVJVBTVNWGWFVMJZSZDQWLDAVMUJXH
+      WKDXHWGWJSWKXGWJWGXGWHWIVCWJWFVJVKVDWHWIVETULWGWJUMTUNTVFWEWLVGTVFUOWCWMF
+      VHUQVIWOEBUHTVRWNEVHUQ $.
+      $( [24-Mar-2015] $)
   $}
 
   ${
@@ -58510,11 +58782,11 @@ A. a -. ( ( a e. A -> A. b -. ( ( b e. a -> -. b = b ) -> -. ( -. b = b -> b e.
         c -> e = d ) -> -. ( e = d -> e e. c ) ) -> ( A. f ( f e. b -> -. f e.
         c ) -> -. A. g -. ( ( g e. a -> ( -. g e. b -> g e. c ) ) -> -. ( ( -.
         g e. b -> g e. c ) -> g e. a ) ) ) ) ) -> a e. A ) ) ) $=
-    ( c1c cplc wceq cv wcel wb wal wel wi wn bitri dfcleq elsucprim dfbi1 albii
-    weq bibi2i ) ABJKZLFMZANZUHUGNZOZFPUIGMBNCHQZCIUEZRUMULRSRSCPSIPSDGQDHQSRDP
-    EFQZEGQSEHQRZRUOUNRSRSEPSRRHPRGPSZRUPUIRSRSZFPFAUGUAUKUQFUKUIUPOUQUJUPUIUHB
-    DEGHICUBUFUIUPUCTUDT $.
-    $( [24-Mar-2015] $)
+      ( c1c cplc wceq cv wcel wb wal wel wi wn bitri weq dfcleq elsucprim dfbi1
+      bibi2i albii ) ABJKZLFMZANZUHUGNZOZFPUIGMBNCHQZCIUAZRUMULRSRSCPSIPSDGQDHQ
+      SRDPEFQZEGQSEHQRZRUOUNRSRSEPSRRHPRGPSZRUPUIRSRSZFPFAUGUBUKUQFUKUIUPOUQUJU
+      PUIUHBDEGHICUCUEUIUPUDTUFT $.
+      $( [24-Mar-2015] $)
   $}
 
 
@@ -58537,16 +58809,17 @@ A. a -. ( ( a e. A -> A. b -. ( ( b e. a -> -. b = b ) -> -. ( -. b = b -> b e.
         l ( l e. h -> -. l e. i ) -> -. A. m -. ( ( m e. g -> ( -. m e. h -> m
         e. i ) ) -> -. ( ( -. m e. h -> m e. i ) -> m e. g ) ) ) ) ) -> g e. f
         ) ) -> -. f e. a ) ) ) -> A e. a ) ) $=
-    ( wa wi wal wel wn cnnc wcel c0c cv c1c cplc wral cab df-nnc eleq2i elintab
-    cint weq wex df-clel eq0cprim anbi1i exbii alinexa con2bii 3bitri eqsucprim
-    wceq ralbii df-ral bitri anbi12i df-an imbi1i albii ) AUAUBAUCJUDZUBZBUDZUE
-    UFZVKUBZBVKUGZPZJUHULZUBVQAVKUBZQZJRLKSZMLSZMMUMTZQWCWBQTQTMRZQWDWAQTQTLRZK
-    JSZTQKRZTZBJSDCSZEBSHFSZHGUMZQWKWJQTQTHRTGRTNESNFSTQNRIDSZIESTIFSQZQWMWLQTQ
-    TIRTQQFRQERTZQWNWIQTQTDRZCJSZTQCRZTZQBRZTQTZVSQZJRUAVRABJUIUJVQJAOUKVTXAJVQ
-    WTVSVQWHWSPWTVLWHVPWSVLKUDZUCVCZWFPZKUNWEWFPZKUNZWHKUCVKUOXDXEKXCWEWFXBLMUP
-    UQURWGXFWEWFKUSUTVAVPWRBVKUGWSVOWRBVKVOCUDZVNVCZWPPZCUNWOWPPZCUNZWRCVNVKUOX
-    IXJCXHWOWPXGVMHNIDEFGVBUQURWQXKWOWPCUSUTVAVDWRBVKVEVFVGWHWSVHVFVIVJVA $.
-    $( [24-Mar-2015] $)
+      ( wa wi wal wel wn cnnc wcel c0c c1c cplc wral cab cint weq df-nnc eleq2i
+      elintab wceq wex df-clel eq0cprim anbi1i alinexa con2bii 3bitri eqsucprim
+      cv exbii ralbii df-ral bitri anbi12i df-an imbi1i albii ) AUAUBAUCJVBZUBZ
+      BVBZUDUEZVKUBZBVKUFZPZJUGUHZUBVQAVKUBZQZJRLKSZMLSZMMUITZQWCWBQTQTMRZQWDWA
+      QTQTLRZKJSZTQKRZTZBJSDCSZEBSHFSZHGUIZQWKWJQTQTHRTGRTNESNFSTQNRIDSZIESTIFS
+      QZQWMWLQTQTIRTQQFRQERTZQWNWIQTQTDRZCJSZTQCRZTZQBRZTQTZVSQZJRUAVRABJUJUKVQ
+      JAOULVTXAJVQWTVSVQWHWSPWTVLWHVPWSVLKVBZUCUMZWFPZKUNWEWFPZKUNZWHKUCVKUOXDX
+      EKXCWEWFXBLMUPUQVCWGXFWEWFKURUSUTVPWRBVKUFWSVOWRBVKVOCVBZVNUMZWPPZCUNWOWP
+      PZCUNZWRCVNVKUOXIXJCXHWOWPXGVMHNIDEFGVAUQVCWQXKWOWPCURUSUTVDWRBVKVEVFVGWH
+      WSVHVFVIVJUT $.
+      $( [24-Mar-2015] $)
   $}
 
   ${
@@ -58613,22 +58886,22 @@ A. a -. ( ( a e. A -> A. b -. ( ( b e. a -> -. b = b ) -> -. ( -. b = b -> b e.
         q ) -> -. A. u -. ( ( u e. o -> ( -. u e. p -> u e. q ) ) -> -. ( ( -.
         u e. p -> u e. q ) -> u e. o ) ) ) ) ) -> o e. n ) ) -> -. n e. i ) ) )
         -> a e. i ) ) ) -> b e. A ) ) ) ) $=
-     ( vt3 cphi wcel cv wel weq wi wn wal wex wrex cnnc c1c cplc cif wceq eqeq1
-     wa rexbidv df-phi elab2 wb dfcleq wo vex elnncprim elsucprim anbi12i ancom
-     elif bitri df-an notbii biid annim orbi12i imor bitr4i bibi2i dfbi1 rexbii
-     albii df-rex alinexa con2bii ) CDUFZUGZSUHZDUGZTUHZCUGZUASUIFUBUIZFEUJZUKW
-     QWPUKULUKULFUMULEUMULGUAUIGUBUIULUKGUMHTUIZHUAUIULHUBUIUKZUKWSWRUKULUKULHU
-     MULUKUKUBUMUKUAUMULZKJUIZUCKUIZUCUCUJULZUKXCXBUKULUKULUCUMZUKXDXAUKULUKULK
-     UMJIUIULUKJUMULLIUINMUIZRLUIOQUIZOPUJZUKXGXFUKULUKULOUMULPUMULBRUIBQUIULUK
-     BUMANUIZARUIULAQUIUKZUKXIXHUKULUKULAUMULUKUKQUMUKRUMULZUKXJXEUKULUKULNUMMI
-     UIULUKMUMULUKLUMULUKULSIUIUKIUMZULZUKZTSUIZXKUKULZUKZUKXPWOUKULUKULZTUMZVB
-     SUNZWMXRULUKSUMZULWKXRSDUOZXSWKCWLUPUGZWLUQURZWLUSZUTZSDUOZYAUEUHZYDUTZSDU
-     OYFUECWJUDYGCUTYHYESDYGCYDVAVCSUEDVDVEYEXRSDYEWOWNYDUGZVFZTUMXRTCYDVGYJXQT
-     YJWOXPVFXQYIXPWOYIYBWNYCUGZVBZYBULZXNVBZVHZXPYBWNYCWLVNYOXMULZXOVHXPYLYPYN
-     XOYLWTXKVBZYPYLXKWTVBYQYBXKYKWTWLLMNRQPOAIJKUCBSVIVJZWNWLGHUAUBEFVKVLXKWTV
-     MVOWTXKVPVOYNXNXLVBZXOYNXLXNVBYSYMXLXNXNYBXKYRVQXNVRVLXLXNVMVOXNXKVSVOVTXM
-     XOWAWBVOWCWOXPWDVOWFVOWEVOXRSDWGVOXTXSWMXRSWHWIVO $.
-     $( [24-Mar-2015] $)
+      ( vt3 cphi wcel cv wel weq wi wn wal wa wex wrex cnnc c1c cplc wceq eqeq1
+      cif rexbidv df-phi elab2 wb dfcleq elif elnncprim elsucprim anbi12i ancom
+      vex bitri df-an notbii biid annim orbi12i imor bitr4i bibi2i dfbi1 rexbii
+      wo albii df-rex alinexa con2bii ) CDUFZUGZSUHZDUGZTUHZCUGZUASUIFUBUIZFEUJ
+      ZUKWQWPUKULUKULFUMULEUMULGUAUIGUBUIULUKGUMHTUIZHUAUIULHUBUIUKZUKWSWRUKULU
+      KULHUMULUKUKUBUMUKUAUMULZKJUIZUCKUIZUCUCUJULZUKXCXBUKULUKULUCUMZUKXDXAUKU
+      LUKULKUMJIUIULUKJUMULLIUINMUIZRLUIOQUIZOPUJZUKXGXFUKULUKULOUMULPUMULBRUIB
+      QUIULUKBUMANUIZARUIULAQUIUKZUKXIXHUKULUKULAUMULUKUKQUMUKRUMULZUKXJXEUKULU
+      KULNUMMIUIULUKMUMULUKLUMULUKULSIUIUKIUMZULZUKZTSUIZXKUKULZUKZUKXPWOUKULUK
+      ULZTUMZUNSUOZWMXRULUKSUMZULWKXRSDUPZXSWKCWLUQUGZWLURUSZWLVBZUTZSDUPZYAUEU
+      HZYDUTZSDUPYFUECWJUDYGCUTYHYESDYGCYDVAVCSUEDVDVEYEXRSDYEWOWNYDUGZVFZTUMXR
+      TCYDVGYJXQTYJWOXPVFXQYIXPWOYIYBWNYCUGZUNZYBULZXNUNZWEZXPYBWNYCWLVHYOXMULZ
+      XOWEXPYLYPYNXOYLWTXKUNZYPYLXKWTUNYQYBXKYKWTWLLMNRQPOAIJKUCBSVMVIZWNWLGHUA
+      UBEFVJVKXKWTVLVNWTXKVOVNYNXNXLUNZXOYNXLXNUNYSYMXLXNXNYBXKYRVPXNVQVKXLXNVL
+      VNXNXKVRVNVSXMXOVTWAVNWBWOXPWCVNWFVNWDVNXRSDWGVNXTXSWMXRSWHWIVN $.
+      $( [24-Mar-2015] $)
   $}
 
   ${
@@ -58648,6 +58921,13 @@ A. a -. ( ( a e. A -> A. b -. ( ( b e. a -> -. b = b ) -> -. ( -. b = b -> b e.
     $d r s $.  $d r v $.  $d r w $.  $d s t $.  $d s u $.  $d s v $.  $d s w $.
     $d t1 u1 $.  $d t1 x $.  $d t u $.  $d x y $.  $d x z $.  $d y z $.
     elopprim.1 $e |- A e. _V $.
+
+    $( 16-Apr-2015 NM The proof of this seems to break mmj2:
+          **** I-UT-0015 Processing RunParmFile Command #2 = VerifyProof,*
+          E-PR-0006 VerifyProof: stack has more than one entry at end of proof!
+          Theorem: elopprim Step#: 854 Step Label:
+       even though it passes the metamath program. $)
+
     $( PLEASE PUT DESCRIPTION HERE. $)
     elopprim $p |- ( A e. <. B , C >. <-> ( A. a ( a e. B -> -. A. b -. ( ( b
         e. A -> -. A. c ( c e. a -> -. A. d -. ( ( d e. b -> ( ( -. A. e ( e e.
@@ -58883,35 +59163,35 @@ A. a -. ( ( a e. A -> A. b -. ( ( b e. a -> -. b = b ) -> -. ( -. b = b -> b e.
         t1 e. x -> A. u1 -. ( ( u1 e. t1 -> -. u1 = u1 ) -> -. ( -. u1 = u1 ->
         u1 e. t1 ) ) ) -> -. ( A. u1 -. ( ( u1 e. t1 -> -. u1 = u1 ) -> -. ( -.
         u1 = u1 -> u1 e. t1 ) ) -> t1 e. x ) ) ) -> x e. A ) ) ) ) ) $=
-    ( vt3 cop wcel cv cphi wceq wrex cab c0c csn cun wo wel weq wi wn wal df-op
-    eleq2i elun bitri eqeq1 rexbidv wa wex wb dfcleq vex elphiprim bibi2i dfbi1
-    elab albii rexbii df-rex alinexa con2bii elsn eq0cprim orbi12i imor bitr4i
-    ) HIJVMZVNZHVLVOZUEVOZVPZVQZUEIVRZVLVSZVNZHXPXRVTWAZWBZVQZUEJVRZVLVSZVNZWCZ
-    XQIVNZUFVOZHVNZUGUEWDUHUFWDZKUGWDNLWDZNMWEZWFYOYNWFWGWFWGNWHWGMWHWGOKWDOLWD
-    WGWFOWHPUHWDZPKWDWGPLWDWFZWFYQYPWFWGWFWGPWHWGWFWFLWHWFKWHWGRUIWDZSRWDZSSWEW
-    GZWFYTYSWFWGWFWGSWHZWFUUAYRWFWGWFWGRWHUIQWDWGWFUIWHWGTQWDUCUDWDZUBTWDFUAWDZ
-    FGWEZWFUUDUUCWFWGWFWGFWHWGGWHWGEUBWDEUAWDWGWFEWHDUCWDZDUBWDWGDUAWDWFZWFUUFU
-    UEWFWGWFWGDWHWGWFWFUAWHWFUBWHWGZWFUUGUUBWFWGWFWGUCWHUDQWDWGWFUDWHWGWFTWHWGW
-    FWGUGQWDWFQWHZWGWFUHUGWDUUHWFWGWFZWFUUIYMWFWGWFWGUHWHWGWFUGWHWGZWFUUJYLWFWG
-    WFWGZUFWHZWGWFUEWHZXQJVNZAVOZHVNZBUEWDCAWDZUJBWDUMUKWDZUMULWEZWFUUSUURWFWGW
-    FWGUMWHWGULWHWGUNUJWDUNUKWDWGWFUNWHUOCWDZUOUJWDWGUOUKWDWFZWFUVAUUTWFWGWFWGU
-    OWHWGWFWFUKWHWFUJWHWGURUQWDZUSURWDZUSUSWEWGZWFUVDUVCWFWGWFWGUSWHZWFUVEUVBWF
-    WGWFWGURWHUQUPWDWGWFUQWHWGUTUPWDVBVAWDZVCUTWDVFVDWDZVFVEWEZWFUVHUVGWFWGWFWG
-    VFWHWGVEWHWGVGVCWDVGVDWDWGWFVGWHVHVBWDZVHVCWDWGVHVDWDWFZWFUVJUVIWFWGWFWGVHW
-    HWGWFWFVDWHWFVCWHWGZWFUVKUVFWFWGWFWGVBWHVAUPWDWGWFVAWHWGWFUTWHWGWFWGBUPWDWF
-    UPWHZWGWFCBWDUVLWFWGWFZWFUVMUUQWFWGWFWGCWHWGWFBWHZVIAWDZVJVIWDZVJVJWEWGZWFU
-    VQUVPWFWGWFWGVJWHZWFUVRUVOWFWGWFWGVIWHZWFZWFUVTUUPWFWGWFWGZAWHZWGWFUEWHZWGZ
-    WFZXOHYAYGWBZVNYIXNUWFHVLUEIJWIWJHYAYGWKWLYIUUMWGZUWDWCUWEYBUWGYHUWDYBHXRVQ
-    ZUEIVRZUWGXTUWIVLHVKXPHVQZXSUWHUEIXPHXRWMWNXCUWIYJUULWOUEWPZUWGUWIUULUEIVRU
-    WKUWHUULUEIUWHYLYKXRVNZWQZUFWHUULUFHXRWRUWMUUKUFUWMYLUUJWQUUKUWLUUJYLDEYKXQ
-    MNOPQUIRTUDUCFGUAUBUGUHKLSUFWSWTXAYLUUJXBWLXDWLXEUULUEIXFWLUUMUWKYJUULUEXGX
-    HWLWLYHHYDVQZUEJVRZUWDYFUWOVLHVKUWJYEUWNUEJXPHYDWMWNXCUWOUUNUWBWOUEWPZUWDUW
-    OUWBUEJVRUWPUWNUWBUEJUWNUUPUUOYDVNZWQZAWHUWBAHYDWRUWRUWAAUWRUUPUVTWQUWAUWQU
-    VTUUPUWQUUOXRVNZUUOYCVNZWCZUVTUUOXRYCWKUXAUVNWGZUVSWCUVTUWSUXBUWTUVSVHVGUUO
-    XQULUMUNUOUPUQURUTVAVBVFVEVDVCBCUJUKUSAWSZWTUWTUUOVTVQUVSUUOVTUXCXIUUOVIVJX
-    JWLXKUVNUVSXLXMWLXAUUPUVTXBWLXDWLXEUWBUEJXFWLUWCUWPUUNUWBUEXGXHWLWLXKUUMUWD
-    XLXMWL $.
-    $( [24-Mar-2015] $)
+      ( vt3 cop wcel cv cphi wceq wrex cab c0c csn cun wo wel weq wi wal eleq2i
+      wn df-op elun bitri eqeq1 rexbidv elab wa wex dfcleq vex elphiprim bibi2i
+      wb dfbi1 albii rexbii df-rex alinexa con2bii elsn eq0cprim orbi12i bitr4i
+      imor ) HIJVMZVNZHVLVOZUEVOZVPZVQZUEIVRZVLVSZVNZHXPXRVTWAZWBZVQZUEJVRZVLVS
+      ZVNZWCZXQIVNZUFVOZHVNZUGUEWDUHUFWDZKUGWDNLWDZNMWEZWFYOYNWFWIWFWINWGWIMWGW
+      IOKWDOLWDWIWFOWGPUHWDZPKWDWIPLWDWFZWFYQYPWFWIWFWIPWGWIWFWFLWGWFKWGWIRUIWD
+      ZSRWDZSSWEWIZWFYTYSWFWIWFWISWGZWFUUAYRWFWIWFWIRWGUIQWDWIWFUIWGWITQWDUCUDW
+      DZUBTWDFUAWDZFGWEZWFUUDUUCWFWIWFWIFWGWIGWGWIEUBWDEUAWDWIWFEWGDUCWDZDUBWDW
+      IDUAWDWFZWFUUFUUEWFWIWFWIDWGWIWFWFUAWGWFUBWGWIZWFUUGUUBWFWIWFWIUCWGUDQWDW
+      IWFUDWGWIWFTWGWIWFWIUGQWDWFQWGZWIWFUHUGWDUUHWFWIWFZWFUUIYMWFWIWFWIUHWGWIW
+      FUGWGWIZWFUUJYLWFWIWFWIZUFWGZWIWFUEWGZXQJVNZAVOZHVNZBUEWDCAWDZUJBWDUMUKWD
+      ZUMULWEZWFUUSUURWFWIWFWIUMWGWIULWGWIUNUJWDUNUKWDWIWFUNWGUOCWDZUOUJWDWIUOU
+      KWDWFZWFUVAUUTWFWIWFWIUOWGWIWFWFUKWGWFUJWGWIURUQWDZUSURWDZUSUSWEWIZWFUVDU
+      VCWFWIWFWIUSWGZWFUVEUVBWFWIWFWIURWGUQUPWDWIWFUQWGWIUTUPWDVBVAWDZVCUTWDVFV
+      DWDZVFVEWEZWFUVHUVGWFWIWFWIVFWGWIVEWGWIVGVCWDVGVDWDWIWFVGWGVHVBWDZVHVCWDW
+      IVHVDWDWFZWFUVJUVIWFWIWFWIVHWGWIWFWFVDWGWFVCWGWIZWFUVKUVFWFWIWFWIVBWGVAUP
+      WDWIWFVAWGWIWFUTWGWIWFWIBUPWDWFUPWGZWIWFCBWDUVLWFWIWFZWFUVMUUQWFWIWFWICWG
+      WIWFBWGZVIAWDZVJVIWDZVJVJWEWIZWFUVQUVPWFWIWFWIVJWGZWFUVRUVOWFWIWFWIVIWGZW
+      FZWFUVTUUPWFWIWFWIZAWGZWIWFUEWGZWIZWFZXOHYAYGWBZVNYIXNUWFHVLUEIJWJWHHYAYG
+      WKWLYIUUMWIZUWDWCUWEYBUWGYHUWDYBHXRVQZUEIVRZUWGXTUWIVLHVKXPHVQZXSUWHUEIXP
+      HXRWMWNWOUWIYJUULWPUEWQZUWGUWIUULUEIVRUWKUWHUULUEIUWHYLYKXRVNZXBZUFWGUULU
+      FHXRWRUWMUUKUFUWMYLUUJXBUUKUWLUUJYLDEYKXQMNOPQUIRTUDUCFGUAUBUGUHKLSUFWSWT
+      XAYLUUJXCWLXDWLXEUULUEIXFWLUUMUWKYJUULUEXGXHWLWLYHHYDVQZUEJVRZUWDYFUWOVLH
+      VKUWJYEUWNUEJXPHYDWMWNWOUWOUUNUWBWPUEWQZUWDUWOUWBUEJVRUWPUWNUWBUEJUWNUUPU
+      UOYDVNZXBZAWGUWBAHYDWRUWRUWAAUWRUUPUVTXBUWAUWQUVTUUPUWQUUOXRVNZUUOYCVNZWC
+      ZUVTUUOXRYCWKUXAUVNWIZUVSWCUVTUWSUXBUWTUVSVHVGUUOXQULUMUNUOUPUQURUTVAVBVF
+      VEVDVCBCUJUKUSAWSZWTUWTUUOVTVQUVSUUOVTUXCXIUUOVIVJXJWLXKUVNUVSXMXLWLXAUUP
+      UVTXCWLXDWLXEUWBUEJXFWLUWCUWPUUNUWBUEXGXHWLWLXKUUMUWDXMXLWL $.
+      $( [24-Mar-2015] $)
   $}
 
   ${
@@ -58948,6 +59228,10 @@ A. a -. ( ( a e. A -> A. b -. ( ( b e. a -> -. b = b ) -> -. ( -. b = b -> b e.
     $d x1 y1 $.  $d x1 z1 $.  $d x2 y2 $.  $d x2 z2 $.  $d y1 z1 $.
     $d y2 z2 $.  $d y z $.
     $( PLEASE PUT DESCRIPTION HERE. $)
+  $( I commented this out because 'save proof opthprim/compressed' and
+     'show statement opthprim/html' take an unreasonable amount of time
+     to complete; it needs to be broken up somehow. $)
+$(
     opthprim $p |- -. ( ( A. a -. ( ( ( A. b ( b e. A -> -. A. c -. ( ( c e. a
         -> -. A. d ( d e. b -> -. A. e -. ( ( e e. c -> ( ( -. A. f ( f e. d ->
         A. g ( -. A. h -. A. i -. ( ( i e. g -> i = h ) -> -. ( i = h -> i e. g
@@ -60916,5 +61200,6 @@ A. a -. ( ( a e. A -> A. b -. ( ( b e. a -> -. b = b ) -> -. ( -. b = b -> b e.
     IMNOPQRUJTUAUEGUBUCUDUGUHUILSULUMUNUOUPUQURUSUTVAVBVCVDVEVFVGVHVIVJVKVLUFYM
     ZYNWPWQWRWOWNWMWLUYTJKVQVRVSVTWAWBWCWEWFWGWKWJWIWHVMVNVOVPWDWSWTXAXBXCXDXEX
     FXGXHXIXJXKXLXMXNXOXPXQXRXSVUDYNYOUWKUYOYPYQYRYQUUDUUEYSYOUYQUYRYPYQYT $.
+$)
     $( [24-Mar-2015] $)
   $}
