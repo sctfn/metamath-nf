@@ -15850,14 +15850,22 @@ $)
 
 $(
 ###############################################################################
-                ZF (ZERMELO-FRAENKEL) SET THEORY
+                NEW FOUNDATIONS (NF) SET THEORY
 ###############################################################################
-$)
 
-$(
-#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#
-                    New Foundations Set Theory
-#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#
+Here we introduce New Foundations set theory.
+We first introduce the axiom of extensionality in ~ ax-ext .
+We later add set construction axioms from
+{{Hailperin}}, such as ~ ax-nin ,
+that are designed to implement the
+Stratification Axiom from {{Quine2}}.
+
+We then introduce ordered pairs, relationships, and functions.
+Note that the definition of an ordered pair (in ~ df-op ) is different
+than the Kuratowski ordered pair definition (in ~ df-opk )
+typically used in ZFC, because the Kuratowski definition is not type-level.
+
+We conclude with orderings.
 $)
 
 $(
@@ -23699,7 +23707,7 @@ $)
        building mmbiblio.html -NM 16-Apr-2015. $)
 
     $( Define the anti-intersection of two classes.  This operation is used
-       implicitly in {{Haliperin}}, though there does not seem to be any
+       implicitly in {{Hailperin}}, though there does not seem to be any
        notation for it in the literature. $)
     df-nin $a |- ( A -i^i B ) = { x | ( x e. A -/\ x e. B ) } $.
   $}
@@ -28578,12 +28586,12 @@ $)
 
   ${
     $d x y z w $.
-    $( State the axiom of anti-intersection.  Axiom P2 of {{Haliperin}}.  This
-       axiom sets up boolean opkerations on sets.
+    $( State the axiom of anti-intersection.  Axiom P1 of {{Hailperin}}.  This
+       axiom sets up boolean operations on sets.
 
        Note on this and the following axioms: this axiom, ~ ax-xp , ~ ax-cnv ,
        ~ ax-1c , ~ ax-sset , ~ ax-si , ~ ax-ins2 , ~ ax-ins3 , and
-       ~ ax-typlower are from {{Haliperin}}, and are designed to implement the
+       ~ ax-typlower are from {{Hailperin}}, and are designed to implement the
        Stratification Axiom from {{Quine2}}.
 
        A well-formed formula using only propositional symbols, predicate
@@ -28595,8 +28603,8 @@ $)
        formula.
 
        Since we cannot state stratification from within the logic, we use
-       Haliperin's axioms and prove existence of stratified sets using
-       Haliperin's algorithm. $)
+       Hailperin's axioms and prove existence of stratified sets using
+       Hailperin's algorithm. $)
     ax-nin $a |- E. z A. w ( w e. z <-> ( w e. x -/\ w e. y ) ) $.
   $}
 
@@ -28604,7 +28612,7 @@ $)
     $d x y z w t $.
     $( State the axiom of cross product.  This axiom guarantees the existence
        of the (Kuratowski) cross product of ` _V ` with ` x ` .  Axiom P5 of
-       {{Haliperin}}. $)
+       {{Hailperin}}. $)
     ax-xp $a |- E. y A. z ( z e. y <->
            E. w E. t ( z = << w , t >> /\ t e. x ) ) $.
   $}
@@ -28612,7 +28620,7 @@ $)
   ${
     $d x y z w $.
     $( State the axiom of converse.  This axiom guarantees the existence of the
-       Kuratowski converse of ` x ` .  Axiom P7 of {{Haliperin}}. $)
+       Kuratowski converse of ` x ` .  Axiom P7 of {{Hailperin}}. $)
     ax-cnv $a |- E. y A. z A. w ( << z , w >> e. y <-> << w , z >> e. x ) $.
   $}
 
@@ -28620,7 +28628,7 @@ $)
     $d x y z w $.
     $( State the axiom of cardinal one.  This axiom guarantees the existence of
        the set of all singletons, which will become cardinal one later in our
-       development.  Axiom P8 of {{Haliperin}}. $)
+       development.  Axiom P8 of {{Hailperin}}. $)
     ax-1c $a |- E. x A. y ( y e. x <-> E. z A. w ( w e. y <-> w = z ) ) $.
   $}
 
@@ -28628,7 +28636,7 @@ $)
     $d x y z w $.
     $( State the axiom of the subset relationship.  This axiom guarantees the
        existence of the Kuratowski relationship representing subset.  Slight
-       generalization of axiom P8 of {{Haliperin}}. $)
+       generalization of axiom P9 of {{Hailperin}}. $)
     ax-sset $a |- E. x A. y A. z ( << y , z >> e. x <->
       A. w ( w e. y -> w e. z ) ) $.
   $}
@@ -28637,7 +28645,7 @@ $)
     $d x y z w $.
     $( State the axiom of the singleton image.  This axiom guarantees that
        guarantees the existence of a set that raises the "type" of another set
-       when considered as a relationship.  Axiom P2 of {{Haliperin}}. $)
+       when considered as a relationship.  Axiom P2 of {{Hailperin}}. $)
     ax-si $a |- E. y A. z A. w ( << { z } , { w } >> e. y <->
           << z , w >> e. x ) $.
   $}
@@ -28646,13 +28654,13 @@ $)
     $d x y z w t $.
     $( State the insertion two axiom.  This axiom sets up a set that inserts an
        extra variable at the second place of the relationship described by
-       ` x ` .  Axiom P3 of {{Haliperin}}. $)
+       ` x ` .  Axiom P3 of {{Hailperin}}. $)
     ax-ins2 $a |- E. y A. z A. w A. t (
       << { { z } } , << w , t >> >> e. y <-> << z , t >> e. x ) $.
 
     $( State the insertion three axiom.  This axiom sets up a set that inserts
        an extra variable at the third place of the relationship described by
-       ` x ` .  Axiom P4 of {{Haliperin}}. $)
+       ` x ` .  Axiom P4 of {{Hailperin}}. $)
     ax-ins3 $a |- E. y A. z A. w A. t (
       << { { z } } , << w , t >> >> e. y <-> << z , w >> e. x ) $.
   $}
@@ -28661,14 +28669,14 @@ $)
     $d x y z w $.
     $( The type lowering axiom.  This axiom eventually sets up both the
        existence of the sum set and the existence of the range of a
-       relationship. $)
+       relationship. Axiom P6 of {{Hailperin}}. $)
     ax-typlower $a |- E. y A. z ( z e. y <-> A. w << w , { z } >> e. x ) $.
   $}
 
   ${
     $d x y z $.
     $( The singleton axiom.  This axiom sets up the existence of a singleton
-       set.  This appears to have been an oversight on Haliperin's part, as it
+       set.  This appears to have been an oversight on Hailperin's part, as it
        is needed to prove the properties of Kuratowski ordered pairs. $)
     ax-sn $a |- E. y A. z ( z e. y <-> z = x ) $.
   $}
@@ -29260,7 +29268,7 @@ $)
 
 
   $( Define the unit union of a class.  This operation is used implicitly in
-     both {{Holmes}} and {{Haliperin}} to complete their stratification
+     both {{Holmes}} and {{Hailperin}} to complete their stratification
      algorithms, although neither provide explicit notation for it.  See
      ~ eluni1 for membership condition. $)
   df-uni1 $a |- U.1 A = U. ( A i^i 1c ) $.
@@ -32905,7 +32913,7 @@ $)
     $d d y $.  $d d z $.  $d t w $.  $d t x $.  $d t y $.  $d t z $.  $d w x $.
     $d w y $.  $d w z $.  $d x y $.  $d x z $.  $d y z $.
 
-    $( Finite less than is stratitfied. $)
+    $( Finite less than is stratified. $)
     ltfinex $p |- <[fin] e. _V $=
       ( vx vt vc va vb vd cssetk csik cpw1 csn copk wceq wrex wa wex opksnelsik
       wcel snex 3bitri sikex vy vz cltfin cvv cxpk cins3k cins2k cin c1c ccompl
@@ -51158,7 +51166,7 @@ $)
     clos1is.9 $e |- ( ( y e. C /\ y R z /\ ps ) -> ch ) $.
     $( Induction scheme for closures.  Hypotheses one through three set up
        existence properties, hypothesis four sets up stratification, hypotheses
-       five, through seven set up implicit substitution, and hypotheses eight
+       five through seven set up implicit substitution, and hypotheses eight
        and nine set up the base and induction steps. $)
     clos1is $p |- ( A e. C -> th ) $=
       ( wcel cab cvv wss cv wbr wa wal wral ssab mpgbir 3expib vex anbi1i ancom
@@ -54150,7 +54158,7 @@ $)
      function. $)
   ctcfn $a class TcFn $.
 
-  $( Define the set of all cardinal numbers.  We define them as equivelance
+  $( Define the set of all cardinal numbers.  We define them as equivalence
      classes of sets of the same size.  Definition from {{Rosser}}, p. 372. $)
   df-ncs $a |- NC = ( _V /. ~~ ) $.
 
